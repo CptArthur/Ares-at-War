@@ -127,7 +127,7 @@ namespace AresAtWar.Factions
                 if (FACplaceholderForStoredVariable < 0)
                 {
                     FACplaceholderForStoredVariable = 0;
-                    MyAPIGateway.Utilities.SetVariable<int>(this.Aggression_CounterName, FACplaceholderForStoredVariable);
+                    MyAPIGateway.Utilities.SetVariable<int>(this.Strength_CounterName, FACplaceholderForStoredVariable);
                 }
   
             }
@@ -139,7 +139,7 @@ namespace AresAtWar.Factions
 
 
                 int Strength_Counter;
-                MyAPIGateway.Utilities.GetVariable<int>(Aggression_CounterName, out Strength_Counter);
+                MyAPIGateway.Utilities.GetVariable<int>(Strength_CounterName, out Strength_Counter);
 
                 if (Strength_Counter < this.Strength_Cap)
                 {

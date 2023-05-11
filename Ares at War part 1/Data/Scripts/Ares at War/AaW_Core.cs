@@ -20,10 +20,10 @@ using Sandbox.Game.Entities.Planet;
 
 namespace AresAtWar.SessionCore
 {
-    [MySessionComponentDescriptor(MyUpdateOrder.BeforeSimulation)]
+    [MySessionComponentDescriptor(MyUpdateOrder.AfterSimulation)]
     public class AaWSession : MySessionComponentBase
     {
-        public static string ModVersion = "0.4.3.3";
+        public static string ModVersion = "0.4.3.4";
         public static MESApi MESApi;
         public int counter = 0;
         public int counter2 = 0;
@@ -99,10 +99,9 @@ namespace AresAtWar.SessionCore
         public override void UpdateAfterSimulation()
         {
 
-
             //Every 10 seconds
-            if (counter == 600)
-            {
+            if (counter >= 600)
+            {     
                 //Faction check 
                 for (int i = 0; i < AaWMain.listOfFactions.Count; i++)
                 {
@@ -110,11 +109,12 @@ namespace AresAtWar.SessionCore
                     fac.StrengthCalculator();
                     fac.Holders();
                 }
+                counter = 0;
             }
 
 
             //30m 
-            if (counter2 == 108000)
+            if (counter2 >= 108000)
             {
                 MyVisualScriptLogicProvider.ShowNotificationToAll("Updated Faction Strength", 5000);
                 for (int i = 0; i < AaWMain.listOfFactions.Count; i++)
@@ -122,17 +122,13 @@ namespace AresAtWar.SessionCore
                     var fac = AaWMain.listOfFactions[i];
                     fac.AddProductiontoCounter();
                 }
-            }
-            if (counter > 600)
-                counter = 0;
-
-            if (counter2 > 216000)
                 counter2 = 0;
+            }
 
             counter++;
             counter2++; 
-
         }
+
         protected override void UnloadData()
         {
 
