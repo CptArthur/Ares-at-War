@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerFilterProfile-ExcludedPlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Filter]
+	[CheckSandboxList:true]
+	[ExcludedSandboxListId:PlayerNear]
+	
+      </Description>
+      
+    </EntityComponent>
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerFilterProfile-IncludedPlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Filter]
+	[CheckSandboxList:true]
+	[IncludedSandboxListId:PlayerNear]
+ 
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerFilterProfile-ITCNeutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Filter]
+	
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:ITC]
+	[MinPlayerReputation:-499]
+	[MaxPlayerReputation:499]
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerFilterProfile-ITCFriendly</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Filter]
+	
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:ITC]
+	[MinPlayerReputation:500]
+	[MaxPlayerReputation:1500]
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerFilterProfile-AHENeutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Filter]
+	
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:AHE]
+	[MinPlayerReputation:-499]
+	[MaxPlayerReputation:499]
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerFilterProfile-AHEFriendly</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Filter]
+	
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:AHE]
+	[MinPlayerReputation:500]
+	[MaxPlayerReputation:1500]
+
+
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+  </EntityComponents>
+</Definitions>

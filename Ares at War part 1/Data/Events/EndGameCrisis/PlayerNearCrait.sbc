@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+  <!-- 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-PlayerNearCrait</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		[MinCooldownMs:18000]
+		[MaxCooldownMs:36001]
+		
+		[ConditionIds:AaW-EventCondition-PlayerNearCrait]
+		
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000]
+
+
+		[ActionIds:AaW-EventAction-PlayerNearCrait]
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-PlayerNearCrait-NewsAlert]	
+		
+		
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-PlayerNearCrait</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+	[CheckPlayerNear:true]
+	
+	[Distance:50928]
+	[Coords:{X:1449429.5 Y:-622819.5 Z:-2854387.5}
+	  
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-PlayerNearCrait</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+
+
+
+
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-PlayerNearCrait-NewsAlert</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+	    [UseChatBroadcast:true]
+    [ChatData:AaW-EventChat-PlayerNearCraitNewsAlert]
+
+
+      </Description>
+      
+    </EntityComponent>
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-PlayerNearCraitNewsAlert</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Green]
+      [Author:Ares News Station]
+        
+      [ChatMessages:EndGameCrisis time]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	-->
+	
+	
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+<!--
+
+[SpawnConditionsProfiles:ITC-SpawnProfile-ITCBylenRing-Both-Zone]
+
+
+
+[SpawnConditionsProfiles:ITC-SpawnProfile-ITCBylenRing-Both-Outside-Str2]
+[SpawnConditionsProfiles:ITC-SpawnProfile-ITCBylenRing-Both-Outside-Str3]
+[SpawnConditionsProfiles:ITC-SpawnProfile-ITCBylenRing-Both-Outside-Str4]
+
+
+
+
+
+
+[SpawnConditionsProfiles:ITC-SpawnProfile-ITCBylenRing-Combat-Outside-Str2]
+[SpawnConditionsProfiles:ITC-SpawnProfile-ITCBylenRing-Combat-Outside-Str3]
+[SpawnConditionsProfiles:ITC-SpawnProfile-ITCBylenRing-Combat-Outside-Str4]
+
+
+
+-->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>ITC-SpawnProfile-ITCBylenRing-Both-Zone</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[SpaceCargoShip:true]
+	[FactionOwner:ITC]
+	[ZoneConditions:ZoneCondition-ITC]			
+		[CustomApiConditions:BylenRing]
+	[IgnoreCombatPhase:true]
+
+
+	[UseSpawnGroupPrefabSpawningMode:true]
+	
+      </Description>
+
+    </EntityComponent>
+		
+	<!-- Outside Combat -->	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>ITC-SpawnProfile-ITCBylenRing-Both-Outside-Str2</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[SpaceCargoShip:true]
+	[FactionOwner:ITC]
+	[SandboxVariables:ITCStr2]		
+		[CustomApiConditions:BylenRing]
+
+	[SpaceCargoShipChance:25]	
+	[IgnoreCombatPhase:true]
+	
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>ITC-SpawnProfile-ITCBylenRing-Both-Outside-Str3</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[SpaceCargoShip:true]
+	[FactionOwner:ITC]
+	[SandboxVariables:ITCStr3]		
+	[CustomApiConditions:BylenRing]
+
+	[IgnoreCombatPhase:true]
+		
+	[UseSpawnGroupPrefabSpawningMode:true]
+	
+      </Description>
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>ITC-SpawnProfile-ITCBylenRing-Both-Outside-Str4</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[SpaceCargoShip:true]
+	[FactionOwner:ITC]
+	[SandboxVariables:ITCStr4]		
+	[CustomApiConditions:BylenRing]
+
+	[IgnoreCombatPhase:true]
+		
+	
+	
+
+	[UseSpawnGroupPrefabSpawningMode:true]
+	
+      </Description>
+    </EntityComponent>		
+
+
+
+
+
+		
+		
+		
+		
+		
+	<!-- Outside Combat -->	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>ITC-SpawnProfile-ITCBylenRing-Combat-Outside-Str2</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[SpaceCargoShip:true]
+	[FactionOwner:ITC]
+	[SandboxVariables:ITCStr2]		
+		[CustomApiConditions:BylenRing]
+
+	[SpaceCargoShipChance:25]	
+	[UseCombatPhase:true]
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:10000]
+	[ThreatIncludeOtherNpcOwners:true]
+	[ThreatScoreMinimum:666]	
+	
+	
+
+	[UseSpawnGroupPrefabSpawningMode:true]
+	
+      </Description>
+    </EntityComponent>
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>ITC-SpawnProfile-ITCBylenRing-Combat-Outside-Str3</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[SpaceCargoShip:true]
+	[FactionOwner:ITC]	
+	[CustomApiConditions:BylenRing]
+
+	[UseCombatPhase:true]
+		
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:10000]
+	[ThreatIncludeOtherNpcOwners:true]
+	[ThreatScoreMinimum:666]
+
+
+	[UseSpawnGroupPrefabSpawningMode:true]
+	
+      </Description>
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>ITC-SpawnProfile-ITCBylenRing-Combat-Outside-Str4</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[SpaceCargoShip:true]
+	[FactionOwner:ITC]
+	[CustomApiConditions:BylenRing]
+
+	[UseCombatPhase:true]
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:10000]
+	[ThreatIncludeOtherNpcOwners:true]
+	[ThreatScoreMinimum:666]	
+	
+	
+	[UseSpawnGroupPrefabSpawningMode:true]
+
+	
+      </Description>
+    </EntityComponent>		
+	
+
+    
+  </EntityComponents>
+</Definitions>

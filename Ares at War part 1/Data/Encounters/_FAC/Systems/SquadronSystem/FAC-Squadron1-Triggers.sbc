@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+  <!--
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-SquadronLeader-Trigger-Damage-PlayerDamage</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Damage]
+	[DamageTypes:Any]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	
+	[Conditions:FAC-Context-Condition-Hostile-PlayerDamage]
+
+	
+	[MaxActions:1]
+	[Actions:FAC-SquadronLeader-Action-Loose]
+	  
+      </Description>
+      
+    </EntityComponent>  
+  
+  
+  
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-SquadronLeader-Trigger-Damage-DamagerIsNPC</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Damage]
+	[DamageTypes:Any]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+
+	[Conditions:FAC-Context-Condition-DamagerIsNPC]
+
+	[MaxActions:1]
+	[Actions:FAC-SquadronLeader-Action-Loose]
+	  
+      </Description>
+      
+    </EntityComponent>    
+  
+  
+  -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-SquadronLeader-Trigger-HasTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:TargetNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:4500]
+	[MaxActions:1]
+	[Actions:FAC-SquadronLeader-Action-HasTarget]
+	  
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	
+	
+	
+	
+      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-SquadronLeader-Trigger-ProcessEscortRequest</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:FACSquadronMemberRequest]
+
+        [StartsReady:true]
+        [MinCooldownMs:0]
+        [MaxCooldownMs:0]
+        [MaxActions:-1]
+        [Actions:FAC-SquadronLeader-Action-ProcessEscortRequest]
+
+      </Description>
+
+    </EntityComponent>	
+	
+	
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>TIF-HQ-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW-Target-Main-B]	
+	
+	[TriggerGroups:ContextTriggers]
+	[TriggerGroups:TIF-CommonTriggers]
+	[TriggerGroups:TIF-Static-CommonTriggers]
+	[TriggerGroups:FAC-Static-CommonTriggers]
+
+
+
+[Triggers:TIF-ZoneController-Trigger-Death]
+
+	
+	
+		[Triggers:FAC-PointSystem-Trigger-Decrease100]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase100]
+	
+      </Description>
+      
+    </EntityComponent>	
+	
+
+
+
+	
+	
+
+
+	
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Xu-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[AutopilotData:FAF-LDroneAutopilot-KeepDistance]	
+	[SecondaryAutopilotData:FAF-LDroneAutopilot-Horsefly]	
+	[TargetData:AaW-Target-Main-A]		
+	
+	
+	[TriggerGroups:ContextTriggers]
+	[TriggerGroups:FAF-CommonTriggers] 	
+	[TriggerGroups:FAF-LDrone-CommonTriggers] 		
+	[TriggerGroups:FAC-LDrone-CommonTriggers] 		
+	
+	[TriggerGroups:FAC-OffensiveEscortSystem-TaskLeader-TriggerGroup] 		
+
+	[Triggers:FAF-Xu-Trigger-Death]
+	[Triggers:FAF-Xu-Trigger-Retreat]	
+	
+	
+	[Triggers:FAC-PointSystem-Trigger-Decrease75]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase50]	
+
+
+	
+
+
+
+	[EscortOffsets:{X:-500 Y:0 Z:0}]
+	[EscortOffsets:{X:500 Y:0 Z:0}]
+	 
+	 
+      </Description>
+      
+    </EntityComponent>
+	
+
+	
+	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>

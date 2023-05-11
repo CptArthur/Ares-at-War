@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-Patrol-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Behavior]
+      [BehaviorName:Patrol]
+
+	  [TargetData:AaW-Target-ShortRange]
+	  [AutopilotData:FAC-Patrol-Autopilot]
+       [SecondaryAutopilotData:RAI-Generic-Autopilot-Fighter]
+	  
+	[TriggerGroups:ContextTriggers]	 		
+	[TriggerGroups:DRA-CommonTriggers] 	
+	[TriggerGroups:DRA-Patrol-CommonTriggers] 		
+	[TriggerGroups:FAC-Patrol-CommonTriggers] 	
+	
+	[Triggers:FAC-PointSystem-Trigger-Decrease1]
+
+
+	  
+
+      </Description>
+      
+    </EntityComponent>	
+	
+
+	
+  </EntityComponents>
+</Definitions>

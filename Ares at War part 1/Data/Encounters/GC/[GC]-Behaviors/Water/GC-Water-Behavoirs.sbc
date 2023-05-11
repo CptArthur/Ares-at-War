@@ -1,0 +1,56 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC-Behaviour-RaidingBoat</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Behavior]
+        [BehaviorName:Patrol]
+
+        [AutopilotData:GC-Marine-Autopilot]
+        [TargetData:AaW-Marine-Targeting]
+
+		[Triggers:GC-Water-Trigger-Death]
+		[Triggers:GC-Water-Trigger-HasTarget]
+		[Triggers:GC-Water-Trigger-PlayerNear]
+	  		[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:GC-CommonTriggers] 
+
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC-Behaviour-Destroyer</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Behavior]
+        [BehaviorName:Patrol]
+
+        [AutopilotData:GC-Marine-Autopilot]
+        [TargetData:AaW-Marine-Targeting]
+
+		[Triggers:GC-Water-Trigger-Death]
+		[Triggers:GC-Water-Trigger-HasTarget]
+		[Triggers:GC-Water-Trigger-PlayerNear]
+	  		[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:GC-CommonTriggers] 
+
+
+      </Description>
+
+    </EntityComponent>
+    
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>RAI-Generic-Autopilot-Strike</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Autopilot]
+
+        [DisableInertiaDampeners:false]
+        [FlyLevelWithGravity:false]
+        [CollisionEvasionWaypointCalculatedAwayFromEntity:true]
+        [WaypointTolerance:50]
+        [IdealMinSpeed:50]
+        [IdealMaxSpeed:100]
+        [SlowDownOnWaypointApproach:true]
+        [ExtraSlowDownDistance:50]
+
+        [OffsetSpaceMinDistFromTarget:900]
+        [OffsetSpaceMaxDistFromTarget:1000]
+        [OffsetPlanetMinDistFromTarget:100]
+        [OffsetPlanetMaxDistFromTarget:150]
+        [OffsetPlanetMinTargetAltitude:900]
+        [OffsetPlanetMaxTargetAltitude:1100]
+
+        [ReverseOffsetDistAltAboveHeight:true]
+        [ReverseOffsetHeight:1300]
+
+      </Description>
+
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE-EscortAutopilot</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Autopilot]
+
+	[DisableInertiaDampeners:false]
+	[SlowDownOnWaypointApproach:true]
+	[FlyLevelWithGravity:false]
+	[MinimumPlanetAltitude:75]
+	[IdealPlanetAltitude:150]
+	[WaypointTolerance:5]
+	[UseVelocityCollisionEvasion:true]
+	[WaypointWaitTimeTrigger:20]
+
+	[IdealMinSpeed:12]
+	[IdealMaxSpeed:100]
+	[MaxSpeedTolerance:3]
+
+	[LimitRotationSpeed:true]
+	[MaxRotationMagnitude:0.75]
+
+	[EscortSpeedMatchMinDistance:5]
+      </Description>
+
+    </EntityComponent>	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE-EscortAutopilot-B</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Autopilot]
+
+        [DisableInertiaDampeners:false]
+        [SlowDownOnWaypointApproach:true]
+        [ExtraSlowDownDistance:100]
+        [FlyLevelWithGravity:false]
+
+        [IdealMinSpeed:33]
+        [IdealMaxSpeed:100]
+
+        [EngageDistanceSpace:500]
+        [EngageDistancePlanet:600]
+        [DisengageDistanceSpace:800]
+        [DisengageDistancePlanet:800]
+
+        [AllowStrafing:true]
+        [StrafeMinDurationMs:1000]
+        [StrafeMaxDurationMs:1500]
+        [StrafeSpeedCutOff:45]
+
+      </Description>
+
+    </EntityComponent>	
+
+
+	
+  </EntityComponents>
+</Definitions>

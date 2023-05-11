@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>SDC-SpawnGroup-Patrol</SubtypeId>
+			</Id>
+			<Description>
+
+			[Modular Encounters SpawnGroup]
+			
+			[SpaceCargoShip:false]
+			[LunarCargoShip:false]
+			[SpaceRandomEncounter:false]
+			[AtmosphericCargoShip:false]
+			[PlanetaryInstallation:false]
+			
+			[RivalAiSpawn:true]
+	        [FactionOwner:SDC]	
+			
+			[ZoneConditions:ZoneCondition-ZoneAaW]	
+			[IgnoreCombatPhase:true]				
+			
+						[SkipVoxelSpawnChecks:true]
+			[SkipGridSpawnChecks:true]
+			
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="SDC-IceCursher">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SDC-Patrol-Behavior</Behaviour>
+				</Prefab>
+			</Prefabs>			
+		</SpawnGroup>
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>SDC-SpawnGroup-LightGarrison</SubtypeId>
+			</Id>
+			<Description>
+
+			[Modular Encounters SpawnGroup]
+			
+			[SpaceCargoShip:false]
+			[LunarCargoShip:false]
+			[SpaceRandomEncounter:false]
+			[AtmosphericCargoShip:false]
+			[PlanetaryInstallation:false]
+			
+			[RivalAiSpawn:true]
+	        [FactionOwner:SDC]	
+			
+			[ZoneConditions:ZoneCondition-ZoneAaW]	
+			[IgnoreCombatPhase:true]	
+	
+				[SkipVoxelSpawnChecks:true]
+			[SkipGridSpawnChecks:true]
+			
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="SDC-IceCursher">
+					<Position>
+						<X>-100.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SDC-Drone-Behavior</Behaviour>
+				</Prefab>
+
+				<Prefab SubtypeId="SDC-IceCursher">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SDC-Drone-Behavior</Behaviour>
+				</Prefab>
+
+				<Prefab SubtypeId="SDC-IceCursher">
+					<Position>
+						<X>100.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SDC-Drone-Behavior</Behaviour>
+				</Prefab>
+			</Prefabs>			
+		</SpawnGroup>
+
+	<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>SDC-SpawnGroup-MediumGarrison</SubtypeId>
+			</Id>
+		<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[SpaceCargoShip:false]
+			[LunarCargoShip:false]
+			[SpaceRandomEncounter:false]
+			[AtmosphericCargoShip:false]
+			[PlanetaryInstallation:false]
+			
+			[RivalAiSpawn:true]
+	        [FactionOwner:SDC]	
+			
+			[ZoneConditions:ZoneCondition-ZoneAaW]	
+			[IgnoreCombatPhase:true]	
+
+			[SkipVoxelSpawnChecks:true]
+			[SkipGridSpawnChecks:true]
+			
+			
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+	
+		</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				
+				<Prefab SubtypeId="SDC-IceCursher">
+					<Position>
+						<X>-100.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SDC-Drone-Behavior</Behaviour>
+				</Prefab>
+
+
+				<Prefab SubtypeId="SDC-IceCursher">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SDC-Drone-Behavior</Behaviour>
+				</Prefab>
+	
+			
+				<Prefab SubtypeId="SDC-IceCursher">
+					<Position>
+						<X>100.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SDC-Drone-Behavior</Behaviour>
+				</Prefab>
+			
+			</Prefabs>			
+		</SpawnGroup>		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</SpawnGroups>
+</Definitions>

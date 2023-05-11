@@ -1,0 +1,306 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-SquadronLeader-Chat-Escort</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:false]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:Squadleader]
+      [Color:Red]
+      
+      [ChatMessages:This is Squadleader. Accepted escort request]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron-Chat-AggressionSwitchEscort</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:false]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Green]
+      
+      [ChatMessages:Going alone!]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent> 
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron1-Chat-Down</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:false]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:FAC COMMAND]
+      [Color:Green]
+      
+      [ChatMessages:Lost 1]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent> 
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron2-Chat-Down</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:false]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:FAC COMMAND]
+      [Color:Green]
+      
+      [ChatMessages:Lost 2]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent> 
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron3-Chat-Down</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:false]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:FAC COMMAND]
+      [Color:{PlayerRelation}]
+      
+      [ChatMessages:Lost 3]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent> 
+
+
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron1-Chat-Damage-StartRetreat</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:Squadron1]
+      [Color:{PlayerRelation}]
+      
+      [ChatMessages:Lost 2 and 3. Retreating now]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent> 
+ 
+ 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron2-Chat-Damage-StartRetreat</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:Squadron2]
+      [Color:{PlayerRelation}]
+      
+      [ChatMessages:Lost 1 and 3. Retreating now]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent> 
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron3-Chat-Damage-StartRetreat</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:Squadron3]
+      [Color:Green]
+      
+      [ChatMessages:Lost 1 and 2. Retreating now]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent> 
+
+
+
+ 
+ 	
+
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-SquadronLeader-Chat-HasTarget</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:White]
+      
+      [ChatMessages:This is squadleader got something]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron-Chat-Retreating</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:false]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:TetrachFighter]
+      [Color:Green]
+      
+      [ChatMessages:Lost the turret, retreating now!]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>	
+	
+  </EntityComponents>
+</Definitions>

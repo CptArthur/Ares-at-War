@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>TIF-LDroneTaskLeader-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[AutopilotData:TIF-LDroneAutopilot]	
+	[SecondaryAutopilotData:TIF-LDroneAutopilot-Horsefly]	
+	[TargetData:AaW-Target-Main-A]		
+	
+	
+	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:TIF-CommonTriggers] 	
+	[TriggerGroups:TIF-LDrone-CommonTriggers] 		
+	[TriggerGroups:FAC-LDrone-CommonTriggers] 		
+
+	
+	[TriggerGroups:FAC-OffensiveEscortSystem-TaskLeader-TriggerGroup] 		
+
+	[Triggers:FAC-PointSystem-Trigger-Decrease50]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase25]
+
+
+	[EscortOffsets:{X:-100 Y:0 Z:0}]
+	[EscortOffsets:{X:100 Y:0 Z:0}]
+	 
+	 
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF-LDroneAutopilot</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Autopilot]
+		
+        [DisableInertiaDampeners:false]
+        [SlowDownOnWaypointApproach:true]
+        [FlyLevelWithGravity:true]
+        [MinimumPlanetAltitude:400]
+        [IdealPlanetAltitude:500]
+        [WaypointTolerance:30]
+
+        [IdealMaxSpeed:75]
+        [MaxSpeedTolerance:5]
+		
+		
+        [OffsetSpaceMinDistFromTarget:150]
+        [OffsetSpaceMaxDistFromTarget:300]
+        [OffsetPlanetMinDistFromTarget:150]
+        [OffsetPlanetMaxDistFromTarget:300]
+        [OffsetPlanetMinTargetAltitude:-200]
+        [OffsetPlanetMaxTargetAltitude:200]
+
+      </Description>
+
+    </EntityComponent>	
+	
+	
+	   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF-LDroneAutopilot-Horsefly</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Autopilot]
+		
+        [DisableInertiaDampeners:false]
+        [SlowDownOnWaypointApproach:true]
+        [FlyLevelWithGravity:true]
+        [MinimumPlanetAltitude:400]
+        [IdealPlanetAltitude:500]
+        [WaypointTolerance:30]
+
+        [IdealMaxSpeed:75]
+        [MaxSpeedTolerance:5]
+		
+		
+        [OffsetSpaceMinDistFromTarget:150]
+        [OffsetSpaceMaxDistFromTarget:300]
+        [OffsetPlanetMinDistFromTarget:150]
+        [OffsetPlanetMaxDistFromTarget:300]
+        [OffsetPlanetMinTargetAltitude:-200]
+        [OffsetPlanetMaxTargetAltitude:200]
+
+      </Description>
+
+    </EntityComponent>	
+	
+		
+	
+	
+	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>

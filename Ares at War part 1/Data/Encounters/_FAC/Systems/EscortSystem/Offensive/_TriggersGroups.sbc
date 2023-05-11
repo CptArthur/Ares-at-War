@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-OffensiveEscortSystem-Drone-TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI TriggerGroup]
+
+	[Triggers:FAC-OffensiveEscortDrone-Trigger-RequestEscortSlot]		
+	[Triggers:FAC-OffensiveEscortDrone-Trigger-AggressionSwitchEscort]	
+	
+	[Triggers:FAC-OffensiveEscortDrone-Trigger-TaskLeaderisNotReady]		
+	[Triggers:FAC-OffensiveEscortDrone-Trigger-TaskLeaderisReady]		
+	[Triggers:FAC-OffensiveEscortDrone-Trigger-NoTargetSwitchEscort]
+
+
+	
+      </Description>
+    </EntityComponent> 	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-OffensiveEscortSystem-TaskLeader-TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI TriggerGroup]
+
+	[Triggers:FAC-OffensiveTaskLeader-Trigger-ProcessEscortRequest]		
+	[Triggers:FAC-OffensiveTaskLeader-Trigger-TargetNear1500]	
+	
+	[Triggers:FAC-OffensiveTaskLeader-Trigger-HasTarget]	
+	[Triggers:FAC-OffensiveTaskLeader-Trigger-NoTarget]	
+	[Triggers:FAC-OffensiveTaskLeader-Trigger-SwitchtoCargo]
+	
+	
+      </Description>
+    </EntityComponent> 		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

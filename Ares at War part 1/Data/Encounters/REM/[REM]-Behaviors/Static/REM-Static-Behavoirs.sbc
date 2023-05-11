@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>REM-HQ-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW-Target-Main-B]	
+	
+	[TriggerGroups:ContextTriggers]
+	[TriggerGroups:REM-CommonTriggers]
+	[TriggerGroups:REM-Static-CommonTriggers]
+	[TriggerGroups:FAC-Static-CommonTriggers]
+
+
+
+[Triggers:REM-ZoneController-Trigger-Death]
+
+	
+	[Triggers:FAC-PointSystem-Trigger-Decrease100]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase100]
+	
+	
+      </Description>
+      
+    </EntityComponent>	
+	
+
+
+
+
+
+
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>REM-Airfield-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+
+	[TargetData:AaW-Target-Main-B]	  
+
+
+	[TriggerGroups:ContextTriggers]
+	[TriggerGroups:REM-CommonTriggers]
+	[TriggerGroups:REM-Static-CommonTriggers]
+	[TriggerGroups:FAC-Static-CommonTriggers]
+
+
+	[Triggers:FAC-PointSystem-Trigger-Decrease100]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase100]
+	
+	
+	
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+
+
+	
+  </EntityComponents>
+</Definitions>

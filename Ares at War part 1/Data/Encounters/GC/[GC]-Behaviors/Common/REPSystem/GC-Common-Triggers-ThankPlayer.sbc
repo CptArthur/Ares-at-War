@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+<!--
+
+GC-Common-Trigger-CommandReceived-GCThanksPlayer
+
+
+
+-->
+
+<!--================= Command Normal ==================-->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-Common-Trigger-CommandReceived-GCThanksPlayer</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:CommandReceived]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[CommandReceiveCode:GCThanksPlayer]
+	[MaxActions:1]
+
+	[Actions:GC-Common-Action-CommandReceived-GCThanksPlayer]	
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-Common-Action-CommandReceived-GCThanksPlayer</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[UseChatBroadcast:true]
+	[ChatData:GC-Common-Chat-CommandReceived-GCThanksPlayer]
+
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:3500]
+	[ReputationChangeFactions:GC]
+	[ReputationChangeAmount:500]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+	
+	[ChangeAttackerReputation:true]
+	[ChangeAttackerReputationFaction:GC]
+	[ChangeAttackerReputationAmount:-500]
+	[ReputationChangesForAllAttackPlayerFactionMembers:true]
+
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-Common-Chat-CommandReceived-GCThanksPlayer</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+	[UseChat:true]
+	[StartsReady:true]
+	[Chance:100]
+	[MaxChats:-1]
+	[BroadcastRandomly:true]
+	[IgnoreAntennaRequirement:true]
+	[IgnoredAntennaRangeOverride:10000]      
+	[Author:{AntennaName}]
+	[Color:Green]
+      [BroadcastRandomly:true]
+	
+      [ChatMessages:Enemy control block destroyed! Nice work {PlayerName}]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+      [ChatMessages:Enemy control block destroyed! Thanks {PlayerName}]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+      [ChatMessages:Good work {PlayerName}! Enemy control block destroyed! ]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+  </EntityComponents>
+</Definitions>

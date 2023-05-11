@@ -1,0 +1,202 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!-- 
+[Triggers:FAF-LDrone-Trigger-GGCCargoResponse-NoCheck]
+[Triggers:FAF-LDrone-Trigger-GGCLDroneResponse-NoCheck]
+[Triggers:FAF-LDrone-Trigger-GGCMinorStaticResponse-NoCheck]
+[Triggers:FAF-LDrone-Trigger-GGCMajorStaticResponse-NoCheck]
+
+
+[Triggers:FAF-LDrone-Trigger-GGCCargoResponse-Check]
+[Triggers:FAF-LDrone-Trigger-GGCLDroneResponse-Check]
+[Triggers:FAF-LDrone-Trigger-GGCMinorStaticResponse-Check]
+[Triggers:FAF-LDrone-Trigger-GGCMajorStaticResponse-Check]
+
+
+
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-LDrone-Trigger-GGCCargoResponse-NoCheck</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:GGC-Cargo-Command-Presence]
+
+        [StartsReady:true]
+        [MaxActions:1]
+        [Actions:FAF-all-Action-SwitchToReceivedTarget]
+      </Description>
+
+    </EntityComponent>
+    
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-LDrone-Trigger-GGCLDroneResponse-NoCheck</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:GGC-LDrone-Command-Presence]
+
+        [StartsReady:true]
+        [MaxActions:1]
+        [Actions:FAF-all-Action-SwitchToReceivedTarget]
+      </Description>
+
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-LDrone-Trigger-GGCMinorStaticResponse-NoCheck</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:GGC-MinorStatic-Command-Presence]
+
+        [StartsReady:true]
+        [MaxActions:1]
+        [Actions:FAF-all-Action-SwitchToReceivedTarget]
+      </Description>
+
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-LDrone-Trigger-GGCMajorStaticResponse-NoCheck</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:GGC-MajorStatic-Command-Presence]
+
+        [StartsReady:true]
+        [MaxActions:1]
+        [Actions:FAF-all-Action-SwitchToReceivedTarget]
+      </Description>
+
+    </EntityComponent>	
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-LDrone-Trigger-GGCCargoResponse-Check</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:GGC-Cargo-Command-Presence]
+		[Conditions:FAC-Context-Condition-CompareCommandGridValue]
+        [StartsReady:true]
+        [MaxActions:1]
+        [Actions:FAF-all-Action-SwitchToReceivedTarget]
+      </Description>
+
+    </EntityComponent>
+    
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-LDrone-Trigger-GGCLDroneResponse-Check</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:GGC-LDrone-Command-Presence]
+		[Conditions:FAC-Context-Condition-CompareCommandGridValue]
+        [StartsReady:true]
+        [MaxActions:1]
+        [Actions:FAF-all-Action-SwitchToReceivedTarget]
+      </Description>
+
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-LDrone-Trigger-GGCMinorStaticResponse-Check</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:GGC-MinorStatic-Command-Presence]
+		[Conditions:FAC-Context-Condition-CompareCommandGridValue]
+        [StartsReady:true]
+        [MaxActions:1]
+        [Actions:FAF-all-Action-SwitchToReceivedTarget]
+      </Description>
+
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-LDrone-Trigger-GGCMajorStaticResponse-Check</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:GGC-MajorStatic-Command-Presence]
+		[Conditions:FAC-Context-Condition-CompareCommandGridValue]
+        [StartsReady:true]
+        [MaxActions:1]
+        [Actions:FAF-all-Action-SwitchToReceivedTarget]
+      </Description>
+
+    </EntityComponent>		
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-all-Action-SwitchToReceivedTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[SwitchToReceivedTarget:true]
+      </Description>
+
+    </EntityComponent>
+
+
+  </EntityComponents>
+</Definitions>

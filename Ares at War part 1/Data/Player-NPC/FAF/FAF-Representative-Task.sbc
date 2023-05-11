@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!--
+
+[Triggers:FAF-Representative-Trigger-Task-1]
+[Triggers:FAF-Representative-Trigger-Task-FAIL]
+
+
+
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Trigger-Task-1</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:FAF-Representative]
+	[ButtonPanelIndex:2]
+	[Conditions:FAF-Representative-Condition-Task-1]
+	[Actions:FAF-Representative-Action-Task-1]
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Condition-Task-1</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	[CheckPlayerReputation:true]
+	
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:500]
+	[MaxPlayerReputation:1500]
+
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:FAF-CurrentTask]
+	[CustomSandboxCountersTargets:1]
+	[SandboxCounterCompareTypes:Equal]
+
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Action-Task-1</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:FAF-Representative-Chat-Task-1]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Chat-Task-1</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF-Representative]
+      [Color:{PlayerRelation}]
+      
+      [ChatMessages:We gathered some intel that the ROS is developing Laser weapons. Go destroy their base on Crait]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]   
+
+	  [MinTime:2]
+	  [MaxTime:3]	
+	  
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Trigger-Task-FAIL</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:FAF-Representative]
+	[ButtonPanelIndex:2]
+	[Conditions:FAF-Representative-Condition-Task-FAIL]
+	[Actions:FAF-Representative-Action-Task-FAIL]
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Condition-Task-FAIL</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	[CheckPlayerReputation:true]
+	
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:-1500]
+	[MaxPlayerReputation:499]
+
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Action-Task-FAIL</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:FAF-Representative-Chat-Task-FAIL]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Chat-Task-FAIL</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF-Representative]
+      [Color:{PlayerRelation}]
+      
+      [ChatMessages:We only give tasks to associates]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat] 
+
+		  [MinTime:2]
+	  [MaxTime:3]	  
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+	
+	
+	
+	
+ 
+	
+	
+	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>

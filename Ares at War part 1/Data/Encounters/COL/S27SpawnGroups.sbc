@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+<!--
+
+
+GPS:Sation27:-270949.04:515.36:-1035567.12:#FF75C9F1:
+
+
+    <MyObjectBuilder_EntityBase xsi:type="MyObjectBuilder_VoxelMap">
+      <SubtypeName />
+      <EntityId>127282486861692308</EntityId>
+      <PersistentFlags>CastShadows InScene</PersistentFlags>
+      <Name>Station27-Asteroid</Name>
+      <PositionAndOrientation>
+        <Position x="-270949.04" y="515.36" z="-1035567.12" />
+        <Forward x="0.930415332" y="-0.01940845" z="0.3659926" />
+        <Up x="0.0642227" y="0.991779864" z="-0.1106713" />
+        <Orientation>
+          <X>-0.05782862</X>
+          <Y>-0.8244102</Y>
+          <Z>0.0276751947</Z>
+          <W>0.5623502</W>
+        </Orientation>
+      </PositionAndOrientation>
+      <LocalPositionAndOrientation xsi:nil="true" />
+      <ContentChanged>false</ContentChanged>
+      <BoulderPlanetId xsi:nil="true" />
+      <BoulderSectorId xsi:nil="true" />
+      <BoulderItemId xsi:nil="true" />
+      <CreatedByUser>true</CreatedByUser>
+      <StorageName>Station27-Asteroid</StorageName>
+    </MyObjectBuilder_EntityBase>
+	
+	
+	
+	
+	From Asteroid to Station27
+	
+	x += -8.05378800002
+	y += 149.99250428
+	z += -466.812254
+	
+	
+	
+	
+	-->
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>S27</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:COL-B]		
+
+			[TriggerCoords:{X:-270957.093788 Y:665.35250428 Z:-1036033.93225}]
+			[TriggerRadius:200000]
+
+			[ForceExactPositionAndOrientation:true]
+			[CutVoxelsAtAirtightCells:true]
+
+
+			[StaticEncounterCoords:{X:-270957.093788 Y:665.35250428 Z:-1036033.93225}]
+			[StaticEncounterForward:{X:0 Y:0 Z:-1}]
+			[StaticEncounterUp:{X:0 Y:1 Z:0}]
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-AAW)]
+			[RandomGridNamePattern:Station27]
+			[ReplaceAntennaNameWithRandomizedName:Station 27]
+			
+		[GridsAreDestructable:false]
+	
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:Station27]			
+			[ZoneConditions:ZoneCondition-ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="Station27">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>COL-Station27-Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>
+
+
+
+
+		
+		
+		
+		
+	</SpawnGroups>
+	
+</Definitions>

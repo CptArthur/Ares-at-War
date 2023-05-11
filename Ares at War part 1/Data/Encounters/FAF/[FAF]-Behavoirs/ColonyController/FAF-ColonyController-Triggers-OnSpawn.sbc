@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-ColonyController-Trigger-OnSpawn</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Timer]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	[MaxActions:2]
+
+
+	[ActionExecution:All]
+
+	  [Actions:FAF-ColonyController-Action-OnSpawn1]
+	  [Actions:FAF-ColonyController-Action-OnSpawn2]	  
+      </Description>
+      
+    </EntityComponent>
+	
+
+					
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-ColonyController-Action-OnSpawn1</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+
+	[ChangeZoneAtPosition:true]
+	[ZoneName:ZoneFAF]
+	[ZoneToggleActiveAtPosition:true]
+	[ZoneToggleActiveAtPositionMode:true]
+
+
+      </Description>
+      
+    </EntityComponent>		
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-ColonyController-Action-OnSpawn2</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+
+	[ChangeZoneAtPosition:true]
+	[ZoneName:ZoneGC]
+	[ZoneToggleActiveAtPosition:true]
+	[ZoneToggleActiveAtPositionMode:false]
+
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

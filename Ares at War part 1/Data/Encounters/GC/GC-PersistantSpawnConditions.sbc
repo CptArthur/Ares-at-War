@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+<!--
+[PersistentConditions:GC-PersistentSpawnProfile-LightTaskForce]
+[PersistentConditions:GC-PersistentSpawnProfile-MediumTaskForce]
+
+[PersistentConditions:GC-PersistentSpawnProfile-Cargoship]
+
+
+-->
+
+	
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC-PersistentSpawnProfile-LightTaskForce</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+
+	[SandboxVariables:GCActive]
+	
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:GC_Strength_Counter]
+	[CustomSandboxCountersTargets:40]
+	[SandboxCounterCompareTypes:GreaterOrEqual]
+
+
+
+	
+	
+	
+      </Description>
+
+    </EntityComponent>		
+	
+	
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC-PersistentSpawnProfile-MediumTaskForce</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+
+	[SandboxVariables:GCActive]
+	
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:GC_Strength_Counter]
+	[CustomSandboxCountersTargets:60]
+	[SandboxCounterCompareTypes:GreaterOrEqual]
+	
+
+	
+      </Description>
+
+    </EntityComponent>	 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC-PersistentSpawnProfile-Cargoship</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+
+	[SandboxVariables:GCActive]
+	
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:GC_Strength_Counter]
+	[CustomSandboxCountersTargets:20]
+	[SandboxCounterCompareTypes:GreaterOrEqual]
+
+
+	
+	
+      </Description>
+
+    </EntityComponent>	 	
+	
+	
+	
+    
+  </EntityComponents>
+</Definitions>

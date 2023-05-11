@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-LDroneTaskLeader-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[AutopilotData:AHE-LDroneAutopilot]	
+	[SecondaryAutopilotData:AHE-LDroneAutopilot-Horsefly]	
+	[TargetData:AaW-Target-Main-A]		
+	
+	
+	[TriggerGroups:ContextTriggers]
+	[TriggerGroups:AHE-CommonTriggers] 	
+	[TriggerGroups:AHE-LDrone-CommonTriggers] 		
+	[TriggerGroups:FAC-LDrone-CommonTriggers] 		
+	
+	
+	
+	
+	
+	[TriggerGroups:FAC-OffensiveEscortSystem-TaskLeader-TriggerGroup] 		
+
+
+	[Triggers:FAC-PointSystem-Trigger-Decrease15]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase10]
+
+
+
+	[EscortOffsets:{X:-100 Y:0 Z:0}]
+	[EscortOffsets:{X:100 Y:0 Z:0}]
+	 
+	 
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>

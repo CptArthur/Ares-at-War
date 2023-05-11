@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+	<!--
+[Triggers:COL-Carcosa-Triggers-EnableGreetings]
+
+[Triggers:COL-Carcosa-Triggers-Greeting]
+[Triggers:COL-Carcosa-Triggers-PlayerFar]
+
+
+	-->
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Carcosa-Triggers-EnableGreetings</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[TargetDistance:5000]
+	[MinCooldownMs:10000]
+	[MaxCooldownMs:10001]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	  	 
+	[Actions:COL-Carcosa-Action-EnableGreetings]
+
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Carcosa-Triggers-DisableGreetings</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[TargetDistance:5000]
+	[MinCooldownMs:10000]
+	[MaxCooldownMs:10001]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	  	 
+	[UseFailCondition:true]
+
+	[Actions:COL-Carcosa-Action-DisableGreetings]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Carcosa-Action-EnableGreetings</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+        
+	[EnableTriggers:true]
+	[EnableTriggerNames:COL-Carcosa-Triggers-Greeting]
+	
+	
+	[EnableTriggerNames:COL-Carcosa-Triggers-PlayerFar]
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Carcosa-Action-DisableGreetings</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	[DisableTriggers:true]
+	[DisableTriggerNames:COL-Carcosa-Triggers-Greeting]
+
+
+	[DisableTriggerNames:COL-Carcosa-Triggers-PlayerFar]
+       
+
+      </Description>
+      
+    </EntityComponent>	
+
+	
+	
+<!-- Carcosa
+
+COL-Carcosa-Triggers-Greeting
+
+
+
+
+
+
+COL-Carcosa-Triggers-PlayerFar
+
+
+ -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Carcosa-Triggers-Greeting</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[TargetDistance:2000]
+	[UsePlayerFilterProfile:true]
+	[PlayerFilterProfileIds:PlayerFilterProfile-ExcludedPlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	  
+	[Actions:COL-Carcosa-Action-Greeting]	  
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Carcosa-Action-Greeting</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+        
+	[UseChatBroadcast:true]
+    [ChatData:COL-Carcosa-Chat-Greeting]    
+	
+	[SavePlayerIdentityToSandboxList:true]
+	[PlayerIdentitySandboxList:PlayerNear]
+
+	[SavePlayerIdentity:true]
+	
+	[ApplyLcdChanges:true]
+	[LcdTextTemplateFile:NewsTemplate.xml]
+	[LcdBlockNames:FactionBanner]
+	[LcdTemplateIndexes:0]
+	
+	
+	
+	
+	
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Carcosa-Chat-Greeting</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [MinTime:2]
+      [MaxTime:3]
+
+      [Author:Carcosa]
+      [Color:Green]
+      
+	[ChatMessages:Greetings {PlayerName}! Welcome to Carcosa]
+	[BroadcastChatType:Chat]
+    [ChatAudio:ArcHudGPSNotification2]
+
+	[ChatMessages:Greetings {PlayerName}! Welcome to the pearl of the south]
+	[BroadcastChatType:Chat]
+	[ChatAudio:ArcHudGPSNotification2]
+      </Description>
+      
+    </EntityComponent>
+
+	
+	<!-- The unsubscribe one -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Carcosa-Triggers-PlayerFar</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerFar]
+	[TargetDistance:3500]
+	[UsePlayerFilterProfile:true]
+	[PlayerFilterProfileIds:PlayerFilterProfile-IncludedPlayerNear]
+	
+	[UseTrigger:true]
+	[StartsReady:true]
+
+	  
+	[Actions:COL-Carcosa-Action-PlayerFar]	  
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Carcosa-Action-PlayerFar</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+        
+	[RemovePlayerIdentityFromSandboxList:true]
+	[PlayerIdentitySandboxList:PlayerNear]
+	[RemovePlayerIdentity:true]
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

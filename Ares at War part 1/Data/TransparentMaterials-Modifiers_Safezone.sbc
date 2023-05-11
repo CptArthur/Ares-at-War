@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <TransparentMaterials>
+
+        <TransparentMaterial>
+            <Id>
+                <TypeId>TransparentMaterialDefinition</TypeId>
+                <SubtypeId>SafeZoneShield_Material</SubtypeId>
+            </Id>
+            <Texture>Textures\Models\Environment\SafeZone\SafeZoneShield_Default_alphamask.DDS</Texture>
+            <GlossTexture>Textures\Models\Environment\SafeZone\SafeZoneShield_Default_ng.DDS</GlossTexture>
+            <ShadowMultiplier>
+                <X>20</X> <!-- Seems to control UV tiling size !-->
+                <Y>0.05</Y> <!-- Seems to control speed -->
+                <Z>0</Z> <!-- No effect -->
+                <W>0</W> <!-- No effect -->
+            </ShadowMultiplier>
+            <LightMultiplier>
+                <X>6</X> <!-- Seems to control the opacity of the  'middle' view of the material -->
+                <Y>16</Y> <!-- Seems to control the 'glow' of the edges of the mateiral -->
+                <Z>1.5</Z> <!-- Seems to control Emissive of the edges - multiplicative, small number equal big change -->
+                <W>20</W> <!-- Unknown -->
+            </LightMultiplier>
+            <Reflectivity>0</Reflectivity>
+            <ReflectionShadow>0</ReflectionShadow> <!-- Stretching -->
+            <TriangleFaceCulling>false</TriangleFaceCulling> <!-- When true, back side is not rendered -->
+            <SoftParticleDistanceScale>20</SoftParticleDistanceScale>
+			<!-- <CanBeAffectedByOtherLights>true</CanBeAffectedByOtherLights> -->
+            <!-- <SpecularColorFactor>0</SpecularColorFactor> -->
+            <!-- <Gloss>0</Gloss> -->
+        </TransparentMaterial>
+		
+    </TransparentMaterials>
+</Definitions>

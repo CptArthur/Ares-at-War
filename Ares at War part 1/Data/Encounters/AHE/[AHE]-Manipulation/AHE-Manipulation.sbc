@@ -1,0 +1,114 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE-Manipulation-Group</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Manipulation Group]
+
+        [ManipulationProfiles:MES-Manipulation-RivalAi]
+        [ManipulationProfiles:AHE-Manipulation-Common]
+        [ManipulationProfiles:AHE-Manipulation-Loot]
+
+
+      </Description>
+
+    </EntityComponent>
+        
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE-Manipulation-Common</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Manipulation]
+[GridsAreDestructable:false]
+
+
+        [UseLootProfiles:true]
+        [LootProfiles:MES-Loot-Corpses]
+        [LootProfiles:MES-Loot-Freight]
+        [LootProfiles:MES-Loot-Lockers]
+        [LootProfiles:MES-Loot-WeaponRacks]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE-Manipulation-Loot</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Manipulation]
+
+        [UseLootProfiles:true]
+        [OverrideLootChance:true]
+        [LootChanceOverride:33]
+        [LootProfiles:MES-Loot-BasicContainers]
+        [LootProfiles:MES-Loot-MixedContainers]
+
+      </Description>
+
+    </EntityComponent>
+    
+	
+	<!-- 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE-Manipulation-Thrust</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Manipulation]
+
+        [UseBlockReplacerProfile:true]
+        [IgnoreGlobalBlockReplacer:true]
+        [BlockReplacerProfileNames:MES-NpcThrusters-Ion]
+        [BlockReplacerProfileNames:MES-NpcThrusters-Atmo]
+        [BlockReplacerProfileNames:MES-NpcThrusters-Hydro]
+
+        [ConfigureSpecialNpcThrusters:true]
+        [RestrictNpcIonThrust:true]
+        [NpcIonThrustPowerMultiply:0.0001]
+        [NpcIonThrustForceMultiply:1.5]
+        [NpcAtmoThrustPowerMultiply:0.0001]
+        [NpcAtmoThrustForceMultiply:1.5]
+        [NpcHydroThrustPowerMultiply:0.0001]
+        [NpcHydroThrustForceMultiply:1.5]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE-Manipulation-DamageMod</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Manipulation]
+
+        [ManipulationAllowedPrefabIndexes:0]
+        [ManipulationAllowedPrefabIndexes:1]
+        [OverrideBlockDamageModifier:true]
+        [BlockDamageModifier:20]
+
+      </Description>
+
+    </EntityComponent>
+
+ -->
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+  <!-- [Triggers:SYN-Trigger-Static-PopulateStores-TalisOutpost] -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SYN-Trigger-Static-PopulateStores-TalisOutpost</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Session]
+        [Conditions:SYN-Condition-Static-PopulateStores-TalisOutpost]
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:SYN-Action-Static-PopulateStores-TalisOutpost]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SYN-Condition-Static-PopulateStores-TalisOutpost</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+              
+        [UseConditions:true]
+        [UseFailCondition:true]
+        [CheckAllLoadedModIDs:true]
+        [AllModIDsToCheck:2344068716]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SYN-Action-Static-PopulateStores-TalisOutpost</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [ApplyStoreProfiles:true]
+        [ClearStoreContentsFirst:true]
+
+        
+      [StoreBlocks:Store {ITC}]
+      [StoreProfiles:COL-StoreProfile-S27-ITC]		
+		
+	  [StoreBlocks:Store {SYN}]
+      [StoreProfiles:COL-StoreProfile-S27-SYN]	
+		
+      [StoreBlocks:Store Add]
+      [StoreProfiles:SYN-StoreProfile-TalisOutpost-Add]
+  
+      [StoreBlocks:Store Comp]
+      [StoreProfiles:SYN-StoreProfile-TalisOutpost-Comp]
+  
+      [StoreBlocks:Store Ingot]
+      [StoreProfiles:SYN-StoreProfile-TalisOutpost-Ingot]
+  
+      [StoreBlocks:Store Fuel]
+      [StoreProfiles:SYN-StoreProfile-TalisOutpost-Fuel]
+  
+      [StoreBlocks:Store Outpost]
+      [StoreProfiles:SYN-StoreProfile-TalisOutpost-Outpost]  
+	  
+	  
+	[AddCustomDataToBlocks:true]
+	[CustomDataBlockNames:EconomySurvival Store Water Vehicles,EconomySurvival Store Land Vehicles,EconomySurvival Store Air Vehicles,EconomySurvival Store Space Vehicles]
+	[CustomDataFiles:SYN_Water_Vehicles.xml]
+	[CustomDataFiles:SYN_Land_Vehicles.xml]
+	[CustomDataFiles:SYN_Air_Vehicles.xml]
+	[CustomDataFiles:SYN_Space_Vehicles.xml]  
+      </Description>
+
+    </EntityComponent>
+  </EntityComponents>
+</Definitions>

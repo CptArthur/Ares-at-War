@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!-- 
+FAF-Representative-Trigger-Introduce-Neutral
+FAF-Representative-Trigger-Introduce-Friendly
+
+
+ -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Trigger-Introduce-Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:FAF-Representative]
+	[ButtonPanelIndex:0]
+	[Conditions:FAF-Representative-Condition-Introduce-Neutral]
+	[Actions:FAF-Representative-Action-Introduce-Neutral]
+
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Condition-Introduce-Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	[CheckPlayerReputation:true]
+	
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:-499]
+	[MaxPlayerReputation:499]
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Action-Introduce-Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:FAF-Representative-Chat-Introduce-Neutral]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Chat-Introduce-Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF-Representative]
+      [Color:Blue]
+	  
+	  [MinTime:2]
+	  [MaxTime:3]	  
+      
+      [ChatMessages:I joined the Ares Dominion because I believe in its goals and values. I believe that our military strength and advanced technology can be used to bring peace and prosperity to the Ares system, and that our rule is necessary to achieve this goal. I also believe that our code of honor is important, and that it guides our actions and holds us accountable for our behavior.]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+            
+      </Description>
+      
+    </EntityComponent>
+
+
+<!-- Already Joined -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Trigger-Introduce-Friendly</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:FAF-Representative]
+	[ButtonPanelIndex:0]
+	[Conditions:FAF-Representative-Condition-Introduce-Friendly]
+	[Actions:FAF-Representative-Action-Introduce-Friendly]
+
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Condition-Introduce-Friendly</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	[CheckPlayerReputation:true]
+	
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:500]
+	[MaxPlayerReputation:1500]
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Action-Introduce-Friendly</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:FAF-Representative-Chat-Introduce-Friendly]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Chat-Introduce-Friendly</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF-Representative]
+      [Color:{PlayerRelation}]
+      
+      [ChatMessages:Hi {PlayerName}, I am pleased to see a friend of the cause.]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+            
+	  [MinTime:2]
+	  [MaxTime:3]
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>

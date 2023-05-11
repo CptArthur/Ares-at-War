@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-DefensiveEscortDrone-Chat-PassiveSwitchPatrol</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:4]
+        [BroadcastRandomly:true]
+        [Author:{AntennaName}]
+        [Color:Red]
+
+        [ChatMessages:Returning to patrol mode.]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+
+        [ChatMessages:Disengaging from combat.]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+
+      </Description>
+    </EntityComponent>
+ 
+
+ 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-DefensiveEscortDrone-Chat-AggressionSwitchEscort</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:4]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Red]
+      
+      [ChatMessages:Deviating from escort]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>	
+	
+  </EntityComponents>
+</Definitions>

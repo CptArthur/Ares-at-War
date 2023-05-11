@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-Drone-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Behavior]
+      [BehaviorName:Fighter]  
+	  [AutopilotData:DRA-DroneAutopilot]    
+	  [TargetData:AaW-Target-Main-A]
+
+	[TriggerGroups:ContextTriggers]	 		
+	[TriggerGroups:DRA-CommonTriggers] 	
+	[TriggerGroups:DRA-Drone-CommonTriggers] 		
+	[TriggerGroups:FAC-Drone-CommonTriggers] 	
+	
+	[Triggers:FAC-PointSystem-Trigger-Decrease3]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase3]		
+
+      </Description>
+      
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-Drone1-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Behavior]
+      [BehaviorName:Fighter]  
+	  [AutopilotData:DRA-DroneAutopilot]    
+	  [TargetData:AaW-Target-Main-A]
+
+	[TriggerGroups:ContextTriggers]	 		
+	[TriggerGroups:DRA-CommonTriggers] 	
+	[TriggerGroups:DRA-Drone-CommonTriggers] 		
+	[TriggerGroups:FAC-Drone-CommonTriggers] 	
+
+	[TriggerGroups:FAC-Squadron1-Triggers]	
+		[Triggers:FAC-PointSystem-Trigger-Decrease3]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase3]	
+      </Description>
+      
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-Drone2-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Behavior]
+      [BehaviorName:Fighter]  
+	  [AutopilotData:DRA-DroneAutopilot]    
+	  [TargetData:AaW-Target-Main-A]
+
+	[TriggerGroups:ContextTriggers]	 		
+	[TriggerGroups:DRA-CommonTriggers] 	
+	[TriggerGroups:DRA-Drone-CommonTriggers] 		
+	[TriggerGroups:FAC-Drone-CommonTriggers] 	
+
+	[TriggerGroups:FAC-Squadron2-Triggers]	
+
+	[Triggers:FAC-PointSystem-Trigger-Decrease3]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase3]	
+	
+      </Description>
+      
+    </EntityComponent>	
+		
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-Drone3-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Behavior]
+      [BehaviorName:Fighter]  
+	  [AutopilotData:DRA-DroneAutopilot]    
+	  [TargetData:AaW-Target-Main-A]
+
+	[TriggerGroups:ContextTriggers]	 		
+	[TriggerGroups:DRA-CommonTriggers] 	
+	[TriggerGroups:DRA-Drone-CommonTriggers] 		
+	[TriggerGroups:FAC-Drone-CommonTriggers] 	
+
+	[TriggerGroups:FAC-Squadron3-Triggers]	
+
+	[Triggers:FAC-PointSystem-Trigger-Decrease3]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase3]	
+	
+      </Description>
+      
+    </EntityComponent>	
+		
+	
+	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>DRA-DroneAutopilot</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Autopilot]
+
+		[IdealPlanetAltitude:800]
+		[MinimumPlanetAltitude:450]
+		
+        [DisableInertiaDampeners:false]
+        [FlyLevelWithGravity:false]
+        [WaypointTolerance:40]
+        [IdealMinSpeed:20]
+        [IdealMaxSpeed:60]
+        [MaxSpeedTolerance:5]
+        [SlowDownOnWaypointApproach:true]
+        [ExtraSlowDownDistance:800]
+
+        [AllowStrafing:true]
+        [StrafeMinDurationMs:1000]
+        [StrafeMaxDurationMs:2000]
+
+        [StrafeMinCooldownMs:3000]
+        [StrafeMaxCooldownMs:5000]
+
+        [StrafeMinimumTargetDistance:600]
+        [StrafeSpeedCutOff:40]
+        [StrafeDistanceCutOff:600]
+		
+		[UseVelocityCollisionEvasion:true]
+		[CollisionEvasionWaypointDistance:20]
+		
+		[CollisionEvasionResumeTime:4]
+      </Description>
+
+    </EntityComponent>	
+	
+  </EntityComponents>
+</Definitions>

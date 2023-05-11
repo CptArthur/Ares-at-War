@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+ 
+  
+ <!-- Condition Target Threat check? 
+ 
+FAC-Patrol-Trigger-RedAlert
+FAC-Patrol-Trigger-Compromised
+ 
+ 
+ -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Patrol-Trigger-RedAlert</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:true]
+	[StartsReady:true]		
+	[Type:TargetNear]
+	[Conditions:FAC-Patrol-Condition-RedAlert]
+		
+	[TargetDistance:1500]
+
+	[MinCooldownMs:90000]
+	[MaxCooldownMs:120000]
+
+	[MaxActions:-1]
+	[Actions:FAC-Patrol-Action-RedAlert]
+	
+      </Description>
+      
+    </EntityComponent>  
+
+  
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Patrol-Condition-RedAlert</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	
+	[UseConditions:true]
+	[IsTargetGrid:true]
+      </Description>
+      
+    </EntityComponent>  
+  
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Patrol-Action-RedAlert</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	
+	[UseChatBroadcast:true]
+	[ChatData:FAC-Patrol-Chat-RedAlert]
+	
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:FAC-Patrol-Command-RedAlert]
+	
+	[DisableTriggers:true]
+	[DisableTriggerNames:FAC-Patrol-Trigger-Compromised]
+
+	
+	
+      </Description>
+      
+    </EntityComponent>    
+  
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Patrol-Chat-RedAlert</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+	[MinTime:180]
+	[MaxTime:360]
+      [BroadcastRandomly:true]
+      
+      [Author:{GridName}]
+      [Color:Red]
+      
+      [ChatMessages:Command! I have found them!]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+      </Description>
+      
+    </EntityComponent>  
+    
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Patrol-Command-RedAlert</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Command]
+      
+	[CommandCode:FAC-RedAlert]
+	[MatchSenderReceiverOwners:true]
+	[SendTargetEntityId:true]
+
+	[IgnoreAntennaRequirement:true]
+	[IgnoreReceiverAntennaRequirement:true]
+	[MaxRadius:10000]
+
+	[CommandDelayTicks:180]
+
+      </Description>
+      
+    </EntityComponent> 
+   
+  
+
+<!-- Compromised -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Patrol-Trigger-Compromised</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:true]
+	[Type:Compromised]
+
+
+	[MaxActions:-1]
+	[Actions:FAC-Patrol-Action-Compromised]
+	
+      </Description>
+      
+    </EntityComponent>  
+
+   
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Patrol-Action-Compromised</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+		
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:FAC-Patrol-Command-RedAlert]
+      </Description>
+      
+    </EntityComponent>    
+
+ 
+    
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Patrol-Command-RedAlert</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Command]
+      
+	[CommandCode:{FactionTag}-RedAlert]
+	[MatchSenderReceiverOwners:true]
+	[SendTargetEntityId:true]
+
+	[IgnoreAntennaRequirement:true]
+	[IgnoreReceiverAntennaRequirement:true]
+	[MaxRadius:10000]
+
+	[CommandDelayTicks:180]
+
+      </Description>
+      
+    </EntityComponent> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </EntityComponents>
+</Definitions>

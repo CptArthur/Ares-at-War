@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+	<!-- =============AHE================ -->
+	<!-- =============AHE================ -->
+	<!-- =============AHE================ -->		
+		
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>AHE-HQ</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:AHE]		
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:10000]
+
+			[ForceExactPositionAndOrientation:true]
+
+			[StaticEncounterCoords:{X:-1161953.75344831 Y:139121.166631091 Z:1341178.05856765}]
+			[StaticEncounterForward:{X:-0.560104906605245 Y:0.206659808771988 Z:0.802230775422543}]
+			[StaticEncounterUp:{X:0.114313576747356 Y:0.978401274297235 Z:-0.172230521757248}]
+
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Agaris]
+			[StaticEncounterPlanetDirection:{X:-0.558731834798119 Y:0.207904800101283 Z:0.80286632192288}]
+			[StaticEncounterPlanetAltitude:1.56266419277381]
+
+
+
+		[ManipulationGroups:AHE-Manipulation-Group]
+		
+
+			[SandboxVariables:AHEActive]			
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:AHE-HQDestroyed]			
+			[ZoneConditions:ZoneCondition-ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="AHE HQ">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>AHE-HQ-Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>		
+		
+		
+		<!-- 1 -->
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>AHE-Outpost1</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:AHE]		
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:4500]
+
+			[ForceExactPositionAndOrientation:true]
+
+			[StaticEncounterCoords:{X:-1166849.16437926 Y:123865.319191948 Z:1340043.45990879}]
+			[StaticEncounterForward:{X:-0.29698189547353 Y:-0.905794901893671 Z:-0.302220696618191}]
+			[StaticEncounterUp:{X:0.633558992227331 Y:0.0498836915761411 Z:-0.772084594252874}]
+
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Agaris]
+			[StaticEncounterPlanetDirection:{X:-0.632839274084897 Y:-0.0503079692387786 Z:0.772647113116183}]
+			[StaticEncounterPlanetAltitude:0.0329737775537069]
+
+		[ManipulationGroups:AHE-Manipulation-Group]
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			
+			
+			[SandboxVariables:AHEActive]				
+			[FalseSandboxVariables:AHE-Outpost1Destroyed]			
+			[ZoneConditions:ZoneCondition-ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="AHE-outpost-1">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>AHE-Station-Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>
+
+
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>AHE-Outpost2</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:AHE]		
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:4500]
+
+			[ForceExactPositionAndOrientation:true]
+
+
+			[StaticEncounterCoords:{X:-1176614.56257119 Y:128845.08222306 Z:1328921.88249257}]
+			[StaticEncounterForward:{X:0.0424050611917734 Y:0.999100500839449 Z:-2.77186334944922E-06}]
+			[StaticEncounterUp:{X:-0.592126314875489 Y:0.0251295239949559 Z:-0.805453247715694}]
+
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Agaris]
+			[StaticEncounterPlanetDirection:{X:-0.804698913305327 Y:0.0333775536819672 Z:0.592744125095672}]
+			[StaticEncounterPlanetAltitude:0.139801568737312]
+
+
+			[SandboxVariables:AHEActive]	
+		[ManipulationGroups:AHE-Manipulation-Group]
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:AHE-Outpost2Destroyed]			
+			[ZoneConditions:ZoneCondition-ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="AHE-outpost-2">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>AHE-Station-Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>
+
+
+		<!-- 3 Rover Stop -->
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>AHE-Outpost3</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:AHE]		
+
+			[TriggerCoords:{X:-143805.286617886 Y:-202753.315234932 Z:83560.2246360953}]
+			[TriggerRadius:4500]
+
+			[ForceExactPositionAndOrientation:true]
+
+			[ZoneConditions:ZoneCondition-Agaris]
+
+
+			[StaticEncounterCoords:{X:-1169461.01360726 Y:136040.446946224 Z:1335925.98040201}]
+			[StaticEncounterForward:{X:0.680904870879544 Y:0.48354885380837 Z:0.550044600730816}]
+			[StaticEncounterUp:{X:-0.685129340893276 Y:0.155191075682058 Z:0.71169762980903}]
+
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Agaris]
+			[StaticEncounterPlanetDirection:{X:-0.684635623920991 Y:0.155275136982436 Z:0.712154262988996}]
+			[StaticEncounterPlanetAltitude:-0.0379074734737515]
+
+			[SandboxVariables:AHEActive]	
+		[ManipulationGroups:AHE-Manipulation-Group]
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:AHE-Outpost3Destroyed]			
+			[ZoneConditions:ZoneCondition-ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="AHE-outpost-3">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>AHE-Station-Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>
+
+	
+		
+		
+		
+	</SpawnGroups>
+	
+</Definitions>

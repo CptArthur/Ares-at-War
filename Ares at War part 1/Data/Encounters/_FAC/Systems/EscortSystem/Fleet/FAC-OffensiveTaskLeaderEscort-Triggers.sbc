@@ -1,0 +1,384 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+  <!-- RequestEscortSlot
+  
+  
+  
+[Triggers:FAC-OffensiveTaskLeaderEscort-Trigger-RequestEscortSlot]
+
+[Triggers:FAC-OffensiveTaskLeaderEscort-Trigger-AggressionSwitchEscort]
+
+[Triggers:FAC-OffensiveTaskLeaderEscort-Trigger-TaskLeaderisNotReady
+
+[Triggers:FAC-OffensiveTaskLeaderEscort-Trigger-TaskLeaderisReady
+
+[Triggers:FAC-OffensiveTaskLeaderEscort-Trigger-NoTargetSwitchEscort
+
+
+
+
+[Triggers:
+
+
+
+
+  -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-OffensiveTaskLeaderEscort-Trigger-RequestEscortSlot</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:FAC-OffensiveTaskLeaderEscort-Action-RequestEscortSlot]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-OffensiveTaskLeaderEscort-Action-RequestEscortSlot</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:FAC-OffensiveTaskLeaderEscort-Command-RequestEscortSlot]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:FAC-OffensiveTaskLeaderEscort-Trigger-RequestEscortSlot]
+
+      </Description>
+
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-OffensiveTaskLeaderEscort-Command-RequestEscortSlot</SubtypeId>
+      </Id>
+      <Description>
+
+    [RivalAI Command]
+
+	[CommandCode:OffensiveTaskLeaderEscortRequest]
+	[MatchSenderReceiverOwners:true]
+	[IgnoreAntennaRequirement:true]
+	[IgnoreReceiverAntennaRequirement:true]
+	[Radius:5000]
+    [RequestEscortSlot:true]	
+
+      </Description>
+
+    </EntityComponent>	
+	
+<!--==========================
+
+
+
+
+===========================-->
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-OffensiveTaskLeaderEscort-Trigger-AggressionSwitchEscort</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:TargetNear]
+
+        [TargetDistance:1500]
+
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:FAC-OffensiveTaskLeaderEscort-Action-AggressionSwitchEscort]
+
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-OffensiveTaskLeaderEscort-Action-AggressionSwitchEscort</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:FAC-OffensiveTaskLeaderEscort-Chat-AggressionSwitchEscort]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Horsefly]
+
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:FAC-OffensiveTaskLeaderEscort-Trigger-AggressionSwitchEscort]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:FAC-OffensiveTaskLeaderEscort-Trigger-NoTargetSwitchEscort]
+		
+
+      </Description>
+
+    </EntityComponent>
+
+
+  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-OffensiveTaskLeaderEscort-Chat-AggressionSwitchEscort</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:false]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:{Faction} Drone]
+      [Color:Green]
+      
+      [ChatMessages:{Faction} Going alone!]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent> 
+
+<!--==========================
+
+
+
+
+===========================-->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-OffensiveTaskLeaderEscort-Trigger-TaskLeaderisNotReady</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+		[CommandReceiveCode:TaskLeaderisNotReady]
+        [StartsReady:true]
+		
+        [MaxActions:-1]
+        [Actions:FAC-OffensiveTaskLeaderEscort-Action-TaskLeaderisNotReady]
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-OffensiveTaskLeaderEscort-Action-TaskLeaderisNotReady</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+	[SetBooleansFalse:TaskLeaderisReady]
+
+      </Description>
+
+    </EntityComponent>
+
+<!--==========================
+
+
+
+
+===========================-->
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-OffensiveTaskLeaderEscort-Trigger-TaskLeaderisReady</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+		[CommandReceiveCode:TaskLeaderisReady]
+        [StartsReady:true]
+		
+        [MaxActions:-1]
+        [Actions:FAC-OffensiveTaskLeaderEscort-Action-TaskLeaderisReady]
+
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-OffensiveTaskLeaderEscort-Action-TaskLeaderisReady</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+	[SetBooleansTrue:TaskLeaderisReady]
+
+      </Description>
+
+    </EntityComponent>
+	
+<!--==========================
+
+
+
+
+===========================-->	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-OffensiveTaskLeaderEscort-Trigger-NoTargetSwitchEscort</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+
+	[UseTrigger:false]
+	[Type:NoTarget]
+	[TargetDistance:2000]
+	[StartsReady:true]
+	[Conditions:FAC-OffensiveTaskLeaderEscort-Condition-TaskLeaderisReady]
+	  
+	[MinCooldownMs:6000]
+	[MaxCooldownMs:9000]		
+		
+
+	[MaxActions:-1]
+	[Actions:FAC-OffensiveTaskLeaderEscort-Action-PassiveSwitchPatrol]
+
+      </Description>
+
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-OffensiveTaskLeaderEscort-Condition-TaskLeaderisReady</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Condition]
+      
+	[UseConditions:true]
+	[MatchAnyCondition:true]
+	[CheckTrueBooleans:true]
+	[TrueBooleans:TaskLeaderisReady]
+	  
+	  
+	  
+      </Description>
+      
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-OffensiveTaskLeaderEscort-Action-PassiveSwitchPatrol</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:FAC-OffensiveTaskLeaderEscort-Chat-PassiveSwitchPatrol]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Escort]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:FAC-OffensiveTaskLeaderEscort-Trigger-NoTargetSwitchEscort]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:FAC-OffensiveTaskLeaderEscort-Trigger-AggressionSwitchEscort]
+
+      </Description>
+
+    </EntityComponent>		
+	
+	
+  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-OffensiveTaskLeaderEscort-Chat-PassiveSwitchPatrol</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:false]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:DEBUG {Antenna}]
+      [Color:Green]
+      
+      [ChatMessages:PassiveSwitchPatrol]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent> 
+
+
+
+
+
+
+
+  </EntityComponents>
+</Definitions>

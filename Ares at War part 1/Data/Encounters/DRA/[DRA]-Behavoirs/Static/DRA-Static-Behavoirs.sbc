@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<EntityComponents>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+		<Id>
+			<TypeId>Inventory</TypeId>
+			<SubtypeId>DRA-HQ-Behavior</SubtypeId>
+		</Id>
+		<Description>
+
+		[RivalAI Behavior]
+		[BehaviorName:Passive]
+		[TargetData:AaW-Target-Main-B]
+
+	[TriggerGroups:ContextTriggers]
+	[TriggerGroups:DRA-CommonTriggers]
+	[TriggerGroups:DRA-Static-CommonTriggers]	 
+	[TriggerGroups:FAC-Static-CommonTriggers]	 	
+	
+	
+	[Triggers:FAC-PointSystem-Trigger-Decrease75]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase100]	
+
+
+
+
+		[Triggers:DRA-DefenseSystem-Trigger-HeavyGarrison]
+
+
+		[Triggers:DRA-ZoneController-Trigger-Death]	  
+		  
+
+		</Description>
+	</EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+		<Id>
+			<TypeId>Inventory</TypeId>
+			<SubtypeId>DRA-MiningOutpost-Behavior</SubtypeId>
+		</Id>
+		<Description>
+
+		[RivalAI Behavior]
+		[BehaviorName:Passive]
+		[TargetData:AaW-Target-Main-B]
+
+	[TriggerGroups:ContextTriggers]
+	[TriggerGroups:DRA-CommonTriggers]
+	[TriggerGroups:DRA-Static-CommonTriggers]	 
+	[TriggerGroups:FAC-Static-CommonTriggers]
+	
+	
+	
+	
+		[Triggers:DRA-DefenseSystem-Trigger-MediumGarrison]
+
+
+
+
+
+
+		</Description>
+	</EntityComponent>	
+
+
+</EntityComponents>
+</Definitions>

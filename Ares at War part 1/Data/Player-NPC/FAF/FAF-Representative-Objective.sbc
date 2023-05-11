@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!--
+
+[Triggers:FAF-Representative-Trigger-Objective-1]
+
+
+
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Trigger-Objective-1</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:FAF-Representative]
+	[ButtonPanelIndex:3]
+	[Conditions:FAF-Representative-Condition-Objective-1]
+	[Actions:FAF-Representative-Action-Objective-1]
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Condition-Objective-1</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	[CheckPlayerReputation:true]
+	
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:500]
+	[MaxPlayerReputation:1500]
+
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:FAF-CurrentObjective]
+	[CustomSandboxCountersTargets:1]
+	[SandboxCounterCompareTypes:Equal]
+
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Action-Objective-1</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:FAF-Representative-Chat-Objective-1]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Chat-Objective-1</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF-Representative]
+      [Color:{PlayerRelation}]
+      
+      [ChatMessages:Good work {PlayerName}]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]   
+
+
+	  [MinTime:2]
+	  [MaxTime:3]		  
+      </Description>
+      
+    </EntityComponent>
+	
+
+	
+  </EntityComponents>
+</Definitions>

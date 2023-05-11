@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!--
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-GCvsFAF-BattleSim</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event]
+	[UniqueEvent:false]
+	[EventControllerId:GCvsFAF]
+	[ConditionIds:AaW-EventCondition-Day1]	
+
+
+  [MinCooldownMs:36000000]
+  [MaxCooldownMs:72000001]
+
+	[ActionExecution:Random]
+	
+
+
+	[ActionIds:AaW-EventAction-AaW-BattleSim-minorFAF]
+	[ActionIds:AaW-EventAction-AaW-BattleSim-minorFAF]
+	[ActionIds:AaW-EventAction-AaW-BattleSim-minorFAF]
+	[ActionIds:AaW-EventAction-AaW-BattleSim-majorFAF]
+
+
+	[ActionIds:AaW-EventAction-AaW-BattleSim-minorGC_FAF]
+	[ActionIds:AaW-EventAction-AaW-BattleSim-minorGC_FAF]
+	[ActionIds:AaW-EventAction-AaW-BattleSim-minorGC_FAF]
+	[ActionIds:AaW-EventAction-AaW-BattleSim-minorGC_FAF]    
+	[ActionIds:AaW-EventAction-AaW-BattleSim-minorGC_FAF]
+
+	[ActionIds:AaW-EventAction-AaW-BattleSim-majorGC_FAF]
+	[ActionIds:AaW-EventAction-AaW-BattleSim-majorGC_FAF]
+	[ActionIds:AaW-EventAction-AaW-BattleSim-majorGC_FAF]
+	[ActionIds:AaW-EventAction-AaW-BattleSim-majorGC_FAF]
+	[ActionIds:AaW-EventAction-AaW-BattleSim-majorGC_FAF]
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+		 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-AaW-BattleSim-minorFAF</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Green]
+      [Author:Agaris Times]
+        
+      [ChatMessages:Battle GCvsFAF Outcome: Minor victory for FAF]
+      [BroadcastChatType:Chat]
+      [ChatAudio:event_yellow_alert_01]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+		 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-AaW-BattleSim-majorFAF</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Green]
+      [Author:Agaris Times]
+        
+      [ChatMessages:Battle GCvsFAF Outcome: Major victory for FAF]
+      [BroadcastChatType:Chat]
+      [ChatAudio:event_yellow_alert_01]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW-EventAction-AaW-BattleSim-minorGC_FAF</SubtypeId>
+    </Id>
+    <Description>
+
+    [MES Event Action]
+    [UseChatBroadcast:true]
+    [ChatData:AaW-EventChat-AaW-BattleSim-minorGC_FAF]
+
+
+    [ChangeCounters:true]
+    [DecreaseSandboxCounters:FAF_Strength_Counter]
+    [DecreaseSandboxCountersAmount:20]
+
+    [DecreaseSandboxCounters:GC_Strength_Counter]
+    [DecreaseSandboxCountersAmount:10]
+
+    </Description>
+    
+  </EntityComponent>			
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW-EventAction-AaW-BattleSim-majorGC_FAF</SubtypeId>
+    </Id>
+    <Description>
+
+    [MES Event Action]
+    [UseChatBroadcast:true]
+    [ChatData:AaW-EventChat-AaW-BattleSim-majorGC_FAF]
+
+
+    [ChangeCounters:true]
+    [DecreaseSandboxCounters:FAF_Strength_Counter]
+    [DecreaseSandboxCountersAmount:50]
+
+    [DecreaseSandboxCounters:GC_Strength_Counter]
+    [DecreaseSandboxCountersAmount:15]
+
+    </Description>
+    
+  </EntityComponent>		
+
+
+		 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-AaW-BattleSim-minorGC_FAF</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Red]
+      [Author:Agaris Times]
+        
+      [ChatMessages:Battle GCvsFAF Outcome: Minor victory for GC]
+      [BroadcastChatType:Chat]
+      [ChatAudio:event_yellow_alert_01]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+		 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-AaW-BattleSim-majorGC_FAF</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Red]
+      [Author:Agaris Times]
+        
+      [ChatMessages:Battle GCvsFAF Outcome: Major victory for GC]
+      [BroadcastChatType:Chat]
+      [ChatAudio:event_yellow_alert_01]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>	
+
+-->
+
+
+
+	
+  </EntityComponents>
+</Definitions>

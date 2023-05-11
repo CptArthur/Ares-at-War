@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!--
+
+[TriggerGroups:GC-TriggerGroup-LightDefense]
+[TriggerGroups:GC-TriggerGroup-MediumDefense]
+-->
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-TriggerGroup-LightDefense</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI TriggerGroup]
+      	
+	[Triggers:GC-DefenseSystem-Trigger-ReceivedRedAlert]
+
+	[Triggers:GC-DefenseSystem-Trigger-LightGarrison]
+		
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-TriggerGroup-MediumDefense</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI TriggerGroup]  	
+	[Triggers:GC-DefenseSystem-Trigger-RedAlert]
+
+	[Triggers:GC-DefenseSystem-Trigger-ReceivedSOS]
+	[Triggers:GC-DefenseSystem-Trigger-ReceivedRedAlert]
+
+	[Triggers:GC-DefenseSystem-Trigger-MediumGarrison]
+
+      </Description>
+      
+    </EntityComponent>		
+	
+	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-TriggerGroup-HeavyDefense</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI TriggerGroup]
+	  	
+	[Triggers:GC-DefenseSystem-Trigger-RedAlert]
+
+	[Triggers:GC-DefenseSystem-Trigger-ReceivedSOS]
+	[Triggers:GC-DefenseSystem-Trigger-ReceivedRedAlert]
+
+	[Triggers:GC-DefenseSystem-Trigger-HeavyGarrison]
+
+	  
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+
+
+
+
+	
+	
+	
+  </EntityComponents>
+</Definitions>

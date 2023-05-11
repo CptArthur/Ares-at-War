@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	<!--
+	
+	
+	[AutopilotData:FAC-Dropship-Autopilot-1]
+	[SecondaryAutopilotData:FAC-Dropship-Autopilot-2]	
+	
+	
+
+	[Triggers:FAC-Dropship-Trigger-MoveToLanding]
+	[Triggers:FAC-Dropship-Trigger-StartLanding]	
+	
+	[Triggers:FAC-Dropship-Trigger-ArrivedAtLandingSite]	
+
+	[Triggers:FAC-Dropship-Trigger-SpawnEncounters]	
+	
+	-->
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Dropship-Trigger-MoveToLanding</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+	  [Type:TargetNear]
+	  [UseTrigger:true]
+	  [TargetDistance:800]
+	  [MaxActions:1]
+	  [Actions:FAC-Dropship-Action-MoveToLanding]
+      </Description>
+    </EntityComponent>
+
+
+<!--
+	[ChangeBehaviorSubclass:true]  
+	[NewBehaviorSubclass:CargoShip]
+	
+
+	[AddWaypoints:true]
+	[WaypointsToAdd:FAC-Dropship-Waypoint-LandingSite]
+
+	-->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Dropship-Action-MoveToLanding</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+
+
+	[ChangeAutopilotProfile:true]
+	[AutopilotProfile:Secondary]	
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Dropship-Trigger-StartLanding</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+	  [Type:TargetNear]
+	  [UseTrigger:true]
+	  [TargetDistance:400]
+	  [MaxActions:1]
+	  [Actions:FAC-Dropship-Action-StartLanding]
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Dropship-Action-StartLanding</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+		[ChangeAutopilotProfile:true]
+	[AutopilotProfile:Tertiary]  
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	 <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Dropship-Waypoint-LandingSite</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Waypoint]
+      
+      [Waypoint:RelativeRandom]
+      [RelativeEntity:Target]
+
+      [MinDistance:20]
+      [MaxDistance:100]
+      [MinAltitude:1999]
+      [MaxAltitude:2000]
+      
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Dropship-Trigger-ArrivedAtLandingSite</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+	  [Type:Timer]
+	  [UseTrigger:true]
+	[StartsReady:true]
+		[Conditions:FAC-Dropship-Condition-ArrivedAtLandingSite]
+
+		
+	  [MaxActions:1]
+	  [Actions:FAC-Dropship-Action-ArrivedAtLandingSite]
+      </Description>
+    </EntityComponent>		
+	
+	
+	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Dropship-Condition-ArrivedAtLandingSite</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+
+        [UseConditions:true]
+
+        [AltitudeCheck:true]
+        [MaxAltitude:5]
+
+        [CheckGridSpeed:true]
+        [MaxGridSpeed:10]
+
+      </Description>
+
+    </EntityComponent>
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Dropship-Action-ArrivedAtLandingSite</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:FAC-Dropship-Trigger-SpawnEncounters]
+
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:FAC-Dropship-Trigger-SpawnEncounters]
+		
+		
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Passive]
+
+
+      </Description>
+
+    </EntityComponent>	
+	
+	
+	<!-- Oi -->
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Dropship-Trigger-SpawnEncounters</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:false]
+        [Type:Timer]
+
+        [Conditions:FAC-Dropship-Condition-SpawnEncounters]
+
+        [MinCooldownMs:2000]
+        [MaxCooldownMs:2001]
+        [StartsReady:false]
+
+        [MaxActions:1]
+        [Actions:FAC-Dropship-Action-SpawnEncounters]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Dropship-Condition-SpawnEncounters</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+
+        [UseConditions:true]
+
+        [AltitudeCheck:true]
+        [MaxAltitude:8]
+
+        [CheckGridSpeed:true]
+        [MaxGridSpeed:10]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Dropship-Action-SpawnEncounters</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Horsefly]
+
+
+	[ChangeAutopilotProfile:true]
+	[AutopilotProfile:Primary]	
+	
+	
+        [SpawnEncounter:true]
+        [Spawner:FAC-Dropship-Spawner-SpawnEncounters]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Dropship-Spawner-SpawnEncounters</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Spawn]
+
+        [UseSpawn:true]
+
+        [SpawnMinCooldown:1]
+        [SpawnMaxCooldown:2]
+        [MaxSpawns:1]
+        [SpawningType:Creature]
+        [SpawnGroups:GC-Dropship-SpawnGroup-Raiders]
+        [ProcessAsAdminSpawn:true]
+
+      </Description>
+
+    </EntityComponent>
+	
+
+	
+	
+	
+  </EntityComponents>
+</Definitions>

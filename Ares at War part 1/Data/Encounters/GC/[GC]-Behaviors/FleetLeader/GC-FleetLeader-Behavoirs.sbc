@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-FleetLeader-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Behavior]
+      [BehaviorName:CargoShip]
+	  [TargetData:AaW-Target-Main-A]	  
+	  [AutopilotData:GC-FleetLeaderAutopilot]  
+	[SecondaryAutopilotData:GC-FleetLeaderAutopilot-Horsefly]	
+
+	
+ 	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:GC-CommonTriggers]	
+	[TriggerGroups:GC-FleetLeader-CommonTriggers]	 
+ 	[TriggerGroups:FAC-FleetLeader-CommonTriggers]	
+ 
+	[Triggers:FAC-PointSystem-Trigger-Decrease100]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase100]
+ 
+
+	  
+	[EscortOffsets:{X:-300 Y:-100 Z:-400}]
+	[EscortOffsets:{X:300 Y:-100 Z:-400}]	  
+			
+	
+	[TriggerGroups:FAC-OffensiveFleetLeader-TriggerGroup]
+
+	
+      </Description>
+      
+    </EntityComponent>
+	
+
+	
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+<!--
+
+[PersistentConditions:FAF-PersistentSpawnProfile-Basic]
+[PersistentConditions:FAF-PersistentSpawnProfile-Fighters]
+[PersistentConditions:FAF-PersistentSpawnProfile-StrikeForce]
+[PersistentConditions:FAF-PersistentSpawnProfile-Cargoship]
+
+
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-PersistentSpawnProfile-Basic</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+
+	[SandboxVariables:FAFActive]
+	
+
+      </Description>
+
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-PersistentSpawnProfile-Fighters</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+
+	
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:FAF_Strength_Counter]
+	[CustomSandboxCountersTargets:10]
+	[SandboxCounterCompareTypes:GreaterOrEqual]
+
+      </Description>
+
+    </EntityComponent>	
+	
+	
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-PersistentSpawnProfile-LightStrikeForce</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+
+	
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:FAF_Strength_Counter]
+	[CustomSandboxCountersTargets:40]
+	[SandboxCounterCompareTypes:GreaterOrEqual]
+
+      </Description>
+
+    </EntityComponent>		
+	
+	
+	
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-PersistentSpawnProfile-StrikeForce</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+
+	
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:FAF_Strength_Counter]
+	[CustomSandboxCountersTargets:60]
+	[SandboxCounterCompareTypes:GreaterOrEqual]
+
+      </Description>
+
+    </EntityComponent>	 
+	
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-PersistentSpawnProfile-Cargoship</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+
+	
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:FAF_Strength_Counter]
+	[CustomSandboxCountersTargets:20]
+	[SandboxCounterCompareTypes:GreaterOrEqual]
+
+      </Description>
+
+    </EntityComponent>	 	
+	
+	
+	
+    
+  </EntityComponents>
+</Definitions>

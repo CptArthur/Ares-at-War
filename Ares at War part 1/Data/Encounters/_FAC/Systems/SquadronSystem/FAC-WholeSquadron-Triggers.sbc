@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron-Trigger-Squadron1Down</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:CommandReceived]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	[CommandReceiveCode:CommandSquadron1Down]
+	  [MaxActions:1]
+	  
+	  [Actions:FAC-Squadron1-Action-Down]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron-Trigger-Squadron2Down</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:CommandReceived]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	[CommandReceiveCode:CommandSquadron2Down]
+	  [MaxActions:1]
+	  
+	  [Actions:FAC-Squadron2-Action-Down]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron-Trigger-Squadron3Down</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:CommandReceived]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	[CommandReceiveCode:CommandSquadron3Down]
+	  [MaxActions:1]
+	  
+	  [Actions:FAC-Squadron3-Action-Down]
+	  
+      </Description>
+      
+    </EntityComponent>
+	
+	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron1-Trigger-StartRetreat</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Timer]
+	[Conditions:FAC-Squadron1-Condition-Retreat]		
+	
+	
+	[UseTrigger:true]
+	[StartsReady:false]
+	[MinCooldownMs:2000]
+	[MaxCooldownMs:2001]	
+	[MaxActions:1]
+	[Actions:FAC-Squadron1-Action-StartRetreat]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron2-Trigger-StartRetreat</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Trigger]
+	[Type:Timer]
+	[Conditions:FAC-Squadron2-Condition-Retreat]		
+	
+	[UseTrigger:true]
+	[StartsReady:false]
+	[MinCooldownMs:2000]
+	[MaxCooldownMs:2001]	
+	[MaxActions:1]
+	[Actions:FAC-Squadron2-Action-StartRetreat]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron3-Trigger-StartRetreat</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Timer]
+	[Conditions:FAC-Squadron3-Condition-Retreat]		
+	[UseTrigger:true]
+	[StartsReady:false]
+	[MinCooldownMs:2000]
+	[MaxCooldownMs:2001]	
+	[MaxActions:1]
+	[Actions:FAC-Squadron3-Action-StartRetreat]
+	  
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron1-Trigger-Death</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Compromised]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	  [MaxActions:1]
+	  [Actions:FAC-Squadron1-Action-Death]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron2-Trigger-Death</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Compromised]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	  [MaxActions:1]
+	  [Actions:FAC-Squadron2-Action-Death]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron3-Trigger-Death</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Compromised]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	  [MaxActions:1]
+	  [Actions:FAC-Squadron3-Action-Death]
+	  
+      </Description>
+      
+    </EntityComponent>	
+	
+
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

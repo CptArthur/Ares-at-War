@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+<!--
+
+[SpawnConditionsProfiles:TIF-SpawnProfile-Lezuno-Both-Zone]
+
+[SpawnConditionsProfiles:TIF-SpawnProfile-Lezuno-Both-Outside-Str2]
+[SpawnConditionsProfiles:TIF-SpawnProfile-Lezuno-Both-Outside-Str3]
+[SpawnConditionsProfiles:TIF-SpawnProfile-Lezuno-Both-Outside-Str4]
+
+
+[SpawnConditionsProfiles:TIF-SpawnProfile-Lezuno-Combat-Outside-Str2]
+[SpawnConditionsProfiles:TIF-SpawnProfile-Lezuno-Combat-Outside-Str3]
+[SpawnConditionsProfiles:TIF-SpawnProfile-Lezuno-Combat-Outside-Str4]
+
+
+
+-->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF-SpawnProfile-Lezuno-Both-Zone</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:TIF]
+	[ZoneConditions:ZoneCondition-TIF]			
+
+	[PlanetWhitelist:Planet Lezuno]
+	[SkipAirDensityCheck:true]
+	
+	
+	[IgnoreCombatPhase:true]
+
+
+
+      </Description>
+
+    </EntityComponent>
+		
+	<!-- Outside Combat -->	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF-SpawnProfile-Lezuno-Both-Outside-Str2</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:TIF]
+	[SandboxVariables:TIFStr2]		
+	
+	[PlanetWhitelist:Planet Lezuno]
+	[SkipAirDensityCheck:true]
+	
+	
+	[AtmosphericCargoShipChance:25]	
+	[IgnoreCombatPhase:true]
+	
+
+	
+
+
+	
+      </Description>
+    </EntityComponent>
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF-SpawnProfile-Lezuno-Both-Outside-Str3</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:TIF]
+	[SandboxVariables:TIFStr3]		
+
+	[PlanetWhitelist:Planet Lezuno]
+	[SkipAirDensityCheck:true]
+
+	[IgnoreCombatPhase:true]
+		
+
+
+
+
+	
+      </Description>
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF-SpawnProfile-Lezuno-Both-Outside-Str4</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:TIF]
+	[SandboxVariables:TIFStr4]		
+
+
+	[PlanetWhitelist:Planet Lezuno]
+	[SkipAirDensityCheck:true]
+	
+	
+	
+	[IgnoreCombatPhase:true]
+		
+      </Description>
+    </EntityComponent>		
+
+
+
+
+
+	
+		
+		
+		
+		
+		
+		
+		
+		
+	<!-- Outside Combat -->	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF-SpawnProfile-Lezuno-Combat-Outside-Str2</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:TIF]
+	[SandboxVariables:TIFStr2]		
+	
+	[AtmosphericCargoShipChance:25]	
+	[UseCombatPhase:true]
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:10000]
+	[ThreatIncludeOtherNpcOwners:true]
+	[ThreatScoreMinimum:666]	
+	
+		[PlanetWhitelist:Planet Lezuno]
+	[SkipAirDensityCheck:true]
+
+
+	
+      </Description>
+    </EntityComponent>
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF-SpawnProfile-Lezuno-Combat-Outside-Str3</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:TIF]
+	[SandboxVariables:TIFStr3]		
+
+	[UseCombatPhase:true]
+		
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:10000]
+	[ThreatIncludeOtherNpcOwners:true]
+	[ThreatScoreMinimum:666]
+
+	[PlanetWhitelist:Planet Lezuno]
+	[SkipAirDensityCheck:true]
+
+	
+      </Description>
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF-SpawnProfile-Lezuno-Combat-Outside-Str4</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:TIF]
+	[SandboxVariables:TIFStr4]		
+
+	[UseCombatPhase:true]
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:10000]
+	[ThreatIncludeOtherNpcOwners:true]
+	[ThreatScoreMinimum:666]	
+	
+	
+	[PlanetWhitelist:Planet Lezuno]
+	[SkipAirDensityCheck:true]
+
+	
+      </Description>
+    </EntityComponent>		
+	
+
+    
+  </EntityComponents>
+</Definitions>

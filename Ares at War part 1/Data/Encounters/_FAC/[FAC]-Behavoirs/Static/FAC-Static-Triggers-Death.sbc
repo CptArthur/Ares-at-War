@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Static-Trigger-StoreDeath</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Compromised]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+
+	  [Actions:FAC-Static-Action-Death]
+	  
+      </Description>
+      
+    </EntityComponent>	
+			
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Static-Action-Death</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[SetSandboxBooleansTrue:{SpawnGroupName}Destroyed]
+	
+
+
+
+
+      </Description>
+      
+    </EntityComponent>						
+
+
+
+	
+	
+  </EntityComponents>
+</Definitions>

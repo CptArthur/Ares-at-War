@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-Drone-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Behavior]
+      [BehaviorName:Fighter]
+
+	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:SYN-CommonTriggers] 	
+	[TriggerGroups:SYN-Drone-CommonTriggers] 		
+	[TriggerGroups:FAC-Drone-CommonTriggers] 	
+	
+
+	  [AutopilotData:SYN-DroneAutopilot]
+	  
+	  [FighterEngageDistancePlanet:600]
+	  [FighterDisengageDistancePlanet:1000]
+	  
+	  [TargetData:AaW-Target-Main-A]
+
+	[Triggers:FAC-PointSystem-Trigger-Decrease1]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-Drone1-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Behavior]
+      [BehaviorName:Passive]
+
+	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:SYN-CommonTriggers] 	
+	[TriggerGroups:SYN-Drone-CommonTriggers] 		
+	[TriggerGroups:FAC-Drone-CommonTriggers] 	
+	
+	[TriggerGroups:FAC-Squadron1-Triggers]
+
+	  [AutopilotData:SYN-DroneAutopilot]
+	  
+	  [FighterEngageDistancePlanet:600]
+	  [FighterDisengageDistancePlanet:1000]
+	  
+	  [TargetData:AaW-Target-Main-A]
+
+
+	[Triggers:FAC-PointSystem-Trigger-Decrease1]
+      </Description>
+      
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-Drone2-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Behavior]
+      [BehaviorName:Escort]
+
+	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:SYN-CommonTriggers] 	
+	[TriggerGroups:SYN-Drone-CommonTriggers] 		
+	[TriggerGroups:FAC-Drone-CommonTriggers] 	
+	
+	[TriggerGroups:FAC-Squadron2-Triggers]
+
+	  [AutopilotData:SYN-DroneAutopilot]
+	  
+	  [FighterEngageDistancePlanet:600]
+	  [FighterDisengageDistancePlanet:1000]
+	  
+	  [TargetData:AaW-Target-Main-A]
+
+	[Triggers:FAC-PointSystem-Trigger-Decrease1]
+
+      </Description>
+      
+    </EntityComponent>	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-Drone3-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Behavior]
+      [BehaviorName:Escort]
+
+	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:SYN-CommonTriggers] 	
+	[TriggerGroups:SYN-Drone-CommonTriggers] 		
+	[TriggerGroups:FAC-Drone-CommonTriggers] 	
+	
+	[TriggerGroups:FAC-Squadron3-Triggers]
+
+	  [AutopilotData:SYN-DroneAutopilot]
+	  
+	  [FighterEngageDistancePlanet:600]
+	  [FighterDisengageDistancePlanet:1000]
+	  
+	  [TargetData:AaW-Target-Main-A]
+
+	[Triggers:FAC-PointSystem-Trigger-Decrease1]
+
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SYN-DroneAutopilot</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Autopilot]
+
+		[IdealPlanetAltitude:450]
+		[MinimumPlanetAltitude:350]
+		
+        [DisableInertiaDampeners:false]
+        [FlyLevelWithGravity:false]
+        [WaypointTolerance:40]
+        [IdealMinSpeed:20]
+        [IdealMaxSpeed:80]
+        [MaxSpeedTolerance:5]
+        [SlowDownOnWaypointApproach:true]
+        [ExtraSlowDownDistance:500]
+
+        [AllowStrafing:true]
+        [StrafeMinDurationMs:1000]
+        [StrafeMaxDurationMs:2000]
+
+        [StrafeMinCooldownMs:3000]
+        [StrafeMaxCooldownMs:5000]
+
+        [StrafeMinimumTargetDistance:600]
+        [StrafeSpeedCutOff:50]
+        [StrafeDistanceCutOff:450]
+		
+		
+		[UseVelocityCollisionEvasion:true]
+		[CollisionEvasionWaypointDistance:20]
+		
+		[CollisionEvasionResumeTime:4]
+
+      </Description>
+
+    </EntityComponent>		
+	
+	
+	
+	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+	
+	<!-- HQ Base -->
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>GC-HQ</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:GC]		
+
+		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+		[TriggerRadius:10000]
+
+		[ForceExactPositionAndOrientation:true]
+
+
+[StaticEncounterCoords:{X:-1132538.71539391 Y:150710.78695068 Z:1240143.78978904}]
+[StaticEncounterForward:{X:-0.995572389827939 Y:0.0407438725910711 Z:0.0847086386301298}]
+[StaticEncounterUp:{X:-0.0609053362723568 Y:0.406804415063408 Z:-0.911482697531045}]
+
+
+[StaticEncounterUsePlanetDirectionAndAltitude:true]
+[StaticEncounterPlanet:Planet Agaris]
+[StaticEncounterPlanetDirection:{X:-0.0595261417764929 Y:0.404842674530126 Z:-0.912446736705491}]
+[StaticEncounterPlanetAltitude:-15.4427286687933]
+
+
+
+
+
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:GC-HQDestroyed]		
+		[ZoneConditions:ZoneCondition-ZoneAaW]
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="GC-Agaris-PortZuris">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>GC-AgarisHeavyBase-Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+		
+	</SpawnGroup>
+	
+	
+	
+	
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>GC-AgarisMarsaBase</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:GC]		
+
+		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+		[TriggerRadius:10000]
+
+		[ForceExactPositionAndOrientation:true]
+
+		[ZoneConditions:ZoneCondition-Agaris]
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:Marsa Base]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+
+
+		[StaticEncounterCoords:{X:-1107394.66094505 Y:97948.4911173773 Z:1247027.9476043}]
+		[StaticEncounterForward:{X:-0.804599166145648 Y:-0.593818307092073 Z:-1.82191257687978E-07}]
+		[StaticEncounterUp:{X:0.362287386504191 Y:-0.490884132823267 Z:-0.792326080425422}]
+
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Agaris]
+		[StaticEncounterPlanetDirection:{X:0.36580047351385 Y:-0.488937984050042 Z:-0.791915185692334}]
+		[StaticEncounterPlanetAltitude:0.631704604289553]
+
+
+
+
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:GC-AgarisMarsaBaseDestroyed]			
+		[ZoneConditions:ZoneCondition-ZoneAaW]
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="GC-HeavyBase">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>GC-AgarisHeavyBase-Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+		
+	</SpawnGroup>
+
+
+
+
+
+	
+	<!-- MidWay Base -->
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>GC-AgarisMidWayBase</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:GC]		
+
+		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+		[TriggerRadius:10000]
+
+		[ForceExactPositionAndOrientation:true]
+
+
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:Clam Base]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+
+
+		[StaticEncounterCoords:{X:6797180.86638087 Y:-1211594.05683649 Z:-439060.026254286}]
+		[StaticEncounterForward:{X:-0.406046218072334 Y:0.146958606754244 Z:0.901958777711047}]
+		[StaticEncounterUp:{X:-0.848120548498166 Y:0.306954674025116 Z:-0.431822143143801}]
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Agaris]
+		[StaticEncounterPlanetDirection:{X:-0.847864691420133 Y:0.307879209144023 Z:-0.431666373047395}]
+		[StaticEncounterPlanetAltitude:0.0131879717882839]
+
+
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:GC-AgarisMidWayBaseDestroyed]			
+		[ZoneConditions:ZoneCondition-ZoneAaW]
+
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="GC-MediumBase">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>GC-AgarisMediumBase-Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+		
+	</SpawnGroup>	
+	
+	
+	</SpawnGroups>
+</Definitions>

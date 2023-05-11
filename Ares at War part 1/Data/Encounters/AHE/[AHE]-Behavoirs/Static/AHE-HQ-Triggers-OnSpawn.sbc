@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-HQ-Triggers-OnSpawn</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Session]
+	[UseTrigger:true]
+	[StartsReady:true]
+
+
+	[DisableNamedTriggerOnSuccess:AHE-HQ-Triggers-OnSpawn]
+
+	[Actions:AHE-HQ-Action-OnSpawn]	  
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-HQ-Action-OnSpawn</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+	[ActivateEvent:true]
+	[EventId:AaW-Event-AaWStartup]
+	
+      </Description>
+      
+    </EntityComponent>	
+
+
+  </EntityComponents>
+
+
+</Definitions>

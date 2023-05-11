@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>TIF-DefensiveEscortDrone-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Escort]
+
+ 	[AutopilotData:FAC-Drone-Autopilot-Fighter]
+
+	[TargetData:AaW-Target-ShortRange]
+	  
+	  
+	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:TIF-CommonTriggers]	
+	[TriggerGroups:TIF-Drone-CommonTriggers]		
+	[TriggerGroups:FAC-Drone-CommonTriggers]	
+
+
+	[Triggers:FAC-PointSystem-Trigger-Decrease3]
+
+ 	
+	[TriggerGroups:FAC-DefensiveEscortSystem-Drone-TriggerGroup] 	
+
+
+
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>TIF-OffensiveEscortDrone-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Escort]
+
+ 		[AutopilotData:FAC-Drone-Autopilot-Fighter]  
+
+	[TargetData:AaW-Target-Main-A]
+	  
+	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:TIF-CommonTriggers]	
+	[TriggerGroups:TIF-Drone-CommonTriggers]		
+	[TriggerGroups:FAC-Drone-CommonTriggers]	
+	
+	
+	[TriggerGroups:FAC-OffensiveEscortSystem-Drone-TriggerGroup] 	
+	[Triggers:FAC-PointSystem-Trigger-Decrease3]
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>TIF-Squadron-1-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW-Target-Main-A]
+
+	[AutopilotData:FAC-Drone-Autopilot-Fighter]
+
+	
+	[TriggerGroups:FAC-Squadron1-Triggers]		
+	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:TIF-CommonTriggers]	
+	[TriggerGroups:TIF-Drone-CommonTriggers]		
+	[TriggerGroups:FAC-Drone-CommonTriggers]	
+
+
+	[EscortOffsets:{X:100 Y:0 Z:0}]
+	[EscortOffsets:{X:-100 Y:0 Z:0}]
+
+	[Triggers:FAC-PointSystem-Trigger-Decrease3]
+      </Description>
+      
+    </EntityComponent>
+		
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>TIF-Squadron-2-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Escort]
+	[TargetData:AaW-Target-Main-A]
+	[AutopilotData:FAC-Drone-Autopilot-Fighter]
+
+	
+	[TriggerGroups:FAC-Squadron2-Triggers]	
+	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:TIF-CommonTriggers]	
+	[TriggerGroups:TIF-Drone-CommonTriggers]		
+	[TriggerGroups:FAC-Drone-CommonTriggers]	
+	[Triggers:FAC-PointSystem-Trigger-Decrease3]	
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>TIF-Squadron-3-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Escort]
+	[TargetData:AaW-Target-Main-A]
+	[AutopilotData:FAC-Drone-Autopilot-Fighter]
+	
+	
+	[TriggerGroups:FAC-Squadron3-Triggers]	
+	
+	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:TIF-CommonTriggers]	
+	[TriggerGroups:TIF-Drone-CommonTriggers]		
+	[TriggerGroups:FAC-Drone-CommonTriggers]		
+	
+	[Triggers:FAC-PointSystem-Trigger-Decrease3]
+      </Description>
+      
+    </EntityComponent>
+
+	
+	
+	
+
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

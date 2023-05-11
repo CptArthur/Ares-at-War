@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+<!--
+
+FAC-FleetLeader-Trigger-StoreSpawn
+
+FAC-FleetLeader-Trigger-StoreDespawn
+
+-->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-FleetLeader-Trigger-StoreSpawn</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Timer]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+
+		[MaxActions:1]
+	  [Actions:FAC-FleetLeader-Action-StoreSpawn]
+	  
+      </Description>
+      
+    </EntityComponent>	
+			
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-FleetLeader-Action-StoreSpawn</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[SetSandboxBooleansTrue:{SpawnGroupName}Spawned]
+	
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-FleetLeader-Trigger-StoreDespawn</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:DespawnMES]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+
+	  [Actions:FAC-FleetLeader-Action-StoreDespawn]
+	  
+      </Description>
+      
+    </EntityComponent>	
+			
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-FleetLeader-Action-StoreDespawn</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[SetSandboxBooleansFalse:{SpawnGroupName}Spawned]
+	
+
+
+
+
+      </Description>
+      
+    </EntityComponent>						
+
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-FleetLeader-Trigger-StoreDespawn2</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Despawn]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+
+	  [Actions:FAC-FleetLeader-Action-StoreDespawn2]
+	  
+      </Description>
+      
+    </EntityComponent>	
+			
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-FleetLeader-Action-StoreDespawn2</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[SetSandboxBooleansFalse:{SpawnGroupName}Spawned]
+	
+
+
+
+
+      </Description>
+      
+    </EntityComponent>		
+
+
+
+
+
+
+
+
+
+	
+	
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!--
+[Triggers:FAF-Representative-Trigger-HowtoJoin-Neutral]
+[Triggers:FAF-Representative-Trigger-HowtoJoin-FAIL-Nolike]
+[Triggers:FAF-Representative-Trigger-HowtoJoin-FAIL-Already]
+-->
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Trigger-HowtoJoin-Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:FAF-Representative]
+	[ButtonPanelIndex:1]
+	[Conditions:FAF-Representative-Condition-HowtoJoin-Neutral]
+	[Actions:FAF-Representative-Action-HowtoJoin-Neutral]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Condition-HowtoJoin-Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	[CheckPlayerReputation:true]
+	
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:-499]
+	[MaxPlayerReputation:499]
+	
+	[CheckReputationwithFaction:AHE]
+	[MinPlayerReputation:-499]
+	[MaxPlayerReputation:499]	
+	
+	[CheckReputationwithFaction:ITC]
+	[MinPlayerReputation:-1500]
+	[MaxPlayerReputation:499]		
+	
+	
+	[CheckReputationwithFaction:SYN]
+	[MinPlayerReputation:-1500]
+	[MaxPlayerReputation:499]		
+	
+	
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Action-HowtoJoin-Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:FAF-Representative-Chat-HowtoJoin-Neutral]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Chat-HowtoJoin-Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF-Representative]
+      [Color:{PlayerRelation}]
+      
+      [ChatMessages:You need to speak with an officer]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]	
+      
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+<!-- Our requirements are not met -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Trigger-HowtoJoin-FAIL-Nolike</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:FAF-Representative]
+	[ButtonPanelIndex:1]
+	[Conditions:FAF-Representative-Condition-HowtoJoin-FAIL-Nolike]
+	[Actions:FAF-Representative-Action-HowtoJoin-FAIL-Nolike]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Condition-HowtoJoin-FAIL-Nolike</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	[CheckPlayerReputation:true]
+	[AllowAnyPlayerReputationwithFaction:true]
+	
+	
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:-1500]
+	[MaxPlayerReputation:-500]
+	
+	
+	[CheckReputationwithFaction:AHE]
+	[MinPlayerReputation:-1500]
+	[MaxPlayerReputation:-500]
+	
+	[CheckReputationwithFaction:REM]
+	[MinPlayerReputation:-1500]
+	[MaxPlayerReputation:-500]
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Action-HowtoJoin-FAIL-Nolike</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:FAF-Representative-Chat-HowtoJoin-FAIL-Nolike]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Chat-HowtoJoin-FAIL-Nolike</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF-Representative]
+      [Color:{PlayerRelation}]
+      
+      [ChatMessages:You cannot join our faction, because you are enemy of us, or one of our friends is enemy with you]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]	
+      
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Trigger-HowtoJoin-FAIL-Already</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:FAF-Representative]
+	[ButtonPanelIndex:1]
+	[Conditions:FAF-Representative-Condition-HowtoJoin-FAIL-Already]
+	[Actions:FAF-Representative-Action-HowtoJoin-FAIL-Already]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Condition-HowtoJoin-FAIL-Already</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	[CheckPlayerReputation:true]
+	[AllowAnyPlayerReputationwithFaction:true]
+	
+	
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:500]
+	[MaxPlayerReputation:1500]
+	
+	
+	[CheckReputationwithFaction:AHE]
+	[MinPlayerReputation:500]
+	[MaxPlayerReputation:1500]
+	
+	[CheckReputationwithFaction:SYN]
+	[MinPlayerReputation:500]
+	[MaxPlayerReputation:1500]
+	
+	[CheckReputationwithFaction:ITC]
+	[MinPlayerReputation:500]
+	[MaxPlayerReputation:1500]
+	
+	[CheckReputationwithFaction:UCA]
+	[MinPlayerReputation:500]
+	[MaxPlayerReputation:1500]
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Action-HowtoJoin-FAIL-Already</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:FAF-Representative-Chat-HowtoJoin-FAIL-Already]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Representative-Chat-HowtoJoin-FAIL-Already</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF-Representative]
+      [Color:{PlayerRelation}]
+      
+      [ChatMessages:You cannot join our faction, because you are already associated with an faction]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]	
+      
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>

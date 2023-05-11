@@ -1,0 +1,337 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Static-Trigger-CallAtmoCargoShip-UCACode</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+
+        [MinCooldownMs:24000]
+        [MaxCooldownMs:36000]
+        [StartsReady:true]
+        
+        [MaxActions:-1]
+        [Actions:FAC-Static-Action-CallAtmoCargoShip-UCACode]
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Static-Trigger-CallAtmoCargoShip-GGCCode</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+
+        [MinCooldownMs:24000]
+        [MaxCooldownMs:36000]
+        [StartsReady:true]
+        
+        [MaxActions:-1]
+        [Actions:FAC-Static-Action-CallAtmoCargoShip-GGCCode]
+
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Static-Trigger-CallAtmoCargoShip-CivCode</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+
+        [MinCooldownMs:24000]
+        [MaxCooldownMs:36000]
+        [StartsReady:true]
+        
+        [MaxActions:-1]
+        [Actions:FAC-Static-Action-CallAtmoCargoShip-CivCode]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Static-Trigger-CallAtmoCargoShip-SYNCode</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+
+        [MinCooldownMs:60000]
+        [MaxCooldownMs:90000]
+        [StartsReady:true]
+        
+        [MaxActions:-1]
+        [Actions:FAC-Static-Action-CallAtmoCargoShip-SYNCode]
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+
+
+
+	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Static-Action-CallAtmoCargoShip-UCACode</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:FAC-Static-Command-CallAtmoCargoShip-UCACode]
+
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Static-Action-CallAtmoCargoShip-GGCCode</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:FAC-Static-Command-CallAtmoCargoShip-GGCCode]
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Static-Action-CallAtmoCargoShip-CivCode</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:FAC-Static-Command-CallAtmoCargoShip-CivCode]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Static-Action-CallAtmoCargoShip-SYNCode</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:FAC-Static-Command-CallAtmoCargoShip-SYNCode]
+
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Static-Command-CallAtmoCargoShip-UCACode</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Command]
+
+        [CommandCode:UCAPathDeviation]
+        [SingleRecipient:true]
+        [SendWaypoint:true]
+        [MatchSenderReceiverOwners:false]
+        [Waypoint:FAC-Static-Waypoint-CallAtmoCargoShip]
+
+      </Description>
+	  
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Static-Command-CallAtmoCargoShip-GGCCode</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Command]
+
+        [CommandCode:GGCPathDeviation]
+        [SingleRecipient:true]
+        [SendWaypoint:true]
+        [MatchSenderReceiverOwners:false]
+        [Waypoint:FAC-Static-Waypoint-CallAtmoCargoShip]
+
+      </Description>
+	  
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Static-Command-CallAtmoCargoShip-CivCode</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Command]
+
+        [CommandCode:CivPathDeviation]
+        [SingleRecipient:true]
+        [SendWaypoint:true]
+        [MatchSenderReceiverOwners:false]
+        [Waypoint:FAC-Static-Waypoint-CallAtmoCargoShip]
+
+
+[IgnoreAntennaRequirement:true]
+
+[Radius:15000]
+
+
+      </Description>
+	  
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Static-Command-CallAtmoCargoShip-SYNCode</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Command]
+
+        [CommandCode:SYNCodePathDeviation]
+        [SingleRecipient:true]
+        [SendWaypoint:true]
+        [MatchSenderReceiverOwners:false]
+        [Waypoint:FAC-Static-Waypoint-CallAtmoCargoShip]
+
+      </Description>
+	  
+    </EntityComponent>	
+
+<!-- ITC ============================================================== -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Static-Trigger-CallAtmoCargoShip-ITCCode</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+
+        [MinCooldownMs:240000]
+        [MaxCooldownMs:360001]
+        [StartsReady:true]
+        
+        [MaxActions:-1]
+        [Actions:FAC-Static-Action-CallAtmoCargoShip-ITCCode]
+
+      </Description>
+
+    </EntityComponent>
+	
+	
+	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Static-Action-CallAtmoCargoShip-ITCCode</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:FAC-Static-Command-CallAtmoCargoShip-ITCCode]
+
+      </Description>
+
+    </EntityComponent>
+	
+	   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Static-Command-CallAtmoCargoShip-ITCCode</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Command]
+
+        [CommandCode:ITCPathDeviation]
+        [SingleRecipient:true]
+        [SendWaypoint:true]
+        [MatchSenderReceiverOwners:false]
+        [Waypoint:FAC-Static-Waypoint-CallAtmoCargoShip]
+
+      </Description>
+	  
+    </EntityComponent>
+	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Static-Waypoint-CallAtmoCargoShip</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Waypoint]
+
+        [Waypoint:EntityRandom]
+        [RelativeEntity:Self]
+        [MinDistance:200]
+        [MaxDistance:250]
+        [MinAltitude:60]
+        [MaxAltitude:300]
+
+      </Description>
+
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>

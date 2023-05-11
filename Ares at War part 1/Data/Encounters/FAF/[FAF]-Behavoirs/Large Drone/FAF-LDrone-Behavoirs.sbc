@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-LDroneTaskLeader-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[AutopilotData:FAF-LDroneAutopilot-KeepDistance]	
+	[SecondaryAutopilotData:FAF-LDroneAutopilot-Horsefly]	
+	[TargetData:AaW-Target-Main-A]		
+	
+	
+	[TriggerGroups:ContextTriggers]
+	[TriggerGroups:FAF-CommonTriggers] 	
+	[TriggerGroups:FAF-LDrone-CommonTriggers] 		
+	[TriggerGroups:FAC-LDrone-CommonTriggers] 		
+	
+	
+	
+	
+	
+	[TriggerGroups:FAC-OffensiveEscortSystem-TaskLeader-TriggerGroup] 		
+
+
+	[Triggers:FAC-PointSystem-Trigger-Decrease25]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase15]
+
+
+
+	[EscortOffsets:{X:-500 Y:0 Z:0}]
+	[EscortOffsets:{X:500 Y:0 Z:0}]
+	 
+	 
+      </Description>
+      
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-LDroneEscort-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Escort]
+	[AutopilotData:FAF-LDroneAutopilot]	
+	[SecondaryAutopilotData:FAF-LDroneAutopilot-Horsefly]	
+	[TargetData:AaW-Target-Main-A]		
+	
+	
+	[TriggerGroups:ContextTriggers]
+	[TriggerGroups:FAF-CommonTriggers] 	
+	[TriggerGroups:FAF-LDrone-CommonTriggers] 		
+	[TriggerGroups:FAC-LDrone-CommonTriggers] 		
+	
+
+	[TriggerGroups:FAC-OffensiveEscortSystem-LDrone-TriggerGroup] 		
+	[Triggers:FAC-PointSystem-Trigger-Decrease25]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase15]
+	
+
+
+
+	[EscortOffsets:{X:-100 Y:0 Z:0}]
+	[EscortOffsets:{X:100 Y:0 Z:0}]
+	 
+	 
+      </Description>
+      
+    </EntityComponent>
+		
+	
+	
+	
+	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>

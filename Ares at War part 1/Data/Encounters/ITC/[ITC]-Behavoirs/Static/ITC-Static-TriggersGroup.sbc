@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>ITC-Static-CommonTriggers</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI TriggerGroup]
+      
+	[Triggers:ITC-Static-Trigger-Hostile-PlayerDamage] 	
+	[Triggers:ITC-Static-Trigger-Hostile-DamagerIsNPC] 	
+	
+	[Triggers:FAC-Static-Trigger-CallAtmoCargoShip-ITCCode]	
+      </Description>
+      
+    </EntityComponent>  
+	
+	
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>ITC-TradeStation-CommonTriggers</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI TriggerGroup]
+      
+	[Triggers:FAC-Static-Trigger-CallAtmoCargoShip-CivCode]	
+	[Triggers:ITC-TradeStation-Triggers-EnableGreetings]
+	[Triggers:ITC-TradeStation-Triggers-DisableGreetings]
+	[Triggers:ITC-TradeStation-Triggers-PlayerFar]
+	[Triggers:ITC-TradeStation-Triggers-Greeting-Neutral]
+	[Triggers:ITC-TradeStation-Triggers-Greeting-Friendly]
+      </Description>
+      
+    </EntityComponent>  	
+	
+	
+  </EntityComponents>
+</Definitions>

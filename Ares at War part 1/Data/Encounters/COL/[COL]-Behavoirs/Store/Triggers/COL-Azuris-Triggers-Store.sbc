@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+  <!-- [Triggers:COL-Trigger-Static-PopulateStores-Azuris] -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>COL-Trigger-Static-PopulateStores-Azuris</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Session]
+        [Conditions:COL-Condition-Static-PopulateStores-Azuris]
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:COL-Action-Static-PopulateStores-Azuris]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>COL-Condition-Static-PopulateStores-Azuris</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+              
+        [UseConditions:true]
+        [UseFailCondition:true]
+        [CheckAllLoadedModIDs:true]
+        [AllModIDsToCheck:2344068716]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>COL-Action-Static-PopulateStores-Azuris</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [ApplyStoreProfiles:true]
+        [ClearStoreContentsFirst:true]
+
+        
+      [StoreBlocks:Store {ITC}]
+      [StoreProfiles:COL-StoreProfile-S27-ITC]		
+		
+	  [StoreBlocks:Store {SYN}]
+      [StoreProfiles:COL-StoreProfile-S27-SYN]	
+		
+      [StoreBlocks:Store Add]
+      [StoreProfiles:COL-StoreProfile-Azuris-Add]
+  
+      [StoreBlocks:Store Comp]
+      [StoreProfiles:COL-StoreProfile-Azuris-Comp]
+  
+      [StoreBlocks:Store Ingot]
+      [StoreProfiles:COL-StoreProfile-Azuris-Ingot]
+  
+      [StoreBlocks:Store Fuel]
+      [StoreProfiles:COL-StoreProfile-Azuris-Fuel]
+  
+      [StoreBlocks:Store Outpost]
+      [StoreProfiles:COL-StoreProfile-Azuris-Outpost]  
+	  
+	  
+	[AddCustomDataToBlocks:true]
+	[CustomDataBlockNames:EconomySurvival Store Water Vehicles,EconomySurvival Store Land Vehicles,EconomySurvival Store Air Vehicles,EconomySurvival Store Space Vehicles]
+	[CustomDataFiles:COL_Water_Vehicles.xml]
+	[CustomDataFiles:COL_Land_Vehicles.xml]
+	[CustomDataFiles:COL_Air_Vehicles.xml]
+	[CustomDataFiles:COL_Space_Vehicles.xml]  
+      </Description>
+
+    </EntityComponent>
+  </EntityComponents>
+</Definitions>

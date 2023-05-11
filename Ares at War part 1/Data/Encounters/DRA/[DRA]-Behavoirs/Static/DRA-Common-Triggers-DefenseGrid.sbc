@@ -1,0 +1,477 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!-- 
+[Triggers:DRA-DefenseSystem-Trigger-ReceivedRedAlert]
+[Triggers:DRA-DefenseSystem-Trigger-ReceivedSOS]
+[Triggers:DRA-DefenseSystem-Trigger-SOS]
+
+[Triggers:DRA-DefenseSystem-Trigger-MediumGarrison]
+
+[Triggers:DRA-DefenseSystem-Trigger-LaunchingPatrolCraft]
+[Triggers:DRA-DefenseSystem-Trigger-HeavyGarrison]
+
+-->
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-DefenseSystem-Trigger-ReceivedRedAlert</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:true]
+	[Type:CommandReceived]
+	[StartsReady:true]		
+	
+	[MinCooldownMs:90000]
+	[MaxCooldownMs:120000]
+	
+	[CommandReceiveCode:DRA-RedAlert]
+
+	[MaxActions:-1]
+	[ActionExecution:All]
+
+	[Actions:FAC-Context-Action-InitBattle]
+	
+      </Description>
+      
+    </EntityComponent> 
+
+
+  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-DefenseSystem-Trigger-ReceivedSOS</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+		[UseTrigger:true]
+		[StartsReady:true]		
+		
+	[Type:CommandReceived]
+	
+	[MinCooldownMs:90000]
+	[MaxCooldownMs:120000]
+	
+	[Conditions:FAC-Context-Condition-SettingNormal]
+	[CommandReceiveCode:DRA-SOS]
+
+	[MaxActions:-1]
+	[ActionExecution:All]
+
+	[Actions:DRA-DefenseSystem-Action-ReceivedSOS]
+  [Actions:FAC-Context-Action-InitHighAlert]
+	
+      </Description>
+      
+    </EntityComponent> 
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-DefenseSystem-Action-ReceivedSOS</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+[InheritLastAttackerFromCommand:true]
+      </Description>
+      
+    </EntityComponent>   
+  
+ 
+  
+  
+ <!-- UnderAttack Beacon -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-DefenseSystem-Trigger-SOS</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Damage]
+	[UseTrigger:true]
+	[StartsReady:true]		
+	[DamageTypes:Any]
+
+	[ExcludedDamageTypes:Environment]
+	[ExcludedDamageTypes:Deformation]
+	[ExcludedDamageTypes:Fire]
+
+	[MinCooldownMs:90000]
+	[MaxCooldownMs:120000]
+	[Conditions:FAC-Context-Condition-SettingBattle]
+	[MaxActions:-1]
+	[Actions:DRA-DefenseSystem-Action-SOS]
+	
+      </Description>
+      
+    </EntityComponent>  
+
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-DefenseSystem-Action-SOS</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	
+	[UseChatBroadcast:true]
+	[ChatData:DRA-DefenseSystem-Chat-SOS]
+	
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:DRA-DefenseSystem-Command-SOS]
+
+
+      </Description>
+      
+    </EntityComponent>    
+  
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-DefenseSystem-Chat-SOS</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+	[MinTime:180]
+	[MaxTime:360]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+	[Color:{PlayerRelation}]
+      
+      [ChatMessages:This is {AntennaName}, we require inmediate assistance!]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>  
+    
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-DefenseSystem-Command-SOS</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Command]
+      
+	[CommandCode:DRA-SOS]
+	[MatchSenderReceiverOwners:true]
+	[SendTargetEntityId:true]
+
+	[CommandDelayTicks:180]
+
+      </Description>
+      
+    </EntityComponent>  
+  
+
+  
+  <!-- MediumGarrison -->  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-DefenseSystem-Trigger-MediumGarrison</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:true]
+	[Type:Timer]	
+	[StartsReady:true]	
+
+	[MinCooldownMs:1800000]
+	[MaxCooldownMs:1800001]
+	[Conditions:FAC-Context-Condition-SettingBattle]
+	[MaxActions:-1]
+	[Actions:DRA-DefenseSystem-Action-MediumGarrison]
+	
+      </Description>
+      
+    </EntityComponent>
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-DefenseSystem-Action-MediumGarrison</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	
+	[UseChatBroadcast:true]
+	[ChatData:DRA-DefenseSystem-Chat-Garrison]
+ 
+ [SpawnEncounter:true]
+[Spawner:DRA-Spawner-MediumGarrison]
+
+      </Description>
+      
+    </EntityComponent>  
+  
+
+  <!-- HeavyGarrison -->  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-DefenseSystem-Trigger-HeavyGarrison</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:true]
+	[Type:Timer]	
+	[StartsReady:true]	
+
+	[MinCooldownMs:1800000]
+	[MaxCooldownMs:1800001]
+	[Conditions:FAC-Context-Condition-SettingBattle]
+	[MaxActions:-1]
+	[Actions:DRA-DefenseSystem-Action-HeavyGarrison]
+	
+      </Description>
+      
+    </EntityComponent>
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-DefenseSystem-Action-HeavyGarrison</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	
+	[UseChatBroadcast:true]
+	[ChatData:DRA-DefenseSystem-Chat-Garrison]
+ 
+ [SpawnEncounter:true]
+[Spawner:DRA-Spawner-HeavyGarrison]
+
+      </Description>
+      
+    </EntityComponent>  
+  
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-DefenseSystem-Chat-Garrison</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:{PlayerRelation}]
+      
+      [ChatMessages:Alert Alert! Launching Garrison]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>  
+  
+  
+ 
+  
+<!-- PatrolSystem -->  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-DefenseSystem-Trigger-LaunchingPatrolCraft</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:true]
+	[Type:Timer]	
+	[StartsReady:true]	
+
+	[MinCooldownMs:1800000]
+	[MaxCooldownMs:1800001]
+	[Conditions:FAC-Context-Condition-SettingHighAlert]
+	[MaxActions:-1]
+	[Actions:DRA-DefenseSystem-Action-LaunchingPatrolCraft]
+	
+      </Description>
+      
+    </EntityComponent>
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-DefenseSystem-Action-LaunchingPatrolCraft</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	
+	[UseChatBroadcast:true]
+	[ChatData:DRA-DefenseSystem-Chat-LaunchingPatrolCraft]
+ 
+ [SpawnEncounter:true]
+[Spawner:DRA-Spawner-Patrol]
+
+      </Description>
+      
+    </EntityComponent>  
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-DefenseSystem-Chat-LaunchingPatrolCraft</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:White]
+      
+      [ChatMessages:We have detected eniemies in the area, launching intercept forces]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>
+	  
+  
+
+ <!-- Spawners --> 
+  
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-Spawner-Patrol</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Spawn]
+
+	[UseSpawn:true]
+
+	[StartsReady:true]
+	[SpawningType:CustomSpawn]
+
+	[MaxSpawns:-1]
+
+	[SpawnGroups:DRA-SpawnGroup-Patrol]
+
+	[UseRelativeSpawnPosition:false]
+	[MinDistance:400]
+	[MaxDistance:800]
+	[MinAltitude:400]
+	[MaxAltitude:800]
+	[IgnoreSafetyChecks:true]
+      
+      </Description>
+      
+    </EntityComponent>
+
+
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-Spawner-MediumGarrison</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Spawn]
+
+	[UseSpawn:true]
+
+	[StartsReady:true]
+	[SpawningType:CustomSpawn]
+
+	[MaxSpawns:-1]
+
+	[SpawnGroups:DRA-SpawnGroup-MediumGarrison]
+
+	[UseRelativeSpawnPosition:false]
+	[MinDistance:250]
+	[MaxDistance:2500]
+	[MinAltitude:500]
+	[MaxAltitude:1000]
+	[IgnoreSafetyChecks:true]
+      
+      </Description>
+      
+    </EntityComponent>
+
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>DRA-Spawner-HeavyGarrison</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Spawn]
+
+	[UseSpawn:true]
+
+	[StartsReady:true]
+	[SpawningType:CustomSpawn]
+
+	[MaxSpawns:-1]
+
+	[SpawnGroups:DRA-SpawnGroup-MediumGarrison]
+
+	[UseRelativeSpawnPosition:false]
+	[MinDistance:250]
+	[MaxDistance:2500]
+	[MinAltitude:500]
+	[MaxAltitude:1000]
+	[IgnoreSafetyChecks:true]
+      
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+
+  </EntityComponents>
+</Definitions>

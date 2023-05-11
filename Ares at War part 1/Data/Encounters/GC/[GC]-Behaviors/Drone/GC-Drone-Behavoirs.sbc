@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-DefensiveEscortDrone-Behavior1</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Escort]
+
+	[AutopilotData:FAC-Drone-Autopilot-Fighter]	 
+	[TargetData:AaW-Target-ShortRange]
+
+	[TriggerGroups:ContextTriggers]	
+	[TriggerGroups:GC-CommonTriggers]	
+  [TriggerGroups:GC-Drone-CommonTriggers]	
+  [TriggerGroups:FAC-Drone-CommonTriggers]
+
+
+	[TriggerGroups:FAC-DefensiveEscortSystem-Drone-TriggerGroup] 	
+
+	[Triggers:FAC-PointSystem-Trigger-Decrease1]
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-OffensiveEscortDrone-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Escort]
+	[TargetData:AaW-Target-Main-A]
+
+	[AutopilotData:FAC-Drone-Autopilot-Fighter]
+
+	[TriggerGroups:ContextTriggers]	
+	[TriggerGroups:GC-CommonTriggers]	
+  	[TriggerGroups:GC-Drone-CommonTriggers]	
+  	[TriggerGroups:FAC-Drone-CommonTriggers]
+		
+	[TriggerGroups:FAC-OffensiveEscortSystem-Drone-TriggerGroup] 	
+	[Triggers:FAC-PointSystem-Trigger-Decrease1]	
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<!-- Basic -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-DroneFighterMK3-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Behavior]
+      [BehaviorName:Fighter]
+	  [TargetData:AaW-Target-Main-A]	  
+	[AutopilotData:FAC-Drone-Autopilot-Fighter]
+
+	
+	[TriggerGroups:ContextTriggers]	
+	[TriggerGroups:GC-CommonTriggers]	
+  	[TriggerGroups:GC-Drone-CommonTriggers]	
+  	[TriggerGroups:FAC-Drone-CommonTriggers]
+
+	[Triggers:FAC-PointSystem-Trigger-Decrease1]
+
+
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-DroneGarrison-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Behavior]
+      [BehaviorName:Fighter]  
+	[AutopilotData:FAC-Drone-Autopilot-Fighter]
+	[Triggers:FAC-PointSystem-Trigger-Decrease1]
+      </Description>
+      
+    </EntityComponent>		
+
+	
+  </EntityComponents>
+</Definitions>

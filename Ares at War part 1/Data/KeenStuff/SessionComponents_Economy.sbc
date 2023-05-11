@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!--Definition for container economy system-->
+    <Definition xsi:type="MyObjectbuilder_SessionComponentEconomyDefinition">
+        <Id>
+            <TypeId>MyObjectbuilder_SessionComponentEconomyDefinition</TypeId>
+            <SubtypeId>Default</SubtypeId>
+        </Id>
+
+        <PerFactionInitialCurrency>10000000000</PerFactionInitialCurrency>
+
+        <FactionRatio_Miners>1</FactionRatio_Miners>
+        <FactionRatio_Traders>0</FactionRatio_Traders>
+        <FactionRatio_Builders>0</FactionRatio_Builders>
+
+        <DeepSpaceStationStoreBonus>0.05</DeepSpaceStationStoreBonus>
+        <DeepSpaceStationContractBonus>1.1</DeepSpaceStationContractBonus>
+
+        <RepMult_Pos_Owner>1</RepMult_Pos_Owner>
+        <RepMult_Pos_Friend>0.25</RepMult_Pos_Friend>
+        <RepMult_Pos_Neutral>0</RepMult_Pos_Neutral>
+        <RepMult_Pos_Enemy>-1.25</RepMult_Pos_Enemy>
+
+        <RepMult_Neg_Owner>1</RepMult_Neg_Owner>
+        <RepMult_Neg_Friend>0.5</RepMult_Neg_Friend>
+        <RepMult_Neg_Neutral>0</RepMult_Neg_Neutral>
+        <RepMult_Neg_Enemy>-0.25</RepMult_Neg_Enemy>
+
+        <ReputationHostileMin>-1500</ReputationHostileMin>
+        <ReputationHostileMid>-1000</ReputationHostileMid>
+        <ReputationNeutralMin>-500</ReputationNeutralMin>
+        <ReputationNeutralMid>0</ReputationNeutralMid>
+        <ReputationFriendlyMin>500</ReputationFriendlyMin>
+        <ReputationFriendlyMid>1000</ReputationFriendlyMid>
+        <ReputationFriendlyMax>1500</ReputationFriendlyMax>
+
+        <ReputationLevelValue>1000</ReputationLevelValue>
+        <ReputationPlayerDefault>0</ReputationPlayerDefault>
+
+        <Station_Distance_MinimalFromOtherStation>10000</Station_Distance_MinimalFromOtherStation>
+
+        <Station_Rule_Miner_Min_StationM>0</Station_Rule_Miner_Min_StationM>
+        <Station_Rule_Miner_Max_StationM>1</Station_Rule_Miner_Max_StationM>
+        <Station_Rule_Miner_Min_Outpost>0</Station_Rule_Miner_Min_Outpost>
+        <Station_Rule_Miner_Max_Outpost>1</Station_Rule_Miner_Max_Outpost>
+
+        <Station_Rule_Trader_Min_Orbit>0</Station_Rule_Trader_Min_Orbit>
+        <Station_Rule_Trader_Max_Orbit>1</Station_Rule_Trader_Max_Orbit>
+        <Station_Rule_Trader_Min_Outpost>0</Station_Rule_Trader_Min_Outpost>
+        <Station_Rule_Trader_Max_Outpost>1</Station_Rule_Trader_Max_Outpost>
+        <Station_Rule_Trader_Min_Deep>0</Station_Rule_Trader_Min_Deep>
+        <Station_Rule_Trader_Max_Deep>1</Station_Rule_Trader_Max_Deep>
+
+        <Station_Rule_Builder_Min_Orbit>0</Station_Rule_Builder_Min_Orbit>
+        <Station_Rule_Builder_Max_Orbit>1</Station_Rule_Builder_Max_Orbit>
+        <Station_Rule_Builder_Min_Outpost>0</Station_Rule_Builder_Min_Outpost>
+        <Station_Rule_Builder_Max_Outpost>1</Station_Rule_Builder_Max_Outpost>
+        <Station_Rule_Builder_Min_Station>0</Station_Rule_Builder_Min_Station>
+        <Station_Rule_Builder_Max_Station>1</Station_Rule_Builder_Max_Station>
+
+        <PirateId>
+            <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+            <SubtypeId>SpacePirates</SubtypeId>
+        </PirateId>
+        <DatapadDefinition>
+            <TypeId>MyObjectBuilder_Datapad</TypeId>
+            <SubtypeId>Datapad</SubtypeId>
+        </DatapadDefinition>
+    </Definition>
+    <Definition xsi:type="MyObjectBuilder_SessionComponentContractSystemDefinition">
+        <Id>
+            <TypeId>MyObjectBuilder_SessionComponentContractSystemDefinition</TypeId>
+            <SubtypeId>Default</SubtypeId>
+        </Id>
+        <ContractPerPlayerLimit>3</ContractPerPlayerLimit>
+    </Definition>
+</Definitions>

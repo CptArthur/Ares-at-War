@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+ 
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-DefensiveEscortDrone-Trigger-RequestEscortSlot</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:FAC-DefensiveEscortDrone-Action-RequestEscortSlot]
+
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-DefensiveEscortDrone-Trigger-AggressionSwitchEscort</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:TargetNear]
+
+        [TargetDistance:1500]
+
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:FAC-DefensiveEscortDrone-Action-AggressionSwitchEscort]
+
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-DefensiveEscortDrone-Trigger-TargetfarSwitchEscort</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:false]
+        [Type:TargetFar]
+
+        [TargetDistance:2000]
+
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:FAC-DefensiveEscortDrone-Action-PassiveSwitchPatrol]
+
+      </Description>
+
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

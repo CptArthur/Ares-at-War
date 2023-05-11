@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Common-IncomingMessage</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-Common-IncomingMessage]
+      </Description>
+      
+    </EntityComponent>		
+
+		 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-Common-IncomingMessage</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+	[IgnoreAntennaRequirement:True]
+	[IgnoredAntennaRangeOverride:1]
+	[SendToAllOnlinePlayers:true]
+
+
+	[Color:Blue]
+	[Author:Ares News Station]
+     
+	[ChatMessages:Priority message incoming]
+	[BroadcastChatType:Notify]
+    [ChatAudio:event_yellow_alert_01]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>	
+		
+	
+  </EntityComponents>
+</Definitions>

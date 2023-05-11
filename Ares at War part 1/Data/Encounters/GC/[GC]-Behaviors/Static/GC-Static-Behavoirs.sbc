@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!-- Space-->
+
+
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-MiningStation-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+     [RivalAI Behavior]
+     [BehaviorName:Passive]
+	[TargetData:AaW-Target-Main-B] 
+	 
+	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:GC-CommonTriggers]
+  	[TriggerGroups:GC-Static-CommonTriggers]	
+  	[TriggerGroups:FAC-Static-CommonTriggers]
+	
+	
+	
+	[TriggerGroups:FAC-Static-PlayerNear-ShortRange-Unwanted]	 
+	[TriggerGroups:GC-TriggerGroup-LightDefense]
+	
+	
+	
+	[Triggers:GC-MinorStatic-Trigger-selfpresence]
+	[Triggers:GC-MiningStation-Trigger-Death]
+	[Triggers:FAC-PointSystem-Trigger-Decrease15]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase15]
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	<!-- ==================Agaris Bases =================== -->
+
+	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-AgarisMediumBase-Behavior</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW-Target-Static-A]	  
+	
+	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:GC-CommonTriggers]
+  	[TriggerGroups:GC-Static-CommonTriggers]	
+  	[TriggerGroups:FAC-Static-CommonTriggers]
+	
+	[TriggerGroups:FAC-Static-PlayerNear-Unwanted]	 
+	[TriggerGroups:GC-TriggerGroup-MediumDefense]
+
+	[Triggers:GC-MajorStatic-Trigger-selfpresence]			
+	[Triggers:GC-ZoneController-Trigger-Death]				
+	[Triggers:FAC-PointSystem-Trigger-Decrease50]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase50]		
+      </Description>
+      
+    </EntityComponent>		
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-AgarisHeavyBase-Behavior</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW-Target-Static-A]	  
+	
+	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:GC-CommonTriggers]
+  	[TriggerGroups:GC-Static-CommonTriggers]	
+  	[TriggerGroups:FAC-Static-CommonTriggers]
+	
+	[TriggerGroups:FAC-Static-PlayerNear-Unwanted]	 
+	[TriggerGroups:GC-TriggerGroup-HeavyDefense]
+
+	[Triggers:GC-MajorStatic-Trigger-selfpresence]			
+	[Triggers:GC-ZoneController-Trigger-Death]				
+	[Triggers:FAC-PointSystem-Trigger-Decrease100]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase100]	
+      </Description>
+      
+    </EntityComponent>	
+	
+		
+	
+		
+	
+	
+
+
+	
+  </EntityComponents>
+</Definitions>

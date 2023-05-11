@@ -1,0 +1,342 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+<!--
+FAFMode
+
+0: OntheRun
+1: Secret
+2: OpenWar
+3: AllColonies
+4: FreeAgarisRepublic
+Bool FAFDestroyed
+
+
+[SpawnConditionsProfiles:FAF-SpawnProfile-FreeAgarisRepublic-Both-Zone]
+[SpawnConditionsProfiles:FAF-SpawnProfile-FreeAgarisRepublic-Both-Outside]
+[SpawnConditionsProfiles:FAF-SpawnProfile-FreeAgarisRepublic-Both-Outside-FriendlyBase]
+
+
+[SpawnConditionsProfiles:FAF-SpawnProfile-FreeAgarisRepublic-Combat-Outside]
+[SpawnConditionsProfiles:FAF-SpawnProfile-FreeAgarisRepublic-Combat-GC]
+
+
+[SpawnConditionsProfiles:FAF-SpawnProfile-FreeAgarisRepublic-Combat-LightPlayerBaseStrike]
+[SpawnConditionsProfiles:FAF-SpawnProfile-FreeAgarisRepublic-Combat-MediumPlayerBaseStrike]
+[SpawnConditionsProfiles:FAF-SpawnProfile-FreeAgarisRepublic-Combat-HeavyPlayerBaseStrike]
+-->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-SpawnProfile-FreeAgarisRepublic-Both-Zone</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:FAF]
+	[SandboxVariables:FAFActive]
+
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:FAFMode]
+	[CustomSandboxCountersTargets:3]
+	[SandboxCounterCompareTypes:GreaterOrEqual]	
+
+	
+	[ZoneConditions:ZoneCondition-FAF]			
+	[PlanetWhitelist:Planet Agaris]
+	[SkipAirDensityCheck:true]
+	[AtmosphericCargoShipChance:100]		
+	
+	[IgnoreCombatPhase:true]
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-SpawnProfile-FreeAgarisRepublic-Both-Outside</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:FAF]
+	[SandboxVariables:FAFActive]
+
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:FAFMode]
+	[CustomSandboxCountersTargets:3]
+	[SandboxCounterCompareTypes:GreaterOrEqual]
+	
+	
+	[PlanetWhitelist:Planet Agaris]	
+	[SkipAirDensityCheck:true]
+	[AtmosphericCargoShipChance:100]	
+	[IgnoreCombatPhase:true]
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:true]
+	
+	[CustomApiConditions:AgarisLand]
+			
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-SpawnProfile-FreeAgarisRepublic-Both-Outside-FriendlyBase</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:FAF]
+	[SandboxVariables:FAFActive]
+
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:FAFMode]
+	[CustomSandboxCountersTargets:3]
+	[SandboxCounterCompareTypes:GreaterOrEqual]
+	
+	[PlanetWhitelist:Planet Agaris]	
+	[SkipAirDensityCheck:true]
+	[AtmosphericCargoShipChance:100]	
+	[IgnoreCombatPhase:true]
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMinimum:300]	
+	[ThreatIncludeOtherNpcOwners:true]
+	
+	[UsePlayerFactionReputation:true]
+	[PlayerReputationCheckRadius:4000]
+	[MinimumReputation:-499]
+	[MaximumReputation:1500]
+	
+	[CustomApiConditions:AgarisLand]	
+			
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+    </EntityComponent>	
+	
+	<!-- Outside Combat -->	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-SpawnProfile-FreeAgarisRepublic-Combat-Outside</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:FAF]
+	[SandboxVariables:FAFActive]
+
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:FAFMode]
+	[CustomSandboxCountersTargets:3]
+	[SandboxCounterCompareTypes:GreaterOrEqual]
+
+	
+	[PlanetWhitelist:Planet Agaris]	
+	[SkipAirDensityCheck:true]
+	[AtmosphericCargoShipChance:100]	
+	[UseCombatPhase:true]
+
+	[CustomApiConditions:AgarisLand]
+			
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-SpawnProfile-FreeAgarisRepublic-Combat-GC</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:FAF]
+	[SandboxVariables:FAFActive]
+
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:FAFMode]
+	[CustomSandboxCountersTargets:3]
+	[SandboxCounterCompareTypes:GreaterOrEqual]	
+	
+	[ZoneConditions:ZoneCondition-GC]			
+	[AtmosphericCargoShipChance:100]
+	[PlanetWhitelist:Planet Agaris]
+	[SkipAirDensityCheck:true]
+	[UseCombatPhase:true]
+	
+	[CustomApiConditions:AgarisLand]
+			
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-SpawnProfile-FreeAgarisRepublic-Combat-LightPlayerBaseStrike</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:FAF]
+	[SandboxVariables:FAFActive]
+
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:FAFMode]
+	[CustomSandboxCountersTargets:3]
+	[SandboxCounterCompareTypes:GreaterOrEqual]	
+	
+	[ZoneConditions:ZoneCondition-ZoneAaW]			
+	[AtmosphericCargoShipChance:100]
+	[PlanetWhitelist:Planet Agaris]
+	[SkipAirDensityCheck:true]
+	[UseCombatPhase:true]
+	
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:4000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMinimum:222]	
+	[ThreatScoreMaximum:666]
+
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:FAF_Aggression_Counter]
+	[CustomSandboxCountersTargets:60]
+	[SandboxCounterCompareTypes:GreaterOrGreaterOrEqual]
+
+
+	[UsePlayerFactionReputation:true]
+	[PlayerReputationCheckRadius:4000]
+	[MinimumReputation:-1500]
+	[MaximumReputation:-500]
+	[UseSpawnGroupPrefabSpawningMode:true]
+
+
+      </Description>
+
+    </EntityComponent>		
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-SpawnProfile-FreeAgarisRepublic-Combat-MediumPlayerBaseStrike</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:FAF]
+	[SandboxVariables:FAFActive]
+
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:FAFMode]
+	[CustomSandboxCountersTargets:3]
+	[SandboxCounterCompareTypes:GreaterOrEqual]	
+	
+	[ZoneConditions:ZoneCondition-ZoneAaW]			
+	[AtmosphericCargoShipChance:100]
+	[PlanetWhitelist:Planet Agaris]
+	[SkipAirDensityCheck:true]
+	[UseCombatPhase:true]
+	
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:4000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMinimum:667]	
+	[ThreatScoreMaximum:999]
+
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:FAF_Aggression_Counter]
+	[CustomSandboxCountersTargets:70]
+	[SandboxCounterCompareTypes:GreaterOrGreaterOrEqual]
+
+
+	[UsePlayerFactionReputation:true]
+	[PlayerReputationCheckRadius:4000]
+	[MinimumReputation:-1500]
+	[MaximumReputation:-500]
+
+
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-SpawnProfile-FreeAgarisRepublic-Combat-HeavyPlayerBaseStrike</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:FAF]
+	[SandboxVariables:FAFActive]
+
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:FAFMode]
+	[CustomSandboxCountersTargets:3]
+	[SandboxCounterCompareTypes:GreaterOrEqual]	
+	
+	[ZoneConditions:ZoneCondition-ZoneAaW]			
+	[AtmosphericCargoShipChance:100]
+	[PlanetWhitelist:Planet Agaris]
+	[SkipAirDensityCheck:true]
+	[UseCombatPhase:true]
+	
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:4000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMinimum:1000]	
+
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:FAF_Aggression_Counter]
+	[CustomSandboxCountersTargets:80]
+	[SandboxCounterCompareTypes:GreaterOrGreaterOrEqual]
+
+
+	[UsePlayerFactionReputation:true]
+	[PlayerReputationCheckRadius:4000]
+	[MinimumReputation:-1500]
+	[MaximumReputation:-500]
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+
+    </EntityComponent>
+	
+	
+	
+	
+	
+	
+	
+	
+
+    
+  </EntityComponents>
+</Definitions>

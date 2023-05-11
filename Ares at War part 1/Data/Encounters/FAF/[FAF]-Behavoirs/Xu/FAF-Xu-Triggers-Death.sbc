@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	<!-- ================== -->
+	<!-- Region Outpost lost -->
+	<!-- ================== -->	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Xu-Trigger-Death</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Compromised]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+
+	  [Actions:FAF-Xu-Action-Death]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Xu-Action-Death</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+      [UseChatBroadcast:true]
+      [ChatData:FAF-Xu-Chat-Death]
+	[SetSandboxBooleansTrue:FAFXuDestroyed]
+      </Description>
+      
+    </EntityComponent>						
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Xu-Chat-Death</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF]
+      [Color:Red]
+      
+      [ChatMessages:We have lost the Xu]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+	  
+	[IgnoreAntennaRequirement:true]
+	[IgnoredAntennaRangeOverride:5000]
+      </Description>
+      
+    </EntityComponent>
+	
+  </EntityComponents>
+</Definitions>

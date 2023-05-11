@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!--
+
+[Triggers:GC-ColonyBuilding-Trigger-Despawn-SunsetCity]
+[Triggers:GC-ColonyBuilding-Trigger-Despawn-Carcosa]
+[Triggers:GC-ColonyBuilding-Trigger-Despawn-Azuris]
+
+-->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-ColonyBuilding-Trigger-Despawn-SunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Timer]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	[Conditions:GC-ColonyBuilding-Condition-SunsetCity]
+
+
+	[ActionExecution:All]
+
+	  [Actions:GC-ColonyBuilding-Action-SunsetCity]  
+      </Description>
+      
+    </EntityComponent>
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-ColonyBuilding-Condition-SunsetCity</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Condition]
+
+	[CheckTrueSandboxBooleans:true]
+
+	[TrueSandboxBooleans:FAFSunsetCity]
+	[TrueSandboxBooleans:COLSunsetCity]
+
+	[AllowAnyTrueSandboxBoolean:true]
+
+      </Description>
+      
+    </EntityComponent>					
+
+
+
+				
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-ColonyBuilding-Action-SunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	[ForceDespawn:true]
+	[ResetThisStaticEncounter:true]
+      </Description>
+      
+    </EntityComponent>		
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-ColonyBuilding-Trigger-Despawn-Carcosa</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Timer]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	[Conditions:GC-ColonyBuilding-Condition-Carcosa]
+
+
+	[ActionExecution:All]
+
+	  [Actions:GC-ColonyBuilding-Action-Carcosa]  
+      </Description>
+      
+    </EntityComponent>
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-ColonyBuilding-Condition-Carcosa</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Condition]
+
+	[CheckTrueSandboxBooleans:true]
+
+	[TrueSandboxBooleans:FAFCarcosa]
+	[TrueSandboxBooleans:COLCarcosa]
+
+	[AllowAnyTrueSandboxBoolean:true]
+
+      </Description>
+      
+    </EntityComponent>					
+
+
+
+				
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-ColonyBuilding-Action-Carcosa</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	[ForceDespawn:true]
+	[ResetThisStaticEncounter:true]
+      </Description>
+      
+    </EntityComponent>			
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-ColonyBuilding-Trigger-Despawn-Azuris</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Timer]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	[Conditions:GC-ColonyBuilding-Condition-Azuris]
+
+
+	[ActionExecution:All]
+
+	  [Actions:GC-ColonyBuilding-Action-Azuris]  
+      </Description>
+      
+    </EntityComponent>
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-ColonyBuilding-Condition-Azuris</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Condition]
+
+	[CheckTrueSandboxBooleans:true]
+
+	[TrueSandboxBooleans:FAFAzuris]
+	[TrueSandboxBooleans:COLAzuris]
+
+	[AllowAnyTrueSandboxBoolean:true]
+
+      </Description>
+      
+    </EntityComponent>					
+
+
+
+				
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-ColonyBuilding-Action-Azuris</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	[ForceDespawn:true]
+	[ResetThisStaticEncounter:true]
+      </Description>
+      
+    </EntityComponent>			
+	
+  </EntityComponents>
+</Definitions>

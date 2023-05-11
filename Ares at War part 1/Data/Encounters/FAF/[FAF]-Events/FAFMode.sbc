@@ -1,0 +1,426 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+<!--
+FAFMode
+
+0: OntheRun
+1: Secret
+2: OpenWar
+3: AllColonies
+4: FreeAgarisRepublic
+Bool FAFDestroyed
+
+
+AaW-Event-SetFAFOntheRun
+AaW-Event-SetFAFSecret
+AaW-Event-SetFAFOpenWar
+
+AaW-Event-SetFAFDestroyed
+
+
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-SetFAFOntheRun</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:false]
+		[Tags:FAF]		
+		[ConditionIds:AaW-EventCondition-SetFAFOntheRun]
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-SetFAFOntheRun]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-SetFAFOntheRun</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+	[CheckCustomCounters:true]
+	[CustomCounters:FAFMode]
+	[CustomCountersTargets:0]
+	[CounterCompareTypes:NotEqual]
+	
+	  [CheckTrueBooleans:true]
+	  [TrueBooleans:FAF-HQDestroyed]
+	  
+	  
+      [CheckFalseBooleans:true]
+      [FalseBooleans:FAFSunsetCity]
+      [FalseBooleans:FAFCarcosa]
+      [FalseBooleans:FAFAzuris]	  
+
+  
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetFAFOntheRun</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		[ChangeCounters:true]
+		[SetCounters:FAFMode]
+		[SetCountersAmount:0]	
+
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-SetFAFSecret</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:false]
+		[Tags:FAF]
+		[ConditionIds:AaW-EventCondition-SetFAFSecret]
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-SetFAFSecret]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-SetFAFSecret</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+
+	[CheckCustomCounters:true]
+	[CustomCounters:FAFMode]
+	[CustomCountersTargets:1]
+	[CounterCompareTypes:NotEqual]
+	  
+	  
+	  
+	  
+	  
+      [CheckFalseBooleans:true]
+      [FalseBooleans:FAFSunsetCity]
+      [FalseBooleans:FAFCarcosa]
+      [FalseBooleans:FAFAzuris]	  
+	  
+      [FalseBooleans:FAF-HQDestroyed]	  
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetFAFSecret</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+		[ChangeBooleans:true]
+		
+		[ChangeCounters:true]
+		[SetCounters:FAFMode]
+		[SetCountersAmount:1]		
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-SetFAFOpenWar</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[Tags:FAF]		
+		[UniqueEvent:false]
+		[ConditionIds:AaW-EventCondition-SetFAFOpenWar]
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-SetFAFOpenWar]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-SetFAFOpenWar</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  	[CheckCustomCounters:true]
+	[CustomCounters:FAFMode]
+	[CustomCountersTargets:2]
+	[CounterCompareTypes:NotEqual]
+	  
+	  
+	  
+	  [CheckTrueBooleans:true]
+	  [AllowAnyTrueBoolean:true]
+      [TrueBooleans:FAFSunsetCity]
+      [TrueBooleans:FAFCarcosa]
+      [TrueBooleans:FAFAzuris]	 
+	 
+	 
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetFAFOpenWar</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		[ChangeCounters:true]
+		[SetCounters:FAFMode]
+		[SetCountersAmount:2]		
+
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-SetFAFAllColonies</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[Tags:FAF]		
+		[UniqueEvent:false]
+		[ConditionIds:AaW-EventCondition-SetFAFAllColonies]
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-SetFAFAllColonies]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-SetFAFAllColonies</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	[CheckCustomCounters:true]
+	[CustomCounters:FAFMode]
+	[CustomCountersTargets:3]
+	[CounterCompareTypes:NotEqual]
+	  
+	  
+	  
+	  
+	  [CheckTrueBooleans:true]
+      [TrueBooleans:FAFSunsetCity]
+      [TrueBooleans:FAFCarcosa]
+      [TrueBooleans:FAFAzuris]	 
+	
+
+	  [CheckFalseBooleans:true]	
+	 [FalseBooleans:GCAgarisDefeated]
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetFAFAllColonies</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		[ChangeCounters:true]
+		[SetCounters:FAFMode]
+		[SetCountersAmount:3]		
+
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-SetFAFRepublic</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[Tags:FAF]		
+		[UniqueEvent:false]
+		[ConditionIds:AaW-EventCondition-SetFAFRepublic]
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-SetFAFRepublic]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-SetFAFRepublic</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	[CheckCustomCounters:true]
+	[CustomCounters:FAFMode]
+	[CustomCountersTargets:4]
+	[CounterCompareTypes:NotEqual]
+	  	  
+	  
+	  
+	  
+	  [CheckTrueBooleans:true]
+      [TrueBooleans:FAFSunsetCity]
+      [TrueBooleans:FAFCarcosa]
+      [TrueBooleans:FAFAzuris]	 
+	 [TrueBooleans:GCAgarisDefeated]
+	 
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetFAFRepublic</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		[ChangeCounters:true]
+		[SetCounters:FAFMode]
+		[SetCountersAmount:4]		
+
+      </Description>
+      
+    </EntityComponent>	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-SetFAFDestroyed</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[Tags:FAF]		
+		[UniqueEvent:false]
+		[ConditionIds:AaW-EventCondition-SetFAFDestroyed]
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-SetFAFDestroyed]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-SetFAFDestroyed</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	  
+	[CheckTrueBooleans:true]
+	[TrueBooleans:FAF-XuDestroyed]
+	[TrueBooleans:FAF-HQDestroyed]
+
+	[CheckFalseBooleans:true]
+	[FalseBooleans:FAFSunsetCity]
+	[FalseBooleans:FAFCarcosa]
+	[FalseBooleans:FAFAzuris]	  
+
+
+
+	 
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetFAFDestroyed</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		[ChangeBooleans:true]
+		
+
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+  </EntityComponents>
+</Definitions>
