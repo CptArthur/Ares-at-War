@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SpawnGroups>
+  
+  
+  
+  <SpawnGroup>
+      <Id>
+        <TypeId>SpawnGroupDefinition</TypeId>
+        <SubtypeId>AHE HQ Wasted Event</SubtypeId>
+      </Id>
+	 <Description>
+
+    [Modular Encounters SpawnGroup]
+	
+	
+	
+	[StaticEncounter:True]
+	[ForceStaticGrid:true]
+	[RotateFirstCockpitToForward:false]
+	[FactionOwner:Nobody]		
+
+	[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+	[TriggerRadius:10000]
+
+	[ForceExactPositionAndOrientation:true]
+
+	[StaticEncounterCoords:{X:-1161953.75201648 Y:139121.166682262 Z:1341178.0553917}]
+	[StaticEncounterForward:{X:-0.560104906605245 Y:0.206659808771987 Z:0.802230775422543}]
+	[StaticEncounterUp:{X:0.114313576747356 Y:0.978401274297234 Z:-0.172230521757248}]
+
+
+	[StaticEncounterUsePlanetDirectionAndAltitude:true]
+	[StaticEncounterPlanet:Planet Agaris]
+	[StaticEncounterPlanetDirection:{X:-0.558731842162433 Y:0.207904812752624 Z:0.802866313521791}]
+	[StaticEncounterPlanetAltitude:1.55693938589684]
+	
+
+
+	[ManipulationGroups:AHE-Manipulation-Group]
+
+
+	[FalseSandboxVariables:AHEActive]			
+	[IgnoreCombatPhase:true]
+	[IgnoreCleanupRules:true]
+	
+	[SandboxVariables:AHE HQ Wasted Event]		
+	[FalseSandboxVariables:AHE-HQDestroyed]	
+	[FalseSandboxVariables:FAF-AHE-HQDestroyed]	
+
+	[ZoneConditions:ZoneCondition-ZoneAaW]	
+	
+    </Description>
+	
+      <Icon>Textures\GUI\Icons\Fake.dds</Icon>
+      <IsPirate>true</IsPirate>
+      <Speed>0.0</Speed>
+      <Frequency>2</Frequency>
+      <Prefabs>
+	 
+        <Prefab SubtypeId="AHE HQ Wasted">
+          <Position>
+            <X>0.0</X>
+            <Y>1.5</Y>
+            <Z>0.0</Z>
+          </Position>
+          <Speed>0</Speed>
+        </Prefab>
+		
+		
+      </Prefabs>
+  </SpawnGroup>   
+
+
+
+  </SpawnGroups>
+</Definitions>
+

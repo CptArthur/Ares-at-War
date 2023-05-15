@@ -23,7 +23,7 @@ namespace AresAtWar.SessionCore
     [MySessionComponentDescriptor(MyUpdateOrder.AfterSimulation)]
     public class AaWSession : MySessionComponentBase
     {
-        public static string ModVersion = "0.4.3.4";
+        public static string ModVersion = "0.4.4";
         public static MESApi MESApi;
         public int counter = 0;
         public int counter2 = 0;
@@ -113,8 +113,8 @@ namespace AresAtWar.SessionCore
             }
 
 
-            //30m 
-            if (counter2 >= 108000)
+            //20m 
+            if (counter2 >= 72000)
             {
                 MyVisualScriptLogicProvider.ShowNotificationToAll("Updated Faction Strength", 5000);
                 for (int i = 0; i < AaWMain.listOfFactions.Count; i++)
