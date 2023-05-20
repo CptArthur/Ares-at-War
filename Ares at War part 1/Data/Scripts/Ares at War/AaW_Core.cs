@@ -24,6 +24,7 @@ namespace AresAtWar.SessionCore
     public class AaWSession : MySessionComponentBase
     {
         public static string ModVersion = "0.4.4";
+
         public static MESApi MESApi;
         public int counter = 0;
         public int counter2 = 0;
