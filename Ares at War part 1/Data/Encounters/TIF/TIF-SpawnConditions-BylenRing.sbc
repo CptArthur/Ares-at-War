@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+<!--
+
+[SpawnConditionsProfiles:TIF-SpawnProfile-BylenRing-Both-Zone]
+
+
+[SpawnConditionsProfiles:TIF-SpawnProfile-BylenRing-Combat-Outside]
+
+
+
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF-SpawnProfile-BylenRing-Both-Zone</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[SpaceCargoShip:true]
+	[FactionOwner:TIF]
+	[ZoneConditions:ZoneCondition-TIF]			
+		[CustomApiConditions:BylenRing]
+	[IgnoreCombatPhase:true]
+
+
+	[UseSpawnGroupPrefabSpawningMode:true]
+	
+      </Description>
+
+    </EntityComponent>
+
+		
+	<!-- Outside Combat -->	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF-SpawnProfile-BylenRing-Combat-Outside</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[SpaceCargoShip:true]
+	[FactionOwner:TIF]
+
+	[CustomApiConditions:BylenRing]
+
+	[SpaceCargoShipChance:25]	
+	[UseCombatPhase:true]
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:10000]
+	[ThreatIncludeOtherNpcOwners:true]
+	[ThreatScoreMinimum:333]	
+	
+	
+
+	[UseSpawnGroupPrefabSpawningMode:true]
+	
+      </Description>
+    </EntityComponent>
+		
+
+	
+
+    
+  </EntityComponents>
+</Definitions>

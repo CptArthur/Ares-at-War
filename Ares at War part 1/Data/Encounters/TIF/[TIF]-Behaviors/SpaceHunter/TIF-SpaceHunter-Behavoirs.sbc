@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF-SpaceHunter-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Behavior]
+
+        [BehaviorName:Hunter]
+
+        [AutopilotData:FAC-HunterAutopilot-Passive]
+        [SecondaryAutopilotData:FAC-HunterAutopilot-Aggressive]
+
+		[TargetData:AaW-Target-Main-A]		
+
+
+		[TriggerGroups:ContextTriggers]	 
+		[TriggerGroups:TIF-CommonTriggers] 	
+		[TriggerGroups:TIF-SpaceHunter-CommonTriggers] 		
+		[TriggerGroups:FAC-SpaceHunter-CommonTriggers] 		
+
+
+		[TriggerGroups:FAC-OffensiveEscortSystem-TaskLeader-TriggerGroup] 		
+
+		[Triggers:FAC-PointSystem-Trigger-Decrease25]
+		[Triggers:FAC-AggressionSystem-Trigger-Increase25]
+
+      </Description>
+
+    </EntityComponent>
+
+	
+	
+	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>

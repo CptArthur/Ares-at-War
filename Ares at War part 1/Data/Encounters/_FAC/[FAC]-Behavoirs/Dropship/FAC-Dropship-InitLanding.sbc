@@ -15,7 +15,7 @@
 	
 	[Triggers:FAC-Dropship-Trigger-ArrivedAtLandingSite]	
 
-	[Triggers:FAC-Dropship-Trigger-SpawnEncounters]	
+	[Triggers:FAC-Dropship-Trigger-LeaveLandingSite]	
 	
 	-->
 	
@@ -31,6 +31,7 @@
 	  [Type:TargetNear]
 	  [UseTrigger:true]
 	  [TargetDistance:800]
+	[Conditions:FAC-Dropship-Condition-MoveToLanding]
 	  [MaxActions:1]
 	  [Actions:FAC-Dropship-Action-MoveToLanding]
       </Description>
@@ -46,6 +47,36 @@
 	[WaypointsToAdd:FAC-Dropship-Waypoint-LandingSite]
 
 	-->
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Dropship-Condition-MoveToLanding</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+
+        [UseConditions:true]
+
+        [IsTargetStatic:true]
+		
+		[CheckAllLoadedModIDs:true]
+[AnyModIDsToCheck:2596208372]
+
+		
+      </Description>
+
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -153,10 +184,10 @@
         [UseConditions:true]
 
         [AltitudeCheck:true]
-        [MaxAltitude:5]
+        [MaxAltitude:8]
 
         [CheckGridSpeed:true]
-        [MaxGridSpeed:10]
+        [MaxGridSpeed:15]
 
       </Description>
 
@@ -174,17 +205,19 @@
         [RivalAI Action]
 
         [EnableTriggers:true]
-        [EnableTriggerNames:FAC-Dropship-Trigger-SpawnEncounters]
+        [EnableTriggerNames:FAC-Dropship-Trigger-LeaveLandingSite]
 
 
         [ResetCooldownTimeOfTriggers:true]
-        [ResetTriggerCooldownNames:FAC-Dropship-Trigger-SpawnEncounters]
+        [ResetTriggerCooldownNames:FAC-Dropship-Trigger-LeaveLandingSite]
 		
 		
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Passive]
 
 
+		
+		[SetBooleansTrue:SpawnEncounters]
       </Description>
 
     </EntityComponent>	
@@ -195,7 +228,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dropship-Trigger-SpawnEncounters</SubtypeId>
+        <SubtypeId>FAC-Dropship-Trigger-LeaveLandingSite</SubtypeId>
       </Id>
       <Description>
 
@@ -204,14 +237,14 @@
         [UseTrigger:false]
         [Type:Timer]
 
-        [Conditions:FAC-Dropship-Condition-SpawnEncounters]
+        [Conditions:FAC-Dropship-Condition-LeaveLandingSite]
 
-        [MinCooldownMs:2000]
-        [MaxCooldownMs:2001]
+        [MinCooldownMs:1500]
+        [MaxCooldownMs:1501]
         [StartsReady:false]
 
         [MaxActions:1]
-        [Actions:FAC-Dropship-Action-SpawnEncounters]
+        [Actions:FAC-Dropship-Action-LeaveLandingSite]
 
       </Description>
 
@@ -220,7 +253,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dropship-Condition-SpawnEncounters</SubtypeId>
+        <SubtypeId>FAC-Dropship-Condition-LeaveLandingSite</SubtypeId>
       </Id>
       <Description>
 
@@ -241,7 +274,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dropship-Action-SpawnEncounters</SubtypeId>
+        <SubtypeId>FAC-Dropship-Action-LeaveLandingSite</SubtypeId>
       </Id>
       <Description>
 
@@ -254,37 +287,15 @@
 
 	[ChangeAutopilotProfile:true]
 	[AutopilotProfile:Primary]	
-	
-	
-        [SpawnEncounter:true]
-        [Spawner:FAC-Dropship-Spawner-SpawnEncounters]
+
+
+		
 
       </Description>
 
     </EntityComponent>
 
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dropship-Spawner-SpawnEncounters</SubtypeId>
-      </Id>
-      <Description>
 
-        [RivalAI Spawn]
-
-        [UseSpawn:true]
-
-        [SpawnMinCooldown:1]
-        [SpawnMaxCooldown:2]
-        [MaxSpawns:1]
-        [SpawningType:Creature]
-        [SpawnGroups:GC-Dropship-SpawnGroup-Raiders]
-        [ProcessAsAdminSpawn:true]
-
-      </Description>
-
-    </EntityComponent>
-	
 
 	
 	

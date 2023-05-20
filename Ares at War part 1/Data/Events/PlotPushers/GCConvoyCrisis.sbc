@@ -1,0 +1,620 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-GCConvoyCrisis-GCConvoyDestoyed</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		
+		[ConditionIds:AaW-EventCondition-GCConvoyDestoyed-Basic]
+		[ConditionIds:AaW-EventCondition-GCConvoyDestoyed-PlayerBase]
+		[ConditionIds:AaW-EventCondition-GCConvoyDestoyed-PlayerNotNear]	
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000]
+		
+		[ActionIds:AaW-EventAction-GCConvoyDestoyed]
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-GCConvoyDestoyed-NewsAlert]	
+      </Description>
+	</EntityComponent>	
+	  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCConvoyDestoyed-Basic</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+	[CheckTrueBooleans:true]
+	[TrueBooleans:AHEActive]  
+	[TrueBooleans:GCActive]  
+
+	[CheckFalseBooleans:true]	  
+	[FalseBooleans:GCvsAHE]	 	
+	[FalseBooleans:AHE-HQDestroyed]	 			 	
+      </Description>
+      
+    </EntityComponent>	
+
+	  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCConvoyDestoyed-PlayerBase</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+	[CheckThreatScore:true]
+	[ThreatScoreAmount:1000]
+	[ThreatScoreDistance:5000]
+	[ThreatScoreCoords:{X:-1129033.5 Y:126871.5 Z:1293873.5}]
+	[ThreatScoreDistanceFromCoords:90000]
+	[ThreatScoreType:PlayerLocation]
+	[ThreatScoreGridConfiguration:Static]
+      </Description>
+      
+    </EntityComponent>		  
+	  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCConvoyDestoyed-PlayerNotNear</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	[UseFailCondition:true]
+
+	[CheckPlayerNear:true]
+	[PlayerNearCoords:{X:-1162242.5 Y:139010.1 Z:1341161.84}]
+	[PlayerNearDistanceFromCoords:15000]
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCConvoyDestoyed</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+		
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownTags:GCConvoyCrisis]
+		
+		
+		
+		
+		[ChangeBooleans:true]
+		[SetBooleansTrue:GCConvoyCrisisAftermath]	
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCConvoyDestoyed-NewsAlert</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-GCConvoyDestoyedNewsAlert]
+      </Description>
+      
+    </EntityComponent>
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-GCConvoyDestoyedNewsAlert</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Blue]
+      [Author:Ares News Station]
+        
+      [ChatMessages:In a shocking incident, a GC convoy departing from the AHE HQ fell victim to a devastating bomb attack. Details surrounding the attack remain scarce, but initial reports indicate that it was a meticulously planned assault, suggesting a serious breach of security protocols. The GC have yet to respond this shocking incident.]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]   
+      </Description>
+      
+    </EntityComponent>		
+	
+	<!-- Test -->
+
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-GCConvoyCrisis-GCAnnouncement</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		[MinCooldownMs:300000]
+		[MaxCooldownMs:300001]		
+		
+		[Tags:GCConvoyCrisis]
+		
+		[ConditionIds:AaW-EventCondition-GCConvoyDestoyed-Aftermath]
+		[ActionExecution:All]
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+
+		[ActionIds:AaW-EventAction-GCConvoyCrisis-SetGCvsAHE]
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-GCConvoyCrisis-GCAnnouncement]
+      </Description>
+	</EntityComponent>	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCConvoyDestoyed-Aftermath</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	
+	[CheckTrueBooleans:true]
+	[TrueBooleans:GCConvoyCrisisAftermath]  
+
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCConvoyCrisis-GCAnnouncement</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-GCConvoyCrisis-GCAnnouncement]
+	
+      </Description>
+      
+    </EntityComponent>		
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-GCConvoyCrisis-GCAnnouncement</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Red]
+      [Author:GC Command]
+        
+      [ChatMessages:In response to AHE's failure to ensure securtiy within their territory, we have implemented a critical measure. Effective immediately, all AHE assets will now fall under GC Authority. This decision has been made with the utmost consideration for the safety and security of all inhabitants of Agaris.]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>		
+
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-GCConvoyCrisis-ChaosatAHEHQ</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		[MinCooldownMs:1200000]
+		[MaxCooldownMs:1200001]		
+		
+		[Tags:GCConvoyCrisis]
+		
+		[ConditionIds:AaW-EventCondition-GCConvoyDestoyed-Aftermath]
+		[ActionExecution:All]
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-GCConvoyCrisis-ChaosatAHEHQ]
+      </Description>
+	</EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCConvoyCrisis-ChaosatAHEHQ</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-GCConvoyCrisis-ChaosatAHEHQ]
+
+		
+	[ChangeBooleans:true] 
+	[SetBooleansTrue:GCvsAHE] 
+	[SetBooleansTrue:BattleforAHEHQ] 
+
+
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:BattleforAHEHQ]
+	
+	[ToggleEvents:true]
+	[ToggleEventTags:BattleforAHEHQ
+	[ToggleEventTagModes:true]
+	
+	
+	[SetBooleansFalse:StartGCvsAHE]
+	[SetBooleansFalse:AHEActive]	
+
+	[ChangeZoneAtPosition:true]
+	[ZoneNames:ZoneAHE]
+	[ZoneCoords:{X:-1166125.22929222 Y:138383.504581418 Z:1338343.63843264}]
+	[ZoneToggleActiveModes:false]
+
+	[ZoneNames:ZoneFAF]
+	[ZoneCoords:{X:-1166125.22929222 Y:138383.504581418 Z:1338343.63843264}]
+	[ZoneToggleActiveModes:true]	
+
+	
+	[AddGPSForAll:true]
+	[UseGPSObjective:true]
+	[UseGPSdisappearsInS:true]
+	[GPSdisappearsInS:7200]
+
+	
+	[GPSNames:Battle for AHE-HQ]
+	[GPSDescriptions:Comequick]
+	[GPSCoords:{X:-1162242.5 Y:139010.1 Z:1341161.84}
+	[GPSColors:{X:0 Y:255 Z:0}]
+		
+	
+	
+	
+      </Description>
+      
+    </EntityComponent>	
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-GCConvoyCrisis-ChaosatAHEHQ</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Blue]
+      [Author:Ares News Station]
+        
+      [ChatMessages:Chaos! AHE HQ has become the epicenter of a violent clash between the GC forces and AHE loyalists. The deteriorating situation unfolded rapidly as tensions between the AHE and the GC reached a boiling point. Despite the GC's attempts to assert control over AHE assets, the AHE vehemently rejected the takeover, fueling deep-seated resentment and triggering an armed rebellion against what they perceive as an encroachment on their sovereignty.]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>
+
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-GCConvoyCrisis-AHESpeech</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		
+		[MinCooldownMs:1240000]
+		[MaxCooldownMs:1240001]		
+		
+		[Tags:GCConvoyCrisis]
+		
+		[ConditionIds:AaW-EventCondition-GCConvoyDestoyed-Aftermath]
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-GCConvoyCrisis-AHESpeech]
+      </Description>
+	</EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCConvoyCrisis-AHESpeech</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-GCConvoyCrisis-AHESpeech]
+
+      </Description>
+      
+    </EntityComponent>	
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-GCConvoyCrisis-AHESpeech</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Green]
+      [Author:AHE Spokesmen]
+        
+      [ChatMessages:Citizens of Agaris, For far too long have found ourselves under the shadow of encroaching forces seeking to undermine our autonomy and suppress our aspirations. But hear me, the AHE and FAF stand united in the cause to free Agaris. Our headquarters is under fierce attack as we speak. We need your help urgently. Join the battle, stand with us, and fight for the liberation of all Agaris!]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	
+	<!-- BattleforAHEHQ -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-BattleforAHEHQ</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	
+	[CheckTrueBooleans:true]
+	[TrueBooleans:BattleforAHEHQ]  
+
+      </Description>
+      
+    </EntityComponent>	
+
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2-Event-BattleforAHEHQ-PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[Tags:BattleforAHEHQ]
+	
+		[ConditionIds:AaW-EventCondition-BattleforAHEHQ]	
+		[ConditionIds:AaW-EventCondition-BattleforAHEHQ-PlayerNear]
+		
+		
+		[ActionExecution:All]
+		[ActionIds:AaW-EventAction-BattleforAHEHQ-Spawn]
+
+      </Description>
+	</EntityComponent>	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-BattleforAHEHQ-PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+
+	[CheckPlayerNear:true]
+	[PlayerNearCoords:{X:-1162242.5 Y:139010.1 Z:1341161.84}]
+	[PlayerNearDistanceFromCoords:6500]
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-BattleforAHEHQ-Spawn</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:BattleforAHEHQ]
+	[ToggleEventTagModes:false]	
+
+	[RemoveGPSForAll:true]
+	[GPSNames:Battle for AHE-HQ]	
+
+	
+	[SpawnEncounter:true]
+	[SpawnData:GC-Spawner-HeavyGarrison]
+	[SpawnFactionTags:GC]
+	[SpawnCoords:{X:-1162242.5 Y:139010.1 Z:1341161.84}]
+	
+
+      </Description>
+      
+    </EntityComponent>		
+		
+		
+		
+		
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2-Event-BattleforAHEHQ-GCWon</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:7200000]
+		[MaxCooldownMs:7200001]		
+		[ConditionIds:AaW-EventCondition-BattleforAHEHQ]		
+		[Tags:BattleforAHEHQ]
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-BattleforAHEHQ-GCWon]
+
+
+
+      </Description>
+	</EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-BattleforAHEHQ-GCWon</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	
+	[ToggleEvents:true]
+	[ToggleEventTags:BattleforAHEHQ]
+	[ToggleEventTagModes:false]		
+	
+	[ChangeBooleans:true] 
+	[SetBooleansFalse:AHE-HQDestroyed] 
+	[SetBooleansFalse:FAF-AHE-HQDestroyed]
+	[SetBooleansTrue:AHE HQ Wasted Event]
+
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-BattleforAHEHQ-GCWon]			
+	
+	
+	[RemoveGPSForAll:true]
+	[GPSNames:Battle for AHE-HQ]	
+      </Description>
+      
+    </EntityComponent>		
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-BattleforAHEHQ-GCWon</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Blue]
+      [Author:Ares News Station]
+        
+      [ChatMessages:AHE HQ has been destroyed]
+      [BroadcastChatType:Chat]
+      [ChatAudio:event_red_alert]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>		
+
+	
+	
+	
+  </EntityComponents>
+</Definitions>

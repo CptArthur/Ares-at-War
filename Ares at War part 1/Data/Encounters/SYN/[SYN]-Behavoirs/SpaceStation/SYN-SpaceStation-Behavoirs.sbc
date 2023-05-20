@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!-- Space-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-SpaceStation-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+     [RivalAI Behavior]
+     [BehaviorName:Passive]
+	 [TargetData:AaW-Target-Static-A]
+
+	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:SYN-CommonTriggers]
+  	[TriggerGroups:SYN-SpaceStation-CommonTriggers]	
+  	[TriggerGroups:FAC-SpaceStation-CommonTriggers]		
+	
+	
+	
+	[Triggers:SYN-DefenseSystem-Trigger-LightGarrison]		
+	[Triggers:FAC-Static-Trigger-CallAtmoCargoShip-SYNCode]
+
+
+
+	[Triggers:SYN-MinorStatic-Trigger-selfpresence]
+	[Triggers:SYN-ZoneController-Trigger-Death]
+	[Triggers:FAC-PointSystem-Trigger-Decrease50]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase100]
+      </Description>
+      
+    </EntityComponent>
+
+	
+	
+
+
+	
+  </EntityComponents>
+</Definitions>

@@ -13,7 +13,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-Event-StartGCvsAHE</SubtypeId>
+          <SubtypeId>AaW2-Event-StartGCvsAHE</SubtypeId>
       </Id>
       <Description>
 
@@ -42,7 +42,9 @@
 	[TrueBooleans:GCActive]  
 
 	[CheckFalseBooleans:true]	  
-	[FalseBooleans:GCvsAHE]	 			
+	[FalseBooleans:GCvsAHE]	 	
+	[FalseBooleans:GCConvoyCrisisAftermath]	 	
+	
 
       </Description>
 	</EntityComponent>				
@@ -116,96 +118,11 @@
 	
 	
 	
-
-<!-- 
+<!-- AHE Announcement -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-Event-GCvsAHEGCAnnouncement</SubtypeId>
-      </Id>
-      <Description>
-
-		[MES Event]
-		[UniqueEvent:true]
-		[MinCooldownMs:60000]
-		[MaxCooldownMs:60001]		
-		
-		
-		
-		[Tags:GCvsAHE]
-		
-		[ConditionIds:AaW-EventCondition-StartGCvsAHE]
-		[ActionExecution:All]
-
-		[ActionExecution:Sequential]
-		[TimeUntilNextActionMs:6000]
-
-
-		[ActionIds:AaW-EventAction-Common-IncomingMessage]
-		[ActionIds:AaW-EventAction-GCvsAHEGCAnnouncement]
-
-      </Description>
-	</EntityComponent>	
-	
-	
-
-	
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventAction-GCvsAHEGCAnnouncement</SubtypeId>
-      </Id>
-      <Description>
-
-		[MES Event Action]
-		
-	[UseChatBroadcast:true]
-	[ChatData:AaW-EventChat-GCvsAHEGCAnnouncement]
-		
-      </Description>
-      
-    </EntityComponent>		
-	
-		
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventChat-GCvsAHEGCAnnouncement</SubtypeId>
-      </Id>
-	  
-      <Description>
-
-      [RivalAI Chat]
-      
-      [UseChat:true]
-      [StartsReady:true]
-      [Chance:100]
-      [MaxChats:-1]
-      [BroadcastRandomly:true]
-      [IgnoreAntennaRequirement:True]
-      [IgnoredAntennaRangeOverride:1]
-      [SendToAllOnlinePlayers:true]
-
-
-      [Color:Red]
-      [Author:GC Command]
-        
-      [ChatMessages:This is a GC announcement. Effective immediately, all AHE assets will now fall under GC Authority. Failure to comply will result in severe consequences.]
-      [BroadcastChatType:Chat]
-      [ChatAudio:]  
-
-	    	  
-      </Description>
-      
-    </EntityComponent>		
-GC Announcement -->	
-	
-	
-<!-- GC Announcement -->
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-Event-GCvsAHEAHEAnnouncement</SubtypeId>
+          <SubtypeId>AaW2-Event-GCvsAHEAHEAnnouncement</SubtypeId>
       </Id>
       <Description>
 

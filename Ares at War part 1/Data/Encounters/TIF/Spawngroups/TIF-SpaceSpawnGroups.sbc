@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+	<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>TIF-SpaceHunter</SubtypeId>
+			</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		
+		
+		
+
+[SpawnConditionsProfiles:TIF-SpawnProfile-BylenRing-Combat-Outside]
+
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:DC-SU.B-RandomNumberRandomNumber]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]		
+
+
+		[ManipulationProfiles:AaW-Manipulation-ThrustForceMultiply]
+
+		</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				
+
+				<Prefab SubtypeId="TIF-Bulk">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>TIF-SpaceHunter-Behavior</Behaviour>
+				</Prefab>
+	
+
+			</Prefabs>			
+		</SpawnGroup>		
+
+
+	
+	</SpawnGroups>
+</Definitions>
