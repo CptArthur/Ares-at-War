@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+<!--
+
+
+
+[Triggers:FAC-SpaceHunter-Trigger-NewTarget]
+
+-->
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-SpaceHunter-Trigger-NewTarget</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:AcquiredTarget]
+        [MinCooldownMs:120000]
+        [MaxCooldownMs:120001]
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:FAC-SpaceHunter-Action-NewTarget]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-SpaceHunter-Action-NewTarget</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:FAC-SpaceHunter-Chat-NewTarget]
+
+      </Description>
+
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-SpaceHunter-Chat-NewTarget</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+        [BroadcastRandomly:false]
+        [Author:Reaver]
+        [Color:Red]
+
+        [ChatMessages:A {Faction} ship has Detected a Potential Target]
+        [ChatAudio:event_red_alert]
+        [BroadcastChatType:Notify]
+		
+		
+		[IgnoreAntennaRequirement:true]
+[IgnoredAntennaRangeOverride:10000]
+
+
+      </Description>
+    </EntityComponent>	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+  </EntityComponents>
+</Definitions>

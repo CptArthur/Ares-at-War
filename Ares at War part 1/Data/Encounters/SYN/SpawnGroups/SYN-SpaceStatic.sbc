@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+	
+
+<!-- Horseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee shoeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
+<!-- Horseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee shoeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>SYN-ForegoneStation</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:SYN]		
+
+		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+		[TriggerRadius:4500]
+
+		[ForceExactPositionAndOrientation:true]
+
+       
+
+		[StaticEncounterCoords:{X:-657826.494377677 Y:500.162570356646 Z:-815187.711541753}]
+		[StaticEncounterForward:{X:2.02567762476071E-09 Y:0.999014973207353 Z:0.0443743541644369}]
+		[StaticEncounterUp:{X:-8.21561662788461E-09 Y:-0.0443743541644369 Z:0.999014973207353}]
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Lezuno]
+		[StaticEncounterPlanetDirection:{X:0.665461140666964 Y:0.333935104217385 Z:0.667569334551511}]
+		[StaticEncounterPlanetAltitude:915402.60905026]
+
+
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:SYN-HQ]			
+		[ZoneConditions:ZoneCondition-ZoneAaW]	
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="(SYN) Foregone Bar and Tradestation">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>SYN-MajorStation-Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+	</SpawnGroup>
+
+
+
+	
+	
+	</SpawnGroups>
+</Definitions>
