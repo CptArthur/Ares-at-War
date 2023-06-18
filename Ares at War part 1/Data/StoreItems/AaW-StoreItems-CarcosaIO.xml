@@ -2,13 +2,33 @@
 <StoreItemsContainer xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <StoreItems>
     <StoreItem>
+      <StoreItemId>CivilianProduct</StoreItemId>
+      <ItemType>Component</ItemType>
+      <ItemSubtypeIds> 
+        <ItemSubtypeId>CivilianProductI</ItemSubtypeId>  
+        <ItemSubtypeId>CivilianProductII</ItemSubtypeId>  
+        <ItemSubtypeId>CivilianProductIII</ItemSubtypeId>  
+      </ItemSubtypeIds> 
+
+      <Offer>
+        <MinPriceMultiplier>110</MinPriceMultiplier>
+        <MaxPriceMultiplier>130</MaxPriceMultiplier>
+        <MinAmount>10</MinAmount>
+        <MaxAmount>20</MaxAmount>
+      </Offer>
+      <Order>
+        <MinPriceMultiplier>90</MinPriceMultiplier>
+        <MaxPriceMultiplier>100</MaxPriceMultiplier>
+        <MinAmount>10</MinAmount>
+        <MaxAmount>20</MaxAmount>
+      </Order>
+    </StoreItem>
+    <StoreItem>
       <StoreItemId>Ingot1</StoreItemId>
       <ItemType>Ingot</ItemType>
       <ItemSubtypeIds> 
-        <ItemSubtypeId>Iron</ItemSubtypeId> 
-        <ItemSubtypeId>Nickel</ItemSubtypeId> 
         <ItemSubtypeId>Silicon</ItemSubtypeId> 
-        <ItemSubtypeId>Copper</ItemSubtypeId> 
+        <ItemSubtypeId>Aluminum</ItemSubtypeId> 
         <ItemSubtypeId>Niter</ItemSubtypeId> 
       </ItemSubtypeIds>
       <Offer>
@@ -29,10 +49,9 @@
       <StoreItemId>Ingot2</StoreItemId>
       <ItemType>Ingot</ItemType>
       <ItemSubtypeIds> 
-        <ItemSubtypeId>Cobalt</ItemSubtypeId> 
-        <ItemSubtypeId>Silver</ItemSubtypeId> 
-        <ItemSubtypeId>Gold</ItemSubtypeId> 
-        <ItemSubtypeId>Aluminum</ItemSubtypeId> 
+        <ItemSubtypeId>Iron</ItemSubtypeId> 
+        <ItemSubtypeId>Nickel</ItemSubtypeId> 
+        <ItemSubtypeId>Copper</ItemSubtypeId> 
         <ItemSubtypeId>Titanium</ItemSubtypeId> 
       </ItemSubtypeIds>
       <Offer>
@@ -53,6 +72,10 @@
       <StoreItemId>Ingot3</StoreItemId>
       <ItemType>Ingot</ItemType>
       <ItemSubtypeIds> 
+        <ItemSubtypeId>Cobalt</ItemSubtypeId> 
+        <ItemSubtypeId>Silver</ItemSubtypeId> 
+        <ItemSubtypeId>Gold</ItemSubtypeId> 
+        <ItemSubtypeId>Sulfur</ItemSubtypeId> 
         <ItemSubtypeId>Carbon</ItemSubtypeId> 
         <ItemSubtypeId>Polymer</ItemSubtypeId> 
         <ItemSubtypeId>FuelOil</ItemSubtypeId> 
@@ -75,7 +98,7 @@
       <StoreItemId>Ingot4</StoreItemId>
       <ItemType>Ingot</ItemType>
       <ItemSubtypeIds> 
-        <ItemSubtypeId>Sulfur</ItemSubtypeId> 
+        <ItemSubtypeId>Lithium</ItemSubtypeId> 
       </ItemSubtypeIds>
       <Offer>
         <MinPriceMultiplier>145</MinPriceMultiplier>
@@ -98,7 +121,6 @@
       <ItemSubtypeIds> 
         <ItemSubtypeId>Platinum</ItemSubtypeId> 
         <ItemSubtypeId>Uranium</ItemSubtypeId> 
-        <ItemSubtypeId>Lithium</ItemSubtypeId> 
         <ItemSubtypeId>Tantalum</ItemSubtypeId> 
         <ItemSubtypeId>CrystalPrism</ItemSubtypeId> 
         <ItemSubtypeId>DoriumIngot</ItemSubtypeId> 
@@ -138,12 +160,11 @@
         <ItemSubtypeId>Detector</ItemSubtypeId>  
         <ItemSubtypeId>Canvas</ItemSubtypeId>  
         <ItemSubtypeId>SolarCell</ItemSubtypeId>  
+        <ItemSubtypeId>InteriorPlate</ItemSubtypeId>  
         <ItemSubtypeId>Explosives</ItemSubtypeId>  
-        <ItemSubtypeId>MedicalComponent</ItemSubtypeId>  
-        <ItemSubtypeId>MetalGrid</ItemSubtypeId>  
         <ItemSubtypeId>Cryocooler</ItemSubtypeId>  
         <ItemSubtypeId>Thermocouple</ItemSubtypeId>  
-        <ItemSubtypeId>Cupper</ItemSubtypeId>  
+        <ItemSubtypeId>ArmorGlass</ItemSubtypeId>  
         <ItemSubtypeId>Concrete</ItemSubtypeId>  
         <ItemSubtypeId>Electromagnet</ItemSubtypeId>  
         <ItemSubtypeId>Lightbulb</ItemSubtypeId>  
@@ -169,17 +190,18 @@
       <ItemType>Component</ItemType>
       <ItemSubtypeIds> 
         <ItemSubtypeId>Display</ItemSubtypeId>  
-        <ItemSubtypeId>InteriorPlate</ItemSubtypeId>  
+        <ItemSubtypeId>PowerCell</ItemSubtypeId>  
+        <ItemSubtypeId>MedicalComponent</ItemSubtypeId>  
         <ItemSubtypeId>ReactorComponent</ItemSubtypeId>  
+        <ItemSubtypeId>MetalGrid</ItemSubtypeId>  
         <ItemSubtypeId>ThrustComponent</ItemSubtypeId>  
-        <ItemSubtypeId>GravityGeneratorComponent</ItemSubtypeId>  
         <ItemSubtypeId>Superconductor</ItemSubtypeId>  
         <ItemSubtypeId>FSSolarCell</ItemSubtypeId>  
         <ItemSubtypeId>Capacitor</ItemSubtypeId>  
         <ItemSubtypeId>CompositeArmor</ItemSubtypeId>  
         <ItemSubtypeId>TokamakBlanket</ItemSubtypeId>  
         <ItemSubtypeId>SuperMagnet</ItemSubtypeId>  
-        <ItemSubtypeId>ArmorGlass</ItemSubtypeId>  
+        <ItemSubtypeId>Cupper</ItemSubtypeId>  
         <ItemSubtypeId>GoldWire</ItemSubtypeId>  
         <ItemSubtypeId>Rubber</ItemSubtypeId>  
         <ItemSubtypeId>Plastic</ItemSubtypeId>  
@@ -187,6 +209,7 @@
         <ItemSubtypeId>QuantumComputer</ItemSubtypeId>  
         <ItemSubtypeId>TitaniumPlate</ItemSubtypeId>  
         <ItemSubtypeId>ArmoredPlate</ItemSubtypeId>  
+        <ItemSubtypeId>AcidPowerCell</ItemSubtypeId>  
         <ItemSubtypeId>Ceramic</ItemSubtypeId>  
         <ItemSubtypeId>LaserEmitter</ItemSubtypeId>  
       </ItemSubtypeIds>
@@ -208,9 +231,8 @@
       <StoreItemId>Component3</StoreItemId>
       <ItemType>Component</ItemType>
       <ItemSubtypeIds> 
-        <ItemSubtypeId>PowerCell</ItemSubtypeId>  
+        <ItemSubtypeId>GravityGeneratorComponent</ItemSubtypeId>  
         <ItemSubtypeId>ElectronMatrix</ItemSubtypeId>  
-        <ItemSubtypeId>QuantumComputer</ItemSubtypeId>  
         <ItemSubtypeId>ReinforcedDrillbit</ItemSubtypeId>  
         <ItemSubtypeId>ReinforcedPlate</ItemSubtypeId>  
         <ItemSubtypeId>LaserAmplifier</ItemSubtypeId>  
@@ -235,7 +257,6 @@
       <ItemType>Ammo</ItemType>
       <ItemSubtypeIds> 
         <ItemSubtypeId>NATO_25x184mm</ItemSubtypeId> 
-        <ItemSubtypeId>Missile200mm</ItemSubtypeId> 
         <ItemSubtypeId>MediumCalibreAmmo</ItemSubtypeId> 
         <ItemSubtypeId>AutocannonClip</ItemSubtypeId> 
       </ItemSubtypeIds>
@@ -257,9 +278,9 @@
       <StoreItemId>Ammo2</StoreItemId>
       <ItemType>Ammo</ItemType>
       <ItemSubtypeIds> 
+        <ItemSubtypeId>Missile200mm</ItemSubtypeId> 
         <ItemSubtypeId>LargeCalibreAmmo</ItemSubtypeId> 
         <ItemSubtypeId>LargeRailgunAmmo</ItemSubtypeId> 
-        <ItemSubtypeId>SmallRailgunAmmo</ItemSubtypeId> 
       </ItemSubtypeIds>
       <Offer>
         <MinPriceMultiplier>120</MinPriceMultiplier>
@@ -278,6 +299,9 @@
     <StoreItem>
       <StoreItemId>Ammo3</StoreItemId>
       <ItemType>Ammo</ItemType>
+      <ItemSubtypeIds> 
+        <ItemSubtypeId>SmallRailgunAmmo</ItemSubtypeId> 
+      </ItemSubtypeIds>
       <Offer>
         <MinPriceMultiplier>190</MinPriceMultiplier>
         <MaxPriceMultiplier>210</MaxPriceMultiplier>

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+<!-- 3 hours-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-PURGE-StartEndGame</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		
+		[MinCooldownMs:10800000]
+		[MaxCooldownMs:10800001]
+		
+		[ConditionIds:AaW-EventCondition-PURGE-StartEndGame]
+
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000]
+		
+		[ActionIds:AaW-EventAction-PURGE-StartEndGame]
+	
+      </Description>
+	</EntityComponent>	
+     
+	 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-PURGE-StartEndGame</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	[CheckTrueBooleans:true]
+	[TrueBooleans:PURGEBlitz]	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-PURGE-StartEndGame</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+
+
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownTags:PURGEEndGame]
+		[ResetEventCooldownIds:]
+		
+		
+		[ChangeBooleans:true]
+		[SetBooleansTrue:PURGEEndGame]
+      </Description>
+      
+    </EntityComponent>
+	
+
+
+	
+  </EntityComponents>
+</Definitions>

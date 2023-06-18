@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AresAtWar.API;
+using AresAtWar.GPSManagers;
 using Sandbox.Definitions;
 using Sandbox.Game;
 using Sandbox.Game.Entities;
@@ -15,38 +16,6 @@ namespace AresAtWar.SessionCore
     {
         public static Vector3D PlanetCenter = new Vector3D(0, 0, 0);
 
-        public static void CustomSpawnInit(MESApi MESApi)
-        {
-
-            MESApi.ToggleSpawnGroupEnabled("Reaver - Group - Test - A", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Aggressor", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Berserker", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Butcher", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Carver", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Charger", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Cockroach", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Crimson", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - CrimsonTormentor", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Devourer", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - GroupEncounter - Hard - A", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - GroupEncounter - Hard - B", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - GroupEncounter - Medium - A", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - GroupEncounter - Medium - B", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Havelock", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Impaler", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Interloper", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Invader - Space", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Mutilator", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Nikkadudu", false);
-
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Piercer", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Scourge", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Slayer", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Thrasher", false);
-            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Tormentor", false);
-
-
-        }
 
         public static bool BylenRing(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
         {
@@ -124,6 +93,41 @@ namespace AresAtWar.SessionCore
                 return false;
             }
             return true;
+        }
+
+
+
+        public static void CustomSpawnInit(MESApi MESApi)
+        {
+
+            MESApi.ToggleSpawnGroupEnabled("Reaver - Group - Test - A", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Aggressor", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Berserker", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Butcher", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Carver", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Charger", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Cockroach", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Crimson", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - CrimsonTormentor", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Devourer", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - GroupEncounter - Hard - A", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - GroupEncounter - Hard - B", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - GroupEncounter - Medium - A", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - GroupEncounter - Medium - B", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Havelock", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Impaler", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Interloper", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Invader - Space", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Mutilator", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Nikkadudu", false);
+
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Piercer", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Scourge", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Slayer", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Thrasher", false);
+            MESApi.ToggleSpawnGroupEnabled("Reaver - SpawnGroup - Tormentor", false);
+
+
         }
 
 

@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF-Static-Trigger-OnSpawn</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:3000]
+        [StartsReady:true]
+        [MaxActions:1]
+        [Actions:AnF-Static-Action-OnSpawn]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF-Static-Action-OnSpawn</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:AnF-Static-Chat-OnSpawn]
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+        <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF-Static-Chat-OnSpawn</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+        [BroadcastRandomly:false]
+        [Author:AnF]
+        [Color:Red]
+
+        [ChatMessages:{AntennaName} signal detected]
+        [ChatAudio:AnF-Spawn]
+        [ChatVolumeMultiplier:1]
+        [BroadcastChatType:Notify]
+
+      </Description>
+    </EntityComponent>
+	
+	<!-- HealthPercentage -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF-Static-Trigger-HealthPercentage</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:HealthPercentage]
+        [StartsReady:true]
+        [MaxActions:1]
+		[UseFailCondition:true]
+		
+		[PercentageOfHealthRemaining:90]
+
+        [Actions:AnF-Static-Action-HealthPercentage]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF-Static-Action-HealthPercentage</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:AnF-Static-Chat-HealthPercentage]
+		
+		 [SpawnEncounter:true]
+		[Spawner:AnF-Spawner-Squadron]
+      </Description>
+
+    </EntityComponent>
+
+
+
+        <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF-Static-Chat-HealthPercentage</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+        [BroadcastRandomly:false]
+        [Author:AnF]
+        [Color:Red]
+
+        [ChatMessages:Unintelligible]
+        [ChatAudio:AnF-Defensive]
+        [ChatVolumeMultiplier:1]
+        [BroadcastChatType:Notify]
+
+      </Description>
+    </EntityComponent>	
+	
+
+	
+	<!-- PlayerNear -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF-Static-Trigger-PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:PlayerNear]
+        [StartsReady:true]
+		
+		[MinCooldownMs:300000]
+		[MaxCooldownMs:600000]	
+
+
+        [MaxActions:-1]
+[TargetDistance:3000]
+
+
+
+
+
+        [Actions:AnF-Static-Action-PlayerNear]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF-Static-Action-PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:AnF-Static-Chat-PlayerNear]
+		
+		 [SpawnEncounter:true]
+		[Spawner:AnF-Spawner-Squadron]
+      </Description>
+
+    </EntityComponent>
+
+
+
+        <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF-Static-Chat-PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+        [BroadcastRandomly:false]
+        [Author:AnF]
+        [Color:Red]
+
+        [ChatMessages:(@%@%AX$#S54()!]
+        [ChatAudio:AnF-Target]
+        [ChatVolumeMultiplier:1]
+        [BroadcastChatType:Chat]
+		
+		
+
+      </Description>
+    </EntityComponent>	
+		
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

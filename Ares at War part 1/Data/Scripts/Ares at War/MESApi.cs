@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Sandbox.ModAPI;
+using VRage;
 using VRage.Game.ModAPI;
 using VRage.ModAPI;
 using VRage.Utils;
@@ -23,6 +24,7 @@ namespace AresAtWar.API
 		private Func<List<string>, MatrixD, Vector3, bool, string, string, bool> _customSpawnRequest;
 		private Func<IMyCubeGrid, Vector3D> _getDespawnCoords;
 		private Func<List<string>> _getSpawnGroupBlackList;
+		private Action<long, string, List<MyTuple<IMyRadioAntenna, DateTime>>> _getPlayerInhibitorData;
 		private Func<List<string>> _getNpcNameBlackList;
 		private Func<Vector3D, bool, string, bool> _isPositionInKnownPlayerLocation;
 		private Func<IMyCubeGrid, Vector3D> _getNpcStartCoordinates;
@@ -44,6 +46,7 @@ namespace AresAtWar.API
 		private Func<Vector3D, List<string>, bool> _spawnRandomEncounter;
 		private Func<Vector3D, List<string>, bool> _spawnSpaceCargoShip;
 		private Action<string, bool> _toggleSpawnGroupEnabled;
+		private Action<bool, string, Action> _registerCustomAction;
 
 		//Create this object in your SessionComponent LoadData() Method
 		public MESApi()
@@ -108,6 +111,14 @@ namespace AresAtWar.API
 		/// <param name="cubeGrid">The cubegrid of the NPC you want to check Despawn Coords For</param>
 		/// <returns></returns>
 		public Vector3D GetDespawnCoords(IMyCubeGrid cubeGrid) => _getDespawnCoords?.Invoke(cubeGrid) ?? Vector3D.Zero;
+
+		/// <summary>
+		/// Gets all active inhibitors in range of a provided player identity id
+		/// </summary>
+		/// <param name="playerIdentityId">The identity id of the player you want to check against</param>
+		/// <param name="inhibitorType">The type of inhibitor you want to check for. "Drill", "Energy", "Jetpack", "Personnel"</param>
+		/// <param name="inhibitorData">The collection the data will be sent to.</param>
+		public void GetPlayerInhibitorData(long playerIdentityId, string inhibitorType, List<MyTuple<IMyRadioAntenna, DateTime>> inhibitorData) => _getPlayerInhibitorData(playerIdentityId, inhibitorType, inhibitorData);
 
 		/// <summary>
 		/// Get a String List of all Current SpawnGroup SubtypeNames Currently in the MES Blacklist
@@ -286,6 +297,18 @@ namespace AresAtWar.API
 		/// <param name="toggle">true for enabled, false for disabled</param>
 		public void ToggleSpawnGroupEnabled(string spawnGroupName, bool toggle) => _toggleSpawnGroupEnabled?.Invoke(spawnGroupName, toggle);
 
+		/// <summary>
+		/// Allows you to register a method that is invoked when a SpawnGroup's Conditions are being evaluated. The SpawnGroup eligiblity will pass or fail depending on the bool output of your provided method.
+		/// </summary>
+		/// <param name="register">If true, the method provided will be registered. If false, the provided method will be deregistered.</param>
+		/// <param name="methodIdentifier">A unique name that is used to link your method to a SpawnCondition</param>
+		/// <param name="action">The method you want invoked when Spawning is requested.</param>
+		/*
+			action Parameters:
+
+		*/
+		public void RegisterCustomAction(bool register, string methodIdentifier, Action action) => _registerCustomAction?.Invoke(register, methodIdentifier, action);
+
 		//Run This Method in your SessionComponent UnloadData() Method
 		public void UnregisterListener()
 		{
@@ -337,6 +360,7 @@ namespace AresAtWar.API
 				_spawnRandomEncounter = (Func<Vector3D, List<string>, bool>)dict["SpawnRandomEncounter"];
 				_spawnSpaceCargoShip = (Func<Vector3D, List<string>, bool>)dict["SpawnSpaceCargoShip"];
 				_toggleSpawnGroupEnabled = (Action<string, bool>)dict["ToggleSpawnGroupEnabled"];
+				_registerCustomAction = (Action<bool, string, Action>)dict["RegisterCustomAction"];
 
 			}
 			catch (Exception e)

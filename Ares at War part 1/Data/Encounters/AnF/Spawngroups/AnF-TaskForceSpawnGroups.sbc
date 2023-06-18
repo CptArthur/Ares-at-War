@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>AnF-SpawnGroup-Squadron</SubtypeId> <!-- Squadron -->
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[SpaceCargoShip:false]
+			[LunarCargoShip:false]
+			[SpaceRandomEncounter:false]
+			[AtmosphericCargoShip:false]
+			[PlanetaryInstallation:false]
+
+			[RivalAiSpawn:true]
+			[FactionOwner:PURGE]
+			[ReplenishSystems:false]
+
+			[SkipVoxelSpawnChecks:true]
+			[SkipGridSpawnChecks:true]
+			[IgnoreCombatPhase:true]
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			[ManipulationProfiles:Anf-Manipulation-Thrust]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="AntiFrank Spawn">
+					<Position>
+						<X>-500.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>AnF-Drone-Behavior</Behaviour>
+				</Prefab>
+
+				<Prefab SubtypeId="AntiFrank Juggernaut">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>AnF-Drone-Behavior</Behaviour>
+				</Prefab>
+
+				<Prefab SubtypeId="AntiFrank Spawn">
+					<Position>
+						<X>500.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>AnF-Drone-Behavior</Behaviour>
+				</Prefab>
+			</Prefabs>			
+		</SpawnGroup>
+
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>Anf-Main</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			[SpaceCargoShip:true]
+			[LunarCargoShip:true]
+			[AtmosphericCargoShip:true]
+			[FactionOwner:PURGE]			
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			[ManipulationProfiles:Anf-Manipulation-Thrust]
+
+			[SandboxVariables:PURGEBlitz]
+			[IgnoreCombatPhase:true]	
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+
+				<Prefab SubtypeId="Anti-Frank Entropy">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>AnF-LDrone-Behavior</Behaviour>
+				</Prefab>
+			
+				<Prefab SubtypeId="Antifrank Chaos">
+					<Position>
+						<X>-400.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>AnF-LDrone-Behavior</Behaviour>
+				</Prefab>
+	
+
+				<Prefab SubtypeId="Antifrank Chaos">
+					<Position>
+						<X>400.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>AnF-LDrone-Behavior</Behaviour>
+				</Prefab>	
+
+			</Prefabs>			
+		</SpawnGroup>	
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+
+	</SpawnGroups>
+</Definitions>
