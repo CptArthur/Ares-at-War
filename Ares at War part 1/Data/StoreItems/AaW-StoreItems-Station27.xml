@@ -2,6 +2,28 @@
 <StoreItemsContainer xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <StoreItems>
     <StoreItem>
+      <StoreItemId>CivilianProduct</StoreItemId>
+      <ItemType>Component</ItemType>
+      <ItemSubtypeIds> 
+        <ItemSubtypeId>CivilianProductI</ItemSubtypeId>  
+        <ItemSubtypeId>CivilianProductII</ItemSubtypeId>  
+        <ItemSubtypeId>CivilianProductIII</ItemSubtypeId>  
+      </ItemSubtypeIds> 
+
+      <Offer>
+        <MinPriceMultiplier>110</MinPriceMultiplier>
+        <MaxPriceMultiplier>130</MaxPriceMultiplier>
+        <MinAmount>10</MinAmount>
+        <MaxAmount>20</MaxAmount>
+      </Offer>
+      <Order>
+        <MinPriceMultiplier>90</MinPriceMultiplier>
+        <MaxPriceMultiplier>100</MaxPriceMultiplier>
+        <MinAmount>10</MinAmount>
+        <MaxAmount>20</MaxAmount>
+      </Order>
+    </StoreItem>
+    <StoreItem>
       <StoreItemId>Ingot1</StoreItemId>
       <ItemType>Ingot</ItemType>
       <ItemSubtypeIds> 
@@ -11,8 +33,6 @@
         <ItemSubtypeId>Cobalt</ItemSubtypeId> 
         <ItemSubtypeId>Silver</ItemSubtypeId> 
         <ItemSubtypeId>Gold</ItemSubtypeId> 
-        <ItemSubtypeId>Platinum</ItemSubtypeId> 
-        <ItemSubtypeId>Uranium</ItemSubtypeId> 
       </ItemSubtypeIds>
       <Offer>
         <MinPriceMultiplier>50</MinPriceMultiplier>
@@ -32,7 +52,8 @@
       <StoreItemId>Ingot2</StoreItemId>
       <ItemType>Ingot</ItemType>
       <ItemSubtypeIds> 
-        <ItemSubtypeId>PurifiedSpice</ItemSubtypeId> 
+        <ItemSubtypeId>Platinum</ItemSubtypeId> 
+        <ItemSubtypeId>Uranium</ItemSubtypeId> 
       </ItemSubtypeIds>
       <Offer>
         <MinPriceMultiplier>80</MinPriceMultiplier>
@@ -51,10 +72,6 @@
     <StoreItem>
       <StoreItemId>Ingot3</StoreItemId>
       <ItemType>Ingot</ItemType>
-      <ItemSubtypeIds> 
-        <ItemSubtypeId>DoriumIngot</ItemSubtypeId> 
-        <ItemSubtypeId>StabilizedCronyx</ItemSubtypeId> 
-      </ItemSubtypeIds>
       <Offer>
         <MinPriceMultiplier>120</MinPriceMultiplier>
         <MaxPriceMultiplier>130</MaxPriceMultiplier>
@@ -73,7 +90,7 @@
       <StoreItemId>Ingot4</StoreItemId>
       <ItemType>Ingot</ItemType>
       <ItemSubtypeIds> 
-        <ItemSubtypeId>CrystalPrism</ItemSubtypeId> 
+        <ItemSubtypeId>Magnesium</ItemSubtypeId> 
       </ItemSubtypeIds>
       <Offer>
         <MinPriceMultiplier>145</MinPriceMultiplier>
@@ -94,7 +111,10 @@
       <StoreItemId>Ingot5</StoreItemId>
       <ItemType>Ingot</ItemType>
       <ItemSubtypeIds> 
-        <ItemSubtypeId>Magnesium</ItemSubtypeId> 
+        <ItemSubtypeId>CrystalPrism</ItemSubtypeId> 
+        <ItemSubtypeId>DoriumIngot</ItemSubtypeId> 
+        <ItemSubtypeId>StabilizedCronyx</ItemSubtypeId> 
+        <ItemSubtypeId>PurifiedSpice</ItemSubtypeId> 
       </ItemSubtypeIds>
       <Offer>
         <MinPriceMultiplier>190</MinPriceMultiplier>
@@ -156,10 +176,6 @@
     <StoreItem>
       <StoreItemId>Component2</StoreItemId>
       <ItemType>Component</ItemType>
-      <ItemSubtypeIds> 
-        <ItemSubtypeId>ReinforcedDrillbit</ItemSubtypeId>  
-        <ItemSubtypeId>ReinforcedPlate</ItemSubtypeId>  
-      </ItemSubtypeIds>
       <Offer>
         <MinPriceMultiplier>120</MinPriceMultiplier>
         <MaxPriceMultiplier>130</MaxPriceMultiplier>
@@ -179,6 +195,8 @@
       <ItemType>Component</ItemType>
       <ItemSubtypeIds> 
         <ItemSubtypeId>Explosives</ItemSubtypeId>  
+        <ItemSubtypeId>ReinforcedDrillbit</ItemSubtypeId>  
+        <ItemSubtypeId>ReinforcedPlate</ItemSubtypeId>  
         <ItemSubtypeId>LaserAmplifier</ItemSubtypeId>  
       </ItemSubtypeIds>
       <Offer>
@@ -222,6 +240,8 @@
       <ItemType>Ammo</ItemType>
       <ItemSubtypeIds> 
         <ItemSubtypeId>missile</ItemSubtypeId> 
+        <ItemSubtypeId>MediumCalibreAmmo</ItemSubtypeId> 
+        <ItemSubtypeId>LargeCalibreAmmo</ItemSubtypeId> 
       </ItemSubtypeIds>
       <Offer>
         <MinPriceMultiplier>120</MinPriceMultiplier>
@@ -242,8 +262,6 @@
       <ItemType>Ammo</ItemType>
       <ItemSubtypeIds> 
         <ItemSubtypeId>NATO_25x184mm</ItemSubtypeId> 
-        <ItemSubtypeId>MediumCalibreAmmo</ItemSubtypeId> 
-        <ItemSubtypeId>LargeCalibreAmmo</ItemSubtypeId> 
         <ItemSubtypeId>AutocannonClip</ItemSubtypeId> 
       </ItemSubtypeIds>
       <Offer>
@@ -353,9 +371,6 @@
     <StoreItem>
       <StoreItemId>Consumable2</StoreItemId>
       <ItemType>Consumable</ItemType>
-      <ItemSubtypeIds> 
-        <ItemSubtypeId>SpiceInhaler</ItemSubtypeId>  
-      </ItemSubtypeIds>
       <Offer>
         <MinPriceMultiplier>120</MinPriceMultiplier>
         <MaxPriceMultiplier>130</MaxPriceMultiplier>
@@ -373,6 +388,9 @@
     <StoreItem>
       <StoreItemId>Consumable3</StoreItemId>
       <ItemType>Consumable</ItemType>
+      <ItemSubtypeIds> 
+        <ItemSubtypeId>SpiceInhaler</ItemSubtypeId>  
+      </ItemSubtypeIds>
       <Offer>
         <MinPriceMultiplier>190</MinPriceMultiplier>
         <MaxPriceMultiplier>210</MaxPriceMultiplier>

@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+  
+  
+      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-PURGE-Test</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:false]
+		
+		[ConditionIds:AaW-EventCondition-PURGE-Test]
+	
+
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000]
+		
+		[ActionIds:AaW-EventAction-PURGE-Test]
+      </Description>
+	</EntityComponent>	
+     
+	 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-PURGE-Test</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	[CheckTrueBooleans:true]
+	[TrueBooleans:Test]	
+
+
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-PURGE-Test</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+		
+
+		[ChangeBooleans:true]
+		[SetBooleansFalse:Test]
+		[ActivateCustomAction:true]
+		[CustomActionName:AddGPS]
+		
+
+      </Description>
+      
+    </EntityComponent>
+
+
+	
+  </EntityComponents>
+</Definitions>

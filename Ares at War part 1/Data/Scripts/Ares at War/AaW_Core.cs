@@ -12,6 +12,7 @@ using VRage.Utils;
 using VRageMath;
 using AresAtWar.Factions;
 using AresAtWar.Command;
+using AresAtWar.GPSManagers;
 using AresAtWar.Init;
 
 using SimpleSyncManager;
@@ -23,19 +24,25 @@ namespace AresAtWar.SessionCore
     [MySessionComponentDescriptor(MyUpdateOrder.AfterSimulation)]
     public class AaWSession : MySessionComponentBase
     {
-        public static string ModVersion = "0.4.4";
+        public static string ModVersion = "0.4.5";
 
         public static MESApi MESApi;
         public int counter = 0;
         public int counter2 = 0;
         public bool restart = false;
+        public static string ModLocation;
 
         public override void LoadData()
         {
             MESApi = new MESApi();
+
+            GPSManager.Setup();
+
+
+            ModLocation= ModContext.ModPath;
         }
 
-
+        
 
         public override void BeforeStart()
         {
@@ -90,7 +97,11 @@ namespace AresAtWar.SessionCore
             MESApi.RegisterCustomSpawnCondition(true, "BylenRing", CustomSpawnCodtions.BylenRing);
             MESApi.RegisterCustomSpawnCondition(true, "AgarisDeepOcean", CustomSpawnCodtions.AgarisDeepOcean);
             MESApi.RegisterCustomSpawnCondition(true, "AgarisLand", CustomSpawnCodtions.AgarisLand);
+            MESApi.RegisterCustomAction(true, "GPSBattleforAHEHQ", CustomActions.GPSBattleforAHEHQ);
 
+
+
+            //MESApi.RegisterCustomAction(true, "AddGPS", CustomActions.StartGPS);
 
         }
 
@@ -102,7 +113,24 @@ namespace AresAtWar.SessionCore
 
             //Every 10 seconds
             if (counter >= 600)
-            {     
+            {
+                //GPS check
+
+                
+
+
+                for (int i = 0; i < GPSManager.AllActiveGPS.Count; i++)
+                {
+                    GPSManager.AllActiveGPS[i].Update();
+                }
+
+                for (int i = 0; i < GPSManager.NonActiveGPS.Count; i++)
+                {
+                    GPSManager.NonActiveGPS[i].RemoveGPSForAll();
+                }
+
+
+
                 //Faction check 
                 for (int i = 0; i < AaWMain.listOfFactions.Count; i++)
                 {
@@ -138,6 +166,8 @@ namespace AresAtWar.SessionCore
 
 
             MyVisualScriptLogicProvider.RespawnShipSpawned -= RespawnShipSpawned;
+
+            
         }
 
 
