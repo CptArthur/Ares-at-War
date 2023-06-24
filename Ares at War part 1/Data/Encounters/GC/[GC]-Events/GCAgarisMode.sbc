@@ -11,7 +11,7 @@ GCAgarisMode
 3: NotYetLost
 4: No surrender
 Bool GCAgarisDefeated
-
+GCAgarisMartialLaw
 
 
 -->
@@ -76,6 +76,15 @@ Bool GCAgarisDefeated
 		[ChangeCounters:true]
 		[SetCounters:GCAgarisMode]
 		[SetCountersAmount:0]
+		
+	[ToggleEvents:true]
+	[ToggleEventIds:Aaw-Event-GCMartialLaw-Disable]
+	[ToggleEventIdModes:true]
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:Aaw-Event-GCMartialLaw-Disable]	
+		
+		
       </Description>
       
     </EntityComponent>	
@@ -191,8 +200,11 @@ Bool GCAgarisDefeated
 	[FalseBooleans:GCCarcosa]		  
 	[FalseBooleans:GCAzuris]  
 	  
-
-	  
+	[CheckTrueBooleans:true]
+	[AllowAnyTrueBoolean:true]	  
+	[TrueBooleans:GCSunsetCity]	
+	[TrueBooleans:GCCarcosa]		  
+	[TrueBooleans:GCAzuris]  	  
       </Description>
       
     </EntityComponent>	
@@ -239,6 +251,15 @@ Bool GCAgarisDefeated
 	[ChangeCounters:true]
 	[SetCounters:GCAgarisMode]
 	[SetCountersAmount:2]
+	
+
+	[ToggleEvents:true]
+	[ToggleEventIds:Aaw-Event-GCMartialLaw-Activate]
+	[ToggleEventIdModes:true]
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:Aaw-Event-GCMartialLaw-Activate]
+	
       </Description>
       
     </EntityComponent>	
@@ -299,6 +320,13 @@ Bool GCAgarisDefeated
 		[ChangeCounters:true]
 		[SetCounters:GCAgarisMode]
 		[SetCountersAmount:3]
+		
+	[ToggleEvents:true]
+	[ToggleEventIds:Aaw-Event-GCMartialLaw-Disable]
+	[ToggleEventIdModes:true]
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:Aaw-Event-GCMartialLaw-Disable]	
       </Description>
       
     </EntityComponent>	
@@ -382,6 +410,13 @@ Bool GCAgarisDefeated
 		[ChangeCounters:true]
 		[SetCounters:GCAgarisMode]
 		[SetCountersAmount:4]
+		
+	[ToggleEvents:true]
+	[ToggleEventIds:Aaw-Event-GCMartialLaw-Disable]
+	[ToggleEventIdModes:true]
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:Aaw-Event-GCMartialLaw-Disable]		
       </Description>
       
     </EntityComponent>	
@@ -440,7 +475,14 @@ Bool GCAgarisDefeated
 		
 		[ChangeBooleans:true]
 		[SetBooleansTrue:GCAgarisDefeated]
-
+		
+		
+	[ToggleEvents:true]
+	[ToggleEventIds:Aaw-Event-GCMartialLaw-Disable]
+	[ToggleEventIdModes:true]
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:Aaw-Event-GCMartialLaw-Disable]	
       </Description>
       
     </EntityComponent>	

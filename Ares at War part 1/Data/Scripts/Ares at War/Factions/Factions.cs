@@ -91,17 +91,22 @@ namespace AresAtWar.Factions
                 this.TotalProduction = placeholderint_Production;
 
                 int Strength_Counter; 
-                MyAPIGateway.Utilities.GetVariable<int>(Aggression_CounterName, out Strength_Counter);
+                MyAPIGateway.Utilities.GetVariable<int>(Strength_CounterName, out Strength_Counter);
 
 
-                if (Strength_Cap-Strength_Counter < 15)
+                if (Strength_Counter > 50)
                     MyAPIGateway.Utilities.SetVariable<bool>(this.Tag + "ReadyForExpansion", true);
                 else
                     MyAPIGateway.Utilities.SetVariable<bool>(this.Tag + "ReadyForExpansion", false);
 
             }
 
-
+            public int GetStrength()
+            {
+                int FACplaceholderForStoredVariable = 0;
+                MyAPIGateway.Utilities.GetVariable<int>(this.Strength_CounterName, out FACplaceholderForStoredVariable);
+                return FACplaceholderForStoredVariable;
+            }
             public void StrengthCalculator()
             {
                 //Aggression Counter

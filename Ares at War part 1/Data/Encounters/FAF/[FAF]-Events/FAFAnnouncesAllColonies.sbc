@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!--
+-->
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>Aaw-Event-FAFAllColoniesSpeech</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		
+		[UniqueEvent:false]	
+		[MinCooldownMs:90000]
+		[MaxCooldownMs:90001]	
+
+		[ConditionIds:AaW-EventCondition-FAFAllColoniesSpeech]
+		
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+
+
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-FAFAllColoniesSpeech]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-FAFAllColoniesSpeech</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+	
+	  [CheckTrueBooleans:true]
+      [TrueBooleans:FAFSunsetCity]
+      [TrueBooleans:FAFCarcosa]
+      [TrueBooleans:FAFAzuris]	 
+	
+
+	  [CheckFalseBooleans:true]	
+	 [FalseBooleans:GCAgarisDefeated]
+	  	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAllColoniesSpeech</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-FAFAllColoniesSpeech]	
+
+
+	[ToggleEvents:true]
+	[ToggleEventIds:Aaw-Event-FAFAllColoniesSpeech]
+	[ToggleEventIdModes:false]
+	
+
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-FAFAllColoniesSpeech</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Green]
+      [Author:FAF Command]
+        
+      [ChatMessages:Citizens of Agaris, Liberation of the colonies has been achieved, but our fight continues. Stay united, stay vigilant. Together, we will secure a brighter future. Onward, brave rebels!]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>	
+
+	
+
+
+
+
+
+
+
+
+
+  </EntityComponents>
+</Definitions>

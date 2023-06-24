@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!--
+Aaw-Event-GCMartialLaw-Activate
+
+Aaw-Event-GCMartialLaw-Disable
+-->
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>Aaw-Event-GCMartialLaw-Activate</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		
+		[UniqueEvent:false]	
+		[MinCooldownMs:180001]
+		[MaxCooldownMs:180001]	
+
+		[ConditionIds:AaW-EventCondition-GCMartialLaw-Activate]
+		
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+
+
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-GCMartialLaw-Activate]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCMartialLaw-Activate</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+	
+	[CheckFalseBooleans:true]
+	[FalseBooleans:GCAgarisMartialLaw]  
+	  	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCMartialLaw-Activate</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+
+
+	[ChangeBooleans:true] 
+	[SetBooleansTrue:GCAgarisMartialLaw] 	
+	
+	
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-GCMartialLaw-Activate]	
+
+
+	[ToggleEvents:true]
+	[ToggleEventIds:Aaw-Event-GCMartialLaw-Activate]
+	[ToggleEventIdModes:false]
+	
+
+	[ToggleEventIds:Aaw-Event-GCMartialLaw-Disable]
+	[ToggleEventIdModes:false]
+	
+	
+	
+	
+	
+	
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-GCMartialLaw-Activate</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Red]
+      [Author:GC Command]
+        
+      [ChatMessages:In response to emerging threats, Martial Law is now in effect for Agaris. We reassure you that measures are being taken to address the situation effectively. We ask for your support and unity as we work together to overcome these challenges.]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>	
+
+	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>Aaw-Event-GCMartialLaw-Disable</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		
+		[UniqueEvent:false]	
+		[MinCooldownMs:180000]
+		[MaxCooldownMs:180001]	
+
+		[ConditionIds:AaW-EventCondition-GCMartialLaw-Disable]
+		
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+
+
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-GCMartialLaw-Disable]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCMartialLaw-Disable</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+	[CheckTrueBooleans:true]
+	[TrueBooleans:GCAgarisMartialLaw]  
+	  	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCMartialLaw-Disable</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+
+
+	[ChangeBooleans:true] 
+	[SetBooleansFalse:GCAgarisMartialLaw] 	
+	
+	
+	[ToggleEvents:true]
+
+	[ToggleEventIds:Aaw-Event-GCMartialLaw-Disable]
+	[ToggleEventIdModes:false]	
+	
+	[ToggleEventIds:Aaw-Event-GCMartialLaw-Activate]
+	[ToggleEventIdModes:false]	
+	
+	
+	
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-GCMartialLaw-Disable]		
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-GCMartialLaw-Disable</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Blue]
+      [Author:Ares News Station]
+        
+      [ChatMessages:GC Martial Law is no longer in effect for Agaris.]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </EntityComponents>
+</Definitions>

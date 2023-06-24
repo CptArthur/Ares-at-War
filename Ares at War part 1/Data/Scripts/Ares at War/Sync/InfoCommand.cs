@@ -29,13 +29,18 @@ namespace AresAtWar.Command
 
                 int Strength_Counter;
                 MyAPIGateway.Utilities.GetVariable<int>(AllFactionList[i].Strength_CounterName, out Strength_Counter);
+                bool ReadyForExpansion;
+                MyAPIGateway.Utilities.GetVariable<bool>(AllFactionList[i].Tag + "ReadyForExpansion",out ReadyForExpansion);
+
 
                 text.Append("").AppendLine();
                 text.Append("::: Faction: ").Append(AllFactionList[i].Tag.ToString()).Append(" :::").AppendLine();
                 text.Append(" - Active:              ").Append(AllFactionList[i].IsFactionActive().ToString()).AppendLine();
-                text.Append(" - TotalProduction:     ").Append(AllFactionList[i].TotalProduction.ToString()).AppendLine();
+                text.Append(" - Strength:            ").Append(Strength_Counter).AppendLine();
                 text.Append(" - Strength_Cap:        ").Append(AllFactionList[i].Strength_Cap.ToString()).AppendLine();
-                text.Append(" - Strength_Counter:    ").Append(Strength_Counter).AppendLine();
+                text.Append(" - TotalProduction:     ").Append(AllFactionList[i].TotalProduction.ToString()).AppendLine();
+                text.Append(" - ReadyForExpansion:   ").Append(ReadyForExpansion).AppendLine();
+
                 text.Append("::: Modes :::").AppendLine();
                 for (int j = 0; j < AllFactionList[i].Modes.Count; j++)
                 {

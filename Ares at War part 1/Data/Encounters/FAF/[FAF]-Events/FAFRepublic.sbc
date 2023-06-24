@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!--
+Aaw-Event-FAFRepublicSpeech
+
+Aaw-Event-GCMartialLaw-Disable
+-->
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>Aaw-Event-FAFRepublicSpeech</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		
+		[UniqueEvent:false]	
+		[MinCooldownMs:180000]
+		[MaxCooldownMs:180001]	
+
+		[ConditionIds:AaW-EventCondition-FAFRepublicSpeech]
+		
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+
+
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-FAFRepublicSpeech]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-FAFRepublicSpeech</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	
+	  [CheckTrueBooleans:true]
+      [TrueBooleans:FAFSunsetCity]
+      [TrueBooleans:FAFCarcosa]
+      [TrueBooleans:FAFAzuris]	 
+      [TrueBooleans:GCAgarisDefeated]	 	
+
+
+	  	  
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFRepublicSpeech</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+
+	
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-FAFRepublicSpeech]	
+
+
+	
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-FAFRepublicSpeech</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Green]
+      [Author:FAF Command]
+        
+      [ChatMessages:Victory, Agaris! The GC's reign is over, our freedom restored. Today marks a new beginning. With the defeat of the GC, we embrace the birth of the Free Agaris Republic. Together, we'll build a future of liberty and justice. Onward, united Agaris!]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </EntityComponents>
+</Definitions>

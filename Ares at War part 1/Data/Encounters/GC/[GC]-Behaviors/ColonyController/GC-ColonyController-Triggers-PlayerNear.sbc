@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC-Condition-GCAgarisMartialLaw</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+		[UseConditions:true]
+
+		[CheckTrueSandboxBooleans:true]
+		[TrueSandboxBooleans:GCAgarisMartialLaw]
+
+
+      </Description>
+
+    </EntityComponent>
+	
+	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-ColonyController-Triggers-MartialLawPlayerNear1000-Neutral-Unwanted</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:1500]
+	[MinCooldownMs:450000]
+	[MaxCooldownMs:600000]
+	[Conditions:FAC-Context-Condition-NormalNeutral]
+	[Conditions:GC-Condition-GCAgarisMartialLaw]
+
+	  [Actions:GC-ColonyController-Action-MartialLawPlayerNear1000-Neutral-Unwanted]	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-ColonyController-Triggers-MartialLawPlayerNear1000-Neutral-Unwanted-ReputationLoss</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:1500]
+	[MinCooldownMs:2000]
+	[MaxCooldownMs:2001]
+	[Conditions:FAC-Context-Condition-NormalNeutral]
+	[Conditions:GC-Condition-GCAgarisMartialLaw]
+		
+		
+	[Actions:GC-ColonyController-Action-MartialLawPlayerNear1000-Neutral-Unwanted-ReputationLoss]	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-ColonyController-Action-MartialLawPlayerNear1000-Neutral-Unwanted</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+      [UseChatBroadcast:true]
+      [ChatData:GC-ColonyController-Chat-MartialLawPlayerNear1000-Neutral-Unwanted]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-ColonyController-Action-MartialLawPlayerNear1000-Neutral-Unwanted-ReputationLoss</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+      
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:2800]
+	[ReputationChangeFactions:{Self}]
+	[ReputationChangeAmount:-10]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+      </Description>
+      
+    </EntityComponent>	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-ColonyController-Chat-MartialLawPlayerNear1000-Neutral-Unwanted</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Red]
+      
+      [ChatMessages:This is a restricted zone under martial law. Unauthorized individuals are prohibited from entering. Vacate the area immediately to avoid further action.]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+
+      </Description>
+      
+    </EntityComponent>
+	
+
+  </EntityComponents>
+</Definitions>

@@ -5,13 +5,12 @@
 	<!--
 [Triggers:COL-Carcosa-Triggers-EnableGreetings]
 
-[Triggers:COL-Carcosa-Triggers-Greeting]
+[Triggers:COL-Carcosa-Triggers-Greeting-FAF]
 [Triggers:COL-Carcosa-Triggers-PlayerFar]
 
 
 	-->
-	
-	
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -71,7 +70,7 @@
       [RivalAI Action]
         
 	[EnableTriggers:true]
-	[EnableTriggerNames:COL-Carcosa-Triggers-Greeting]
+	[EnableTriggerNames:COL-Carcosa-Triggers-Greeting-FAF]
 	
 	
 	[EnableTriggerNames:COL-Carcosa-Triggers-PlayerFar]
@@ -91,7 +90,7 @@
 
 	[RivalAI Action]
 	[DisableTriggers:true]
-	[DisableTriggerNames:COL-Carcosa-Triggers-Greeting]
+	[DisableTriggerNames:COL-Carcosa-Triggers-Greeting-FAF]
 
 
 	[DisableTriggerNames:COL-Carcosa-Triggers-PlayerFar]
@@ -105,7 +104,7 @@
 	
 <!-- Carcosa
 
-COL-Carcosa-Triggers-Greeting
+COL-Carcosa-Triggers-GreetingFAF
 
 
 
@@ -119,19 +118,21 @@ COL-Carcosa-Triggers-PlayerFar
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>COL-Carcosa-Triggers-Greeting</SubtypeId>
+          <SubtypeId>COL-Carcosa-Triggers-Greeting-FAF</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI Trigger]
 	[Type:PlayerNear]
 	[TargetDistance:2000]
+	[Conditions:COL-Condition-FAF]	
+	
 	[UsePlayerFilterProfile:true]
 	[PlayerFilterProfileIds:PlayerFilterProfile-ExcludedPlayerNear]
 	[UseTrigger:true]
 	[StartsReady:true]
 	  
-	[Actions:COL-Carcosa-Action-Greeting]	  
+	[Actions:COL-Carcosa-Action-Greeting-FAF]	  
       </Description>
       
     </EntityComponent>
@@ -139,7 +140,7 @@ COL-Carcosa-Triggers-PlayerFar
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>COL-Carcosa-Action-Greeting</SubtypeId>
+          <SubtypeId>COL-Carcosa-Action-Greeting-FAF</SubtypeId>
       </Id>
       <Description>
 
@@ -169,7 +170,7 @@ COL-Carcosa-Triggers-PlayerFar
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>COL-Carcosa-Chat-Greeting</SubtypeId>
+          <SubtypeId>COL-Carcosa-Chat-Greeting-FAF</SubtypeId>
       </Id>
 	  
       <Description>

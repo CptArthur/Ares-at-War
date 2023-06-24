@@ -196,7 +196,11 @@ AaW2-Event-SetFAFDestroyed
       [TrueBooleans:FAFCarcosa]
       [TrueBooleans:FAFAzuris]	 
 	 
-	 
+	  [CheckFalseBooleans:true]
+	  [AllowAnyFalseBoolean:true]
+      [FalseBooleans:FAFSunsetCity]
+      [FalseBooleans:FAFCarcosa]
+      [FalseBooleans:FAFAzuris]		 
       </Description>
       
     </EntityComponent>	
@@ -260,6 +264,14 @@ AaW2-Event-SetFAFDestroyed
 
 	  [CheckFalseBooleans:true]	
 	 [FalseBooleans:GCAgarisDefeated]
+	 
+	 
+ 
+	 
+	 
+	 
+	 
+	 
       </Description>
       
     </EntityComponent>	
@@ -276,6 +288,15 @@ AaW2-Event-SetFAFDestroyed
 		[SetCounters:FAFMode]
 		[SetCountersAmount:3]		
 
+
+	[ToggleEvents:true]
+	[ToggleEventIds:Aaw-Event-FAFAllColoniesSpeech]
+	[ToggleEventIdModes:true]
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:Aaw-Event-FAFAllColoniesSpeech]		
+	
+	
       </Description>
       
     </EntityComponent>	
@@ -338,6 +359,13 @@ AaW2-Event-SetFAFDestroyed
 		[SetCounters:FAFMode]
 		[SetCountersAmount:4]		
 
+
+	[ToggleEvents:true]
+	[ToggleEventIds:Aaw-Event-FAFRepublicSpeech]
+	[ToggleEventIdModes:true]
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:Aaw-Event-FAFRepublicSpeech]		
       </Description>
       
     </EntityComponent>	

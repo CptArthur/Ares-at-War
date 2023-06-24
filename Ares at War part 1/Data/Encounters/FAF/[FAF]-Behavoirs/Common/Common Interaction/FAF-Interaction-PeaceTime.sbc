@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!--
+[Triggers:FAF-Interaction-Trigger-Recruitment]
+[Triggers:FAF-Interaction-Trigger-MartialLawAgaris-Neutral]
+
+
+-->
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-PlayerFilterProfile-Recruitment</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Filter]
+	
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:GC]
+	[MinPlayerReputation:-499]
+	[MaxPlayerReputation:499]
+
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:-499]
+	[MaxPlayerReputation:499]
+      </Description>
+      
+    </EntityComponent>		
+	
+
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Interaction-Trigger-Recruitment</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	
+	[UsePlayerFilterProfile:true]
+	[PlayerFilterProfileIds:FAF-PlayerFilterProfile-Recruitment]	
+
+	[StartsReady:false]
+	[TargetDistance:6000]
+	[MinCooldownMs:30000]
+	[MaxCooldownMs:42000]
+	[Conditions:FAC-Context-Condition-NormalNeutral]
+	[Conditions:FAF-Interaction-Condition-Recruitment]
+
+	[MaxActions:1]
+
+	[Actions:FAF-Interaction-Action-Recruitment]	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Interaction-Condition-Recruitment</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+      
+	  [CheckCustomSandboxCounters:true]
+	  
+	  [CustomSandboxCounters:FAFAgarisMode]
+	  [CustomSandboxCountersTargets:2]
+	  [SandboxCounterCompareTypes:LessOrEqual]
+	  
+	  
+	[UsePlayerFilterProfile:true]
+	[PlayerFilterProfileIds:PlayerFilterProfile-IncludedPlayerNear]	  
+	  
+	  
+	  
+	  
+	  
+      </Description>
+      
+    </EntityComponent>
+
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Interaction-Action-Recruitment</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+    
+      [UseChatBroadcast:true]
+      [ChatData:FAF-Interaction-Chat-Recruitment]
+      </Description>
+      
+    </EntityComponent>
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-Interaction-Chat-Recruitment</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [MaxChats:-1]
+        [StartsReady:true]
+		
+		[MinTime:3600]
+		[MaxTime:3601]
+
+        [BroadcastRandomly:true]
+        [Author:{AntennaName}]
+        [Color:White]
+
+
+	  [ChatMessages:{PlayerName}, the time for neutrality is over. Agaris needs your active involvement. Embrace the cause of the Free Agaris Forces, fight the GC, and together we will reclaim our Planet. For Agaris!!]
+	  [ChatAudio:ArcHudGPSNotification2]
+	  [BroadcastChatType:Chat]
+
+
+	  [ChatMessages:{PlayerName}, what are you waiting for? Fight the GC. For Agaris!!]
+	  [ChatAudio:ArcHudGPSNotification2]
+	  [BroadcastChatType:Chat]
+
+
+
+      </Description>
+    </EntityComponent>	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+  </EntityComponents>
+</Definitions>
