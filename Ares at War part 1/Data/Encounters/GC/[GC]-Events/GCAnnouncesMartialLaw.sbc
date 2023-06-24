@@ -2,10 +2,121 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 <!--
+
+
+
 Aaw-Event-GCMartialLaw-Activate
 
 Aaw-Event-GCMartialLaw-Disable
 -->
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-GCMartialLaw-GCLostBase</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+
+		[ConditionIds:AaW-EventCondition-GCLostBase]
+		[ConditionIds:AaW-EventCondition-GCLostBase1]		
+		
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-GCLostBase]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCLostBase</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+
+	[CheckTrueBooleans:true]
+	[AllowAnyTrueBoolean:true]	 	
+	[TrueBooleans:GC-HQDestroyed]
+	[TrueBooleans:GC-AgarisMarsaBaseDestroyed]		  
+	[TrueBooleans:GC-AgarisMidWayBaseDestroyed]  
+
+	[CheckFalseBooleans:true]
+	[FalseBooleans:GCAgarisMartialLaw] 	  
+  
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCLostBase1</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+
+	[CheckTrueBooleans:true]
+	[TrueBooleans:GCSunsetCity]	
+	[TrueBooleans:GCCarcosa]		  
+	[TrueBooleans:GCAzuris]  	  
+	  
+      </Description>
+      
+    </EntityComponent>		
+	
+			
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCLostBase</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+
+
+		[ToggleEvents:true]
+	[ToggleEventIds:Aaw-Event-GCMartialLaw-Activate]
+	[ToggleEventIdModes:true]
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:Aaw-Event-GCMartialLaw-Activate]
+	
+	
+	
+	
+	
+	
+	
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
 	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
