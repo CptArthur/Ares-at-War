@@ -18,10 +18,14 @@ namespace AresAtWar.Command
     {
         public static StringBuilder SendAllInfo(StringBuilder text, List<AaWFactions.FactionData>  AllFactionList)
         {
+            bool StoryEvents = false;
+
+            MyAPIGateway.Utilities.GetVariable<bool>("AaWEventsEnabled", out StoryEvents);
+
             text.Append("Ares at War").AppendLine();
-            text.Append($"ModVersion: {AaWSession.ModVersion}");
-
-
+            text.Append($"ModVersion: {AaWSession.ModVersion}").AppendLine();
+            text.Append($"StoryEvents Enabled: {StoryEvents}");
+           
 
             //Holdings check 
             for (int i = 0; i < AllFactionList.Count; i++)

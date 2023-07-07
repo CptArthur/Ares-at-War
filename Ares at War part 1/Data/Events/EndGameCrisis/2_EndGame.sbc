@@ -6,24 +6,20 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-Event-PURGE-StartEndGame</SubtypeId>
+          <SubtypeId>AaW-Event-Purge-StartEndGame</SubtypeId>
       </Id>
       <Description>
 
 		[MES Event]
+		[UseEvent:false]
+		[Tags:AaW-StoryEvent]		
 		[UniqueEvent:true]
+		[MinCooldownMs:14400000]
+		[MaxCooldownMs:28800000]				
+		[ConditionIds:AaW-EventCondition-Purge-StartEndGame]
+		[ActionExecution:All]
 		
-		[MinCooldownMs:10800000]
-		[MaxCooldownMs:10800001]
-		
-		[ConditionIds:AaW-EventCondition-PURGE-StartEndGame]
-
-
-		[ActionExecution:Sequential]
-		[TimeUntilNextActionMs:5000]
-		
-		[ActionIds:AaW-EventAction-PURGE-StartEndGame]
-	
+		[ActionIds:AaW-EventAction-Purge-StartEndGame]
       </Description>
 	</EntityComponent>	
      
@@ -31,39 +27,397 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventCondition-PURGE-StartEndGame</SubtypeId>
+          <SubtypeId>AaW-EventCondition-Purge-StartEndGame</SubtypeId>
       </Id>
       <Description>
 
 	[MES Event Condition]
 	[CheckTrueBooleans:true]
-	[TrueBooleans:PURGEBlitz]	  
+	[TrueBooleans:PurgeActive]	  
+      </Description>
+  
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-StartEndGame</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownTags:PurgeEndGame]
+		
+		[ChangeBooleans:true]
+		[SetBooleansTrue:PurgeEndGame]
+
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-CreateGPS]
+		[CustomActionArgumentsString:Battle for the Ares System]
+		[CustomActionArgumentsString:PURGE will destroy the Ares System]
+		[CustomActionArgumentsInt:240]		
+		[CustomActionArgumentsVector3D:{X:-103.97 Y:-297.29 Z:2578246.63}]		
+
+		[DebugHudMessage:StartEndGame]
+
+
+      </Description>
+      
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-Purge-CancelEndGame</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]	
+		[UniqueEvent:true]			
+		[ActionExecution:All]
+		
+		[ActionIds:AaW-EventAction-Purge-CancelEndGame]
+      </Description>
+	</EntityComponent>	
+     
+	 
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-CancelEndGame</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-RemoveGPS]
+		[CustomActionArgumentsString:Battle for the Ares System]
+
+		[DebugHudMessage:CancelEndGame]
+
+
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+	
+<!-- The END-->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-Purge-EndGame</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	[CheckTrueBooleans:true]
+	[TrueBooleans:PurgeEndGame]	  
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-Purge-FireSuperWeapon-1</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		[Tags:PurgeEndGame]
+		[MinCooldownMs:14400000]
+		[MaxCooldownMs:14400001]
+		[ConditionIds:AaW-EventCondition-Purge-EndGame]
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:1500]
+		[ActionIds:AaW-EventAction-Purge-FireSuperWeapon-Announce]
+		[ActionIds:AaW-EventAction-Purge-FireSuperWeapon-2]
+		[ActionIds:AaW-EventAction-Purge-FireSuperWeapon-1]	
+		[ActionIds:AaW-EventAction-Purge-FireSuperWeapon]
+		[ActionIds:AaW-EventAction-Purge-FireSuperWeaponChat]
+      </Description>
+	</EntityComponent>	
+ 
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-FireSuperWeapon-Announce</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+	
+		[UseChatBroadcast:true]
+		[ChatData:AaW-EventChat-Purge-FireSuperWeapon-Announce]
+	
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-Purge-FireSuperWeapon-Announce</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Red]
+      [Author:Purge]
+        
+      [ChatMessages:Firing Superweapon in 3]
+      [BroadcastChatType:Chat]
+      [ChatAudio:laser-of-doom]  
+   	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-FireSuperWeapon-2</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+	
+		[UseChatBroadcast:true]
+		[ChatData:AaW-EventChat-Purge-FireSuperWeapon-2]
+
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-Purge-FireSuperWeapon-2</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Red]
+      [Author:Purge]
+        
+      [ChatMessages:2]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+   	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-FireSuperWeapon-1</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+	
+		[UseChatBroadcast:true]
+		[ChatData:AaW-EventChat-Purge-FireSuperWeapon-1]
+
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-Purge-FireSuperWeapon-1</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Red]
+      [Author:Purge]
+        
+      [ChatMessages:1]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+   	  
       </Description>
       
     </EntityComponent>	
 
 
 
+
+ 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventAction-PURGE-StartEndGame</SubtypeId>
+          <SubtypeId>AaW-EventAction-Purge-FireSuperWeapon</SubtypeId>
       </Id>
       <Description>
 
 		[MES Event Action]
-
-
+	
+		[ActivateCustomAction:true]
+		[CustomActionName:FireSuperWeapon]
+		[ToggleEvents:true]
+		[ToggleEventIds:AaW-Event-Purge-DestroyTheSystem]
+		[ToggleEventIdModes:true]
+		
 		[ResetCooldownTimeOfEvents:true]
-		[ResetEventCooldownTags:PURGEEndGame]
-		[ResetEventCooldownIds:]
+		[ResetEventCooldownIds:AaW-Event-Purge-DestroyTheSystem]
 		
-		
-		[ChangeBooleans:true]
-		[SetBooleansTrue:PURGEEndGame]
       </Description>
       
     </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-FireSuperWeaponChat</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+	
+		[UseChatBroadcast:true]
+		[ChatData:AaW-EventChat-Purge-FireSuperWeaponChat]
+	
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-Purge-FireSuperWeaponChat</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Red]
+      [Author:Purge]
+        
+      [ChatMessages:Massive subspace distortion detected!]
+      [BroadcastChatType:Notify]
+      [ChatAudio:]  
+   	  
+      </Description>
+      
+    </EntityComponent>		
+
+
+
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-Purge-DestroyTheSystem</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:8000]
+		[MaxCooldownMs:8001]
+
+		
+		[ConditionIds:AaW-EventCondition-Purge-EndGame]
+
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:3000]
+		
+		[ActionIds:AaW-EventAction-Purge-DestroyTheSystem]
+      </Description>
+	</EntityComponent>	 
+	
+	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-DestroyTheSystem</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+	
+		[ActivateCustomAction:true]
+		[CustomActionName:DestroyTheSystem]
+
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
 	
 
 

@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!-- 
+[Triggers:COL-DefenseSystem-Trigger-ReceivedSOS]
+[Triggers:COL-DefenseSystem-Trigger-SOS-Chat]
+[Triggers:COL-DefenseSystem-Trigger-SOS]
+ -->
+
+
+
+
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-DefenseSystem-Trigger-SOS-Chat</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Timer]
+	[UseTrigger:true]
+	[StartsReady:true]		
+
+	[MinCooldownMs:600000]
+	[MaxCooldownMs:600001]
+	[Conditions:FAC-Context-Condition-SettingBattle]
+	[MaxActions:-1]
+	[Actions:COL-DefenseSystem-Action-SOS-Chat]
+	
+      </Description>
+      
+    </EntityComponent>  
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-DefenseSystem-Action-SOS-Chat</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	
+	[UseChatBroadcast:true]
+	[ChatData:COL-DefenseSystem-Chat-SOS]
+
+      </Description>
+      
+    </EntityComponent>  	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-DefenseSystem-Chat-SOS</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+	[MinTime:4]
+	[MaxTime:5]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Red]
+      
+      [ChatMessages:This is {AntennaName}, we require inmediate assistance!]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>  
+    	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-DefenseSystem-Trigger-SOS</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Timer]
+	[UseTrigger:true]
+	[StartsReady:true]		
+
+
+	[MinCooldownMs:9000]
+	[MaxCooldownMs:9001]
+	[Conditions:FAC-Context-Condition-SettingBattle]
+	[MaxActions:-1]
+	[Actions:COL-DefenseSystem-Action-SOS]
+	
+      </Description>
+      
+    </EntityComponent>  
+
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-DefenseSystem-Action-SOS</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+		
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:COL-DefenseSystem-Command-SOS]
+
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:COL-DefenseSystem-Command-SOS]
+
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:FAF-DefenseSystem-Command-SOS]
+	
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:AHE-DefenseSystem-Command-SOS]	
+
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:ITC-DefenseSystem-Command-SOS]
+      </Description>
+      
+    </EntityComponent>    
+  
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-DefenseSystem-Command-SOS</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Command]
+      
+	[CommandCode:COL-SOS]
+	[MatchSenderReceiverOwners:true]
+	[SendTargetEntityId:true]
+
+	[CommandDelayTicks:180]
+
+      </Description>
+      
+    </EntityComponent>  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-DefenseSystem-Trigger-ReceivedSOS</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+		[UseTrigger:true]
+		[StartsReady:true]		
+		
+	[Type:CommandReceived]
+	
+	[MinCooldownMs:600000]
+	[MaxCooldownMs:600001]
+	
+	[Conditions:FAC-Context-Condition-SettingNormalOrHighAlert]
+	[CommandReceiveCode:COL-SOS]
+
+	[MaxActions:-1]
+	[ActionExecution:All]
+
+  [Actions:FAC-Context-Action-InitHighAlert]
+	
+      </Description>
+      
+    </EntityComponent> 
+  
+
+
+
+
+
+
+
+
+  </EntityComponents>
+</Definitions>

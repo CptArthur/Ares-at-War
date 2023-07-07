@@ -6,13 +6,23 @@ using System.Text;
 using AresAtWar.Command;
 using AresAtWar.Init;
 
-namespace SimpleSyncManager
+namespace AaWSyncManager
 {
 	public static class ChatManager
 	{
 
 		public static void MessageEnteredDel(string messageText, ref bool sendToOthers)
 		{
+
+			var thisPlayer = MyAPIGateway.Session.LocalHumanPlayer;
+
+			if (MyAPIGateway.Session.LocalHumanPlayer == null)
+			{
+				return;
+			}
+
+
+
 
 			if (!messageText.StartsWith("/AaW."))
 				return;
@@ -28,36 +38,44 @@ namespace SimpleSyncManager
 
 		public static void ServerChatProcessing(SyncContainer container, ulong sender)
 		{
-
-			var hasinfo = false;
+			var sendinfoback = false;
+			var commandfound = false;
 			var msg = MyAPIGateway.Utilities.SerializeFromBinary<string>(container.Data);
 			var sb = new StringBuilder();
 
+
+			var identity = MyAPIGateway.Players.TryGetIdentityId(sender);
 
 			if (msg == null)
 				return;
 
 			if (msg.EndsWith(".Info", StringComparison.OrdinalIgnoreCase))
 			{
-				hasinfo = true;
+				commandfound = true;
 				sb = AaWCommand.SendAllInfo(sb, AaWMain.listOfFactions);
-
+				sendinfoback = true;
 			}
 
 			if (msg.EndsWith(".Item", StringComparison.OrdinalIgnoreCase))
 			{
-				hasinfo = true;
+				commandfound = true;
 				sb = AaWCommand.GetItemStuff();
-
+				sendinfoback = true;
 			}
 
+			if (msg.EndsWith(".EnableStoryEvents", StringComparison.OrdinalIgnoreCase))
+			{
+				commandfound = true;
+				MyVisualScriptLogicProvider.ShowNotification("Enabling Story Events", 5000, "Green", identity);
+				MyAPIGateway.Utilities.SetVariable<bool>("AaWStoryEvents", true);
+			}
 
-
-
-
-
-
-
+			if (msg.EndsWith(".DisableStoryEvents", StringComparison.OrdinalIgnoreCase))
+			{
+				commandfound = true;
+				MyVisualScriptLogicProvider.ShowNotification("Disabling Story Events", 5000, "Red", identity);
+				MyAPIGateway.Utilities.SetVariable<bool>("AaWStoryEvents", false);
+			}
 
 
 			if (sb.ToString() == null)
@@ -65,24 +83,28 @@ namespace SimpleSyncManager
 
 
 
-			var identity = MyAPIGateway.Players.TryGetIdentityId(sender);
-
-			if (!hasinfo)
+			if (!commandfound)
             {
 				MyVisualScriptLogicProvider.ShowNotification("AaW Command not found", 4000, "White", identity);
 				return;
 			}
+
+
+			if (sendinfoback)
+			{
+				var newContainer = new SyncContainer();
+				newContainer.Mode = SyncMode.Clipboard;
+				newContainer.Data = MyAPIGateway.Utilities.SerializeToBinary<string>(sb.ToString());
+				newContainer.Sender = "AaW";
+
+				if (identity > 0)
+					MyVisualScriptLogicProvider.ShowNotification("Data Sent To Clipboard", 4000, "White", identity);
+				SyncManager.SendNetworkData(newContainer, sender);
+			}
+
+
 				
-			var newContainer = new SyncContainer();
-			newContainer.Mode = SyncMode.Clipboard;
-			newContainer.Data = MyAPIGateway.Utilities.SerializeToBinary<string>(sb.ToString());
-			newContainer.Sender = "AaW";
 
-
-
-			if (identity > 0)
-				MyVisualScriptLogicProvider.ShowNotification("Data Sent To Clipboard", 4000, "White", identity);
-			SyncManager.SendNetworkData(newContainer, sender);
 
 		} 
 

@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!--
+Aaw-Event-EventManager-Activate
+Aaw-Event-EventManager-Disable
+-->
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-EventManager-AaWWorldStartUp</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:false]
+		[MinCooldownMs:5000]
+		[MaxCooldownMs:5001]	
+		[ConditionIds:AaW-EventCondition-AaWWorldStartUp]
+		
+		[ActionExecution:All]
+		[ActionIds:AaW-EventAction-AaWWorldStartUp]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-AaWWorldStartUp</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+
+	[CheckTrueBooleans:true] 	
+	[TrueBooleans:AaWStoryEvents]  
+
+
+	[CheckFalseBooleans:true] 	
+	[FalseBooleans:AaWWorldStartUp]
+  
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-AaWWorldStartUp</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+
+	[ChangeBooleans:true]
+	[SetBooleansFalse:AaWEventsEnabled]
+	[SetBooleansTrue:AaWWorldStartUp]
+	[ToggleEvents:true]
+	[ToggleEventTags:AaW-StoryEvent]
+	[ToggleEventTagModes:false]
+
+
+	[ToggleEventIds:Aaw-Event-EventManager-Disable]
+	[ToggleEventIdModes:true]
+	
+	[ToggleEventIds:AaW-Event-EventManager-ActivateListener]
+	[ToggleEventIdModes:false]
+	
+	
+	[ToggleEventIds:Aaw-Event-EventManager-Activate]
+	[ToggleEventIdModes:true]	
+
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:Aaw-Event-EventManager-Activate]
+
+
+      </Description>
+      
+    </EntityComponent>		
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-EventManager-ActivateListener</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		
+		[UniqueEvent:false]
+		[MinCooldownMs:5000]
+		[MaxCooldownMs:5001]	
+		[ConditionIds:AaW-EventCondition-ActivateListener]
+		
+		[ActionExecution:All]
+		[ActionIds:AaW-EventAction-ActivateListener]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-ActivateListener</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+
+	[CheckTrueBooleans:true] 	
+	[TrueBooleans:AaWStoryEvents]  
+	[TrueBooleans:AaWWorldStartUp]
+  
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-ActivateListener</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+
+
+	[ToggleEvents:true]
+	[ToggleEventTags:AaW-StoryEvent]
+	[ToggleEventTagModes:false]
+
+
+	[ToggleEventIds:AaW-Event-EventManager-ActivateListener]
+	[ToggleEventIdModes:false]
+
+
+	[ToggleEventIds:Aaw-Event-EventManager-Disable]
+	[ToggleEventIdModes:true]
+		
+
+	[ToggleEventIds:Aaw-Event-EventManager-Activate]
+	[ToggleEventIdModes:true]
+		
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:Aaw-Event-EventManager-Activate]
+
+
+      </Description>
+      
+    </EntityComponent>			
+	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>Aaw-Event-EventManager-Activate</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		
+		[UniqueEvent:false]	
+		[MinCooldownMs:180000]
+		[MaxCooldownMs:1500001]	
+		
+		[ConditionIds:AaW-EventCondition-EventManager-Activate]
+		
+		[ActionIds:AaW-EventAction-EventManager-Activate]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-EventManager-Activate</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+
+		[CheckTrueBooleans:true]
+		[TrueBooleans:AaWStoryEvents]  
+	  	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-EventManager-Activate</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+
+
+	[ChangeBooleans:true]
+	[SetBooleansTrue:AaWEventsEnabled]
+	
+	
+		[ToggleEvents:true]
+		[ToggleEventTags:AaW-StoryEvent]
+		[ToggleEventTagModes:true]
+
+		[ToggleEvents:true]
+		[ToggleEventIds:Aaw-Event-EventManager-Activate]
+		[ToggleEventIdModes:false]
+
+		[ToggleEventIds:Aaw-Event-EventManager-Disable]
+		[ToggleEventIdModes:true]
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>Aaw-Event-EventManager-Disable</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		
+		[UniqueEvent:false]	
+		[MinCooldownMs:180000]
+		[MaxCooldownMs:180001]	
+
+		[ConditionIds:AaW-EventCondition-EventManager-Disable]
+		
+
+		[ActionIds:AaW-EventAction-EventManager-Disable]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-EventManager-Disable</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+
+	[CheckFalseBooleans:true]
+	[FalseBooleans:AaWStoryEvents]  
+	  	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-EventManager-Disable</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]	
+
+		[ToggleEvents:true]
+		[ToggleEventTags:AaW-StoryEvent]
+		[ToggleEventTagModes:false]
+			
+		[ToggleEventIds:Aaw-Event-EventManager-Disable]
+		[ToggleEventIdModes:false]	
+
+		[ToggleEventIds:Aaw-Event-EventManager-Activate]
+		[ToggleEventIdModes:false]	
+
+	[ChangeBooleans:true]
+	[SetBooleansFalse:AaWEventsEnabled]
+
+		[ToggleEventIds:AaW-Event-EventManager-ActivateListener]
+		[ToggleEventIdModes:true]
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </EntityComponents>
+</Definitions>

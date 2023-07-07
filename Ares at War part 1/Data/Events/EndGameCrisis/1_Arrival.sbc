@@ -1,0 +1,410 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+<!-- Ares 
+AaW-Event-Purge-StartBlitz
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-Purge-StartArrival</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		[Tags:AaW-StoryEvent]		
+		[ConditionIds:AaW-EventCondition-Purge-StartArrival]
+	
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000]
+		
+
+		[ActionIds:AaW-EventAction-Purge-StartArrival-Effect]			
+		[ActionIds:AaW-EventAction-Purge-StartArrival]		
+		
+		
+      </Description>
+	</EntityComponent>	
+     
+	 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-Purge-StartArrival</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+		[CheckTrueBooleans:true]
+	  [TrueBooleans:PlayerReadyForPurge]	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-StartArrival-Effect</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+
+		[ActivateCustomAction:true]
+		[CustomActionName:PurgeArrivalEffect]
+		[DebugHudMessage:AaW-EventAction-Purge-StartArrival-Effect]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-StartArrival</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+
+		[ToggleEvents:true]
+		[ToggleEventTags:PurgeArrival]
+		[ToggleEventTagModes:true]	
+
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownTags:PurgeArrival]
+
+		
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-CreateGPS]
+		[CustomActionArgumentsString:Massive subspace distortion]
+		[CustomActionArgumentsString:Oh the humanity!]
+		[CustomActionArgumentsInt:300]		
+		[CustomActionArgumentsVector3D:{X:-1725718.78 Y:1493440.69 Z:-698321.45}]		
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-Purge-ArrivalNews</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]		
+		[Tags:PurgeArrival]		
+		[UniqueEvent:true]
+		
+		[MinCooldownMs:40000]
+		[MaxCooldownMs:40001]				
+		
+
+		[ConditionIds:AaW-EventCondition-Purge-StartArrival]
+
+	
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000]
+
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-Purge-ArrivalNews]		
+      </Description>
+	</EntityComponent>		
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-ArrivalNews</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+
+		[UseChatBroadcast:true]
+		[ChatData:AaW-EventChat-Purge-ArrivalNews]
+		
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-AddNews]
+		[CustomActionArgumentsString:A massive tear in the fabric of space has appeared in our system, acting as some sort of portal. Strange spacecraft are pouring in through this portal. It would appear that we are receiving visitors...]		
+		
+		
+		
+		
+      </Description>
+      
+    </EntityComponent>
+		
+
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-Purge-ArrivalNews</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Blue]
+      [Author:Ares News Station]
+        
+      [ChatMessages:A massive tear in the fabric of space has appeared in our system, acting as some sort of portal. Strange spacecraft are pouring in through this portal. It would appear that we are receiving visitors...]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+   	  
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-Purge-ArrivalAnnouncement</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]		
+		[Tags:PurgeArrival]		
+		[UniqueEvent:true]
+		
+		[MinCooldownMs:120000]
+		[MaxCooldownMs:120001]				
+		
+
+		[ConditionIds:AaW-EventCondition-Purge-StartArrival]
+
+	
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000]
+
+		[ActionIds:AaW-EventAction-Common-IncomingPurgeMessage]
+		[ActionIds:AaW-EventAction-Purge-ArrivalAnnouncement]		
+      </Description>
+	</EntityComponent>		
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-ArrivalAnnouncement</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+
+		[UseChatBroadcast:true]
+		[ChatData:AaW-EventChat-Purge-ArrivalAnnouncement]
+		
+		
+				
+		[ChangeBooleans:true]
+		[SetBooleansTrue:PurgeActive]
+		
+		
+		[ToggleEvents:true]
+		[ToggleEventIds:AaW-Event-Purge-StartEndGame]
+		[ToggleEventIdModes:true]	
+
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownIds:AaW-Event-Purge-StartEndGame]			
+		
+      </Description>
+      
+    </EntityComponent>
+		
+
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-Purge-ArrivalAnnouncement</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Red]
+      [Author:PURGE SIGNAL]
+        
+      [ChatMessages:...st##... stan###... stand by... Confirmation of class-2 Singularity! Purge PROTOCOL NOW IN EFFECT! Unlocking all functions... Alert. YOU WILL SUCCUMB!]
+      [BroadcastChatType:Chat]
+      [ChatAudio:AnF-Defensive]  
+   	  
+      </Description>
+      
+    </EntityComponent>		
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-Purge-ArrivalEnd</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]		
+		[Tags:PurgeArrival]		
+		[UniqueEvent:true]
+		
+		[MinCooldownMs:144000]
+		[MaxCooldownMs:144001]				
+		
+		[ConditionIds:AaW-EventCondition-Purge-StartArrival]
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000]
+
+		[ActionIds:AaW-EventAction-Purge-ArrivalEnd]		
+      </Description>
+	</EntityComponent>		
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-ArrivalEnd</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+
+		[ToggleEvents:true]
+		[ToggleEventTags:PurgeArrival]
+		[ToggleEventTagModes:false]	
+
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-RemoveGPS]
+		[CustomActionArgumentsString:Massive subspace distortion]
+		
+
+		
+		
+      </Description>
+      
+    </EntityComponent>
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Battles at the Arrivals -->
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-PurgeArrival-PlayerNearA</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[Tags:PurgeArrival]
+		
+		[ConditionIds:AaW-EventCondition-PurgeArrival-PlayerNearA]
+		
+		
+		[ActionExecution:All]
+		[ActionIds:AaW-EventAction-PurgeArrival-SpawnA]
+
+      </Description>
+	</EntityComponent>	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-PurgeArrival-PlayerNearA</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+
+
+	[CheckPlayerNear:true]
+	[PlayerNearCoords:{X:1523843.37 Y:-769948.11 Z:-2977922.91}]
+	[PlayerNearDistanceFromCoords:6500]
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-PurgeArrival-SpawnA</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	[ActivateCustomAction:true]
+
+
+
+	[SpawnEncounter:true]
+	[SpawnData:AnF-Spawner-HeavyGarrison]
+	[SpawnFactionTags:PURGE]
+	[SpawnCoords:{X:-1725718.78 Y:1493440.69 Z:-698321.45}]
+	
+
+      </Description>
+      
+    </EntityComponent>		
+	
+
+	
+
+
+
+
+
+	
+  </EntityComponents>
+</Definitions>

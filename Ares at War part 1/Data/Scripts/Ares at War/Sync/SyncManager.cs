@@ -3,10 +3,24 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SimpleSyncManager {
+namespace AaWSyncManager
+{
 	public static class SyncManager {
 
 		public static ushort NetworkId = 42017;
+		public static bool SetupDone = false;
+
+		public static void Setup()
+        {
+			if (SetupDone)
+				return;
+
+			SetupDone = true;
+			MyAPIGateway.Multiplayer.RegisterSecureMessageHandler(NetworkId, ReceivedNetworkData);
+			MyAPIGateway.Utilities.MessageEntered += ChatManager.MessageEnteredDel;
+
+
+		}
 
 		public static void SendNetworkData(SyncContainer container, ulong target = 0, bool sendToServer = false, bool sendToOthers = false) {
 
@@ -39,6 +53,13 @@ namespace SimpleSyncManager {
 			if (container.Mode == SyncMode.Clipboard)
 				ClientProcessing.ProcessClipboard(container);
 
+		}
+
+
+		public static void Close()
+		{
+			MyAPIGateway.Multiplayer.UnregisterSecureMessageHandler(NetworkId, ReceivedNetworkData);
+			MyAPIGateway.Utilities.MessageEntered -= ChatManager.MessageEnteredDel;
 		}
 
 	}

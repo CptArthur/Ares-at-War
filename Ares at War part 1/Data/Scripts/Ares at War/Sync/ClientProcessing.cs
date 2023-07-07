@@ -3,7 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SimpleSyncManager {
+namespace AaWSyncManager
+{
 	public static class ClientProcessing {
 
 		public static void ProcessClipboard(SyncContainer container) {

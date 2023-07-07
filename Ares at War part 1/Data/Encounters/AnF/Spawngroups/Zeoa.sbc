@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+<!--
+
+
+GPS:Sation27:-270949.04:515.36:-1035567.12:#FF75C9F1:
+
+
+    <MyObjectBuilder_EntityBase xsi:type="MyObjectBuilder_VoxelMap">
+      <SubtypeName />
+      <EntityId>127282486861692308</EntityId>
+      <PersistentFlags>CastShadows InScene</PersistentFlags>
+      <Name>Station27-Asteroid</Name>
+      <PositionAndOrientation>
+        <Position x="1073109.06" y="-34.97" z="-11476.01" />
+        <Forward x="0.930415332" y="-0.01940845" z="0.3659926" />
+        <Up x="0.0642227" y="0.991779864" z="-0.1106713" />
+        <Orientation>
+          <X>-0.05782862</X>
+          <Y>-0.8244102</Y>
+          <Z>0.0276751947</Z>
+          <W>0.5623502</W>
+        </Orientation>
+      </PositionAndOrientation>
+      <LocalPositionAndOrientation xsi:nil="true" />
+      <ContentChanged>false</ContentChanged>
+      <BoulderPlanetId xsi:nil="true" />
+      <BoulderSectorId xsi:nil="true" />
+      <BoulderItemId xsi:nil="true" />
+      <CreatedByUser>true</CreatedByUser>
+      <StorageName>Station27-Asteroid</StorageName>
+    </MyObjectBuilder_EntityBase>
+	
+	
+	
+	
+	From Asteroid to Station27
+	
+	x += -8.05378800002
+	y += 149.99250428
+	z += -466.812254
+	
+	
+	
+	
+	-->
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>Anf-Zaoa</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:PURGE]		
+
+			[TriggerCoords:{X:1260153.14568597 Y:-78042.7431952351 Z:-129948.087623604}]
+			[TriggerRadius:200000]
+
+			[ForceExactPositionAndOrientation:true]
+			[CutVoxelsAtAirtightCells:true]
+
+[StaticEncounterCoords:{X:1260153.14568597 Y:-78042.7431952351 Z:-129948.087623604}]
+[StaticEncounterForward:{X:0.170849786864419 Y:0.273456546334092 Z:-0.946589598292424}]
+[StaticEncounterUp:{X:-0.501563674278833 Y:-0.802786240688846 Z:-0.322440897537187}]
+
+
+[StaticEncounterUsePlanetDirectionAndAltitude:true]
+[StaticEncounterPlanet:Planet Thora 4]
+[StaticEncounterPlanetDirection:{X:-0.501986589294451 Y:-0.803285728411612 Z:-0.320533153821487}]
+[StaticEncounterPlanetAltitude:-40.7636581458646]
+
+
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:s]			
+			[ZoneConditions:ZoneCondition-ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="AntiFrank Extremis">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour></Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>
+
+
+
+
+		
+		
+		
+		
+	</SpawnGroups>
+	
+</Definitions>

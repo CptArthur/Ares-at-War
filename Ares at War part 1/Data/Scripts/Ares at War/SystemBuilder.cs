@@ -20,13 +20,14 @@ namespace AresAtWar.SystemBuilder
 
 		public static Vector3D BylenCenter = new Vector3D(0, 0, 0);
 		public static Vector3D Planet_AgarisCenter = new Vector3D(-1131656, 124249, 1291251);
-		public static Vector3D MoonCenter = new Vector3D(-1104261, 226335, 1512996);
 
+
+		public static Vector3D MoonCenter = new Vector3D(-1091306, 297482, 1657451);
 
 		public static Vector3D Planet_CraitCenter = new Vector3D(1449653, -622596, -2854164);
 		public static Vector3D Planet_LezunoCenter = new Vector3D(-1309682, -327914, -1469100);
-		public static Vector3D Planet_LorusCenter = new Vector3D(-1265326, -460714, -1663462);
-		public static Vector3D Planet_Thora4Center = new Vector3D(1272692, -50110, -126680);
+		public static Vector3D Planet_LorusCenter = new Vector3D(-1255638, -527925, -1810308);
+		public static Vector3D Planet_Thora4Center = new Vector3D(1391341, -96601, -122962);
 
 		public static void RemoveAllPlanets()
         {

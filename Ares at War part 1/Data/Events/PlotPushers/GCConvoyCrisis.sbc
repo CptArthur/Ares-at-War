@@ -11,7 +11,7 @@
 
 		[MES Event]
 		[UniqueEvent:true]
-		
+		[Tags:AaW-StoryEvent]			
 		[ConditionIds:AaW-EventCondition-GCConvoyDestoyed-Basic]
 		[ConditionIds:AaW-EventCondition-GCConvoyDestoyed-PlayerBase]
 		[ConditionIds:AaW-EventCondition-GCConvoyDestoyed-PlayerNotNear]	
@@ -116,6 +116,11 @@
 		
 	[UseChatBroadcast:true]
 	[ChatData:AaW-EventChat-GCConvoyDestoyedNewsAlert]
+	
+	
+	[ActivateCustomAction:true]
+		[CustomActionName:ScT-AddNews]
+		[CustomActionArgumentsString:In a shocking incident, a GC convoy departing from the AHE HQ fell victim to a devastating bomb attack. Details surrounding the attack remain scarce, but initial reports indicate that it was a meticulously planned assault, suggesting a serious breach of security protocols. The GC have yet to respond this shocking incident.]
       </Description>
       
     </EntityComponent>
@@ -264,8 +269,11 @@
 		[ActionExecution:Sequential]
 		[TimeUntilNextActionMs:6000]
 
-		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+
 		[ActionIds:AaW-EventAction-GCConvoyCrisis-ChaosatAHEHQ]
+			[ActionIds:AaW-EventAction-Common-IncomingMessage]	
+		
+		[ActionIds:AaW-EventAction-GCConvoyCrisis-ChaosatAHEHQ-News]
       </Description>
 	</EntityComponent>	
 	
@@ -278,8 +286,6 @@
 
 	[MES Event Action]
 		
-	[UseChatBroadcast:true]
-	[ChatData:AaW-EventChat-GCConvoyCrisis-ChaosatAHEHQ]
 
 		
 	[ChangeBooleans:true] 
@@ -308,8 +314,48 @@
 	[ZoneToggleActiveModes:true]	
 
 	
+	
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-CreateGPS]
+
+	[CustomActionArgumentsString:Battle for AHE-HQ]
+	
+	[CustomActionArgumentsString:AHE HQ has become the epicenter of a violent clash between the GC forces and AHE loyalists.]
+	
+		[CustomActionArgumentsInt:120]		
+	[CustomActionArgumentsVector3D:{X:-1162242.5 Y:139010.1 Z:1341161.84}]		
+	
+	
+	
+	
+	
+	
+
+	
+      </Description>
+      
+    </EntityComponent>	
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCConvoyCrisis-ChaosatAHEHQ-News</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-GCConvoyCrisis-ChaosatAHEHQ]
+
+	
+	
 		[ActivateCustomAction:true]
-	[CustomActionName:GPSBattleforAHEHQ]
+		[CustomActionName:ScT-AddNews]
+		[CustomActionArgumentsString:Chaos! AHE HQ has become the epicenter of a violent clash between the GC forces and AHE loyalists. The deteriorating situation unfolded rapidly as tensions between the AHE and the GC reached a boiling point. Despite the GC's attempts to assert control over AHE assets, the AHE vehemently rejected the takeover, fueling deep-seated resentment and triggering an armed rebellion against what they perceive as an encroachment on their sovereignty.]
+	
+	
+	
 
 	
       </Description>
@@ -317,6 +363,12 @@
     </EntityComponent>	
 
 	
+	
+	
+	
+	
+
+		
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -497,9 +549,9 @@
 	[ToggleEvents:true]
 	[ToggleEventTags:BattleforAHEHQ]
 	[ToggleEventTagModes:false]	
-
-	[RemoveGPSForAll:true]
-	[GPSNames:Battle for AHE-HQ]	
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-RemoveGPS]
+	[CustomActionArgumentsString:Battle for AHE-HQ]
 
 	
 	[SpawnEncounter:true]
@@ -533,7 +585,9 @@
 		[ActionExecution:Sequential]
 		[TimeUntilNextActionMs:6000]
 		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-BattleforAHEHQ-GCWon-Chat]
 		[ActionIds:AaW-EventAction-BattleforAHEHQ-GCWon]
+
 
 
 
@@ -560,16 +614,37 @@
 	[SetBooleansTrue:AHE HQ Wasted Event]
 
 		
-	[UseChatBroadcast:true]
-	[ChatData:AaW-EventChat-BattleforAHEHQ-GCWon]			
 	
-	
-	[RemoveGPSForAll:true]
-	[GPSNames:Battle for AHE-HQ]	
+		[ActivateCustomAction:true]
+	[CustomActionName:ScT-RemoveGPS]
+	[CustomActionArgumentsString:Battle for AHE-HQ]
       </Description>
       
     </EntityComponent>		
 
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-BattleforAHEHQ-GCWon-Chat</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	
+
+
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-BattleforAHEHQ-GCWon]			
+	[ActivateCustomAction:true]
+		[CustomActionName:ScT-AddNews]
+		[CustomActionArgumentsString:AHE HQ has been destroyed]
+      </Description>
+      
+    </EntityComponent>	
+	
+	
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>

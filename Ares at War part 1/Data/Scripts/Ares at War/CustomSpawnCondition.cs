@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using AresAtWar.API;
-using AresAtWar.GPSManagers;
 using Sandbox.Definitions;
 using Sandbox.Game;
 using Sandbox.Game.Entities;

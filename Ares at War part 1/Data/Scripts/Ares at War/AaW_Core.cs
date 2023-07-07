@@ -12,62 +12,45 @@ using VRage.Utils;
 using VRageMath;
 using AresAtWar.Factions;
 using AresAtWar.Command;
-using AresAtWar.GPSManagers;
 using AresAtWar.Init;
 
-using SimpleSyncManager;
+using AaWSyncManager;
 using VRage.Game.ModAPI;
 using Sandbox.Game.Entities.Planet;
 
 namespace AresAtWar.SessionCore
 {
-    [MySessionComponentDescriptor(MyUpdateOrder.AfterSimulation)]
+    [MySessionComponentDescriptor(MyUpdateOrder.BeforeSimulation | MyUpdateOrder.AfterSimulation)]
     public class AaWSession : MySessionComponentBase
     {
-        public static string ModVersion = "0.4.6";
+        public static string ModVersion = "0.4.9";
 
         public static MESApi MESApi;
         public int counter = 0;
         public int counter2 = 0;
         public bool restart = false;
+        public bool hasrun = false;
         public static string ModLocation;
+
 
         public override void LoadData()
         {
             MESApi = new MESApi();
-
-            GPSManager.Setup();
-
-
             ModLocation= ModContext.ModPath;
+
+            MyAPIGateway.Utilities.SetVariable<bool>("AaWWorldStartUp", false);
+
+            AaWMain.init();
+            AaWMain.CheckValues();
+            SyncManager.Setup();
+
+            MyVisualScriptLogicProvider.RespawnShipSpawned += RespawnShipSpawned;
         }
 
         
 
         public override void BeforeStart()
         {
-            if (!MESApi.MESApiReady)
-            {
-                MyVisualScriptLogicProvider.ShowNotificationToAll("MES API FAILED - Ares at War is broken", 1000000, "Red");
-                MyVisualScriptLogicProvider.ShowNotificationToAll("Possible fix: Set MES as lowest or highest in the mod load order", 1000000, "White");
-                return;
-            }
-
-
-
-            AaWMain.init();
-            AaWMain.CheckValues();
-
-
-
-
-
-            MyAPIGateway.Utilities.MessageEntered += ChatManager.MessageEnteredDel;
-            MyAPIGateway.Multiplayer.RegisterSecureMessageHandler(SyncManager.NetworkId, SyncManager.ReceivedNetworkData);
-            MyVisualScriptLogicProvider.RespawnShipSpawned += RespawnShipSpawned;
-
-
-
 
             //Check for update
             string ActivePlaceHolder;
@@ -91,21 +74,31 @@ namespace AresAtWar.SessionCore
                 MyVisualScriptLogicProvider.ShowNotificationToAll("Ares at War setup complete", 5000, "Green");
             }
 
-
-
-
-            MESApi.RegisterCustomSpawnCondition(true, "BylenRing", CustomSpawnCodtions.BylenRing);
-            MESApi.RegisterCustomSpawnCondition(true, "AgarisDeepOcean", CustomSpawnCodtions.AgarisDeepOcean);
-            MESApi.RegisterCustomSpawnCondition(true, "AgarisLand", CustomSpawnCodtions.AgarisLand);
-            MESApi.RegisterCustomAction(true, "GPSBattleforAHEHQ", CustomActions.GPSBattleforAHEHQ);
-
-
-
-            //MESApi.RegisterCustomAction(true, "AddGPS", CustomActions.StartGPS);
-
         }
 
+        public override void UpdateBeforeSimulation()
+        {
+            if (!hasrun)
+            {
+                if (!MESApi.MESApiReady)
+                {
+                    MyVisualScriptLogicProvider.ShowNotificationToAll("Ares at War FAILED - MES API is not ready", 1000000, "Red");
+                    return;
+                }
 
+                MESApi.RegisterCustomSpawnCondition(true, "BylenRing", CustomSpawnCodtions.BylenRing);
+                MESApi.RegisterCustomSpawnCondition(true, "AgarisDeepOcean", CustomSpawnCodtions.AgarisDeepOcean);
+                MESApi.RegisterCustomSpawnCondition(true, "AgarisLand", CustomSpawnCodtions.AgarisLand);
+
+                MESApi.RegisterCustomAction(true, "FireSuperWeapon", CustomActions.FireSuperWeapon);
+                MESApi.RegisterCustomAction(true, "DestroyTheSystem", CustomActions.DestroyTheSystem);
+                MESApi.RegisterCustomAction(true, "PurgeArrivalEffect", CustomActions.PurgeArrivalEffect);
+
+
+                hasrun = true;
+            }
+
+        }
 
 
         public override void UpdateAfterSimulation()
@@ -114,22 +107,6 @@ namespace AresAtWar.SessionCore
             //Every 10 seconds
             if (counter >= 600)
             {
-                //GPS check
-
-                
-
-
-                for (int i = 0; i < GPSManager.AllActiveGPS.Count; i++)
-                {
-                    GPSManager.AllActiveGPS[i].Update();
-                }
-
-                for (int i = 0; i < GPSManager.NonActiveGPS.Count; i++)
-                {
-                    GPSManager.NonActiveGPS[i].RemoveGPSForAll();
-                }
-
-
 
                 //Faction check 
                 for (int i = 0; i < AaWMain.listOfFactions.Count; i++)
@@ -161,9 +138,7 @@ namespace AresAtWar.SessionCore
         protected override void UnloadData()
         {
 
-            MyAPIGateway.Multiplayer.UnregisterSecureMessageHandler(SyncManager.NetworkId, SyncManager.ReceivedNetworkData);
-            MyAPIGateway.Utilities.MessageEntered -= ChatManager.MessageEnteredDel;
-
+            SyncManager.Close();
 
             MyVisualScriptLogicProvider.RespawnShipSpawned -= RespawnShipSpawned;
 

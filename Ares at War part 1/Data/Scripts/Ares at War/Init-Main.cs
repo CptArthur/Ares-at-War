@@ -284,7 +284,10 @@ namespace AresAtWar.Init
             //Events
             if (!MyAPIGateway.Utilities.GetVariable<bool>("GCvsAHE", out boolplaceholder))
                 MyAPIGateway.Utilities.SetVariable<bool>("GCvsAHE", false);
-            
+
+            if (!MyAPIGateway.Utilities.GetVariable<bool>("AaWStoryEvents", out boolplaceholder))
+                MyAPIGateway.Utilities.SetVariable<bool>("AaWStoryEvents", true);
+
 
 
 
@@ -327,6 +330,8 @@ namespace AresAtWar.Init
         public static void SetStartingValues()
         {
 
+            MyAPIGateway.Utilities.SetVariable<bool>("AaWStoryEvents", true);
+
             MyAPIGateway.Utilities.SetVariable<int>("GC_Strength_Counter", 200);
             MyAPIGateway.Utilities.SetVariable<int>("FAF_Strength_Counter", 66);
             MyAPIGateway.Utilities.SetVariable<int>("AHE_Strength_Counter", 31);
@@ -335,6 +340,8 @@ namespace AresAtWar.Init
             MyAPIGateway.Utilities.SetVariable<int>("DRA_Strength_Counter", 15);
             MyAPIGateway.Utilities.SetVariable<int>("TIF_Strength_Counter", 20);
             MyAPIGateway.Utilities.SetVariable<int>("REM_Strength_Counter", 19);
+
+
 
             //Faction check 
             for (int i = 0; i < listOfFactions.Count; i++)
