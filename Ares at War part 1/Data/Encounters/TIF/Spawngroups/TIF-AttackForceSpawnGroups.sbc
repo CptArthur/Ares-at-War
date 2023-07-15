@@ -127,10 +127,41 @@
 			</Prefabs>			
 		</SpawnGroup>	
 
+<!-- 		[SpawnConditionsProfiles:TIF-SpawnProfile-Lezuno-Light]-->
+
+	<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>TIF-Scout</SubtypeId>
+			</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+				
 
 
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
 
+		</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
 
+				<Prefab SubtypeId="TIF-Vulture">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>TIF-PlanetHunter-Behavior</Behaviour>
+				</Prefab>
+
+			</Prefabs>			
+		</SpawnGroup>
 
 
 

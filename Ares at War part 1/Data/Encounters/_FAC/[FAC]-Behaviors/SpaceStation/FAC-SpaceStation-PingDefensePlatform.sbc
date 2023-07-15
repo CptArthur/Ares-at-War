@@ -1,0 +1,162 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!--
+
+
+
+
+
+ -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-SpaceStation-Trigger-PingDefensePlatform</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+        [StartsReady:true]
+		[MinCooldownMs:30000]
+		[MaxCooldownMs:30001]
+
+        [MaxActions:-1]
+
+
+        [Actions:FAC-SpaceStation-Action-PingDefensePlatform]
+
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-SpaceStation-Action-PingDefensePlatform</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+		[BroadcastCommandProfiles:true]
+		[CommandProfileIds:FAC-SpaceStation-Command-PingDefensePlatform]
+
+      </Description>
+
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-SpaceStation-Command-PingDefensePlatform</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Command]
+
+	[CommandCode:PingDefensePlatform]
+	[SingleRecipient:false]
+	[MatchSenderReceiverOwners:true]
+
+	[IgnoreAntennaRequirement:true]
+	[IgnoreReceiverAntennaRequirement:true]
+	[Radius:5000]
+      </Description>
+    </EntityComponent>	
+	
+	
+	
+<!-- DefensePlatform -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-DefensePlatform-Trigger-PingReceived</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [StartsReady:true]
+[CommandReceiveCode:PingDefensePlatform]
+
+
+        [MaxActions:-1]
+
+
+        [Actions:FAC-DefensePlatform-Action-PingReceived]
+
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-DefensePlatform-Action-PingReceived</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+[ResetCooldownTimeOfTriggers:true]
+[ResetTriggerCooldownNames:FAC-DefensePlatform-Trigger-Despawn]
+
+
+      </Description>
+
+    </EntityComponent>
+	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-DefensePlatform-Trigger-Despawn</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:PlayerNear]
+		[TargetDistance:7500]
+
+[UseFailCondition:true]
+        [StartsReady:false]
+		[MinCooldownMs:60000]
+		[MaxCooldownMs:60001]
+
+        [MaxActions:-1]
+
+
+        [Actions:FAC-DefensePlatform-Action-Despawn]
+
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-DefensePlatform-Action-Despawn</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+		[ForceDespawn:true]
+		
+      </Description>
+
+    </EntityComponent>
+
+
+  </EntityComponents>
+</Definitions>

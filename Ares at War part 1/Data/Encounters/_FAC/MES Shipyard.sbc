@@ -1,0 +1,97 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Shipyard-Shipyard</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Shipyard]
+
+        [AllowBlueprintBuilding:false] //This feature isn't even built yet, so don't get any ideas.
+        [AllowScrapPurchasing:true]
+        [AllowRepairAndConstruction:true]
+        [AllowGridTakeover:true]
+
+      </Description>
+
+    </EntityComponent>
+	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Shipyard-ScrapYard</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Shipyard]
+
+        [AllowBlueprintBuilding:false] //This feature isn't even built yet, so don't get any ideas.
+        [AllowScrapPurchasing:true]
+        [AllowRepairAndConstruction:false]
+        [AllowGridTakeover:true]
+
+      </Description>
+
+    </EntityComponent>
+	
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Shipyard-Garage</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Shipyard]
+
+        [AllowBlueprintBuilding:false] //This feature isn't even built yet, so don't get any ideas.
+        [AllowScrapPurchasing:false]
+        [AllowRepairAndConstruction:true]
+        [AllowGridTakeover:false]
+
+      </Description>
+
+    </EntityComponent>
+	
+		
+	
+	
+	
+	
+	
+	
+	
+    
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-SuitUpgrades-MainProfile</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Suit Upgrades]
+
+        [AllowJetpackInhibitorMod:true]
+        [AllowHandDrillInhibitorMod:true]
+        [AllowPersonnelInhibitorMod:true]
+        [AllowEnergyInhibitorMod:true]
+        [AllowSolarChargingMod:true]
+        [AllowDamageReductionMod:true]
+
+      </Description>
+
+    </EntityComponent>
+    
+  </EntityComponents>
+</Definitions>

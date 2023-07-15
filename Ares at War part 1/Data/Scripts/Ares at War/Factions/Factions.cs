@@ -157,9 +157,8 @@ namespace AresAtWar.Factions
                     {
                         placeholder = Strength_Counter += this.TotalProduction;
                     }
-                }
-
-                MyAPIGateway.Utilities.SetVariable<int>(this.Strength_CounterName, placeholder);
+                    MyAPIGateway.Utilities.SetVariable<int>(this.Strength_CounterName, placeholder);
+                } 
             }
 
         }

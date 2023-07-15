@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+<!--
+[Triggers:GC-PlanetHunter-Trigger-OnSpawn]
+
+[Triggers:GC-PlanetHunter-Trigger-Respond]
+
+
+-->
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC-PlanetHunter-Trigger-OnSpawn</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+		[MinCooldownMs:7000]
+		[MaxCooldownMs:9001]
+        [StartsReady:false]
+
+        [StartsReady:true]
+        [MaxActions:1]
+        [Actions:GC-PlanetHunter-Action-OnSpawn]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC-PlanetHunter-Action-OnSpawn</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+
+        [UseChatBroadcast:true]
+        [ChatData:GC-PlanetHunter-Chat-OnSpawn]
+
+
+      </Description>
+
+    </EntityComponent>
+	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC-PlanetHunter-Chat-OnSpawn</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+        [BroadcastRandomly:false]
+        [Author:{AntennaName}]
+        [Color:Red]
+
+        [ChatMessages:OnSpawn]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+		
+		
+
+
+
+      </Description>
+    </EntityComponent>	
+	
+<!-- Respond -->
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC-PlanetHunter-Trigger-Respond</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+		[MinCooldownMs:18000]
+		[MaxCooldownMs:18001]
+
+
+        [StartsReady:false]
+        [MaxActions:1]
+        [Actions:GC-PlanetHunter-Action-Respond]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC-PlanetHunter-Action-Respond</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+	
+		[UseChatBroadcast:true]
+		[ChatData:GC-PlanetHunter-Chat-Respond]
+      </Description>
+
+    </EntityComponent>	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC-PlanetHunter-Chat-Respond</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+        [BroadcastRandomly:false]
+        [Author:GC Command]
+        [Color:Red]
+
+        [ChatMessages:This is command, continue search]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+      </Description>
+    </EntityComponent>	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+  </EntityComponents>
+</Definitions>
