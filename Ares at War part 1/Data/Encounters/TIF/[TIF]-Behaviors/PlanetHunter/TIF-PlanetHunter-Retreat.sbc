@@ -2,21 +2,15 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-
 <!--
-
-
-
-[Triggers:FAC-PlanetHunter-Trigger-TargetClose]
-[Triggers:FAC-PlanetHunter-Trigger-Retreat]
-
-
+[Triggers:TIF-PlanetHunter-Trigger-TargetClose]
+[Triggers:TIF-PlanetHunter-Trigger-Retreat]
 -->
 
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-PlanetHunter-Trigger-TargetClose</SubtypeId>
+        <SubtypeId>TIF-PlanetHunter-Trigger-TargetClose</SubtypeId>
       </Id>
       <Description>
 
@@ -24,11 +18,11 @@
 
         [UseTrigger:true]
         [Type:TargetNear]
-		[TargetDistance:800]
+		[TargetDistance:1200]
 
         [StartsReady:true]
         [MaxActions:1]
-        [Actions:FAC-PlanetHunter-Action-TargetClose]
+        [Actions:TIF-PlanetHunter-Action-TargetClose]
 
       </Description>
 
@@ -37,21 +31,21 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-PlanetHunter-Action-TargetClose</SubtypeId>
+        <SubtypeId>TIF-PlanetHunter-Action-TargetClose</SubtypeId>
       </Id>
       <Description>
 
         [RivalAI Action]
 
 [ResetCooldownTimeOfTriggers:true]
-[ResetTriggerCooldownNames:FAC-PlanetHunter-Trigger-Retreat]
+[ResetTriggerCooldownNames:TIF-PlanetHunter-Trigger-Retreat]
 [EnableTriggers:true]
-[EnableTriggerNames:FAC-PlanetHunter-Trigger-Retreat]
+[EnableTriggerNames:TIF-PlanetHunter-Trigger-Retreat]
 
 
 
         [UseChatBroadcast:true]
-        [ChatData:FAC-Dynamic-Chat-TargetClose]
+        [ChatData:TIF-PlanetHunter-Chat-TargetClose]
 
 
       </Description>
@@ -62,7 +56,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dynamic-Chat-TargetClose</SubtypeId>
+        <SubtypeId>TIF-PlanetHunter-Chat-TargetClose</SubtypeId>
       </Id>
       <Description>
 
@@ -75,26 +69,29 @@
         [Author:{AntennaName}]
         [Color:Red]
 
-        [ChatMessages:HEyyyyyyyyyyy]
+      [ChatMessages:Oh Oh... What do we have here]
       [ChatAudio:GreetingSoundId-A]
       [BroadcastChatType:Chat]
-		
-		
+	  
+	  
+      [ChatMessages:Your ships would probably fetch a pretty penny at the salvage yard.]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+	  	  
 
-
-
+	  
+	  
+	  
+	  
       </Description>
     </EntityComponent>	
 	
-
-
-
-
+	
 	
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-PlanetHunter-Trigger-Retreat</SubtypeId>
+        <SubtypeId>TIF-PlanetHunter-Trigger-Retreat</SubtypeId>
       </Id>
       <Description>
 
@@ -102,41 +99,39 @@
 
         [UseTrigger:false]
         [Type:Timer]
-		[MinCooldownMs:60000]
-		[MaxCooldownMs:60001]
+		[MinCooldownMs:240000]
+		[MaxCooldownMs:340001]
 
 
         [StartsReady:false]
         [MaxActions:1]
-        [Actions:FAC-PlanetHunter-Action-Retreat]
-
+        [Actions:TIF-PlanetHunter-Action-Retreat]
       </Description>
-
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-PlanetHunter-Action-Retreat</SubtypeId>
+        <SubtypeId>TIF-PlanetHunter-Action-Retreat</SubtypeId>
       </Id>
       <Description>
 
         [RivalAI Action]
 
-[Retreat:true]
+		[Retreat:true]
 
-	
-	        [UseChatBroadcast:true]
-        [ChatData:FAC-Dynamic-Chat-Retreat]
       </Description>
 
     </EntityComponent>	
 
+<!--
+	    [UseChatBroadcast:true]
+        [ChatData:TIF-Dynamic-Chat-Retreat]
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dynamic-Chat-Retreat</SubtypeId>
+        <SubtypeId>TIF-Dynamic-Chat-Retreat</SubtypeId>
       </Id>
       <Description>
 
@@ -152,24 +147,9 @@
         [ChatMessages:Byeeee]
       [ChatAudio:GreetingSoundId-A]
       [BroadcastChatType:Chat]
-		
-		
-
-
-
       </Description>
     </EntityComponent>	
-
-
-
-
-
-
-
-
-
-
-
+-->
 	
 	
   </EntityComponents>

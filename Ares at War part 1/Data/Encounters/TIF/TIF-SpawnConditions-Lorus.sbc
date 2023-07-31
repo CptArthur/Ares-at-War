@@ -13,7 +13,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>TIF-SpawnProfile-Lezuno-Both-Zone</SubtypeId>
+        <SubtypeId>TIF-SpawnProfile-Lorus-Both-Zone</SubtypeId>
       </Id>
       <Description>
 
@@ -22,7 +22,7 @@
 	[FactionOwner:TIF]
 	[ZoneConditions:ZoneCondition-TIF]			
 
-	[PlanetWhitelist:Planet Lezuno]
+	[PlanetWhitelist:Planet Lorus]
 	[SkipAirDensityCheck:true]
 	
 	[IgnoreCombatPhase:true]
@@ -30,6 +30,84 @@
       </Description>
 
     </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF-SpawnProfile-Lorus-Combat-SYN</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:TIF]
+
+	[PlanetWhitelist:Planet Lorus]
+	[SkipAirDensityCheck:true]
+	
+[UseCombatPhase:true]
+[AtmosphericCargoShipChance:1]
+
+
+	[ZoneConditions:ZoneCondition-TIF]	
+	
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:5000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:50]	
+	[ThreatIncludeOtherNpcOwners:true]	
+	
+	
+	
+      </Description>
+
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF-SpawnProfile-Lorus-Combat-Outside</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:TIF]
+
+	[PlanetWhitelist:Planet Lorus]
+	[SkipAirDensityCheck:true]
+	
+[UseCombatPhase:true]
+[AtmosphericCargoShipChance:25]
+
+
+
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:5000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:50]	
+	[ThreatIncludeOtherNpcOwners:true]
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
   </EntityComponents>

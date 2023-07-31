@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+	<!--
+[Triggers:SYN-ForgoneStation-Triggers-EnableGreetings]
+[Triggers:SYN-ForgoneStation-Triggers-DisableGreetings]
+[Triggers:SYN-ForgoneStation-Triggers-Greeting]
+[Triggers:SYN-ForgoneStation-Triggers-PlayerFar]
+
+
+	-->
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-ForgoneStation-Triggers-EnableGreetings</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[TargetDistance:5000]
+	[MinCooldownMs:10000]
+	[MaxCooldownMs:10001]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	  	 
+	[Actions:SYN-ForgoneStation-Action-EnableGreetings]
+
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-ForgoneStation-Triggers-DisableGreetings</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[TargetDistance:5000]
+	[MinCooldownMs:10000]
+	[MaxCooldownMs:10001]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	  	 
+	[UseFailCondition:true]
+
+	[Actions:SYN-ForgoneStation-Action-DisableGreetings]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-ForgoneStation-Action-EnableGreetings</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+        
+	[EnableTriggers:true]
+	[EnableTriggerNames:SYN-ForgoneStation-Triggers-Greeting]
+	[EnableTriggerNames:SYN-ForgoneStation-Triggers-PlayerFar]
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-ForgoneStation-Action-DisableGreetings</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	[DisableTriggers:true]
+	[DisableTriggerNames:SYN-ForgoneStation-Triggers-Greeting]
+	[DisableTriggerNames:SYN-ForgoneStation-Triggers-PlayerFar]
+      </Description>
+      
+    </EntityComponent>	
+
+	
+	
+<!-- Azuris
+
+SYN-ForgoneStation-Triggers-Greeting
+SYN-ForgoneStation-Triggers-PlayerFar
+
+
+ -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-ForgoneStation-Triggers-Greeting</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[TargetDistance:2000]
+	[UsePlayerFilterProfile:true]
+	[PlayerFilterProfileIds:PlayerFilterProfile-ExcludedPlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	  
+	[Actions:SYN-ForgoneStation-Action-Greeting]	  
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-ForgoneStation-Action-Greeting</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+        
+	[UseChatBroadcast:true]
+    [ChatData:SYN-ForgoneStation-Chat-Greeting]    
+	
+	[SavePlayerIdentityToSandboxList:true]
+	[PlayerIdentitySandboxList:PlayerNear]
+
+	[SavePlayerIdentity:true]
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-ForgoneStation-Chat-Greeting</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [MinTime:2]
+      [MaxTime:3]
+
+      [Author:Azuris]
+      [Color:Forgone Station]
+      
+	[ChatMessages:Greetings {PlayerName}! Welcome to Forgone Station]
+	[BroadcastChatType:Chat]
+    [ChatAudio:ArcHudGPSNotification2]
+
+      </Description>
+      
+    </EntityComponent>
+
+	
+	<!-- The unsubscribe one -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-ForgoneStation-Triggers-PlayerFar</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerFar]
+	[TargetDistance:3500]
+	[UsePlayerFilterProfile:true]
+	[PlayerFilterProfileIds:PlayerFilterProfile-IncludedPlayerNear]
+	
+	[UseTrigger:true]
+	[StartsReady:true]
+
+	  
+	[Actions:SYN-ForgoneStation-Action-PlayerFar]	  
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-ForgoneStation-Action-PlayerFar</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+        
+	[RemovePlayerIdentityFromSandboxList:true]
+	[PlayerIdentitySandboxList:PlayerNear]
+	[RemovePlayerIdentity:true]
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

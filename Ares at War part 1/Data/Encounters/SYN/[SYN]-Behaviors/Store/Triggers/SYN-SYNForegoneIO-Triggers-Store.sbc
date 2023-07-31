@@ -2,11 +2,11 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-  <!-- [Triggers:AHE-Trigger-Static-PopulateStores-AHEOutpostIO] -->
+  <!-- [Triggers:SYN-Trigger-Static-PopulateStores-SYNForegoneIO] -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AHE-Trigger-Static-PopulateStores-AHEOutpostIO</SubtypeId>
+        <SubtypeId>SYN-Trigger-Static-PopulateStores-SYNForegoneIO</SubtypeId>
       </Id>
       <Description>
 
@@ -14,10 +14,10 @@
 
         [UseTrigger:true]
         [Type:Session]
-        [Conditions:AHE-Condition-Static-PopulateStores-AHEOutpostIO]
+        [Conditions:SYN-Condition-Static-PopulateStores-SYNForegoneIO]
         [StartsReady:true]
         [MaxActions:-1]
-        [Actions:AHE-Action-Static-PopulateStores-AHEOutpostIO]
+        [Actions:SYN-Action-Static-PopulateStores-SYNForegoneIO]
 
       </Description>
 
@@ -26,7 +26,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AHE-Condition-Static-PopulateStores-AHEOutpostIO</SubtypeId>
+        <SubtypeId>SYN-Condition-Static-PopulateStores-SYNForegoneIO</SubtypeId>
       </Id>
       <Description>
 
@@ -44,7 +44,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AHE-Action-Static-PopulateStores-AHEOutpostIO</SubtypeId>
+        <SubtypeId>SYN-Action-Static-PopulateStores-SYNForegoneIO</SubtypeId>
       </Id>
       <Description>
 
@@ -55,48 +55,48 @@
 
         
       [StoreBlocks:Store {ITC}]
-      [StoreProfiles:AHE-StoreProfile-AHEOutpostIO-ITC]		
+      [StoreProfiles:SYN-StoreProfile-SYNForegoneIO-ITC]		
 		
 	  [StoreBlocks:Store {SYN}]
-      [StoreProfiles:AHE-StoreProfile-AHEOutpostIO-SYN]	
+      [StoreProfiles:SYN-StoreProfile-SYNForegoneIO-SYN]	
 		
       
 
 
       [StoreBlocks:Store Civ]
-      [StoreProfiles:AHE-StoreProfile-AHEOutpostIO-Civ]
+      [StoreProfiles:SYN-StoreProfile-SYNForegoneIO-Civ]
   
       [StoreBlocks:Store Salvage]
-      [StoreProfiles:AHE-StoreProfile-AHEOutpostIO-Salvage]
+      [StoreProfiles:SYN-StoreProfile-SYNForegoneIO-Salvage]
 
       [StoreBlocks:Store Ammo]
-      [StoreProfiles:AHE-StoreProfile-AHEOutpostIO-Ammo]
+      [StoreProfiles:SYN-StoreProfile-SYNForegoneIO-Ammo]
 
       [StoreBlocks:Store Ingot]
-      [StoreProfiles:AHE-StoreProfile-AHEOutpostIO-Ingot]
+      [StoreProfiles:SYN-StoreProfile-SYNForegoneIO-Ingot]
   
       [StoreBlocks:Store Tool]
-      [StoreProfiles:AHE-StoreProfile-AHEOutpostIO-Tool]      
+      [StoreProfiles:SYN-StoreProfile-SYNForegoneIO-Tool]      
 
       [StoreBlocks:Store Prefab]
-      [StoreProfiles:AHE-StoreProfile-AHEOutpostIO-Prefab]      
+      [StoreProfiles:SYN-StoreProfile-SYNForegoneIO-Prefab]      
 
       
       [StoreBlocks:Store Fuel]
-      [StoreProfiles:AHE-StoreProfile-AHEOutpostIO-Fuel]
+      [StoreProfiles:SYN-StoreProfile-SYNForegoneIO-Fuel]
   
       
       [StoreBlocks:Store Outpost]
-      [StoreProfiles:AHE-StoreProfile-AHEOutpostIO-Outpost]
+      [StoreProfiles:SYN-StoreProfile-SYNForegoneIO-Outpost]
 
 	  
 	  
 	[AddCustomDataToBlocks:true]
 	[CustomDataBlockNames:EconomySurvival Store Water Vehicles,EconomySurvival Store Land Vehicles,EconomySurvival Store Air Vehicles,EconomySurvival Store Space Vehicles]
-	[CustomDataFiles:AHE_Water_Vehicles.xml]
-	[CustomDataFiles:AHE_Land_Vehicles.xml]
-	[CustomDataFiles:AHE_Air_Vehicles.xml]
-	[CustomDataFiles:AHE_Space_Vehicles.xml]  
+	[CustomDataFiles:SYN_Water_Vehicles.xml]
+	[CustomDataFiles:SYN_Land_Vehicles.xml]
+	[CustomDataFiles:SYN_Air_Vehicles.xml]
+	[CustomDataFiles:SYN_Space_Vehicles.xml]  
       </Description>
 
     </EntityComponent>
