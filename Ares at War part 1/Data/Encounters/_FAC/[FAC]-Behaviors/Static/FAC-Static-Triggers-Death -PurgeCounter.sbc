@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Static-Trigger-Death-PurgeCounter</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Compromised]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+
+	  [Actions:FAC-Static-Action-Death-PurgeCounter]
+	  
+      </Description>
+      
+    </EntityComponent>	
+			
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Static-Action-Death-PurgeCounter</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      [IncreaseSandboxCounters:PlayerReadyForPurge]
+[IncreaseSandboxCountersAmount:1]
+
+
+      </Description>
+      
+    </EntityComponent>						
+
+
+
+	
+	
+  </EntityComponents>
+</Definitions>

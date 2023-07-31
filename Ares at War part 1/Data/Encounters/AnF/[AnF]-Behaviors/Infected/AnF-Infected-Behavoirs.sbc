@@ -6,25 +6,24 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AnF-LDrone-Behavior</SubtypeId>
+          <SubtypeId>AnF-Zeoa-Behavior</SubtypeId>
       </Id>
       <Description>
 
       [RivalAI Behavior]
       [BehaviorName:Passive]
 	  [TargetData:AaW-Target-Main-A]	  
-	  [AutopilotData:AnF-LDroneAutopilot]  
+  
 	  
+	[TriggerGroups:AnF-CommonTriggers]	 	  
+	[TriggerGroups:AnF-Infected-CommonTriggers]	 
 	  
-	 	[TriggerGroups:AnF-CommonTriggers]	 	  
-	 	[TriggerGroups:AnF-LDrone-CommonTriggers]	 
-	  
-	  
-	[SecondaryAutopilotData:AnF-LDroneAutopilot-Horsefly]	
 
+		
+		[Triggers:AnF-Infected-Trigger-PlayerNear]
+			[Triggers:AnF-Zeoa-Trigger-DistressCall]
 
-		[TriggerGroups:FAC-OffensiveTaskLeaderEscort-TriggerGroup] 	
-		[Triggers:FAC-PointSystem-Trigger-Decrease50]
+[Triggers:AnF-Zeoa-Trigger-PlayerInvestigated]	
 
     
       </Description>

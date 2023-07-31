@@ -23,7 +23,7 @@ namespace AresAtWar.SessionCore
     [MySessionComponentDescriptor(MyUpdateOrder.BeforeSimulation | MyUpdateOrder.AfterSimulation)]
     public class AaWSession : MySessionComponentBase
     {
-        public static string ModVersion = "0.4.9.3";
+        public static string ModVersion = "0.4.9.5";
 
         public static MESApi MESApi;
         public int counter = 0;
@@ -40,8 +40,10 @@ namespace AresAtWar.SessionCore
 
             MyAPIGateway.Utilities.SetVariable<bool>("AaWWorldStartUp", false);
 
-            AaWMain.init();
+
+
             AaWMain.CheckValues();
+            AaWMain.init();
             SyncManager.Setup();
 
             MyVisualScriptLogicProvider.RespawnShipSpawned += RespawnShipSpawned;

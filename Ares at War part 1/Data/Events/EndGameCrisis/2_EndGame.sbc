@@ -2,6 +2,100 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
   
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-Purge-Defeated</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]				
+		[ConditionIds:AaW-EventCondition-Purge-Defeated]
+		[ActionExecution:All]
+		
+		[ActionIds:AaW-EventAction-Purge-Defeated]
+      </Description>
+	</EntityComponent>	
+     
+	 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-Purge-Defeated</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	
+	[CheckCustomCounters:true]
+	[CustomCounters:Purge_Strength_Counter]
+	[CustomCountersTargets:1]
+	[CounterCompareTypes:LessOrEqual]
+	
+	[CheckTrueBooleans:true]
+	[TrueBooleans:PurgeActive]	  
+      </Description>
+  
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-Defeated</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+
+		[ChangeBooleans:true]
+		[SetBooleansFalse:PurgeActive]
+
+	
+		[UseChatBroadcast:true]
+		[ChatData:AaW-EventChat-Purge-Defeated]
+		
+		
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-Purge-Defeated</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Blue]
+      [Author:Ares News Station]
+        
+      [ChatMessages:The PURGE has been defeated!!! The Ares System is saved. Victory!]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+   	  
+      </Description>
+      
+    </EntityComponent>	
+	
+  
+  
+  
+  
 <!-- 3 hours-->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -14,8 +108,8 @@
 		[UseEvent:false]
 		[Tags:AaW-StoryEvent]		
 		[UniqueEvent:true]
-		[MinCooldownMs:14400000]
-		[MaxCooldownMs:28800000]				
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]				
 		[ConditionIds:AaW-EventCondition-Purge-StartEndGame]
 		[ActionExecution:All]
 		
@@ -32,6 +126,12 @@
       <Description>
 
 	[MES Event Condition]
+	
+	[CheckCustomCounters:true]
+	[CustomCounters:Purge_Strength_Counter]
+	[CustomCountersTargets:999]
+	[CounterCompareTypes:GreaterOrEqual]
+	
 	[CheckTrueBooleans:true]
 	[TrueBooleans:PurgeActive]	  
       </Description>
@@ -55,13 +155,10 @@
 
 		[ActivateCustomAction:true]
 		[CustomActionName:ScT-CreateGPS]
-		[CustomActionArgumentsString:Battle for the Ares System]
+		[CustomActionArgumentsString:PURGE Superweapon Firing In]
 		[CustomActionArgumentsString:PURGE will destroy the Ares System]
 		[CustomActionArgumentsInt:240]		
 		[CustomActionArgumentsVector3D:{X:-103.97 Y:-297.29 Z:2578246.63}]		
-
-		[DebugHudMessage:StartEndGame]
-
 
       </Description>
       
@@ -96,21 +193,12 @@
 		[MES Event Action]
 		[ActivateCustomAction:true]
 		[CustomActionName:ScT-RemoveGPS]
-		[CustomActionArgumentsString:Battle for the Ares System]
-
-		[DebugHudMessage:CancelEndGame]
+		[CustomActionArgumentsString:PURGE Superweapon Firing In]
 
 
       </Description>
       
     </EntityComponent>	
-	
-	
-	
-	
-	
-	
-	
 	
 <!-- The END-->
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -126,8 +214,6 @@
       </Description>
       
     </EntityComponent>	
-	
-	
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>

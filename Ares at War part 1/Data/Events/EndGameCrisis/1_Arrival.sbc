@@ -3,27 +3,23 @@
   <EntityComponents>
   
 <!-- Ares 
-AaW-Event-Purge-StartBlitz
 -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-Event-Purge-StartArrival</SubtypeId>
+          <SubtypeId>AaW-Event-Purge-PlayerReadyForPurge</SubtypeId>
       </Id>
       <Description>
 
 		[MES Event]
 		[UniqueEvent:true]
 		[Tags:AaW-StoryEvent]		
-		[ConditionIds:AaW-EventCondition-Purge-StartArrival]
+		[ConditionIds:AaW-EventCondition-Purge-PlayerReadyForPurge]
 	
 		[ActionExecution:Sequential]
 		[TimeUntilNextActionMs:5000]
 		
-
-		[ActionIds:AaW-EventAction-Purge-StartArrival-Effect]			
-		[ActionIds:AaW-EventAction-Purge-StartArrival]		
-		
+		[ActionIds:AaW-EventAction-Purge-PlayerReadyForPurge]			
 		
       </Description>
 	</EntityComponent>	
@@ -32,16 +28,72 @@ AaW-Event-Purge-StartBlitz
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventCondition-Purge-StartArrival</SubtypeId>
+          <SubtypeId>AaW-EventCondition-Purge-PlayerReadyForPurge</SubtypeId>
       </Id>
       <Description>
 
       [MES Event Condition]
-		[CheckTrueBooleans:true]
-	  [TrueBooleans:PlayerReadyForPurge]	  
+	  
+	[CheckCustomCounters:true]
+	[CustomCounters:PlayerReadyForPurge]
+	[CustomCountersTargets:12]
+	[CounterCompareTypes:GreaterOrEqual]
+ 
       </Description>
       
     </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-PlayerReadyForPurge</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+
+		[ToggleEvents:true]
+		[ToggleEventIds:AaW2-Event-Purge-StartArrival]
+		[ToggleEventIdModes:true]	
+
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownIds:AaW2-Event-Purge-StartArrival]
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2-Event-Purge-StartArrival</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]		
+		[MinCooldownMs:2800000]
+		[MaxCooldownMs:3600000]		
+
+	
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000]
+		
+		[ActionIds:AaW-EventAction-Purge-StartArrival-Effect]			
+		[ActionIds:AaW-EventAction-Purge-StartArrival]		
+		
+		
+      </Description>
+	</EntityComponent>	
+     
+	 
 
 
 
@@ -55,8 +107,6 @@ AaW-Event-Purge-StartBlitz
 
 		[ActivateCustomAction:true]
 		[CustomActionName:PurgeArrivalEffect]
-		[DebugHudMessage:AaW-EventAction-Purge-StartArrival-Effect]
-
       </Description>
       
     </EntityComponent>
@@ -79,7 +129,6 @@ AaW-Event-Purge-StartBlitz
 		[ResetCooldownTimeOfEvents:true]
 		[ResetEventCooldownTags:PurgeArrival]
 
-		
 		[ActivateCustomAction:true]
 		[CustomActionName:ScT-CreateGPS]
 		[CustomActionArgumentsString:Massive subspace distortion]
@@ -89,16 +138,12 @@ AaW-Event-Purge-StartBlitz
       </Description>
       
     </EntityComponent>
-	
-	
-	
-	
-	
+
 	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-Event-Purge-ArrivalNews</SubtypeId>
+          <SubtypeId>AaW2-Event-Purge-ArrivalNews</SubtypeId>
       </Id>
       <Description>
 
@@ -129,7 +174,6 @@ AaW-Event-Purge-StartBlitz
           <SubtypeId>AaW-EventAction-Purge-ArrivalNews</SubtypeId>
       </Id>
       <Description>
-
 		[MES Event Action]
 
 		[UseChatBroadcast:true]
@@ -138,12 +182,7 @@ AaW-Event-Purge-StartBlitz
 		[ActivateCustomAction:true]
 		[CustomActionName:ScT-AddNews]
 		[CustomActionArgumentsString:A massive tear in the fabric of space has appeared in our system, acting as some sort of portal. Strange spacecraft are pouring in through this portal. It would appear that we are receiving visitors...]		
-		
-		
-		
-		
       </Description>
-      
     </EntityComponent>
 		
 
@@ -155,9 +194,8 @@ AaW-Event-Purge-StartBlitz
       </Id>
 	  
       <Description>
-
       [RivalAI Chat]
-      
+  
       [UseChat:true]
       [StartsReady:true]
       [Chance:100]
@@ -170,7 +208,7 @@ AaW-Event-Purge-StartBlitz
       [Color:Blue]
       [Author:Ares News Station]
         
-      [ChatMessages:A massive tear in the fabric of space has appeared in our system, acting as some sort of portal. Strange spacecraft are pouring in through this portal. It would appear that we are receiving visitors...]
+      [ChatMessages:A massive tear in the fabric of space has appeared in our system, acting as some sort of portal. Strange spacecraft are pouring in through it. It would appear that we are receiving visitors...]
       [BroadcastChatType:Chat]
       [ChatAudio:]  
    	  
@@ -182,7 +220,7 @@ AaW-Event-Purge-StartBlitz
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-Event-Purge-ArrivalAnnouncement</SubtypeId>
+          <SubtypeId>AaW2-Event-Purge-ArrivalAnnouncement</SubtypeId>
       </Id>
       <Description>
 
@@ -190,14 +228,11 @@ AaW-Event-Purge-StartBlitz
 		[UseEvent:false]		
 		[Tags:PurgeArrival]		
 		[UniqueEvent:true]
-		
 		[MinCooldownMs:120000]
 		[MaxCooldownMs:120001]				
-		
 
 		[ConditionIds:AaW-EventCondition-Purge-StartArrival]
 
-	
 		[ActionExecution:Sequential]
 		[TimeUntilNextActionMs:5000]
 
@@ -218,17 +253,25 @@ AaW-Event-Purge-StartBlitz
 
 		[UseChatBroadcast:true]
 		[ChatData:AaW-EventChat-Purge-ArrivalAnnouncement]
-		
-		
-				
+	
 		[ChangeBooleans:true]
 		[SetBooleansTrue:PurgeActive]
 		
 		
+		[ChangeCounters:true]
+		
+		[SetCounters:Purge_Strength_Counter]
+		[SetCountersAmount:800]
+
+		
 		[ToggleEvents:true]
 		[ToggleEventIds:AaW-Event-Purge-StartEndGame]
 		[ToggleEventIdModes:true]	
-
+		
+		[ToggleEventIds:AaW-Event-Purge-Defeated]
+		[ToggleEventIdModes:true]			
+		
+		
 		[ResetCooldownTimeOfEvents:true]
 		[ResetEventCooldownIds:AaW-Event-Purge-StartEndGame]			
 		
@@ -260,7 +303,7 @@ AaW-Event-Purge-StartBlitz
       [Color:Red]
       [Author:PURGE SIGNAL]
         
-      [ChatMessages:...st##... stan###... stand by... Confirmation of class-2 Singularity! Purge PROTOCOL NOW IN EFFECT! Unlocking all functions... Alert. YOU WILL SUCCUMB!]
+      [ChatMessages:...st##... stan###... stand by... Confirmation of class-2 Singularity! M##ust secure ... foothold before un#eashing the Harbinger...]
       [BroadcastChatType:Chat]
       [ChatAudio:AnF-Defensive]  
    	  
@@ -273,7 +316,7 @@ AaW-Event-Purge-StartBlitz
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-Event-Purge-ArrivalEnd</SubtypeId>
+          <SubtypeId>AaW2-Event-Purge-ArrivalEnd</SubtypeId>
       </Id>
       <Description>
 
@@ -311,10 +354,6 @@ AaW-Event-Purge-StartBlitz
 		[ActivateCustomAction:true]
 		[CustomActionName:ScT-RemoveGPS]
 		[CustomActionArgumentsString:Massive subspace distortion]
-		
-
-		
-		
       </Description>
       
     </EntityComponent>
@@ -323,22 +362,11 @@ AaW-Event-Purge-StartBlitz
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 <!-- Battles at the Arrivals -->
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-Event-PurgeArrival-PlayerNearA</SubtypeId>
+          <SubtypeId>AaW2-Event-PurgeArrival-PlayerNearA</SubtypeId>
       </Id>
       <Description>
 
@@ -386,24 +414,14 @@ AaW-Event-Purge-StartBlitz
 	[MES Event Action]
 	[ActivateCustomAction:true]
 
-
-
 	[SpawnEncounter:true]
 	[SpawnData:AnF-Spawner-HeavyGarrison]
 	[SpawnFactionTags:PURGE]
 	[SpawnCoords:{X:-1725718.78 Y:1493440.69 Z:-698321.45}]
-	
 
       </Description>
       
     </EntityComponent>		
-	
-
-	
-
-
-
-
 
 	
   </EntityComponents>

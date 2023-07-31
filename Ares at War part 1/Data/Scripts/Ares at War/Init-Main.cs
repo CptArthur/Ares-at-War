@@ -258,8 +258,15 @@ namespace AresAtWar.Init
             DRAHQ.Production = 2;
             DRA.HoldingsList.Add(DRAHQ);
 
+            //AHE
+            AaWFactions.FactionData Purge = new AaWFactions.FactionData("Purge");
+            listOfFactions.Add(Purge);
 
 
+            AaWHoldings.HoldingData Harbinger = new AaWHoldings.HoldingData("Harbinger");
+            Harbinger.Cap = 1000;
+            Harbinger.Production = 25;
+            Purge.HoldingsList.Add(Harbinger);
 
 
             //Faction check 
@@ -287,6 +294,10 @@ namespace AresAtWar.Init
 
             if (!MyAPIGateway.Utilities.GetVariable<bool>("AaWStoryEvents", out boolplaceholder))
                 MyAPIGateway.Utilities.SetVariable<bool>("AaWStoryEvents", true);
+
+
+            if (!MyAPIGateway.Utilities.GetVariable<bool>("PurgeActive", out boolplaceholder))
+                MyAPIGateway.Utilities.SetVariable<bool>("PurgeActive", false);
 
 
 

@@ -98,15 +98,41 @@ namespace Digi.Examples
 
                 if (!fac.IsFactionActive())
                     continue;
+                if(fac.Tag == "Purge")
+                {
+                    int Strength_Counter;
+                    MyAPIGateway.Utilities.GetVariable<int>(fac.Strength_CounterName, out Strength_Counter);
+                    sb.AppendLine();
+                    sb.Append($"THE PURGE").AppendLine();
 
-                int Strength_Counter;
-                MyAPIGateway.Utilities.GetVariable<int>(fac.Strength_CounterName, out Strength_Counter);
 
-                int Aggression_Counter;
-                MyAPIGateway.Utilities.GetVariable<int>(fac.Aggression_CounterName, out Aggression_Counter);
+                    bool HarbingerDestroyed = false;
+                    MyAPIGateway.Utilities.GetVariable<bool>("HarbingerDestroyed", out HarbingerDestroyed);
 
-                sb.Append($"{Format(fac.Tag)} {Format(Strength_Counter.ToString())} {Format(fac.Strength_Cap.ToString())}  {Format(fac.TotalProduction.ToString())}  {Format(Aggression_Counter.ToString())}");
-                sb.AppendLine();
+                    if (HarbingerDestroyed)
+                    {
+                        sb.Append($"Remaining Purge Forces").AppendLine();
+                        sb.Append($"{Format(Strength_Counter.ToString())}");
+                    }
+                    else
+                    {
+                        sb.Append($"Progress on Harbinger:").AppendLine();
+                        sb.Append($"{Format(Strength_Counter.ToString())}/{Format(fac.Strength_Cap.ToString())}");
+                    }
+
+                }
+                else
+                {
+                    int Strength_Counter;
+                    MyAPIGateway.Utilities.GetVariable<int>(fac.Strength_CounterName, out Strength_Counter);
+
+                    int Aggression_Counter;
+                    MyAPIGateway.Utilities.GetVariable<int>(fac.Aggression_CounterName, out Aggression_Counter);
+
+                    sb.Append($"{Format(fac.Tag)} {Format(Strength_Counter.ToString())} {Format(fac.Strength_Cap.ToString())}  {Format(fac.TotalProduction.ToString())}  {Format(Aggression_Counter.ToString())}");
+                    sb.AppendLine();
+                }
+
 
             }
 
@@ -155,8 +181,20 @@ namespace Digi.Examples
 
         public static string Format(string input)
         {
+
+            if (input == "Purge")
+                return input;
+
+
             if (input.Length == 3)
                 return input;
+
+
+            if (input.Length == 4)
+                return input;
+
+
+
 
             if (input.Length == 2)
                 return " " + input;

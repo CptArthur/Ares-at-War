@@ -22,10 +22,14 @@ namespace AresAtWar.Command
 
             MyAPIGateway.Utilities.GetVariable<bool>("AaWEventsEnabled", out StoryEvents);
 
+            int PlayerReadyForPurge = 0;
+
+            MyAPIGateway.Utilities.GetVariable<int>("PlayerReadyForPurge", out PlayerReadyForPurge);
+
             text.Append("Ares at War").AppendLine();
             text.Append($"ModVersion: {AaWSession.ModVersion}").AppendLine();
-            text.Append($"StoryEvents Enabled: {StoryEvents}");
-           
+            text.Append($"StoryEvents Enabled: {StoryEvents} (False by default if the world just loaded (6min to 25 min)").AppendLine();
+            text.Append($"Counter: {PlayerReadyForPurge}");
 
             //Holdings check 
             for (int i = 0; i < AllFactionList.Count; i++)

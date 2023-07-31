@@ -40,8 +40,19 @@
 [ExplosionDamage:0]
 
 [SetSandboxBooleansFalse:PurgeEndGame]
+[SetSandboxBooleansTrue:HarbingerDestroyed]
+
+
 [ActivateEvent:true]
 [ActivateEventIds:AaW-Event-Purge-CancelEndGame]
+
+
+[DecreaseSandboxCounters:Purge_Strength_Counter]
+[DecreaseSandboxCountersAmount:500]
+
+
+
+
 
 
 
@@ -68,10 +79,16 @@
         [Author:PURGE]
         [Color:Red]
 
-        [ChatMessages:FS@%AX$#S54()!]
+        [ChatMessages:Harbinger Destroyed]
         [ChatAudio:AnF-Target]
         [ChatVolumeMultiplier:1]
         [BroadcastChatType:Chat]
+
+
+[IgnoreAntennaRequirement:true]
+[IgnoredAntennaRangeOverride:20000]
+
+
 
       </Description>
     </EntityComponent>	

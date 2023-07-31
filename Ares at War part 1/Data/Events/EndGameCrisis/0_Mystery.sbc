@@ -2,18 +2,182 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
   
-  
+<!-- 
+These are the events start when the player is ready for the EndGameCrisis
+
+
+You have multiple ways to determine if a player is ready for the buildup
+
+
+A: 1500 ThreatScore
+B: ROSPurgeHints
+
+-Agaris Start
+C: FAF liberated Agaris
+D: FAF on the run
+
+-Lezuno start
+E: SYN HQ destroyed
+F: Remnant HQ destroyed
+
+-Bylen Start
+G: ITC capital destored
+-->  
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-Purge-StartBuildUp</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		[Tags:AaW-StoryEvent]		
+		
+		[UseAnyPassingCondition:true]
+		[ConditionIds:AaW-EventCondition-Purge-StartBuildUp]
+		
+		[ActionIds:AaW-EventAction-Purge-StartBuildUp]		
+      </Description>
+	</EntityComponent>	
+
+
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventChat-Purge-Zeoa</SubtypeId>
+          <SubtypeId>AaW-EventAction-Purge-StartBuildUp</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+
+		[ToggleEvents:true]
+		[ToggleEventTags:AaW-PurgeBuildUp]
+		[ToggleEventTagModes:true]	
+
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownTags:AaW-PurgeBuildUp]
+		
+		
+		[ChangeBooleans:true]
+[SetBooleansTrue:PurgeStartBuildUp]
+
+
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-Purge-StartBuildUp</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:true]
+
+	[CheckThreatScore:true]
+	[ThreatScoreAmount:1500]
+	[ThreatScoreDistance:5000]
+	[ThreatScoreType:Player]
+	[ThreatScoreGridConfiguration:All]	
+
+	[CheckCustomCounters:true]
+	[CustomCounters:GCAgarisMode]
+	[CustomCountersTargets:4]
+	[CounterCompareTypes:Equal]
+
+	[CheckTrueBooleans:true]
+	[AllowAnyTrueBoolean:true]
+	[TrueBooleans:FAF-HQDestroyed]  
+	[TrueBooleans:ITC-Thora4CapitalDestroyed]  
+	[TrueBooleans:REM-LezunoHQDestroyed]  
+	[TrueBooleans:SYN-HQDestroyed]
+	[TrueBooleans:ROSPurgeHints]
+      </Description>
+      
+    </EntityComponent>	
+
+
+<!-- PlayerReadyForPurge
+
++2 ROSPurgeHints
+Unlocked (after midgame is reached)
++5 Zeoa investigation
++2 DeepSpace Echoes (2 hours later)
++? More
+=5
+
+(WorldState)
++3 FAF has all the colonies or +2 FAF on the run
++2 FAF liberated Agaris
++2 ThreatScore 2000
++1 TIF HQ destroyed
++1 Rem HQ destroyed
++1 SYN HQ destroyed
++1 ITC HQ destroyed
+= 11
+ -->
+ 
+<!-- DeepSpaceEchoes -->
+
+<!--
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-PurgeBuildUp-DeepSpaceEchoes</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		[UseEvent:false]		
+
+		[MinCooldownMs:7200000]
+		[MaxCooldownMs:7800000]
+
+		[Tags:AaW-PurgeBuildUp]		
+		[ActionIds:AaW-EventAction-PurgeBuildUp-DeepSpaceEchoes]		
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-PurgeBuildUp-DeepSpaceEchoes</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+
+		[ChangeCounters:true]
+		[IncreaseCounters:PlayerReadyForPurge]
+		[IncreaseCountersAmount:2]
+		
+		[UseChatBroadcast:true]
+		[ChatData:AaW-EventChat-PurgeBuildUp-DeepSpaceEchoes]
+		
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-AddNews]
+		[CustomActionArgumentsString:Unknown DeepSpaceEchoes]		
+      </Description>
+    </EntityComponent>
+		
+
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-PurgeBuildUp-DeepSpaceEchoes</SubtypeId>
       </Id>
 	  
       <Description>
-
       [RivalAI Chat]
-      
+  
       [UseChat:true]
       [StartsReady:true]
       [Chance:100]
@@ -23,16 +187,242 @@
       [IgnoredAntennaRangeOverride:1]
       [SendToAllOnlinePlayers:true]
 
-      [Color:Blue]
-      [Author:Unkown]
+      [Color:Red]
+      [Author:Unknown Origin]
         
-      [ChatMessages:This is ITC-Zeoa. Do not come near us. The ship is infected with some sort of virus. Origin unkown. Our attempts to contain and neutralize the virus have proven futile. It adapts and evolves at an alarming rate. I... am afraid we don't have much time left.]
-      [BroadcastChatType:Chat]
-      [ChatAudio:]  
+      [ChatMessages:##...T#%56####SS@....]
+      [BroadcastChatType:Both]
+      [ChatAudio:AnF-Defensive]  
    	  
       </Description>
       
     </EntityComponent>		
+-->
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-PurgeBuildUp-ThreatScorePoints</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		[UseEvent:false]			
+		[Tags:AaW-PurgeBuildUp]		
+		
+		[UseAnyPassingCondition:true]
+		[ConditionIds:AaW-EventCondition-PurgeBuildUp-ThreatScorePoints]
+		
+		[ActionIds:AaW-EventAction-PurgeBuildUp-ThreatScorePoints]		
+      </Description>
+	</EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-PurgeBuildUp-ThreatScorePoints</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:true]
+
+	[CheckThreatScore:true]
+	[ThreatScoreAmount:2000]
+	[ThreatScoreDistance:5000]
+	[ThreatScoreType:Player]
+	[ThreatScoreGridConfiguration:All]	
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-PurgeBuildUp-ThreatScorePoints</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+
+		[ChangeCounters:true]
+		[IncreaseCounters:PlayerReadyForPurge]
+		[IncreaseCountersAmount:2]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+<!-- FAF on the run -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-PurgeBuildUp-FAFOntheRun</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		[Tags:AaW-PurgeBuildUp]	
+		[UseEvent:false]			
+		
+		[UseAnyPassingCondition:true]
+		[ConditionIds:AaW-EventCondition-PurgeBuildUp-FAFOntheRun]
+		
+		[ActionIds:AaW-EventAction-PurgeBuildUp-FAFOntheRun]		
+      </Description>
+	</EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-PurgeBuildUp-FAFOntheRun</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[CheckCustomCounters:true]
+	[CustomCounters:FAFMode]
+	[CustomCountersTargets:0]
+	[CounterCompareTypes:Equal]
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-PurgeBuildUp-FAFOntheRun</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+
+		[ChangeCounters:true]
+		[IncreaseCounters:PlayerReadyForPurge]
+		[IncreaseCountersAmount:2]
+
+      </Description>
+      
+    </EntityComponent>
+
+<!-- FAF All colonies -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-PurgeBuildUp-FAFAllColonies</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		[UseEvent:false]			
+		[Tags:AaW-PurgeBuildUp]		
+		
+		[UseAnyPassingCondition:true]
+		[ConditionIds:AaW-EventCondition-PurgeBuildUp-FAFAllColonies]
+		
+		[ActionIds:AaW-EventAction-PurgeBuildUp-FAFAllColonies]		
+      </Description>
+	</EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-PurgeBuildUp-FAFAllColonies</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	  [CheckTrueBooleans:true]
+      [TrueBooleans:FAFSunsetCity]
+      [TrueBooleans:FAFCarcosa]
+      [TrueBooleans:FAFAzuris]	
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-PurgeBuildUp-FAFAllColonies</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+
+		[ChangeCounters:true]
+		[IncreaseCounters:PlayerReadyForPurge]
+		[IncreaseCountersAmount:3]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+<!-- FAF All colonies -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-PurgeBuildUp-FAFRepublic</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		[UseEvent:false]			
+		[Tags:AaW-PurgeBuildUp]		
+		
+		[UseAnyPassingCondition:true]
+		[ConditionIds:AaW-EventCondition-PurgeBuildUp-FAFRepublic]
+		
+		[ActionIds:AaW-EventAction-PurgeBuildUp-FAFRepublic]		
+      </Description>
+	</EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-PurgeBuildUp-FAFRepublic</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[CheckCustomCounters:true]
+	[CustomCounters:FAFMode]
+	[CustomCountersTargets:4]
+	[CounterCompareTypes:Equal]
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-PurgeBuildUp-FAFRepublic</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+
+		[ChangeCounters:true]
+		[IncreaseCounters:PlayerReadyForPurge]
+		[IncreaseCountersAmount:2]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
 	
   </EntityComponents>
 </Definitions>

@@ -31,9 +31,6 @@
 		[StaticEncounterPlanetDirection:{X:-0.216657629726509 Y:0.423037535629053 Z:0.87982879864789}]
 		[StaticEncounterPlanetAltitude:13.4318165565455]
 
-
-
-
 		[ReplenishSystems:true]
 		[UseRivalAi:true]
 		[RivalAiReplaceRemoteControl:true]
@@ -118,6 +115,83 @@
 		</Prefabs>
 		
 	</SpawnGroup>	
+	
+	
+	<!--
+GPS:DeepSpaceStation:1409209.05876541:1269750.29429394:4322544.06449768:#FF75C9F1:	
+	
+	-->
+	
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>ROS-DeepSpaceStation</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:ROS]		
+
+		[TriggerCoords:{X:1409212.66274555 Y:1269755.79727905 Z:4322539.1548167}]
+		[TriggerRadius:15000]
+
+		[ForceExactPositionAndOrientation:true]
+
+
+		[StaticEncounterCoords:{X:1409212.66274555 Y:1269755.79727905 Z:4322539.1548167}]
+		[StaticEncounterForward:{X:0.0339924696711476 Y:-0.980441223048722 Z:0.193854378728937}]
+		[StaticEncounterUp:{X:0.82755571349248 Y:0.136365010284939 Z:0.544569669588695}]
+
+
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:ROS-DeepSpaceStationDestroyed]			
+		[ZoneConditions:ZoneCondition-ZoneAaW]	
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="ROS-DeepSpaceStation">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>ROS-ResearchStation-Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+		
+	</SpawnGroup>	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	<SpawnGroup>

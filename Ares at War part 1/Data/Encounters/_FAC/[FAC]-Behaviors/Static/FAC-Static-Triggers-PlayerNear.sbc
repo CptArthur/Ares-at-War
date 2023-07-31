@@ -3,15 +3,10 @@
   <EntityComponents>
 
 
-   <!--
-[Triggers:ROS-Station-Triggers-PlayerNear12000-Unwanted]
-[Triggers:ROS-Station-Triggers-PlayerNear12000-Neutral-ReputationLoss]
-   -->
-
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>ROS-Station-Triggers-PlayerNear12000-Unwanted</SubtypeId>
+          <SubtypeId>FAC-Static-Triggers-PlayerNear3000-Neutral-Unwanted</SubtypeId>
       </Id>
       <Description>
 
@@ -19,13 +14,36 @@
 	[Type:PlayerNear]
 	[UseTrigger:true]
 	[StartsReady:true]
-	[TargetDistance:12000]
+	[TargetDistance:3000]
 	[MinCooldownMs:450000]
 	[MaxCooldownMs:600000]
 	[Conditions:FAC-Context-Condition-NormalNeutral]
 
 
-	  [Actions:ROS-Station-Action-PlayerNear12000-Neutral]	  
+	  [Actions:FAC-Static-Action-PlayerNear3000-Neutral-Unwanted]	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Static-Triggers-PlayerNear2500-Neutral-Unwanted</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:2500]
+	[MinCooldownMs:450000]
+	[MaxCooldownMs:600000]
+	[Conditions:FAC-Context-Condition-NormalNeutral]
+
+
+	  [Actions:FAC-Static-Action-PlayerNear2500-Neutral-Unwanted]	  
       </Description>
       
     </EntityComponent>	
@@ -33,7 +51,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>ROS-Station-Triggers-PlayerNear12000-Neutral-ReputationLoss</SubtypeId>
+          <SubtypeId>FAC-Static-Triggers-PlayerNear2500-Neutral-Unwanted-ReputationLoss</SubtypeId>
       </Id>
       <Description>
 
@@ -41,27 +59,210 @@
 	[Type:PlayerNear]
 	[UseTrigger:true]
 	[StartsReady:true]
-	[TargetDistance:12000]
+	[TargetDistance:2500]
 	[MinCooldownMs:5000]
 	[MaxCooldownMs:5001]
 	[Conditions:FAC-Context-Condition-NormalNeutral]
-	[Actions:ROS-Station-Action-PlayerNear12000-Neutral-ReputationLoss]	  
+	[Actions:FAC-Static-Action-PlayerNear2500-Neutral-Unwanted-ReputationLoss]	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Static-Triggers-PlayerNear3000-Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:3000]
+	[MinCooldownMs:450000]
+	[MaxCooldownMs:600000]
+	[Conditions:FAC-Context-Condition-NormalNeutral]
+
+
+	  [Actions:FAC-Static-Action-PlayerNear3000-Friendly]	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Static-Triggers-PlayerNear3000-Friendly</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:3000]
+	[MinCooldownMs:450000]
+	[MaxCooldownMs:600000]
+	[Conditions:FAC-Context-Condition-NormalFriendly]
+
+
+	  [Actions:FAC-Static-Action-PlayerNear3000-Friendly]	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+<!-- =============================================================== -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Static-Triggers-PlayerNear2000-Neutral-Unwanted</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:2000]
+	[MinCooldownMs:450000]
+	[MaxCooldownMs:600000]
+	[Conditions:FAC-Context-Condition-NormalNeutral]
+
+
+	  [Actions:FAC-Static-Action-PlayerNear3000-Neutral-Unwanted]	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Static-Triggers-PlayerNear1500-Neutral-Unwanted</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:1500]
+	[MinCooldownMs:450000]
+	[MaxCooldownMs:600000]
+	[Conditions:FAC-Context-Condition-NormalNeutral]
+
+
+	  [Actions:FAC-Static-Action-PlayerNear2500-Neutral-Unwanted]	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Static-Triggers-PlayerNear1500-Neutral-Unwanted-ReputationLoss</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:1500]
+	[MinCooldownMs:5000]
+	[MaxCooldownMs:5001]
+	[Conditions:FAC-Context-Condition-NormalNeutral]
+	[Actions:FAC-Static-Action-PlayerNear2500-Neutral-Unwanted-ReputationLoss]	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Static-Triggers-PlayerNear2000-Friendly</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:2000]
+	[MinCooldownMs:450000]
+	[MaxCooldownMs:600000]
+	[Conditions:FAC-Context-Condition-NormalFriendly]
+
+
+	  [Actions:FAC-Static-Action-PlayerNear3000-Friendly]	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+
+
+
+	<!-- ================== -->
+	<!-- Static Player near -->
+	<!-- ================== -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Static-Action-PlayerNear3000-Enemy</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      	  
+
       </Description>
       
     </EntityComponent>
+
+
+
+
+	
 	
 	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>ROS-Station-Action-PlayerNear12000</SubtypeId>
+          <SubtypeId>FAC-Static-Action-PlayerNear3000-Neutral-Unwanted</SubtypeId>
       </Id>
       <Description>
 
       [RivalAI Action]
       
       [UseChatBroadcast:true]
-      [ChatData:ROS-Station-Chat-PlayerNear12000-Neutral]
+      [ChatData:FAC-Static-Chat-PlayerNear3000-Neutral-Unwanted]
+	  
+
+      </Description>
+      
+    </EntityComponent>
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Static-Action-PlayerNear2500-Neutral-Unwanted</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+      [UseChatBroadcast:true]
+      [ChatData:FAC-Static-Chat-PlayerNear2500-Neutral-Unwanted]
+	  
+
       </Description>
       
     </EntityComponent>
@@ -70,7 +271,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>ROS-Station-Action-PlayerNear12000-Neutral-ReputationLoss</SubtypeId>
+          <SubtypeId>FAC-Static-Action-PlayerNear2500-Neutral-Unwanted-ReputationLoss</SubtypeId>
       </Id>
       <Description>
 
@@ -83,13 +284,32 @@
 	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
       </Description>
       
-    </EntityComponent>		
+    </EntityComponent>	
+	
 	
 	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>ROS-Station-Chat-PlayerNear12000-Neutral</SubtypeId>
+          <SubtypeId>FAC-Static-Action-PlayerNear3000-Friendly</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+      [UseChatBroadcast:true]
+      [ChatData:FAC-Static-Chat-PlayerNear3000-Friendly]
+	  
+
+      </Description>
+      
+    </EntityComponent>
+	
+	<!-- ================== -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Static-Chat-PlayerNear3000-Neutral-Unwanted</SubtypeId>
       </Id>
 	  
       <Description>
@@ -115,7 +335,68 @@
 
       </Description>
       
-    </EntityComponent>	
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Static-Chat-PlayerNear2500-Neutral-Unwanted</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Red]
+      
+      [ChatMessages:Have you lost your mind? You’re are not authorized to be in this Area. Leave now]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+      [ChatMessages:You have now right to be here. Leave Immediately! ]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+	  
+	  
+      </Description>
+      
+    </EntityComponent>
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Static-Chat-PlayerNear3000-Friendly</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Green]
+      
+      [ChatMessages:Greetings {PlayerName}! You’re now in {Faction} space. Please make sure you follow our guidelines]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+
+      </Description>
+      
+    </EntityComponent>
+
 	
 	
 	

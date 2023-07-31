@@ -2,6 +2,47 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-HQ-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+ 	[TargetData:AaW-Target-Main-B]
+
+	[TriggerGroups:ContextTriggers]		
+	[TriggerGroups:SYN-CommonTriggers]
+	[TriggerGroups:SYN-Static-CommonTriggers]	
+	[TriggerGroups:FAC-Static-CommonTriggers]	
+	[TriggerGroups:FAC-Static-PlayerNear-Unwanted]		
+	
+	[Triggers:SYN-DefenseSystem-Trigger-LaunchingPatrolCraft]
+	[Triggers:SYN-DefenseSystem-Trigger-LightGarrison]		
+	[Triggers:FAC-Static-Trigger-CallAtmoCargoShip-SYNCode]
+
+	[Triggers:FAC-PointSystem-Trigger-Decrease100]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase100]
+	
+		
+	
+	
+		[Triggers:FAC-Static-Trigger-Death-PurgeCounter]
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -47,6 +88,11 @@
 	[TriggerGroups:SYN-Static-CommonTriggers]	
 	[TriggerGroups:FAC-Static-CommonTriggers]		
 	
+	[TriggerGroups:FAC-Static-PlayerNear-ShortRange-Unwanted]	
+
+
+
+
 
 
 	[Triggers:FAC-PointSystem-Trigger-Decrease50]
@@ -85,6 +131,8 @@
       </Description>
       
     </EntityComponent>		
+	
+
 	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>

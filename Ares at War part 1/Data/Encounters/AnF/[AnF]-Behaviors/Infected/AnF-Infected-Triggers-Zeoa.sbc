@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+<!-- 
+[Triggers:AnF-Zeoa-Trigger-DistressCall]
+
+[Triggers:AnF-Zeoa-Trigger-PlayerInvestigated]
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF-Zeoa-Trigger-DistressCall</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+        [MinCooldownMs:7200000]
+        [MaxCooldownMs:7200001]
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:AnF-Zeoa-Action-DistressCall]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF-Zeoa-Action-DistressCall</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:AnF-Zeoa-Chat-DistressCall]
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AnF-Zeoa-Chat-DistressCall</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:80000]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Blue]
+      [Author:Zeoa]
+        
+      [ChatMessages:This is ITC-Zeoa. Do not come near us. The ship is infected with some sort of virus. Origin unkown. Our attempts to contain and neutralize the virus have proven futile. It adapts and evolves at an alarming rate. I... am afraid we don't have much time left.]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+   	  
+      </Description>
+      
+
+    </EntityComponent>
+	
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF-Zeoa-Trigger-PlayerInvestigated</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:PlayerNear]
+		[TargetDistance:5000]
+        [StartsReady:true]
+        [MaxActions:1]
+        [Actions:AnF-Zeoa-Action-PlayerInvestigated]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF-Zeoa-Action-PlayerInvestigated</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+      [IncreaseSandboxCounters:PlayerReadyForPurge]
+		[IncreaseSandboxCountersAmount:5]
+      </Description>
+
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+  </EntityComponents>
+</Definitions>
