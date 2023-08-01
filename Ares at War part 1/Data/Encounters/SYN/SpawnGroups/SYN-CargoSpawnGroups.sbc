@@ -2,152 +2,113 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<SpawnGroups>
 	
-	
-		<SpawnGroup>
+	<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>SYN-Cargo-SN0</SubtypeId>
+				<SubtypeId>SYN-SpawnGroup-LargeCargoTransport</SubtypeId>
 			</Id>
 			<Description>
-			[Modular Encounters SpawnGroup]
 
-		
-		
-		
-		[ManipulationProfiles:SYN-Manipulation-Basic]
-
-
-		
-			[SpawnConditionsProfiles:SYN-SpawnProfile-Basic]
-			[SpawnConditionsProfiles:SYN-SpawnProfile-Agaris]						
-			</Description>
-			
-			
-			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
-			<IsPirate>true</IsPirate>
-			
-			<Frequency>5.0</Frequency>
-			<Prefabs>
-				<Prefab SubtypeId="(SYN) Recovery Hauler SN-0">
-					<Position>
-						<X>0.0</X>
-						<Y>0.0</Y>
-						<Z>0.0</Z>
-					</Position>
-					<Speed>25</Speed>
-					<Behaviour>SYN-Cargo-Behavior</Behaviour>
-				</Prefab>
-			</Prefabs>
-		
-		</SpawnGroup>	
-	
-
-		<SpawnGroup>
-			<Id>
-				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>SYN-Cargo-SN1</SubtypeId>
-			</Id>
-			<Description>
-			[Modular Encounters SpawnGroup]		
+		[Modular Encounters SpawnGroup]
 		
 			[SpawnConditionsProfiles:SYN-SpawnProfile-Basic]
 				
 		[ManipulationGroups:SYN-Manipulation-Group]	
 				
-				
-
-			</Description>
-			
-			
-			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
-			<IsPirate>true</IsPirate>
-			
-			<Frequency>5.0</Frequency>
-			<Prefabs>
-				<Prefab SubtypeId="(SYN) General Transport Hauler SN-1">
-					<Position>
-						<X>0.0</X>
-						<Y>0.0</Y>
-						<Z>0.0</Z>
-					</Position>
-					<Speed>25</Speed>
-					<Behaviour>SYN-Cargo-Behavior</Behaviour>
-				</Prefab>
-			</Prefabs>
-		
-		</SpawnGroup>
-
-
-		<SpawnGroup>
-			<Id>
-				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>SYN-Cargo-SN2</SubtypeId>
-			</Id>
-			<Description>
-			[Modular Encounters SpawnGroup]
-
-		
-			[SpawnConditionsProfiles:SYN-SpawnProfile-Basic]
-			[SpawnConditionsProfiles:SYN-SpawnProfile-Agaris]	
-
-
-		[ManipulationGroups:SYN-Manipulation-Group]		
-
-
-						
-			</Description>
-			
-			
-			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
-			<IsPirate>true</IsPirate>
-			
-			<Frequency>5.0</Frequency>
-			<Prefabs>
-				<Prefab SubtypeId="(SYN) General Transport Hauler SN-2">
-					<Position>
-						<X>0.0</X>
-						<Y>0.0</Y>
-						<Z>0.0</Z>
-					</Position>
-					<Speed>25</Speed>
-					<Behaviour>SYN-Cargo-Behavior</Behaviour>
-				</Prefab>
-			</Prefabs>
-		
-		</SpawnGroup>
-
-		<SpawnGroup>
-			<Id>
-				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>SYN-Cargo-SN3</SubtypeId>
-			</Id>
-			<Description>
-			[Modular Encounters SpawnGroup]
 	
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
 		
-			[SpawnConditionsProfiles:SYN-SpawnProfile-Basic]
-			[SpawnConditionsProfiles:SYN-SpawnProfile-Agaris]				
+		[UseSpawnGroupPrefabSpawningMode:true]
+		[PrefabSpawningMode:RandomSelectedIndexes]
+
+        [PrefabIndexGroupNames:Escort 1]
+        [PrefabIndexGroupValues:0]
+
+        [PrefabIndexGroupNames:Escort 2]
+        [PrefabIndexGroupValues:1]
+	
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:2]
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:3]	
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:4]					
+		[PrefabIndexGroupNames:MainShip]
+		[PrefabIndexGroupValues:5]				
+
 				
-		[ManipulationGroups:SYN-Manipulation-Group]					
-			</Description>
+		</Description>
 			
 			
 			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
 			<IsPirate>true</IsPirate>
 			
 			<Frequency>5.0</Frequency>
-			<Prefabs>
-				<Prefab SubtypeId="(SYN) Fuel Hauler SN-3">
-					<Position>
-						<X>0.0</X>
-						<Y>0.0</Y>
-						<Z>0.0</Z>
-					</Position>
-					<Speed>25</Speed>
-					<Behaviour>SYN-Cargo-Behavior</Behaviour>
-				</Prefab>
-			</Prefabs>
-		</SpawnGroup>
+						
+		<Prefabs>			
+		<Prefab SubtypeId="(SYN) SD-3">
+			<Position>
+				<X>-100.0</X>
+				<Y>0.0</Y>
+				<Z>0.0</Z>
+			</Position>
+			<Speed>25</Speed>
+			<Behaviour>SYN-EscortDrone-Behavior</Behaviour>
+		</Prefab>			
+	
+		<Prefab SubtypeId="(SYN) SD-3">
+			<Position>
+				<X>100.0</X>
+				<Y>0.0</Y>
+				<Z>0.0</Z>
+			</Position>
+			<Speed>25</Speed>
+			<Behaviour>SYN-EscortDrone-Behavior</Behaviour>
+		</Prefab>	
+			<Prefab SubtypeId="SYN-LargeCargoTransport-0">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>SYN-Cargo-Behavior</Behaviour>
+			</Prefab>
+
+			<Prefab SubtypeId="SYN-LargeCargoTransport-1">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>SYN-Cargo-Behavior</Behaviour>
+			</Prefab>
+			
+			<Prefab SubtypeId="SYN-LargeCargoTransport-2">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>SYN-Cargo-Behavior</Behaviour>
+			</Prefab>			
+			<Prefab SubtypeId="SYN-LargeCargoTransport-3">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>SYN-Cargo-Behavior</Behaviour>
+			</Prefab>					
+		</Prefabs>	
+	</SpawnGroup>
+
+	
+<!--
 
 		<SpawnGroup>
 			<Id>
@@ -286,7 +247,7 @@
 			</Prefabs>
 		</SpawnGroup>
 
-
+-->
 
 	</SpawnGroups>
 </Definitions>

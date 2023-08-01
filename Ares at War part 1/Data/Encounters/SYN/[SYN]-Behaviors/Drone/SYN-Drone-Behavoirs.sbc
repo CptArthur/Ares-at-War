@@ -35,6 +35,34 @@
 
 
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-EscortDrone-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Behavior]
+      [BehaviorName:Escort]
+
+	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:SYN-CommonTriggers] 	
+	[TriggerGroups:SYN-Drone-CommonTriggers] 		
+	[TriggerGroups:FAC-Drone-CommonTriggers] 	
+	
+
+	  [AutopilotData:SYN-DroneAutopilot]
+	  
+	  [FighterEngageDistancePlanet:600]
+	  [FighterDisengageDistancePlanet:1000]
+	  
+	  [TargetData:AaW-Target-Main-A]
+	[TriggerGroups:FAC-DefensiveEscortSystem-Drone-TriggerGroup] 
+	[Triggers:FAC-PointSystem-Trigger-Decrease1]
+
+      </Description>
+      
+    </EntityComponent>
 
 
 
