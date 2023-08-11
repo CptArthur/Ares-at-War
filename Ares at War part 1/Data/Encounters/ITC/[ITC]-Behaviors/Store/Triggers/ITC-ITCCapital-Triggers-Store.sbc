@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+  <!-- [Triggers:ITC-Trigger-Static-PopulateStores-ITCCapital] -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>ITC-Trigger-Static-PopulateStores-ITCCapital</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Session]
+        [Conditions:ITC-Condition-Static-PopulateStores-ITCCapital]
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:ITC-Action-Static-PopulateStores-ITCCapital]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>ITC-Condition-Static-PopulateStores-ITCCapital</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+              
+        [UseConditions:true]
+        [UseFailCondition:true]
+        [CheckAllLoadedModIDs:true]
+        [AllModIDsToCheck:2344068716]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>ITC-Action-Static-PopulateStores-ITCCapital</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [ApplyStoreProfiles:true]
+        [ClearStoreContentsFirst:true]
+
+        
+      [StoreBlocks:Store {ITC}]
+      [StoreProfiles:ITC-StoreProfile-ITCCapital-ITC]		
+		
+	  [StoreBlocks:Store {SYN}]
+      [StoreProfiles:ITC-StoreProfile-ITCCapital-SYN]	
+		
+      
+
+
+      [StoreBlocks:Store Civ]
+      [StoreProfiles:ITC-StoreProfile-ITCCapital-Civ]
+  
+      [StoreBlocks:Store Salvage]
+      [StoreProfiles:ITC-StoreProfile-ITCCapital-Salvage]
+
+      [StoreBlocks:Store Ammo]
+      [StoreProfiles:ITC-StoreProfile-ITCCapital-Ammo]
+
+      [StoreBlocks:Store Ingot]
+      [StoreProfiles:ITC-StoreProfile-ITCCapital-Ingot]
+  
+      [StoreBlocks:Store Tool]
+      [StoreProfiles:ITC-StoreProfile-ITCCapital-Tool]      
+
+      [StoreBlocks:Store Prefab]
+      [StoreProfiles:ITC-StoreProfile-ITCCapital-Prefab]      
+
+      
+      [StoreBlocks:Store Fuel]
+      [StoreProfiles:ITC-StoreProfile-ITCCapital-Fuel]
+  
+      
+      [StoreBlocks:Store Outpost]
+      [StoreProfiles:ITC-StoreProfile-ITCCapital-Outpost]
+
+	  
+	  
+	[AddCustomDataToBlocks:true]
+	[CustomDataBlockNames:EconomySurvival Store Water Vehicles,EconomySurvival Store Land Vehicles,EconomySurvival Store Air Vehicles,EconomySurvival Store Space Vehicles]
+	[CustomDataFiles:ITC_Water_Vehicles.xml]
+	[CustomDataFiles:ITC_Land_Vehicles.xml]
+	[CustomDataFiles:ITC_Air_Vehicles.xml]
+	[CustomDataFiles:ITC_Space_Vehicles.xml]  
+      </Description>
+
+    </EntityComponent>
+  </EntityComponents>
+</Definitions>
