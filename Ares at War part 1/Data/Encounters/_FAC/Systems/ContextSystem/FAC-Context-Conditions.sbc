@@ -2,6 +2,48 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
+
+<!-- NormalNeutral
+Plaernear
+HasNoTarget
+
+
+-->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Context-Condition-NormalNeutralPlayerNearNoTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:SettingNormal]
+	[TrueBooleans:PlayerNear]
+	[TrueBooleans:NoTarget]	
+	
+[CheckPlayerReputation:true]
+[MaxPlayerReputationDistanceCheck:4500]
+[AllPlayersReputationMustMatch:true]
+[CheckReputationwithFaction:{self}]
+[MinPlayerReputation:-499]
+[MaxPlayerReputation:499]	
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+
+
+
+
+
+
 <!-- Check command value -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!--
+
+[Triggers:FAC-Context-Trigger-PlayerNear]
+
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Context-Condition-PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:PlayerNear]
+      </Description>
+      
+    </EntityComponent>	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Context-Condition-PlayerFar</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[UseFailCondition:true]
+	
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+
+	[TrueBooleans:PlayerFar]
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Context-Trigger-PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[TargetDistance:5000]
+
+	[UseTrigger:true]
+	[StartsReady:false]
+	[MinCooldownMs:10000]
+	[MaxCooldownMs:10001]
+	[MaxActions:-1]
+
+	[Actions:FAC-Context-Action-PlayerNear]
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Context-Action-PlayerNear</SubtypeId>
+      </Id>
+     <Description>
+
+	[RivalAI Action]
+
+	[SetBooleansTrue:PlayerNear]
+		[SetBooleansFalse:PlayerFar]
+	</Description>
+      
+    </EntityComponent>
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Context-Trigger-PlayerFar</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[TargetDistance:5000]
+
+	[UseTrigger:true]
+	[StartsReady:false]
+	[MinCooldownMs:10000]
+	[MaxCooldownMs:10001]
+	[MaxActions:-1]
+
+[UseFailCondition:true]
+	[Actions:FAC-Context-Action-PlayerFar]
+      </Description>
+    </EntityComponent>	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Context-Action-PlayerFar</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[SetBooleansTrue:PlayerFar]
+	[SetBooleansFalse:PlayerNear]
+	
+	
+		</Description>
+      
+    </EntityComponent>	
+
+
+
+  </EntityComponents>
+</Definitions>
