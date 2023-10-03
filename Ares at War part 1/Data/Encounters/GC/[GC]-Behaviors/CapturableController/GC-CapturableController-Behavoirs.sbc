@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-ColonyController-Behavior</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW-Target-Main-B]	  
+	
+	[Triggers:FAC-Triggers-Despawn]		
+      </Description>
+      
+    </EntityComponent>	
+	
+		
+	
+		
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-CapturableController-Behavior</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW-Target-Main-B]	  
+	
+	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:GC-CommonTriggers]
+  	[TriggerGroups:GC-CapturableController-CommonTriggers]	
+  	[TriggerGroups:FAC-CapturableController-CommonTriggers]
+
+
+	[TriggerGroups:GC-TriggerGroup-HeavyDefense]
+
+
+	[Triggers:GC-MajorStatic-Trigger-selfpresence]	
+	[Triggers:FAC-PointSystem-Trigger-Decrease150]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase100]					
+      </Description>
+      
+    </EntityComponent>		
+	
+
+
+	
+  </EntityComponents>
+</Definitions>

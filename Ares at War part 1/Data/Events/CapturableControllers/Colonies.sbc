@@ -1,0 +1,1064 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+  <!-- Carcosa -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2-Event-SetFAFCarcosa</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:false]
+		[MinCooldownMs:18000]
+		[MaxCooldownMs:36001]
+		
+		[ConditionIds:AaW-EventCondition-SetFAFCarcosa]
+		
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000]
+
+
+		[ActionIds:AaW-EventAction-SetFAFCarcosa]
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-SetFAFCarcosa-NewsAlert]	
+		
+		
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-SetFAFCarcosa</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+      [CheckTrueBooleans:true]
+      [TrueBooleans:COLCarcosa]	  
+      [TrueBooleans:FAFActive]	  
+      [TrueBooleans:FAFReadyForExpansion]	
+
+	  
+      [CheckFalseBooleans:true]
+      [FalseBooleans:GCCarcosa]
+      [FalseBooleans:FAFCarcosa]
+	  
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetFAFCarcosa</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+		[ChangeBooleans:true]
+		
+		[SetBooleansFalse:COLCarcosa]
+		[SetBooleansFalse:GCCarcosa]
+		[SetBooleansTrue:FAFCarcosa]		
+
+		[ToggleEvents:true]
+		[ToggleEventIds:AaW2-Event-SetGCCarcosa]
+		[ToggleEventIdModes:true]	
+		
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-SpawnPlanetaryInstallation]
+		[CustomActionArgumentsString:FAFCarcosa]	
+		[CustomActionArgumentsVector3D:{X:-1169412.7 Y:97934.39 Z:1325510.96}]				
+
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetFAFCarcosa-NewsAlert</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+	    [UseChatBroadcast:true]
+    [ChatData:AaW-EventChat-FAFCarcosaNewsAlert]
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:FAF Captured Carcosa]
+      </Description>
+      
+    </EntityComponent>
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-FAFCarcosaNewsAlert</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Green]
+      [Author:Ares News Station]
+        
+      [ChatMessages:FAF Captured Carcosa!]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2-Event-SetGCCarcosa</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:false]
+		[MinCooldownMs:18000]
+		[MaxCooldownMs:36001]
+
+		[ConditionIds:AaW-EventCondition-SetGCCarcosa]
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000]
+
+		[ActionIds:AaW-EventAction-SetGCCarcosa]
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-SetGCCarcosa-NewsAlert]	
+		
+
+      </Description>
+	</EntityComponent>	
+      
+
+	  
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-SetGCCarcosa</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+      [CheckTrueBooleans:true]
+      [TrueBooleans:COLCarcosa]	  
+      [TrueBooleans:GCActive]	
+      [TrueBooleans:GCReadyForExpansion]
+	  
+      [CheckFalseBooleans:true]
+      [FalseBooleans:GCCarcosa]
+      [FalseBooleans:FAFCarcosa]
+	  [FalseBooleans:GCAgarisDefeated]
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetGCCarcosa</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+		[ChangeBooleans:true]
+		
+		[SetBooleansFalse:COLCarcosa]
+		[SetBooleansFalse:FAFCarcosa]
+		[SetBooleansTrue:GCCarcosa]	
+
+		
+		[ToggleEvents:true]
+		[ToggleEventIds:AaW2-Event-SetFAFCarcosa]
+		[ToggleEventIdModes:true]	
+		
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-SpawnPlanetaryInstallation]
+		[CustomActionArgumentsString:GCCarcosa]	
+		[CustomActionArgumentsVector3D:{X:-1169412.7 Y:97934.39 Z:1325510.96}]			
+		
+      </Description>
+      
+    </EntityComponent>
+		
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetGCCarcosa-NewsAlert</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+	    [UseChatBroadcast:true]
+    [ChatData:AaW-EventChat-GCCarcosaNewsAlert]
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:GC Captured Carcosa]
+      </Description>
+      
+    </EntityComponent>
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-GCCarcosaNewsAlert</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Green]
+      [Author:Ares News Station]
+        
+      [ChatMessages:GC Captured Carcosa!]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>		
+	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2-Event-SetFAFSunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:false]
+		[MinCooldownMs:18000]
+		[MaxCooldownMs:36001]
+		
+		[ConditionIds:AaW-EventCondition-SetFAFSunsetCity]
+		
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000]
+
+
+		[ActionIds:AaW-EventAction-SetFAFSunsetCity]
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-SetFAFSunsetCity-NewsAlert]	
+		
+		
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-SetFAFSunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+      [CheckTrueBooleans:true]
+      [TrueBooleans:COLSunsetCity]	  
+      [TrueBooleans:FAFActive]	  
+      [TrueBooleans:FAFReadyForExpansion]	
+
+	  
+      [CheckFalseBooleans:true]
+      [FalseBooleans:GCSunsetCity]
+      [FalseBooleans:FAFSunsetCity]
+	  
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetFAFSunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+		[ChangeBooleans:true]
+		
+		[SetBooleansFalse:COLSunsetCity]
+		[SetBooleansFalse:GCSunsetCity]
+		[SetBooleansTrue:FAFSunsetCity]		
+
+		[ToggleEvents:true]
+		[ToggleEventIds:AaW2-Event-SetGCSunsetCity]
+		[ToggleEventIdModes:true]	
+
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-SpawnPlanetaryInstallation]
+		[CustomActionArgumentsString:FAFSunsetCity]	
+		[CustomActionArgumentsVector3D:{X:-1133703.76714407 Y:133985.403575366 Z:1235588.46964791}]	
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetFAFSunsetCity-NewsAlert</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+	    [UseChatBroadcast:true]
+    [ChatData:AaW-EventChat-FAFSunsetCityNewsAlert]
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:FAF Captured SunsetCity]
+      </Description>
+      
+    </EntityComponent>
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-FAFSunsetCityNewsAlert</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Green]
+      [Author:Ares News Station]
+        
+      [ChatMessages:FAF Captured SunsetCity!]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2-Event-SetGCSunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:false]
+		[MinCooldownMs:18000]
+		[MaxCooldownMs:36001]
+
+		[ConditionIds:AaW-EventCondition-SetGCSunsetCity]
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000]
+
+		[ActionIds:AaW-EventAction-SetGCSunsetCity]
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-SetGCSunsetCity-NewsAlert]	
+		
+
+      </Description>
+	</EntityComponent>	
+      
+
+	  
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-SetGCSunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+      [CheckTrueBooleans:true]
+      [TrueBooleans:COLSunsetCity]	  
+      [TrueBooleans:GCActive]	
+      [TrueBooleans:GCReadyForExpansion]
+	  
+      [CheckFalseBooleans:true]
+      [FalseBooleans:GCSunsetCity]
+      [FalseBooleans:FAFSunsetCity]
+	  [FalseBooleans:GCAgarisDefeated]	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetGCSunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+		[ChangeBooleans:true]
+
+		[SetBooleansFalse:COLSunsetCity]
+		[SetBooleansFalse:FAFSunsetCity]
+		[SetBooleansTrue:GCSunsetCity]		
+
+		[ToggleEvents:true]
+		[ToggleEventIds:AaW2-Event-SetFAFSunsetCity]
+		[ToggleEventIdModes:true]	
+		
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-SpawnPlanetaryInstallation]
+		[CustomActionArgumentsString:GCSunsetCity]	
+		[CustomActionArgumentsVector3D:{X:-1133703.76714407 Y:133985.403575366 Z:1235588.46964791}]			
+      </Description>
+      
+    </EntityComponent>
+		
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetGCSunsetCity-NewsAlert</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+	    [UseChatBroadcast:true]
+    [ChatData:AaW-EventChat-GCSunsetCityNewsAlert]
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:GC Captured SunsetCity]
+      </Description>
+      
+    </EntityComponent>
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-GCSunsetCityNewsAlert</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Green]
+      [Author:Ares News Station]
+        
+      [ChatMessages:GC Captured SunsetCity!]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2-Event-SetFAFAzuris</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:false]
+		[MinCooldownMs:18000]
+		[MaxCooldownMs:36001]
+		
+		[ConditionIds:AaW-EventCondition-SetFAFAzuris]
+		
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000]
+
+
+		[ActionIds:AaW-EventAction-SetFAFAzuris]
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-SetFAFAzuris-NewsAlert]	
+		
+		
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-SetFAFAzuris</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+      [CheckTrueBooleans:true]
+      [TrueBooleans:COLAzuris]	  
+      [TrueBooleans:FAFActive]	  
+      [TrueBooleans:FAFReadyForExpansion]	
+
+	  
+      [CheckFalseBooleans:true]
+      [FalseBooleans:GCAzuris]
+      [FalseBooleans:FAFAzuris]
+	  
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetFAFAzuris</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+		[ChangeBooleans:true]
+		
+		[SetBooleansFalse:COLAzuris]
+		[SetBooleansFalse:GCAzuris]
+		[SetBooleansTrue:FAFAzuris]		
+
+		[ToggleEvents:true]
+		[ToggleEventIds:AaW2-Event-SetGCAzuris]
+		[ToggleEventIdModes:true]	
+		
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-SpawnPlanetaryInstallation]
+		[CustomActionArgumentsString:FAFAzuris]	
+		[CustomActionArgumentsVector3D:{X:-1083758.95490802 Y:125933.592745608 Z:1256220.63219873}]	
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetFAFAzuris-NewsAlert</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+	    [UseChatBroadcast:true]
+    [ChatData:AaW-EventChat-FAFAzurisNewsAlert]
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:FAF Captured Azuris]
+
+      </Description>
+      
+    </EntityComponent>
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-FAFAzurisNewsAlert</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Green]
+      [Author:Ares News Station]
+        
+      [ChatMessages:FAF Captured Azuris!]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2-Event-SetGCAzuris</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:false]
+		[MinCooldownMs:18000]
+		[MaxCooldownMs:36001]
+
+		[ConditionIds:AaW-EventCondition-SetGCAzuris]
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000]
+
+		[ActionIds:AaW-EventAction-SetGCAzuris]
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-SetGCAzuris-NewsAlert]	
+		
+
+      </Description>
+	</EntityComponent>	
+      
+
+	  
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-SetGCAzuris</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+      [CheckTrueBooleans:true]
+      [TrueBooleans:COLAzuris]	  
+      [TrueBooleans:GCActive]	
+      [TrueBooleans:GCReadyForExpansion]
+	  
+      [CheckFalseBooleans:true]
+      [FalseBooleans:GCAzuris]
+      [FalseBooleans:FAFAzuris]
+	  [FalseBooleans:GCAgarisDefeated]	  
+
+		
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetGCAzuris</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+		[ChangeBooleans:true]
+		
+		[SetBooleansFalse:COLAzuris]
+		[SetBooleansFalse:FAFAzuris]
+		[SetBooleansTrue:GCAzuris]		
+
+
+		[ToggleEvents:true]
+		[ToggleEventIds:AaW2-Event-SetFAFAzuris]
+		[ToggleEventIdModes:true]
+		
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-SpawnPlanetaryInstallation]
+		[CustomActionArgumentsString:GCAzuris]	
+		[CustomActionArgumentsVector3D:{X:-1083758.95490802 Y:125933.592745608 Z:1256220.63219873}]	
+      </Description>
+      
+    </EntityComponent>
+		
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetGCAzuris-NewsAlert</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+	    [UseChatBroadcast:true]
+    [ChatData:AaW-EventChat-GCAzurisNewsAlert]
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:GC Captured Azuris]
+      </Description>
+      
+    </EntityComponent>
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-GCAzurisNewsAlert</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Green]
+      [Author:Ares News Station]
+        
+      [ChatMessages:GC Captured Azuris!]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2-Event-SetCOLSunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:false]
+		[ConditionIds:AaW-EventCondition-SetCOLSunsetCity]
+		[MinCooldownMs:30000]
+		[MaxCooldownMs:30001]
+		
+		
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-SetCOLSunsetCity]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-SetCOLSunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+      [CheckFalseBooleans:true]
+      [FalseBooleans:GCSunsetCity]
+      [FalseBooleans:FAFSunsetCity]
+      [FalseBooleans:COLSunsetCity]	  
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetCOLSunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+		[ChangeBooleans:true]
+		
+		[SetBooleansTrue:COLSunsetCity]
+		[SetBooleansFalse:GCSunsetCity]
+		[SetBooleansFalse:FAFSunsetCity]		
+
+		[DebugHudMessage:SetSunsetCity]
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2-Event-SetCOLCarcosa</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[MinCooldownMs:30000]
+		[MaxCooldownMs:30001]
+		
+		
+		[UniqueEvent:false]
+		[ConditionIds:AaW-EventCondition-SetCOLCarcosa]
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-SetCOLCarcosa]
+
+      </Description>
+	</EntityComponent>	
+      
+		    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-SetCOLCarcosa</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+      [CheckFalseBooleans:true]
+      [FalseBooleans:GCCarcosa]
+      [FalseBooleans:FAFCarcosa]
+      [FalseBooleans:COLCarcosa]	  
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetCOLCarcosa</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+		[ChangeBooleans:true]
+		
+		[SetBooleansTrue:COLCarcosa]
+		
+		
+		[SetBooleansFalse:GCCarcosa]
+		[SetBooleansFalse:FAFCarcosa]	
+		
+		[DebugHudMessage:SetCOLCarcosa]
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2-Event-SetCOLAzuris</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[MinCooldownMs:30000]
+		[MaxCooldownMs:30001]
+		
+		
+		[UniqueEvent:false]
+		[ConditionIds:AaW-EventCondition-SetCOLAzuris]
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-SetCOLAzuris]
+
+      </Description>
+	</EntityComponent>	
+      
+		    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-SetCOLAzuris</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+      [CheckFalseBooleans:true]
+      [FalseBooleans:GCAzuris]
+      [FalseBooleans:FAFAzuris]
+      [FalseBooleans:COLAzuris]	  
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetCOLAzuris</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+		[ChangeBooleans:true]
+		
+		[SetBooleansTrue:COLAzuris]
+		[SetBooleansFalse:GCAzuris]
+		[SetBooleansFalse:FAFAzuris]		
+		[DebugHudMessage:SetCOLAzuris]
+      </Description>
+      
+    </EntityComponent>	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2-Event-SetCOLS27</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[MinCooldownMs:30000]
+		[MaxCooldownMs:30001]		
+		
+		[UniqueEvent:false]
+		[ConditionIds:AaW-EventCondition-SetCOLS27]
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-SetCOLS27]
+
+      </Description>
+	</EntityComponent>	
+      
+		    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-SetCOLS27</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+      [CheckFalseBooleans:true]
+      [FalseBooleans:GCS27]
+      [FalseBooleans:FAFS27]
+      [FalseBooleans:COLS27]	  
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-SetCOLS27</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+		[ChangeBooleans:true]
+		
+		[SetBooleansTrue:COLS27]
+		[SetBooleansFalse:GCS27]
+		[SetBooleansFalse:FAFS27]		
+		[DebugHudMessage:SetCOLS27]
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+
+	
+	
+	
+	
+
+ 
+
+
+
+
+
+
+
+
+	
+	
+  </EntityComponents>
+</Definitions>

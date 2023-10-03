@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-CapturableController-Triggers-PlayerNear130-Neutral-Unwanted</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:130]
+	[MinCooldownMs:450000]
+	[MaxCooldownMs:600000]
+	[Conditions:FAC-Context-Condition-NormalNeutral]
+
+
+	  [Actions:FAC-CapturableController-Action-PlayerNear130-Neutral-Unwanted]	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-CapturableController-Triggers-PlayerNear130-Neutral-Unwanted-ReputationLoss</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:130]
+	[MinCooldownMs:1000]
+	[MaxCooldownMs:1001]
+	[Conditions:FAC-Context-Condition-NormalNeutral]
+	[Actions:FAC-CapturableController-Action-PlayerNear130-Neutral-Unwanted-ReputationLoss]	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-CapturableController-Action-PlayerNear130-Neutral-Unwanted</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+      [UseChatBroadcast:true]
+      [ChatData:FAC-CapturableController-Chat-PlayerNear130-Neutral-Unwanted]
+	  
+
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-CapturableController-Action-PlayerNear130-Neutral-Unwanted-ReputationLoss</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+      
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:2800]
+	[ReputationChangeFactions:{Self}]
+	[ReputationChangeAmount:-10]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+      </Description>
+      
+    </EntityComponent>	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-CapturableController-Chat-PlayerNear130-Neutral-Unwanted</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Red]
+      
+      [ChatMessages:Have you lost your mind? You’re are not authorized to be in this Area. Leave now]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+      [ChatMessages:You have no right to be here. Leave immediately! ]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+	  
+	  
+      </Description>
+      
+    </EntityComponent>
+	
+
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!-- 
+[Triggers:FAC-Capturable-Trigger-CheckForController-Start]
+
+[Triggers:FAC-Capturable-Trigger-FoundController]
+
+
+[Triggers:FAC-Capturable-Trigger-RequestController]
+
+[Triggers:FAC-Capturable-Trigger-RequestController-GC]
+[Triggers:FAC-Capturable-Trigger-RequestController-FAF]
+
+
+
+
+
+
+
+-->
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Trigger-CheckForController-Start</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Timer]
+	[Conditions:FAC-Capturable-Condition-NotCOL]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+
+
+	[Actions:FAC-Capturable-Action-CheckForController-Start]
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Action-CheckForController-Start</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+	[DisableTriggers:true]
+	[DisableTriggerNames:FAC-Capturable-Trigger-CheckForController-Start]	
+	
+	
+	[ResetCooldownTimeOfTriggers:true]
+	[ResetTriggerCooldownNames:FAC-Capturable-Trigger-RequestController]
+	
+	
+	[EnableTriggers:true]
+	[EnableTriggerNames:FAC-Capturable-Trigger-FoundController]
+	[EnableTriggerNames:FAC-Capturable-Trigger-RequestController]
+
+	
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Trigger-FoundController</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:false]
+	
+	[Type:CommandReceived]
+	[CommandReceiveCode:CapturableController]
+	[StartsReady:true]
+	
+		
+	[Actions:FAC-Capturable-Action-RequestController-DisableAll]	
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Action-RequestController-DisableAll</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+	[DisableTriggers:true]
+	
+	[DisableTriggerNames:FAC-Capturable-Trigger-FoundController]		
+	
+	
+	[DisableTriggerNames:FAC-Capturable-Trigger-RequestController-GC]
+	[DisableTriggerNames:FAC-Capturable-Trigger-RequestController-FAF]
+	[DisableTriggerNames:FAC-Capturable-Trigger-RequestController]
+
+	
+      </Description>
+      
+    </EntityComponent>		
+	
+
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Trigger-RequestController</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:false]
+	[Type:Timer]
+
+	[MinCooldownMs:20000]
+	[MaxCooldownMs:20001]
+
+	[Actions:FAC-Capturable-Action-RequestController]
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Action-RequestController</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+	[EnableTriggers:true]
+	[EnableTriggerNames:FAC-Capturable-Trigger-RequestController-GC]
+	[EnableTriggerNames:FAC-Capturable-Trigger-RequestController-FAF]
+      </Description>
+      
+    </EntityComponent>
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Action-RequestController-CheckEnded</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+	[DisableTriggers:true]
+	[DisableTriggerNames:FAC-Capturable-Trigger-RequestController-GC]
+	[DisableTriggerNames:FAC-Capturable-Trigger-RequestController-FAF]
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+	
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Trigger-RequestController-GC</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:false]
+	[Type:Timer]
+	[MinCooldownMs:900]
+	[MaxCooldownMs:901]	
+	[Conditions:FAC-Capturable-Condition-GC]
+	
+	[ActionExecution:All]
+	[Actions:FAC-Capturable-Action-RequestController-GC]
+	[Actions:FAC-Capturable-Action-RequestController-CheckEnded]
+	
+      </Description>
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Action-RequestController-GC</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+	[ActivateEvent:true]
+	[ActivateEventIds:AaW-Event-SpawnGC{SpawnGroupName}]
+		
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Trigger-RequestController-FAF</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:false]
+	[Type:Timer]
+	[MinCooldownMs:900]
+	[MaxCooldownMs:901]		
+	[Conditions:FAC-Capturable-Condition-FAF]
+	
+	[ActionExecution:All]
+	[Actions:FAC-Capturable-Action-RequestController-FAF]
+	[Actions:FAC-Capturable-Action-RequestController-CheckEnded]
+	
+      </Description>
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Action-RequestController-FAF</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+	[ActivateEvent:true]
+	[ActivateEventIds:AaW-Event-SpawnFAF{SpawnGroupName}]
+		
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+  </EntityComponents>
+</Definitions>

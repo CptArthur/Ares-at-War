@@ -1,0 +1,314 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+<!-- 
+[Triggers:FAC-Capturable-Triggers-FAF]
+[Triggers:FAC-Capturable-Triggers-GC]
+[Triggers:FAC-Capturable-Triggers-COL]
+
+
+-->
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Triggers-FAF</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:true]
+    [Type:Session]
+	[Conditions:FAC-Capturable-Condition-FAF]
+
+[ActionExecution:All]
+	[Actions:FAC-Capturable-Action-FAF]
+	[Actions:FAC-Capturable-Action-FAF2]
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Action-FAF</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+	
+	[RecolorGrid:true]
+	[OldBlockColors:{X:0 Y:-0.8 Z:-0.13}]
+	[NewBlockColors:{X:0.3333333 Y:-0.48 Z:-0.25}]
+
+	[ChangeBlockOwnership:true]
+	[OwnershipBlockNames:{FAC}]
+	[OwnershipBlockFactions:FAF]
+
+	[EnableTriggers:true]
+	[DisableTriggers:true]
+	
+			
+	[EnableTriggerNames:FAC-Trigger-CallAtmoCargoShip-FAFCode]
+	[DisableTriggerNames:FAC-Trigger-CallAtmoCargoShip-GCCode]
+
+
+	[EnableTriggerNames:FAC-Capturable-Trigger-CheckForController-Start]
+	
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Action-FAF2</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+	[RecolorGrid:true]
+	[OldBlockColors:{X:0 Y:-0.03 Z:-0.14}]
+	[NewBlockColors:{X:0.3333333 Y:-0.48 Z:-0.25}]
+
+
+
+      </Description>
+      
+    </EntityComponent>	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Triggers-GC</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:true]
+    [Type:Session]
+	[Conditions:FAC-Capturable-Condition-GC]
+	 
+[ActionExecution:All]
+	 
+	[Actions:FAC-Capturable-Action-GC]
+	[Actions:FAC-Capturable-Action-GC2]
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Action-GC</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[ChangeBlockOwnership:true]
+	[OwnershipBlockNames:{FAC}]
+	[OwnershipBlockFactions:GC]
+
+	[RecolorGrid:true]
+	[OldBlockColors:{X:0 Y:-0.8 Z:-0.13}]
+	[NewBlockColors:{X:0 Y:-0.03 Z:-0.14}]
+
+	[EnableTriggers:true]
+	[DisableTriggers:true]
+	
+	[DisableTriggerNames:FAC-Trigger-CallAtmoCargoShip-UCACode]
+	[EnableTriggerNames:FAC-Trigger-CallAtmoCargoShip-GCCode]
+
+	[EnableTriggerNames:FAC-Capturable-Trigger-CheckForController-Start]	
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Action-GC2</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+	[RecolorGrid:true]
+
+	[OldBlockColors:{X:0.3333333 Y:-0.48 Z:-0.25}]
+	[NewBlockColors:{X:0 Y:-0.03 Z:-0.14}]
+
+
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Triggers-COL</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:true]
+    [Type:Session]
+	[Conditions:FAC-Capturable-Condition-COL]
+	  
+	  
+	[ActionExecution:All]  
+	[Actions:FAC-Capturable-Action-COL]
+	[Actions:FAC-Capturable-Action-COL2]
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Action-COL</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[RecolorGrid:true]
+	[OldBlockColors:{X:0 Y:-0.03 Z:-0.14}]
+	[NewBlockColors:{X:0 Y:-0.8 Z:-0.13}]
+
+
+	[DisableTriggers:true]	
+	[DisableTriggerNames:FAC-Trigger-CallAtmoCargoShip-FAFCode]
+	[DisableTriggerNames:FAC-Trigger-CallAtmoCargoShip-GCCode]
+
+	[ChangeBlockOwnership:true]
+	[OwnershipBlockNames:{FAC}]
+	[OwnershipBlockFactions:COL]
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Action-COL2</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[RecolorGrid:true]
+
+	[NewBlockColors:{X:0.3333333 Y:-0.48 Z:-0.25}]
+	[NewBlockColors:{X:0 Y:-0.8 Z:-0.13}]
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+
+
+<!-- Conditions -->
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Condition-FAF</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+      [CheckTrueSandboxBooleans:true]
+
+	  [TrueSandboxBooleans:FAF{SpawnGroupName}]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Condition-GC</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+      [CheckTrueSandboxBooleans:true]
+
+	  [TrueSandboxBooleans:GC{SpawnGroupName}]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Condition-COL</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+      [CheckTrueSandboxBooleans:true]
+
+	  [TrueSandboxBooleans:COL{SpawnGroupName}]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Capturable-Condition-NotCOL</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+      [CheckTrueSandboxBooleans:true]
+
+	  [TrueSandboxBooleans:COL{SpawnGroupName}]
+	  [UseFailCondition:true]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+  </EntityComponents>
+</Definitions>

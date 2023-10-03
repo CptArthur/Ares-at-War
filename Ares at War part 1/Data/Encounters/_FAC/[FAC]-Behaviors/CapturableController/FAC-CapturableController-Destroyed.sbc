@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!--
+
+[Triggers:FAC-CapturableController-Triggers-Destroyed-ResetCooldown]
+[Triggers:FAC-CapturableController-Triggers-Destroyed]
+
+-->
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-CapturableController-Triggers-Destroyed</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Compromised]
+	[UseTrigger:true]
+	[StartsReady:false]
+
+	  [Actions:FAC-CapturableController-Action-Destroyed]	  
+      </Description>
+      
+    </EntityComponent>	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-CapturableController-Action-Destroyed</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+	  
+	  
+	[ToggleEvents:true]
+	[ToggleEventIds:AaW2-Event-Set{SpawnGroupName}]
+	[ToggleEventIdModes:false]	
+
+	[SetSandboxBooleansFalse:{SpawnGroupName}]
+
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

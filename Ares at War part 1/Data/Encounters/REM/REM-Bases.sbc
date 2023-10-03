@@ -6,6 +6,73 @@
 	<SpawnGroup>
 		<Id>
 			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>REM-LezunoHQ</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:REM]		
+
+		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+		[TriggerRadius:10000]
+
+		[ForceExactPositionAndOrientation:true]
+
+
+		[StaticEncounterCoords:{X:-1308380.83074186 Y:-309148.219564624 Z:-1408842.20772734}]
+		[StaticEncounterForward:{X:0.429190634457179 Y:0.872649428740001 Z:-0.232977195909803}]
+		[StaticEncounterUp:{X:-0.0215506444615484 Y:0.267762932253143 Z:0.96324378110346}]
+
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Lezuno]
+		[StaticEncounterPlanetDirection:{X:-0.0220707318468992 Y:0.269647865089264 Z:0.962706035946874}]
+		[StaticEncounterPlanetAltitude:12.6183289822147]
+
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:Outpost Braz]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+
+        [ShipyardSetup:true]
+        [ShipyardConsoleBlockNames:{Any}]
+        [ShipyardProfileNames:FAC-Shipyard-ScrapYard]
+		
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:REM-LezunoHQDestroyed]			
+		[ZoneConditions:ZoneCondition-ZoneAaW]	
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="REM-HQ">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>REM-HQ-Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+		
+	</SpawnGroup>
+	
+	
+	
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
 			<SubtypeId>REM-AgarisCrashedPegasus</SubtypeId>
 		</Id>
 		<Description>
@@ -31,10 +98,6 @@
 			[StaticEncounterPlanetAltitude:-3.81032417688402]
 
 
-        [ShipyardSetup:true]
-        [ShipyardConsoleBlockNames:{Any}]
-        [ShipyardProfileNames:FAC-Shipyard-ScrapYard]
-		
 		
 		
 			[ReplenishSystems:true]
@@ -124,63 +187,6 @@
 		
 	</SpawnGroup>	
 
-	<SpawnGroup>
-		<Id>
-			<TypeId>SpawnGroupDefinition</TypeId> 
-			<SubtypeId>REM-LezunoHQ</SubtypeId>
-		</Id>
-		<Description>
-		[Modular Encounters SpawnGroup]
-		
-		[StaticEncounter:True]
-		[ForceStaticGrid:true]
-		[RotateFirstCockpitToForward:false]
-		[FactionOwner:REM]		
-
-		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
-		[TriggerRadius:10000]
-
-		[ForceExactPositionAndOrientation:true]
-
-
-		[StaticEncounterCoords:{X:-1308380.83074186 Y:-309148.219564624 Z:-1408842.20772734}]
-		[StaticEncounterForward:{X:0.429190634457179 Y:0.872649428740001 Z:-0.232977195909803}]
-		[StaticEncounterUp:{X:-0.0215506444615484 Y:0.267762932253143 Z:0.96324378110346}]
-
-
-		[StaticEncounterUsePlanetDirectionAndAltitude:true]
-		[StaticEncounterPlanet:Planet Lezuno]
-		[StaticEncounterPlanetDirection:{X:-0.0220707318468992 Y:0.269647865089264 Z:0.962706035946874}]
-		[StaticEncounterPlanetAltitude:12.6183289822147]
-
-
-
-		[ReplenishSystems:true]
-		[UseRivalAi:true]
-		[RivalAiReplaceRemoteControl:true]
-		[IgnoreCombatPhase:true]
-		[IgnoreCleanupRules:true]
-		[FalseSandboxVariables:REM-LezunoHQDestroyed]			
-		[ZoneConditions:ZoneCondition-ZoneAaW]	
-		</Description>
-		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
-		<IsPirate>true</IsPirate>
-		
-		<Frequency>5.0</Frequency>
-		<Prefabs>
-			<Prefab SubtypeId="REM-HQ">
-				<Position>
-					<X>0.0</X>
-					<Y>0.0</Y>
-					<Z>0.0</Z>
-				</Position>
-				<Speed>0</Speed>
-				<Behaviour>REM-HQ-Behavior</Behaviour>
-			<PlaceToGridOrigin>true</PlaceToGridOrigin>
-			</Prefab>
-		</Prefabs>
-		
-	</SpawnGroup>
 
 
 
