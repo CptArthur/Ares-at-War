@@ -23,7 +23,7 @@ namespace AresAtWar.SessionCore
     [MySessionComponentDescriptor(MyUpdateOrder.BeforeSimulation | MyUpdateOrder.AfterSimulation)]
     public class AaWSession : MySessionComponentBase
     {
-        public static string ModVersion = "0.4.9.8";
+        public static string ModVersion = "0.4.10";
 
         public static MESApi MESApi;
         public int counter = 0;
