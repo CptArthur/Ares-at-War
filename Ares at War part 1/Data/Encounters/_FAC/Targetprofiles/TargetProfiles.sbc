@@ -61,7 +61,50 @@
 	
 	
 	
-	
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW-Target-SpaceHunters</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Target]
+
+        [UseCustomTargeting:true]
+        [Target:Grid]
+
+        [MaxDistance:15000]
+
+        [TimeUntilTargetAcquisition:10]
+        [TimeUntilNextEvaluation:3]
+
+        [MatchAllFilters:OutsideOfSafezone]
+        [MatchAllFilters:Owner]
+        [MatchAllFilters:Relation]
+        [MatchAllFilters:Powered]
+
+
+        [MatchAnyFilters:Broadcasting]
+        [MatchAnyFilters:MovementScore]
+        [MatchAnyFilters:LineOfSight]
+
+        [NonBroadcastVisualRange:4000]
+        [MinMovementScore:1000]
+        [MaxMovementDetectableDistance:8000]
+        [MaxLineOfSight:5000]
+
+
+
+        [Owners:Player]
+        [Owners:NPC]
+        [Relations:Enemy]
+
+        [GetTargetBy:ClosestDistance]
+
+      </Description>
+
+    </EntityComponent>
+		
 
 
 

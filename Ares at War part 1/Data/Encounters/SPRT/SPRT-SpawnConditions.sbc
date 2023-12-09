@@ -3,24 +3,74 @@
   <EntityComponents>
 	
 
-	<!-- UCA-SpawnProfile-Zone-UCAStr-1 -->
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>SPRT-SpawnProfile-Main</SubtypeId>
+        <SubtypeId>SPRT-SpawnProfile-BylenRing</SubtypeId>
       </Id>
       <Description>
 
         [MES Spawn Conditions]
 
+        [FactionOwner:SPRT]
+		
+		
+        [ChanceCeiling:250]
+        [SpaceCargoShip:true]
+        [SpaceCargoShipChance:200]
 
+
+		[CustomApiConditions:BylenRing]
+        [UseCombatPhase:true]
+		
+		
+		
+		
+		
+		
+		
+	[UseSpawnGroupPrefabSpawningMode:true]		
+		
       </Description>
 
     </EntityComponent>
 	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SPRT-SpawnProfile-DeepSpace</SubtypeId>
+      </Id>
+      <Description>
 
+        [MES Spawn Conditions]
+
+        [FactionOwner:SPRT]
+		
+        [ChanceCeiling:250]
+        [SpaceCargoShip:true]
+        [SpaceCargoShipChance:50]
 
 	
+        [GravityCargoShip:true]
+        [GravityCargoShipChance:20]
+		
+        [UseCombatPhase:true]
+		
+		[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+
+    </EntityComponent>	
+	
+	
+	
+	
+	
+
     
+
+
   </EntityComponents>
 </Definitions>

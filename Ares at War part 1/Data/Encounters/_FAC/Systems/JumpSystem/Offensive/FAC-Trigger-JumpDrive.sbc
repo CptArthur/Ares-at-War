@@ -1,32 +1,28 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
+    <!--JumpDrive-TargetFar-->
 
-<!--
-
-
-
-[Triggers:FAC-Dynamic-Trigger-NewTarget]
-
--->
-
-   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dynamic-Trigger-NewTarget</SubtypeId>
+        <SubtypeId>FAC-Trigger-JumpDrive-TargetFar</SubtypeId>
       </Id>
       <Description>
 
         [RivalAI Trigger]
 
         [UseTrigger:true]
-        [Type:AcquiredTarget]
+        [Type:TargetFar]
+		[TargetDistance:5000]
+
+		
         [MinCooldownMs:120000]
         [MaxCooldownMs:120001]
         [StartsReady:true]
         [MaxActions:-1]
-        [Actions:FAC-Dynamic-Action-NewTarget]
+        [Actions:FAC-Action-JumpDrive-TargetFar]
 
       </Description>
 
@@ -35,23 +31,26 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dynamic-Action-NewTarget</SubtypeId>
+        <SubtypeId>FAC-Action-JumpDrive-TargetFar</SubtypeId>
       </Id>
       <Description>
 
         [RivalAI Action]
 
+[JumpToTarget:true]
+
+
         [UseChatBroadcast:true]
-        [ChatData:FAC-Dynamic-Chat-NewTarget]
+        [ChatData:FAC-Chat-JumpDrive-TargetFar]
 
       </Description>
 
     </EntityComponent>
-	
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dynamic-Chat-NewTarget</SubtypeId>
+        <SubtypeId>FAC-Chat-JumpDrive-TargetFar</SubtypeId>
       </Id>
       <Description>
 
@@ -61,36 +60,16 @@
         [StartsReady:true]
         [MaxChats:-1]
         [BroadcastRandomly:false]
-        [Author:Reaver]
+        [Author:SPRT]
         [Color:Red]
 
-        [ChatMessages:A {Faction} {AntennaName} has Detected a Potential Target]
+        [ChatMessages:Jump Drive Activated]
         [ChatAudio:event_red_alert]
+        [ChatVolumeMultiplier:0.2]
         [BroadcastChatType:Notify]
-		
-		
-		[IgnoreAntennaRequirement:true]
-[IgnoredAntennaRangeOverride:10000]
-
 
       </Description>
-    </EntityComponent>	
-	
+    </EntityComponent>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	
   </EntityComponents>
 </Definitions>

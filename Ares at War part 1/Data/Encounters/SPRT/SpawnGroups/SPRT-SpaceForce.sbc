@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>SPRT-SpawnGroup-LightSpaceTaskForce</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+
+        [PersistentConditions:AaW-SpawnConditions-Threat-Medium]
+        [SpawnConditionsProfiles:SPRT-SpawnProfile-BylenRing]
+	
+		[UseSpawnGroupPrefabSpawningMode:true]
+		[PrefabSpawningMode:RandomSelectedIndexes]
+
+        [PrefabIndexGroupNames:Main]
+        [PrefabIndexGroupValues:0]
+
+        [PrefabIndexGroupNames:Main]
+        [PrefabIndexGroupValues:1]
+
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="SPRT-LightHunter">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SPRT-SpaceHunter-Behavior-Solo</Behaviour>
+				</Prefab>
+				<Prefab SubtypeId="SPRT-LightHunter-2">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SPRT-SpaceHunter-Behavior-Solo</Behaviour>
+				</Prefab>
+			</Prefabs>			
+		</SpawnGroup>	
+
+
+
+
+
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>SPRT-SpawnGroup-MediumSpaceTaskForce</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+	
+        [PersistentConditions:AaW-SpawnConditions-Threat-Hard]
+        [SpawnConditionsProfiles:SPRT-SpawnProfile-BylenRing]	
+	
+		[UseSpawnGroupPrefabSpawningMode:true]
+		[PrefabSpawningMode:RandomSelectedIndexes]
+
+        [PrefabIndexGroupNames:Main]
+        [PrefabIndexGroupValues:0]
+
+        [PrefabIndexGroupNames:Main]
+        [PrefabIndexGroupValues:1]
+
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="SPRT-Corvette-1">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SPRT-SpaceHunter-Behavior-Solo</Behaviour>
+				</Prefab>
+				<Prefab SubtypeId="SPRT-Corvette-2">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SPRT-SpaceHunter-Behavior-Solo</Behaviour>
+				</Prefab>
+			</Prefabs>			
+		</SpawnGroup>	
+
+
+
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>SPRT-SpawnGroup-HeavySpaceTaskForce</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+
+
+        [PersistentConditions:AaW-SpawnConditions-Threat-VeryHard]
+        [SpawnConditionsProfiles:SPRT-SpawnProfile-BylenRing]	
+        [SpawnConditionsProfiles:SPRT-SpawnProfile-DeepSpace]
+		
+		[UseSpawnGroupPrefabSpawningMode:true]
+		[PrefabSpawningMode:RandomSelectedIndexes]
+
+        [PrefabIndexGroupNames:Escort]
+        [PrefabIndexGroupValues:0]
+
+		
+        [PrefabIndexGroupNames:Main]
+        [PrefabIndexGroupValues:1]
+        [PrefabIndexGroupNames:Main]
+        [PrefabIndexGroupValues:2]
+			
+        [PrefabIndexGroupNames:Main]
+        [PrefabIndexGroupValues:3]	
+
+		
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+
+				<Prefab SubtypeId="SPRT-Gunfighter">
+					<Position>
+						<X>0</X>
+						<Y>-200</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SPRT-OffensiveEscortDrone-Behavior</Behaviour>
+				</Prefab>
+
+								
+				<Prefab SubtypeId="SPRT-Cruiser-1">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SPRT-SpaceHunter-Behavior-Leader</Behaviour>
+				</Prefab>
+				
+				<Prefab SubtypeId="SPRT-Cruiser-2">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SPRT-SpaceHunter-Behavior-Leader</Behaviour>
+				</Prefab>
+
+				<Prefab SubtypeId="SPRT-Destroyer-Grissom">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SPRT-SpaceHunter-Behavior-Leader</Behaviour>
+				</Prefab>
+			</Prefabs>			
+		</SpawnGroup>	
+
+
+
+
+
+	</SpawnGroups>
+</Definitions>
