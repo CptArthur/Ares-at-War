@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!--
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-PlayerCondition-LezunoStart</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+
+	[CheckLastRespawnShipName:true]
+	[LastRespawnShipName:ITC Mallard (Crashed)]
+	
+	
+	[CheckPlayerTags:true]
+	[ExcludedPlayerTag:Attacked_GC_Recently]
+	
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-OnSpawnTest</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:true]
+		[UniqueEvent:false]
+
+		[ConditionIds:AaW-EventCondition-OnSpawnTest]
+		
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-OnSpawnTest]
+      </Description>
+	</EntityComponent>	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-OnSpawnTest</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:AaW-PlayerCondition-LezunoStart]
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-OnSpawnTest</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+[DebugHudMessage:OnSpawnTest]
+
+
+[AddTagstoPlayers:true]
+[TagsPlayerConditionIds:AaW-PlayerCondition-LezunoStart]
+[Tags:Attacked_GC_Recently]
+      </Description>
+      
+    </EntityComponent>	
+-->
+	
+  </EntityComponents>
+</Definitions>

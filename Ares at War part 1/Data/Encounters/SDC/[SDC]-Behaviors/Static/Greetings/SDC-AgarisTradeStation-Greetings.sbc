@@ -134,9 +134,9 @@ SDC-TradeStation-Triggers-PlayerFar
 	[RivalAI Trigger]
 	[Type:PlayerNear]
 	[TargetDistance:2000]
-	[UsePlayerFilterProfile:true]
-	[PlayerFilterProfileIds:PlayerFilterProfile-ExcludedPlayerNear]
-	[PlayerFilterProfileIds:PlayerFilterProfile-SDCNeutral]
+	[UsePlayerConditionProfile:true]
+	[PlayerConditionProfileIds:PlayerConditionProfile-ExcludedPlayerNear]
+	[PlayerConditionProfileIds:PlayerConditionProfile-SDCNeutral]
 	
 	
 	[UseTrigger:true]
@@ -211,9 +211,9 @@ SDC-TradeStation-Triggers-PlayerFar
 	[RivalAI Trigger]
 	[Type:PlayerNear]
 	[TargetDistance:2000]
-	[UsePlayerFilterProfile:true]
-	[PlayerFilterProfileIds:PlayerFilterProfile-ExcludedPlayerNear]
-	[PlayerFilterProfileIds:PlayerFilterProfile-SDCFriendly]
+	[UsePlayerConditionProfile:true]
+	[PlayerConditionProfileIds:PlayerConditionProfile-ExcludedPlayerNear]
+	[PlayerConditionProfileIds:PlayerConditionProfile-SDCFriendly]
 	
 	
 	[UseTrigger:true]
@@ -236,8 +236,10 @@ SDC-TradeStation-Triggers-PlayerFar
 	[UseChatBroadcast:true]
     [ChatData:SDC-TradeStation-Chat-Greeting-Friendly]    
 	
-	[SavePlayerIdentityToSandboxList:true]
-	[PlayerIdentitySandboxList:PlayerNear]
+	[AddTagsToPlayers:true]
+	[AddTags:PlayerNear]
+	[AddTagsIncludeSavedPlayerIdentity:true]
+	
 
 	[SavePlayerIdentity:true]
       </Description>
@@ -302,8 +304,8 @@ SDC-TradeStation-Triggers-PlayerFar
 	[RivalAI Trigger]
 	[Type:PlayerFar]
 	[TargetDistance:3500]
-	[UsePlayerFilterProfile:true]
-	[PlayerFilterProfileIds:PlayerFilterProfile-IncludedPlayerNear]
+	[UsePlayerConditionProfile:true]
+	[PlayerConditionProfileIds:PlayerConditionProfile-IncludedPlayerNear]
 	
 	[UseTrigger:true]
 	[StartsReady:true]
@@ -324,9 +326,9 @@ SDC-TradeStation-Triggers-PlayerFar
 
       [RivalAI Action]
         
-	[SDCovePlayerIdentityFromSandboxList:true]
-	[PlayerIdentitySandboxList:PlayerNear]
-	[SDCovePlayerIdentity:true]
+	[RemoveTagsFromPlayers:true]
+	[RemoveTags:PlayerNear]
+	[RemoveTagsIncludeSavedPlayerIdentity:true]
       </Description>
       
     </EntityComponent>	

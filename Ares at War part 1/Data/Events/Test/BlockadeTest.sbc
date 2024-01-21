@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
-  <!--
+
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-Event-Test</SubtypeId>
+          <SubtypeId>AaW-Event-BlockadeTest</SubtypeId>
       </Id>
       <Description>
 
@@ -14,18 +14,18 @@
 		[UniqueEvent:true]
 
 	
-		[ConditionIds:AaW-EventCondition-Test]
+		[ConditionIds:AaW-EventCondition-BlockadeTest]
 		
 		
 		[ActionExecution:All]
-		[ActionIds:AaW-EventAction-Test]
 
+		[ActionIds:AaW-EventAction-BlockadeTest]
       </Description>
 	</EntityComponent>	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventCondition-Test</SubtypeId>
+          <SubtypeId>AaW-EventCondition-BlockadeTest</SubtypeId>
       </Id>
       <Description>
 
@@ -33,19 +33,18 @@
 
 	[CheckPlayerNear:true]
 	[PlayerNearCoords:{X:1449429.5 Y:-622819.5 Z:-2854387.5}]
-	[PlayerNearDistanceFromCoords:75000]
-
-
+	[PlayerNearMinDistanceFromCoords:45080]
+	[PlayerNearDistanceFromCoords:49460]
       </Description>
       
     </EntityComponent>	
 
 
-	
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventAction-Test</SubtypeId>
+          <SubtypeId>AaW-EventAction-BlockadeTest</SubtypeId>
       </Id>
       <Description>
 
@@ -55,9 +54,9 @@
 	[CustomActionName:ScT-SpawnPlanetaryBlockade]
 	[CustomActionArgumentsString:GC-SpawnGroup-HeavyGarrison]
 	
-	[CustomActionArgumentsInt:70000]	
-	[CustomActionArgumentsInt:78000]
-	[CustomActionArgumentsInt:4500]	
+	[CustomActionArgumentsInt:45080]	
+	[CustomActionArgumentsInt:49460]
+	[CustomActionArgumentsInt:5000]	
 	
 	[CustomActionArgumentsVector3D:{X:1449429.5 Y:-622819.5 Z:-2854387.5}]
 
@@ -66,8 +65,7 @@
       </Description>
       
     </EntityComponent>	
-     -->         
-	
+
 	
   </EntityComponents>
 </Definitions>

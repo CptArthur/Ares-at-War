@@ -134,9 +134,9 @@ AHE-TradeStation-Triggers-PlayerFar
 	[RivalAI Trigger]
 	[Type:PlayerNear]
 	[TargetDistance:2000]
-	[UsePlayerFilterProfile:true]
-	[PlayerFilterProfileIds:PlayerFilterProfile-ExcludedPlayerNear]
-	[PlayerFilterProfileIds:PlayerFilterProfile-AHENeutral]
+	[UsePlayerConditionProfile:true]
+	[PlayerConditionProfileIds:PlayerConditionProfile-ExcludedPlayerNear]
+	[PlayerConditionProfileIds:PlayerConditionProfile-AHENeutral]
 	
 	
 	[UseTrigger:true]
@@ -159,8 +159,9 @@ AHE-TradeStation-Triggers-PlayerFar
 	[UseChatBroadcast:true]
     [ChatData:AHE-TradeStation-Chat-Greeting-Neutral]    
 	
-	[SavePlayerIdentityToSandboxList:true]
-	[PlayerIdentitySandboxList:PlayerNear]
+	[AddTagsToPlayers:true]
+	[AddTags:PlayerNear]
+	[AddTagsIncludeSavedPlayerIdentity:true]
 
 	[SavePlayerIdentity:true]
       </Description>
@@ -216,9 +217,9 @@ AHE-TradeStation-Triggers-PlayerFar
 	[RivalAI Trigger]
 	[Type:PlayerNear]
 	[TargetDistance:2000]
-	[UsePlayerFilterProfile:true]
-	[PlayerFilterProfileIds:PlayerFilterProfile-ExcludedPlayerNear]
-	[PlayerFilterProfileIds:PlayerFilterProfile-AHEFriendly]
+	[UsePlayerConditionProfile:true]
+	[PlayerConditionProfileIds:PlayerConditionProfile-ExcludedPlayerNear]
+	[PlayerConditionProfileIds:PlayerConditionProfile-AHEFriendly]
 	
 	
 	[UseTrigger:true]
@@ -314,8 +315,8 @@ AHE-TradeStation-Triggers-PlayerFar
 	[RivalAI Trigger]
 	[Type:PlayerFar]
 	[TargetDistance:3000]
-	[UsePlayerFilterProfile:true]
-	[PlayerFilterProfileIds:PlayerFilterProfile-IncludedPlayerNear]
+	[UsePlayerConditionProfile:true]
+	[PlayerConditionProfileIds:PlayerConditionProfile-IncludedPlayerNear]
 	
 	[UseTrigger:true]
 	[StartsReady:true]
@@ -336,9 +337,9 @@ AHE-TradeStation-Triggers-PlayerFar
 
       [RivalAI Action]
         
-	[RemovePlayerIdentityFromSandboxList:true]
-	[PlayerIdentitySandboxList:PlayerNear]
-	[RemovePlayerIdentity:true]
+	[RemoveTagsFromPlayers:true]
+	[RemoveTags:PlayerNear]
+	[RemoveTagsIncludeSavedPlayerIdentity:true]
       </Description>
       
     </EntityComponent>	

@@ -3,10 +3,6 @@
 	<SpawnGroups>
 
 
-
-
-
-<!--
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
@@ -24,7 +20,8 @@
 		[UseRivalAi:true]
 		[RivalAiReplaceRemoteControl:true]
 
-			
+			[UsePlayerCondition:true]
+			[PlayerConditionIds:AaW-PlayerCondition-AresCampaign]
 			</Description>
 			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
 			<IsPirate>true</IsPirate>
@@ -81,9 +78,6 @@
 
 
 
-
-
-
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
@@ -93,11 +87,6 @@
 			[Modular Encounters SpawnGroup]
 		
 
-		[SpawnConditionsProfiles:GC-SpawnProfile-AgarisPeace-Both-Zone]
-		[SpawnConditionsProfiles:GC-SpawnProfile-AgarisPeace-Both-Outside]
-
-		[SpawnConditionsProfiles:GC-SpawnProfile-AgarisWar-Both-Zone]		
-		[SpawnConditionsProfiles:GC-SpawnProfile-AgarisWar-Combat-Outside]
 
 
 		
@@ -111,8 +100,6 @@
 			
 			<Frequency>5.0</Frequency>
 			<Prefabs>
-
-
 
 
 				<Prefab SubtypeId="GC-Fighter-MK3">
@@ -146,6 +133,36 @@
 					<Behaviour>GC-Dropship-Behavior</Behaviour>
 				</Prefab>
 
+				<Prefab SubtypeId="Missile Small 2">
+					<Position>
+						<X>-100.0</X>
+						<Y>500</Y>
+						<Z>-100</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>FAC-Missle-Behavior</Behaviour>
+				</Prefab>
+
+				<Prefab SubtypeId="Missile Small 2">
+					<Position>
+						<X>100.0</X>
+						<Y>500</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>FAC-Missle-Behavior</Behaviour>
+				</Prefab>
+				
+				
+				<Prefab SubtypeId="Missile Small 2">
+					<Position>
+						<X>0.0</X>
+						<Y>500</Y>
+						<Z>250</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>FAC-Missle-Behavior</Behaviour>
+				</Prefab>
 
 
 				
@@ -162,21 +179,15 @@
 			[Modular Encounters SpawnGroup]
 			
 		
-		[SpawnConditionsProfiles:GC-SpawnProfile-AgarisPeace-Both-Zone]
-		[SpawnConditionsProfiles:GC-SpawnProfile-AgarisPeace-Combat-Outside]
-		[SpawnConditionsProfiles:GC-SpawnProfile-AgarisPeace-Combat-FAF]
-	
-			
-			
-		[SpawnConditionsProfiles:GC-SpawnProfile-AgarisWar-Both-Zone]
-		[SpawnConditionsProfiles:GC-SpawnProfile-AgarisWar-Combat-Outside]
-		[SpawnConditionsProfiles:GC-SpawnProfile-AgarisWar-Combat-AHE]
-		[SpawnConditionsProfiles:GC-SpawnProfile-AgarisWar-Combat-FAF]
 		
 
 			
 		[UseSpawnGroupPrefabSpawningMode:true]
 		[PrefabSpawningMode:RandomSelectedIndexes]
+
+
+
+
 
         [PrefabIndexGroupNames:Escort1]
         [PrefabIndexGroupValues:0]
@@ -189,6 +200,15 @@
         [PrefabIndexGroupNames:Main]
         [PrefabIndexGroupValues:3]
 			
+	
+        [PrefabIndexGroupNames:Missle1]
+        [PrefabIndexGroupValues:4]
+
+        [PrefabIndexGroupNames:Missle2]
+        [PrefabIndexGroupValues:5]
+		
+        [PrefabIndexGroupNames:Missle3]
+        [PrefabIndexGroupValues:6]		
 		
 		[UseRivalAi:true]
 		[RivalAiReplaceRemoteControl:true]
@@ -241,16 +261,40 @@
 					<Behaviour>GC-GunshipTaskLeader-Behavior</Behaviour>
 				</Prefab>
 
+				<Prefab SubtypeId="Missile Small 2">
+					<Position>
+						<X>-100.0</X>
+						<Y>500</Y>
+						<Z>-100</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>FAC-Missle-Behavior</Behaviour>
+				</Prefab>
+
+				<Prefab SubtypeId="Missile Small 2">
+					<Position>
+						<X>100.0</X>
+						<Y>500</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>FAC-Missle-Behavior</Behaviour>
+				</Prefab>
+				
+				
+				<Prefab SubtypeId="Missile Small 2">
+					<Position>
+						<X>0.0</X>
+						<Y>500</Y>
+						<Z>250</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>FAC-Missle-Behavior</Behaviour>
+				</Prefab>
 
 				
 			</Prefabs>			
 		</SpawnGroup>	
-		
-	
--->
-
-
-
 
 
 

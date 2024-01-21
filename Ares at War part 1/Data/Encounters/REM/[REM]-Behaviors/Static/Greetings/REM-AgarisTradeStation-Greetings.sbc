@@ -134,9 +134,9 @@ REM-TradeStation-Triggers-PlayerFar
 	[RivalAI Trigger]
 	[Type:PlayerNear]
 	[TargetDistance:2000]
-	[UsePlayerFilterProfile:true]
-	[PlayerFilterProfileIds:PlayerFilterProfile-ExcludedPlayerNear]
-	[PlayerFilterProfileIds:PlayerFilterProfile-REMNeutral]
+	[UsePlayerConditionProfile:true]
+	[PlayerConditionProfileIds:PlayerConditionProfile-ExcludedPlayerNear]
+	[PlayerConditionProfileIds:PlayerConditionProfile-REMNeutral]
 	
 	
 	[UseTrigger:true]
@@ -159,8 +159,9 @@ REM-TradeStation-Triggers-PlayerFar
 	[UseChatBroadcast:true]
     [ChatData:REM-TradeStation-Chat-Greeting-Neutral]    
 	
-	[SavePlayerIdentityToSandboxList:true]
-	[PlayerIdentitySandboxList:PlayerNear]
+	[AddTagsToPlayers:true]
+	[AddTags:PlayerNear]
+	[AddTagsIncludeSavedPlayerIdentity:true]
 
 	[SavePlayerIdentity:true]
       </Description>
@@ -211,9 +212,9 @@ REM-TradeStation-Triggers-PlayerFar
 	[RivalAI Trigger]
 	[Type:PlayerNear]
 	[TargetDistance:2000]
-	[UsePlayerFilterProfile:true]
-	[PlayerFilterProfileIds:PlayerFilterProfile-ExcludedPlayerNear]
-	[PlayerFilterProfileIds:PlayerFilterProfile-REMFriendly]
+	[UsePlayerConditionProfile:true]
+	[PlayerConditionProfileIds:PlayerConditionProfile-ExcludedPlayerNear]
+	[PlayerConditionProfileIds:PlayerConditionProfile-REMFriendly]
 	
 	
 	[UseTrigger:true]
@@ -236,8 +237,9 @@ REM-TradeStation-Triggers-PlayerFar
 	[UseChatBroadcast:true]
     [ChatData:REM-TradeStation-Chat-Greeting-Friendly]    
 	
-	[SavePlayerIdentityToSandboxList:true]
-	[PlayerIdentitySandboxList:PlayerNear]
+	[RemoveTagsFromPlayers:true]
+	[RemoveTags:PlayerNear]
+	[RemoveTagsIncludeSavedPlayerIdentity:true]
 
 	[SavePlayerIdentity:true]
       </Description>
@@ -302,8 +304,8 @@ REM-TradeStation-Triggers-PlayerFar
 	[RivalAI Trigger]
 	[Type:PlayerFar]
 	[TargetDistance:3500]
-	[UsePlayerFilterProfile:true]
-	[PlayerFilterProfileIds:PlayerFilterProfile-IncludedPlayerNear]
+	[UsePlayerConditionProfile:true]
+	[PlayerConditionProfileIds:PlayerConditionProfile-IncludedPlayerNear]
 	
 	[UseTrigger:true]
 	[StartsReady:true]
@@ -324,8 +326,9 @@ REM-TradeStation-Triggers-PlayerFar
 
       [RivalAI Action]
         
-	[RemovePlayerIdentityFromSandboxList:true]
-	[PlayerIdentitySandboxList:PlayerNear]
+	[RemoveTagsFromPlayers:true]
+	[RemoveTags:PlayerNear]
+	[RemoveTagsIncludeSavedPlayerIdentity:true]
 	[RemovePlayerIdentity:true]
       </Description>
       

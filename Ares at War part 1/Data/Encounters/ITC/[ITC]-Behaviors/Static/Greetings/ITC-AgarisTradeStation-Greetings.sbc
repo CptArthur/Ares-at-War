@@ -127,17 +127,15 @@ ITC-TradeStation-Triggers-PlayerFar
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>ITC-TradeStation-Triggers-Greeting-Neutral</SubtypeId>
+          <SubtypeId>ITC-TradeStation-Triggers-Greeting</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI Trigger]
 	[Type:PlayerNear]
 	[TargetDistance:2000]
-	[UsePlayerFilterProfile:true]
-	[PlayerFilterProfileIds:PlayerFilterProfile-ExcludedPlayerNear]
-	[PlayerFilterProfileIds:PlayerFilterProfile-ITCNeutral]
-	
+	[UsePlayerConditionProfile:true]
+	[PlayerConditionProfileIds:PlayerConditionProfile-ExcludedPlayerNear]
 	
 	[UseTrigger:true]
 	[StartsReady:true]
@@ -150,7 +148,7 @@ ITC-TradeStation-Triggers-PlayerFar
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>ITC-TradeStation-Action-Greeting-Neutral</SubtypeId>
+          <SubtypeId>ITC-TradeStation-Action-Greeting</SubtypeId>
       </Id>
       <Description>
 
@@ -158,9 +156,13 @@ ITC-TradeStation-Triggers-PlayerFar
         
 	[UseChatBroadcast:true]
     [ChatData:ITC-TradeStation-Chat-Greeting-Neutral]    
+	[ChatData:ITC-TradeStation-Chat-Greeting-Friendly]    
 	
-	[SavePlayerIdentityToSandboxList:true]
-	[PlayerIdentitySandboxList:PlayerNear]
+	
+	[AddTagsToPlayers:true]
+	[AddTags:PlayerNear]
+	[AddTagsIncludeSavedPlayerIdentity:true]
+	
 
 	[SavePlayerIdentity:true]
       </Description>
@@ -195,54 +197,12 @@ ITC-TradeStation-Triggers-PlayerFar
 	[ChatMessages:Welcome {PlayerName}. None of the best things in life are free. But here at ITC, they're cheap.]
 	[BroadcastChatType:Chat]
 	[ChatAudio:ArcHudGPSNotification2]
+	
+	[SendToSpecificPlayers:true]
+	[PlayerConditionProfileIds:PlayerConditionProfile-ITCNeutral]
       </Description>
       
     </EntityComponent>
-
-	
-	
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>ITC-TradeStation-Triggers-Greeting-Friendly</SubtypeId>
-      </Id>
-      <Description>
-
-	[RivalAI Trigger]
-	[Type:PlayerNear]
-	[TargetDistance:2000]
-	[UsePlayerFilterProfile:true]
-	[PlayerFilterProfileIds:PlayerFilterProfile-ExcludedPlayerNear]
-	[PlayerFilterProfileIds:PlayerFilterProfile-ITCFriendly]
-	
-	
-	[UseTrigger:true]
-	[StartsReady:true]
-	  
-	[Actions:ITC-TradeStation-Action-Greeting-Friendly]	  
-      </Description>
-      
-    </EntityComponent>
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>ITC-TradeStation-Action-Greeting-Friendly</SubtypeId>
-      </Id>
-      <Description>
-
-      [RivalAI Action]
-        
-	[UseChatBroadcast:true]
-    [ChatData:ITC-TradeStation-Chat-Greeting-Friendly]    
-	
-	[SavePlayerIdentityToSandboxList:true]
-	[PlayerIdentitySandboxList:PlayerNear]
-
-	[SavePlayerIdentity:true]
-      </Description>
-      
-    </EntityComponent>	
 	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -264,7 +224,7 @@ ITC-TradeStation-Triggers-PlayerFar
 
       [Author:{AntennaName}]
       [Color:{PlayerRelation}]
-      
+	  
 	[ChatMessages:Greetings {PlayerName}. As a token of respect, we'll try to arrange for a reduced price on some of our goods.]
 	[BroadcastChatType:Chat]
     [ChatAudio:ArcHudGPSNotification2]
@@ -272,8 +232,10 @@ ITC-TradeStation-Triggers-PlayerFar
 	[ChatMessages:Welcome {PlayerName}. Always a pleasure to see to a sensible business partner.]
 	[BroadcastChatType:Chat]
 	[ChatAudio:ArcHudGPSNotification2]
-      </Description>
-      
+	
+	[SendToSpecificPlayers:true]
+	[PlayerConditionIds:PlayerConditionProfile-ITCFriendly]	
+      </Description> 
     </EntityComponent>	
 	
 	
@@ -302,8 +264,8 @@ ITC-TradeStation-Triggers-PlayerFar
 	[RivalAI Trigger]
 	[Type:PlayerFar]
 	[TargetDistance:3000]
-	[UsePlayerFilterProfile:true]
-	[PlayerFilterProfileIds:PlayerFilterProfile-IncludedPlayerNear]
+	[UsePlayerConditionProfile:true]
+	[PlayerConditionProfileIds:PlayerConditionProfile-IncludedPlayerNear]
 	
 	[UseTrigger:true]
 	[StartsReady:true]
@@ -324,8 +286,9 @@ ITC-TradeStation-Triggers-PlayerFar
 
       [RivalAI Action]
         
-	[RemovePlayerIdentityFromSandboxList:true]
-	[PlayerIdentitySandboxList:PlayerNear]
+	[RemoveTagsFromPlayers:true]
+	[RemoveTags:PlayerNear]
+	[RemoveTagsIncludeSavedPlayerIdentity:true]
 	[RemovePlayerIdentity:true]
       </Description>
       

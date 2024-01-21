@@ -126,8 +126,8 @@ COL-Station27-Triggers-PlayerFar
 	[RivalAI Trigger]
 	[Type:PlayerNear]
 	[TargetDistance:2000]
-	[UsePlayerFilterProfile:true]
-	[PlayerFilterProfileIds:PlayerFilterProfile-ExcludedPlayerNear]
+	[UsePlayerConditionProfile:true]
+	[PlayerConditionProfileIds:PlayerConditionProfile-ExcludedPlayerNear]
 	[UseTrigger:true]
 	[StartsReady:true]
 	  
@@ -148,8 +148,9 @@ COL-Station27-Triggers-PlayerFar
 	[UseChatBroadcast:true]
     [ChatData:COL-Station27-Chat-Greeting]    
 	
-	[SavePlayerIdentityToSandboxList:true]
-	[PlayerIdentitySandboxList:PlayerNear]
+	[AddTagsToPlayers:true]
+	[AddTags:PlayerNear]
+	[AddTagsIncludeSavedPlayerIdentity:true]
 
 	[SavePlayerIdentity:true]
       </Description>
@@ -197,8 +198,8 @@ COL-Station27-Triggers-PlayerFar
 	[RivalAI Trigger]
 	[Type:PlayerFar]
 	[TargetDistance:3500]
-	[UsePlayerFilterProfile:true]
-	[PlayerFilterProfileIds:PlayerFilterProfile-IncludedPlayerNear]
+	[UsePlayerConditionProfile:true]
+	[PlayerConditionProfileIds:PlayerConditionProfile-IncludedPlayerNear]
 	
 	[UseTrigger:true]
 	[StartsReady:true]
@@ -219,8 +220,9 @@ COL-Station27-Triggers-PlayerFar
 
       [RivalAI Action]
         
-	[RemovePlayerIdentityFromSandboxList:true]
-	[PlayerIdentitySandboxList:PlayerNear]
+	[RemoveTagsFromPlayers:true]
+	[RemoveTags:PlayerNear]
+	[RemoveTagsIncludeSavedPlayerIdentity:true]
 	[RemovePlayerIdentity:true]
       </Description>
       
