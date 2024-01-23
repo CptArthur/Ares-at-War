@@ -1,0 +1,326 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+ 
+<!--
+Start: NewsAlert
+5 min later: GCAnnouncement of the blockade.
+
+--> 
+ 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-GCInvasionOfLorus-Start</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		[Tags:AaW-StoryEvent]			
+		[ConditionIds:AaW-EventCondition-GCInvasionOfLorus-Basic]
+		[ConditionIds:AaW-EventCondition-GCInvasionOfLorus-ThreatScore]
+		[ConditionIds:AaW-EventCondition-GCInvasionOfLorus-PlayerNotNear]	
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000] 
+
+		[ActionIds:AaW-EventAction-GCInvasionOfLorus]		
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-GCInvasionOfLorus-NewsAlert]	
+
+      </Description>
+	</EntityComponent>	
+	  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCInvasionOfLorus-Basic</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[CheckTrueBooleans:true]
+	[TrueBooleans:SYNActive]  
+	[TrueBooleans:GCActive]  
+
+	[CheckFalseBooleans:true]	  
+	[FalseBooleans:SYN-HQDestroyed]	 	
+
+	[CheckCustomCounters:true]
+	[CustomCounters:GCAgarisMode]
+	[CustomCountersTargets:1]
+	[CounterCompareTypes:LessOrEqual]		 	
+      </Description>
+      
+    </EntityComponent>	
+
+<!-- Include the belt, but not Lezuno -->	  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCInvasionOfLorus-ThreatScore</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+	[CheckThreatScore:true]
+	[ThreatScoreAmount:600]
+	[ThreatScoreDistance:5000]
+	[ThreatScoreCoords:{X:-1249083.5 Y:-521370.5 Z:-1803753.5}]
+	[ThreatScoreDistanceFromCoords:90000]
+	[ThreatScoreType:PlayerLocation]
+	[ThreatScoreGridConfiguration:All]
+      </Description> 
+    </EntityComponent>		  
+	  
+	  
+	  
+<!-- Otherwise what is the point of this event-->	  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCInvasionOfLorus-PlayerNearLorus</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+
+	[CheckPlayerNear:true]
+	[PlayerNearCoords:{X:-1249083.5 Y:-521370.5 Z:-1803753.5}]
+	[PlayerNearDistanceFromCoords:90000]
+      </Description>  
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCInvasionOfLorus</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+	
+		[ToggleEvents:true]
+		[ToggleEventTags:GCInvasionOfLorus]
+		[ToggleEventTagModes:true]
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownTags:GCInvasionOfLorus]
+		
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCInvasionOfLorus-NewsAlert</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-GCInvasionOfLorus-NewsAlert]
+	
+	
+	[ActivateCustomAction:true]
+		[CustomActionName:ScT-AddNews]
+		[CustomActionArgumentsString:A large GC fleet has been spotted moving towards the planet Lorus.]
+      </Description>
+      
+    </EntityComponent>
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-NewsAlert</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Blue]
+      [Author:Ares News Station]
+        
+      [ChatMessages:]
+      [BroadcastChatType:Chat]
+      [ChatAudio:A large GC fleet has been spotted moving towards the planet Lorus.]   
+      </Description>
+      
+    </EntityComponent>		
+
+
+<!-- GCAnnouncement
+		[ChangeBooleans:true]
+		[SetBooleansTrue:GCInvasionOfLorus]	
+		-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-GCInvasionOfLorus-GCAnnouncement</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[Tags:GCInvasionOfLorus]	
+
+		[MinCooldownMs:300000]
+		[MaxCooldownMs:300001]	
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000] 
+
+		
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-GCInvasionOfLorus-GCAnnouncement]
+		[ActionIds:AaW-EventAction-GCInvasionOfLorus-2hStart]
+      </Description>
+	</EntityComponent>	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCInvasionOfLorus-2hStart</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+		
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:StartGCInvasionOfLorus]
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-CreateGPS]
+	[CustomActionArgumentsString:Imminent GC Invasion]
+	[CustomActionArgumentsString:GC has announced that they are going to invade Lorus! If all civilians do not leave, immediately they will be seen as an enemy of the GC]
+	[CustomActionArgumentsInt:120]		
+	[CustomActionArgumentsVector3D:{X:-1249083.5 Y:-521370.5 Z:-1803753.5}]	
+	
+      </Description>
+      
+    </EntityComponent>		
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCInvasionOfLorus-GCAnnouncement</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-GCInvasionOfLorus-GCAnnouncement]
+	
+      </Description>
+    </EntityComponent>		
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-GCInvasionOfLorus-GCAnnouncement</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Red]
+      [Author:GC Command]
+        
+      [ChatMessages:To all civilians currently on Lorus: evacuate within 2 hours or risk being identified as a threat by us.]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]   	  
+      </Description>
+    </EntityComponent>	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-GCInvasionOfLorus-StartGCInvasionOfLorus</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[Tags:GCInvasionOfLorus]	
+
+		[MinCooldownMs:7200000]
+		[MaxCooldownMs:7200001]	
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000] 
+
+		
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-GCInvasionOfLorus-GCAnnouncement]
+		[ActionIds:AaW-EventAction-GCInvasionOfLorus-StartGCInvasionOfLorus]
+      </Description>
+	</EntityComponent>		
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCInvasionOfLorus-StartGCInvasionOfLorus</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+		
+	[ChangeBooleans:true]
+	[SetBooleansTrue:GCInvasionOfLorus]
+
+	[ChangeReputationWithPlayers:true]
+	[ReputationPlayerConditionIds:PlayerCondition-Position-Lorus]
+	[ReputationPlayerConditionIds:PlayerCondition-Reputation-GCNeutral]
+	[ReputationChangeFactions:GC]
+	[ReputationChangeAmount:-3000]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+      </Description>
+    </EntityComponent>		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>
