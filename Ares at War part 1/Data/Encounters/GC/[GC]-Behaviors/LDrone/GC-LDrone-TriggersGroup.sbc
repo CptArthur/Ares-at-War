@@ -13,10 +13,6 @@
 	  
 	[Triggers:GC-DefenseSystem-Trigger-ReceivedRedAlert]  
 	  
-	  
-	  
-	  
-	  
 	  [Triggers:GC-LDrone-Trigger-Death]
 	  [Triggers:GC-Common-Trigger-NewTarget]
 	  [Triggers:GC-LDrone-Trigger-selfpresence]      
@@ -43,7 +39,27 @@
     </EntityComponent>  
 	
 	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-LDrone-CommonTriggers-BlockadeLeader</SubtypeId>
+      </Id>
+      <Description>
 
+      [RivalAI TriggerGroup]
+	  
+[Triggers:GC-BlockadeLeader-Trigger-PlayerAgarisOuterOrbit]
+[Triggers:GC-BlockadeLeader-Trigger-PlayerAgarisOuterOrbit-ReputationLoss]
+
+[Triggers:GC-BlockadeLeader-Trigger-PlayerAgarisInnerOrbit]
+[Triggers:GC-BlockadeLeader-Trigger-PlayerAgarisInnerOrbit-ReputationLoss]
+
+[Triggers:GC-BlockadeLeader-Trigger-PlayerAgarisOrbit-ReputationLoss]
+
+
+      </Description>
+      
+    </EntityComponent>  
 	
 	
 	

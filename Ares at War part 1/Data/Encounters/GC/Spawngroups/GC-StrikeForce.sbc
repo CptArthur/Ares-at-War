@@ -6,94 +6,17 @@
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>GC-SpawnGroup-LightMissleStrikeForce</SubtypeId>
-			</Id>
-			<Description>
-			[Modular Encounters SpawnGroup]
-		
-	[AtmosphericCargoShip:true]
-	[FactionOwner:GC]
-
-			[IgnoreCombatPhase:true]
-			[ZoneConditions:ZoneCondition-ZoneAaW]	
-	
-		[UseRivalAi:true]
-		[RivalAiReplaceRemoteControl:true]
-
-			[UsePlayerCondition:true]
-			[PlayerConditionIds:AaW-PlayerCondition-AresCampaign]
-			</Description>
-			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
-			<IsPirate>true</IsPirate>
-			
-			<Frequency>5.0</Frequency>
-			<Prefabs>
-
-
-
-
-				<Prefab SubtypeId="Missile Small 2">
-					<Position>
-						<X>-100.0</X>
-						<Y>0.0</Y>
-						<Z>0.0</Z>
-					</Position>
-					<Speed>25</Speed>
-					<Behaviour>FAC-Missle-Behavior</Behaviour>
-				</Prefab>
-
-				<Prefab SubtypeId="Missile Small 2">
-					<Position>
-						<X>100.0</X>
-						<Y>0.0</Y>
-						<Z>0.0</Z>
-					</Position>
-					<Speed>25</Speed>
-					<Behaviour>FAC-Missle-Behavior</Behaviour>
-				</Prefab>
-				
-				
-				<Prefab SubtypeId="Missile Small 2">
-					<Position>
-						<X>0.0</X>
-						<Y>0.0</Y>
-						<Z>0</Z>
-					</Position>
-					<Speed>25</Speed>
-					<Behaviour>FAC-Missle-Behavior</Behaviour>
-				</Prefab>
-
-
-
-				
-			</Prefabs>			
-		</SpawnGroup>	
-
-
-
-
-
-
-
-
-
-
-		<SpawnGroup>
-			<Id>
-				<TypeId>SpawnGroupDefinition</TypeId> 
 				<SubtypeId>GC-SpawnGroup-LightStrikeForce</SubtypeId>
 			</Id>
 			<Description>
 			[Modular Encounters SpawnGroup]
 		
+[SpawnConditionsProfiles:GC-SpawnProfile-AgarisWar-Combat-LightPlayerBaseStrike]
 
+[SpawnConditionsProfiles:GC-SpawnProfile-Retaliation-Both-LightPlayerBaseStrike-Agaris]
 
-
-		
 		[UseRivalAi:true]
 		[RivalAiReplaceRemoteControl:true]
-
-			
 			</Description>
 			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
 			<IsPirate>true</IsPirate>
@@ -102,42 +25,22 @@
 			<Prefabs>
 
 
-				<Prefab SubtypeId="GC-Fighter-MK3">
-					<Position>
-						<X>-100.0</X>
-						<Y>0.0</Y>
-						<Z>0.0</Z>
-					</Position>
-					<Speed>25</Speed>
-					<Behaviour>GC-DroneGarrison-Behavior</Behaviour>
-				</Prefab>
-
-				<Prefab SubtypeId="GC-Fighter-MK3">
-					<Position>
-						<X>100.0</X>
-						<Y>0.0</Y>
-						<Z>0.0</Z>
-					</Position>
-					<Speed>25</Speed>
-					<Behaviour>GC-DroneGarrison-Behavior</Behaviour>
-				</Prefab>
-				
-				
-				<Prefab SubtypeId="GC-Dropship">
+				<Prefab SubtypeId="Missile Small 2">
 					<Position>
 						<X>0.0</X>
-						<Y>0.0</Y>
-						<Z>0</Z>
+						<Y>200</Y>
+						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>GC-Dropship-Behavior</Behaviour>
+					<Behaviour>GC-Dropship-Behavior-Retaliation</Behaviour>
 				</Prefab>
+				
 
 				<Prefab SubtypeId="Missile Small 2">
 					<Position>
 						<X>-100.0</X>
-						<Y>500</Y>
-						<Z>-100</Z>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
 					<Behaviour>FAC-Missle-Behavior</Behaviour>
@@ -146,7 +49,7 @@
 				<Prefab SubtypeId="Missile Small 2">
 					<Position>
 						<X>100.0</X>
-						<Y>500</Y>
+						<Y>0.0</Y>
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
@@ -157,17 +60,19 @@
 				<Prefab SubtypeId="Missile Small 2">
 					<Position>
 						<X>0.0</X>
-						<Y>500</Y>
-						<Z>250</Z>
+						<Y>0.0</Y>
+						<Z>0</Z>
 					</Position>
 					<Speed>25</Speed>
 					<Behaviour>FAC-Missle-Behavior</Behaviour>
 				</Prefab>
+
 
 
 				
 			</Prefabs>			
 		</SpawnGroup>	
+
 
 
 		<SpawnGroup>
@@ -177,16 +82,16 @@
 			</Id>
 			<Description>
 			[Modular Encounters SpawnGroup]
-			
-		
-		
+				
+[SpawnConditionsProfiles:GC-SpawnProfile-AgarisWar-Combat-MediumPlayerBaseStrike]
+[SpawnConditionsProfiles:GC-SpawnProfile-AgarisWar-Combat-HeavyPlayerBaseStrike]
 
-			
+[SpawnConditionsProfiles:GC-SpawnProfile-Retaliation-Both-MediumPlayerBaseStrike-Agaris]
+[SpawnConditionsProfiles:GC-SpawnProfile-Retaliation-Both-HeavyPlayerBaseStrike-Agaris]
+
+				
 		[UseSpawnGroupPrefabSpawningMode:true]
 		[PrefabSpawningMode:RandomSelectedIndexes]
-
-
-
 
 
         [PrefabIndexGroupNames:Escort1]
@@ -213,7 +118,6 @@
 		[UseRivalAi:true]
 		[RivalAiReplaceRemoteControl:true]
 
-			
 			</Description>
 			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
 			<IsPirate>true</IsPirate>
@@ -248,7 +152,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>GC-GunshipTaskLeader-Behavior</Behaviour>
+					<Behaviour>GC-GunshipStrikeLeader-Behavior</Behaviour>
 				</Prefab>
 				
 				<Prefab SubtypeId="GC-Gunship-Mk3">
@@ -258,7 +162,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>GC-GunshipTaskLeader-Behavior</Behaviour>
+					<Behaviour>GC-GunshipStrikeLeader-Behavio</Behaviour>
 				</Prefab>
 
 				<Prefab SubtypeId="Missile Small 2">

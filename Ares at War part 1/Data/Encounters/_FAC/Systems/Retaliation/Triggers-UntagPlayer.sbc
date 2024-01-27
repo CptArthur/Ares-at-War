@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>RetaliationTriggers</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI TriggerGroup]
+      
+[Triggers:FAC-Retaliation-Trigger-RemoveTags]
+  
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Retaliation-Trigger-RemoveTags</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Trigger]
+      [Type:Timer]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+[MinCooldownMs:1000]
+[MaxCooldownMs:1001]
+
+		[Conditions:FAC-Retaliation-Condition-RemoveTags]
+		
+	  [ActionExecution:Sequential]
+		[Actions:FAC-Retaliation-Action-RemoveTags-Chat]  
+	  [Actions:FAC-Retaliation-Action-RemoveTags]
+	  
+
+
+
+	  [MaxActions:2]
+
+      </Description>
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Retaliation-Condition-RemoveTags</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+	[UseConditions:true]
+	[CheckForSpawnConditions:true]
+	[RequiredSpawnConditions:GC-SpawnProfile-Retaliation-Both-LightPlayerBaseStrike-Agaris]
+	[RequiredSpawnConditions:GC-SpawnProfile-Retaliation-Both-MediumPlayerBaseStrike-Agaris]
+	[RequiredSpawnConditions:GC-SpawnProfile-Retaliation-Both-HeavyPlayerBaseStrike-Agaris]
+
+      
+      </Description>
+      
+    </EntityComponent>
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Retaliation-Action-RemoveTags-Chat</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Action]
+
+	[UseChatBroadcast:true]
+      [ChatData:FAC-Retaliation-Chat-RemoveTags]
+      </Description>
+    </EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Retaliation-Chat-RemoveTags</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Red]
+      
+      [ChatMessages:So {PlayerName}, You thought you could destroy a base of ours and get away with it? Wrong!]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+
+      </Description>      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Retaliation-Action-RemoveTags</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Action]
+
+	[RemoveTagsFromPlayers:true]
+	[RemoveTagsPlayerConditionIds:PlayerConditionProfile-Recently_Attacked_{Faction}]
+	[RemoveTags:Recently_Attacked_{Faction}_Base]	
+	[RemoveTagsOverridePositionInPlayerCondition:true]*
+      </Description>
+    </EntityComponent>	
+
+
+
+	
+
+  </EntityComponents>
+</Definitions>

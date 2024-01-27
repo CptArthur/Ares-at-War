@@ -1,29 +1,25 @@
 <?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
-  
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>Aaw-Event-GCCarcosaLost</SubtypeId>
+          <SubtypeId>Aaw-Event-GCAgarisMartialLaw-SpawnBlockade</SubtypeId>
       </Id>
       <Description>
 
 		[MES Event]
-		[UseEvent:false]
+		[UseEvent:true]
 		
 		[UniqueEvent:false]	
 		[MinCooldownMs:180001]
 		[MaxCooldownMs:180001]	
 
-		[ConditionIds:AaW-EventCondition-GCCarcosaLost]
+		[ConditionIds:AaW-EventCondition-GCAgarisMartialLawSpawnBlockade]
 		
-		
-		[ActionExecution:Sequential]
-		[TimeUntilNextActionMs:6000]
+		[ActionExecution:ALl]
 
-
-		[ActionIds:AaW-EventAction-Common-IncomingMessage]
 		[ActionIds:AaW-EventAction-GCCarcosaLost]
 
       </Description>
@@ -32,20 +28,20 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventCondition-GCCarcosaLost</SubtypeId>
+          <SubtypeId>AaW-EventCondition-GCAgarisMartialLaw</SubtypeId>
       </Id>
       <Description>
 
       [MES Event Condition]
 	  
-	
-	[CheckFalseBooleans:true]
-	[FalseBooleans:GCAgarisMartialLaw]  
-	  	  
+	[CheckTrueBooleans:true]
+	[TrueBooleans:GCAgarisMartialLaw]  
+	[CheckPlayerCondition:true]
+[PlayerConditionIds:PlayerConditionProfile-Position-Agaris-Orbit]  	  
       </Description>
+
       
     </EntityComponent>	
-
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -53,70 +49,20 @@
           <SubtypeId>AaW-EventAction-GCCarcosaLost</SubtypeId>
       </Id>
       <Description>
+	[MES Event Action]
 
-		[MES Event Action]
-
-
-	[ChangeBooleans:true] 
-	[SetBooleansTrue:GCAgarisMartialLaw] 	
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-SpawnPlanetaryBlockade]
+	[CustomActionArgumentsString:GC-SpawnGroup-MediumBlockade]
 	
+	[CustomActionArgumentsInt:45080]	
+	[CustomActionArgumentsInt:49460]
+	[CustomActionArgumentsInt:5000]	
 	
-	[UseChatBroadcast:true]
-	[ChatData:AaW-EventChat-GCCarcosaLost]	
-
-
-	[ToggleEvents:true]
-	[ToggleEventIds:Aaw-Event-GCCarcosaLost]
-	[ToggleEventIdModes:false]
-	
-	
-	
-	[ToggleEvents:true]
-	[ToggleEventIds:Aaw-Event-GCMartialLaw-Disable]
-	[ToggleEventIdModes:false]
-	
-	[ResetCooldownTimeOfEvents:true]
-	[ResetEventCooldownIds:Aaw-Event-GCMartialLaw-Disable]		
-	
-	
-	
-	
+	[CustomActionArgumentsVector3D:{X:1449429.5 Y:-622819.5 Z:-2854387.5}]
       </Description>
       
     </EntityComponent>	
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventChat-GCCarcosaLost</SubtypeId>
-      </Id>
-	  
-      <Description>
-
-      [RivalAI Chat]
-      
-      [UseChat:true]
-      [StartsReady:true]
-      [Chance:100]
-      [MaxChats:-1]
-      [BroadcastRandomly:true]
-      [IgnoreAntennaRequirement:True]
-      [IgnoredAntennaRangeOverride:1]
-      [SendToAllOnlinePlayers:true]
-
-      [Color:Red]
-      [Author:GC Command]
-        
-      [ChatMessages:This is an official Announcement: In response to emerging threats, Martial Law is now in effect for Agaris. We reassure you that measures are being taken to address the situation effectively. We ask for your support and unity as we work together to overcome these challenges.]
-      [BroadcastChatType:Chat]
-      [ChatAudio:]  
-
-	    	  
-      </Description>
-      
-    </EntityComponent>	
-              
-	
-	
   </EntityComponents>
 </Definitions>

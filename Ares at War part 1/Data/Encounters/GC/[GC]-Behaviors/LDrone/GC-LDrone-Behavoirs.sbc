@@ -16,6 +16,40 @@
 	  [AutopilotData:GC-LDroneAutopilot]  
 	[SecondaryAutopilotData:GC-LDroneAutopilot-Horsefly]	
 
+ 	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:GC-CommonTriggers]	
+	[TriggerGroups:GC-LDrone-CommonTriggers]	 
+ 	[TriggerGroups:FAC-LDrone-CommonTriggers]	
+	[TriggerGroups:GC-Interaction-Triggers]
+ 
+	[Triggers:FAC-PointSystem-Trigger-Decrease25]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase10]
+ 
+	[EscortOffsets:{X:-100 Y:0 Z:0}]
+	[EscortOffsets:{X:100 Y:0 Z:0}]	  
+	
+	[TriggerGroups:FAC-OffensiveEscortSystem-TaskLeader-TriggerGroup] 		
+	
+	[TriggerGroups:FAC-OffensiveTaskLeaderEscort-TriggerGroup] 	
+	
+      </Description>
+      
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-BlockadeLeader-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Behavior]
+      [BehaviorName:Passive]
+	  [TargetData:AaW-Target-Main-A]	  
+	  [AutopilotData:GC-LDroneAutopilot]  
+	[SecondaryAutopilotData:GC-LDroneAutopilot-Horsefly]	
+
 	
  	[TriggerGroups:ContextTriggers]	 
 	[TriggerGroups:GC-CommonTriggers]	
@@ -37,7 +71,7 @@
 	
 	[TriggerGroups:FAC-OffensiveTaskLeaderEscort-TriggerGroup] 	
 
-
+	[TriggerGroups:GC-LDrone-CommonTriggers-BlockadeLeader]
 
 	
       </Description>
@@ -45,6 +79,45 @@
     </EntityComponent>
 	
   
+      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-GunshipStrikeLeader-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Behavior]
+      [BehaviorName:Passive]
+	  [TargetData:AaW-Target-Main-A]	  
+	  [AutopilotData:GC-LDroneAutopilot]  
+	[SecondaryAutopilotData:GC-LDroneAutopilot-Horsefly]	
+
+ 	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:GC-CommonTriggers]	
+	[TriggerGroups:GC-LDrone-CommonTriggers]	 
+ 	[TriggerGroups:FAC-LDrone-CommonTriggers]	
+	[TriggerGroups:GC-Interaction-Triggers]
+ [TriggerGroups:RetaliationTriggers]
+ 
+ 
+	[Triggers:FAC-PointSystem-Trigger-Decrease25]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase10]
+ 
+	[EscortOffsets:{X:-100 Y:0 Z:0}]
+	[EscortOffsets:{X:100 Y:0 Z:0}]	  
+	
+	[TriggerGroups:FAC-OffensiveEscortSystem-TaskLeader-TriggerGroup] 		
+	
+	[TriggerGroups:FAC-OffensiveTaskLeaderEscort-TriggerGroup] 	
+	
+      </Description>
+      
+    </EntityComponent>
+  
+  
+  
+  
+    	
 	
 
 	
