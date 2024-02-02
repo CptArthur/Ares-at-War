@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+
+    <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+      <Id>
+        <TypeId>LargeMissileTurret</TypeId>
+        <SubtypeId>LargeAmplifiedLaserTurret</SubtypeId>
+      </Id>
+      <DisplayName>Amplified Laser Turret</DisplayName>
+      <Icon>Icons\AmplifiedLaserTurret.dds</Icon>
+      <Description>Military-grade laser weapon. The use of Crystal Laser Amplifiers increases beam cohesion and power, providing high damage and long effective range.
+	  
+	  Power Usage: 60 MW
+	  Damage: 5400/s
+	  Range: 3500m</Description>
+      <CubeSize>Large</CubeSize>
+      <PlaceDecals>false</PlaceDecals>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="3" y="2" z="3" />
+      <Center x="1" y="0" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\LargeAmplifiedLaserTurretBase.mwm</Model>
+      <UseModelIntersection>true</UseModelIntersection>
+      <Components>
+        <Component Subtype="SteelPlate" Count="100" />
+        <Component Subtype="Construction" Count="75" />
+        <Component Subtype="MetalGrid" Count="25" />
+        <Component Subtype="Superconductor" Count="50" />
+        <Component Subtype="LargeTube" Count="25" />
+        <Component Subtype="Motor" Count="30" />
+        <Component Subtype="LaserAmplifier" Count="100" />
+        <Component Subtype="Computer" Count="80" />
+        <Component Subtype="SteelPlate" Count="50" />
+      </Components>
+      <CriticalComponent Subtype="LaserAmplifier" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="3" EndY="3" />
+      </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Construct\LargeAmplifiedLaserTurretConstruct1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Construct\LargeAmplifiedLaserTurretConstruct2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Construct\LargeAmplifiedLaserTurretConstruct3.mwm" />
+            </BuildProgressModels>
+      <BlockPairName>AmplifiedLaserTurret</BlockPairName>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>30</BuildTimeSeconds>
+      <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
+      <WeaponDefinitionId Subtype="PDLaser" />
+      <InventoryMaxVolume>0.384</InventoryMaxVolume>
+      <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+      <DamagedSound>ParticleWeapExpl</DamagedSound>
+      <ResourceSinkGroup>Defense</ResourceSinkGroup>
+      <MinElevationDegrees>-8</MinElevationDegrees>
+      <MaxElevationDegrees>75</MaxElevationDegrees>
+      <MinAzimuthDegrees>-180</MinAzimuthDegrees>
+      <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
+      <IdleRotation>false</IdleRotation>
+      <MaxRangeMeters>3500</MaxRangeMeters>
+      <RotationSpeed>0.00025</RotationSpeed>
+      <ElevationSpeed>0.00015 </ElevationSpeed>
+      <EmissiveColorPreset>Default</EmissiveColorPreset>
+      <MinFov>0.1</MinFov>
+      <MaxFov>1.04719755</MaxFov>
+      <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>
+      <IsAirTight>false</IsAirTight>
+      <UpCameraOffset>0.4</UpCameraOffset>
+      <ForwardCameraOffset>0.5</ForwardCameraOffset>
+    </Definition>
+
+    <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+      <Id>
+        <TypeId>LargeMissileTurret</TypeId>
+        <SubtypeId>SmallAmplifiedLaserTurret</SubtypeId>
+      </Id>
+      <DisplayName>Amplified Laser Turret</DisplayName>
+      <Icon>Icons\AmplifiedLaserTurret.dds</Icon>
+      <Description>Military-grade laser weapon. The use of Crystal Laser Amplifiers increases beam cohesion and power, providing high damage and long effective range.
+	  
+	  Power Usage: 10 MW
+	  Damage: 960/s
+	  Range: 1500m</Description>
+      <CubeSize>Small</CubeSize>
+      <PlaceDecals>false</PlaceDecals>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="3" y="2" z="3" />
+      <Center x="1" y="0" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\SmallAmplifiedLaserTurretBase.mwm</Model>
+      <UseModelIntersection>true</UseModelIntersection>
+      <Components>
+        <Component Subtype="SteelPlate" Count="40" />
+        <Component Subtype="Construction" Count="40" />
+        <Component Subtype="MetalGrid" Count="10" />
+        <Component Subtype="Superconductor" Count="20" />
+        <Component Subtype="LargeTube" Count="10" />
+        <Component Subtype="Motor" Count="10" />
+        <Component Subtype="LaserAmplifier" Count="25" />
+        <Component Subtype="Computer" Count="30" />
+        <Component Subtype="SteelPlate" Count="15" />
+      </Components>
+      <CriticalComponent Subtype="LaserAmplifier" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="3" EndY="3" />
+      </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Construct\SmallAmplifiedLaserTurretConstruct1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Construct\SmallAmplifiedLaserTurretConstruct2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Construct\SmallAmplifiedLaserTurretConstruct3.mwm" />
+            </BuildProgressModels>
+      <BlockPairName>AmplifiedLaserTurret</BlockPairName>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>30</BuildTimeSeconds>
+      <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
+      <WeaponDefinitionId Subtype="PDLaser" />
+      <InventoryMaxVolume>0.384</InventoryMaxVolume>
+      <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+      <DamagedSound>ParticleWeapExpl</DamagedSound>
+      <ResourceSinkGroup>Defense</ResourceSinkGroup>
+      <MinElevationDegrees>-8</MinElevationDegrees>
+      <MaxElevationDegrees>75</MaxElevationDegrees>
+      <MinAzimuthDegrees>-180</MinAzimuthDegrees>
+      <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
+      <IdleRotation>false</IdleRotation>
+      <MaxRangeMeters>1500</MaxRangeMeters>
+      <RotationSpeed>0.0005</RotationSpeed>
+      <ElevationSpeed>0.0003 </ElevationSpeed>
+      <EmissiveColorPreset>Default</EmissiveColorPreset>
+      <MinFov>0.1</MinFov>
+      <MaxFov>1.04719755</MaxFov>
+      <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>
+      <IsAirTight>false</IsAirTight>
+      <UpCameraOffset>0.4</UpCameraOffset>
+      <ForwardCameraOffset>0.5</ForwardCameraOffset>
+    </Definition>
+	
+    <Definition xsi:type="MyObjectBuilder_WeaponBlockDefinition">
+      <Id>
+        <TypeId>SmallMissileLauncher</TypeId>
+        <SubtypeId>LargeFixedAmplifiedLaser</SubtypeId>
+      </Id>
+      <DisplayName>Amplified Laser</DisplayName>
+      <Icon>Icons\FixedAmplifiedLaser.dds</Icon>
+      <Description>Military-grade laser weapon. The use of Crystal Laser Amplifiers increases beam cohesion and power, providing high damage and long effective range.
+	  
+	  Power Usage: 60 MW
+	  Damage: 6000/s
+	  Range: 4000m</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="7" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\LargeFixedAmplifiedLaser.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="100" />
+        <Component Subtype="Construction" Count="75" />
+        <Component Subtype="MetalGrid" Count="25" />
+        <Component Subtype="Superconductor" Count="50" />
+        <Component Subtype="LargeTube" Count="25" />
+        <Component Subtype="Motor" Count="30" />
+        <Component Subtype="LaserAmplifier" Count="100" />
+        <Component Subtype="Computer" Count="80" />
+        <Component Subtype="SteelPlate" Count="50" />
+      </Components>
+      <CriticalComponent Subtype="LaserAmplifier" Index="0" />
+      <Center x="0" y="0" z="6" />
+      <MountPoints>
+        <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+        <MountPoint Side="Top" StartX="0.3" StartY="0" EndX="0.7" EndY="1" />
+        <MountPoint Side="Right" StartX="0" StartY="0" EndX="1.9" EndY="1" />
+        <MountPoint Side="Bottom" StartX="0.3" StartY="6" EndX="0.7" EndY="7" />
+        <MountPoint Side="Left" StartX="5.1" StartY="0" EndX="7" EndY="1" />
+      </MountPoints>
+      <BlockPairName>FixedAmplifiedLaser</BlockPairName>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+      <BuildTimeSeconds>15</BuildTimeSeconds>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Construct\LargeFixedAmplifiedLaserConstruct1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Construct\LargeFixedAmplifiedLaserConstruct2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Construct\LargeFixedAmplifiedLaserConstruct3.mwm" />
+            </BuildProgressModels>
+      <WeaponDefinitionId Subtype="PDLaser"/>
+      <InventoryMaxVolume>0.1</InventoryMaxVolume>
+      <DamageEffectId>213</DamageEffectId>
+    </Definition>
+	
+    <Definition xsi:type="MyObjectBuilder_WeaponBlockDefinition">
+      <Id>
+        <TypeId>SmallMissileLauncher</TypeId>
+        <SubtypeId>SmallFixedAmplifiedLaser</SubtypeId>
+      </Id>
+      <DisplayName>Amplified Laser</DisplayName>
+      <Icon>Icons\FixedAmplifiedLaser.dds</Icon>
+      <Description>Military-grade laser weapon. The use of Crystal Laser Amplifiers increases beam cohesion and power, providing high damage and long effective range.
+	  
+	  Power Usage: 10 MW
+	  Damage: 1200/s
+	  Range: 2000m</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="7" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\SmallFixedAmplifiedLaser.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="40" />
+        <Component Subtype="Construction" Count="40" />
+        <Component Subtype="MetalGrid" Count="10" />
+        <Component Subtype="Superconductor" Count="20" />
+        <Component Subtype="LargeTube" Count="10" />
+        <Component Subtype="Motor" Count="10" />
+        <Component Subtype="LaserAmplifier" Count="25" />
+        <Component Subtype="Computer" Count="30" />
+        <Component Subtype="SteelPlate" Count="15" />
+      </Components>
+      <CriticalComponent Subtype="LaserAmplifier" Index="0" />
+      <Center x="0" y="0" z="6" />
+      <MountPoints>
+        <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+        <MountPoint Side="Top" StartX="0.3" StartY="0" EndX="0.7" EndY="1" />
+        <MountPoint Side="Right" StartX="0" StartY="0" EndX="1.9" EndY="1" />
+        <MountPoint Side="Bottom" StartX="0.3" StartY="6" EndX="0.7" EndY="7" />
+        <MountPoint Side="Left" StartX="5.1" StartY="0" EndX="7" EndY="1" />
+      </MountPoints>
+      <BlockPairName>FixedAmplifiedLaser</BlockPairName>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+      <BuildTimeSeconds>15</BuildTimeSeconds>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Construct\SmallFixedAmplifiedLaserConstruct1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Construct\SmallFixedAmplifiedLaserConstruct2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Construct\SmallFixedAmplifiedLaserConstruct3.mwm" />
+            </BuildProgressModels>
+      <WeaponDefinitionId Subtype="PDLaser"/>
+      <InventoryMaxVolume>0.1</InventoryMaxVolume>
+      <DamageEffectId>213</DamageEffectId>
+    </Definition>
+	
+    <Definition xsi:type="MyObjectBuilder_ShipGrinderDefinition">
+      <Id>
+        <TypeId>ShipGrinder</TypeId>
+        <SubtypeId>LargeAmplifiedLaserGrinder</SubtypeId>
+      </Id>
+      <DisplayName>Amplified Laser Cutter</DisplayName>
+      <Icon>Icons\AmplifiedLaserGrinder.dds</Icon>
+      <Description>Uses tightly focused lasers to cut components apart. Tripled working speed. Amplified beams provide doubled working radius.
+	  
+	  3m working radius.</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="2" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Center x="0" y="0" z="1" />
+      <Model>Models\AmplifiedLaserGrinder.mwm</Model>
+      <UseModelIntersection>true</UseModelIntersection>
+      <UsesDeformation>false</UsesDeformation>
+      <Components>
+        <Component Subtype="SteelPlate" Count="20" />
+        <Component Subtype="Construction" Count="30" />
+        <Component Subtype="LargeTube" Count="5" />
+        <Component Subtype="Motor" Count="20" />
+        <Component Subtype="Computer" Count="30" />
+        <Component Subtype="LaserAmplifier" Count="15" />
+        <Component Subtype="Superconductor" Count="5" />
+        <Component Subtype="GravityGenerator" Count="3" />
+        <Component Subtype="SteelPlate" Count="15" />
+      </Components>
+      <CriticalComponent Subtype="GravityGenerator" Index="0" />
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\GrinderConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\GrinderConstruction_2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\GrinderConstruction_3.mwm" />
+      </BuildProgressModels>
+      <VoxelPlacement>
+        <!--Possible settings Both,InVoxel,OutsideVoxel,Volumetric. If volumetric set than MaxAllowed and MinAllowed will be used.-->
+        <StaticMode>
+          <PlacementMode>OutsideVoxel</PlacementMode>
+          <MaxAllowed>0.2</MaxAllowed>
+          <MinAllowed>0</MinAllowed>
+        </StaticMode>
+        <DynamicMode>
+          <PlacementMode>OutsideVoxel</PlacementMode>
+          <MaxAllowed>0.2</MaxAllowed>
+          <MinAllowed>0.01</MinAllowed>
+        </DynamicMode>
+      </VoxelPlacement>
+      <MountPoints>
+        <MountPoint Side="Left" StartX="1.18" StartY="0.20" EndX="1.92" EndY="0.80" />
+        <MountPoint Side="Right" StartX="0.08" StartY="0.20" EndX="0.82" EndY="0.80" />
+        <MountPoint Side="Top" StartX="0.30" StartY="0.30" EndX="0.70" EndY="0.70" />
+        <MountPoint Side="Bottom" StartX="0.30" StartY="1.30" EndX="0.70" EndY="1.70" />
+        <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+      </MountPoints>
+      <BlockPairName>AmplifiedShipGrinder</BlockPairName>
+      <MirroringZ>X</MirroringZ>
+      <EdgeType>Light</EdgeType>
+      <OperationalPowerConsumption>0.5</OperationalPowerConsumption>
+      <BuildTimeSeconds>24</BuildTimeSeconds>
+      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+      <DamagedSound>ParticleHeavyMech</DamagedSound>
+      <EmissiveColorPreset>Welder</EmissiveColorPreset>
+      <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>
+      <SensorRadius>3</SensorRadius>
+      <PCU>100</PCU>      
+    </Definition>
+	
+    <Definition xsi:type="MyObjectBuilder_ShipGrinderDefinition">
+      <Id>
+        <TypeId>ShipGrinder</TypeId>
+        <SubtypeId>SmallAmplifiedLaserGrinder</SubtypeId>
+      </Id>
+      <DisplayName>Amplified Laser Cutter</DisplayName>
+      <Icon>Icons\AmplifiedLaserGrinder.dds</Icon>
+      <Description>Uses tightly focused lasers to cut components apart. Tripled working speed. Amplified beams provide doubled working radius.
+	  
+	  2m working radius.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="3" y="3" z="6" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Center x="1" y="1" z="3" />
+      <Model>Models\SmallAmplifiedLaserGrinder.mwm</Model>
+      <UseModelIntersection>true</UseModelIntersection>
+      <UsesDeformation>false</UsesDeformation>
+      <Components>
+        <Component Subtype="SteelPlate" Count="15" />
+        <Component Subtype="Construction" Count="20" />
+        <Component Subtype="SmallTube" Count="10" />
+        <Component Subtype="Motor" Count="10" />
+        <Component Subtype="Computer" Count="20" />
+        <Component Subtype="LaserAmplifier" Count="5" />
+        <Component Subtype="Superconductor" Count="2" />
+        <Component Subtype="GravityGenerator" Count="1" />
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="GravityGenerator" Index="0" />
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.5" File="Models\Cubes\Small\GrinderConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="1.0" File="Models\Cubes\Small\GrinderConstruction_2.mwm" />
+      </BuildProgressModels>
+      <VoxelPlacement>
+        <!--Possible settings Both,InVoxel,OutsideVoxel,Volumetric. If volumetric set than MaxAllowed and MinAllowed will be used.-->
+        <StaticMode>
+          <PlacementMode>OutsideVoxel</PlacementMode>
+          <MaxAllowed>0.2</MaxAllowed>
+          <MinAllowed>0</MinAllowed>
+        </StaticMode>
+        <DynamicMode>
+          <PlacementMode>OutsideVoxel</PlacementMode>
+          <MaxAllowed>0.2</MaxAllowed>
+          <MinAllowed>0.01</MinAllowed>
+        </DynamicMode>
+      </VoxelPlacement>
+      <MountPoints>
+        <MountPoint Side="Left" StartX="3.5" StartY="0.5" EndX="5.8" EndY="2.5" />
+        <MountPoint Side="Right" StartX="0.2" StartY="0.5" EndX="2.5" EndY="2.5" />
+        <MountPoint Side="Top" StartX="0.8" StartY="0.2" EndX="2.2" EndY="2.5" />
+        <MountPoint Side="Bottom" StartX="0.8" StartY="3.5" EndX="2.2" EndY="5.8" />
+        <MountPoint Side="Back" StartX="0.25" StartY="0.25" EndX="0.35" EndY="2.75" Default="true" />
+        <MountPoint Side="Back" StartX="2.65" StartY="0.25" EndX="2.75" EndY="2.75" />
+        <MountPoint Side="Back" StartX="0.35" StartY="0.25" EndX="2.65" EndY="0.35" />
+        <MountPoint Side="Back" StartX="0.35" StartY="2.65" EndX="2.65" EndY="2.75" />
+      </MountPoints>
+      <BlockPairName>AmplifiedShipGrinder</BlockPairName>
+      <MirroringZ>X</MirroringZ>
+      <EdgeType>Light</EdgeType>
+      <OperationalPowerConsumption>0.25</OperationalPowerConsumption>
+      <BuildTimeSeconds>18</BuildTimeSeconds>
+      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+      <DamagedSound>ParticleHeavyMech</DamagedSound>
+      <EmissiveColorPreset>Welder</EmissiveColorPreset>
+      <DestroyEffect>BlockDestroyedExplosion_Small</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>
+      <SensorRadius>2</SensorRadius>
+      <PCU>100</PCU>
+      <IsAirTight>false</IsAirTight>      
+    </Definition>
+	
+    <Definition xsi:type="MyObjectBuilder_ShipWelderDefinition">
+      <Id>
+        <TypeId>ShipWelder</TypeId>
+        <SubtypeId>LargeAmplifiedLaserWelder</SubtypeId>
+      </Id>
+      <DisplayName>Amplified Laser Welder</DisplayName>
+      <Icon>Icons\AmplifiedLaserWelder.dds</Icon>
+      <Description>The use of laser welding heads and gravity fields to manipulate components provides tripled working speed. Amplified beams provide doubled working radius.
+	  
+	  4.5m working radius.</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="2" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Center x="0" y="0" z="1" />
+      <Model>Models\AmplifiedLaserWelder.mwm</Model>
+      <UseModelIntersection>true</UseModelIntersection>
+      <UsesDeformation>false</UsesDeformation>
+      <Components>
+        <Component Subtype="SteelPlate" Count="20" />
+        <Component Subtype="Construction" Count="30" />
+        <Component Subtype="SmallTube" Count="15" />
+        <Component Subtype="Motor" Count="25" />
+        <Component Subtype="Computer" Count="25" />
+        <Component Subtype="LaserAmplifier" Count="10" />
+        <Component Subtype="Superconductor" Count="6" />
+        <Component Subtype="GravityGenerator" Count="5" />
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="GravityGenerator" Index="0" />
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\WelderConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\WelderConstruction_2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\WelderConstruction_3.mwm" />
+      </BuildProgressModels>
+      <VoxelPlacement>
+        <!--Possible settings Both,InVoxel,OutsideVoxel,Volumetric. If volumetric set than MaxAllowed and MinAllowed will be used.-->
+        <StaticMode>
+          <PlacementMode>OutsideVoxel</PlacementMode>
+          <MaxAllowed>0.2</MaxAllowed>
+          <MinAllowed>0</MinAllowed>
+        </StaticMode>
+        <DynamicMode>
+          <PlacementMode>OutsideVoxel</PlacementMode>
+          <MaxAllowed>0.2</MaxAllowed>
+          <MinAllowed>0.01</MinAllowed>
+        </DynamicMode>
+      </VoxelPlacement>
+      <MountPoints>
+        <MountPoint Side="Left" StartX="1.18" StartY="0.20" EndX="1.92" EndY="0.80" />
+        <MountPoint Side="Right" StartX="0.08" StartY="0.20" EndX="0.82" EndY="0.80" />
+        <MountPoint Side="Top" StartX="0.30" StartY="0.30" EndX="0.70" EndY="0.70" />
+        <MountPoint Side="Bottom" StartX="0.30" StartY="1.30" EndX="0.70" EndY="1.70" />
+        <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+      </MountPoints>
+      <BlockPairName>AmplifiedShipWelder</BlockPairName>
+      <MirroringZ>X</MirroringZ>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>24</BuildTimeSeconds>
+      <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+      <DamagedSound>ParticleElectrical</DamagedSound>
+      <Flare>ShipWelderLarge</Flare>
+      <EmissiveColorPreset>Welder</EmissiveColorPreset>
+      <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>
+      <SensorRadius>4.5</SensorRadius>
+      <PCU>150</PCU>      
+    </Definition>
+	
+    <Definition xsi:type="MyObjectBuilder_ShipWelderDefinition">
+      <Id>
+        <TypeId>ShipWelder</TypeId>
+        <SubtypeId>SmallAmplifiedLaserWelder</SubtypeId>
+      </Id>
+      <DisplayName>Amplified Laser Welder</DisplayName>
+      <Icon>Icons\AmplifiedLaserWelder.dds</Icon>
+      <Description>The use of laser welding heads and gravity fields to manipulate components provides tripled working speed. Amplified beams provide doubled working radius.
+	  
+	  2m working radius.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="3" y="3" z="6" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Center x="1" y="1" z="3" />
+      <Model>Models\SmallAmplifiedLaserWelder.mwm</Model>
+      <UseModelIntersection>true</UseModelIntersection>
+      <UsesDeformation>false</UsesDeformation>
+      <Components>
+        <Component Subtype="SteelPlate" Count="15" />
+        <Component Subtype="Construction" Count="20" />
+        <Component Subtype="SmallTube" Count="8" />
+        <Component Subtype="Motor" Count="10" />
+        <Component Subtype="Computer" Count="20" />
+        <Component Subtype="LaserAmplifier" Count="4" />
+        <Component Subtype="Superconductor" Count="3" />
+        <Component Subtype="GravityGenerator" Count="2" />
+        <Component Subtype="SteelPlate" Count="5" />
+      </Components>
+      <CriticalComponent Subtype="GravityGenerator" Index="0" />
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.5" File="Models\Cubes\Small\WelderConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="1.0" File="Models\Cubes\Small\WelderConstruction_2.mwm" />
+      </BuildProgressModels>
+      <MountPoints>
+        <MountPoint Side="Left" StartX="3.5" StartY="0.5" EndX="5.8" EndY="2.5" />
+        <MountPoint Side="Right" StartX="0.2" StartY="0.5" EndX="2.5" EndY="2.5" />
+        <MountPoint Side="Top" StartX="0.8" StartY="0.2" EndX="2.2" EndY="2.5" />
+        <MountPoint Side="Bottom" StartX="0.8" StartY="3.5" EndX="2.2" EndY="5.8" />
+        <MountPoint Side="Back" StartX="0.25" StartY="0.25" EndX="0.35" EndY="2.75" />
+        <MountPoint Side="Back" StartX="2.65" StartY="0.25" EndX="2.75" EndY="2.75" />
+        <MountPoint Side="Back" StartX="0.35" StartY="0.25" EndX="2.65" EndY="0.35" />
+        <MountPoint Side="Back" StartX="0.35" StartY="2.65" EndX="2.65" EndY="2.75" Default="true" />
+      </MountPoints>
+      <BlockPairName>AmplifiedShipWelder</BlockPairName>
+      <MirroringZ>X</MirroringZ>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>18</BuildTimeSeconds>
+      <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+      <DamagedSound>ParticleElectrical</DamagedSound>
+      <Flare>ShipWelder</Flare>
+      <EmissiveColorPreset>Welder</EmissiveColorPreset>
+      <DestroyEffect>BlockDestroyedExplosion_Small</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>
+      <SensorRadius>2</SensorRadius>
+      <PCU>150</PCU>
+      <IsAirTight>false</IsAirTight>      
+    </Definition>
+	
+  </CubeBlocks>
+</Definitions>

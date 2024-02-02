@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <VoxelMaterials>
+  
+
+	 <!-- Sand_02 -->
+    <VoxelMaterial xsi:type="MyObjectBuilder_Dx11VoxelMaterialDefinition">
+      <Id>
+        <TypeId>VoxelMaterialDefinition</TypeId>
+        <SubtypeId>LV</SubtypeId>
+      </Id>
+      <SpawnsInAsteroids>false</SpawnsInAsteroids>
+      <SpawnsFromMeteorites>false</SpawnsFromMeteorites>
+      <MaterialTypeName>Beach</MaterialTypeName>
+      <MinedOre>Stone</MinedOre>
+      <MinedOreRatio>5</MinedOreRatio>
+      <CanBeHarvested>true</CanBeHarvested>
+      <IsRare>false</IsRare>
+      <IsIndestructible>false</IsIndestructible>
+      <DamageRatio>1</DamageRatio>
+      <ParticleEffect>Collision_Meteor</ParticleEffect>
+      
+      <VoxelHandPreview>Textures\Voxels\Sand_02_Thumbnail.dds</VoxelHandPreview>
+      <ColorMetalXZnY>Textures\Voxels\LV\lv_cm.dds</ColorMetalXZnY>
+      <NormalGlossXZnY>Textures\Voxels\LV\lv_ng.dds</NormalGlossXZnY>
+      <ExtXZnY>Textures\Voxels\dummy_add.dds</ExtXZnY>
+      
+      <SpecularPower>24</SpecularPower>
+      <SpecularShininess>0.364</SpecularShininess>
+	  
+      <!--Foliage-->
+        <FoliageColorTextureArray>
+          <Color>Textures\Models\Environment\Grass\Grass_old_01_cm.dds</Color>
+          <Color>Textures\Models\Environment\Grass\Grass_old_02_cm.dds</Color>
+          <Color>Textures\Models\Environment\Grass\Grass_old_03_cm.dds</Color>
+        </FoliageColorTextureArray>
+        <FoliageNormalTextureArray>
+          <Normal>Textures\Models\Environment\Grass\Grass_old_01_ng.dds</Normal>
+          <Normal>Textures\Models\Environment\Grass\Grass_old_02_ng.dds</Normal>
+          <Normal>Textures\Models\Environment\Grass\Grass_old_03_ng.dds</Normal>
+        </FoliageNormalTextureArray>
+
+        <FoliageDensity>1</FoliageDensity>
+        <FoliageScale>
+          <X>0.5</X>
+          <Y>0.5</Y>
+        </FoliageScale>
+        <FoliageRandomRescaleMult>0.20</FoliageRandomRescaleMult>
+      <SpawnChannels>
+        <Channel>2</Channel>
+        <Channel>3</Channel>
+      </SpawnChannels>
+      <SpawnsFlora>true</SpawnsFlora>
+      <BiomeValueMin>1</BiomeValueMin>
+      <BiomeValueMax>1</BiomeValueMax>
+      
+      <ColorKey Hex="#DD9B28"/>
+  
+    </VoxelMaterial>
+	
+
+
+  </VoxelMaterials>
+</Definitions>

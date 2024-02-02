@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>Aaw-Event-GCCrait-SpawnBlockade</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:true]
+		
+		[UniqueEvent:false]	
+		[MinCooldownMs:180001]
+		[MaxCooldownMs:180001]	
+
+		[ConditionIds:AaW-EventCondition-GCCrait-SpawnBlockade]
+		
+		[ActionExecution:ALl]
+
+		[ActionIds:AaW-EventAction-GCCrait-SpawnBlockade]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCCrait-SpawnBlockade</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+	[CheckFalseBooleans:true]
+	[FalseBooleans:GC-CraitStationDestroyed]  
+	[CheckPlayerCondition:true]
+[PlayerConditionIds:PlayerCondition-Position-Crait-Orbit]  	  
+      </Description>
+
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCCrait-SpawnBlockade</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-SpawnPlanetaryBlockade]
+	[CustomActionArgumentsString:GC-SpawnGroup-MediumBlockade]
+	
+	[CustomActionArgumentsInt:42300]	
+	[CustomActionArgumentsInt:49670]
+	[CustomActionArgumentsInt:5000]	
+	
+	[CustomActionArgumentsVector3D:{X:1449429.5 Y:-622819.5 Z:-2854387.5}]
+      </Description>
+      
+    </EntityComponent>	
+
+  </EntityComponents>
+</Definitions>

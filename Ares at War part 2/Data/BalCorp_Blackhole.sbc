@@ -1,0 +1,306 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <PlanetGeneratorDefinitions>
+      <PlanetGeneratorDefinition>
+    <!--<Definition xsi:type="PlanetGeneratorDefinition">-->
+        <Id>
+            <TypeId>PlanetGeneratorDefinition</TypeId>
+            <SubtypeId>Blackhole (BalCorp)</SubtypeId>
+        </Id>
+
+        <MusicCategories>
+            <MusicCategory Category="Danger" Frequency="0.075" />
+        </MusicCategories>
+
+        <SurfaceGravity>10000</SurfaceGravity>
+        <GravityFalloffPower>5.6</GravityFalloffPower>
+        <DefaultSurfaceMaterial Material="BalCorp_Blackhole" MaxDepth="1"/>
+        <DefaultSubSurfaceMaterial Material="BalCorp_Blackhole"/>
+        
+        <PlanetMaps Material="false" Ores="false" Biome="false" Occlusion="false"/>
+        
+        <MaterialsMaxDepth Min="4000" Max="4000"/>
+        <MaterialsMinDepth Min="0" Max="20"/>
+
+        <HillParams Min = "-0.0003" Max ="-0.0002"/>
+
+        <HasAtmosphere>true</HasAtmosphere>
+        <Atmosphere>
+            <Breathable>false</Breathable>
+            <Density>0.001</Density>
+            <LimitAltitude>10000.0</LimitAltitude>
+        </Atmosphere>
+
+        <AtmosphereSettings>
+            <RayleighScattering>
+                <X>15.786</X>
+                <Y>37.753</Y>
+                <Z>100.000</Z>
+            </RayleighScattering>
+            <MieScattering>147.671082</MieScattering>
+            <MieColorScattering>
+                <X>5.000</X>
+                <Y>5.000</Y>
+                <Z>5.000</Z>
+            </MieColorScattering>
+            <RayleighHeight>1.000</RayleighHeight>
+            <RayleighHeightSpace>1.000</RayleighHeightSpace>
+            <RayleighTransitionModifier>0.100</RayleighTransitionModifier>
+            <MieHeight>25.000</MieHeight>
+            <MieG>1</MieG>
+            <Intensity>0.100</Intensity>
+            <FogIntensity>0</FogIntensity>
+            <SeaLevelModifier>0.9</SeaLevelModifier>
+            <AtmosphereTopModifier>1.1</AtmosphereTopModifier>
+            <Scale>1</Scale>
+            <SunColor>
+                <X>1</X>
+                <Y>1</Y>
+                <Z>1</Z>
+            </SunColor>
+            <SunSpecularColor>
+                <X>1</X>
+                <Y>1</Y>
+                <Z>1</Z>
+            </SunSpecularColor>
+        </AtmosphereSettings>
+        
+        <CloudLayers>
+            <CloudLayer>
+                <Model>Models\Environment\BalCorp_Blackhole\BalCorp_BlackHoleDarkRing.mwm</Model>
+                <Textures>
+                    <Texture>Textures\Models\Environment\BalCorp_Blackhole\Blackhole_Misc.dds</Texture>
+                </Textures>
+                <RelativeAltitude>1.0</RelativeAltitude>
+                <RotationAxis>
+                    <X>0</X>
+                    <Y>1</Y>
+                    <Z>0</Z>
+                </RotationAxis>
+                <AngularVelocity>0.0</AngularVelocity>
+                <InitialRotation>0.0</InitialRotation>
+                <ScalingEnabled>false</ScalingEnabled>
+                <FadeOutRelativeAltitudeStart>0.0</FadeOutRelativeAltitudeStart>
+                <FadeOutRelativeAltitudeEnd>0.0</FadeOutRelativeAltitudeEnd>
+                <ApplyFogRelativeDistance>0.001</ApplyFogRelativeDistance>
+            </CloudLayer>
+            <CloudLayer>
+                <Model>Models\Environment\BalCorp_Blackhole\BalCorp_BlackHoleRingGlow.mwm</Model>
+                <Textures>
+                    <Texture>Textures\Models\Environment\BalCorp_Blackhole\Blackhole_Glow.dds</Texture>
+                </Textures>
+                <RelativeAltitude>1.0</RelativeAltitude>
+                <RotationAxis>
+                    <X>0</X>
+                    <Y>1</Y>
+                    <Z>0</Z>
+                </RotationAxis>
+                <AngularVelocity>-10.0</AngularVelocity>
+                <InitialRotation>1.2</InitialRotation>
+                <ScalingEnabled>false</ScalingEnabled>
+                <FadeOutRelativeAltitudeStart>0.0</FadeOutRelativeAltitudeStart>
+                <FadeOutRelativeAltitudeEnd>0.0001</FadeOutRelativeAltitudeEnd>
+                <ApplyFogRelativeDistance>0.001</ApplyFogRelativeDistance>
+            </CloudLayer>
+            <CloudLayer>
+                <Model>Models\Environment\BalCorp_Blackhole\BalCorp_BlackHoleDisc.mwm</Model>
+                <Textures>
+                    <Texture>Textures\Models\Environment\BalCorp_Blackhole\Blackhole_Clouds_1.dds</Texture>
+                </Textures>
+                <RelativeAltitude>-1.0</RelativeAltitude>
+                <RotationAxis>
+                    <X>0</X>
+                    <Y>1</Y>
+                    <Z>0</Z>
+                </RotationAxis>
+                <AngularVelocity>0.4</AngularVelocity> <!-- -0.2 -->
+                <InitialRotation>0.0</InitialRotation>
+                <ScalingEnabled>false</ScalingEnabled>
+                <FadeOutRelativeAltitudeStart>0.0</FadeOutRelativeAltitudeStart>
+                <FadeOutRelativeAltitudeEnd>0.0001</FadeOutRelativeAltitudeEnd>
+                <ApplyFogRelativeDistance>0.001</ApplyFogRelativeDistance>
+            </CloudLayer>
+            <CloudLayer>
+                <Model>Models\Environment\BalCorp_Blackhole\BalCorp_BlackHoleDisc.mwm</Model>
+                <Textures>
+                    <Texture>Textures\Models\Environment\BalCorp_Blackhole\Blackhole_Clouds_2.dds</Texture>
+                </Textures>
+                <RelativeAltitude>-1.0</RelativeAltitude>
+                <RotationAxis>
+                    <X>0</X>
+                    <Y>1</Y>
+                    <Z>0</Z>
+                </RotationAxis>
+                <AngularVelocity>0.1</AngularVelocity> <!-- -0.025 -->
+                <InitialRotation>0.0</InitialRotation>
+                <ScalingEnabled>false</ScalingEnabled>
+                <FadeOutRelativeAltitudeStart>0.0</FadeOutRelativeAltitudeStart>
+                <FadeOutRelativeAltitudeEnd>0.0001</FadeOutRelativeAltitudeEnd>
+                <ApplyFogRelativeDistance>0.001</ApplyFogRelativeDistance>
+            </CloudLayer>
+            <CloudLayer>
+                <Model>Models\Environment\BalCorp_Blackhole\BalCorp_BlackHoleDisc.mwm</Model>
+                <Textures>
+                    <Texture>Textures\Models\Environment\BalCorp_Blackhole\Blackhole_Clouds_3.dds</Texture>
+                </Textures>
+                <RelativeAltitude>-1.0</RelativeAltitude>
+                <RotationAxis>
+                    <X>0</X>
+                    <Y>1</Y>
+                    <Z>0</Z>
+                </RotationAxis>
+                <AngularVelocity>0.04</AngularVelocity> <!-- -0.008333333333 -->
+                <InitialRotation>0.0</InitialRotation>
+                <ScalingEnabled>false</ScalingEnabled>
+                <FadeOutRelativeAltitudeStart>0.0</FadeOutRelativeAltitudeStart>
+                <FadeOutRelativeAltitudeEnd>0.0001</FadeOutRelativeAltitudeEnd>
+                <ApplyFogRelativeDistance>0.001</ApplyFogRelativeDistance>
+            </CloudLayer>
+            <CloudLayer>
+                <Model>Models\Environment\BalCorp_Blackhole\BalCorp_BlackHoleDisc.mwm</Model>
+                <Textures>
+                    <Texture>Textures\Models\Environment\BalCorp_Blackhole\Blackhole_Clouds_4.dds</Texture>
+                </Textures>
+                <RelativeAltitude>-1.0</RelativeAltitude>
+                <RotationAxis>
+                    <X>0</X>
+                    <Y>1</Y>
+                    <Z>0</Z>
+                </RotationAxis>
+                <AngularVelocity>0.016</AngularVelocity> <!-- -0.002083333333 -->
+                <InitialRotation>0.0</InitialRotation>
+                <ScalingEnabled>false</ScalingEnabled>
+                <FadeOutRelativeAltitudeStart>0.0</FadeOutRelativeAltitudeStart>
+                <FadeOutRelativeAltitudeEnd>0.0001</FadeOutRelativeAltitudeEnd>
+                <ApplyFogRelativeDistance>0.001</ApplyFogRelativeDistance>
+            </CloudLayer>
+            <CloudLayer>
+                <Model>Models\Environment\BalCorp_Blackhole\BalCorp_BlackHoleDisc.mwm</Model>
+                <Textures>
+                    <Texture>Textures\Models\Environment\BalCorp_Blackhole\Blackhole_Clouds_5.dds</Texture>
+                </Textures>
+                <RelativeAltitude>-1.0</RelativeAltitude>
+                <RotationAxis>
+                    <X>0</X>
+                    <Y>1</Y>
+                    <Z>0</Z>
+                </RotationAxis>
+                <AngularVelocity>0.0064</AngularVelocity> <!-- -0.000416666667 -->
+                <InitialRotation>0.0</InitialRotation>
+                <ScalingEnabled>false</ScalingEnabled>
+                <FadeOutRelativeAltitudeStart>0.0</FadeOutRelativeAltitudeStart>
+                <FadeOutRelativeAltitudeEnd>0.0001</FadeOutRelativeAltitudeEnd>
+                <ApplyFogRelativeDistance>0.001</ApplyFogRelativeDistance>
+            </CloudLayer>
+            <CloudLayer>
+                <Model>Models\Environment\BalCorp_Blackhole\BalCorp_BlackHoleDisc.mwm</Model>
+                <Textures>
+                    <Texture>Textures\Models\Environment\BalCorp_Blackhole\Blackhole_Clouds_6.dds</Texture>
+                </Textures>
+                <RelativeAltitude>-1.0</RelativeAltitude>
+                <RotationAxis>
+                    <X>0</X>
+                    <Y>1</Y>
+                    <Z>0</Z>
+                </RotationAxis>
+                <AngularVelocity>0.00256</AngularVelocity> <!-- -0.00006944444444 -->
+                <InitialRotation>0.0</InitialRotation>
+                <ScalingEnabled>false</ScalingEnabled>
+                <FadeOutRelativeAltitudeStart>0.0</FadeOutRelativeAltitudeStart>
+                <FadeOutRelativeAltitudeEnd>0.0001</FadeOutRelativeAltitudeEnd>
+                <ApplyFogRelativeDistance>0.001</ApplyFogRelativeDistance>
+            </CloudLayer>
+        </CloudLayers>
+
+    <!--</Definition>-->
+      </PlanetGeneratorDefinition>
+    
+      <PlanetGeneratorDefinition>
+    <!--<Definition xsi:type="PlanetGeneratorDefinition">-->
+        <Id>
+            <TypeId>PlanetGeneratorDefinition</TypeId>
+            <SubtypeId>Blackhole (BalCorp) NoDisk</SubtypeId>
+        </Id>
+
+        <MusicCategories>
+            <MusicCategory Category="Danger" Frequency="0.075" />
+        </MusicCategories>
+
+        <SurfaceGravity>10000</SurfaceGravity>
+        <GravityFalloffPower>5.6</GravityFalloffPower>
+        <DefaultSurfaceMaterial Material="BalCorp_Blackhole" MaxDepth="1"/>
+        <DefaultSubSurfaceMaterial Material="BalCorp_Blackhole"/>
+        
+        <PlanetMaps Material="false" Ores="false" Biome="false" Occlusion="false"/>
+        
+        <MaterialsMaxDepth Min="4000" Max="4000"/>
+        <MaterialsMinDepth Min="0" Max="20"/>
+
+        <HillParams Min = "-0.0003" Max ="-0.0002"/>
+
+        <HasAtmosphere>true</HasAtmosphere>
+        <Atmosphere>
+            <Breathable>false</Breathable>
+            <Density>0.001</Density>
+            <LimitAltitude>10000.0</LimitAltitude>
+        </Atmosphere>
+
+        <AtmosphereSettings>
+            <RayleighScattering>
+                <X>15.786</X>
+                <Y>37.753</Y>
+                <Z>100.000</Z>
+            </RayleighScattering>
+            <MieScattering>147.671082</MieScattering>
+            <MieColorScattering>
+                <X>5.000</X>
+                <Y>5.000</Y>
+                <Z>5.000</Z>
+            </MieColorScattering>
+            <RayleighHeight>1.000</RayleighHeight>
+            <RayleighHeightSpace>1.000</RayleighHeightSpace>
+            <RayleighTransitionModifier>0.100</RayleighTransitionModifier>
+            <MieHeight>25.000</MieHeight>
+            <MieG>1</MieG>
+            <Intensity>0.100</Intensity>
+            <FogIntensity>0</FogIntensity>
+            <SeaLevelModifier>0.9</SeaLevelModifier>
+            <AtmosphereTopModifier>1.1</AtmosphereTopModifier>
+            <Scale>1</Scale>
+            <SunColor>
+                <X>1</X>
+                <Y>1</Y>
+                <Z>1</Z>
+            </SunColor>
+            <SunSpecularColor>
+                <X>1</X>
+                <Y>1</Y>
+                <Z>1</Z>
+            </SunSpecularColor>
+        </AtmosphereSettings>
+        
+        <CloudLayers>
+            <CloudLayer>
+                <Model>Models\Environment\BalCorp_Blackhole\BalCorp_BlackHoleDarkRingNoDisk.mwm</Model>
+                <Textures>
+                    <Texture>Textures\Models\Environment\BalCorp_Blackhole\Blackhole_Misc.dds</Texture>
+                </Textures>
+                <RelativeAltitude>1.0</RelativeAltitude>
+                <RotationAxis>
+                    <X>0</X>
+                    <Y>1</Y>
+                    <Z>0</Z>
+                </RotationAxis>
+                <AngularVelocity>0.0</AngularVelocity>
+                <InitialRotation>0.0</InitialRotation>
+                <ScalingEnabled>false</ScalingEnabled>
+                <FadeOutRelativeAltitudeStart>0.0</FadeOutRelativeAltitudeStart>
+                <FadeOutRelativeAltitudeEnd>0.0</FadeOutRelativeAltitudeEnd>
+                <ApplyFogRelativeDistance>0.001</ApplyFogRelativeDistance>
+            </CloudLayer>
+        </CloudLayers>
+
+    <!--</Definition>-->
+      </PlanetGeneratorDefinition>      
+    </PlanetGeneratorDefinitions>
+</Definitions>

@@ -1,0 +1,460 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <VoxelMaterials>
+   
+    <!-- Sand_02 -->
+    <VoxelMaterial xsi:type="MyObjectBuilder_Dx11VoxelMaterialDefinition">
+      <Id>
+        <TypeId>VoxelMaterialDefinition</TypeId>
+        <SubtypeId>DOC-BeachSand</SubtypeId>
+      </Id>
+      <SpawnsInAsteroids>false</SpawnsInAsteroids>
+      <SpawnsFromMeteorites>false</SpawnsFromMeteorites>
+      <MaterialTypeName>Beach</MaterialTypeName>
+      <MinedOre>Stone</MinedOre>
+      <MinedOreRatio>5</MinedOreRatio>
+      <CanBeHarvested>true</CanBeHarvested>
+      <IsRare>false</IsRare>
+      <IsIndestructible>false</IsIndestructible>
+      <DamageRatio>1</DamageRatio>
+      <ParticleEffect>Collision_Meteor</ParticleEffect>
+      
+      <VoxelHandPreview>Textures\Voxels\Sand_02_Thumbnail.dds</VoxelHandPreview>
+      <ColorMetalXZnY>Textures\Voxels\Doctor\DOC-BeachSand\EarthSand_cm.dds</ColorMetalXZnY>
+      <NormalGlossXZnY>Textures\Voxels\Doctor\DOC-BeachSand\EarthSand_ng.dds</NormalGlossXZnY>
+      <ExtXZnY>Textures\Voxels\dummy_add.dds</ExtXZnY>
+      
+      <SpecularPower>24</SpecularPower>
+      <SpecularShininess>0.364</SpecularShininess>
+
+      <SpawnChannels>
+        <Channel>2</Channel>
+        <Channel>3</Channel>
+      </SpawnChannels>
+      <SpawnsFlora>true</SpawnsFlora>
+      <BiomeValueMin>1</BiomeValueMin>
+      <BiomeValueMax>1</BiomeValueMax>
+      
+      <Friction>0.85</Friction>
+      <Restitution>0.3</Restitution>
+      <ColorKey Hex="#DD9B28"/>
+    </VoxelMaterial>
+   <!--
+   <VoxelMaterial xsi:type="MyObjectBuilder_Dx11VoxelMaterialDefinition">
+      <Id>
+        <TypeId>VoxelMaterialDefinition</TypeId>
+        <SubtypeId>DOC blackSand_02</SubtypeId>
+      </Id>
+      <SpawnsInAsteroids>false</SpawnsInAsteroids>
+      <SpawnsFromMeteorites>false</SpawnsFromMeteorites>
+      <MaterialTypeName>Beach</MaterialTypeName>
+      <MinedOre>Stone</MinedOre>
+      <MinedOreRatio>5</MinedOreRatio>
+      <CanBeHarvested>true</CanBeHarvested>
+      <IsRare>false</IsRare>
+      <IsIndestructible>false</IsIndestructible>
+      <DamageRatio>1</DamageRatio>
+      <ParticleEffect>Collision_Meteor</ParticleEffect>
+      
+      <VoxelHandPreview>Textures\Voxels\Sand_02_Thumbnail.dds</VoxelHandPreview>
+      <ColorMetalXZnY>Textures\Voxels\Earth\Sand\blackEarthSand_cm.dds</ColorMetalXZnY>
+      <NormalGlossXZnY>Textures\Voxels\Earth\Sand\EarthSand_ng.dds</NormalGlossXZnY>
+      <ExtXZnY>Textures\Voxels\dummy_add.dds</ExtXZnY>
+      
+      <SpecularPower>24</SpecularPower>
+      <SpecularShininess>0.364</SpecularShininess>
+
+      <SpawnChannels>
+        <Channel>2</Channel>
+        <Channel>3</Channel>
+      </SpawnChannels>
+      <SpawnsFlora>true</SpawnsFlora>
+      <BiomeValueMin>1</BiomeValueMin>
+      <BiomeValueMax>1</BiomeValueMax>
+      
+      <Friction>0.85</Friction>
+      <Restitution>0.3</Restitution>
+      <ColorKey Hex="#DD9B28"/>
+    </VoxelMaterial>
+    -->
+    <!-- 
+    <VoxelMaterial xsi:type="MyObjectBuilder_Dx11VoxelMaterialDefinition">
+      <Id>
+        <TypeId>VoxelMaterialDefinition</TypeId>
+        <SubtypeId>Ice_02DOC</SubtypeId>
+      </Id>
+      <MaterialTypeName>Ice</MaterialTypeName>
+      <MinedOre>Ice</MinedOre>
+      <MinedOreRatio>4.5</MinedOreRatio>
+      <CanBeHarvested>true</CanBeHarvested>
+      <IsRare>false</IsRare>
+      <IsIndestructible>false</IsIndestructible>
+      <DamageRatio>0.2</DamageRatio>
+      
+      <SpecularPower>21</SpecularPower>
+      <SpecularShininess>0.632</SpecularShininess>
+      <MinVersion>1</MinVersion>
+      <VoxelHandPreview>Textures\Voxels\EarthIce_Thumbnail.dds</VoxelHandPreview>
+      <ColorMetalXZnY>Textures\Voxels\Europa\Ice_02\Ice_02_cm.dds</ColorMetalXZnY>
+      <NormalGlossXZnY>Textures\Voxels\Europa\Ice_02\Ice_02_ng.dds</NormalGlossXZnY>
+      <ExtXZnY>Textures\Voxels\Dummy_add.dds</ExtXZnY>
+      <ScaleMultiplier>4</ScaleMultiplier>
+
+      <ExtDetailScale>0.005</ExtDetailScale>
+      <Scale>500</Scale>
+      <Far1Distance>22</Far1Distance>
+      <Far2Distance>500</Far2Distance>
+      <Far1Scale>300</Far1Scale>
+      <Far2Scale>2000</Far2Scale>
+      
+      <Friction>0.15</Friction>
+      <Restitution>0.9</Restitution>
+      <ColorKey Hex="#DD9B28"/>
+    </VoxelMaterial>
+Ice -->
+ 
+  
+    <!-- DOC-TundraGrass -->
+    <VoxelMaterial xsi:type="MyObjectBuilder_Dx11VoxelMaterialDefinition">
+      <Id>
+        <TypeId>VoxelMaterialDefinition</TypeId>
+        <SubtypeId>DOC-TundraGrass</SubtypeId>
+      </Id>
+      <SpawnsInAsteroids>false</SpawnsInAsteroids>
+      <SpawnsFromMeteorites>false</SpawnsFromMeteorites>
+      <MaterialTypeName>Snow</MaterialTypeName>
+      <MinedOre>Stone</MinedOre>
+      <MinedOreRatio>5</MinedOreRatio>
+      <CanBeHarvested>true</CanBeHarvested>
+      <IsRare>false</IsRare>
+      <IsIndestructible>false</IsIndestructible>
+      <DamageRatio>1</DamageRatio>
+      <ParticleEffect>Collision_Meteor</ParticleEffect>
+
+      <VoxelHandPreview>Textures\Voxels\Grass_old_Thumbnail.dds</VoxelHandPreview>
+      <ColorMetalXZnY>Textures\Voxels\Doctor\DOC-TundraGrass\EarthGrass_03_cm.dds</ColorMetalXZnY>
+      <NormalGlossXZnY>Textures\Voxels\Doctor\DOC-TundraGrass\EarthGrass_03_ng.dds</NormalGlossXZnY>
+      <ExtXZnY>Textures\Voxels\Dummy_add.dds</ExtXZnY>
+
+      <SpecularPower>24</SpecularPower>
+      <SpecularShininess>0.364</SpecularShininess>
+
+      <!--Foliage-->
+      <FoliageColorTextureArray>
+        <Color>Textures\Models\Environment\Grass\Grass_old_01_cm.dds</Color>
+        <Color>Textures\Models\Environment\Grass\Grass_old_02_cm.dds</Color>
+        <Color>Textures\Models\Environment\Grass\Grass_old_03_cm.dds</Color>
+      </FoliageColorTextureArray>
+      <FoliageNormalTextureArray>
+        <Normal>Textures\Models\Environment\Grass\Grass_old_01_ng.dds</Normal>
+        <Normal>Textures\Models\Environment\Grass\Grass_old_02_ng.dds</Normal>
+        <Normal>Textures\Models\Environment\Grass\Grass_old_03_ng.dds</Normal>
+      </FoliageNormalTextureArray>
+
+      <FoliageDensity>3</FoliageDensity>
+      <FoliageScale>
+        <X>0.4</X>
+        <Y>0.4</Y>
+      </FoliageScale>
+      <FoliageRandomRescaleMult>0.20</FoliageRandomRescaleMult>
+
+      <SpawnChannels>
+        <Channel>1</Channel>
+        <Channel>4</Channel>
+      </SpawnChannels>
+
+
+      <SpawnsFlora>true</SpawnsFlora>
+      <BiomeValueMin>20</BiomeValueMin>
+      <BiomeValueMax>30</BiomeValueMax>
+
+      <DamagedMaterial>Soil</DamagedMaterial>
+		<BareVariant>DOC-TundraGrass-BARE</BareVariant>
+
+      <ColorKey Hex="#BCBB56"/>
+    </VoxelMaterial>
+ 
+    <!-- DOC-TundraGrass-BARE -->
+    <VoxelMaterial xsi:type="MyObjectBuilder_Dx11VoxelMaterialDefinition">
+      <Id>
+        <TypeId>VoxelMaterialDefinition</TypeId>
+        <SubtypeId>DOC-TundraGrass-BARE</SubtypeId>
+      </Id>
+      <SpawnsInAsteroids>false</SpawnsInAsteroids>
+      <SpawnsFromMeteorites>false</SpawnsFromMeteorites>
+      <MaterialTypeName>Snow</MaterialTypeName>
+      <MinedOre>Stone</MinedOre>
+      <MinedOreRatio>5</MinedOreRatio>
+      <CanBeHarvested>true</CanBeHarvested>
+      <IsRare>false</IsRare>
+      <IsIndestructible>false</IsIndestructible>
+      <DamageRatio>1</DamageRatio>
+      <ParticleEffect>Collision_Meteor</ParticleEffect>
+
+      <VoxelHandPreview>Textures\Voxels\Grass_old_Thumbnail.dds</VoxelHandPreview>
+      <ColorMetalXZnY>Textures\Voxels\Doctor\DOC-TundraGrass\EarthGrass_03_cm.dds</ColorMetalXZnY>
+      <NormalGlossXZnY>Textures\Voxels\Doctor\DOC-TundraGrass\EarthGrass_03_ng.dds</NormalGlossXZnY>
+      <ExtXZnY>Textures\Voxels\Dummy_add.dds</ExtXZnY>
+
+      <SpecularPower>24</SpecularPower>
+      <SpecularShininess>0.364</SpecularShininess>
+
+      <SpawnChannels>
+        <Channel>1</Channel>
+        <Channel>4</Channel>
+      </SpawnChannels>
+
+
+      <SpawnsFlora>true</SpawnsFlora>
+      <BiomeValueMin>20</BiomeValueMin>
+      <BiomeValueMax>30</BiomeValueMax>
+
+      <DamagedMaterial>Soil</DamagedMaterial>
+
+      <ColorKey Hex="#BCBB56"/>
+    </VoxelMaterial>
+
+
+    
+	 <!-- DarinusRock -->
+	<VoxelMaterial xsi:type="MyObjectBuilder_Dx11VoxelMaterialDefinition">
+      <Id>
+        <TypeId>VoxelMaterialDefinition</TypeId>
+        <SubtypeId>DOC-DarinusRock</SubtypeId>
+      </Id>
+      <SpawnsInAsteroids>false</SpawnsInAsteroids>
+      <SpawnsFromMeteorites>false</SpawnsFromMeteorites>
+      <MaterialTypeName>Rock</MaterialTypeName>
+      <MinedOre>Stone</MinedOre>
+      <MinedOreRatio>5</MinedOreRatio>
+      <CanBeHarvested>true</CanBeHarvested>
+      <IsRare>false</IsRare>
+      <IsIndestructible>false</IsIndestructible>
+      <DamageRatio>1</DamageRatio>
+      <ParticleEffect>Collision_Meteor</ParticleEffect>
+      
+      <ColorMetalXZnY>Textures\Voxels\Doctor\DOC-DarinusRock\DarinusRock_cm.dds</ColorMetalXZnY>
+      <NormalGlossXZnY>Textures\Voxels\Doctor\DOC-DarinusRock\DarinusRock_ng.dds</NormalGlossXZnY>
+      <ExtXZnY>Textures\Voxels\Dummy_add.dds</ExtXZnY>
+	  
+      <SpecularPower>24</SpecularPower>
+      <SpecularShininess>0.364</SpecularShininess>
+      
+    </VoxelMaterial>
+
+	
+	
+	<VoxelMaterial xsi:type="MyObjectBuilder_Dx11VoxelMaterialDefinition">
+      <Id>
+        <TypeId>VoxelMaterialDefinition</TypeId>
+        <SubtypeId>DOC-DarinusGrass2</SubtypeId>
+      </Id>
+      <SpawnsInAsteroids>false</SpawnsInAsteroids>
+      <SpawnsFromMeteorites>false</SpawnsFromMeteorites>
+      <MaterialTypeName>Grass</MaterialTypeName>
+      <MinedOre>Stone</MinedOre>
+      <MinedOreRatio>5</MinedOreRatio>
+      <CanBeHarvested>true</CanBeHarvested>
+      <IsRare>false</IsRare>
+      <IsIndestructible>false</IsIndestructible>
+      <DamageRatio>1</DamageRatio>
+      <ParticleEffect>Collision_Meteor</ParticleEffect>
+      
+      <ColorMetalXZnY>Textures\Voxels\Doctor\DOC-DarinusGrass2\DarinusGrass2_cm.dds</ColorMetalXZnY>
+      <NormalGlossXZnY>Textures\Voxels\Doctor\DOC-DarinusGrass\DarinusGrass_ng.dds</NormalGlossXZnY>
+	  <ExtXZnY>Textures\Voxels\Dummy_add.dds</ExtXZnY>
+	  <ExtDetailScale>0.001</ExtDetailScale>
+
+      <SpecularPower>24</SpecularPower>
+      <SpecularShininess>0.364</SpecularShininess>
+
+            <!--Foliage-->
+      <FoliageColorTextureArray>
+        <Color>Textures\Models\Environment\Grass\DarinusGrass2_01_cm.dds</Color>
+        <Color>Textures\Models\Environment\Grass\DarinusGrass2_02_cm.dds</Color>
+        <Color>Textures\Models\Environment\Grass\DarinusGrass2_03_cm.dds</Color>
+        <Color>Textures\Models\Environment\Grass\DarinusGrass2_04_cm.dds</Color>
+      </FoliageColorTextureArray>
+      <FoliageNormalTextureArray>
+        <Normal>Textures\Models\Environment\Grass\DarinusGrass_01_ng.dds</Normal>
+        <Normal>Textures\Models\Environment\Grass\DarinusGrass_02_ng.dds</Normal>
+        <Normal>Textures\Models\Environment\Grass\DarinusGrass_03_ng.dds</Normal>
+        <Normal>Textures\Models\Environment\Grass\DarinusGrass_04_ng.dds</Normal>
+      </FoliageNormalTextureArray>
+
+      <FoliageDensity>1</FoliageDensity>
+      <FoliageScale>
+        <X>1.0</X>
+        <Y>1.0</Y>
+      </FoliageScale>
+      <FoliageRandomRescaleMult>0.20</FoliageRandomRescaleMult>
+
+      <SpecularPower>24</SpecularPower>
+      <SpecularShininess>0.364</SpecularShininess>
+
+      <SpawnChannels>
+        <Channel>1</Channel>
+        <Channel>4</Channel>
+      </SpawnChannels>
+      
+      <SpawnsFlora>true</SpawnsFlora>
+      <BiomeValueMin>255</BiomeValueMin>
+      <BiomeValueMax>255</BiomeValueMax>
+      <DamageThreashold>0.1</DamageThreashold>
+        
+		<BareVariant>DOC-DarinusGrass2 bare</BareVariant>
+
+    </VoxelMaterial>
+
+	
+	<VoxelMaterial xsi:type="MyObjectBuilder_Dx11VoxelMaterialDefinition">
+      <Id>
+        <TypeId>VoxelMaterialDefinition</TypeId>
+        <SubtypeId>DOC-DarinusGrass2 bare</SubtypeId>
+      </Id>
+      <SpawnsInAsteroids>false</SpawnsInAsteroids>
+      <SpawnsFromMeteorites>false</SpawnsFromMeteorites>
+      <MaterialTypeName>Grass</MaterialTypeName>
+      <MinedOre>Stone</MinedOre>
+      <MinedOreRatio>5</MinedOreRatio>
+      <CanBeHarvested>true</CanBeHarvested>
+      <IsRare>false</IsRare>
+      <IsIndestructible>false</IsIndestructible>
+      <DamageRatio>1</DamageRatio>
+      <ParticleEffect>Collision_Meteor</ParticleEffect>
+      
+      <ColorMetalXZnY>Textures\Voxels\Doctor\DOC-DarinusGrass2\DarinusGrass2_cm.dds</ColorMetalXZnY>
+      <NormalGlossXZnY>Textures\Voxels\Doctor\DOC-DarinusGrass\DarinusGrass_ng.dds</NormalGlossXZnY>
+	  <ExtXZnY>Textures\Voxels\Dummy_add.dds</ExtXZnY>
+	  <ExtDetailScale>0.001</ExtDetailScale>
+
+      <SpecularPower>24</SpecularPower>
+      <SpecularShininess>0.364</SpecularShininess>
+
+
+      <SpecularPower>24</SpecularPower>
+      <SpecularShininess>0.364</SpecularShininess>
+
+      <SpawnChannels>
+        <Channel>1</Channel>
+        <Channel>4</Channel>
+      </SpawnChannels>
+      
+      <SpawnsFlora>true</SpawnsFlora>
+      <BiomeValueMin>255</BiomeValueMin>
+      <BiomeValueMax>255</BiomeValueMax>
+      <DamageThreashold>0.1</DamageThreashold>
+    </VoxelMaterial>	    
+   
+  
+    <!-- RavLava -->
+	<VoxelMaterial xsi:type="MyObjectBuilder_Dx11VoxelMaterialDefinition">
+      <Id>
+        <TypeId>VoxelMaterialDefinition</TypeId>
+        <SubtypeId>DOC-RavLava</SubtypeId>
+      </Id>
+      <SpawnsInAsteroids>false</SpawnsInAsteroids>
+      <MaterialTypeName>RavLava</MaterialTypeName>
+      <MinedOre>Stone</MinedOre>
+      <MinedOreRatio>5</MinedOreRatio>
+      <CanBeHarvested>true</CanBeHarvested>
+      <IsRare>false</IsRare>
+      <IsIndestructible>false</IsIndestructible>
+      <DamageRatio>0.4</DamageRatio>
+      <ParticleEffect>Collision_Meteor</ParticleEffect>
+      
+      <SpecularPower>8</SpecularPower>
+      <SpecularShininess>0.23</SpecularShininess>
+      
+      <ColorMetalXZnY>Textures\Voxels\Doctor\DOC-RavLava\RavLava_cm.dds</ColorMetalXZnY>   
+      <NormalGlossXZnY>Textures\Voxels\Doctor\DOC-RavLava\RavLava_ng.dds</NormalGlossXZnY>
+      <ExtXZnY>Textures\Voxels\Doctor\DOC-RavLava\RavLava_add.dds</ExtXZnY>
+	  
+	  
+    </VoxelMaterial>
+	
+	<!-- RavRock -->
+	<VoxelMaterial xsi:type="MyObjectBuilder_Dx11VoxelMaterialDefinition">
+      <Id>
+        <TypeId>VoxelMaterialDefinition</TypeId>
+        <SubtypeId>DOC-RavRock</SubtypeId>
+      </Id>
+      <SpawnsInAsteroids>false</SpawnsInAsteroids>
+      <MaterialTypeName>Rock</MaterialTypeName>
+      <MinedOre>Stone</MinedOre>
+      <MinedOreRatio>7</MinedOreRatio>
+      <CanBeHarvested>true</CanBeHarvested>
+      <IsRare>false</IsRare>
+      <IsIndestructible>false</IsIndestructible>
+      <DamageRatio>0.2</DamageRatio>
+      <ParticleEffect>Collision_Meteor</ParticleEffect>
+      
+      <SpecularPower>24</SpecularPower>
+      <SpecularShininess>0.364</SpecularShininess>
+      
+      <ColorMetalXZnY>Textures\Voxels\Doctor\DOC-RavRock\RavRock_cm.dds</ColorMetalXZnY>
+      <ColorMetalY>Textures\Voxels\Doctor\DOC-RavRock\RavRock_cm.dds</ColorMetalY>
+      <NormalGlossXZnY>Textures\Voxels\Doctor\DOC-RavRock\RavRock_ng.dds</NormalGlossXZnY>
+	  <ExtXZnY>Textures\Voxels\Doctor\DOC-RavRock\RavRock_add.dds</ExtXZnY>
+	  
+    </VoxelMaterial>
+	
+	<!-- RavCrackedRock -->
+	<VoxelMaterial xsi:type="MyObjectBuilder_Dx11VoxelMaterialDefinition">
+      <Id>
+        <TypeId>VoxelMaterialDefinition</TypeId>
+        <SubtypeId>DOC-RavCrackedRock</SubtypeId>
+      </Id>
+      <SpawnsInAsteroids>false</SpawnsInAsteroids>
+      <SpawnsFromMeteorites>false</SpawnsFromMeteorites>
+      <MaterialTypeName>Rock</MaterialTypeName>
+      <MinedOre>Stone</MinedOre>
+      <MinedOreRatio>6</MinedOreRatio>
+      <CanBeHarvested>true</CanBeHarvested>
+      <IsRare>false</IsRare>
+      <IsIndestructible>false</IsIndestructible>
+      <DamageRatio>1</DamageRatio>
+      <ParticleEffect>Collision_Meteor</ParticleEffect>
+
+      <ColorMetalXZnY>Textures\Voxels\Doctor\DOC-RavCrackedRock\RavCrackedRock_cm.dds</ColorMetalXZnY>
+      <NormalGlossXZnY>Textures\Voxels\Doctor\DOC-RavCrackedRock\RavCrackedRock_ng.dds</NormalGlossXZnY>
+      <ExtXZnY>Textures\Voxels\Doctor\DOC-RavCrackedRock\RavCrackedRock_add.dds</ExtXZnY>
+
+      <SpecularPower>24</SpecularPower>
+      <SpecularShininess>0.364</SpecularShininess>
+
+      
+      <BiomeValueMin>0</BiomeValueMin>
+      <BiomeValueMax>10</BiomeValueMax>
+    </VoxelMaterial>
+	
+	<!-- RavSoil -->
+    <VoxelMaterial xsi:type="MyObjectBuilder_Dx11VoxelMaterialDefinition">
+      <Id>
+        <TypeId>VoxelMaterialDefinition</TypeId>
+        <SubtypeId>DOC-RavSoil</SubtypeId>
+      </Id>
+      <SpawnsInAsteroids>false</SpawnsInAsteroids>
+      <SpawnsFromMeteorites>false</SpawnsFromMeteorites>
+      <MaterialTypeName>Soil</MaterialTypeName>
+      <MinedOre>Stone</MinedOre>
+      <MinedOreRatio>5</MinedOreRatio>
+      <CanBeHarvested>true</CanBeHarvested>
+      <IsRare>false</IsRare>
+      <IsIndestructible>false</IsIndestructible>
+      <DamageRatio>1</DamageRatio>
+      <ParticleEffect>Collision_Meteor</ParticleEffect>
+      
+      <ColorMetalXZnY>Textures\Voxels\Doctor\DOC-RavSoil\RavSoil_cm.dds</ColorMetalXZnY>
+      <NormalGlossXZnY>Textures\Voxels\Doctor\DOC-RavSoil\RavSoil_ng.dds</NormalGlossXZnY>
+	  <ExtXZnY>Textures\Voxels\Doctor\DOC-RavSoil\RavSoil_add.dds</ExtXZnY>
+
+      <SpecularPower>24</SpecularPower>
+      <SpecularShininess>0.364</SpecularShininess>
+      
+    </VoxelMaterial>
+	
+
+    
+  </VoxelMaterials>
+</Definitions>

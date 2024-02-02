@@ -1,0 +1,561 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <!--Moons -->
+    <Definition xsi:type="PlanetGeneratorDefinition">
+        <Id>
+            <TypeId>PlanetGeneratorDefinition</TypeId>
+            <SubtypeId>Agaris II</SubtypeId>
+        </Id>
+
+        <Difficulty>DifficultyHard</Difficulty>
+        <!--!!!Important!! Read if you want to mod Planets! -->
+        <!--Following tag switches off loading from certain color channels. Its performance measure in cases where channels are not used-->
+        <!--Make sure you are not modding a switched off channel-->
+        <PlanetMaps Material="true" Ores="true" Biome="true" Occlusion="true"/>
+
+        <MesherPostprocessing xsi:type="MyObjectBuilder_VoxelMesherComponentDefinition">
+            <PostprocessingSteps>
+                <Step xsi:type="MyObjectBuilder_VoxelPostprocessingDecimate" ForPhysics="true">
+                    <LodSettings>
+                        <Settings FromLod="0">
+                            <FeatureAngle>15</FeatureAngle>
+                            <EdgeThreshold>.04</EdgeThreshold>
+                            <PlaneThreshold>.02</PlaneThreshold>
+                        </Settings>
+                        <Settings FromLod="1">
+                            <FeatureAngle>15</FeatureAngle>
+                            <EdgeThreshold>.04</EdgeThreshold>
+                            <PlaneThreshold>.04</PlaneThreshold>
+                        </Settings>
+                        <Settings FromLod="2">
+                            <FeatureAngle>15</FeatureAngle>
+                            <EdgeThreshold>.06</EdgeThreshold>
+                            <PlaneThreshold>.06</PlaneThreshold>
+                        </Settings>
+                    </LodSettings>
+                </Step>
+            </PostprocessingSteps>
+        </MesherPostprocessing>
+
+        <SurfaceDetail>
+            <Texture>Data/PlanetDataFiles/Extra/material_detail_1</Texture>
+            <Size>256</Size>
+            <Scale>2</Scale>
+            <Slope Min="30" Max="90" />
+            <Transition>10</Transition>
+        </SurfaceDetail>
+
+        <CustomMaterialTable>
+            <Material Material="MoonRocks" Value ="190" MaxDepth ="5"/>
+            <Material Material="MoonSoil" Value ="174" MaxDepth ="5"/>
+            <Material Material="Ice" Value ="158" MaxDepth ="5"/>
+        </CustomMaterialTable>
+
+
+        <!-- Earthmoon definitions -->
+        <ComplexMaterials>
+            <MaterialGroup Name="Craters" Value="48">
+
+                <Rule>
+                    <Layers>
+                        <Layer Material="MoonSoil" Depth="5"/>
+                    </Layers>
+                    <Height Min="0.5" Max="1"/>
+                    <Latitude Min="0" Max="90"/>
+                    <Slope Min="40" Max="70"/>
+                </Rule>
+
+                <Rule>
+                    <Layers>
+                        <Layer Material="MoonSoil" Depth="5"/>
+                    </Layers>
+                    <Height Min="0" Max="0.3"/>
+                    <Latitude Min="0" Max="90"/>
+                    <Slope Min="0" Max="30"/>
+                </Rule>
+
+                <Rule>
+                    <Layers>
+                        <Layer Material="MoonSoil" Depth="5"/>
+                    </Layers>
+                    <Height Min="0.4" Max="0.6"/>
+                    <Latitude Min="0" Max="90"/>
+                    <Slope Min="0" Max="30"/>
+                </Rule>
+
+                <Rule>
+                    <Layers>
+                        <Layer Material="Ice" Depth="5"/>
+                    </Layers>
+                    <Height Min="0" Max="0.5"/>
+                    <Latitude Min="60" Max="90"/>
+                    <Slope Min="0" Max="10"/>
+                </Rule>
+
+                <Rule>
+                    <Layers>
+                        <Layer Material="Ice" Depth="5"/>
+                    </Layers>
+                    <Height Min="0.25" Max="0.5"/>
+                    <Latitude Min="60" Max="90"/>
+                    <Slope Min="30" Max="60"/>
+                </Rule>
+
+            </MaterialGroup>
+
+            <MaterialGroup Name="Other features" Value="16">
+
+                <Rule>
+                    <Layers>
+                        <Layer Material="MoonSoil" Depth="5"/>
+                    </Layers>
+                    <Height Min="0.5" Max="1"/>
+                    <Latitude Min="0" Max="90"/>
+                    <Slope Min="40" Max="70"/>
+                </Rule>
+
+                <Rule>
+                    <Layers>
+                        <Layer Material="MoonSoil" Depth="5"/>
+                    </Layers>
+                    <Height Min="0" Max="0.3"/>
+                    <Latitude Min="0" Max="90"/>
+                    <Slope Min="0" Max="30"/>
+                </Rule>
+
+                <Rule>
+                    <Layers>
+                        <Layer Material="MoonSoil" Depth="5"/>
+                    </Layers>
+                    <Height Min="0.4" Max="0.6"/>
+                    <Latitude Min="0" Max="90"/>
+                    <Slope Min="0" Max="30"/>
+                </Rule>
+
+                <Rule>
+                    <Layers>
+                        <Layer Material="Ice" Depth="5"/>
+                    </Layers>
+                    <Height Min="0" Max="0.5"/>
+                    <Latitude Min="60" Max="90"/>
+                    <Slope Min="0" Max="10"/>
+                </Rule>
+
+                <Rule>
+                    <Layers>
+                        <Layer Material="Ice" Depth="5"/>
+                    </Layers>
+                    <Height Min="0.25" Max="0.5"/>
+                    <Latitude Min="60" Max="90"/>
+                    <Slope Min="30" Max="60"/>
+                </Rule>
+
+            </MaterialGroup>
+
+            <MaterialGroup Name="Other features 2" Value="0">
+
+                <Rule>
+                    <Layers>
+                        <Layer Material="MoonSoil" Depth="5"/>
+                    </Layers>
+                    <Height Min="0.5" Max="1"/>
+                    <Latitude Min="0" Max="90"/>
+                    <Slope Min="40" Max="70"/>
+                </Rule>
+
+                <Rule>
+                    <Layers>
+                        <Layer Material="MoonSoil" Depth="5"/>
+                    </Layers>
+                    <Height Min="0" Max="0.3"/>
+                    <Latitude Min="0" Max="90"/>
+                    <Slope Min="0" Max="30"/>
+                </Rule>
+
+                <Rule>
+                    <Layers>
+                        <Layer Material="MoonSoil" Depth="5"/>
+                    </Layers>
+                    <Height Min="0.4" Max="0.6"/>
+                    <Latitude Min="0" Max="90"/>
+                    <Slope Min="0" Max="30"/>
+                </Rule>
+
+                <Rule>
+                    <Layers>
+                        <Layer Material="Ice" Depth="5"/>
+                    </Layers>
+                    <Height Min="0" Max="0.5"/>
+                    <Latitude Min="60" Max="90"/>
+                    <Slope Min="0" Max="10"/>
+                </Rule>
+
+                <Rule>
+                    <Layers>
+                        <Layer Material="Ice" Depth="5"/>
+                    </Layers>
+                    <Height Min="0.25" Max="0.5"/>
+                    <Latitude Min="60" Max="90"/>
+                    <Slope Min="30" Max="60"/>
+                </Rule>
+            </MaterialGroup>
+        </ComplexMaterials>
+
+        <EnvironmentItems>
+            <Item>
+                <Biomes>
+                    <Biome>0</Biome>
+                </Biomes>
+                <Materials>
+                    <Material>MoonSoil</Material>
+                </Materials>
+                <Items>
+                    <Item TypeId="MyObjectBuilder_VoxelMapStorageDefinition" GroupId="StoneCoverageIronCore" ModifierId="Moon" Density="0.003" />
+                </Items>
+                <Rule>
+                    <Height Min="0" Max="0.7"/>
+                    <Latitude Min="0" Max="80"/>
+                    <Slope Min="0" Max="15"/>
+                </Rule>
+            </Item>
+
+            <Item>
+                <Biomes>
+                    <Biome>0</Biome>
+                </Biomes>
+                <Materials>
+                    <Material>MoonRocks</Material>
+                </Materials>
+                <Items>
+                    <Item TypeId="MyObjectBuilder_VoxelMapStorageDefinition" GroupId="StoneCoverageIronCore" ModifierId="Moon" Density="0.003" />
+                </Items>
+                <Rule>
+                    <Height Min="0" Max="0.7"/>
+                    <Latitude Min="0" Max="80"/>
+                    <Slope Min="0" Max="15"/>
+                </Rule>
+            </Item>
+        </EnvironmentItems>
+
+    <OreMappings>
+      <Ore Value="245" Type="Iron_01" Start="5" Depth="7" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="235" Type="Nickel_01" Start="10" Depth="4" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="225" Type="Silicon_01" Start="9" Depth="4" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="215" Type="Silver_01" Start="21" Depth="3" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="205" Type="Iron_01" Start="5" Depth="7" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="195" Type="Cobalt_01" Start="15" Depth="4" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="185" Type="Gold_01" Start="75" Depth="3" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="175" Type="Platinum_01" Start="112" Depth="2" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="155" Type="Copper" Start="12" Depth="5" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="145" Type="Copper" Start="12" Depth="5" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="125" Type="Bauxite" Start="32" Depth="5" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="115" Type="Titanium" Start="103" Depth="5" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="95" Type="Coal" Start="40" Depth="10" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="85" Type="Sulfur" Start="60" Depth="5" TargetColor="#616c83" ColorInfluence="15"/>
+    </OreMappings>
+
+        <!-- END Earthmoon definitions -->
+
+        <SoundRules>
+            <!-- Day -->
+            <SoundRule>
+                <Height Min="0" Max="0.75"/>
+                <Latitude Min="0" Max="90"/>
+                <SunAngleFromZenith Min="0" Max="90"/>
+                <EnvironmentSound>AmbMoonDayLoop</EnvironmentSound>
+            </SoundRule>
+
+            <!-- Night -->
+            <SoundRule>
+                <Height Min="0" Max="0.75"/>
+                <Latitude Min="0" Max="90"/>
+                <SunAngleFromZenith Min="90" Max="180"/>
+                <EnvironmentSound>AmbMoonNightLoop</EnvironmentSound>
+            </SoundRule>
+        </SoundRules>
+
+        <MusicCategories>
+            <MusicCategory Category="Planet" Frequency="0.75" />
+            <MusicCategory Category="Mystery" Frequency="0.075" />
+            <MusicCategory Category="Danger" Frequency="0.075" />
+            <MusicCategory Category="Space" Frequency="0.15" />
+        </MusicCategories>
+
+        <DefaultSurfaceMaterial Material="MoonRocks" MaxDepth="5"/>
+
+        <HasAtmosphere>false</HasAtmosphere>
+
+        <SurfaceGravity>0.25</SurfaceGravity>
+        <Deviation Min ="0.005" Max ="0.003"/>
+        <MaterialsMaxDepth Min="4000" Max="4000"/>
+        <MaterialsMinDepth Min="20" Max="20"/>
+
+        <HillParams Min = "-0.03" Max ="0.03"/>
+        <MinimumSurfaceLayerDepth>5</MinimumSurfaceLayerDepth>
+    </Definition>
+
+
+    <!--Moons -->
+    <Definition xsi:type="PlanetGeneratorDefinition">
+        <Id>
+            <TypeId>PlanetGeneratorDefinition</TypeId>
+            <SubtypeId>Agaris II - Lava</SubtypeId>
+        </Id>
+		<FolderName>Agaris II</FolderName>
+		
+		
+        <Difficulty>DifficultyHard</Difficulty>
+        <!--!!!Important!! Read if you want to mod Planets! -->
+        <!--Following tag switches off loading from certain color channels. Its performance measure in cases where channels are not used-->
+        <!--Make sure you are not modding a switched off channel-->
+        <PlanetMaps Material="true" Ores="true" Biome="true" Occlusion="true"/>
+
+        <MesherPostprocessing xsi:type="MyObjectBuilder_VoxelMesherComponentDefinition">
+            <PostprocessingSteps>
+                <Step xsi:type="MyObjectBuilder_VoxelPostprocessingDecimate" ForPhysics="true">
+                    <LodSettings>
+                        <Settings FromLod="0">
+                            <FeatureAngle>15</FeatureAngle>
+                            <EdgeThreshold>.04</EdgeThreshold>
+                            <PlaneThreshold>.02</PlaneThreshold>
+                        </Settings>
+                        <Settings FromLod="1">
+                            <FeatureAngle>15</FeatureAngle>
+                            <EdgeThreshold>.04</EdgeThreshold>
+                            <PlaneThreshold>.04</PlaneThreshold>
+                        </Settings>
+                        <Settings FromLod="2">
+                            <FeatureAngle>15</FeatureAngle>
+                            <EdgeThreshold>.06</EdgeThreshold>
+                            <PlaneThreshold>.06</PlaneThreshold>
+                        </Settings>
+                    </LodSettings>
+                </Step>
+            </PostprocessingSteps>
+        </MesherPostprocessing>
+
+        <SurfaceDetail>
+            <Texture>Data/PlanetDataFiles/Extra/material_detail_1</Texture>
+            <Size>256</Size>
+            <Scale>2</Scale>
+            <Slope Min="30" Max="90" />
+            <Transition>10</Transition>
+        </SurfaceDetail>
+
+        <CustomMaterialTable>
+            <Material Material="MoonRocks" Value ="190" MaxDepth ="5"/>
+            <Material Material="MoonSoil" Value ="174" MaxDepth ="5"/>
+            <Material Material="Ice" Value ="158" MaxDepth ="5"/>
+        </CustomMaterialTable>
+
+
+        <!-- Earthmoon definitions -->
+        <ComplexMaterials>
+            <MaterialGroup Name="Craters" Value="48">
+
+		 <Rule>
+            <Layers>
+              <Layer Material="DOC-RavSoil" Depth="10"/>
+            </Layers>
+            <Height Min="0" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="0" Max="5"/>
+          </Rule>
+		 <Rule>
+            <Layers>
+              <Layer Material="DOC-RavRock" Depth="10"/>
+            </Layers>
+            <Height Min="0" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="5" Max="10"/>
+          </Rule>
+		 <Rule>
+            <Layers>
+              <Layer Material="DOC-RavSoil" Depth="10"/>
+            </Layers>
+            <Height Min="0" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="10" Max="30"/>
+          </Rule>
+		 <Rule>
+            <Layers>
+              <Layer Material="DOC-RavCrackedRock" Depth="10"/>
+            </Layers>
+            <Height Min="0" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="30" Max="90"/>
+          </Rule>
+		  
+
+            </MaterialGroup>
+
+            <MaterialGroup Name="Other features" Value="16">
+
+ 		 <Rule>
+            <Layers>
+              <Layer Material="DOC-RavSoil" Depth="10"/>
+            </Layers>
+            <Height Min="0" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="0" Max="5"/>
+          </Rule>
+		 <Rule>
+            <Layers>
+              <Layer Material="DOC-RavRock" Depth="10"/>
+            </Layers>
+            <Height Min="0" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="5" Max="10"/>
+          </Rule>
+		 <Rule>
+            <Layers>
+              <Layer Material="DOC-RavSoil" Depth="10"/>
+            </Layers>
+            <Height Min="0" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="10" Max="30"/>
+          </Rule>
+		 <Rule>
+            <Layers>
+              <Layer Material="DOC-RavCrackedRock" Depth="10"/>
+            </Layers>
+            <Height Min="0" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="30" Max="90"/>
+          </Rule>
+		  
+
+            </MaterialGroup>
+
+            <MaterialGroup Name="Other features 2" Value="0">
+
+		 <Rule>
+            <Layers>
+              <Layer Material="DOC-RavSoil" Depth="10"/>
+            </Layers>
+            <Height Min="0" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="0" Max="5"/>
+          </Rule>
+		 <Rule>
+            <Layers>
+              <Layer Material="DOC-RavRock" Depth="10"/>
+            </Layers>
+            <Height Min="0" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="5" Max="10"/>
+          </Rule>
+		 <Rule>
+            <Layers>
+              <Layer Material="DOC-RavSoil" Depth="10"/>
+            </Layers>
+            <Height Min="0" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="10" Max="30"/>
+          </Rule>
+		 <Rule>
+            <Layers>
+              <Layer Material="DOC-RavCrackedRock" Depth="10"/>
+            </Layers>
+            <Height Min="0" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="30" Max="90"/>
+          </Rule>
+		  
+            </MaterialGroup>
+        </ComplexMaterials>
+
+        <EnvironmentItems>
+            <Item>
+                <Biomes>
+                    <Biome>0</Biome>
+                </Biomes>
+                <Materials>
+                    <Material>MoonSoil</Material>
+                </Materials>
+                <Items>
+                    <Item TypeId="MyObjectBuilder_VoxelMapStorageDefinition" GroupId="StoneCoverageIronCore" ModifierId="Moon" Density="0.003" />
+                </Items>
+                <Rule>
+                    <Height Min="0" Max="0.7"/>
+                    <Latitude Min="0" Max="80"/>
+                    <Slope Min="0" Max="15"/>
+                </Rule>
+            </Item>
+
+            <Item>
+                <Biomes>
+                    <Biome>0</Biome>
+                </Biomes>
+                <Materials>
+                    <Material>MoonRocks</Material>
+                </Materials>
+                <Items>
+                    <Item TypeId="MyObjectBuilder_VoxelMapStorageDefinition" GroupId="StoneCoverageIronCore" ModifierId="Moon" Density="0.003" />
+                </Items>
+                <Rule>
+                    <Height Min="0" Max="0.7"/>
+                    <Latitude Min="0" Max="80"/>
+                    <Slope Min="0" Max="15"/>
+                </Rule>
+            </Item>
+        </EnvironmentItems>
+
+    <OreMappings>
+      <Ore Value="245" Type="Iron_01" Start="5" Depth="7" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="235" Type="Nickel_01" Start="10" Depth="4" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="225" Type="Silicon_01" Start="9" Depth="4" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="215" Type="Silver_01" Start="21" Depth="3" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="205" Type="Iron_01" Start="5" Depth="7" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="195" Type="Cobalt_01" Start="15" Depth="4" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="185" Type="Gold_01" Start="75" Depth="3" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="175" Type="Platinum_01" Start="112" Depth="2" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="155" Type="Copper" Start="12" Depth="5" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="145" Type="Copper" Start="12" Depth="5" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="125" Type="Bauxite" Start="32" Depth="5" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="115" Type="Titanium" Start="103" Depth="5" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="95" Type="Coal" Start="40" Depth="10" TargetColor="#616c83" ColorInfluence="15"/>
+      <Ore Value="85" Type="Sulfur" Start="60" Depth="5" TargetColor="#616c83" ColorInfluence="15"/>
+    </OreMappings>
+
+        <!-- END Earthmoon definitions -->
+
+        <SoundRules>
+            <!-- Day -->
+            <SoundRule>
+                <Height Min="0" Max="0.75"/>
+                <Latitude Min="0" Max="90"/>
+                <SunAngleFromZenith Min="0" Max="90"/>
+                <EnvironmentSound>AmbMoonDayLoop</EnvironmentSound>
+            </SoundRule>
+
+            <!-- Night -->
+            <SoundRule>
+                <Height Min="0" Max="0.75"/>
+                <Latitude Min="0" Max="90"/>
+                <SunAngleFromZenith Min="90" Max="180"/>
+                <EnvironmentSound>AmbMoonNightLoop</EnvironmentSound>
+            </SoundRule>
+        </SoundRules>
+
+        <MusicCategories>
+            <MusicCategory Category="Planet" Frequency="0.75" />
+            <MusicCategory Category="Mystery" Frequency="0.075" />
+            <MusicCategory Category="Danger" Frequency="0.075" />
+            <MusicCategory Category="Space" Frequency="0.15" />
+        </MusicCategories>
+
+        <DefaultSurfaceMaterial Material="MoonRocks" MaxDepth="5"/>
+
+        <HasAtmosphere>false</HasAtmosphere>
+
+        <SurfaceGravity>0.25</SurfaceGravity>
+        <Deviation Min ="0.005" Max ="0.003"/>
+        <MaterialsMaxDepth Min="4000" Max="4000"/>
+        <MaterialsMinDepth Min="20" Max="20"/>
+
+        <HillParams Min = "-0.03" Max ="0.03"/>
+        <MinimumSurfaceLayerDepth>5</MinimumSurfaceLayerDepth>
+    </Definition>
+</Definitions>

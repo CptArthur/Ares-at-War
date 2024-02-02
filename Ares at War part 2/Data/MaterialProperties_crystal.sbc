@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MaterialProperties>
+     <!-- Character -->
+     <Properties>
+      <Id>
+        <TypeId>PhysicalMaterialDefinition</TypeId>
+        <SubtypeId>Character</SubtypeId>
+		<SubtypeId>CharacterFemale</SubtypeId>
+      </Id> 
+	<ContactProperties>
+        <ContactProperty>
+          <Type>CrouchWalk</Type>
+          <Material>Crystal</Material>
+          <SoundCue>PlayStepsSand</SoundCue>
+          <ParticleEffect>CharacterStepCrystal</ParticleEffect>
+        </ContactProperty>
+        <ContactProperty>
+          <Type>Walk</Type>
+          <Material>Crystal</Material>
+          <SoundCue>PlayStepsSand</SoundCue>
+          <ParticleEffect>CharacterStepCrystal</ParticleEffect>
+        </ContactProperty>
+        <ContactProperty>
+          <Type>Run</Type>
+          <Material>Crystal</Material>
+          <SoundCue>PlayStepsSand</SoundCue>
+          <ParticleEffect>CharacterStepCrystal</ParticleEffect>
+        </ContactProperty>
+        <ContactProperty>
+          <Type>Sprint</Type>
+          <Material>Crystal</Material>
+          <SoundCue>PlayStepsSand</SoundCue>
+          <ParticleEffect>CharacterStepCrystal</ParticleEffect>
+        </ContactProperty>
+		
+	</ContactProperties>
+	 </Properties>
+  
+     <!--space spider-->
+    <Properties>
+      <Id>
+        <TypeId>PhysicalMaterialDefinition</TypeId>
+        <SubtypeId>Spider</SubtypeId>
+      </Id>
+	<ContactProperties>
+       <ContactProperty>
+		<Type>Run</Type>
+        <Material>Crystal</Material>
+        <SoundCue>ArcBotSpiderWalk</SoundCue>
+        </ContactProperty>
+		
+	</ContactProperties>
+     </Properties>
+  
+	<Properties>
+      <Id>
+        <TypeId>PhysicalMaterialDefinition</TypeId>
+        <SubtypeId>Metal</SubtypeId>
+      </Id>
+	<ContactProperties>
+          <ContactProperty>
+          <Type>Start</Type>
+          <Material>Crystal</Material>
+          <SoundCue>ImpMetalSandCat0</SoundCue>
+          <AlternativeImpactSounds>
+            <AlternativeImpactSound mass ="8" minVelocity="1" maxVolumeVelocity="15" soundCue="ImpMetalSandCat1" />
+            <AlternativeImpactSound mass ="2000" minVelocity="1" maxVolumeVelocity="15" soundCue="ImpMetalRockCat2" />
+            <AlternativeImpactSound mass ="10000" minVelocity="10" maxVolumeVelocity="20" soundCue="ImpMetalMetalCat3" />
+            <AlternativeImpactSound mass ="200000" minVelocity="3" maxVolumeVelocity="20" soundCue="ImpMetalMetalCat4" />
+            <AlternativeImpactSound mass ="2000000" minVelocity="5" maxVolumeVelocity="25" soundCue="ImpMetalMetalCat5" />
+          </AlternativeImpactSounds>
+        </ContactProperty>
+		
+
+		
+	</ContactProperties>
+	</Properties>
+	 <!-- Wheel -->
+    <Properties>
+      <Id>
+        <TypeId>PhysicalMaterialDefinition</TypeId>
+        <SubtypeId>Wheel</SubtypeId>
+      </Id>
+	  
+	  <ContactProperties>
+        <ContactProperty>
+          <Type>Start</Type>
+          <Material>Crystal</Material>
+          <ParticleEffect>WheelDust_Crystal</ParticleEffect>
+        </ContactProperty>	
+	</ContactProperties>
+	
+
+	</Properties> 
+	
+	
+    <!--rock-->
+		<Properties>
+			<Id>
+				<TypeId>PhysicalMaterialDefinition</TypeId>
+				<SubtypeId>Rock</SubtypeId>
+			</Id>		
+			
+		<ContactProperties>	
+	      <ContactProperty>
+          <Type>Start</Type>
+          <Material>Crystal</Material>
+          <SoundCue>ImpRockRockCat0</SoundCue>
+          <AlternativeImpactSounds>
+            <AlternativeImpactSound mass ="100" minVelocity="1" maxVolumeVelocity="15" soundCue="ImpRockRockCat1" />
+            <AlternativeImpactSound mass ="500" minVelocity="1" maxVolumeVelocity="15" soundCue="ImpRockRockCat2" />
+          </AlternativeImpactSounds>
+        </ContactProperty>
+		
+
+
+
+
+
+
+		
+		</ContactProperties>
+		</Properties>
+		<!--rifle bullet-->
+		<Properties>
+			<Id>
+				<TypeId>PhysicalMaterialDefinition</TypeId>
+				<SubtypeId>RifleBullet</SubtypeId>
+			</Id>	
+	<ContactProperties>			
+		 <ContactProperty>
+          <Type>Hit</Type>
+          <Material>Crystal</Material>
+          <SoundCue>WepPlayRifleImpSand</SoundCue>
+          <ParticleEffect>MaterialHit_Crystal</ParticleEffect>
+        </ContactProperty>
+	
+		
+	</ContactProperties>
+		</Properties>
+		<!--gun bullet-->		
+	    <Properties>
+			<Id>
+				<TypeId>PhysicalMaterialDefinition</TypeId>
+				<SubtypeId>GunBullet</SubtypeId>
+			</Id>	
+	<ContactProperties>
+		 <ContactProperty>
+          <Type>Hit</Type>
+          <Material>Crystal</Material>
+          <SoundCue>WepShipGatlingImpSand</SoundCue>
+          <ParticleEffect>MaterialHit_Crystal</ParticleEffect>
+        </ContactProperty>
+		
+
+		
+	</ContactProperties>
+		</Properties>
+    <!--hand drill-->
+    <Properties>
+      <Id>
+        <TypeId>PhysicalMaterialDefinition</TypeId>
+        <SubtypeId>HandDrill</SubtypeId>
+      </Id>		
+	  <ContactProperties>
+        <ContactProperty>
+          <Type>Start</Type>
+          <Material>Crystal</Material>
+          <ParticleEffect>Smoke_HandDrillDust_Crystal</ParticleEffect>
+          <SoundCue>ToolPlayDrillSand</SoundCue>
+        </ContactProperty>		
+		
+
+
+		
+	</ContactProperties>
+	</Properties>	
+		
+	    <!--ship drill-->
+    <Properties>
+      <Id>
+        <TypeId>PhysicalMaterialDefinition</TypeId>
+        <SubtypeId>ShipDrill</SubtypeId>
+      </Id>
+      <ContactProperties>
+  
+        <ContactProperty>
+          <Type>Start</Type>
+          <Material>Crystal</Material>
+          <ParticleEffect>Smoke_DrillDust_Crystal</ParticleEffect>
+          <SoundCue>ToolShipDrillSoil</SoundCue>
+        </ContactProperty>
+
+		
+		
+      </ContactProperties>
+    </Properties>	
+		
+		
+  </MaterialProperties>
+</Definitions>

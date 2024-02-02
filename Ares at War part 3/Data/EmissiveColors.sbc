@@ -1,0 +1,55 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <EmissiveColorStatePresets>
+        <EmissiveColorStatePreset>
+            <Id>
+                <TypeId>MyObjectBuilder_EmissiveColorStatePresetDefinition</TypeId>
+                <SubtypeId>Cronyx</SubtypeId>
+            </Id>
+            <EmissiveStates>
+                <EmissiveState StateName="Damaged" EmissiveColorName="Black" DisplayColorName="Black" Emissivity="0" />
+                <EmissiveState StateName="Disabled" EmissiveColorName="Black" DisplayColorName="White" Emissivity="0" />
+                <EmissiveState StateName="Working" EmissiveColorName="DarkOrange" DisplayColorName="White" Emissivity="10" />
+                <EmissiveState StateName="Warning" EmissiveColorName="Black" DisplayColorName="White" Emissivity="0" />
+            </EmissiveStates>
+        </EmissiveColorStatePreset>
+        <EmissiveColorStatePreset>
+            <Id>
+                <TypeId>MyObjectBuilder_EmissiveColorStatePresetDefinition</TypeId>
+                <SubtypeId>Spice</SubtypeId>
+            </Id>
+            <EmissiveStates>
+                <EmissiveState StateName="Damaged" EmissiveColorName="Black" DisplayColorName="Black" Emissivity="0" />
+                <EmissiveState StateName="Disabled" EmissiveColorName="Black" DisplayColorName="White" Emissivity="0" />
+                <EmissiveState StateName="Working" EmissiveColorName="Indigo" DisplayColorName="White" Emissivity="1" />
+                <EmissiveState StateName="Warning" EmissiveColorName="Black" DisplayColorName="White" Emissivity="0" />
+            </EmissiveStates>
+        </EmissiveColorStatePreset>
+    </EmissiveColorStatePresets>
+    <EmissiveColors>
+        <EmissiveColor>
+            <Id>
+                <TypeId>MyObjectBuilder_EmissiveColorDefinition</TypeId>
+                <SubtypeId>DarkOrange</SubtypeId>
+            </Id>
+            <ColorDefinition>
+                <R>255</R>
+                <G>25</G>
+                <B>0</B>
+                <A>255</A>
+            </ColorDefinition>
+        </EmissiveColor>
+        <EmissiveColor>
+            <Id>
+                <TypeId>MyObjectBuilder_EmissiveColorDefinition</TypeId>
+                <SubtypeId>Indigo</SubtypeId>
+            </Id>
+            <ColorDefinition>
+                <R>5</R>
+                <G>0</G>
+                <B>255</B>
+                <A>255</A>
+            </ColorDefinition>
+        </EmissiveColor>
+    </EmissiveColors>
+</Definitions>

@@ -23,7 +23,8 @@
 	[RivalAI Trigger]
 	[Type:PlayerNear]
 	[UsePlayerCondition:true]
-	[PlayerConditionIds:PlayerConditionProfile-Position-Agaris-OuterOrbit]
+	[PlayerConditionIds:PlayerCondition-Position-Agaris-OuterOrbit]
+	[PlayerConditionIds:PlayerCondition-Reputation-GCNeutral]
 	[TargetDistance:9000]
 	[UseTrigger:true]
 	[StartsReady:true]
@@ -47,7 +48,8 @@
 	[RivalAI Trigger]
 	[Type:PlayerNear]
 	[UsePlayerCondition:true]
-	[PlayerConditionIds:PlayerConditionProfile-Position-Agaris-OuterOrbit]
+	[PlayerConditionIds:PlayerCondition-Position-Agaris-OuterOrbit]
+	[PlayerConditionIds:PlayerCondition-Reputation-GCNeutral]
 	[TargetDistance:9000]
 	[UseTrigger:true]
 	[StartsReady:true]
@@ -86,28 +88,19 @@
 
 	[RivalAI Action]
       
-	[UseEventAction:true]
-	[EventActionIds:Dummy-EventAction-PlayerAgarisOuterOrbit-ReputationLoss]
-      </Description>
-      
-    </EntityComponent>	
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>Dummy-EventAction-PlayerAgarisOuterOrbit-ReputationLoss</SubtypeId>
-      </Id>
-      <Description>
-
-	[MES Event Action]
 	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:9000]
 	[ReputationPlayerConditionIds:PlayerCondition-Position-Agaris-OuterOrbit]
 	[ReputationPlayerConditionIds:PlayerCondition-Reputation-GCNeutral]
 	[ReputationChangeFactions:GC]
 	[ReputationChangeAmount:-10]
 	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+	
       </Description>
+      
     </EntityComponent>	
+
+
 	
 	
 	
@@ -127,7 +120,7 @@
       [MaxChats:-1]
       [BroadcastRandomly:true]
       
-      [Author:{AntennaName}]
+      [Author:GC Command]
       [Color:Red]
       
       [ChatMessages:Martial Law is now in effect for Agaris. No one is allowed to enter the planet. Leave immediately! ]
@@ -154,7 +147,8 @@
 	[RivalAI Trigger]
 	[Type:PlayerNear]
 	[UsePlayerCondition:true]
-	[PlayerConditionIds:PlayerConditionProfile-Position-Agaris-OuterOrbit]
+	[PlayerConditionIds:PlayerCondition-Position-Agaris-InnerOrbit]
+	[PlayerConditionIds:PlayerCondition-Reputation-GCNeutral]
 	[TargetDistance:9000]
 	[UseTrigger:true]
 	[StartsReady:true]
@@ -178,7 +172,8 @@
 	[RivalAI Trigger]
 	[Type:PlayerNear]
 	[UsePlayerCondition:true]
-	[PlayerConditionIds:PlayerConditionProfile-Position-Agaris-OuterOrbit]
+	[PlayerConditionIds:PlayerCondition-Position-Agaris-InnerOrbit]
+	[PlayerConditionIds:PlayerCondition-Reputation-GCNeutral]
 	[TargetDistance:9000]
 	[UseTrigger:true]
 	[StartsReady:true]
@@ -217,29 +212,19 @@
 
 	[RivalAI Action]
       
-	[UseEventAction:true]
-	[EventActionIds:Dummy-EventAction-PlayerAgarisInnerOrbit-ReputationLoss]
-      </Description>
-      
-    </EntityComponent>	
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>Dummy-EventAction-PlayerAgarisInnerOrbit-ReputationLoss</SubtypeId>
-      </Id>
-      <Description>
-
-	[MES Event Action]
 	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:9000]	
 	[ReputationPlayerConditionIds:PlayerCondition-Position-Agaris-InnerOrbit]
 	[ReputationPlayerConditionIds:PlayerCondition-Reputation-GCNeutral]
+	
 	[ReputationChangeFactions:GC]
 	[ReputationChangeAmount:-10]
 	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
       </Description>
+      
     </EntityComponent>	
-	
+
+
 	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -257,7 +242,7 @@
       [MaxChats:-1]
       [BroadcastRandomly:true]
       
-      [Author:{AntennaName}]
+      [Author:GC Command]
       [Color:Red]
       
       [ChatMessages:Martial Law is now in effect for Agaris. No one is allowed to leave the planet. Return to the surface immediately! ]
@@ -283,7 +268,8 @@
 	[RivalAI Trigger]
 	[Type:PlayerNear]
 	[UsePlayerCondition:true]
-	[PlayerConditionIds:PlayerConditionProfile-Position-Agaris-Orbit]
+	[PlayerConditionIds:PlayerCondition-Position-Agaris-CenterOrbit]
+	[PlayerConditionIds:PlayerCondition-Reputation-GCNeutral]
 	[TargetDistance:9000]
 	[UseTrigger:true]
 	[StartsReady:true]
@@ -305,30 +291,19 @@
       <Description>
 
 	[RivalAI Action]
-      
-	[UseEventAction:true]
-	[EventActionIds:Dummy-EventAction-PlayerAgarisOrbit-ReputationLoss]
-      </Description>
-      
-    </EntityComponent>	
-	
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>Dummy-EventAction-PlayerAgarisOrbit-ReputationLoss</SubtypeId>
-      </Id>
-      <Description>
 
-	[MES Event Action]
 	[ChangeReputationWithPlayers:true]
-	[ReputationPlayerConditionIds:PlayerCondition-Position-Agaris-InnerOrbit]
+	[ReputationChangeRadius:9000]	
+	[ReputationPlayerConditionIds:PlayerCondition-Position-Agaris-CenterOrbit]
 	[ReputationPlayerConditionIds:PlayerCondition-Reputation-GCNeutral]
 	[ReputationChangeFactions:GC]
 	[ReputationChangeAmount:-3000]
 	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
       </Description>
+      
     </EntityComponent>	
 	
+
 	
 	
   </EntityComponents>

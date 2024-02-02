@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PlanetGeneratorDefinitions>
+    <PlanetGeneratorDefinition>
+      <Id>
+        <TypeId>PlanetGeneratorDefinition</TypeId>
+        <SubtypeId>Planet Crait - Lava</SubtypeId>
+      </Id>
+	  
+	  <FolderName>Planet Crait</FolderName>
+	  
+	  
+      <PlanetMaps Material="false" Ores="true" Biome="true" Occlusion="true"/>
+  
+
+  
+  
+  <MesherPostprocessing xsi:type="MyObjectBuilder_VoxelMesherComponentDefinition">
+      <PostprocessingSteps>
+        <Step xsi:type="MyObjectBuilder_VoxelPostprocessingDecimate" ForPhysics="true">
+          <LodSettings>
+            <Settings FromLod="0">
+              <FeatureAngle>15</FeatureAngle>
+              <EdgeThreshold>.04</EdgeThreshold>
+              <PlaneThreshold>.02</PlaneThreshold>
+            </Settings>
+            <Settings FromLod="1">
+              <FeatureAngle>15</FeatureAngle>
+              <EdgeThreshold>.04</EdgeThreshold>
+              <PlaneThreshold>.04</PlaneThreshold>
+            </Settings>
+            <Settings FromLod="2">
+              <FeatureAngle>15</FeatureAngle>
+              <EdgeThreshold>.06</EdgeThreshold>
+              <PlaneThreshold>.06</PlaneThreshold>
+            </Settings>
+          </LodSettings>
+        </Step>
+      </PostprocessingSteps>
+    </MesherPostprocessing>
+	
+	
+      <SurfaceDetail>
+        <Texture>Data/PlanetDataFiles/Extra/material_detail_1</Texture>
+        <Size>384</Size>
+        <Scale>3</Scale>
+        <Slope Min="30" Max="90" />
+        <Transition>7.5</Transition>
+      </SurfaceDetail>
+
+	<DistortionTable>
+      <Distortion Type="Perlin" Value ="92" Frequency="10" Height="4" LayerCount="6"/>
+    </DistortionTable>
+	  
+   <OreMappings>
+	<Ore Value="230" Type="Iron_01" Start="10" Depth="15" TargetColor="#FFFFFF" ColorInfluence="15"/>
+	<Ore Value="225" Type="Nickel_01" Start="10" Depth="15" TargetColor="#FFFFFF" ColorInfluence="100"/>
+	<Ore Value="220" Type="Silicon_01" Start="10" Depth="15" TargetColor="#FFFFFF" ColorInfluence="100"/>
+
+	<Ore Value="215" Type="Magnesium_01" Start="10" Depth="15" TargetColor="#FFFFFF" ColorInfluence="15"/>
+	<Ore Value="210" Type="Cobalt_01" Start="10" Depth="15" TargetColor="#FFFFFF" ColorInfluence="15"/>  
+
+	<Ore Value="205" Type="Silver_01" Start="10" Depth="15" TargetColor="#FFFFFF" ColorInfluence="15"/>
+	<Ore Value="200" Type="Gold_01" Start="10" Depth="15" TargetColor="#FFFFFF" ColorInfluence="15"/>
+	<Ore Value="190" Type="Platinum_01" Start="10" Depth="15" TargetColor="#FFFFFF" ColorInfluence="15"/>  
+	<Ore Value="195" Type="Uraninite_01" Start="10" Depth="15" TargetColor="#FFFFFF" ColorInfluence="15"/>  
+	
+
+	<Ore Value="210" Type="Cobalt_01" Start="10" Depth="15" TargetColor="#FFFFFF" ColorInfluence="15"/>  
+
+
+	<Ore Value="25" Type="Copper" Start="10" Depth="22" TargetColor="#FFFFFF" ColorInfluence="15"/>
+	<Ore Value="30" Type="Bauxite" Start="10" Depth="32" TargetColor="#FFFFFF" ColorInfluence="15"/>
+	<Ore Value="40" Type="Coal" Start="10" Depth="40" TargetColor="#FFFFFF" ColorInfluence="15"/>	
+	<Ore Value="50" Type="Titanium" Start="10" Depth="10" TargetColor="#FFFFFF" ColorInfluence="15"/>	
+	<Ore Value="55" Type="OilSand" Start="10" Depth="40" TargetColor="#FFFFFF" ColorInfluence="15"/>
+	<Ore Value="60" Type="Sulfur" Start="10" Depth="40" TargetColor="#FFFFFF" ColorInfluence="15"/>	 	
+	<Ore Value="75" Type="Lithium" Start="10" Depth="20" TargetColor="#FFFFFF" ColorInfluence="15"/>  	
+	
+	<Ore Value="90" Type="Tantalum" Start="10" Depth="20" TargetColor="#FFFFFF" ColorInfluence="15"/>  	
+	<Ore Value="95" Type="Cronyx" Start="10" Depth="20" TargetColor="#FFFFFF" ColorInfluence="15"/>  	 
+	<Ore Value="76" Type="Dorium" Start="10" Depth="20" TargetColor="#FFFFFF" ColorInfluence="15"/>  	
+    </OreMappings>
+	
+
+		
+      <ComplexMaterials>
+
+		 <MaterialGroup Name="Volcanic" Value="0">
+         
+		 <Rule>
+            <Layers>
+              <Layer Material="DOC-RavSoil" Depth="10"/>
+            </Layers>
+            <Height Min="0" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="0" Max="5"/>
+          </Rule>
+		 <Rule>
+            <Layers>
+              <Layer Material="DOC-RavRock" Depth="10"/>
+            </Layers>
+            <Height Min="0" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="5" Max="10"/>
+          </Rule>
+		 <Rule>
+            <Layers>
+              <Layer Material="DOC-RavSoil" Depth="10"/>
+            </Layers>
+            <Height Min="0" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="10" Max="30"/>
+          </Rule>
+		 <Rule>
+            <Layers>
+              <Layer Material="DOC-RavCrackedRock" Depth="10"/>
+            </Layers>
+            <Height Min="0" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="30" Max="90"/>
+          </Rule>
+        </MaterialGroup>	
+
+
+
+
+		
+      </ComplexMaterials>
+
+      <EnvironmentItems>
+
+	  
+	     <Item>
+        <Biomes>
+          <Biome>75</Biome>
+        </Biomes>
+        <Materials>
+          <Material>AlienSnow</Material>
+		  <Material>MoonAlien</Material>
+		  <Material>AlienSnowSpider</Material>
+        </Materials>
+        <Items>
+          <Item TypeId="MyObjectBuilder_Trees" SubtypeId="AlienSnowForestLarge" Density="0.2"/>
+          <Item TypeId="MyObjectBuilder_DestroyableItems" SubtypeId="AlienSnowBushForestLarge" Density="0.1"/>
+        </Items>
+        <Rule>
+          <Height Min="0" Max="1.0"/>
+          <Latitude Min="0" Max="90"/>
+          <Slope Min="0" Max="90"/>
+        </Rule>
+      </Item>	
+		
+      <Item>
+        <Biomes>
+          <Biome>75</Biome>
+        </Biomes>
+        <Materials>
+          <Material>AlienRockyMountain</Material>
+
+        </Materials>
+        <Items>
+  			<Item TypeId="MyObjectBuilder_VoxelMapStorageDefinition" GroupId="HadrusCrystal" Density="1.4" />
+        </Items>
+        <Rule>
+          <Height Min="0" Max="1.0"/>
+          <Latitude Min="0" Max="90"/>
+          <Slope Min="0" Max="90"/>
+        </Rule>
+      </Item>		
+		
+		
+		
+		
+		
+		
+		
+      </EnvironmentItems>
+
+      <DefaultSurfaceMaterial Material="DOC-RavSoil" MaxDepth="4"/>
+      <DefaultSubSurfaceMaterial Material="TritonStone"/>
+
+      <HasAtmosphere>false</HasAtmosphere>
+	  <MaximumOxygen>0.9</MaximumOxygen>
+    <Atmosphere>
+      <Breathable>true</Breathable>
+      <OxygenDensity>0.5</OxygenDensity>
+      <Density>1.0</Density>
+      <LimitAltitude>2.0</LimitAltitude>
+      <MaxWindSpeed>80</MaxWindSpeed>
+    </Atmosphere>
+
+       <AtmosphereSettings>
+		<RayleighScattering>
+		  <X>25.565</X>
+		  <Y>32.369</Y>
+		  <Z>71.938</Z>
+		</RayleighScattering>
+		<MieScattering>72</MieScattering>
+		<MieColorScattering>
+		  <X>93.938</X>
+		  <Y>135.661</Y>
+		  <Z>147.375</Z>
+		</MieColorScattering>
+		<RayleighHeight>12.098</RayleighHeight>
+		<RayleighHeightSpace>8.192</RayleighHeightSpace>
+		<RayleighTransitionModifier>0.4</RayleighTransitionModifier>
+		<MieHeight>30</MieHeight>
+		<MieG>0.995</MieG>
+		<Intensity>5.518</Intensity>
+		<SeaLevelModifier>0.980</SeaLevelModifier>
+		<AtmosphereTopModifier>1.1</AtmosphereTopModifier>
+		<FogIntensity>1</FogIntensity>
+		<Scale>1</Scale>
+      </AtmosphereSettings>
+	     
+
+   
+
+ 
+	
+      <SurfaceGravity>1</SurfaceGravity>
+      <MaterialsMaxDepth Min="4000" Max="4000"/>
+      <MaterialsMinDepth Min="20" Max="20"/>
+
+      <HillParams Min = "-0.03" Max ="0.03"/>
+
+<!-- Planet 26 Planet's Weather Settings -->
+
+	<WeatherFrequencyMin>600</WeatherFrequencyMin>
+	<WeatherFrequencyMax>5400</WeatherFrequencyMax>
+
+	<WeatherGenerators>
+		
+		
+	</WeatherGenerators>
+	
+
+	
+	
+	
+    </PlanetGeneratorDefinition>
+  </PlanetGeneratorDefinitions>
+</Definitions>

@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Blueprints>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CompatRecipe</SubtypeId>
+      </Id>
+      <DisplayName>DisplayName_Item_ConstructionComponent</DisplayName>
+      <Icon>Textures\GUI\Icons\component\construction_components_component.dds</Icon>
+      <Prerequisites>
+                <Item Amount="1" TypeId="Ingot" SubtypeId="CrystalPrism" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="StabilizedCronyx" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="DoriumIngot" />
+      </Prerequisites>
+            <Results>
+                <Item Amount="1" TypeId="Ingot" SubtypeId="CrystalPrism" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="StabilizedCronyx" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="DoriumIngot" />
+            </Results>
+      <BaseProductionTimeInSeconds>999</BaseProductionTimeInSeconds>
+	  <Public>false</Public>
+    </Blueprint>
+		
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>ActivatedSpice</SubtypeId>
+            </Id>
+            <Prerequisites>
+                <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+            </Prerequisites>
+            <Results>
+                <Item Amount="0.9" TypeId="Ingot" SubtypeId="Stone" />
+            </Results>
+            <BaseProductionTimeInSeconds>1</BaseProductionTimeInSeconds>
+        </Blueprint>
+	
+	<!-- Jump Drive -->
+		
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>JumpCore</SubtypeId>
+            </Id>
+            <DisplayName>High-Density Core</DisplayName>
+            <Icon>Icons\JumpCore.dds</Icon>
+            <Prerequisites>
+                <Item Amount="15" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="10" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="5" TypeId="Ingot" SubtypeId="Gold" />
+                <Item Amount="15" TypeId="Ingot" SubtypeId="Platinum" />
+                <Item Amount="50" TypeId="Ingot" SubtypeId="Uranium" />
+            </Prerequisites>
+            <Results>
+                <Item Amount="1" TypeId="Component" SubtypeId="JumpCore" />
+            </Results>
+            <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
+        </Blueprint>
+		
+	<!-- Items -->
+	
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>SpiceInhaler</SubtypeId>
+            </Id>
+            <DisplayName>Spice Inhaler</DisplayName>
+            <Icon>Icons\SpiceInhaler.dds</Icon>
+            <Prerequisites>
+                <Item Amount="1" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="Silicon" />
+                <Item Amount="5" TypeId="Ingot" SubtypeId="RefinedSpice" />
+            </Prerequisites>
+            <Results>
+                <Item Amount="1" TypeId="ConsumableItem" SubtypeId="SpiceInhaler" />
+            </Results>
+            <BaseProductionTimeInSeconds>15</BaseProductionTimeInSeconds>
+        </Blueprint>
+		
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>Welder4</SubtypeId>
+            </Id>
+            <DisplayName>DisplayName_Item_Welder4</DisplayName>
+            <Icon>Textures\GUI\Icons\WeaponWelder_3.dds</Icon>
+            <Prerequisites>
+                <Item Amount="5" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="0.2" TypeId="Ingot" SubtypeId="Cobalt" />
+                <Item Amount="2" TypeId="Ingot" SubtypeId="StabilizedCronyx" />
+            </Prerequisites>
+            <Result Amount="1" TypeId="PhysicalGunObject" SubtypeId="Welder4Item" />
+            <BaseProductionTimeInSeconds>50</BaseProductionTimeInSeconds>
+        </Blueprint>
+		
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>AngleGrinder4</SubtypeId>
+            </Id>
+            <DisplayName>DisplayName_Item_AngleGrinder4</DisplayName>
+            <Icon>Textures\GUI\Icons\WeaponGrinder_3.dds</Icon>
+            <Prerequisites>
+                <Item Amount="3" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="Cobalt" />
+                <Item Amount="2" TypeId="Ingot" SubtypeId="Silicon" />
+                <Item Amount="2" TypeId="Ingot" SubtypeId="CrystalPrism" />
+            </Prerequisites>
+            <Result Amount="1" TypeId="PhysicalGunObject" SubtypeId="AngleGrinder4Item" />
+            <BaseProductionTimeInSeconds>50</BaseProductionTimeInSeconds>
+        </Blueprint>
+		
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>HandDrill4</SubtypeId>
+            </Id>
+            <DisplayName>DisplayName_Item_HandDrill4</DisplayName>
+            <Icon>Textures\GUI\Icons\WeaponDrill_3.dds</Icon>
+            <Prerequisites>
+                <Item Amount="20" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="3" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="3" TypeId="Ingot" SubtypeId="Silicon" />
+                <Item Amount="2" TypeId="Ingot" SubtypeId="DoriumIngot" />
+            </Prerequisites>
+            <Result Amount="1" TypeId="PhysicalGunObject" SubtypeId="HandDrill4Item" />
+            <BaseProductionTimeInSeconds>50</BaseProductionTimeInSeconds>
+        </Blueprint>
+		
+    </Blueprints>
+</Definitions>

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>Aaw-Event-GCAgarisMartialLaw-SpawnBlockade</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:true]
+		
+		[UniqueEvent:false]	
+		[MinCooldownMs:180001]
+		[MaxCooldownMs:180001]	
+
+		[ConditionIds:AaW-EventCondition-GCAgarisMartialLaw-SpawnBlockade]
+		
+		[ActionExecution:ALl]
+
+		[ActionIds:AaW-EventAction-GCAgarisMartialLaw-SpawnBlockade]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCAgarisMartialLaw-SpawnBlockade</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+	[CheckTrueBooleans:true]
+	[TrueBooleans:GCAgarisMartialLaw]  
+	[CheckPlayerCondition:true]
+[PlayerConditionIds:PlayerCondition-Position-Agaris-Orbit]  	  
+      </Description>
+
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCAgarisMartialLaw-SpawnBlockade</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-SpawnPlanetaryBlockade]
+	[CustomActionArgumentsString:GC-SpawnGroup-MediumBlockade]
+	
+	[CustomActionArgumentsInt:79780]	
+	[CustomActionArgumentsInt:94780]
+	[CustomActionArgumentsInt:5000]	
+	
+	[CustomActionArgumentsVector3D:{X:-1129033.5 Y:126871.5 Z:1293873.5}]
+      </Description>
+      
+    </EntityComponent>	
+
+  </EntityComponents>
+</Definitions>
