@@ -1,0 +1,693 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <CubeBlocks>
+	
+        <Definition xsi:type="MyObjectBuilder_GasTankDefinition">
+            <Id>
+                <TypeId>OxygenTank</TypeId>
+                <SubtypeId>LargeSpiceTank</SubtypeId>
+            </Id>
+            <DisplayName>Activated Spice Tank</DisplayName>
+            <Icon>Icons\LargeSpiceTank.dds</Icon>
+            <Description>Contains, stabilizes, and preserves Activated Spice.
+			
+			Capacity: 70,000L</Description>
+            <CubeSize>Large</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="1" y="1" z="3" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\LargeActivatedSpiceTank.mwm</Model>
+            <Components>
+				<Component Subtype="SteelPlate" Count="50" />
+				<Component Subtype="LargeTube" Count="30" />
+				<Component Subtype="SmallTube" Count="50" />
+				<Component Subtype="Construction" Count="40" />
+				<Component Subtype="Motor" Count="10" />
+				<Component Subtype="Cryocooler" Count="20" />
+				<Component Subtype="CopperWire" Count="35" />
+				<Component Subtype="AdvancedComputer" Count="20" />
+				<Component Subtype="Computer" Count="10" />
+				<Component Subtype="SteelPlate" Count="25" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Construct\LargeActivatedSpiceTankConstruct1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Construct\LargeActivatedSpiceTankConstruct2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Construct\LargeActivatedSpiceTankConstruct3.mwm" />
+            </BuildProgressModels>
+            <BlockPairName>SpiceTank</BlockPairName>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <EdgeType>Light</EdgeType>
+            <ResourceSourceGroup>Reactors</ResourceSourceGroup>
+            <ResourceSinkGroup>Factory</ResourceSinkGroup>
+            <OperationalPowerConsumption>0.01</OperationalPowerConsumption>
+            <StandbyPowerConsumption>0.000001</StandbyPowerConsumption>
+            <Capacity>70000</Capacity>
+            <InventoryMaxVolume>0.75</InventoryMaxVolume>
+            <InventorySize>
+                <X>2</X>
+                <Y>2</Y>
+                <Z>2</Z>
+            </InventorySize>
+            <StoredGasId>
+                <TypeId>GasProperties</TypeId>
+                <SubtypeId>ActivatedSpice</SubtypeId>
+            </StoredGasId>
+            <BuildTimeSeconds>50</BuildTimeSeconds>
+            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+            <DamagedSound>ParticleWeapExpl</DamagedSound>
+            <DestroyEffect>Explosion_Warhead_30</DestroyEffect>
+            <DestroySound>WepLrgWarheadExpl</DestroySound>
+            <EmissiveColorPreset>Spice</EmissiveColorPreset>
+            <PCU>25</PCU>
+            <LeakPercent>0.0025</LeakPercent>
+            <GasExplosionMaxRadius>20</GasExplosionMaxRadius>
+            <GasExplosionNeededVolumeToReachMaxRadius>150000</GasExplosionNeededVolumeToReachMaxRadius>
+            <GasExplosionDamageMultiplier>0.00015</GasExplosionDamageMultiplier>
+            <GasExplosionSound>HydrogenExplosion</GasExplosionSound>
+            <GasExplosionEffect>Explosion_Warhead_30</GasExplosionEffect>
+            <TieredUpdateTimes>
+                <unsignedInt>100</unsignedInt>
+                <unsignedInt>300</unsignedInt>
+                <unsignedInt>600</unsignedInt>
+            </TieredUpdateTimes>
+        </Definition>
+		
+        <Definition xsi:type="MyObjectBuilder_GasTankDefinition">
+            <Id>
+                <TypeId>OxygenTank</TypeId>
+                <SubtypeId>SmallSpiceTank</SubtypeId>
+            </Id>
+            <DisplayName>Activated Spice Tank</DisplayName>
+            <Icon>Icons\SmallSpiceTank.dds</Icon>
+            <Description>Contains, stabilizes, and preserves Activated Spice.
+			
+			Capacity: 3500L</Description>
+            <CubeSize>Small</CubeSize>
+            <GuiVisible>false</GuiVisible>
+            <Public>true</Public>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="3" y="5" z="3" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\SmallActivatedSpiceTank.mwm</Model>
+            <Components>
+				<Component Subtype="SteelPlate" Count="10" />
+				<Component Subtype="LargeTube" Count="5" />
+				<Component Subtype="Construction" Count="15" />
+				<Component Subtype="Motor" Count="10" />
+				<Component Subtype="Cryocooler" Count="4" />
+				<Component Subtype="CopperWire" Count="15" />
+				<Component Subtype="AdvancedComputer" Count="5" />
+				<Component Subtype="Computer" Count="10" />
+				<Component Subtype="SteelPlate" Count="5" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Top" StartX="1" StartY="1" EndX="2" EndY="2" />
+                <MountPoint Side="Bottom" StartX="1" StartY="1" EndX="2" EndY="2" Default="true" />
+                <MountPoint Side="Front" StartX="0" StartY="2.0" EndX="3" EndY="3.0" />
+                <MountPoint Side="Back" StartX="0" StartY="2.0" EndX="3" EndY="3.0" />
+                <MountPoint Side="Left" StartX="0" StartY="2.0" EndX="3" EndY="3.0" />
+                <MountPoint Side="Right" StartX="0" StartY="2.0" EndX="3" EndY="3.0" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Construct\SmallActivatedSpiceTankConstruct1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Construct\SmallActivatedSpiceTankConstruct2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Construct\SmallActivatedSpiceTankConstruct3.mwm" />
+            </BuildProgressModels>
+            <BlockPairName>SpiceTank</BlockPairName>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <EdgeType>Light</EdgeType>
+            <ResourceSourceGroup>Reactors</ResourceSourceGroup>
+            <ResourceSinkGroup>Factory</ResourceSinkGroup>
+            <OperationalPowerConsumption>0.001</OperationalPowerConsumption>
+            <StandbyPowerConsumption>0.000001</StandbyPowerConsumption>
+            <Capacity>3500</Capacity>
+            <InventoryMaxVolume>0.75</InventoryMaxVolume>
+            <InventorySize>
+                <X>2</X>
+                <Y>2</Y>
+                <Z>2</Z>
+            </InventorySize>
+            <StoredGasId>
+                <TypeId>GasProperties</TypeId>
+                <SubtypeId>ActivatedSpice</SubtypeId>
+            </StoredGasId>
+            <BuildTimeSeconds>30</BuildTimeSeconds>
+            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+            <DamagedSound>ParticleWeapExpl</DamagedSound>
+            <EmissiveColorPreset>Spice</EmissiveColorPreset>
+            <DestroyEffect>Explosion_Warhead_02</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <PCU>25</PCU>
+            <LeakPercent>0.005</LeakPercent>
+            <GasExplosionMaxRadius>5</GasExplosionMaxRadius>
+            <GasExplosionNeededVolumeToReachMaxRadius>1000</GasExplosionNeededVolumeToReachMaxRadius>
+            <GasExplosionDamageMultiplier>0.00015</GasExplosionDamageMultiplier>
+            <GasExplosionSound>WepSmallWarheadExpl</GasExplosionSound>
+            <GasExplosionEffect>Explosion_Warhead_02</GasExplosionEffect>
+            <TieredUpdateTimes>
+                <unsignedInt>100</unsignedInt>
+                <unsignedInt>300</unsignedInt>
+                <unsignedInt>600</unsignedInt>
+            </TieredUpdateTimes>
+        </Definition>
+		
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>SmallImpulseThrusterLarge</SubtypeId>
+            </Id>
+            <DisplayName>Impulse Thruster</DisplayName>
+            <Icon>Icons\SmallImpulseThruster.dds</Icon>
+            <Description>Impulse Thrusters utilize the exotic properties of Activated Spice to push against the fabric of space-time, producing thrust without the need for reaction mass.
+			
+			Thrust Output: 7.2 MN
+			Fuel: Activated Spice - 144L/s</Description>
+            <CubeSize>Large</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="1" y="1" z="2" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\SmallImpulseThrusterLarge.mwm</Model>
+            <ThrusterType>Atmospheric</ThrusterType>
+            <SilenceableByShipSoundSystem>true</SilenceableByShipSoundSystem>
+            <Components>
+				<Component Subtype="SteelPlate" Count="25" />
+				<Component Subtype="Construction" Count="40" />
+				<Component Subtype="Computer" Count="10" />
+				<Component Subtype="AdvancedComputer" Count="15" />
+				<Component Subtype="LargeTube" Count="10" />
+				<Component Subtype="MetalGrid" Count="20" />
+				<Component Subtype="Thrust" Count="50" />
+				<Component Subtype="GravityGenerator" Count="5" />
+				<Component Subtype="Ceramic" Count="50" />
+				<Component Subtype="SteelPlate" Count="10" />
+            </Components>
+            <CriticalComponent Subtype="Ceramic" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+                <MountPoint Side="Right" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+                <MountPoint Side="Left" StartX="1.9" StartY="0" EndX="2" EndY="1" />
+                <MountPoint Side="Bottom" StartX="0" StartY="1.9" EndX="1" EndY="2" />
+                <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="0.1" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Construct\SmallImpulseThrusterLargeConstruct1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Construct\SmallImpulseThrusterLargeConstruct2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Construct\SmallImpulseThrusterLargeConstruct3.mwm" />
+            </BuildProgressModels>
+            <VoxelPlacement>
+                <!--Possible settings Both,InVoxel,OutsideVoxel,Volumetric. If volumetric set than MaxAllowed and MinAllowed will be used.-->
+                <StaticMode>
+                    <PlacementMode>Volumetric</PlacementMode>
+                    <MaxAllowed>0.2</MaxAllowed>
+                    <MinAllowed>0</MinAllowed>
+                </StaticMode>
+                <DynamicMode>
+                    <PlacementMode>Volumetric</PlacementMode>
+                    <MaxAllowed>0.2</MaxAllowed>
+                    <MinAllowed>0</MinAllowed>
+                </DynamicMode>
+            </VoxelPlacement>
+            <BlockPairName>SmallImpulseThruster</BlockPairName>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>90</BuildTimeSeconds>
+            <FuelConverter>
+                <FuelId>
+                    <TypeId>GasProperties</TypeId>
+                    <SubtypeId>ActivatedSpice</SubtypeId>
+                </FuelId>
+                <Efficiency>1</Efficiency>
+            </FuelConverter>
+            <MaxPowerConsumption>14.4</MaxPowerConsumption>
+            <MinPowerConsumption>0</MinPowerConsumption>
+            <ResourceSinkGroup>Thrust</ResourceSinkGroup>
+            <ForceMagnitude>7200000</ForceMagnitude>
+            <SlowdownFactor>1</SlowdownFactor>
+            <FlameDamageLengthScale>0</FlameDamageLengthScale>
+            <FlameLengthScale>0.01</FlameLengthScale>
+            <FlameIdleColor>
+                <X>0.01</X>
+                <Y>0</Y>
+                <Z>0.05</Z>
+                <W>0.05</W>
+            </FlameIdleColor>
+            <FlameFullColor>
+                <X>0.2</X>
+                <Y>0</Y>
+                <Z>1</Z>
+                <W>1</W>
+            </FlameFullColor>
+            <FlamePointMaterial>EngineThrustMiddle</FlamePointMaterial>
+            <FlameLengthMaterial>EngineThrustMiddle</FlameLengthMaterial>
+            <FlameFlare>LargeGridLargeThruster</FlameFlare>
+            <FlameVisibilityDistance>700</FlameVisibilityDistance>
+            <FlameGlareQuerySize>1.5</FlameGlareQuerySize>
+            <PropellerUsesPropellerSystem>true</PropellerUsesPropellerSystem>
+            <PropellerSubpartEntityName>Propeller</PropellerSubpartEntityName>
+            <PropellerRoundsPerSecondOnFullSpeed>2</PropellerRoundsPerSecondOnFullSpeed>
+            <PropellerRoundsPerSecondOnIdleSpeed>0.1</PropellerRoundsPerSecondOnIdleSpeed>
+            <PropellerAccelerationTime>3</PropellerAccelerationTime>
+            <PropellerDecelerationTime>5</PropellerDecelerationTime>
+            <PropellerMaxVisibleDistance>500</PropellerMaxVisibleDistance>
+            <PrimarySound>LrgShipLrgJetHydrogen</PrimarySound>
+            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+            <DamagedSound>ParticleWeapExpl</DamagedSound>
+            <Public>true</Public>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <EmissiveColorPreset>Spice</EmissiveColorPreset>
+            <PCU>15</PCU>
+            <TieredUpdateTimes>
+                <unsignedInt>100</unsignedInt>
+                <unsignedInt>600</unsignedInt>
+                <unsignedInt>1200</unsignedInt>
+            </TieredUpdateTimes>
+            <TargetingGroups>
+                <string>Propulsion</string>
+            </TargetingGroups>
+        </Definition>
+		
+        <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+            <Id>
+                <TypeId>Thrust</TypeId>
+                <SubtypeId>SmallImpulseThrusterSmall</SubtypeId>
+            </Id>
+            <DisplayName>Impulse Thruster</DisplayName>
+            <Icon>Icons\SmallImpulseThruster.dds</Icon>
+            <Description>Impulse Thrusters utilize the exotic properties of Activated Spice to push against the fabric of space-time, producing thrust without the need for reaction mass.
+			
+			Thrust Output: 480 kN
+			Fuel: Activated Spice - 9.6L/s</Description>
+            <CubeSize>Small</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="1" y="1" z="2" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\SmallImpulseThrusterSmall.mwm</Model>
+            <ThrusterType>Atmospheric</ThrusterType>
+            <SilenceableByShipSoundSystem>true</SilenceableByShipSoundSystem>
+            <Components>
+				<Component Subtype="SteelPlate" Count="2" />
+				<Component Subtype="Construction" Count="3" />
+				<Component Subtype="Computer" Count="1" />
+				<Component Subtype="AdvancedComputer" Count="5" />
+				<Component Subtype="LargeTube" Count="1" />
+				<Component Subtype="MetalGrid" Count="1" />
+				<Component Subtype="Thrust" Count="5" />
+				<Component Subtype="GravityGenerator" Count="1" />
+				<Component Subtype="Ceramic" Count="4" />
+				<Component Subtype="SteelPlate" Count="1" />
+            </Components>
+            <CriticalComponent Subtype="Ceramic" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+                <MountPoint Side="Right" StartX="0" StartY="0" EndX="0.1" EndY="1" />
+                <MountPoint Side="Left" StartX="1.9" StartY="0" EndX="2" EndY="1" />
+                <MountPoint Side="Bottom" StartX="0" StartY="1.9" EndX="1" EndY="2" />
+                <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="0.1" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Construct\SmallImpulseThrusterSmallConstruct1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Construct\SmallImpulseThrusterSmallConstruct2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Construct\SmallImpulseThrusterSmallConstruct3.mwm" />
+            </BuildProgressModels>
+            <VoxelPlacement>
+                <!--Possible settings Both,InVoxel,OutsideVoxel,Volumetric. If volumetric set than MaxAllowed and MinAllowed will be used.-->
+                <StaticMode>
+                    <PlacementMode>OutsideVoxel</PlacementMode>
+                    <MaxAllowed>0.2</MaxAllowed>
+                    <MinAllowed>0</MinAllowed>
+                </StaticMode>
+                <DynamicMode>
+                    <PlacementMode>OutsideVoxel</PlacementMode>
+                    <MaxAllowed>0.2</MaxAllowed>
+                    <MinAllowed>0</MinAllowed>
+                </DynamicMode>
+            </VoxelPlacement>
+            <BlockPairName>SmallImpulseThruster</BlockPairName>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>20</BuildTimeSeconds>
+            <FuelConverter>
+                <FuelId>
+                    <TypeId>GasProperties</TypeId>
+                    <SubtypeId>ActivatedSpice</SubtypeId>
+                </FuelId>
+                <Efficiency>1</Efficiency>
+            </FuelConverter>
+            <MaxPowerConsumption>0.96</MaxPowerConsumption>
+            <MinPowerConsumption>0</MinPowerConsumption>
+            <ResourceSinkGroup>Thrust</ResourceSinkGroup>
+            <ForceMagnitude>480000</ForceMagnitude>
+            <SlowdownFactor>1</SlowdownFactor>
+            <FlameDamageLengthScale>0</FlameDamageLengthScale>
+            <FlameLengthScale>0.01</FlameLengthScale>
+            <FlameIdleColor>
+                <X>0.01</X>
+                <Y>0</Y>
+                <Z>0.05</Z>
+                <W>0.05</W>
+            </FlameIdleColor>
+            <FlameFullColor>
+                <X>0.2</X>
+                <Y>0</Y>
+                <Z>1</Z>
+                <W>1</W>
+            </FlameFullColor>
+            <FlamePointMaterial>EngineThrustMiddle</FlamePointMaterial>
+            <FlameLengthMaterial>EngineThrustMiddle</FlameLengthMaterial>
+            <FlameFlare>LargeGridLargeThruster</FlameFlare>
+            <FlameVisibilityDistance>700</FlameVisibilityDistance>
+            <FlameGlareQuerySize>1.5</FlameGlareQuerySize>
+            <PropellerUsesPropellerSystem>true</PropellerUsesPropellerSystem>
+            <PropellerSubpartEntityName>Propeller</PropellerSubpartEntityName>
+            <PropellerRoundsPerSecondOnFullSpeed>2</PropellerRoundsPerSecondOnFullSpeed>
+            <PropellerRoundsPerSecondOnIdleSpeed>0.1</PropellerRoundsPerSecondOnIdleSpeed>
+            <PropellerAccelerationTime>3</PropellerAccelerationTime>
+            <PropellerDecelerationTime>5</PropellerDecelerationTime>
+            <PropellerMaxVisibleDistance>500</PropellerMaxVisibleDistance>
+            <PrimarySound>SmShipLrgJetHydrogen</PrimarySound>
+            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+            <DamagedSound>ParticleWeapExpl</DamagedSound>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <EmissiveColorPreset>Spice</EmissiveColorPreset>
+            <PCU>15</PCU>
+            <TieredUpdateTimes>
+                <unsignedInt>100</unsignedInt>
+                <unsignedInt>600</unsignedInt>
+                <unsignedInt>1200</unsignedInt>
+            </TieredUpdateTimes>
+            <TargetingGroups>
+                <string>Propulsion</string>
+            </TargetingGroups>
+        </Definition>
+		
+        <Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
+            <Id>
+                <TypeId>Assembler</TypeId>
+                <SubtypeId>OreCatalyzer</SubtypeId>
+            </Id>
+            <DisplayName>Ore Catalyzer</DisplayName>
+            <Icon>Icons\OreCatalyzer.dds</Icon>
+            <Description>Processes Ore with Refined Spice in order to catalyze it. Catalyzed Ore produces greater refining yields.
+			Only Purified Ore can be Catalyzed. Due to the unique properties of exotic ores, they cannot be Catalyzed.
+			
+			Power Usage: 3 MW</Description>
+            <CubeSize>Large</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="3" y="1" z="3" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\OreCatalyzer.mwm</Model>
+            <Components>
+				<Component Subtype="SteelPlate" Count="50" />
+				<Component Subtype="Construction" Count="50" />
+				<Component Subtype="LargeTube" Count="40" />
+				<Component Subtype="Motor" Count="25" />
+				<Component Subtype="CopperWire" Count="40" />
+				<Component Subtype="MetalGrid" Count="25" />
+				<Component Subtype="Ceramic" Count="50" />
+				<Component Subtype="Computer" Count="10" />
+				<Component Subtype="AdvancedComputer" Count="30" />
+				<Component Subtype="SteelPlate" Count="20" />
+            </Components>
+            <CriticalComponent Subtype="AdvancedComputer" Index="0" />
+            <Center x="1" y="0" z="1" />
+            <MountPoints>				
+                <MountPoint Side="Bottom" StartX="0" StartY="0.2" EndX="3" EndY="2.8" Default="true" />
+				
+                <MountPoint Side="Top" StartX="0" StartY="0.1" EndX="0.1" EndY="2.9" />
+                <MountPoint Side="Top" StartX="2.9" StartY="0.1" EndX="3" EndY="3" />
+                <MountPoint Side="Top" StartX="0" StartY="0.95" EndX="3" EndY="1.05" />
+                <MountPoint Side="Top" StartX="0" StartY="1.95" EndX="3" EndY="2.05" />
+				
+                <MountPoint Side="Back" StartX="0" StartY="0.1" EndX="0.1" EndY="0.9" />
+                <MountPoint Side="Back" StartX="2.9" StartY="0.1" EndX="3" EndY="0.9" />
+                <MountPoint Side="Back" StartX="0" StartY="0.3" EndX="3" EndY="0.4" />
+				
+                <MountPoint Side="Front" StartX="0" StartY="0.1" EndX="0.1" EndY="0.9" />
+                <MountPoint Side="Front" StartX="2.9" StartY="0.1" EndX="3" EndY="0.9" />
+                <MountPoint Side="Front" StartX="0" StartY="0.3" EndX="3" EndY="0.4" />
+				
+                <MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+                <MountPoint Side="Left" StartX="0.1" StartY="0" EndX="2.9" EndY="0.1" />
+                <MountPoint Side="Left" StartX="0.1" StartY="0.9" EndX="2.9" EndY="1" />
+                <MountPoint Side="Left" StartX="0" StartY="0.1" EndX="0.1" EndY="0.9" />
+                <MountPoint Side="Left" StartX="2.9" StartY="0.1" EndX="3" EndY="0.9" />
+				
+                <MountPoint Side="Right" StartX="1" StartY="0" EndX="2" EndY="1" />
+                <MountPoint Side="Right" StartX="0.1" StartY="0" EndX="2.9" EndY="0.1" />
+                <MountPoint Side="Right" StartX="0.1" StartY="0.9" EndX="2.9" EndY="1" />
+                <MountPoint Side="Right" StartX="0" StartY="0.1" EndX="0.1" EndY="0.9" />
+                <MountPoint Side="Right" StartX="2.9" StartY="0.1" EndX="3" EndY="0.9" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Construct\OreCatalyzerConstruct1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Construct\OreCatalyzerConstruct2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Construct\OreCatalyzerConstruct3.mwm" />
+            </BuildProgressModels>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>90</BuildTimeSeconds>
+            <ResourceSinkGroup>Factory</ResourceSinkGroup>
+            <InventoryMaxVolume>7.5</InventoryMaxVolume>
+            <InventorySize>
+                <X>2.5</X>
+                <Y>2.5</Y>
+                <Z>2.5</Z>
+            </InventorySize>
+            <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+            <OperationalPowerConsumption>3</OperationalPowerConsumption>
+            <BlueprintClasses>
+                <Class>OreCatalyzer</Class>
+            </BlueprintClasses>
+			<AssemblySpeed>1</AssemblySpeed>
+            <OreAmountPerPullRequest>2000</OreAmountPerPullRequest>
+            <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+            <DamagedSound>ParticleHeavyMech</DamagedSound>
+            <PrimarySound>BlockRafinery</PrimarySound>
+            <ActionSound>BlockRafineryProcess</ActionSound>
+            <EmissiveColorPreset>Default</EmissiveColorPreset>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <PCU>90</PCU>
+            <TieredUpdateTimes>
+                <unsignedInt>60</unsignedInt>
+                <unsignedInt>120</unsignedInt>
+                <unsignedInt>240</unsignedInt>
+            </TieredUpdateTimes>
+        </Definition>
+		
+        <!--Definition xsi:type="MyObjectBuilder_RefineryDefinition">
+            <Id>
+                <TypeId>Refinery</TypeId>
+                <SubtypeId>OreCatalyzer</SubtypeId>
+            </Id>
+            <DisplayName>Ore Catalyzer</DisplayName>
+            <Icon>Icons\OreCatalyzer.dds</Icon>
+            <Description>Processes Ore with Refined Spice in order to catalyze it. Catalyzed Ore produces greater refining yields.
+			
+			Power Usage: 3 MW</Description>
+            <CubeSize>Large</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="3" y="1" z="3" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\OreCatalyzer.mwm</Model>
+            <Components>
+				<Component Subtype="SteelPlate" Count="50" />
+				<Component Subtype="Construction" Count="50" />
+				<Component Subtype="LargeTube" Count="40" />
+				<Component Subtype="Motor" Count="25" />
+				<Component Subtype="CopperWire" Count="40" />
+				<Component Subtype="MetalGrid" Count="25" />
+				<Component Subtype="Ceramic" Count="50" />
+				<Component Subtype="Computer" Count="10" />
+				<Component Subtype="AdvancedComputer" Count="30" />
+				<Component Subtype="SteelPlate" Count="20" />
+            </Components>
+            <CriticalComponent Subtype="AdvancedComputer" Index="0" />
+            <Center x="1" y="0" z="1" />
+            <MountPoints>				
+                <MountPoint Side="Bottom" StartX="0" StartY="0.2" EndX="3" EndY="2.8" Default="true" />
+				
+                <MountPoint Side="Top" StartX="0" StartY="0.1" EndX="0.1" EndY="2.9" />
+                <MountPoint Side="Top" StartX="2.9" StartY="0.1" EndX="3" EndY="3" />
+                <MountPoint Side="Top" StartX="0" StartY="0.95" EndX="3" EndY="1.05" />
+                <MountPoint Side="Top" StartX="0" StartY="1.95" EndX="3" EndY="2.05" />
+				
+                <MountPoint Side="Back" StartX="0" StartY="0.1" EndX="0.1" EndY="0.9" />
+                <MountPoint Side="Back" StartX="2.9" StartY="0.1" EndX="3" EndY="0.9" />
+                <MountPoint Side="Back" StartX="0" StartY="0.3" EndX="3" EndY="0.4" />
+				
+                <MountPoint Side="Front" StartX="0" StartY="0.1" EndX="0.1" EndY="0.9" />
+                <MountPoint Side="Front" StartX="2.9" StartY="0.1" EndX="3" EndY="0.9" />
+                <MountPoint Side="Front" StartX="0" StartY="0.3" EndX="3" EndY="0.4" />
+				
+                <MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+                <MountPoint Side="Left" StartX="0.1" StartY="0" EndX="2.9" EndY="0.1" />
+                <MountPoint Side="Left" StartX="0.1" StartY="0.9" EndX="2.9" EndY="1" />
+                <MountPoint Side="Left" StartX="0" StartY="0.1" EndX="0.1" EndY="0.9" />
+                <MountPoint Side="Left" StartX="2.9" StartY="0.1" EndX="3" EndY="0.9" />
+				
+                <MountPoint Side="Right" StartX="1" StartY="0" EndX="2" EndY="1" />
+                <MountPoint Side="Right" StartX="0.1" StartY="0" EndX="2.9" EndY="0.1" />
+                <MountPoint Side="Right" StartX="0.1" StartY="0.9" EndX="2.9" EndY="1" />
+                <MountPoint Side="Right" StartX="0" StartY="0.1" EndX="0.1" EndY="0.9" />
+                <MountPoint Side="Right" StartX="2.9" StartY="0.1" EndX="3" EndY="0.9" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Construct\OreCatalyzerConstruct1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Construct\OreCatalyzerConstruct2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Construct\OreCatalyzerConstruct3.mwm" />
+            </BuildProgressModels>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>90</BuildTimeSeconds>
+            <ResourceSinkGroup>Factory</ResourceSinkGroup>
+            <InventoryMaxVolume>7.5</InventoryMaxVolume>
+            <InventorySize>
+                <X>2.5</X>
+                <Y>2.5</Y>
+                <Z>2.5</Z>
+            </InventorySize>
+
+            <InventoryFillFactorMin>0.3</InventoryFillFactorMin>
+            <InventoryFillFactorMax>0.6</InventoryFillFactorMax>
+
+            <StandbyPowerConsumption>0</StandbyPowerConsumption>
+            <OperationalPowerConsumption>3</OperationalPowerConsumption>
+            <BlueprintClasses>
+                <Class>OreCatalyzer</Class>
+            </BlueprintClasses>
+            <RefineSpeed>1</RefineSpeed>
+            <MaterialEfficiency>1</MaterialEfficiency>
+            <OreAmountPerPullRequest>2000</OreAmountPerPullRequest>
+            <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+            <DamagedSound>ParticleHeavyMech</DamagedSound>
+            <PrimarySound>BlockRafinery</PrimarySound>
+            <ActionSound>BlockRafineryProcess</ActionSound>
+            <EmissiveColorPreset>Default</EmissiveColorPreset>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <PCU>90</PCU>
+        </Definition-->
+
+        <Definition xsi:type="MyObjectBuilder_OxygenGeneratorDefinition">
+            <Id>
+                <TypeId>OxygenGenerator</TypeId>
+                <SubtypeId>SpiceEnergizer</SubtypeId>
+            </Id>
+            <DisplayName>Spice Energizer</DisplayName>
+            <Icon>Icons\SpiceEnergizer.dds</Icon>
+            <Description>Saturates Refined Spice with energy in order to activate its exotic properties. Activated Spice can be used to power Impulse Thrusters.
+			
+			Power Usage: 7.5 MW</Description>
+            <CubeSize>Large</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="3" y="2" z="2" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\SpiceEnergizer.mwm</Model>
+            <Components>
+				<Component Subtype="SteelPlate" Count="50" />
+				<Component Subtype="Construction" Count="80" />
+				<Component Subtype="GoldWire" Count="50" />
+				<Component Subtype="Motor" Count="20" />
+				<Component Subtype="TitaniumPlate" Count="25" />
+				<Component Subtype="LaserEmitter" Count="10" />
+				<Component Subtype="Ceramic" Count="50" />
+				<Component Subtype="SuperMagnet" Count="10" />
+				<Component Subtype="Computer" Count="10" />
+				<Component Subtype="AdvancedComputer" Count="100" />
+				<Component Subtype="SteelPlate" Count="20" />
+            </Components>
+            <CriticalComponent Subtype="AdvancedComputer" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Front" StartX="0" StartY="0" EndX="3" EndY="0.1" />
+                <MountPoint Side="Front" StartX="0" StartY="1.9" EndX="3" EndY="2" />
+                <MountPoint Side="Front" StartX="0" StartY="0" EndX="0.1" EndY="2" />
+                <MountPoint Side="Front" StartX="2.9" StartY="0" EndX="3" EndY="2" />
+                <MountPoint Side="Front" StartX="1" StartY="0" EndX="2" EndY="1" />
+                <MountPoint Side="Front" StartX="0" StartY="1.35" EndX="3" EndY="1.45" />
+				
+                <MountPoint Side="Back" StartX="0" StartY="0" EndX="3" EndY="0.1" />
+                <MountPoint Side="Back" StartX="0" StartY="1.9" EndX="3" EndY="2" />
+                <MountPoint Side="Back" StartX="0" StartY="0" EndX="0.1" EndY="2" />
+                <MountPoint Side="Back" StartX="2.9" StartY="0" EndX="3" EndY="2" />
+                <MountPoint Side="Back" StartX="1" StartY="0" EndX="2" EndY="1" />
+                <MountPoint Side="Back" StartX="0" StartY="1.35" EndX="3" EndY="1.45" />
+				
+                <MountPoint Side="Bottom" StartX="0.3" StartY="0" EndX="2.7" EndY="2" Default="true" />
+                <MountPoint Side="Top" StartX="0.3" StartY="0" EndX="2.7" EndY="2" />
+				
+                <MountPoint Side="Left" StartX="0" StartY="0.3" EndX="0.1" EndY="1.7" />
+                <MountPoint Side="Left" StartX="0.95" StartY="0.3" EndX="1.05" EndY="1.7" />
+                <MountPoint Side="Left" StartX="1.9" StartY="0.3" EndX="2" EndY="1.7" />
+                <MountPoint Side="Left" StartX="0" StartY="0.3" EndX="2" EndY="0.4" />
+                <MountPoint Side="Left" StartX="0" StartY="1.6" EndX="2" EndY="1.7" />
+				
+                <MountPoint Side="Right" StartX="0" StartY="0.3" EndX="0.1" EndY="1.7" />
+                <MountPoint Side="Right" StartX="0.95" StartY="0.3" EndX="1.05" EndY="1.7" />
+                <MountPoint Side="Right" StartX="1.9" StartY="0.3" EndX="2" EndY="1.7" />
+                <MountPoint Side="Right" StartX="0" StartY="0.3" EndX="2" EndY="0.4" />
+                <MountPoint Side="Right" StartX="0" StartY="1.6" EndX="2" EndY="1.7" />
+            </MountPoints>
+            <IsAirTight>true</IsAirTight>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Construct\SpiceEnergizerConstruct1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Construct\SpiceEnergizerConstruct2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Construct\SpiceEnergizerConstruct3.mwm" />
+            </BuildProgressModels>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>22</BuildTimeSeconds>
+            <ResourceSourceGroup>Reactors</ResourceSourceGroup>
+            <ResourceSinkGroup>Factory</ResourceSinkGroup>
+            <IceConsumptionPerSecond>100</IceConsumptionPerSecond>
+            <InventoryMaxVolume>4</InventoryMaxVolume>
+            <InventorySize>
+                <X>2</X>
+                <Y>2</Y>
+                <Z>2</Z>
+            </InventorySize>
+
+            <InventoryFillFactorMin>0.3</InventoryFillFactorMin>
+            <InventoryFillFactorMax>0.6</InventoryFillFactorMax>
+
+            <FuelPullAmountFromConveyorInMinutes>1</FuelPullAmountFromConveyorInMinutes>
+
+            <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+            <OperationalPowerConsumption>7.5</OperationalPowerConsumption>
+            <ProducedGases>
+                <GasInfo>
+                    <Id>
+                        <TypeId>GasProperties</TypeId>
+                        <SubtypeId>ActivatedSpice</SubtypeId>
+                    </Id>
+                    <IceToGasRatio>150</IceToGasRatio>
+                </GasInfo>
+            </ProducedGases>
+            <BlueprintClasses>
+                <Class>ActivatedSpice</Class>
+            </BlueprintClasses>
+            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+            <DamagedSound>ParticleWeapExpl</DamagedSound>
+            <GenerateSound>BlockOxyGenProcess</GenerateSound>
+            <IdleSound>BlockOxyGenIdle</IdleSound>
+            <EmissiveColorPreset>Spice</EmissiveColorPreset>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <MirroringX>Y</MirroringX>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <PCU>50</PCU>
+            <TieredUpdateTimes>
+                <unsignedInt>10</unsignedInt>
+                <unsignedInt>200</unsignedInt>
+                <unsignedInt>500</unsignedInt>
+            </TieredUpdateTimes>
+        </Definition>
+		
+    </CubeBlocks>
+</Definitions>

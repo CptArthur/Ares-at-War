@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Blueprints>
+  
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzeSulfurOre</SubtypeId>
+      </Id>
+      <DisplayName>Catalyze Sulfur Ore</DisplayName>
+      <Icon>Icons\CopperOre.dds</Icon>
+      <Prerequisites>
+        <Item Amount="100" TypeId="Ore" SubtypeId="PurifiedSulfur" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+      </Prerequisites>
+      <Result Amount="100" TypeId="Ore" SubtypeId="CatalyzedSulfur" />
+      <BaseProductionTimeInSeconds>5</BaseProductionTimeInSeconds>
+      <IsPrimary>true</IsPrimary>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzeCopperOre</SubtypeId>
+      </Id>
+      <DisplayName>Catalyze Copper Ore</DisplayName>
+      <Icon>Icons\CopperOre.dds</Icon>
+      <Prerequisites>
+        <Item Amount="100" TypeId="Ore" SubtypeId="PurifiedCopper" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+      </Prerequisites>
+      <Result Amount="100" TypeId="Ore" SubtypeId="CatalyzedCopper" />
+      <BaseProductionTimeInSeconds>5</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzeLithiumOre</SubtypeId>
+      </Id>
+      <DisplayName>Catalyze Lithium Ore</DisplayName>
+            <Icon>Icons\GenericOre.dds</Icon>
+      <Prerequisites>
+        <Item Amount="100" TypeId="Ore" SubtypeId="PurifiedLithium" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+      </Prerequisites>
+      <Result Amount="100" TypeId="Ore" SubtypeId="CatalyzedLithium" />
+      <BaseProductionTimeInSeconds>5</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzeBauxiteOre</SubtypeId>
+      </Id>
+      <DisplayName>Catalyze Bauxite Ore</DisplayName>
+            <Icon>Icons\BauxiteOre.dds</Icon>
+      <Prerequisites>
+        <Item Amount="100" TypeId="Ore" SubtypeId="PurifiedBauxite" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+      </Prerequisites>
+      <Result Amount="100" TypeId="Ore" SubtypeId="CatalyzedBauxite" />
+      <BaseProductionTimeInSeconds>5</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzeTitaniumOre</SubtypeId>
+      </Id>
+      <DisplayName>Catalyze Titanium Ore</DisplayName>
+            <Icon>Icons\GenericOre.dds</Icon>
+      <Prerequisites>
+        <Item Amount="100" TypeId="Ore" SubtypeId="PurifiedTitanium" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+      </Prerequisites>
+      <Result Amount="100" TypeId="Ore" SubtypeId="CatalyzedTitanium" />
+      <BaseProductionTimeInSeconds>5</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzeTantalumOre</SubtypeId>
+      </Id>
+      <DisplayName>Catalyze Tantalum Ore</DisplayName>
+            <Icon>Icons\GenericOre.dds</Icon>
+      <Prerequisites>
+        <Item Amount="100" TypeId="Ore" SubtypeId="PurifiedTantalum" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+      </Prerequisites>
+      <Result Amount="100" TypeId="Ore" SubtypeId="CatalyzedTantalum" />
+      <BaseProductionTimeInSeconds>5</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzeNiterOre</SubtypeId>
+      </Id>
+      <DisplayName>Catalyze Niter</DisplayName>
+            <Icon>Icons\NiterOre.dds</Icon>
+      <Prerequisites>
+        <Item Amount="100" TypeId="Ore" SubtypeId="PurifiedNiter" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+      </Prerequisites>
+      <Result Amount="100" TypeId="Ore" SubtypeId="CatalyzedNiter" />
+      <BaseProductionTimeInSeconds>5</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+	<!-- Refining -->
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzedSulfurOreToIngot</SubtypeId>
+      </Id>
+      <DisplayName>DisplayName_BlueprintClass_Ingots</DisplayName>
+      <Icon>Icons\SulfurIngot.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="CatalyzedSulfur" />
+      </Prerequisites>
+      <Results>
+        <Item Amount="0.75" TypeId="Ingot" SubtypeId="Sulfur" />
+      </Results>
+      <BaseProductionTimeInSeconds>0.04</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzedCopperOreToIngot</SubtypeId>
+      </Id>
+      <DisplayName>Copper Ingot</DisplayName>
+      <Icon>Icons\CopperIngot.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="CatalyzedCopper" />
+      </Prerequisites>
+      <Results>
+        <Item Amount="2" TypeId="Ingot" SubtypeId="Copper" />
+      </Results>
+      <BaseProductionTimeInSeconds>0.04</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzedLithiumOreToIngot</SubtypeId>
+      </Id>
+      <DisplayName>Lithium Paste</DisplayName>
+      <Icon>Icons\WhiteBarrel.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="CatalyzedLithium" />
+      </Prerequisites>
+      <Results>
+        <Item Amount="0.5" TypeId="Ingot" SubtypeId="Lithium" />
+      </Results>
+      <BaseProductionTimeInSeconds>0.04</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzedBauxiteOreToIngot</SubtypeId>
+      </Id>
+      <DisplayName>Aluminum Ingot</DisplayName>
+      <Icon>Icons\GenericIngot.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="CatalyzedBauxite" />
+      </Prerequisites>
+      <Results>
+        <Item Amount="1.5" TypeId="Ingot" SubtypeId="Aluminum" />
+      </Results>
+      <BaseProductionTimeInSeconds>0.04</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzedTitaniumOreToIngot</SubtypeId>
+      </Id>
+      <DisplayName>Titanium Ingot</DisplayName>
+      <Icon>Icons\GenericIngot.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="CatalyzedTitanium" />
+      </Prerequisites>
+      <Results>
+        <Item Amount="1" TypeId="Ingot" SubtypeId="Titanium" />
+      </Results>
+      <BaseProductionTimeInSeconds>0.04</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzedTantalumOreToIngot</SubtypeId>
+      </Id>
+      <DisplayName>Tantalum Ingot</DisplayName>
+      <Icon>Icons\GenericIngot.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="CatalyzedTantalum" />
+      </Prerequisites>
+      <Results>
+        <Item Amount="0.025" TypeId="Ingot" SubtypeId="Tantalum" />
+      </Results>
+      <BaseProductionTimeInSeconds>0.04</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzedNiterOreToIngot</SubtypeId>
+      </Id>
+      <DisplayName>Potassium Nitrate</DisplayName>
+      <Icon>Icons\WhiteBarrel.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="CatalyzedNiter" />
+      </Prerequisites>
+      <Results>
+        <Item Amount="0.75" TypeId="Ingot" SubtypeId="Niter" />
+      </Results>
+      <BaseProductionTimeInSeconds>0.04</BaseProductionTimeInSeconds>
+    </Blueprint>
+  </Blueprints>
+</Definitions>

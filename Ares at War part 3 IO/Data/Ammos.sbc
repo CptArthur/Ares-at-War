@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Ammos>
+	
+	<!-- Lock & Load -->
+
+        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>155mmCHEShell</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <DesiredSpeed>1500</DesiredSpeed>
+                <SpeedVariance>0</SpeedVariance>
+                <MaxTrajectory>3000</MaxTrajectory>
+                <IsExplosive>true</IsExplosive>
+                <BackkickForce>50000</BackkickForce>
+                <PhysicalMaterial>MediumShell</PhysicalMaterial>
+            </BasicProperties>
+            <MissileProperties>
+                <MissileMass>300</MissileMass>
+                <MissileExplosionRadius>3</MissileExplosionRadius>
+                <MissileModelName>Models\Weapons\MediumCalibreShell.mwm</MissileModelName>
+                <MissileAcceleration>0</MissileAcceleration>
+                <MissileInitialSpeed>1000</MissileInitialSpeed>
+                <MissileSkipAcceleration>false</MissileSkipAcceleration>
+                <MissileExplosionDamage>7500</MissileExplosionDamage>
+                <MissileHealthPool>100</MissileHealthPool>
+                <MissileTrailEffect>MediumCalibreGun_TracerHE</MissileTrailEffect>
+                <MissileGravityEnabled>true</MissileGravityEnabled>
+            </MissileProperties>
+        </Ammo>
+
+        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>305mmCHEShell</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <DesiredSpeed>2600</DesiredSpeed>
+                <SpeedVariance>0</SpeedVariance>
+                <MaxTrajectory>5200</MaxTrajectory>
+                <IsExplosive>true</IsExplosive>
+                <BackkickForce>150000</BackkickForce>
+                <PhysicalMaterial>LargeShell</PhysicalMaterial>
+            </BasicProperties>
+            <MissileProperties>
+                <MissileMass>800</MissileMass>
+                <MissileExplosionRadius>6</MissileExplosionRadius>
+                <MissileModelName>Models\Weapons\LargeCalibreShell.mwm</MissileModelName>
+                <MissileAcceleration>0</MissileAcceleration>
+                <MissileInitialSpeed>1750</MissileInitialSpeed>
+                <MissileSkipAcceleration>false</MissileSkipAcceleration>
+                <MissileExplosionDamage>22500</MissileExplosionDamage>
+                <MissileHealthPool>100</MissileHealthPool>
+                <MissileTrailEffect>LargeCalibreGun_TracerHE</MissileTrailEffect>
+                <MissileGravityEnabled>true</MissileGravityEnabled>
+            </MissileProperties>
+        </Ammo>
+	
+    <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
+      <Id>
+	<TypeId>AmmoDefinition</TypeId>
+	<SubtypeId>PDLaserCharge</SubtypeId>
+      </Id>
+      <BasicProperties>
+	<DesiredSpeed>50000</DesiredSpeed>
+	<SpeedVariance>0</SpeedVariance>
+	<MaxTrajectory>2500</MaxTrajectory>
+	<BackkickForce>0</BackkickForce>
+	<PhysicalMaterial>GunBullet</PhysicalMaterial>
+      </BasicProperties>
+      <ProjectileProperties>
+	<ProjectileTrailScale>0</ProjectileTrailScale>
+	<ProjectileHitImpulse>0</ProjectileHitImpulse>
+	<ProjectileMassDamage>0</ProjectileMassDamage>
+	<ProjectileHealthDamage>0</ProjectileHealthDamage>
+	<HeadShot>true</HeadShot>
+      </ProjectileProperties>
+    </Ammo>
+	
+        <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>CronyxLargeCaliber</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <DesiredSpeed>600</DesiredSpeed>
+                <SpeedVariance>0</SpeedVariance>
+                <MaxTrajectory>1200</MaxTrajectory>
+                <BackkickForce>200</BackkickForce>
+                <PhysicalMaterial>GunBullet</PhysicalMaterial>
+            </BasicProperties>
+            <ProjectileProperties>
+				<ProjectileTrailColor x="1" y="0.3" z="0" />
+                <ProjectileTrailScale>0.1</ProjectileTrailScale>
+                <ProjectileHitImpulse>2</ProjectileHitImpulse>
+                <ProjectileMassDamage>130</ProjectileMassDamage>
+                <ProjectileHealthDamage>33</ProjectileHealthDamage>
+                <HeadShot>true</HeadShot>
+            </ProjectileProperties>
+        </Ammo>
+
+        <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>CronyxAutocannonShell</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <DesiredSpeed>600</DesiredSpeed>
+                <SpeedVariance>0</SpeedVariance>
+                <MaxTrajectory>1200</MaxTrajectory>
+                <BackkickForce>1000</BackkickForce>
+                <IsExplosive>true</IsExplosive>
+                <PhysicalMaterial>GunAutocannonBullet</PhysicalMaterial>
+            </BasicProperties>
+            <ProjectileProperties>
+				<ProjectileTrailColor x="1" y="0.3" z="0" />
+                <ProjectileTrailScale>0.5</ProjectileTrailScale>
+                <ProjectileHitImpulse>3</ProjectileHitImpulse>
+                <ProjectileMassDamage>750</ProjectileMassDamage>
+                <ProjectileHealthDamage>100</ProjectileHealthDamage>
+                <MissileExplosionRadius>0.25</MissileExplosionRadius>
+                <ProjectileExplosionRadius>0.25</ProjectileExplosionRadius>
+                <HeadShot>true</HeadShot>
+            </ProjectileProperties>
+        </Ammo>
+
+        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>CronyxMissile</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <DesiredSpeed>300</DesiredSpeed>
+                <SpeedVariance>0</SpeedVariance>
+                <MaxTrajectory>1200</MaxTrajectory>
+                <IsExplosive>true</IsExplosive>
+                <BackkickForce>0</BackkickForce>
+                <PhysicalMaterial>Missile</PhysicalMaterial>
+            </BasicProperties>
+            <MissileProperties>
+                <MissileMass>45</MissileMass>
+                <MissileExplosionRadius>6</MissileExplosionRadius>
+                <MissileModelName>Models\Weapons\Projectile_Missile.mwm</MissileModelName>
+                <MissileAcceleration>600</MissileAcceleration>
+                <MissileInitialSpeed>100</MissileInitialSpeed>
+                <MissileSkipAcceleration>false</MissileSkipAcceleration>
+                <MissileExplosionDamage>2500</MissileExplosionDamage>
+                <MissileTrailEffect>Smoke_Missile</MissileTrailEffect>
+            </MissileProperties>
+        </Ammo>
+
+        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>CronyxLargeCalibreShell</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <DesiredSpeed>750</DesiredSpeed>
+                <SpeedVariance>0</SpeedVariance>
+                <MaxTrajectory>3000</MaxTrajectory>
+                <IsExplosive>true</IsExplosive>
+                <BackkickForce>150000</BackkickForce>
+                <PhysicalMaterial>LargeShell</PhysicalMaterial>
+            </BasicProperties>
+            <MissileProperties>
+                <MissileMass>800</MissileMass>
+                <MissileExplosionRadius>4.5</MissileExplosionRadius>
+                <MissileModelName>Models\Weapons\LargeCalibreShell.mwm</MissileModelName>
+                <MissileAcceleration>900</MissileAcceleration>
+                <MissileInitialSpeed>750</MissileInitialSpeed>
+                <MissileSkipAcceleration>false</MissileSkipAcceleration>
+                <MissileExplosionDamage>1500</MissileExplosionDamage>
+                <MissileHealthPool>8500</MissileHealthPool>
+                <MissileTrailEffect>CronyxLargeCalibreGun_Tracer</MissileTrailEffect>
+                <MissileGravityEnabled>true</MissileGravityEnabled>
+            </MissileProperties>
+        </Ammo>
+
+        <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>CronyxMediumCalibreShell</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <DesiredSpeed>750</DesiredSpeed>
+                <SpeedVariance>0</SpeedVariance>
+                <MaxTrajectory>2100</MaxTrajectory>
+                <IsExplosive>true</IsExplosive>
+                <BackkickForce>50000</BackkickForce>
+                <PhysicalMaterial>MediumShell</PhysicalMaterial>
+            </BasicProperties>
+            <MissileProperties>
+                <MissileMass>300</MissileMass>
+                <MissileExplosionRadius>3</MissileExplosionRadius>
+                <MissileModelName>Models\Weapons\MediumCalibreShell.mwm</MissileModelName>
+                <MissileAcceleration>900</MissileAcceleration>
+                <MissileInitialSpeed>750</MissileInitialSpeed>
+                <MissileSkipAcceleration>false</MissileSkipAcceleration>
+                <MissileExplosionDamage>500</MissileExplosionDamage>
+                <MissileHealthPool>2000</MissileHealthPool>
+                <MissileTrailEffect>CronyxMediumCalibreGun_Tracer</MissileTrailEffect>
+                <MissileGravityEnabled>true</MissileGravityEnabled>
+            </MissileProperties>
+        </Ammo>
+		
+    </Ammos>
+</Definitions>

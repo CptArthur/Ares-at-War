@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Blueprints>
+	
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>ReinforcedDrillbit</SubtypeId>
+            </Id>
+            <DisplayName>Reinforced Drill Tooth</DisplayName>
+            <Icon>Icons\ReinforcedDrillbit.dds</Icon>
+            <Prerequisites>
+                <Item Amount="4" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="Cobalt" />
+                <Item Amount="5" TypeId="Ingot" SubtypeId="DoriumIngot" />
+            </Prerequisites>
+            <Results>
+                <Item Amount="1" TypeId="Component" SubtypeId="ReinforcedDrillbit" />
+            </Results>
+            <BaseProductionTimeInSeconds>15</BaseProductionTimeInSeconds>
+        </Blueprint>
+	
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>ReinforcedPlate</SubtypeId>
+            </Id>
+            <DisplayName>Reinforced Plate</DisplayName>
+            <Icon>Icons\ReinforcedPlate.dds</Icon>
+            <Prerequisites>
+                <Item Amount="5" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="2" TypeId="Ingot" SubtypeId="Silicon" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="DoriumIngot" />
+            </Prerequisites>
+            <Results>
+                <Item Amount="1" TypeId="Component" SubtypeId="ReinforcedPlate" />
+            </Results>
+            <BaseProductionTimeInSeconds>10</BaseProductionTimeInSeconds>
+        </Blueprint>
+	
+		<Blueprint>
+		<Id>
+			<TypeId>BlueprintDefinition</TypeId>
+			<SubtypeId>LaserAmplifier</SubtypeId>
+		</Id>
+		<DisplayName>Laser Amplifier</DisplayName>
+		<Icon>Icons\LaserAmplifier.dds</Icon>
+		<Prerequisites>
+			<Item Amount="15" TypeId="Ingot" SubtypeId="CrystalPrism" />
+			<Item Amount="5" TypeId="Ingot" SubtypeId="Silicon" />
+			<Item Amount="2" TypeId="Ingot" SubtypeId="Silver" />
+			<Item Amount="2" TypeId="Ingot" SubtypeId="Cobalt" />
+			<Item Amount="3" TypeId="Ingot" SubtypeId="Iron" />
+		</Prerequisites>
+		<Result Amount="1" TypeId="Component" SubtypeId="LaserAmplifier" />
+		<BaseProductionTimeInSeconds>20</BaseProductionTimeInSeconds>
+		</Blueprint>
+		
+    </Blueprints>
+</Definitions>

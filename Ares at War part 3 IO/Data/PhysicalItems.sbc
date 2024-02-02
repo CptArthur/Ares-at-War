@@ -1,0 +1,40 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <PhysicalItems>
+	
+        <PhysicalItem xsi:type="MyObjectBuilder_ConsumableItemDefinition">
+            <Id>
+                <TypeId>ConsumableItem</TypeId>
+                <SubtypeId>SpiceInhaler</SubtypeId>
+            </Id>
+            <DisplayName>Spice Inhaler</DisplayName>
+            <Description>Single-use inhaler containing Refined Spice. When ingested, pure Spice is capable of catalyzing and accelerating numerous biological processes.
+			NOTE: The ingestion of Spice is illegal throughout known space due to its dangerous side effects.
+			Regenerates 100% Energy and 300% Health over 4 seconds.
+			Deals 30% Damage over the following 5 seconds.</Description>
+            <Icon>Icons\SpiceInhaler.dds</Icon>
+            <Size>
+                <X>0.14</X>
+                <Y>0.43</Y>
+                <Z>0.14</Z>
+            </Size>
+            <Mass>1</Mass>
+            <Volume>1</Volume>
+            <Model>Models\Items\SpiceInhaler.mwm</Model>
+            <PhysicalMaterial>Metal</PhysicalMaterial>
+            <Stats>
+                <Stat Name="BatteryCharge" Value ="0.25" Time="4"/>
+                <Stat Name="Health" Value ="-0.06" Time="9"/>
+                <Stat Name="Health" Value ="0.81" Time="4"/>
+            </Stats>
+			
+            <MinimalPricePerUnit>450000</MinimalPricePerUnit>
+            <MinimumOfferAmount>2</MinimumOfferAmount>
+            <MaximumOfferAmount>20</MaximumOfferAmount>
+            <MinimumOrderAmount>1</MinimumOrderAmount>
+            <MaximumOrderAmount>20</MaximumOrderAmount>
+            <CanPlayerOrder>true</CanPlayerOrder>
+        </PhysicalItem>
+		
+    </PhysicalItems>
+</Definitions>

@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+	
+	<!-- Reactors -->
+	
+        <Definition xsi:type="MyObjectBuilder_ReactorDefinition">
+            <Id>
+                <TypeId>Reactor</TypeId>
+                <SubtypeId>LargeCronyxReactor</SubtypeId>
+            </Id>
+            <DisplayName>Cronyx Reactor</DisplayName>
+            <Icon>Icons\CronyxReactor.dds</Icon>
+            <Description>Heavy-duty Reactor chamber, capable of containing and controlling the massive energy output of Cronyx combustion.
+			
+			Output: 600 MW
+			Fuel: Stabilized Cronyx - 3.3/min</Description>
+            <CubeSize>Large</CubeSize>
+            <GuiVisible>false</GuiVisible>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="3" y="3" z="3" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\LargeCronyxReactor.mwm</Model>
+            <Components>
+                <Component Subtype="SteelPlate" Count="150" />
+                <Component Subtype="Construction" Count="100" />
+                <Component Subtype="CopperWire" Count="50" />
+                <Component Subtype="MetalGrid" Count="50" />
+                <Component Subtype="LargeTube" Count="25" />
+                <Component Subtype="Ceramic" Count="200" />
+                <Component Subtype="Reactor" Count="1000" />
+                <Component Subtype="Electromagnet" Count="100" />
+                <Component Subtype="TokamakBlanket" Count="100" />
+                <Component Subtype="Superconductor" Count="500" />
+                <Component Subtype="Thermocouple" Count="500" />
+                <Component Subtype="Detector" Count="20" />
+                <Component Subtype="GoldWire" Count="75" />
+                <Component Subtype="AdvancedComputer" Count="100" />
+				<Component Subtype="Computer" Count="50" />
+                <Component Subtype="Motor" Count="50" />
+                <Component Subtype="ArmorGlass" Count="150" />
+                <Component Subtype="SteelPlate" Count="50" />
+            </Components>
+            <CriticalComponent Subtype="Motor" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Right" StartX="1" StartY="1" EndX="2" EndY="2" />
+                <MountPoint Side="Left" StartX="1" StartY="1" EndX="2" EndY="2" />
+                <MountPoint Side="Top" StartX="1" StartY="1" EndX="2" EndY="2" />
+                <MountPoint Side="Bottom" StartX="1" StartY="1" EndX="2" EndY="2" Default="true" />
+                <MountPoint Side="Front" StartX="1" StartY="1" EndX="2" EndY="2" />
+                <MountPoint Side="Back" StartX="1" StartY="1" EndX="2" EndY="2" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Construct\LargeCronyxReactorConstruct1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Construct\LargeCronyxReactorConstruct2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Construct\LargeCronyxReactorConstruct3.mwm" />
+            </BuildProgressModels>
+            <BlockPairName>CronyxReactor</BlockPairName>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>100</BuildTimeSeconds>
+            <ResourceSourceGroup>Reactors</ResourceSourceGroup>
+            <MaxPowerOutput>600</MaxPowerOutput>
+            <InventorySize>
+                <X>2</X>
+                <Y>2</Y>
+                <Z>2</Z>
+            </InventorySize>
+
+            <!-- 
+                Values are volume fill ratio, means how much fuel reactor pulls from conveyor system to the inventory.
+                If volume fill ratio is bellow minimum, reactor starts pulling fuel up to maximum value.
+                Warning: Changing these values will affect performance.
+            -->
+            <InventoryFillFactorMin>0.2</InventoryFillFactorMin>
+            <InventoryFillFactorMax>0.6</InventoryFillFactorMax>
+
+            <!-- 
+                This is how much of fuel is pulled from conveyor system in one tick.
+                It's in minutes, means that it will pull X minutes of fuel in one tick.
+                Warning: Changing this value will affect performance.
+            -->
+            <FuelPullAmountFromConveyorInMinutes>10.0</FuelPullAmountFromConveyorInMinutes>
+
+            <FuelInfos>
+                <FuelInfo>
+                    <Id>
+                        <TypeId>Ingot</TypeId>
+                        <SubtypeId>StabilizedCronyx</SubtypeId>
+                    </Id>
+					<Ratio>1</Ratio>
+                </FuelInfo>
+            </FuelInfos>
+            <PrimarySound>ShipLrgNuclearLrg</PrimarySound>
+            <DamageEffectName>Damage_Reactor_Damaged</DamageEffectName>
+            <DamagedSound>ParticleReactor</DamagedSound>
+            <EmissiveColorPreset>Cronyx</EmissiveColorPreset>
+            <DestroyEffect>Explosion_Warhead_30</DestroyEffect>
+            <DestroySound>WepLrgWarheadExpl</DestroySound>
+            <PCU>25</PCU>
+            <IsAirTight>false</IsAirTight>
+            <TieredUpdateTimes>
+                <unsignedInt>100</unsignedInt>
+                <unsignedInt>300</unsignedInt>
+                <unsignedInt>600</unsignedInt>
+            </TieredUpdateTimes>
+            <TargetingGroups>
+                <string>PowerSystems</string>
+            </TargetingGroups>
+        </Definition>
+		
+        <Definition xsi:type="MyObjectBuilder_ReactorDefinition">
+            <Id>
+                <TypeId>Reactor</TypeId>
+                <SubtypeId>SmallCronyxReactor</SubtypeId>
+            </Id>
+            <DisplayName>Cronyx Reactor</DisplayName>
+            <Icon>Icons\CronyxReactor.dds</Icon>
+            <Description>Heavy-duty Reactor chamber, capable of containing and controlling the massive energy output of Cronyx combustion.
+			
+			Output: 30 MW
+			Fuel: Stabilized Cronyx - 0.167/min</Description>
+            <CubeSize>Small</CubeSize>
+            <GuiVisible>false</GuiVisible>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="3" y="3" z="3" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\SmallCronyxReactor.mwm</Model>
+            <SilenceableByShipSoundSystem>true</SilenceableByShipSoundSystem>
+            <Components>
+                <Component Subtype="SteelPlate" Count="15" />
+                <Component Subtype="Construction" Count="20" />
+                <Component Subtype="CopperWire" Count="15" />
+                <Component Subtype="MetalGrid" Count="20" />
+                <Component Subtype="LargeTube" Count="5" />
+                <Component Subtype="Ceramic" Count="40" />
+                <Component Subtype="Reactor" Count="100" />
+                <Component Subtype="Electromagnet" Count="30" />
+                <Component Subtype="TokamakBlanket" Count="20" />
+                <Component Subtype="Superconductor" Count="50" />
+                <Component Subtype="Thermocouple" Count="80" />
+                <Component Subtype="Detector" Count="10" />
+                <Component Subtype="GoldWire" Count="25" />
+                <Component Subtype="AdvancedComputer" Count="25" />
+				<Component Subtype="Computer" Count="10" />
+                <Component Subtype="Motor" Count="15" />
+                <Component Subtype="ArmorGlass" Count="30" />
+                <Component Subtype="SteelPlate" Count="10" />
+            </Components>
+            <CriticalComponent Subtype="Motor" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Right" StartX="1" StartY="1" EndX="2" EndY="2" />
+                <MountPoint Side="Left" StartX="1" StartY="1" EndX="2" EndY="2" />
+                <MountPoint Side="Top" StartX="1" StartY="1" EndX="2" EndY="2" />
+                <MountPoint Side="Bottom" StartX="1" StartY="1" EndX="2" EndY="2" Default="true" />
+                <MountPoint Side="Front" StartX="1" StartY="1" EndX="2" EndY="2" />
+                <MountPoint Side="Back" StartX="1" StartY="1" EndX="2" EndY="2" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Construct\SmallCronyxReactorConstruct1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Construct\SmallCronyxReactorConstruct2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Construct\SmallCronyxReactorConstruct3.mwm" />
+            </BuildProgressModels>
+            <BlockPairName>CronyxReactor</BlockPairName>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <BuildTimeSeconds>30</BuildTimeSeconds>
+            <EdgeType>Light</EdgeType>
+
+            <ResourceSourceGroup>Reactors</ResourceSourceGroup>
+            <MaxPowerOutput>30</MaxPowerOutput>
+
+            <InventorySize>
+                <X>1</X>
+                <Y>1</Y>
+                <Z>1</Z>
+            </InventorySize>
+
+            <!-- 
+                Values are volume fill ratio, means how much fuel reactor pulls from conveyor system to the inventory.
+                If volume fill ratio is bellow minimum, reactor starts pulling fuel up to maximum value.
+                Warning: Changing these values will affect performance.
+            -->
+            <InventoryFillFactorMin>0.2</InventoryFillFactorMin>
+            <InventoryFillFactorMax>0.6</InventoryFillFactorMax>
+
+            <!-- 
+                This is how much of fuel is pulled from conveyor system in one tick.
+                It's in minutes, means that it will pull X minutes of fuel in one tick.
+                Warning: Changing this value will affect performance.
+            -->
+            <FuelPullAmountFromConveyorInMinutes>10.0</FuelPullAmountFromConveyorInMinutes>
+
+            <FuelInfos>
+                <FuelInfo>
+                    <Id>
+                        <TypeId>Ingot</TypeId>
+                        <SubtypeId>StabilizedCronyx</SubtypeId>
+                    </Id>
+					<Ratio>1</Ratio>
+                </FuelInfo>
+            </FuelInfos>
+            <PrimarySound>ShipSmNuclearLrg</PrimarySound>
+            <DamageEffectName>Damage_Reactor_Damaged</DamageEffectName>
+            <DamagedSound>ParticleReactor</DamagedSound>
+            <EmissiveColorPreset>Cronyx</EmissiveColorPreset>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <PCU>25</PCU>
+            <TieredUpdateTimes>
+                <unsignedInt>100</unsignedInt>
+                <unsignedInt>300</unsignedInt>
+                <unsignedInt>600</unsignedInt>
+            </TieredUpdateTimes>
+            <TargetingGroups>
+                <string>PowerSystems</string>
+            </TargetingGroups>
+        </Definition>
+		
+	<!-- Munitions Factories -->
+  
+    <Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
+      <Id>
+        <TypeId>Assembler</TypeId>
+        <SubtypeId>CronyxMunitionsFactory</SubtypeId>
+      </Id>
+      <DisplayName>Cronyx Munitions Factory</DisplayName>
+      <Icon>Icons\CronyxMunitionsFactory.dds</Icon>
+      <Description>Produces powerful Cronyx ammunition.
+	  
+	  Power Usage: 1 MW</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="2" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\CronyxMunitionsFactory.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="80" />
+        <Component Subtype="Construction" Count="80" />
+        <Component Subtype="CopperWire" Count="25" />
+        <Component Subtype="Motor" Count="20" />
+        <Component Subtype="TitaniumPlate" Count="40" />
+        <Component Subtype="Computer" Count="20" />
+        <Component Subtype="AdvancedComputer" Count="30" />
+        <Component Subtype="SteelPlate" Count="20" />
+      </Components>
+      <CriticalComponent Subtype="AdvancedComputer" Index="0" />
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Construct\CronyxMunitionsFactoryConstruct1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Construct\CronyxMunitionsFactoryConstruct2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Construct\CronyxMunitionsFactoryConstruct3.mwm" />
+            </BuildProgressModels>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>80</BuildTimeSeconds>
+      <ResourceSinkGroup>Factory</ResourceSinkGroup>
+      <InventoryMaxVolume>4</InventoryMaxVolume>
+      <InventorySize>
+        <X>1</X>
+        <Y>1</Y>
+        <Z>1</Z>
+      </InventorySize>
+      <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+      <OperationalPowerConsumption>1</OperationalPowerConsumption>
+      <BlueprintClasses>
+        <Class>CronyxAmmo</Class>
+      </BlueprintClasses>
+      <AssemblySpeed>1</AssemblySpeed>
+      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+      <DamagedSound>ParticleHeavyMech</DamagedSound>
+      <PrimarySound>BlockAssembler</PrimarySound>
+      <ActionSound>BlockAssemblerProcess</ActionSound>
+      <DestroyEffect>Explosion_Missile</DestroyEffect>
+      <DestroySound>WepSmallMissileExpl</DestroySound>
+      <PCU>40</PCU>
+      <IsAirTight>true</IsAirTight>      
+            <EmissiveColorPreset>Extended</EmissiveColorPreset>
+    </Definition>
+	
+	
+	
+  </CubeBlocks>
+</Definitions>

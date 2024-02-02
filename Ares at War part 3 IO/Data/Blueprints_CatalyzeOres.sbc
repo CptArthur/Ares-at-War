@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Blueprints>
+  
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzeIronOre</SubtypeId>
+      </Id>
+      <DisplayName>Catalyze Iron Ore</DisplayName>
+      <Icon>Textures\GUI\Icons\ore_Fe_iron.dds</Icon>
+      <Prerequisites>
+        <Item Amount="100" TypeId="Ore" SubtypeId="PurifiedIron" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+      </Prerequisites>
+      <Result Amount="100" TypeId="Ore" SubtypeId="CatalyzedIron" />
+      <BaseProductionTimeInSeconds>5</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzeNickelOre</SubtypeId>
+      </Id>
+      <DisplayName>Catalyze Nickel Ore</DisplayName>
+      <Icon>Textures\GUI\Icons\ore_Ni_nickel.dds</Icon>
+      <Prerequisites>
+        <Item Amount="100" TypeId="Ore" SubtypeId="PurifiedNickel" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+      </Prerequisites>
+      <Result Amount="100" TypeId="Ore" SubtypeId="CatalyzedNickel" />
+      <BaseProductionTimeInSeconds>5</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzeCobaltOre</SubtypeId>
+      </Id>
+      <DisplayName>Catalyze Cobalt Ore</DisplayName>
+      <Icon>Textures\GUI\Icons\ore_Co_cobalt.dds</Icon>
+      <Prerequisites>
+        <Item Amount="100" TypeId="Ore" SubtypeId="PurifiedCobalt" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+      </Prerequisites>
+      <Result Amount="100" TypeId="Ore" SubtypeId="CatalyzedCobalt" />
+      <BaseProductionTimeInSeconds>5</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzeSiliconOre</SubtypeId>
+      </Id>
+      <DisplayName>Catalyze Silicon Ore</DisplayName>
+      <Icon>Textures\GUI\Icons\ore_Si_silicon.dds</Icon>
+      <Prerequisites>
+        <Item Amount="100" TypeId="Ore" SubtypeId="PurifiedSilicon" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+      </Prerequisites>
+      <Result Amount="100" TypeId="Ore" SubtypeId="CatalyzedSilicon" />
+      <BaseProductionTimeInSeconds>5</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzeSilverOre</SubtypeId>
+      </Id>
+      <DisplayName>Catalyze Silver Ore</DisplayName>
+      <Icon>Textures\GUI\Icons\ore_Ag_silver.dds</Icon>
+      <Prerequisites>
+        <Item Amount="100" TypeId="Ore" SubtypeId="PurifiedSilver" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+      </Prerequisites>
+      <Result Amount="100" TypeId="Ore" SubtypeId="CatalyzedSilver" />
+      <BaseProductionTimeInSeconds>5</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzeGoldOre</SubtypeId>
+      </Id>
+      <DisplayName>Catalyze Gold Ore</DisplayName>
+      <Icon>Textures\GUI\Icons\ore_Au_gold.dds</Icon>
+      <Prerequisites>
+        <Item Amount="100" TypeId="Ore" SubtypeId="PurifiedGold" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+      </Prerequisites>
+      <Result Amount="100" TypeId="Ore" SubtypeId="CatalyzedGold" />
+      <BaseProductionTimeInSeconds>5</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzePlatinumOre</SubtypeId>
+      </Id>
+      <DisplayName>Catalyze Platinum Ore</DisplayName>
+      <Icon>Textures\GUI\Icons\ore_Pt_platinum.dds</Icon>
+      <Prerequisites>
+        <Item Amount="100" TypeId="Ore" SubtypeId="PurifiedPlatinum" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+      </Prerequisites>
+      <Result Amount="100" TypeId="Ore" SubtypeId="CatalyzedPlatinum" />
+      <BaseProductionTimeInSeconds>5</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzeUraniumOre</SubtypeId>
+      </Id>
+      <DisplayName>Catalyze Uranium Ore</DisplayName>
+      <Icon>Textures\GUI\Icons\ore_UO2_uranite.dds</Icon>
+      <Prerequisites>
+        <Item Amount="100" TypeId="Ore" SubtypeId="PurifiedUranium" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="RefinedSpice" />
+      </Prerequisites>
+      <Result Amount="100" TypeId="Ore" SubtypeId="CatalyzedUranium" />
+      <BaseProductionTimeInSeconds>5</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+	<!-- Refining -->
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzedIronOreToIngot</SubtypeId>
+      </Id>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="CatalyzedIron" />
+      </Prerequisites>
+      <Result Amount="1.75" TypeId="Ingot" SubtypeId="Iron" />
+      <BaseProductionTimeInSeconds>0.05</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzedNickelOreToIngot</SubtypeId>
+      </Id>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="CatalyzedNickel" />
+      </Prerequisites>
+      <Result Amount="1.5" TypeId="Ingot" SubtypeId="Nickel" />
+      <BaseProductionTimeInSeconds>0.66</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzedCobaltOreToIngot</SubtypeId>
+      </Id>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="CatalyzedCobalt" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="Ingot" SubtypeId="Cobalt" />
+      <BaseProductionTimeInSeconds>3</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzedSiliconOreToIngot</SubtypeId>
+      </Id>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="CatalyzedSilicon" />
+      </Prerequisites>
+      <Result Amount="1.75" TypeId="Ingot" SubtypeId="Silicon" />
+      <BaseProductionTimeInSeconds>0.6</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzedSilverOreToIngot</SubtypeId>
+      </Id>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="CatalyzedSilver" />
+      </Prerequisites>
+      <Result Amount="0.25" TypeId="Ingot" SubtypeId="Silver" />
+      <BaseProductionTimeInSeconds>1</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzedGoldOreToIngot</SubtypeId>
+      </Id>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="CatalyzedGold" />
+      </Prerequisites>
+      <Result Amount="0.125" TypeId="Ingot" SubtypeId="Gold" />
+      <BaseProductionTimeInSeconds>0.4</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzedPlatinumOreToIngot</SubtypeId>
+      </Id>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="CatalyzedPlatinum" />
+      </Prerequisites>
+      <Result Amount="0.0625" TypeId="Ingot" SubtypeId="Platinum" />
+      <BaseProductionTimeInSeconds>3</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CatalyzedUraniumOreToIngot</SubtypeId>
+      </Id>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="CatalyzedUranium" />
+      </Prerequisites>
+      <Results>
+        <Item Amount="0.125" TypeId="Ingot" SubtypeId="Uranium" />
+        <Item Amount="0.5" TypeId="Ingot" SubtypeId="DepletedUranium" />
+      </Results>
+      <BaseProductionTimeInSeconds>4</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+  </Blueprints>
+</Definitions>
