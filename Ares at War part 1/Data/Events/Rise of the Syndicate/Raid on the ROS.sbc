@@ -1,0 +1,464 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+ 
+<!--
+Start: NewsAlert
+5 min later: GCAnnouncement of the blockade.
+--> 
+
+
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-RaidOnTheROSCrait-Start</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		[Tags:AaW-StoryEvent]	
+
+		[MinCooldownMs:600000]
+		[MaxCooldownMs:600001]
+		[OnFailResetCooldown:true]
+		
+		
+		[PersistantConditionIds:AaW-EventCondition-RaidOnTheROSCrait-Basic]
+		
+		[ConditionIds:AaW-EventCondition-RaidOnTheROSCrait-ThreatScore-Lorus]
+		[ConditionIds:AaW-EventCondition-RaidOnTheROSCrait-ThreatScore-Agaris]	
+		[ConditionIds:AaW-EventCondition-RaidOnTheROSCrait-ThreatScore-Other]			
+		[UseAnyPassingCondition:true]
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000] 
+		
+		[ActionIds:AaW-EventAction-RaidOnTheROSCrait-Start]		
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-RaidOnTheROSCrait-NewsAlert]	
+
+      </Description>
+	</EntityComponent>	
+	  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-RaidOnTheROSCrait-Basic</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[CheckTrueBooleans:true]
+	[TrueBooleans:SYNActive]  
+	[TrueBooleans:GCActive]  
+		[TrueBooleans:TesterMode]
+		
+		
+	[CheckFalseBooleans:true]	  
+	[FalseBooleans:SYN-HQDestroyed]	 	
+	[FalseBooleans:ROS-CraitCrystalResearchDestroyed]
+	[FalseBooleans:GC-CraitStationDestroyed]
+
+
+	 	
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+<!-- Everything except Agaris -->	  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-RaidOnTheROSCrait-ThreatScore-Lorus</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+	[CheckThreatScore:true]
+	[ThreatScoreAmount:200]
+	[ThreatScoreDistance:5000]
+	[ThreatScoreCoords:{X:-1249083.5 Y:-521370.5 Z:-1803753.5}]
+	[ThreatScoreDistanceFromCoords:38220]
+	[ThreatScoreType:PlayerLocation]
+	[ThreatScoreGridConfiguration:All]
+      </Description> 
+    </EntityComponent>		  
+	  
+	  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-RaidOnTheROSCrait-ThreatScore-Agaris</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+	[CheckThreatScore:true]
+	[ThreatScoreAmount:1600]
+	[ThreatScoreDistance:5000]
+	[ThreatScoreCoords:{X:-1129033.5 Y:126871.5 Z:1293873.5}]
+	[ThreatScoreDistanceFromCoords:94780]
+	[ThreatScoreType:PlayerLocation]
+	[ThreatScoreGridConfiguration:All]
+	
+      </Description> 
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-RaidOnTheROSCrait-ThreatScore-Other</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+		[CheckThreatScore:true]
+	[ThreatScoreAmount:1200]
+	[ThreatScoreDistance:5000]
+	[ThreatScoreCoords:{X:377352.46 Y:-109733.06 Z:-335181.19}]
+	[ThreatScoreDistanceFromCoords:2150000]
+	[ThreatScoreType:PlayerLocation]
+	[ThreatScoreGridConfiguration:All]
+
+      </Description> 
+    </EntityComponent>	
+  
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-RaidOnTheROSCrait-Start</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+	
+		[ToggleEvents:true]
+		[ToggleEventTags:AaW-StoryEvent]
+		[ToggleEventTagModes:false]
+		
+		[ToggleEventTags:RaidOnTheROSCrait]
+		[ToggleEventTagModes:true]
+
+		
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownTags:RaidOnTheROSCrait]
+
+		
+		
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-RaidOnTheROSCrait-NewsAlert</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-RaidOnTheROSCrait-NewsAlert]
+	
+	
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:An unknown group has raided the ROS research station on Crait.]
+      </Description>
+      
+    </EntityComponent>
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-RaidOnTheROSCrait-NewsAlert</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Blue]
+      [Author:Ares News Station]
+        
+      [ChatMessages:An unknown group has raided the ROS research station on Crait. Initial reports tell us that a lot of prototype weapons have been stolen. How the raiders managed to get past the security grid is unknown. The GC has yet to respond to this shocking incident.]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]   
+      </Description>
+      
+    </EntityComponent>		
+
+
+<!-- GCAnnouncement
+		[ChangeBooleans:true]
+		[SetBooleansTrue:RaidOnTheROSCrait]	
+		-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-RaidOnTheROSCrait-GCAnnouncement</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[Tags:RaidOnTheROSCrait]	
+
+		[MinCooldownMs:300000]
+		[MaxCooldownMs:300001]	
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000] 
+
+		
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-RaidOnTheROSCrait-GCAnnouncement]
+
+      </Description>
+	</EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-RaidOnTheROSCrait-GCAnnouncement</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-RaidOnTheROSCrait-GCAnnouncement]
+      </Description>
+    </EntityComponent>		
+		
+
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-RaidOnTheROSCrait-GCAnnouncement</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Red]
+      [Author:GC Command]
+        
+      [ChatMessages:To those responsible for the raid at our ROS research station, know this – The GC is ready and eager to respond. You will be met with swift and decisive retaliation.]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]   	  
+      </Description>
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-RaidOnTheROSCrait-GCAnnouncement-BlameSYN</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[Tags:RaidOnTheROSCrait]	
+
+		[MinCooldownMs:900000]
+		[MaxCooldownMs:900001]	
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000] 
+
+		
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-RaidOnTheROSCrait-GCAnnouncement-BlameSYN]
+      </Description>
+	</EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-RaidOnTheROSCrait-GCAnnouncement-BlameSYN</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-RaidOnTheROSCrait-GCAnnouncement-BlameSYN]
+
+	[ChangeBooleans:true]
+	[SetBooleansTrue:GCBlamesSYNForROSRaid]	
+	
+	
+		[ToggleEvents:true]
+		[ToggleEventTags:AaW-StoryEvent]
+		[ToggleEventTagModes:true]
+
+
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownTags:AaW-StoryEvent]	
+      </Description>
+    </EntityComponent>		
+		
+
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-RaidOnTheROSCrait-GCAnnouncement-BlameSYN</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Red]
+      [Author:GC Command]
+        
+      [ChatMessages:We have reasons to believe that the Shivan Syndicate is partly responsible for the raid on Crait. They will pay for this!]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]   	  
+      </Description>
+    </EntityComponent>		
+	
+	
+	
+	
+	
+
+	
+	<!-- End -->
+	
+			
+		
+<!--		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-RaidOnTheROSCrait-2hStart</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+		
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:StartRaidOnTheROSCrait]
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-CreateGPS]
+	[CustomActionArgumentsString:Imminent GC Invasion]
+	[CustomActionArgumentsString:GC has announced that they are going to invade Lorus! If all civilians do not leave, immediately they will be seen as an enemy of the GC]
+	[CustomActionArgumentsInt:120]		
+	[CustomActionArgumentsVector3D:{X:-1249083.5 Y:-521370.5 Z:-1803753.5}]	
+	
+      </Description>
+      
+    </EntityComponent>		
+		
+		
+		
+		
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-RaidOnTheROSCrait-StartRaidOnTheROSCrait</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[Tags:RaidOnTheROSCrait]	
+
+		[MinCooldownMs:7200000]
+		[MaxCooldownMs:7200001]	
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000] 
+
+		
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-RaidOnTheROSCrait-GCAnnouncement]
+		[ActionIds:AaW-EventAction-RaidOnTheROSCrait-StartRaidOnTheROSCrait]
+      </Description>
+	</EntityComponent>		
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-RaidOnTheROSCrait-StartRaidOnTheROSCrait</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+		
+	[ChangeBooleans:true]
+	[SetBooleansTrue:RaidOnTheROSCrait]
+
+	[ChangeReputationWithPlayers:true]
+	[ReputationPlayerConditionIds:PlayerCondition-Position-Lorus]
+	[ReputationPlayerConditionIds:PlayerCondition-Reputation-GCNeutral]
+	[ReputationChangeFactions:GC]
+	[ReputationChangeAmount:-3000]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+      </Description>
+    </EntityComponent>		
+	
+	-->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

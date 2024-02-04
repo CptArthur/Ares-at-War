@@ -165,7 +165,55 @@
 	
 	
 	
-	
+		<!-- LorusCommandCenter -->
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>GCLorus</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		[AdminSpawnOnly:true]
+
+		[ForceStaticGrid:true]
+
+		[FactionOwner:GC]		
+
+		[PlanetaryInstallation:true]
+		[PlanetaryInstallationType:Medium]
+
+
+		[UseRandomNameGenerator:true]
+		
+		[RandomGridNamePattern:Lorus Command Center]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[SandboxVariables:GCLorus]			
+		[ZoneConditions:ZoneCondition-ZoneAaW]
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="GC-HeavyBase">
+				<Position>
+					<X>0.0</X>
+					<Y>-88</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>GC-CapturableController-Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+		
+	</SpawnGroup>
 	
 	
 	

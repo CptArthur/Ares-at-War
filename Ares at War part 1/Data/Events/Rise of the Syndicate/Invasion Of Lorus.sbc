@@ -17,15 +17,22 @@ Start: NewsAlert
 
 		[MES Event]
 		[UniqueEvent:true]
-		[Tags:AaW-StoryEvent]			
-		[ConditionIds:AaW-EventCondition-GCInvasionOfLorus-Basic]
-		[ConditionIds:AaW-EventCondition-GCInvasionOfLorus-ThreatScore]
-		[ConditionIds:AaW-EventCondition-GCInvasionOfLorus-PlayerNotNear]	
+		[Tags:AaW-StoryEvent]
+
+		[MinCooldownMs:3600000]
+		[MaxCooldownMs:7200001]
+		[OnFailResetCooldown:true]
+		
+		[PersistantConditionIds:AaW-EventCondition-GCInvasionOfLorus-Basic]
+		[PersistantConditionIds:AaW-EventCondition-GCInvasionOfLorus-Basic2]
+		
+		
+		[ConditionIds:AaW-EventCondition-GCInvasionOfLorus-CasusBelli-RaidOnROSCrait]
 		
 		[ActionExecution:Sequential]
 		[TimeUntilNextActionMs:5000] 
 
-		[ActionIds:AaW-EventAction-GCInvasionOfLorus]		
+		[ActionIds:AaW-EventAction-GCInvasionOfLorus-Start]		
 		[ActionIds:AaW-EventAction-Common-IncomingMessage]
 		[ActionIds:AaW-EventAction-GCInvasionOfLorus-NewsAlert]	
 
@@ -44,9 +51,14 @@ Start: NewsAlert
 	[CheckTrueBooleans:true]
 	[TrueBooleans:SYNActive]  
 	[TrueBooleans:GCActive]  
-
+	[TrueBooleans:SYN-ForegoneStationDestroyed]  
+		[TrueBooleans:TesterMode]
+	
 	[CheckFalseBooleans:true]	  
 	[FalseBooleans:SYN-HQDestroyed]	 	
+
+
+
 
 	[CheckCustomCounters:true]
 	[CustomCounters:GCAgarisMode]
@@ -56,48 +68,51 @@ Start: NewsAlert
       
     </EntityComponent>	
 
-<!-- Include the belt, but not Lezuno -->	  
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventCondition-GCInvasionOfLorus-ThreatScore</SubtypeId>
+          <SubtypeId>AaW-EventCondition-GCInvasionOfLorus-Basic2</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:true]
+
+	[CheckFalseBooleans:true]	  
+	[FalseBooleans:GC-CraitStationDestroyed]
+	[FalseBooleans:GC-LezunoStationDestroyed]
+	[FalseBooleans:GC-BylenStationDestroyed]
+	
+	[CheckCustomCounters:true]
+	[CustomCounters:GCAgarisMode]
+	[CustomCountersTargets:1]
+	[CounterCompareTypes:LessOrEqual]		 	
+      </Description>
+      
+    </EntityComponent>	
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCInvasionOfLorus-CasusBelli-RaidOnROSCrait</SubtypeId>
       </Id>
       <Description>
 
       [MES Event Condition]
 	  
-	[CheckThreatScore:true]
-	[ThreatScoreAmount:600]
-	[ThreatScoreDistance:5000]
-	[ThreatScoreCoords:{X:-1249083.5 Y:-521370.5 Z:-1803753.5}]
-	[ThreatScoreDistanceFromCoords:90000]
-	[ThreatScoreType:PlayerLocation]
-	[ThreatScoreGridConfiguration:All]
+	[CheckTrueBooleans:true]
+	[TrueBooleans:GCBlamesSYNForROSRaid]
+	
       </Description> 
     </EntityComponent>		  
 	  
 	  
-	  
-<!-- Otherwise what is the point of this event-->	  
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventCondition-GCInvasionOfLorus-PlayerNearLorus</SubtypeId>
-      </Id>
-      <Description>
-
-	[MES Event Condition]
-
-	[CheckPlayerNear:true]
-	[PlayerNearCoords:{X:-1249083.5 Y:-521370.5 Z:-1803753.5}]
-	[PlayerNearDistanceFromCoords:90000]
-      </Description>  
-    </EntityComponent>	
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventAction-GCInvasionOfLorus</SubtypeId>
+          <SubtypeId>AaW-EventAction-GCInvasionOfLorus-Start</SubtypeId>
       </Id>
       <Description>
 		[MES Event Action]
@@ -105,8 +120,12 @@ Start: NewsAlert
 		[ToggleEvents:true]
 		[ToggleEventTags:GCInvasionOfLorus]
 		[ToggleEventTagModes:true]
+		
+		[ToggleEventTags:AaW-StoryEvent]
+		[ToggleEventTagModes:false]
+		
 		[ResetCooldownTimeOfEvents:true]
-		[ResetEventCooldownTags:GCInvasionOfLorus]
+		[ResetEventCooldownTags:GCInvasionOfLorus]		
 		
       </Description>
       
@@ -127,7 +146,7 @@ Start: NewsAlert
 	
 	[ActivateCustomAction:true]
 		[CustomActionName:ScT-AddNews]
-		[CustomActionArgumentsString:A large GC fleet has been spotted moving towards the planet Lorus.]
+		[CustomActionArgumentsString:A large GC invasion fleet has been spotted orbiting the planet Lorus.]
       </Description>
       
     </EntityComponent>
@@ -135,7 +154,7 @@ Start: NewsAlert
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventChat-NewsAlert</SubtypeId>
+          <SubtypeId>AaW-EventChat-GCInvasionOfLorus-NewsAlert</SubtypeId>
       </Id>
 	  
       <Description>
@@ -155,9 +174,9 @@ Start: NewsAlert
       [Color:Blue]
       [Author:Ares News Station]
         
-      [ChatMessages:]
+      [ChatMessages:A large GC invasion fleet has been spotted orbiting the planet Lorus.]
       [BroadcastChatType:Chat]
-      [ChatAudio:A large GC fleet has been spotted moving towards the planet Lorus.]   
+      [ChatAudio:]   
       </Description>
       
     </EntityComponent>		
@@ -187,8 +206,8 @@ Start: NewsAlert
 
 		
 		[ActionIds:AaW-EventAction-Common-IncomingMessage]
-		[ActionIds:AaW-EventAction-GCInvasionOfLorus-GCAnnouncement]
 		[ActionIds:AaW-EventAction-GCInvasionOfLorus-2hStart]
+		[ActionIds:AaW-EventAction-GCInvasionOfLorus-GCAnnouncement]
       </Description>
 	</EntityComponent>	
 	
@@ -204,15 +223,17 @@ Start: NewsAlert
 	[MES Event Action]
 		
 	[ResetCooldownTimeOfEvents:true]
-	[ResetEventCooldownIds:StartGCInvasionOfLorus]
+	[ResetEventCooldownIds:AaW-Event-GCInvasionOfLorus-StartGCInvasionOfLorus]
 
 	[ActivateCustomAction:true]
 	[CustomActionName:ScT-CreateGPS]
-	[CustomActionArgumentsString:Imminent GC Invasion]
+	[CustomActionArgumentsString:Imminent GC Invasion of Lorus]
 	[CustomActionArgumentsString:GC has announced that they are going to invade Lorus! If all civilians do not leave, immediately they will be seen as an enemy of the GC]
 	[CustomActionArgumentsInt:120]		
 	[CustomActionArgumentsVector3D:{X:-1249083.5 Y:-521370.5 Z:-1803753.5}]	
-	
+
+
+		
       </Description>
       
     </EntityComponent>		
@@ -281,7 +302,6 @@ Start: NewsAlert
 
 		
 		[ActionIds:AaW-EventAction-Common-IncomingMessage]
-		[ActionIds:AaW-EventAction-GCInvasionOfLorus-GCAnnouncement]
 		[ActionIds:AaW-EventAction-GCInvasionOfLorus-StartGCInvasionOfLorus]
       </Description>
 	</EntityComponent>		
@@ -299,17 +319,72 @@ Start: NewsAlert
 	[ChangeBooleans:true]
 	[SetBooleansTrue:GCInvasionOfLorus]
 
+	[ToggleEvents:true]
+	[ToggleEventTags:AaW-StoryEvent]
+	[ToggleEventTagModes:true]
+
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:AaW-StoryEvent]
+
+
 	[ChangeReputationWithPlayers:true]
 	[ReputationPlayerConditionIds:PlayerCondition-Position-Lorus]
-	[ReputationPlayerConditionIds:PlayerCondition-Reputation-GCNeutral]
+	[ReputationPlayerConditionIds:PlayerCondition-GCNeutral]
 	[ReputationChangeFactions:GC]
 	[ReputationChangeAmount:-3000]
 	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+	
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:GC invasion of Lorus has started]
+
+	
       </Description>
     </EntityComponent>		
 	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-GCInvasionOfLorus-NewsAlert</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Blue]
+      [Author:Ares News Station]
+        
+      [ChatMessages:GC invasion of Lorus has started]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]   
+      </Description>
+      
+    </EntityComponent>	
 	
+<!-- GCLorus
+Spawn: LorusCommandCenter
+-->
+
+<!-- Win Condition -->
+
+
 	
+<!-- Lose invasion of Lorus -->
+
+
+
 	
 	
 	

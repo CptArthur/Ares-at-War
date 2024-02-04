@@ -5,7 +5,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>PlayerConditionProfile-ExcludedPlayerNear</SubtypeId>
+          <SubtypeId>PlayerCondition-ExcludedPlayerNear</SubtypeId>
       </Id>
       <Description>
 
@@ -21,7 +21,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>PlayerConditionProfile-IncludedPlayerNear</SubtypeId>
+          <SubtypeId>PlayerCondition-IncludedPlayerNear</SubtypeId>
       </Id>
       <Description>
 
@@ -38,19 +38,16 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>PlayerConditionProfile-ITCNeutral</SubtypeId>
+          <SubtypeId>PlayerCondition-ITCNeutral</SubtypeId>
       </Id>
       <Description>
 
 	[MES Player Condition]
-	
 	
 	[CheckPlayerReputation:true]
 	[CheckReputationwithFaction:ITC]
 	[MinPlayerReputation:-499]
 	[MaxPlayerReputation:499]
-
-
       </Description>
       
     </EntityComponent>	
@@ -59,7 +56,75 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>PlayerConditionProfile-ITCFriendly</SubtypeId>
+          <SubtypeId>PlayerCondition-ITCFriendly</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:ITC]
+	[MinPlayerReputation:500]
+	[MaxPlayerReputation:1500]
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition-SYNNeutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SYN]
+	[MinPlayerReputation:-499]
+	[MaxPlayerReputation:499]
+      </Description>
+      
+    </EntityComponent>	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition-SYNPositiveNeutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SYN]
+	[MinPlayerReputation:0]
+	[MaxPlayerReputation:499]
+
+      </Description>
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition-SYNFriendly</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SYN]
+	[MinPlayerReputation:500]
+	[MaxPlayerReputation:1500]
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition-GCHostile</SubtypeId>
       </Id>
       <Description>
 
@@ -67,20 +132,17 @@
 	
 	
 	[CheckPlayerReputation:true]
-	[CheckReputationwithFaction:ITC]
-	[MinPlayerReputation:500]
-	[MaxPlayerReputation:1500]
+	[CheckReputationwithFaction:GC]
+	[MinPlayerReputation:-1500]
+	[MaxPlayerReputation:-500]
 
-
-      </Description>
-      
+      </Description>      
     </EntityComponent>	
-
-
+	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>PlayerCondition-Reputation-GCNeutral</SubtypeId>
+          <SubtypeId>PlayerCondition-GCNeutral</SubtypeId>
       </Id>
       <Description>
 
@@ -101,7 +163,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>PlayerCondition-Reputation-GCFriendly</SubtypeId>
+          <SubtypeId>PlayerCondition-GCFriendly</SubtypeId>
       </Id>
       <Description>
 
@@ -120,6 +182,64 @@
 
 
 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition-FAFNeutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:-499]
+	[MaxPlayerReputation:499]
+
+      </Description>
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition-FAFPositiveNeutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:0]
+	[MaxPlayerReputation:499]
+
+      </Description>
+    </EntityComponent>	
+
+
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition-FAFFriendly</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:500]
+	[MaxPlayerReputation:1500]
+
+
+      </Description>
+      
+    </EntityComponent>	
 
 
 
@@ -130,7 +250,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>PlayerConditionProfile-AHENeutral</SubtypeId>
+          <SubtypeId>PlayerCondition-AHENeutral</SubtypeId>
       </Id>
       <Description>
 
@@ -151,7 +271,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>PlayerConditionProfile-AHEFriendly</SubtypeId>
+          <SubtypeId>PlayerCondition-AHEFriendly</SubtypeId>
       </Id>
       <Description>
 

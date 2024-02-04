@@ -113,8 +113,8 @@ SYN-ForgoneStation-Triggers-PlayerFar
 	[RivalAI Trigger]
 	[Type:PlayerNear]
 	[TargetDistance:2000]
-	[UsePlayerFilterProfile:true]
-	[PlayerFilterProfileIds:PlayerFilterProfile-ExcludedPlayerNear]
+	[UsePlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition-ExcludedPlayerNear]
 	[UseTrigger:true]
 	[StartsReady:true]
 	  
@@ -135,8 +135,9 @@ SYN-ForgoneStation-Triggers-PlayerFar
 	[UseChatBroadcast:true]
     [ChatData:SYN-ForgoneStation-Chat-Greeting]    
 	
-	[SavePlayerIdentityToSandboxList:true]
-	[PlayerIdentitySandboxList:PlayerNear]
+	[AddTagsToPlayers:true]
+	[AddTags:PlayerNear]
+	[AddTagsIncludeSavedPlayerIdentity:true]
 
 	[SavePlayerIdentity:true]
       </Description>
@@ -161,8 +162,8 @@ SYN-ForgoneStation-Triggers-PlayerFar
       [MinTime:2]
       [MaxTime:3]
 
-      [Author:Azuris]
-      [Color:Forgone Station]
+      [Author:Forgone Station]
+      [Color:White]
       
 	[ChatMessages:Greetings {PlayerName}! Welcome to Forgone Station]
 	[BroadcastChatType:Chat]
@@ -184,8 +185,10 @@ SYN-ForgoneStation-Triggers-PlayerFar
 	[RivalAI Trigger]
 	[Type:PlayerFar]
 	[TargetDistance:3500]
-	[UsePlayerFilterProfile:true]
-	[PlayerFilterProfileIds:PlayerFilterProfile-IncludedPlayerNear]
+	[UsePlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition-ExcludedPlayerNear]
+	[PlayerConditionIds:PlayerCondition-SYNNeutral]
+	
 	
 	[UseTrigger:true]
 	[StartsReady:true]
@@ -206,9 +209,9 @@ SYN-ForgoneStation-Triggers-PlayerFar
 
       [RivalAI Action]
         
-	[RemovePlayerIdentityFromSandboxList:true]
-	[PlayerIdentitySandboxList:PlayerNear]
-	[RemovePlayerIdentity:true]
+	[RemoveTagsFromPlayers:true]
+	[RemoveTags:PlayerNear]
+	[RemoveTagsIncludeSavedPlayerIdentity:true]
       </Description>
       
     </EntityComponent>	

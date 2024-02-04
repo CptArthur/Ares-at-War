@@ -1,0 +1,802 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+ 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-GCAttackOnForgoneStation-Start</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		[Tags:AaW-StoryEvent]
+
+		[MinCooldownMs:600000]
+		[MaxCooldownMs:1200001]
+		[OnFailResetCooldown:true]
+		
+		[PersistantConditionIds:AaW-EventCondition-GCAttackOnForgoneStation-Basic]
+		[PersistantConditionIds:AaW-EventCondition-GCAttackOnForgoneStation-Basic2]		
+
+		[ConditionIds:AaW-EventCondition-GCAttackOnForgoneStation-CasusBelli-RaidOnROSCrait]
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000] 
+
+	
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-GCAttackOnForgoneStation-NewsAlert]	
+		[ActionIds:AaW-EventAction-GCAttackOnForgoneStation-Start]
+
+      </Description>
+	</EntityComponent>	
+	  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCAttackOnForgoneStation-Basic</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[CheckTrueBooleans:true]
+	[TrueBooleans:SYNActive]  
+	[TrueBooleans:GCActive]  
+	[TrueBooleans:TesterMode]
+
+
+	
+	[CheckFalseBooleans:true]	  
+	[FalseBooleans:SYN-HQDestroyed]
+	[FalseBooleans:SYN-ForegoneStationDestroyed]	 				 	
+      </Description>
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCAttackOnForgoneStation-Basic2</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	
+	[UseAnyPassingCondition:true]
+
+	[CheckFalseBooleans:true]	  
+	[FalseBooleans:GC-CraitStationDestroyed]
+	[FalseBooleans:GC-LezunoStationDestroyed]
+	[FalseBooleans:GC-BylenStationDestroyed]
+	[AllowAnyFalseBoolean:true]
+	
+	[CheckCustomCounters:true]
+	[CustomCounters:GCAgarisMode]
+	[CustomCountersTargets:1]
+	[CounterCompareTypes:LessOrEqual]		
+      </Description>
+    </EntityComponent>	
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCAttackOnForgoneStation-CasusBelli-RaidOnROSCrait</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+	[CheckTrueBooleans:true]
+	[TrueBooleans:GCBlamesSYNForROSRaid]
+	
+      </Description> 
+    </EntityComponent>		  
+	  
+	  
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCAttackOnForgoneStation-Start</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+	
+		[ToggleEvents:true]
+		
+		[ToggleEventTags:GCAttackOnForgoneStation]
+		[ToggleEventTagModes:true]
+		
+		[ToggleEventTags:AaW-StoryEvent]
+		[ToggleEventTagModes:false]
+		
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownTags:GCAttackOnForgoneStation]
+		
+		[ChangeBooleans:true]
+		[SetBooleansTrue:GCAttackOnForgoneStation]		
+
+		
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-CreateGPS]
+		[CustomActionArgumentsString:Battle for Forgone Station]
+		[CustomActionArgumentsString:The GC attacks Forgone Station]
+		[CustomActionArgumentsInt:120]		
+		[CustomActionArgumentsVector3D:{X:-1222071.74 Y:-519946.69 Z:-1835853.98}]	
+
+      </Description>      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCAttackOnForgoneStation-NewsAlert</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-GCAttackOnForgoneStation-NewsAlert]
+	
+	
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:Forgone Station, the stronghold of the Shivan Syndicate, comes under attack by the GC]
+      </Description>
+    </EntityComponent>
+		
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-GCAttackOnForgoneStation-NewsAlert</SubtypeId>
+      </Id> 
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:true]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Blue]
+      [Author:Ares News Station]
+        
+      [ChatMessages:Breaking News: Forgone Station, the stronghold of the Shivan Syndicate, comes under attack by the GC in apparent retaliation for recent Syndicate actions.]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]   
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	<!-- GCAttackOnForgoneStation -->
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCAttackOnForgoneStation</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	
+	[CheckTrueBooleans:true]
+	[TrueBooleans:GCAttackOnForgoneStation]  
+
+      </Description>
+      
+    </EntityComponent>	
+
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-GCAttackOnForgoneStation-PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[Tags:GCAttackOnForgoneStation]
+	
+		[ConditionIds:AaW-EventCondition-GCAttackOnForgoneStation]	
+		[ConditionIds:AaW-EventCondition-GCAttackOnForgoneStation-PlayerNear]
+		
+		
+		[ActionExecution:All]
+		[ActionIds:AaW-EventAction-GCAttackOnForgoneStation-StartLiveBattle]
+
+      </Description>
+	</EntityComponent>	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCAttackOnForgoneStation-PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+
+	[CheckPlayerNear:true]
+	[PlayerNearCoords:{X:-1222071.74 Y:-519946.69 Z:-1835853.98}]
+	[PlayerNearDistanceFromCoords:6500]
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCAttackOnForgoneStation-StartLiveBattle</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:GCAttackOnForgoneStation]
+	[ToggleEventTagModes:false]	
+	
+	[ToggleEventTags:LiveGCAttackOnForgoneStation]
+	[ToggleEventTagModes:true]		
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:LiveGCAttackOnForgoneStation]	
+	
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-RemoveGPS]
+	[CustomActionArgumentsString:Battle for Forgone Station]
+
+	
+	[SpawnEncounter:true]
+	[SpawnData:GC-Spawner-MediumStrikeForce]
+	[SpawnFactionTags:GC]
+	[SpawnCoords:{X:-1222071.74 Y:-519946.69 Z:-1835853.98}]
+	
+	[AddTagstoPlayers:true]
+	[AddTagsPlayerConditionIds:PlayerCondition-Position-NearSYNForgoneStation]
+	[AddTags:WitnessGCAttackOnForgoneStation]
+	
+      </Description>
+      
+    </EntityComponent>		
+		
+		
+		
+<!--
+LiveGCAttackOnForgoneStation
+-->
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-LiveGCAttackOnForgoneStation-AttackerWins</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]	
+		[ConditionIds:AaW-EventCondition-GCAttackOnForgoneStation]
+		[ConditionIds:AaW-EventCondition-LiveGCAttackOnForgoneStation-AttackerWins]		
+		[Tags:LiveGCAttackOnForgoneStation]
+
+		[ActionIds:AaW-EventAction-GCAttackOnForgoneStation-Outcome-GCWon]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-LiveGCAttackOnForgoneStation-AttackerWins</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	
+	[CheckTrueBooleans:true]
+	[TrueBooleans:SYN-ForegoneStationDestroyed] 
+      </Description>
+      
+    </EntityComponent>			
+		
+
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-LiveGCAttackOnForgoneStation-DefenderWins</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:11000]
+		[MaxCooldownMs:11001]	
+		
+		[ConditionIds:AaW-EventCondition-GCAttackOnForgoneStation]
+		[ConditionIds:AaW-EventCondition-LiveGCAttackOnForgoneStation-DefenderWins]		
+		[Tags:LiveGCAttackOnForgoneStation]
+		[Tags:GCAliveCheck]
+		
+		
+		[ActionIds:AaW-EventAction-GCAttackOnForgoneStation-Outcome-SYNWon]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-LiveGCAttackOnForgoneStation-DefenderWins</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	
+	[CheckFalseBooleans:true]
+	[FalseBooleans:SYN-ForegoneStationDestroyed] 
+
+      </Description>
+      
+    </EntityComponent>			
+		
+		
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-LiveGCAttackOnForgoneStation-DefenderWins-CheckAttackers</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[Tags:LiveGCAttackOnForgoneStation]		
+		[UniqueEvent:false]
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+		
+		[ConditionIds:AaW-EventCondition-GCAttackOnForgoneStation]
+		[ConditionIds:AaW-EventCondition-LiveGCAttackOnForgoneStation-DefenderWins]		
+
+
+		[ActionIds:AaW-EventAction-LiveGCAttackOnForgoneStation-DefenderWins-CheckAttackers]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-LiveGCAttackOnForgoneStation-DefenderWins-CheckAttackers</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:GC-Command-GCAliveCheck]
+	[CommandProfileOriginCoords:{X:-1222071.74 Y:-519946.69 Z:-1835853.98}]
+      </Description>
+      
+    </EntityComponent>					
+		
+		
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-Command-GCAliveCheck</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Command]
+      
+      [CommandCode:GCAliveCheck]
+      
+	  [IgnoreAntennaRequirement:true]
+	  [IgnoreReceiverAntennaRequirement:true]
+	  [MatchSenderReceiverOwners:false]
+	  
+	  [Radius:9000]
+      </Description>
+      
+    </EntityComponent>		
+		
+		
+		
+		
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-GCAttackOnForgoneStation-Simulate</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:7200000]
+		[MaxCooldownMs:7200001]		
+		[ConditionIds:AaW-EventCondition-GCAttackOnForgoneStation]		
+		[Tags:GCAttackOnForgoneStation]
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+		[ActionIds:AaW-EventAction-GCAttackOnForgoneStation-Simulate-GCWon]
+		[ActionIds:AaW-EventAction-GCAttackOnForgoneStation-Outcome-GCWon]
+
+
+      </Description>
+	</EntityComponent>	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCAttackOnForgoneStation-Simulate-GCWon</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	
+	[ToggleEvents:true]
+	[ToggleEventTags:GCAttackOnForgoneStation]
+	[ToggleEventTagModes:false]	
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-RemoveGPS]
+	[CustomActionArgumentsString:Battle for Forgone Station]
+	
+	
+      </Description>
+      
+    </EntityComponent>			
+	
+	
+<!-- 
+GC wins
+ -->
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCAttackOnForgoneStation-Outcome-GCWon</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:GCAttackOnForgoneStation]
+	[ToggleEventTagModes:false]
+
+	[ToggleEventTags:AaW-StoryEvent]
+	[ToggleEventTagModes:true]
+		
+		
+	[ToggleEventTags:LiveGCAttackOnForgoneStation]
+	[ToggleEventTagModes:false]
+
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:AaW-Event-GCInvasionOfLorus-Start]
+	[ResetEventCooldownTags:AaW-StoryEvent]
+
+	[AddTagstoPlayers:true]
+	[AddTagsPlayerConditionIds:PlayerCondition-Position-NearSYNForgoneStation]
+	[AddTags:WitnessGCAttackOnForgoneStation]
+
+
+	[ChangeBooleans:true] 
+	[SetBooleansTrue:SYN-ForegoneStationDestroyed] 
+	
+	
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-GCAttackOnForgoneStation-GCWon]			
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:Foregone Station has been destroyed]
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-GCAttackOnForgoneStation-GCWon</SubtypeId>
+      </Id>
+	  
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Blue]
+      [Author:Ares News Station]
+        
+      [ChatMessages:Foregone Station has been destroyed]
+      [BroadcastChatType:Chat]
+      [ChatAudio:event_red_alert]  
+    	  
+      </Description>
+    </EntityComponent>		
+
+	
+<!-- 
+Defenders: SYN win
+ -->	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCAttackOnForgoneStation-Outcome-SYNWon</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:GCAttackOnForgoneStation]
+	[ToggleEventTagModes:false]
+
+	[ToggleEventTags:AaW-StoryEvent]
+	[ToggleEventTagModes:true]
+
+	[ToggleEventTags:LiveGCAttackOnForgoneStation]
+	[ToggleEventTagModes:false]
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:AaW-StoryEvent]	
+	
+	[AddTagstoPlayers:true]
+	[AddTagsPlayerConditionIds:PlayerCondition-Position-NearSYNForgoneStation]
+	[AddTags:WitnessGCAttackOnForgoneStation]
+	
+	
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-GCAttackOnForgoneStation-SYNWon]			
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:The SYN successfully repelled the GC at Forgone Station]
+	
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-GCAttackOnForgoneStation-SYNWon</SubtypeId>
+      </Id>
+	  
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Blue]
+      [Author:Ares News Station]
+        
+      [ChatMessages:The SYN successfully repelled the GC at Forgone Station]
+      [BroadcastChatType:Chat]
+      [ChatAudio:event_red_alert]  
+    	  
+      </Description>
+    </EntityComponent>			
+	
+<!-- BaatleForAHEHQFAFWON-->
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-GCAttackOnForgoneStationSYNWon-PlayersTags</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[Tags:GCAttackOnForgoneStationSYNWon]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:4000]
+		[MaxCooldownMs:4001]	
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+		
+		
+		[ActionIds:AaW-EventAction-GCAttackOnForgoneStationSYNWon-UpdateREP]
+		[ActionIds:AaW-EventAction-GCAttackOnForgoneStationSYNWon-PlayersTags]
+		[ActionIds:AaW-EventAction-GCAttackOnForgoneStationSYNWon-ThankPlayersPersonally]	
+		
+		
+      </Description>
+	</EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCAttackOnForgoneStationSYNWon-UpdateREP</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	
+	
+	[ChangeReputationWithPlayers:true]
+	[ReputationPlayerConditionIds:PlayerCondition-GCHostile]
+	[ReputationPlayerConditionIds:PlayerCondition-SYNPositiveNeutral]
+	[ReputationChangeFactions:SYN]
+	[ReputationChangeAmount:1500]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCAttackOnForgoneStationSYNWon-PlayersTags</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	
+	[AddTagstoPlayers:true]
+	[AddTagsPlayerConditionIds:PlayerCondition-Event-WitnessBattleforAHEHQ]
+	[AddTagsPlayerConditionIds:PlayerCondition-SYNFriendly]
+	[AddTags:SYNHeroAtForgoneStation]
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCAttackOnForgoneStationSYNWon-ThankPlayersPersonally</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-GCAttackOnForgoneStationSYNWon-ThankPlayersPersonally]
+      </Description>
+    </EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-GCAttackOnForgoneStationSYNWon-ThankPlayersPersonally</SubtypeId>
+      </Id> 
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:false]
+	  
+	[SendToSpecificPlayers:true]
+	[PlayerConditionIds:PlayerCondition-Event-SYNHeroAtForgoneStation]
+
+	
+      [Color:Green]
+      [Author:AHE]
+        
+      [ChatMessages:{PlayerName}, we owe you. Thanks for coming to help us.]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+      </Description>
+    </EntityComponent>	
+	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-GCAttackOnForgoneStationSYNWon-VictorySpeech</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event]
+		[Tags:GCAttackOnForgoneStationSYNWon]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:60000]
+		[MaxCooldownMs:60001]	
+		
+		[ActionIds:AaW-EventAction-GCAttackOnForgoneStationSYNWon-VictorySpeech]
+      </Description>
+	</EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCAttackOnForgoneStationSYNWon-VictorySpeech</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-GCAttackOnForgoneStationSYNWon-VictorySpeech]
+
+      </Description>
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-GCAttackOnForgoneStationSYNWon-VictorySpeech</SubtypeId>
+      </Id>
+	  
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Green]
+      [Author:SYN]
+        
+      [ChatMessages:Today we repelled a GC assault on Forgone Station. Our victory is a testament to our strength. Onward to triumph!]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+    	  
+      </Description>
+    </EntityComponent>	
+
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

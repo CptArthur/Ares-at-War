@@ -135,8 +135,8 @@ AHE-TradeStation-Triggers-PlayerFar
 	[Type:PlayerNear]
 	[TargetDistance:2000]
 	[UsePlayerConditionProfile:true]
-	[PlayerConditionProfileIds:PlayerConditionProfile-ExcludedPlayerNear]
-	[PlayerConditionProfileIds:PlayerConditionProfile-AHENeutral]
+	[PlayerConditionProfileIds:PlayerCondition-ExcludedPlayerNear]
+	[PlayerConditionProfileIds:PlayerCondition-AHENeutral]
 	
 	
 	[UseTrigger:true]
@@ -242,8 +242,10 @@ AHE-TradeStation-Triggers-PlayerFar
 	[UseChatBroadcast:true]
     [ChatData:AHE-TradeStation-Chat-Greeting-Friendly]    
 	
-	[SavePlayerIdentityToSandboxList:true]
-	[PlayerIdentitySandboxList:PlayerNear]
+	[AddTagsToPlayers:true]
+	[AddTags:PlayerNear]
+	[AddTagsIncludeSavedPlayerIdentity:true]
+
 
 	[SavePlayerIdentity:true]
       </Description>

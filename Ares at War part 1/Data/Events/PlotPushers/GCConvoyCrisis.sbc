@@ -19,7 +19,7 @@
 		[ActionExecution:Sequential]
 		[TimeUntilNextActionMs:5000]
 		
-		[ActionIds:AaW-EventAction-GCConvoyDestoyed]
+		[ActionIds:AaW-EventAction-GCConvoyDestoyed-Start]
 		[ActionIds:AaW-EventAction-Common-IncomingMessage]
 		[ActionIds:AaW-EventAction-GCConvoyDestoyed-NewsAlert]	
       </Description>
@@ -88,16 +88,25 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventAction-GCConvoyDestoyed</SubtypeId>
+          <SubtypeId>AaW-EventAction-GCConvoyDestoyed-Start</SubtypeId>
       </Id>
       <Description>
 		[MES Event Action]
-		
+	
+		[ToggleEvents:true]
+		[ToggleEventTags:AaW-StoryEvent]
+		[ToggleEventTagModes:false]
+	
 		[ResetCooldownTimeOfEvents:true]
 		[ResetEventCooldownTags:GCConvoyCrisis]
 		
 		[ChangeBooleans:true]
 		[SetBooleansTrue:GCConvoyCrisisAftermath]	
+		
+		
+		
+		
+		
       </Description>
       
     </EntityComponent>
@@ -267,7 +276,7 @@
 		[TimeUntilNextActionMs:6000]
 
 
-		[ActionIds:AaW-EventAction-GCConvoyCrisis-ChaosatAHEHQ]
+		[ActionIds:AaW-EventAction-GCConvoyCrisis-ChaosatAHEHQ2]
 			[ActionIds:AaW-EventAction-Common-IncomingMessage]	
 		
 		[ActionIds:AaW-EventAction-GCConvoyCrisis-ChaosatAHEHQ-News]
@@ -277,13 +286,11 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventAction-GCConvoyCrisis-ChaosatAHEHQ</SubtypeId>
+          <SubtypeId>AaW-EventAction-GCConvoyCrisis-ChaosatAHEHQ2</SubtypeId>
       </Id>
       <Description>
 
 	[MES Event Action]
-		
-
 		
 	[ChangeBooleans:true] 
 	[SetBooleansTrue:GCvsAHE] 
@@ -294,7 +301,7 @@
 	[ResetEventCooldownTags:BattleforAHEHQ]
 	
 	[ToggleEvents:true]
-	[ToggleEventTags:BattleforAHEHQ
+	[ToggleEventTags:BattleforAHEHQ]
 	[ToggleEventTagModes:true]
 	
 	
@@ -345,8 +352,6 @@
 	[UseChatBroadcast:true]
 	[ChatData:AaW-EventChat-GCConvoyCrisis-ChaosatAHEHQ]
 
-	
-	
 		[ActivateCustomAction:true]
 		[CustomActionName:ScT-AddNews]
 		[CustomActionArgumentsString:Chaos! AHE HQ has become the epicenter of a violent clash between the GC forces and AHE loyalists.]
@@ -360,10 +365,7 @@
     </EntityComponent>	
 
 	
-	
-	
-	
-	
+
 
 		
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -510,7 +512,7 @@
 		
 		
 		[ActionExecution:All]
-		[ActionIds:AaW-EventAction-BattleforAHEHQ-Spawn]
+		[ActionIds:AaW-EventAction-BattleforAHEHQ-StartLiveBattle]
 
       </Description>
 	</EntityComponent>	
@@ -533,11 +535,10 @@
     </EntityComponent>	
 
 
-	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventAction-BattleforAHEHQ-Spawn</SubtypeId>
+          <SubtypeId>AaW-EventAction-BattleforAHEHQ-StartLiveBattle</SubtypeId>
       </Id>
       <Description>
 
@@ -546,17 +547,171 @@
 	[ToggleEvents:true]
 	[ToggleEventTags:BattleforAHEHQ]
 	[ToggleEventTagModes:false]	
+	
+	[ToggleEventTags:LiveBattleforAHEHQ]
+	[ToggleEventTagModes:true]		
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:LiveBattleforAHEHQ]	
+	
 	[ActivateCustomAction:true]
 	[CustomActionName:ScT-RemoveGPS]
 	[CustomActionArgumentsString:Battle for AHE-HQ]
 
 	
 	[SpawnEncounter:true]
-	[SpawnData:GC-Spawner-HeavyGarrison]
+	[SpawnData:GC-Spawner-MediumStrikeForce]
 	[SpawnFactionTags:GC]
 	[SpawnCoords:{X:-1162242.5 Y:139010.1 Z:1341161.84}]
 	
 
+	[AddTagstoPlayers:true]
+	[AddTagsPlayerConditionIds:PlayerCondition-Position-NearAHEHQ]
+	[AddTags:WitnessBattleforAHEHQ]
+
+      </Description>
+      
+    </EntityComponent>		
+		
+		
+		
+<!--
+LiveBattleforAHEHQ
+-->
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-LiveBattleforAHEHQ-AttackerWins</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]	
+		[ConditionIds:AaW-EventCondition-BattleforAHEHQ]
+		[ConditionIds:AaW-EventCondition-LiveBattleforAHEHQ-AttackerWins]		
+		[Tags:LiveBattleforAHEHQ]
+
+		[ActionIds:AaW-EventAction-BattleforAHEHQ-Outcome-GCWon]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-LiveBattleforAHEHQ-AttackerWins</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	
+	[CheckTrueBooleans:true]
+	[AllowAnyTrueBoolean:true]
+	[TrueBooleans:AHE-HQDestroyed] 
+	[TrueBooleans:FAF-AHE-HQDestroyed]
+      </Description>
+      
+    </EntityComponent>			
+		
+
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-LiveBattleforAHEHQ-DefenderWins</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:11000]
+		[MaxCooldownMs:11001]	
+		
+		[ConditionIds:AaW-EventCondition-BattleforAHEHQ]
+		[ConditionIds:AaW-EventCondition-LiveBattleforAHEHQ-DefenderWins]		
+		[Tags:LiveBattleforAHEHQ]
+		[Tags:GCAliveCheck]
+		
+		
+		[ActionIds:AaW-EventAction-BattleforAHEHQ-Outcome-FAFWon]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-LiveBattleforAHEHQ-DefenderWins</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	
+	[CheckFalseBooleans:true]
+	[FalseBooleans:AHE-HQDestroyed] 
+	[FalseBooleans:FAF-AHE-HQDestroyed]
+      </Description>
+      
+    </EntityComponent>			
+		
+		
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-LiveBattleforAHEHQ-DefenderWins-CheckAttackers</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[Tags:LiveBattleforAHEHQ]		
+		[UniqueEvent:false]
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+		
+		[ConditionIds:AaW-EventCondition-BattleforAHEHQ]
+		[ConditionIds:AaW-EventCondition-LiveBattleforAHEHQ-DefenderWins]		
+
+
+		[ActionIds:AaW-EventAction-LiveBattleforAHEHQ-DefenderWins-CheckAttackers]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-LiveBattleforAHEHQ-DefenderWins-CheckAttackers</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:GC-Command-GCAliveCheck]
+	[CommandProfileOriginCoords:{X:-1162242.5 Y:139010.1 Z:1341161.84}]
+      </Description>
+      
+    </EntityComponent>					
+		
+		
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC-Command-GCAliveCheck</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Command]
+      
+      [CommandCode:GCAliveCheck]
+      
+	  [IgnoreAntennaRequirement:true]
+	  [IgnoreReceiverAntennaRequirement:true]
+	  [MatchSenderReceiverOwners:false]
+	  
+	  [Radius:9000]
       </Description>
       
     </EntityComponent>		
@@ -567,7 +722,7 @@
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW2-Event-BattleforAHEHQ-GCWon</SubtypeId>
+          <SubtypeId>AaW2-Event-BattleforAHEHQ-Simulate</SubtypeId>
       </Id>
       <Description>
 
@@ -581,9 +736,8 @@
 
 		[ActionExecution:Sequential]
 		[TimeUntilNextActionMs:6000]
-		[ActionIds:AaW-EventAction-Common-IncomingMessage]
-		[ActionIds:AaW-EventAction-BattleforAHEHQ-GCWon-Chat]
-		[ActionIds:AaW-EventAction-BattleforAHEHQ-GCWon]
+		[ActionIds:AaW-EventAction-BattleforAHEHQ-Simulate-GCWon]
+		[ActionIds:AaW-EventAction-BattleforAHEHQ-Outcome-GCWon]
 
 
 
@@ -592,57 +746,69 @@
 	</EntityComponent>	
 	
 	
+	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventAction-BattleforAHEHQ-GCWon</SubtypeId>
+          <SubtypeId>AaW-EventAction-BattleforAHEHQ-Simulate-GCWon</SubtypeId>
       </Id>
       <Description>
 
 	[MES Event Action]
 	
-	[ToggleEvents:true]
-	[ToggleEventTags:BattleforAHEHQ]
-	[ToggleEventTagModes:false]		
-	
 	[ChangeBooleans:true] 
-	[SetBooleansTrue:AHE-HQDestroyed] 
-	[SetBooleansTrue:FAF-AHE-HQDestroyed]
 	[SetBooleansTrue:AHE HQ Wasted Event]
 
-		
-	
-		[ActivateCustomAction:true]
+	[ActivateCustomAction:true]
 	[CustomActionName:ScT-RemoveGPS]
 	[CustomActionArgumentsString:Battle for AHE-HQ]
       </Description>
       
     </EntityComponent>		
 
+<!-- 
+Outcomes
+ -->
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventAction-BattleforAHEHQ-GCWon-Chat</SubtypeId>
+          <SubtypeId>AaW-EventAction-BattleforAHEHQ-Outcome-GCWon</SubtypeId>
       </Id>
       <Description>
 
 	[MES Event Action]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:BattleforAHEHQ]
+	[ToggleEventTagModes:false]
+		[ToggleEventTags:AaW-StoryEvent]
+		[ToggleEventTagModes:true]
+
+	[ToggleEventTags:LiveBattleforAHEHQ]
+	[ToggleEventTagModes:false]
+
+
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownTags:AaW-StoryEvent]
+
+	[ChangeBooleans:true] 
+	[SetBooleansTrue:AHE-HQDestroyed] 
+	[SetBooleansTrue:FAF-AHE-HQDestroyed]
 	
-
-
-		
+	[AddTagstoPlayers:true]
+	[AddTagsPlayerConditionIds:PlayerCondition-Position-NearAHEHQ]
+	[AddTags:WitnessBattleforAHEHQ]
+	
 	[UseChatBroadcast:true]
 	[ChatData:AaW-EventChat-BattleforAHEHQ-GCWon]			
 	[ActivateCustomAction:true]
-		[CustomActionName:ScT-AddNews]
-		[CustomActionArgumentsString:AHE HQ has been destroyed]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:AHE HQ has been destroyed]
       </Description>
       
     </EntityComponent>	
 	
-	
-
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -650,7 +816,6 @@
       </Id>
 	  
       <Description>
-
       [RivalAI Chat]
       
       [UseChat:true]
@@ -669,12 +834,273 @@
       [ChatMessages:AHE HQ has been destroyed]
       [BroadcastChatType:Chat]
       [ChatAudio:event_red_alert]  
-
-	    	  
+    	  
       </Description>
-      
     </EntityComponent>		
 
+	
+	<!-- FAF Won -->
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-BattleforAHEHQ-Outcome-FAFWon</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:BattleforAHEHQ]
+	[ToggleEventTagModes:false]
+
+	[ToggleEventTags:LiveBattleforAHEHQ]
+	[ToggleEventTagModes:false]
+	[ToggleEventTags:AaW-StoryEvent]
+	[ToggleEventTagModes:true]	
+	
+	
+	[ToggleEventTags:BattleforAHEHQFAFWon]
+	[ToggleEventTagModes:true]	
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:BattleforAHEHQFAFWon]	
+	
+	[AddTagstoPlayers:true]
+	[AddTagsPlayerConditionIds:PlayerCondition-Position-NearAHEHQ]
+	[AddTags:WitnessBattleforAHEHQ]
+
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:AaW-StoryEvent]
+		
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-BattleforAHEHQ-FAFWon]			
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:The FAF successfully repelled the GC at AHE HQ]
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-BattleforAHEHQ-FAFWon</SubtypeId>
+      </Id>
+	  
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Blue]
+      [Author:Ares News Station]
+        
+      [ChatMessages:The FAF successfully repelled the GC at AHE HQ]
+      [BroadcastChatType:Chat]
+      [ChatAudio:event_red_alert]  
+    	  
+      </Description>
+    </EntityComponent>	
+	
+<!-- BaatleForAHEHQFAFWON-->
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-BattleforAHEHQFAFWon-PlayersTags</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[Tags:BattleforAHEHQFAFWon]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:4000]
+		[MaxCooldownMs:4001]	
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+		
+		
+		[ActionIds:AaW-EventAction-BattleforAHEHQFAFWon-UpdateREP]
+		[ActionIds:AaW-EventAction-BattleforAHEHQFAFWon-PlayersTags]
+		[ActionIds:AaW-EventAction-BattleforAHEHQFAFWon-ThankPlayersPersonally]	
+		
+		
+      </Description>
+	</EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-BattleforAHEHQFAFWon-UpdateREP</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	
+	
+	[ChangeReputationWithPlayers:true]
+	[ReputationPlayerConditionIds:PlayerCondition-GCHostile]
+	[ReputationPlayerConditionIds:PlayerCondition-FAFPositiveNeutral]
+	[ReputationChangeFactions:FAF]
+	[ReputationChangeAmount:1500]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-BattleforAHEHQFAFWon-PlayersTags</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	
+	[AddTagstoPlayers:true]
+	[AddTagsPlayerConditionIds:PlayerCondition-Event-WitnessBattleforAHEHQ]
+	[AddTagsPlayerConditionIds:PlayerCondition-FAFFriendly]
+	[AddTags:FAFHeroAtBattleForAHEHQ]
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-BattleforAHEHQFAFWon-ThankPlayersPersonally</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-BattleforAHEHQFAFWon-ThankPlayersPersonally]
+      </Description>
+    </EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-BattleforAHEHQFAFWon-ThankPlayersPersonally</SubtypeId>
+      </Id> 
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:false]
+	  
+	[SendToSpecificPlayers:true]
+	[PlayerConditionIds:PlayerCondition-Event-FAFHeroAtBattleForAHEHQ]
+
+	
+      [Color:Green]
+      [Author:AHE]
+        
+      [ChatMessages:{PlayerName}, we owe you. Thanks for coming to help us.]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+      </Description>
+    </EntityComponent>	
+	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-BattleforAHEHQFAFWon-VictorySpeech</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event]
+		[Tags:BattleforAHEHQFAFWon]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:60000]
+		[MaxCooldownMs:60001]	
+		
+		[ActionIds:AaW-EventAction-BattleforAHEHQFAFWon-VictorySpeech]
+      </Description>
+	</EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-BattleforAHEHQFAFWon-VictorySpeech</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-BattleforAHEHQFAFWon-VictorySpeech]
+
+      </Description>
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-BattleforAHEHQFAFWon-VictorySpeech</SubtypeId>
+      </Id>
+	  
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Green]
+      [Author:FAF Spokesmen]
+        
+      [ChatMessages:Today, we celebrate a victory, but our struggle endures. The AHE and FAF, united forces, have won the battle for AHE HQ. Now, our focus shifts to liberating Agaris' colonies. Join us in the ongoing quest for the complete freedom of Agaris!]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+    	  
+      </Description>
+    </EntityComponent>	
+	
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
 	
 	
 	

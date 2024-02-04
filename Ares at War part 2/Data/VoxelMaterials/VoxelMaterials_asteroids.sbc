@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <VoxelMaterials>
+        <!-- Stone_01 - Stone_05 -->
+        <VoxelMaterial xsi:type="MyObjectBuilder_Dx11VoxelMaterialDefinition">
+            <Id>
+                <TypeId>VoxelMaterialDefinition</TypeId>
+                <SubtypeId>Stone_01</SubtypeId>
+            </Id>
+            <MaterialTypeName>Rock</MaterialTypeName>
+            <MinedOre>Stone</MinedOre>
+            <MinedOreRatio>5</MinedOreRatio>
+            <CanBeHarvested>true</CanBeHarvested>
+            <!-- Wether it spawns in asteroids, default true (even if undefined) -->
+            <SpawnsInAsteroids>false</SpawnsInAsteroids>
+            <!-- True = generated in ore pockets and gets detected by ore detector, false = used as asteroids shell -->
+            <IsRare>false</IsRare>
+            <!-- Wether it can spawn from meteorite impacts, default true (even if undefined); NOTE: requires IsRare to be true. -->
+            <SpawnsFromMeteorites>false</SpawnsFromMeteorites>
+
+
+            <VoxelHandPreview>Textures\Voxels\Iron_01_Thumbnail.dds</VoxelHandPreview>
+            <ColorMetalXZnY>Textures\Voxels\Iron_01_ForAxisXZ_cm.dds</ColorMetalXZnY>
+            <ColorMetalY>Textures\Voxels\Iron_01_ForAxisXZ_cm.dds</ColorMetalY>
+
+            <NormalGlossXZnY>Textures\Voxels\Iron_01_ForAxisXZ_ng.dds</NormalGlossXZnY>
+            <NormalGlossY>Textures\Voxels\Iron_01_ForAxisXZ_ng.dds</NormalGlossY>
+
+            <SimpleTilingSetup>
+            </SimpleTilingSetup>
+
+            <InitialScale>2</InitialScale>
+            <ScaleMultiplier>4</ScaleMultiplier>
+            <InitialDistance>4</InitialDistance>
+            <DistanceMultiplier>1.4</DistanceMultiplier>
+            <TilingScale>20</TilingScale>
+
+            <ColorKey Hex="#DD9B28"/>
+            <LandingEffect>Landing_Jet_Ground_Dust</LandingEffect>
+
+        </VoxelMaterial>
+
+
+
+
+        <VoxelMaterial xsi:type="MyObjectBuilder_Dx11VoxelMaterialDefinition">
+            <Id>
+                <TypeId>VoxelMaterialDefinition</TypeId>
+                <SubtypeId>Stone_06</SubtypeId>
+            </Id>
+            <MaterialTypeName>Rock</MaterialTypeName>
+            <MinedOre>Stone</MinedOre>
+            <MinedOreRatio>5</MinedOreRatio>
+            <CanBeHarvested>true</CanBeHarvested>
+            <!-- Wether it spawns in asteroids, default true (even if undefined) -->
+            <SpawnsInAsteroids>true</SpawnsInAsteroids>
+            <!-- True = generated in ore pockets and gets detected by ore detector, false = used as asteroids shell -->
+            <IsRare>false</IsRare>
+            <!-- Wether it can spawn from meteorite impacts, default true (even if undefined); NOTE: requires IsRare to be true. -->
+            <SpawnsFromMeteorites>true</SpawnsFromMeteorites>
+
+
+            <VoxelHandPreview>Textures\Voxels\Stone_01_Thumbnail.dds</VoxelHandPreview>
+            <ColorMetalXZnY>Textures\Voxels\Stone_01_ForAxisXZ_cm.dds</ColorMetalXZnY>
+            <ColorMetalY>Textures\Voxels\Stone_01_ForAxisY_cm.dds</ColorMetalY>
+
+            <NormalGlossXZnY>Textures\Voxels\Stone_01_ForAxisXZ_ng.dds</NormalGlossXZnY>
+            <NormalGlossY>Textures\Voxels\Stone_01_ForAxisXZ_ng.dds</NormalGlossY>
+
+            <SimpleTilingSetup>
+            </SimpleTilingSetup>
+
+            <InitialScale>2</InitialScale>
+            <ScaleMultiplier>4</ScaleMultiplier>
+            <InitialDistance>4</InitialDistance>
+            <DistanceMultiplier>1.4</DistanceMultiplier>
+            <TilingScale>20</TilingScale>
+
+            <ColorKey Hex="#DD9B28"/>
+            <LandingEffect>Landing_Jet_Ground_Dust</LandingEffect>
+
+        </VoxelMaterial>
+
+
+
+
+
+
+
+
+    </VoxelMaterials>
+</Definitions>

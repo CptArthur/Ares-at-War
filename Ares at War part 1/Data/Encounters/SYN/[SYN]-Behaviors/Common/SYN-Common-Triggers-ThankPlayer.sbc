@@ -5,7 +5,7 @@
 
 <!--
 
-GC-Common-Trigger-CommandReceived-GCThanksPlayer
+[Triggers:SYN-Common-Trigger-CommandReceived-SYNThanksPlayer]
 
 
 
@@ -15,7 +15,7 @@ GC-Common-Trigger-CommandReceived-GCThanksPlayer
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>GC-Common-Trigger-CommandReceived-GCThanksPlayer</SubtypeId>
+          <SubtypeId>SYN-Common-Trigger-CommandReceived-SYNThanksPlayer</SubtypeId>
       </Id>
       <Description>
 
@@ -23,10 +23,10 @@ GC-Common-Trigger-CommandReceived-GCThanksPlayer
 	[Type:CommandReceived]
 	[UseTrigger:true]
 	[StartsReady:true]
-	[CommandReceiveCode:GCThanksPlayer]
+	[CommandReceiveCode:SYNThanksPlayer]
 	[MaxActions:1]
 
-	[Actions:GC-Common-Action-CommandReceived-GCThanksPlayer]	
+	[Actions:SYN-Common-Action-CommandReceived-SYNThanksPlayer]	
 	  
       </Description>
       
@@ -36,23 +36,23 @@ GC-Common-Trigger-CommandReceived-GCThanksPlayer
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>GC-Common-Action-CommandReceived-GCThanksPlayer</SubtypeId>
+          <SubtypeId>SYN-Common-Action-CommandReceived-SYNThanksPlayer</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI Action]
 
 	[UseChatBroadcast:true]
-	[ChatData:GC-Common-Chat-CommandReceived-GCThanksPlayer]
+	[ChatData:SYN-Common-Chat-CommandReceived-SYNThanksPlayer]
 
 	[ChangeReputationWithPlayers:true]
 	[ReputationChangeRadius:3500]
-	[ReputationChangeFactions:GC]
+	[ReputationChangeFactions:SYN]
 	[ReputationChangeAmount:500]
 	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
 	
 	[ChangeAttackerReputation:true]
-	[ChangeAttackerReputationFaction:GC]
+	[ChangeAttackerReputationFaction:SYN]
 	[ChangeAttackerReputationAmount:-500]
 	[ReputationChangesForAllAttackPlayerFactionMembers:true]
 
@@ -65,7 +65,7 @@ GC-Common-Trigger-CommandReceived-GCThanksPlayer
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>GC-Common-Chat-CommandReceived-GCThanksPlayer</SubtypeId>
+          <SubtypeId>SYN-Common-Chat-CommandReceived-SYNThanksPlayer</SubtypeId>
       </Id>
 	  
       <Description>
@@ -79,7 +79,7 @@ GC-Common-Trigger-CommandReceived-GCThanksPlayer
 	[BroadcastRandomly:true]
 	[IgnoreAntennaRequirement:true]
 	[IgnoredAntennaRangeOverride:10000]      
-	[Author:GC]
+	[Author:SYN]
 	[Color:Green]
       [BroadcastRandomly:true]
 	

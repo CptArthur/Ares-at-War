@@ -296,6 +296,7 @@ namespace AresAtWar.Init
                 MyAPIGateway.Utilities.SetVariable<bool>("AaWStoryEvents", true);
 
 
+
             if (!MyAPIGateway.Utilities.GetVariable<bool>("PurgeActive", out boolplaceholder))
                 MyAPIGateway.Utilities.SetVariable<bool>("PurgeActive", false);
 

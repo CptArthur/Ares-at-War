@@ -1,0 +1,50 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!-- 
+[Triggers:GC-Common-Trigger-UCACargoResponse-NoCheck]
+
+
+
+
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC-Common-Trigger-GCAliveCheck</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:GCAliveCheck]
+
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:GC-Common-Action-GCAliveCheck]
+      </Description>
+
+    </EntityComponent>
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC-Common-Action-GCAliveCheck</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+[ResetCooldownTimeOfEvents:true]
+[ResetEventCooldownTags:GCAliveCheck]
+
+      </Description>
+
+    </EntityComponent>
+
+
+  </EntityComponents>
+</Definitions>
