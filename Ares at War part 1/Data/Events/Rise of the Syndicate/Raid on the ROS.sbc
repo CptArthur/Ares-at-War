@@ -28,7 +28,7 @@ Start: NewsAlert
 		
 		[ConditionIds:AaW-EventCondition-RaidOnTheROSCrait-ThreatScore-Lorus]
 		[ConditionIds:AaW-EventCondition-RaidOnTheROSCrait-ThreatScore-Agaris]	
-		[ConditionIds:AaW-EventCondition-RaidOnTheROSCrait-ThreatScore-Other]			
+		[ConditionIds:AaW-EventCondition-RaidOnTheROSCrait-ThreatScore-Bylen]			
 		[UseAnyPassingCondition:true]
 		
 		[ActionExecution:Sequential]
@@ -47,24 +47,19 @@ Start: NewsAlert
           <SubtypeId>AaW-EventCondition-RaidOnTheROSCrait-Basic</SubtypeId>
       </Id>
       <Description>
-
-     [MES Event Condition]
+    [MES Event Condition]
 	  
 	[CheckTrueBooleans:true]
 	[TrueBooleans:SYNActive]  
 	[TrueBooleans:GCActive]  
-		[TrueBooleans:TesterMode]
-		
+
 		
 	[CheckFalseBooleans:true]	  
 	[FalseBooleans:SYN-HQDestroyed]	 	
 	[FalseBooleans:ROS-CraitCrystalResearchDestroyed]
 	[FalseBooleans:GC-CraitStationDestroyed]
-
-
-	 	
+ 	
       </Description>
-      
     </EntityComponent>	
 
 
@@ -76,16 +71,31 @@ Start: NewsAlert
           <SubtypeId>AaW-EventCondition-RaidOnTheROSCrait-ThreatScore-Lorus</SubtypeId>
       </Id>
       <Description>
+	[MES Event Condition]
 
-      [MES Event Condition]
-	  
+
+	
+	
 	[CheckThreatScore:true]
-	[ThreatScoreAmount:200]
+	[ThreatScoreAmount:450]
 	[ThreatScoreDistance:5000]
 	[ThreatScoreCoords:{X:-1249083.5 Y:-521370.5 Z:-1803753.5}]
 	[ThreatScoreDistanceFromCoords:38220]
 	[ThreatScoreType:PlayerLocation]
 	[ThreatScoreGridConfiguration:All]
+	
+	[CheckTrueBooleans:true]
+	[AllowAnyTrueBoolean:true]
+	
+	[TrueBooleans:SYN-FuelDepot1Destroyed]
+	[TrueBooleans:SYN-FuelDepot2Destroyed]
+	[TrueBooleans:SYN-FuelDepot3Destroyed]
+	[TrueBooleans:SYN-StripMiningPlatform1Destroyed]	
+	[TrueBooleans:SYN-StripMiningPlatform4Destroyed]
+
+	[TrueBooleans:SYN-MiningOutpost1Destroyed]
+	[TrueBooleans:SYN-MiningOutpost2Destroyed]
+	[TrueBooleans:SYN-MiningOutpost3Destroyed]
       </Description> 
     </EntityComponent>		  
 	  
@@ -96,9 +106,9 @@ Start: NewsAlert
           <SubtypeId>AaW-EventCondition-RaidOnTheROSCrait-ThreatScore-Agaris</SubtypeId>
       </Id>
       <Description>
-
       [MES Event Condition]
-	  
+
+	
 	[CheckThreatScore:true]
 	[ThreatScoreAmount:1600]
 	[ThreatScoreDistance:5000]
@@ -106,7 +116,12 @@ Start: NewsAlert
 	[ThreatScoreDistanceFromCoords:94780]
 	[ThreatScoreType:PlayerLocation]
 	[ThreatScoreGridConfiguration:All]
-	
+
+
+	[CheckCustomCounters:true]
+	[CustomCounters:GCAgarisMode]
+	[CustomCountersTargets:3]
+	[CounterCompareTypes:GreaterOrEqual]	
       </Description> 
     </EntityComponent>	
 
@@ -114,16 +129,18 @@ Start: NewsAlert
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventCondition-RaidOnTheROSCrait-ThreatScore-Other</SubtypeId>
+          <SubtypeId>AaW-EventCondition-RaidOnTheROSCrait-ThreatScore-Bylen</SubtypeId>
       </Id>
       <Description>
-
       [MES Event Condition]
-		[CheckThreatScore:true]
-	[ThreatScoreAmount:1200]
+
+		
+		
+	[CheckThreatScore:true]
+	[ThreatScoreAmount:1400]
 	[ThreatScoreDistance:5000]
-	[ThreatScoreCoords:{X:377352.46 Y:-109733.06 Z:-335181.19}]
-	[ThreatScoreDistanceFromCoords:2150000]
+	[ThreatScoreCoords:{X:0 Y:0 Z:0}]
+	[ThreatScoreDistanceFromCoords:1265000]
 	[ThreatScoreType:PlayerLocation]
 	[ThreatScoreGridConfiguration:All]
 

@@ -13,8 +13,8 @@
 		[UniqueEvent:true]
 		[Tags:AaW-StoryEvent]
 
-		[MinCooldownMs:600000]
-		[MaxCooldownMs:1200001]
+		[MinCooldownMs:7700000]
+		[MaxCooldownMs:14400000]
 		[OnFailResetCooldown:true]
 		
 		[PersistantConditionIds:AaW-EventCondition-GCAttackOnForgoneStation-Basic]
@@ -39,15 +39,11 @@
           <SubtypeId>AaW-EventCondition-GCAttackOnForgoneStation-Basic</SubtypeId>
       </Id>
       <Description>
-
      [MES Event Condition]
 	  
 	[CheckTrueBooleans:true]
 	[TrueBooleans:SYNActive]  
 	[TrueBooleans:GCActive]  
-	[TrueBooleans:TesterMode]
-
-
 	
 	[CheckFalseBooleans:true]	  
 	[FalseBooleans:SYN-HQDestroyed]
@@ -118,7 +114,6 @@
 		[ChangeBooleans:true]
 		[SetBooleansTrue:GCAttackOnForgoneStation]		
 
-		
 		[ActivateCustomAction:true]
 		[CustomActionName:ScT-CreateGPS]
 		[CustomActionArgumentsString:Battle for Forgone Station]

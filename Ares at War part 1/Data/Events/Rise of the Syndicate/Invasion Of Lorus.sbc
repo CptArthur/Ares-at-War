@@ -19,8 +19,8 @@ Start: NewsAlert
 		[UniqueEvent:true]
 		[Tags:AaW-StoryEvent]
 
-		[MinCooldownMs:3600000]
-		[MaxCooldownMs:7200001]
+		[MinCooldownMs:14400000]
+		[MaxCooldownMs:21600000]
 		[OnFailResetCooldown:true]
 		
 		[PersistantConditionIds:AaW-EventCondition-GCInvasionOfLorus-Basic]
@@ -52,7 +52,7 @@ Start: NewsAlert
 	[TrueBooleans:SYNActive]  
 	[TrueBooleans:GCActive]  
 	[TrueBooleans:SYN-ForegoneStationDestroyed]  
-		[TrueBooleans:TesterMode]
+
 	
 	[CheckFalseBooleans:true]	  
 	[FalseBooleans:SYN-HQDestroyed]	 	
@@ -322,9 +322,13 @@ Start: NewsAlert
 	[ToggleEvents:true]
 	[ToggleEventTags:AaW-StoryEvent]
 	[ToggleEventTagModes:true]
+	
+	[ToggleEventTags:GCInvasionOfLorusActive]
+	[ToggleEventTagModes:true]	
+	
 
 	[ResetCooldownTimeOfEvents:true]
-	[ResetEventCooldownTags:AaW-StoryEvent]
+	[ResetEventCooldownTags:GCInvasionOfLorusActive]
 
 
 	[ChangeReputationWithPlayers:true]
@@ -338,6 +342,8 @@ Start: NewsAlert
 	[CustomActionName:ScT-AddNews]
 	[CustomActionArgumentsString:GC invasion of Lorus has started]
 
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-GCInvasionOfLorus-StartGCInvasionOfLorus-NewsAlert]
 	
       </Description>
     </EntityComponent>		
@@ -346,7 +352,7 @@ Start: NewsAlert
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventChat-GCInvasionOfLorus-NewsAlert</SubtypeId>
+          <SubtypeId>AaW-EventChat-GCInvasionOfLorus-StartGCInvasionOfLorus-NewsAlert</SubtypeId>
       </Id>
 	  
       <Description>
@@ -377,13 +383,116 @@ Start: NewsAlert
 Spawn: LorusCommandCenter
 -->
 
-<!-- Win Condition -->
+<!-- Win Condition
+if: 
+ -->
+	
+<!-- Lose invasion of Lorus 
 
+
+if:
+GC-LorusStationDestroyed
+-->
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-GCInvasionOfLorusActive-GCLost</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		[Tags:GCInvasionOfLorusActive]
+
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]
+		[OnFailResetCooldown:true]
+		
+		[PersistantConditionIds:AaW-EventCondition-GCInvasionOfLorusActive-GCLost]
+		
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000] 
+
+		
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW-EventAction-GCInvasionOfLorusActive-NewsAlert]	
+
+      </Description>
+	</EntityComponent>	
+	  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-GCInvasionOfLorusActive-GCLost</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[CheckTrueBooleans:true]
+	[TrueBooleans:GC-LorusStationDestroyed]  
+	 	
+      </Description>
+      
+    </EntityComponent>	
 
 	
-<!-- Lose invasion of Lorus -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-GCInvasionOfLorusActive-NewsAlert</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-GCInvasionOfLorusActive-NewsAlert]
+	
+	
+	[ChangeBooleans:true]
+[SetBooleansFalse:GCInvasionOfLorus]	
+	
+	
+	[ActivateCustomAction:true]
+		[CustomActionName:ScT-AddNews]
+		[CustomActionArgumentsString:GC lost the invasion of Lorus]
+      </Description>
+      
+    </EntityComponent>
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-GCInvasionOfLorusActive-NewsAlert</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
 
 
+      [Color:Blue]
+      [Author:Ares News Station]
+        
+      [ChatMessages:GC lost the invasion of Lorus]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]   
+      </Description>
+      
+    </EntityComponent>	
 
 	
 	

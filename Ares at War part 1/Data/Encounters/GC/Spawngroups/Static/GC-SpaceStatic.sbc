@@ -251,7 +251,73 @@
 	</SpawnGroup>		
 	
 
+	<!-- BylenYetiStation Base Aka Crait -->
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>GC-LorusStation</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:GC]		
 
+		[TriggerCoords:{X:1436450.75 Y:-599990.49 Z:-2801182.58}]
+		[TriggerRadius:200000]
+
+		[ForceExactPositionAndOrientation:true]
+
+
+		[StaticEncounterCoords:{X:-1215952.01421887 Y:-529934.19014557 Z:-1781219.0955059}]
+		[StaticEncounterForward:{X:0.911868158880997 Y:0.0331412480691005 Z:0.409143151592941}]
+		[StaticEncounterUp:{X:-0.409333645189219 Y:0.147958753616275 Z:0.900307821883396}]
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Lorus]
+		[StaticEncounterPlanetDirection:{X:0.808606735124184 Y:-0.209005342379451 Z:0.549974467378856}]
+		[StaticEncounterPlanetAltitude:16420.577756384]
+
+
+
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:Lorus Station]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+
+		[SandboxVariables:GCInvasionOfLorus]	
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:GC-LorusStationDestroyed]			
+		[ZoneConditions:ZoneCondition-ZoneAaW]
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+		
+		
+			<Prefab SubtypeId="GC-SpaceStation">
+				<Position>
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>GC-SpaceStation-Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+
+		</Prefabs>
+		
+	</SpawnGroup>	
 
 
 
