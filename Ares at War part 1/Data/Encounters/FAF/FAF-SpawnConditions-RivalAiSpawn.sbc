@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+<!--
+[SpawnConditionsProfiles:FAF-SpawnProfile-RivalAISpawn]
+
+FAF-SpawnGroup-MediumStrikeForce
+
+-->
+
+	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Spawner-MediumStrikeForce</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Spawn]
+
+	[UseSpawn:true]
+
+	[StartsReady:true]
+	[SpawningType:CustomSpawn]
+
+	[MaxSpawns:-1]
+
+	[SpawnGroups:FAF-SpawnGroup-MediumStrikeForce]
+	
+	
+	[UseRelativeSpawnPosition:false]
+	[MinDistance:800]
+	[MaxDistance:2500]
+	[MinAltitude:600]
+	[MaxAltitude:1000]
+	[IgnoreSafetyChecks:true]
+      
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Spawner-HeavyStrikeForce</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Spawn]
+
+	[UseSpawn:true]
+
+	[StartsReady:true]
+	[SpawningType:CustomSpawn]
+
+	[MaxSpawns:-1]
+
+	[SpawnGroups:FAF-SpawnGroup-HeavyStrikeForce]
+	
+	
+	[UseRelativeSpawnPosition:false]
+	[MinDistance:800]
+	[MaxDistance:2500]
+	[MinAltitude:600]
+	[MaxAltitude:1000]
+	[IgnoreSafetyChecks:true]
+      
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-SpawnProfile-RivalAISpawn</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+
+		[SpaceCargoShip:false]
+		[LunarCargoShip:false]
+		[SpaceRandomEncounter:false]
+		[AtmosphericCargoShip:false]
+		[PlanetaryInstallation:false]
+		
+		[IgnoreCombatPhase:true]
+		[ZoneConditions:ZoneCondition-ZoneAaW]	
+		
+		[RivalAiAnySpawn:true]
+		[FactionOwner:FAF]	
+
+
+	
+	
+		[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+
+    </EntityComponent>		
+	
+
+	
+	
+	
+    
+  </EntityComponents>
+</Definitions>

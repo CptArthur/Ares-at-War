@@ -6,6 +6,8 @@
 <!--
 FAFMode
 
+
+
 0: OntheRun
 1: Secret
 2: OpenWar
@@ -14,14 +16,23 @@ FAFMode
 Bool FAFDestroyed
 
 
+[CheckCustomCounters:true]
+[CustomCounters:FAFMode]
+[CustomCountersTargets:2]
+[CounterCompareTypes:LessOrEqual]
+
+	
+
 AaW2-Event-SetFAFOntheRun
 AaW2-Event-SetFAFSecret
 AaW2-Event-SetFAFOpenWar
 
 AaW2-Event-SetFAFDestroyed
 
-
 -->
+
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>

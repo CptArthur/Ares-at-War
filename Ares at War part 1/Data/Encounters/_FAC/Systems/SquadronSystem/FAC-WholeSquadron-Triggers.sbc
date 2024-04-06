@@ -2,6 +2,15 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
   
+  
+  <!--
+  
+[Triggers:FAC-Squadron-Trigger-Squadron1Down]
+[Triggers:FAC-Squadron1-Trigger-StartRetreat]
+[Triggers:FAC-Squadron1-Trigger-Death]
+
+
+  -->
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -22,6 +31,24 @@
       
     </EntityComponent>
 
+  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron1-Action-Down</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	[SetBooleansTrue:Squadron1Down]
+	[UseChatBroadcast:true]	
+	[ChatData:FAC-Squadron1-Chat-Down]	
+	
+	  
+      </Description>
+      
+    </EntityComponent>	
+	
+	<!-- Number 2 -->
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -42,7 +69,25 @@
       
     </EntityComponent>
 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron2-Action-Down</SubtypeId>
+      </Id>
+      <Description>
 
+	[RivalAI Action]
+	[SetBooleansTrue:Squadron2Down]
+	[UseChatBroadcast:true]	
+	[ChatData:FAC-Squadron2-Chat-Down]			
+	  
+      </Description>
+      
+    </EntityComponent>		
+	
+	<!-- Number 3 -->
+	
+	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -63,7 +108,21 @@
       
     </EntityComponent>
 	
-	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron3-Action-Down</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	[SetBooleansTrue:Squadron3Down]
+	[UseChatBroadcast:true]	
+	[ChatData:FAC-Squadron3-Chat-Down]			
+	  
+      </Description>
+      
+    </EntityComponent>		
 
 
 
@@ -89,7 +148,23 @@
       </Description>
       
     </EntityComponent>
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron1-Action-StartRetreat</SubtypeId>
+      </Id>
+      <Description>
 
+	[RivalAI Action]
+	[Retreat:true]
+	[UseChatBroadcast:true]
+	[ChatData:FAC-Squadron1-Chat-Damage-StartRetreat]
+	  
+      </Description>
+      
+    </EntityComponent>	
+	
+	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -110,7 +185,24 @@
       </Description>
       
     </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron2-Action-StartRetreat</SubtypeId>
+      </Id>
+      <Description>
 
+	[RivalAI Action]
+	[Retreat:true]
+	[UseChatBroadcast:true]
+	[ChatData:FAC-Squadron2-Chat-Damage-StartRetreat]
+	  
+      </Description>
+      
+    </EntityComponent>		
+	
+	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -132,7 +224,21 @@
       
     </EntityComponent>	
 	
-	
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron3-Action-StartRetreat</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	[Retreat:true]
+	[UseChatBroadcast:true]
+	[ChatData:FAC-Squadron3-Chat-Damage-StartRetreat]
+	  
+      </Description>
+      
+    </EntityComponent>	
 	
 
 
@@ -153,7 +259,31 @@
       </Description>
       
     </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron1-Action-Death</SubtypeId>
+      </Id>
+      <Description>
 
+	[RivalAI Action]
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:FAC-Squadron-Command-Squadron1Down]
+
+
+	
+	[GenerateExplosion:true]
+	[ExplosionRange:10]
+	[ExplosionDamage:10]
+	[ExplosionIgnoresVoxels:true]
+	[ForceDespawn:false]
+
+	  
+      </Description>
+      
+    </EntityComponent>
+	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -171,7 +301,29 @@
       </Description>
       
     </EntityComponent>
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron2-Action-Death</SubtypeId>
+      </Id>
+      <Description>
 
+	[RivalAI Action]
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:FAC-Squadron-Command-Squadron2Down]
+	
+
+	 
+	[GenerateExplosion:true]
+	[ExplosionRange:10]
+	[ExplosionDamage:10]
+	[ExplosionIgnoresVoxels:true]
+	[ForceDespawn:true]
+		
+	  
+      </Description>
+      
+    </EntityComponent>	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -190,7 +342,27 @@
       
     </EntityComponent>	
 	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Squadron3-Action-Death</SubtypeId>
+      </Id>
+      <Description>
 
+	[RivalAI Action]
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:FAC-Squadron-Command-Squadron3Down]
+	 
+	[GenerateExplosion:true]
+	[ExplosionRange:10]
+	[ExplosionDamage:10]
+	[ExplosionIgnoresVoxels:true]
+	[ForceDespawn:false]
+
+	  
+      </Description>
+      
+    </EntityComponent>
 	
 	
 	

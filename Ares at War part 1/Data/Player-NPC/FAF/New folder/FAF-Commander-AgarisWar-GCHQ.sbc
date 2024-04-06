@@ -1,0 +1,418 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!-- 
+[Triggers:FAF-Commander-Trigger-AgarisWar-GCHQ]
+[Triggers:FAF-Commander-Trigger-AgarisWar-GCHQ-Busy]
+
+[Triggers:FAF-Commander-Trigger-AgarisWar-GCHQ-TooWeak]
+[Triggers:FAF-Commander-Trigger-AgarisWar-GCHQ-AlreadyAttacked]
+ -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Trigger-AgarisWar-GCHQ</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+		  	  	  [MinCooldownMs:2000]
+	  [MaxCooldownMs:2001]  
+      [Type:ButtonPress]
+	[ButtonPanelName:FAF-Commander]
+	[ButtonPanelIndex:3]
+	[Conditions:FAF-Commander-Condition-AgarisWar-GCHQ]
+	[Actions:FAF-Commander-Action-AgarisWar-GCHQ]
+
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Condition-AgarisWar-GCHQ</SubtypeId>
+      </Id>
+      <Description>
+    [RivalAI Condition]
+      
+    [UseConditions:true]
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:-499]
+	[MaxPlayerReputation:1500]
+	
+	[CheckTrueSandboxBooleans:true]	  	
+	[TrueSandboxBooleans:FAFReadyForExpansion]	
+
+	[CheckFalseSandboxBooleans:true]
+	[FalseSandboxBooleans:FAFAttackAzuris]	
+	[FalseSandboxBooleans:FAFAttackCarcosa]
+	[FalseSandboxBooleans:FAFAttackSunsetCity]	
+	[FalseSandboxBooleans:FAFAttackGCHQ]
+	[FalseSandboxBooleans:GC-HQDestroyed]		
+	
+	
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Action-AgarisWar-GCHQ</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+	  [ActivateEvent:true]
+	  [ActivateEventIds:AaW-Event-FAFAttackGCHQ]
+	  
+	  
+	[SetSandboxCounters:FAF_Strength_Counter]
+	[SetSandboxCountersValues:0]
+	  
+	[UseChatBroadcast:true]
+	[ChatData:FAF-Commander-Chat-AgarisWar-GCHQ]
+
+
+	[AddTagstoPlayers:true]
+	[AddTags:Initiated_FAFAttackGCHQ] 
+	[AddTagsIncludeSavedPlayerIdentity:true]  
+	
+	  	  [ResetCooldownTimeOfTriggers:true]
+	  [ResetTriggerCooldownNames:FAF-Commander-Trigger-AgarisWar-GCHQ-Busy]	
+	
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Chat-AgarisWar-GCHQ</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF]
+      [Color:Green]
+	  
+	  [MinTime:2]
+	  [MaxTime:3]	  
+      
+      [ChatMessages:Very well {PlayerName}, we will attack GCHQ in 2 hours.]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+            
+      </Description>
+      
+    </EntityComponent>
+
+<!-- Busy -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Trigger-AgarisWar-GCHQ-Busy</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	  	  	  [MinCooldownMs:2000]
+	  [MaxCooldownMs:2001]
+	[ButtonPanelName:FAF-Commander]
+	[ButtonPanelIndex:3]
+	[Conditions:FAF-Commander-Condition-AgarisWar-GCHQ-Busy]
+	[Actions:FAF-Commander-Action-AgarisWar-GCHQ-Busy]
+
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Condition-AgarisWar-GCHQ-Busy</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	[CheckPlayerReputation:true]
+	
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:-499]
+	[MaxPlayerReputation:1500]
+	
+	
+	
+	[CheckTrueSandboxBooleans:true]
+	[TrueSandboxBooleans:FAFAttackAzuris]	
+	[TrueSandboxBooleans:FAFAttackCarcosa]
+	[TrueSandboxBooleans:FAFAttackSunsetCity]	
+	[TrueSandboxBooleans:FAFAttackGCHQ]
+	[AllowAnyTrueSandboxBoolean:true]
+	
+
+	[CheckFalseSandboxBooleans:true]
+	[FalseSandboxBooleans:GC-HQDestroyed]	
+	
+	
+      </Description>     
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Action-AgarisWar-GCHQ-Busy</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:FAF-Commander-Chat-AgarisWar-GCHQ-Busy]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Chat-AgarisWar-GCHQ-Busy</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF]
+      [Color:Green]
+	  
+	  [MinTime:2]
+	  [MaxTime:3]	  
+      
+      [ChatMessages:That won't be possible {PlayerName}. We have already commited our forces to something else.]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+            
+      </Description>
+      
+    </EntityComponent>
+	
+	
+
+
+
+<!-- -TooWeak-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Trigger-AgarisWar-GCHQ-TooWeak</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:FAF-Commander]
+	[ButtonPanelIndex:3]
+	[Conditions:FAF-Commander-Condition-AgarisWar-GCHQ-TooWeak]
+	[Actions:FAF-Commander-Action-AgarisWar-GCHQ-TooWeak]
+
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Condition-AgarisWar-GCHQ-TooWeak</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	[CheckPlayerReputation:true]
+	
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:-499]
+	[MaxPlayerReputation:1500]
+	
+
+	
+	[CheckFalseSandboxBooleans:true]
+	[FalseSandboxBooleans:FAFReadyForExpansion]	
+	[FalseSandboxBooleans:GC-HQDestroyed]		
+
+
+	[FalseSandboxBooleans:FAFAttackAzuris]	
+	[FalseSandboxBooleans:FAFAttackCarcosa]
+	[FalseSandboxBooleans:FAFAttackSunsetCity]	
+	[FalseSandboxBooleans:FAFAttackGCHQ]	
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Action-AgarisWar-GCHQ-TooWeak</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:FAF-Commander-Chat-AgarisWar-GCHQ-TooWeak]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Chat-AgarisWar-GCHQ-TooWeak</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF]
+      [Color:Green]
+	  
+	  [MinTime:2]
+	  [MaxTime:3]	  
+      
+      [ChatMessages:Sorry, {PlayerName}. We are currently rebuilding our strength]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+            
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+<!-- -AlreadyAttacked-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Trigger-AgarisWar-GCHQ-AlreadyAttacked</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:FAF-Commander]
+	[ButtonPanelIndex:3]
+	[Conditions:FAF-Commander-Condition-AgarisWar-GCHQ-AlreadyAttacked]
+	[Actions:FAF-Commander-Action-AgarisWar-GCHQ-AlreadyAttacked]
+
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Condition-AgarisWar-GCHQ-AlreadyAttacked</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	[CheckPlayerReputation:true]
+	
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:1500]
+	
+	
+	[CheckTrueSandboxBooleans:true]
+	[TrueSandboxBooleans:GC-HQDestroyed]	
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Action-AgarisWar-GCHQ-AlreadyAttacked</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:FAF-Commander-Chat-AgarisWar-GCHQ-AlreadyAttacked]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Chat-AgarisWar-GCHQ-AlreadyAttacked</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF]
+      [Color:Green]
+	  
+	  [MinTime:2]
+	  [MaxTime:3]	  
+      
+      [ChatMessages:Uhh, GC HQ is already destroyed]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+            
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>

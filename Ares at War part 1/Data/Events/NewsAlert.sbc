@@ -5,6 +5,52 @@
 	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Common-IncomingSecuredMessage</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-Common-IncomingSecuredMessage]
+      </Description>
+      
+    </EntityComponent>		
+
+		 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-Common-IncomingSecuredMessage</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+	[IgnoreAntennaRequirement:True]
+	[IgnoredAntennaRangeOverride:1]
+	[SendToAllOnlinePlayers:true]
+
+
+	[Color:Blue]
+	[Author:Ares News Station]
+     
+	[ChatMessages:receiving unknown message]
+	[BroadcastChatType:Notify]
+    [ChatAudio:Static_on]  
+
+	    	  
+      </Description>
+      
+    </EntityComponent>	
+	
+	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
           <SubtypeId>AaW-EventAction-Common-IncomingMessage</SubtypeId>
       </Id>
       <Description>
@@ -47,6 +93,17 @@
       </Description>
       
     </EntityComponent>	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 
 	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

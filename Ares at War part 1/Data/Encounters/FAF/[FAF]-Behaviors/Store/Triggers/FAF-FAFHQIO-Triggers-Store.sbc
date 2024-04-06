@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+  <!-- [Triggers:FAF-Trigger-Static-PopulateStores-FAFHQIO] -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-Trigger-Static-PopulateStores-FAFHQIO</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Session]
+        [Conditions:FAF-Condition-Static-PopulateStores-FAFHQIO]
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:FAF-Action-Static-PopulateStores-FAFHQIO]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-Condition-Static-PopulateStores-FAFHQIO</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+              
+        [UseConditions:true]
+        
+        [CheckAllLoadedModIDs:true]
+        [AllModIDsToCheck:2344068716]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAF-Action-Static-PopulateStores-FAFHQIO</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [ApplyStoreProfiles:true]
+        [ClearStoreContentsFirst:true]
+
+        
+      [StoreBlocks:Store {ITC}]
+      [StoreProfiles:FAF-StoreProfile-FAFHQIO-ITC]		
+		
+	  [StoreBlocks:Store {SYN}]
+      [StoreProfiles:FAF-StoreProfile-FAFHQIO-SYN]	
+		
+      
+	  [StoreBlocks:Store {FAF}]
+      [StoreProfiles:FAF-StoreProfile-FAFHQIO-FAF]	
+
+      [StoreBlocks:Store Civ]
+      [StoreProfiles:FAF-StoreProfile-FAFHQIO-Civ]
+  
+      [StoreBlocks:Store Salvage]
+      [StoreProfiles:FAF-StoreProfile-FAFHQIO-Salvage]
+
+      [StoreBlocks:Store Ammo]
+      [StoreProfiles:FAF-StoreProfile-FAFHQIO-Ammo]
+
+      [StoreBlocks:Store Ingot]
+      [StoreProfiles:FAF-StoreProfile-FAFHQIO-Ingot]
+  
+      [StoreBlocks:Store Tool]
+      [StoreProfiles:FAF-StoreProfile-FAFHQIO-Tool]      
+
+      [StoreBlocks:Store Prefab]
+      [StoreProfiles:FAF-StoreProfile-FAFHQIO-Prefab]      
+
+      
+      [StoreBlocks:Store Fuel]
+      [StoreProfiles:FAF-StoreProfile-FAFHQIO-Fuel]
+  
+      
+      [StoreBlocks:Store Outpost]
+      [StoreProfiles:FAF-StoreProfile-FAFHQIO-Outpost]
+
+	  
+	  
+	[AddCustomDataToBlocks:true]
+	[CustomDataBlockNames:EconomySurvival Store Water Vehicles,EconomySurvival Store Land Vehicles,EconomySurvival Store Air Vehicles,EconomySurvival Store Space Vehicles]
+	[CustomDataFiles:FAF_Water_Vehicles.xml]
+	[CustomDataFiles:FAF_Land_Vehicles.xml]
+	[CustomDataFiles:FAF_Air_Vehicles.xml]
+	[CustomDataFiles:FAF_Space_Vehicles.xml]  
+      </Description>
+
+    </EntityComponent>
+  </EntityComponents>
+</Definitions>

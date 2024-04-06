@@ -1,0 +1,699 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+ 
+  <!-- Carcosa -->
+  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-FAFAttackCarcosa</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+
+		[ActionIds:AaW-EventAction-FAFAttackCarcosa-Start]		
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackCarcosa-Start</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+	
+		[ToggleEvents:true]
+		
+		[ToggleEventTags:FAFAttackCarcosa]
+		[ToggleEventTagModes:true]
+		
+		[ToggleEventTags:AaW-StoryEvent]
+		[ToggleEventTagModes:false]
+		
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownTags:FAFAttackCarcosa]
+		
+		[ChangeBooleans:true]
+		[SetBooleansTrue:FAFAttackCarcosa]		
+
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-CreateGPS]
+		[CustomActionArgumentsString:Battle for Carcosa]
+		[CustomActionArgumentsString:The FAF tries to liberate Carcosa]
+		[CustomActionArgumentsInt:120]		
+		[CustomActionArgumentsVector3D:{X:-1169412.7 Y:97934.39 Z:1325510.96}]	
+
+
+		
+		[ChangeCounters:true]
+		[SetCounters:FAF_Strength_Counter]
+		[SetCountersAmount:0]
+      </Description>      
+    </EntityComponent>
+	
+	
+	<!-- FAFAttackCarcosa -->
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-FAFAttackCarcosa</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	
+	[CheckTrueBooleans:true]
+	[TrueBooleans:FAFAttackCarcosa]  
+
+      </Description>
+      
+    </EntityComponent>	
+
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-FAFAttackCarcosa-PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:false]
+		[Tags:FAFAttackCarcosa]
+	
+		[ConditionIds:AaW-EventCondition-FAFAttackCarcosa]	
+		[ConditionIds:AaW-EventCondition-FAFAttackCarcosa-PlayerNear]
+		
+		
+		[ActionExecution:All]
+		[ActionIds:AaW-EventAction-FAFAttackCarcosa-StartLiveBattle]
+
+      </Description>
+	</EntityComponent>	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-FAFAttackCarcosa-PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+
+	[CheckPlayerNear:true]
+	[PlayerNearCoords:{X:-1169412.7 Y:97934.39 Z:1325510.96}]
+	[PlayerNearDistanceFromCoords:6500]
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackCarcosa-StartLiveBattle</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:FAFAttackCarcosa]
+	[ToggleEventTagModes:false]	
+	
+	[ToggleEventTags:LiveFAFAttackCarcosa]
+	[ToggleEventTagModes:true]		
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:LiveFAFAttackCarcosa]	
+	
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-RemoveGPS]
+	[CustomActionArgumentsString:Battle for Carcosa]
+
+	
+	[SpawnEncounter:true]
+	[SpawnData:FAF-Spawner-MediumStrikeForce]
+	[SpawnFactionTags:FAF]
+	[SpawnCoords:{X:-1169412.7 Y:97934.39 Z:1325510.96}]
+
+	
+      </Description>
+      
+    </EntityComponent>		
+		
+		
+		
+<!--
+[AddTagstoPlayers:true]
+[AddTagsPlayerConditionIds:PlayerCondition-Position-NearSYNForgoneStation]
+[AddTags:WitnessFAFAttackCarcosa]
+	
+LiveFAFAttackCarcosa
+-->
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-LiveFAFAttackCarcosa-AttackerWins</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:false]	
+		[ConditionIds:AaW-EventCondition-FAFAttackCarcosa]
+		[ConditionIds:AaW-EventCondition-LiveFAFAttackCarcosa-AttackerWins]		
+		[Tags:LiveFAFAttackCarcosa]
+
+		[ActionIds:AaW-EventAction-FAFAttackCarcosa-Outcome-GCWon]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-LiveFAFAttackCarcosa-AttackerWins</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	
+      [CheckFalseBooleans:true]
+      [FalseBooleans:GCCarcosa]
+	
+	
+	
+      </Description>
+      
+    </EntityComponent>			
+		
+
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-LiveFAFAttackCarcosa-DefenderWins</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:false]
+		[MinCooldownMs:11000]
+		[MaxCooldownMs:11001]	
+		
+		[ConditionIds:AaW-EventCondition-FAFAttackCarcosa]
+		[ConditionIds:AaW-EventCondition-LiveFAFAttackCarcosa-DefenderWins]		
+		[Tags:LiveFAFAttackCarcosa]
+		[Tags:FAFAliveCheck]
+		
+		
+		[ActionIds:AaW-EventAction-FAFAttackCarcosa-Outcome-GCWon]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-LiveFAFAttackCarcosa-DefenderWins</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	
+      [CheckTrueBooleans:true]
+      [TrueBooleans:GCCarcosa]
+
+      </Description>
+      
+    </EntityComponent>			
+		
+		
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-LiveFAFAttackCarcosa-DefenderWins-CheckAttackers</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[Tags:LiveFAFAttackCarcosa]		
+		[UniqueEvent:false]
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+		
+		[ConditionIds:AaW-EventCondition-FAFAttackCarcosa]
+		[ConditionIds:AaW-EventCondition-LiveFAFAttackCarcosa-DefenderWins]		
+
+
+		[ActionIds:AaW-EventAction-LiveFAFAttackCarcosa-DefenderWins-CheckAttackers]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-LiveFAFAttackCarcosa-DefenderWins-CheckAttackers</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:FAF-Command-FAFAliveCheck]
+	[CommandProfileOriginCoords:{X:-1172077.36428693 Y:99803.4610013119 Z:1323861.13104679}]
+      </Description>
+      
+    </EntityComponent>					
+		
+		
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Command-FAFAliveCheck</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Command]
+      
+      [CommandCode:FAFAliveCheck]
+      
+	  [IgnoreAntennaRequirement:true]
+	  [IgnoreReceiverAntennaRequirement:true]
+	  [MatchSenderReceiverOwners:false]
+	  
+	  [Radius:9000]
+      </Description>
+      
+    </EntityComponent>		
+		
+		
+		
+		
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-FAFAttackCarcosa-Simulate</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:7200000]
+		[MaxCooldownMs:7200001]		
+		[ConditionIds:AaW-EventCondition-FAFAttackCarcosa]		
+		[Tags:FAFAttackCarcosa]
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+		[ActionIds:AaW-EventAction-FAFAttackCarcosa-Simulate-GCWon]
+		[ActionIds:AaW-EventAction-FAFAttackCarcosa-Outcome-GCWon]
+
+
+      </Description>
+	</EntityComponent>	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackCarcosa-Simulate-GCWon</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	
+	[ToggleEvents:true]
+	[ToggleEventTags:FAFAttackCarcosa]
+	[ToggleEventTagModes:false]	
+
+	[ToggleEventTags:LiveFAFAttackCarcosa]
+	[ToggleEventTagModes:false]	
+	
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-RemoveGPS]
+	[CustomActionArgumentsString:Battle for Carcosa]
+	
+	
+	[ChangeReputationWithPlayers:true]
+	[ReputationPlayerConditionIds:PlayerCondition-InitiatedFAFAttackCarcosa]	
+	[ReputationChangeFactions:FAF]
+	[ReputationChangeAmount:-500]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]	
+	
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-FAFAttackCarcosa-PlayerNotPresent]	
+      </Description>
+      
+    </EntityComponent>			
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-FAFAttackCarcosa-PlayerNotPresent</SubtypeId>
+      </Id> 
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:false]
+	  
+	[SendToSpecificPlayers:true]
+	[PlayerConditionIds:PlayerCondition-InitiatedFAFAttackCarcosa]
+
+      [Color:Green]
+      [Author:FAF]
+        
+      [ChatMessages:{PlayerName}! Where were you? We lost our attempt to liberate Carcosa]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+      </Description>
+    </EntityComponent>	
+
+	
+<!-- 
+
+Outcomes:
+
+GC defender win
+ -->
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackCarcosa-Outcome-GCWon</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:FAFAttackCarcosa]
+	[ToggleEventTagModes:false]
+	[ToggleEventTags:LiveFAFAttackCarcosa]
+	[ToggleEventTagModes:false]
+
+
+
+	[ToggleEventTags:AaW-StoryEvent]
+	[ToggleEventTagModes:true]
+		
+
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:AaW-StoryEvent]
+
+	
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-FAFAttackCarcosa-GCWon]			
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:FAF Attack on Carcosa Failed]
+	
+	[RemoveTagsFromPlayers:true]	
+	[RemoveTagsPlayerConditionIds:PlayerCondition-InitiatedFAFAttackCarcosa]
+	[RemoveTags:Initiated_FAFAttackCarcosa]	
+	
+		[ChangeBooleans:true]
+	[SetBooleansFalse:FAFAttackCarcosa]	
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-FAFAttackCarcosa-GCWon</SubtypeId>
+      </Id>
+	  
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Blue]
+      [Author:Ares News Station]
+        
+      [ChatMessages:The GC successfully repelled the FAF at Carcosa]
+      [BroadcastChatType:Chat]
+      [ChatAudio:event_red_alert]  
+    	  
+      </Description>
+    </EntityComponent>		
+
+	
+<!-- 
+FAF win
+ -->	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackCarcosa-Outcome-FAFWon</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:FAFAttackCarcosa]
+	[ToggleEventTagModes:false]
+	[ToggleEventTags:LiveFAFAttackCarcosa]
+	[ToggleEventTagModes:false]
+	
+	[ToggleEventTags:AaW-StoryEvent]
+	[ToggleEventTagModes:true]
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:AaW-StoryEvent]	
+	
+	[RemoveTagsFromPlayers:true]	
+	[RemoveTagsPlayerConditionIds:PlayerCondition-InitiatedFAFAttackCarcosa]
+	[RemoveTags:Initiated_FAFAttackCarcosa]
+	
+	
+	[ChangeBooleans:true]
+	[SetBooleansFalse:FAFAttackCarcosa]	
+	
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+<!-- 
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-FAFAttackCarcosaFAFWon-PlayersTags</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[Tags:FAFAttackCarcosaFAFWon]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:4000]
+		[MaxCooldownMs:4001]	
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+		
+		
+		[ActionIds:AaW-EventAction-FAFAttackCarcosaFAFWon-UpdateREP]
+		[ActionIds:AaW-EventAction-FAFAttackCarcosaFAFWon-PlayersTags]
+		[ActionIds:AaW-EventAction-FAFAttackCarcosaFAFWon-ThankPlayersPersonally]	
+		
+		
+      </Description>
+	</EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackCarcosaFAFWon-UpdateREP</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	
+	
+	[ChangeReputationWithPlayers:true]
+	[ReputationPlayerConditionIds:PlayerCondition-GCHostile]
+	[ReputationPlayerConditionIds:PlayerCondition-SYNPositiveNeutral]
+	[ReputationChangeFactions:SYN]
+	[ReputationChangeAmount:1500]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackCarcosaFAFWon-PlayersTags</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	
+	[AddTagstoPlayers:true]
+	[AddTagsPlayerConditionIds:PlayerCondition-Event-WitnessBattleforAHEHQ]
+	[AddTagsPlayerConditionIds:PlayerCondition-SYNFriendly]
+	[AddTags:SYNHeroAtForgoneStation]
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackCarcosaFAFWon-ThankPlayersPersonally</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-FAFAttackCarcosaFAFWon-ThankPlayersPersonally]
+      </Description>
+    </EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-FAFAttackCarcosaFAFWon-ThankPlayersPersonally</SubtypeId>
+      </Id> 
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:false]
+	  
+	[SendToSpecificPlayers:true]
+	[PlayerConditionIds:PlayerCondition-Event-SYNHeroAtForgoneStation]
+
+	
+      [Color:Green]
+      [Author:AHE]
+        
+      [ChatMessages:{PlayerName}, we owe you. Thanks for coming to help us.]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+      </Description>
+    </EntityComponent>	
+	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-FAFAttackCarcosaFAFWon-VictorySpeech</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event]
+		[Tags:FAFAttackCarcosaFAFWon]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:60000]
+		[MaxCooldownMs:60001]	
+		
+		[ActionIds:AaW-EventAction-FAFAttackCarcosaFAFWon-VictorySpeech]
+      </Description>
+	</EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackCarcosaFAFWon-VictorySpeech</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-FAFAttackCarcosaFAFWon-VictorySpeech]
+
+      </Description>
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-FAFAttackCarcosaFAFWon-VictorySpeech</SubtypeId>
+      </Id>
+	  
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Green]
+      [Author:SYN]
+        
+      [ChatMessages:Today we repelled a GC assault on Forgone Station. Our victory is a testament to our strength. Onward to triumph!]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+    	  
+      </Description>
+    </EntityComponent>	
+-->
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

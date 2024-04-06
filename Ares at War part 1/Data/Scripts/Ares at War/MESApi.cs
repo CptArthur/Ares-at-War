@@ -8,13 +8,16 @@ using VRage.Utils;
 using VRageMath;
 
 //Change namespace to your mod's namespace
-namespace AresAtWar.API {
-	public class MESApi {
+namespace AresAtWar.API
+{
+	public class MESApi
+	{
 
 		public bool MESApiReady;
 
 		private const long _mesModId = 1521905890;
 		private Action<Vector3D, string, double, int, int, int> _addKnownPlayerLocation;
+		private Func<Vector3D, string, string, bool, bool, List<string>, string, MatrixD, Vector3D, bool, long, bool> _apiSpawnRequest;
 		private Action<bool, Action<IMyRemoteControl, string, string, IMyEntity, Vector3D>> _behaviorTriggerActivationWatcher; //TODO: Complete This
 		private Action<string, MatrixD, long, ulong> _chatCommand;
 		private Action<Vector3D, string, double, bool> _changeKnownPlayerLocationSize;
@@ -22,6 +25,7 @@ namespace AresAtWar.API {
 		private Func<List<string>, MatrixD, Vector3, bool, string, string, bool> _customSpawnRequest;
 		private Func<IMyCubeGrid, Vector3D> _getDespawnCoords;
 		private Func<List<string>> _getSpawnGroupBlackList;
+		private Action<string, List<string>> _getSpawnGroupsByType;
 		private Action<long, string, List<MyTuple<IMyRadioAntenna, DateTime>>> _getPlayerInhibitorData;
 		private Func<List<string>> _getNpcNameBlackList;
 		private Func<Vector3D, bool, string, bool> _isPositionInKnownPlayerLocation;
@@ -47,7 +51,8 @@ namespace AresAtWar.API {
 		private Action<bool, string, Action<object[]>> _registerCustomAction;
 
 		//Create this object in your SessionComponent LoadData() Method
-		public MESApi() {
+		public MESApi()
+		{
 
 			MyAPIGateway.Utilities.RegisterMessageHandler(_mesModId, APIListener);
 
@@ -64,6 +69,23 @@ namespace AresAtWar.API {
 		/// <param name="maxSpawns"></param>
 		/// <param name="minThreatForAvoidingAbandonment"></param>
 		public void AddKnownPlayerLocation(Vector3D coords, string faction, double radius, int expirationMinutes, int maxSpawns, int minThreatForAvoidingAbandonment) => _addKnownPlayerLocation?.Invoke(coords, faction, radius, expirationMinutes, maxSpawns, minThreatForAvoidingAbandonment);
+
+		/// <summary>
+		/// This method allows you to spawn an encounter directly from the MES SpawnRequest() method. It is the most powerful and flexible way to spawn an encounter.
+		/// </summary>
+		/// <param name="coords"></param>
+		/// <param name="source"></param>
+		/// <param name="spawningTypeString">This needs to be one of the SpawningType enums (as a string) found in the Spawning\SpawnRequest.cs file</param>
+		/// <param name="forceSpawn"></param>
+		/// <param name="adminSpawn"></param>
+		/// <param name="eligibleNames"></param>
+		/// <param name="factionOverride"></param>
+		/// <param name="spawnMatrix"></param>
+		/// <param name="customVelocity"></param>
+		/// <param name="ignoreSafetyChecks"></param>
+		/// <param name="ownerOverride"></param>
+		/// <returns></returns>
+		public bool ApiSpawnRequest(Vector3D coords, string source, string spawningTypeString, bool forceSpawn = false, bool adminSpawn = false, List<string> eligibleNames = null, string factionOverride = null, MatrixD spawnMatrix = new MatrixD(), Vector3D customVelocity = new Vector3D(), bool ignoreSafetyChecks = false, long ownerOverride = -1) => _apiSpawnRequest?.Invoke(coords, source, spawningTypeString, forceSpawn, adminSpawn, eligibleNames, factionOverride, spawnMatrix, customVelocity, ignoreSafetyChecks, ownerOverride) ?? false;
 
 		/// <summary>
 		/// This method allows you to register a method that will be invoked each time a RivalAI Behavior Action is Successfully Triggered.
@@ -122,6 +144,13 @@ namespace AresAtWar.API {
 		/// </summary>
 		/// <returns>List of SpawnGroup SubtypeNames</returns>
 		public List<string> GetSpawnGroupBlackList() => _getSpawnGroupBlackList?.Invoke() ?? new List<string>();
+
+		/// <summary>
+		/// Uses the name of a SpawningType to collect a list of SpawnGroup names and adds them to a provided string list.
+		/// </summary>
+		/// <param name="spawningType">This needs to be one of the SpawningType enums (as a string) found in the Spawning\SpawnRequest.cs file</param>
+		/// <param name="spawnGroupNames"></param>
+		public void GetSpawnGroupsByType(string spawningType, List<string> spawnGroupNames) => _getSpawnGroupsByType?.Invoke(spawningType, spawnGroupNames);
 
 		/// <summary>
 		/// Get a String List of all Current SpawnGroup SubtypeNames Currently in the MES Blacklist
@@ -307,19 +336,23 @@ namespace AresAtWar.API {
 		public void RegisterCustomAction(bool register, string methodIdentifier, Action<object[]> action) => _registerCustomAction?.Invoke(register, methodIdentifier, action);
 
 		//Run This Method in your SessionComponent UnloadData() Method
-		public void UnregisterListener() {
+		public void UnregisterListener()
+		{
 
 			MyAPIGateway.Utilities.UnregisterMessageHandler(_mesModId, APIListener);
 
 		}
 
-		public void APIListener(object data) {
+		public void APIListener(object data)
+		{
 
-			try {
+			try
+			{
 
 				var dict = data as Dictionary<string, Delegate>;
 
-				if (dict == null) {
+				if (dict == null)
+				{
 
 					return;
 
@@ -327,11 +360,13 @@ namespace AresAtWar.API {
 
 				MESApiReady = true;
 				_addKnownPlayerLocation = (Action<Vector3D, string, double, int, int, int>)dict["AddKnownPlayerLocation"];
+				_apiSpawnRequest = (Func<Vector3D, string, string, bool, bool, List<string>, string, MatrixD, Vector3D, bool, long, bool>)dict["ApiSpawnRequest"];
 				_behaviorTriggerActivationWatcher = (Action<bool, Action<IMyRemoteControl, string, string, IMyEntity, Vector3D>>)dict["BehaviorTriggerActivationWatcher"];
 				_chatCommand = (Action<string, MatrixD, long, ulong>)dict["ChatCommand"];
 				_customSpawnRequest = (Func<List<string>, MatrixD, Vector3, bool, string, string, bool>)dict["CustomSpawnRequest"];
 				_getDespawnCoords = (Func<IMyCubeGrid, Vector3D>)dict["GetDespawnCoords"];
 				_getSpawnGroupBlackList = (Func<List<string>>)dict["GetSpawnGroupBlackList"];
+				_getSpawnGroupsByType = (Action<string, List<string>>)dict["GetSpawnGroupsByType"];
 				_getNpcNameBlackList = (Func<List<string>>)dict["GetNpcNameBlackList"];
 				_isPositionInKnownPlayerLocation = (Func<Vector3D, bool, string, bool>)dict["IsPositionInKnownPlayerLocation"];
 				_convertRandomNamePatterns = (Func<string, string>)dict["ConvertRandomNamePatterns"];
@@ -355,7 +390,9 @@ namespace AresAtWar.API {
 				_toggleSpawnGroupEnabled = (Action<string, bool>)dict["ToggleSpawnGroupEnabled"];
 				_registerCustomAction = (Action<bool, string, Action<object[]>>)dict["RegisterCustomAction"];
 
-			} catch (Exception e) {
+			}
+			catch (Exception e)
+			{
 
 				MyLog.Default.WriteLineAndConsole("MES API Failed To Load For Client: " + MyAPIGateway.Utilities.GamePaths.ModScopeName);
 

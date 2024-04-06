@@ -53,24 +53,51 @@
       
     </EntityComponent>    
   
-  
+      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-SquadronLeader-Action-Loose</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:FAC-SquadronLeader-Command-Loose]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:FAC-SquadronLeader-Trigger-Damage-PlayerDamage]
+        [DisableTriggerNames:FAC-SquadronLeader-Trigger-Damage-DamagerIsNPC]
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-SquadronLeader-Command-Loose</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Command]
+
+        [CommandCode:FACLooseFighters]
+        [MatchSenderReceiverOwners:true]
+	
+		[Radius:5000]
+
+      </Description>
+
+    </EntityComponent>	 
   -->
   
   
   
   
+    
   
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
           <SubtypeId>FAC-SquadronLeader-Trigger-HasTarget</SubtypeId>
@@ -89,7 +116,23 @@
       
     </EntityComponent>
 	
-	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-SquadronLeader-Action-HasTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	[ChangeBehaviorSubclass:true]
+	[NewBehaviorSubclass:Fighter]
+	[UseChatBroadcast:true]	
+	[ChatData:FAC-SquadronLeader-Chat-HasTarget]
+
+
+      </Description>
+      
+    </EntityComponent>	
 	
 	
 	
@@ -116,6 +159,27 @@
       </Description>
 
     </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-SquadronLeader-Action-ProcessEscortRequest</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+      [AssignEscortFromCommand:true]
+      [UseChatBroadcast:true]
+      [ChatData:FAC-SquadronLeader-Chat-Escort]		
+
+      </Description>
+
+    </EntityComponent>		
+	
+	
+
 	
 	
   </EntityComponents>

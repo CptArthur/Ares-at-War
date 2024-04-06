@@ -1,0 +1,172 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+
+<!--
+[Triggers:FAC-Trigger-OffensiveDrone-TargetUnderGround]
+[Triggers:FAC-Action-OffensiveDrone-ResetAutopilot]
+
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Trigger-OffensiveDrone-TargetUnderGround</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:HasTarget]
+
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+		
+		[Conditions:FAC-Condition-OffensiveDrone-TargetUnderGround]
+		
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:FAC-Action-OffensiveDrone-TargetUnderGround]
+
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Condition-OffensiveDrone-TargetUnderGround</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+
+        [UseConditions:true]
+
+        [IsTargetStatic:true]
+		
+		[TargetAltitudeCheck:true]
+		[MaxTargetAltitude:-50]
+
+
+		[CheckTargetDistance:true]
+		[MaxTargetDistance:1200]
+
+      </Description>
+
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Action-OffensiveDrone-TargetUnderGround</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+		[DebugMessage:TargetUnderGround]
+		
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Tertiary]
+
+
+
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:FAC-Trigger-OffensiveDrone-TargetUnderGround]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:FAC-Trigger-OffensiveDrone-ResetAutopilot]
+
+
+
+      </Description>
+    </EntityComponent>
+	
+	
+	<!-- Reset -->
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Trigger-OffensiveDrone-ResetAutopilot</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:false]
+        [Type:ChangedTarget]
+
+        [MinCooldownMs:600]
+        [MaxCooldownMs:601]
+		
+		[Conditions:FAC-Condition-OffensiveDrone-TargetAboveGround]
+		
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:FAC-Action-OffensiveDrone-ResetAutopilot]
+
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Condition-OffensiveDrone-TargetAboveGround</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+		
+		[UseFailCondition:true]
+		
+        [UseConditions:true]
+        [IsTargetStatic:true]
+		
+		[TargetAltitudeCheck:true]
+		[MaxTargetAltitude:-50]
+      </Description>
+
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC-Action-OffensiveDrone-ResetAutopilot</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+
+
+		[DebugMessage:ResetAutopilot]
+		
+		[ChangeAutopilotProfile:true]
+		[AutopilotProfile:Primary]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:FAC-Trigger-OffensiveDrone-ResetAutopilot]
+		
+		[EnableTriggers:true]
+        [EnableTriggerNames:FAC-Trigger-OffensiveDrone-TargetUnderGround]
+
+
+      </Description>
+    </EntityComponent>	
+	
+	
+
+	
+
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PhysicalItems>
+	
+	 <PhysicalItem xsi:type="MyObjectBuilder_ConsumableItemDefinition">
+      <Id>
+        <TypeId>ConsumableItem</TypeId>
+        <SubtypeId>FAFSquadron</SubtypeId>
+      </Id>
+      <DisplayName>FAF Squadron Request Beacon</DisplayName>
+      <Description>Using this item will attempt to call a FAF Squadron </Description> <!--from a nearby FAF station-->
+      <Icon>Textures\GUI\Icons\Items\PowerKit.dds</Icon>
+      <Size>
+        <X>0.14</X>
+        <Y>0.43</Y>
+        <Z>0.14</Z>
+      </Size>
+      <Mass>9</Mass>
+      <Volume>9</Volume>
+      <Model>Models\Items\PowerKit.mwm</Model>
+      <PhysicalMaterial>Metal</PhysicalMaterial>
+      <Stats>
+        <Stat Name="BatteryCharge" Value ="-0.05" Time="2"/>
+      </Stats>
+      <MinimalPricePerUnit>5000000</MinimalPricePerUnit>
+      <CanPlayerOrder>false</CanPlayerOrder>
+      <CanSpawnFromScreen>true</CanSpawnFromScreen>
+    </PhysicalItem>
+	
+
+    
+  </PhysicalItems>
+</Definitions>

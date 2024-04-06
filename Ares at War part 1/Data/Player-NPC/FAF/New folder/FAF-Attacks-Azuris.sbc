@@ -1,0 +1,703 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+ 
+  <!-- Azuris -->
+  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-FAFAttackAzuris</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+
+		[ActionIds:AaW-EventAction-FAFAttackAzuris-Start]		
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackAzuris-Start</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+	
+		[DebugHudMessage:FAFAttackAzuris]
+		[ToggleEvents:true]
+		
+		[ToggleEventTags:FAFAttackAzuris]
+		[ToggleEventTagModes:true]
+		
+		[ToggleEventTags:AaW-StoryEvent]
+		[ToggleEventTagModes:false]
+		
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownTags:FAFAttackAzuris]
+		
+		[ChangeBooleans:true]
+		[SetBooleansTrue:FAFAttackAzuris]		
+
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-CreateGPS]
+		[CustomActionArgumentsString:Battle for Azuris]
+		[CustomActionArgumentsString:The FAF tries to liberate Azuris]
+		[CustomActionArgumentsInt:120]		
+		[CustomActionArgumentsVector3D:{X:-1083758.95490802 Y:125933.592745608 Z:1256220.63219873}]	
+			[ChangeCounters:true]
+		[SetCounters:FAF_Strength_Counter]
+		[SetCountersAmount:0]	
+
+      </Description>      
+    </EntityComponent>
+	
+	
+	<!-- 
+			[ChangeCounters:true]
+		[SetCounters:FAF_Strength_Counter]
+		[SetCountersAmount:0]
+
+FAFAttackAzuris -->
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-FAFAttackAzuris</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	
+	[CheckTrueBooleans:true]
+	[TrueBooleans:FAFAttackAzuris]  
+
+      </Description>
+      
+    </EntityComponent>	
+
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-FAFAttackAzuris-PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:false]
+		[Tags:FAFAttackAzuris]
+	
+		[ConditionIds:AaW-EventCondition-FAFAttackAzuris]	
+		[ConditionIds:AaW-EventCondition-FAFAttackAzuris-PlayerNear]
+		
+		
+		[ActionExecution:All]
+		[ActionIds:AaW-EventAction-FAFAttackAzuris-StartLiveBattle]
+
+      </Description>
+	</EntityComponent>	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-FAFAttackAzuris-PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+
+	[CheckPlayerNear:true]
+	[PlayerNearCoords:{X:-1083758.95490802 Y:125933.592745608 Z:1256220.63219873}]
+	[PlayerNearDistanceFromCoords:6500]
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackAzuris-StartLiveBattle</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:FAFAttackAzuris]
+	[ToggleEventTagModes:false]	
+	
+	[ToggleEventTags:LiveFAFAttackAzuris]
+	[ToggleEventTagModes:true]		
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:LiveFAFAttackAzuris]	
+	
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-RemoveGPS]
+	[CustomActionArgumentsString:Battle for Azuris]
+
+	
+	[SpawnEncounter:true]
+	[SpawnData:FAF-Spawner-MediumStrikeForce]
+	[SpawnFactionTags:FAF]
+	[SpawnCoords:{X:-1083758.95490802 Y:125933.592745608 Z:1256220.63219873}]
+
+	
+      </Description>
+      
+    </EntityComponent>		
+		
+		
+		
+<!--
+[AddTagstoPlayers:true]
+[AddTagsPlayerConditionIds:PlayerCondition-Position-NearSYNForgoneStation]
+[AddTags:WitnessFAFAttackAzuris]
+	
+LiveFAFAttackAzuris
+-->
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-LiveFAFAttackAzuris-AttackerWins</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:false]	
+		[ConditionIds:AaW-EventCondition-FAFAttackAzuris]
+		[ConditionIds:AaW-EventCondition-LiveFAFAttackAzuris-AttackerWins]		
+		[Tags:LiveFAFAttackAzuris]
+
+		[ActionIds:AaW-EventAction-FAFAttackAzuris-Outcome-GCWon]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-LiveFAFAttackAzuris-AttackerWins</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	
+      [CheckFalseBooleans:true]
+      [FalseBooleans:GCAzuris]
+	
+	
+	
+      </Description>
+      
+    </EntityComponent>			
+		
+
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-LiveFAFAttackAzuris-DefenderWins</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:false]
+		[MinCooldownMs:11000]
+		[MaxCooldownMs:11001]	
+		
+		[ConditionIds:AaW-EventCondition-FAFAttackAzuris]
+		[ConditionIds:AaW-EventCondition-LiveFAFAttackAzuris-DefenderWins]		
+		[Tags:LiveFAFAttackAzuris]
+		[Tags:FAFAliveCheck]
+		
+		
+		[ActionIds:AaW-EventAction-FAFAttackAzuris-Outcome-GCWon]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-LiveFAFAttackAzuris-DefenderWins</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	
+      [CheckTrueBooleans:true]
+      [TrueBooleans:GCAzuris]
+
+      </Description>
+      
+    </EntityComponent>			
+		
+		
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-LiveFAFAttackAzuris-DefenderWins-CheckAttackers</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[Tags:LiveFAFAttackAzuris]		
+		[UniqueEvent:false]
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+		
+		[ConditionIds:AaW-EventCondition-FAFAttackAzuris]
+		[ConditionIds:AaW-EventCondition-LiveFAFAttackAzuris-DefenderWins]		
+
+
+		[ActionIds:AaW-EventAction-LiveFAFAttackAzuris-DefenderWins-CheckAttackers]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-LiveFAFAttackAzuris-DefenderWins-CheckAttackers</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:FAF-Command-FAFAliveCheck]
+	[CommandProfileOriginCoords:{X:-1083758.95490802 Y:125933.592745608 Z:1256220.63219873}]
+      </Description>
+      
+    </EntityComponent>					
+		
+		
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Command-FAFAliveCheck</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Command]
+      
+      [CommandCode:FAFAliveCheck]
+      
+	  [IgnoreAntennaRequirement:true]
+	  [IgnoreReceiverAntennaRequirement:true]
+	  [MatchSenderReceiverOwners:false]
+	  
+	  [Radius:9000]
+      </Description>
+      
+    </EntityComponent>		
+		
+		
+		
+		
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-FAFAttackAzuris-Simulate</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:7200000]
+		[MaxCooldownMs:7200001]		
+		[ConditionIds:AaW-EventCondition-FAFAttackAzuris]		
+		[Tags:FAFAttackAzuris]
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+		[ActionIds:AaW-EventAction-FAFAttackAzuris-Simulate-GCWon]
+		[ActionIds:AaW-EventAction-FAFAttackAzuris-Outcome-GCWon]
+
+
+      </Description>
+	</EntityComponent>	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackAzuris-Simulate-GCWon</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	
+	[ToggleEvents:true]
+	[ToggleEventTags:FAFAttackAzuris]
+	[ToggleEventTagModes:false]	
+
+	[ToggleEventTags:LiveFAFAttackAzuris]
+	[ToggleEventTagModes:false]	
+	
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-RemoveGPS]
+	[CustomActionArgumentsString:Battle for Azuris]
+	
+	
+	[ChangeReputationWithPlayers:true]
+	[ReputationPlayerConditionIds:PlayerCondition-InitiatedFAFAttackAzuris]	
+	[ReputationChangeFactions:FAF]
+	[ReputationChangeAmount:-500]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]	
+	
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-FAFAttackAzuris-PlayerNotPresent]	
+      </Description>
+      
+    </EntityComponent>			
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-FAFAttackAzuris-PlayerNotPresent</SubtypeId>
+      </Id> 
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:false]
+	  
+	[SendToSpecificPlayers:true]
+	[PlayerConditionIds:PlayerCondition-InitiatedFAFAttackAzuris]
+
+      [Color:Green]
+      [Author:FAF]
+        
+      [ChatMessages:{PlayerName}! Where were you? We lost our attempt to liberate Azuris]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+      </Description>
+    </EntityComponent>	
+
+	
+<!-- 
+
+Outcomes:
+
+GC defender win
+ -->
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackAzuris-Outcome-GCWon</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:FAFAttackAzuris]
+	[ToggleEventTagModes:false]
+	[ToggleEventTags:LiveFAFAttackAzuris]
+	[ToggleEventTagModes:false]
+
+
+
+	[ToggleEventTags:AaW-StoryEvent]
+	[ToggleEventTagModes:true]
+		
+
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:AaW-StoryEvent]
+
+	[ChangeBooleans:true]
+	[SetBooleansFalse:FAFAttackAzuris]	
+	
+	
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-FAFAttackAzuris-GCWon]			
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:FAF Attack on Azuris Failed]
+	
+	[RemoveTagsFromPlayers:true]	
+	[RemoveTagsPlayerConditionIds:PlayerCondition-InitiatedFAFAttackAzuris]
+	[RemoveTags:Initiated_FAFAttackAzuris]	
+	
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-FAFAttackAzuris-GCWon</SubtypeId>
+      </Id>
+	  
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Blue]
+      [Author:Ares News Station]
+        
+      [ChatMessages:The GC successfully repelled the FAF at Azuris]
+      [BroadcastChatType:Chat]
+      [ChatAudio:event_red_alert]  
+    	  
+      </Description>
+    </EntityComponent>		
+
+	
+<!-- 
+FAF win
+ -->	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackAzuris-Outcome-FAFWon</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:FAFAttackAzuris]
+	[ToggleEventTagModes:false]
+	[ToggleEventTags:LiveFAFAttackAzuris]
+	[ToggleEventTagModes:false]
+	
+	[ToggleEventTags:AaW-StoryEvent]
+	[ToggleEventTagModes:true]
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:AaW-StoryEvent]	
+	
+	[RemoveTagsFromPlayers:true]	
+	[RemoveTagsPlayerConditionIds:PlayerCondition-InitiatedFAFAttackAzuris]
+	[RemoveTags:Initiated_FAFAttackAzuris]
+	
+	
+		[ChangeBooleans:true]
+	[SetBooleansFalse:FAFAttackAzuris]	
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+<!-- 
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-FAFAttackAzurisFAFWon-PlayersTags</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[Tags:FAFAttackAzurisFAFWon]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:4000]
+		[MaxCooldownMs:4001]	
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+		
+		
+		[ActionIds:AaW-EventAction-FAFAttackAzurisFAFWon-UpdateREP]
+		[ActionIds:AaW-EventAction-FAFAttackAzurisFAFWon-PlayersTags]
+		[ActionIds:AaW-EventAction-FAFAttackAzurisFAFWon-ThankPlayersPersonally]	
+		
+		
+      </Description>
+	</EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackAzurisFAFWon-UpdateREP</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	
+	
+	[ChangeReputationWithPlayers:true]
+	[ReputationPlayerConditionIds:PlayerCondition-GCHostile]
+	[ReputationPlayerConditionIds:PlayerCondition-SYNPositiveNeutral]
+	[ReputationChangeFactions:SYN]
+	[ReputationChangeAmount:1500]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackAzurisFAFWon-PlayersTags</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	
+	[AddTagstoPlayers:true]
+	[AddTagsPlayerConditionIds:PlayerCondition-Event-WitnessBattleforAHEHQ]
+	[AddTagsPlayerConditionIds:PlayerCondition-SYNFriendly]
+	[AddTags:SYNHeroAtForgoneStation]
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackAzurisFAFWon-ThankPlayersPersonally</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-FAFAttackAzurisFAFWon-ThankPlayersPersonally]
+      </Description>
+    </EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-FAFAttackAzurisFAFWon-ThankPlayersPersonally</SubtypeId>
+      </Id> 
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:false]
+	  
+	[SendToSpecificPlayers:true]
+	[PlayerConditionIds:PlayerCondition-Event-SYNHeroAtForgoneStation]
+
+	
+      [Color:Green]
+      [Author:AHE]
+        
+      [ChatMessages:{PlayerName}, we owe you. Thanks for coming to help us.]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+      </Description>
+    </EntityComponent>	
+	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-FAFAttackAzurisFAFWon-VictorySpeech</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event]
+		[Tags:FAFAttackAzurisFAFWon]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:60000]
+		[MaxCooldownMs:60001]	
+		
+		[ActionIds:AaW-EventAction-FAFAttackAzurisFAFWon-VictorySpeech]
+      </Description>
+	</EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackAzurisFAFWon-VictorySpeech</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-FAFAttackAzurisFAFWon-VictorySpeech]
+
+      </Description>
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-FAFAttackAzurisFAFWon-VictorySpeech</SubtypeId>
+      </Id>
+	  
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Green]
+      [Author:SYN]
+        
+      [ChatMessages:Today we repelled a GC assault on Forgone Station. Our victory is a testament to our strength. Onward to triumph!]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+    	  
+      </Description>
+    </EntityComponent>	
+-->
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

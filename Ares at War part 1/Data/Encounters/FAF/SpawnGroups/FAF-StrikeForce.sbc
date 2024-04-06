@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+	
+	
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>FAF-SpawnGroup-LightStrikeForce</SubtypeId>
+			</Id>
+			<Description>
+		[Modular Encounters SpawnGroup]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+
+		[SpawnConditionsProfiles:GC-SpawnProfile-RivalAISpawn]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="FAF-TetrarchFighter">
+					<Position>
+						<X>-100.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>FAF-Squadron-2-Behavior</Behaviour>
+				</Prefab>
+
+				<Prefab SubtypeId="FAF-TetrarchFighter">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>FAF-Squadron-1-Behavior</Behaviour>
+				</Prefab>
+
+				<Prefab SubtypeId="FAF-TetrarchFighter">
+					<Position>
+						<X>100.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>FAF-Squadron-3-Behavior</Behaviour>
+				</Prefab>
+			</Prefabs>			
+		</SpawnGroup>
+
+
+	<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>FAF-SpawnGroup-MediumStrikeForce</SubtypeId>
+			</Id>
+		<Description>
+	[Modular Encounters SpawnGroup]
+	[UseRivalAi:true]
+	[RivalAiReplaceRemoteControl:true]
+
+		[SpawnConditionsProfiles:GC-SpawnProfile-RivalAISpawn]
+	
+	
+		[UseSpawnGroupPrefabSpawningMode:true]
+		[PrefabSpawningMode:RandomSelectedIndexes]
+
+        [PrefabIndexGroupNames:Escort1]
+        [PrefabIndexGroupValues:0]
+
+        [PrefabIndexGroupNames:Escort2]
+        [PrefabIndexGroupValues:1]
+		
+        [PrefabIndexGroupNames:Main]
+        [PrefabIndexGroupValues:2]
+        [PrefabIndexGroupNames:Main]
+        [PrefabIndexGroupValues:3]	
+	
+	
+	
+
+		</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				
+				<Prefab SubtypeId="FAF-TetrarchFighter">
+					<Position>
+						<X>-100.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>FAF-OffensiveEscortDrone-Behavior</Behaviour>
+				</Prefab>
+
+				<Prefab SubtypeId="FAF-TetrarchFighter">
+					<Position>
+						<X>100.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>FAF-OffensiveEscortDrone-Behavior</Behaviour>
+				</Prefab>
+			
+		
+				<Prefab SubtypeId="FAF-SD38-SupplyFreighter">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>FAF-LDroneTaskLeader-Behavior</Behaviour>
+				</Prefab>
+	
+	
+				<Prefab SubtypeId="FAF-StolenGunship">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>FAF-LDroneTaskLeader-Behavior</Behaviour>
+				</Prefab>		
+
+		</Prefabs>			
+	</SpawnGroup>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+	</SpawnGroups>
+</Definitions>

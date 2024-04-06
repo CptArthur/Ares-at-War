@@ -1,0 +1,705 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+ 
+  <!-- GCHQ -->
+  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-FAFAttackGCHQ</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+
+		[ActionIds:AaW-EventAction-FAFAttackGCHQ-Start]		
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackGCHQ-Start</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+	
+		[ToggleEvents:true]
+		
+		[ToggleEventTags:FAFAttackGCHQ]
+		[ToggleEventTagModes:true]
+		
+		[ToggleEventTags:AaW-StoryEvent]
+		[ToggleEventTagModes:false]
+		
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownTags:FAFAttackGCHQ]
+		
+		[ChangeBooleans:true]
+		[SetBooleansTrue:FAFAttackGCHQ]		
+
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-CreateGPS]
+		[CustomActionArgumentsString:Battle for GCHQ]
+		[CustomActionArgumentsString:The FAF tries to liberate GCHQ]
+		[CustomActionArgumentsInt:120]		
+		[CustomActionArgumentsVector3D:{X:-1132574.38899227 Y:150769.749486583 Z:1240151.92102337}]	
+
+		[ChangeCounters:true]
+		[SetCounters:FAF_Strength_Counter]
+		[SetCountersAmount:0]
+      </Description>      
+    </EntityComponent>
+	
+	
+	<!-- FAFAttackGCHQ -->
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-FAFAttackGCHQ</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	
+	[CheckTrueBooleans:true]
+	[TrueBooleans:FAFAttackGCHQ]  
+
+      </Description>
+      
+    </EntityComponent>	
+
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-FAFAttackGCHQ-PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:false]
+		[Tags:FAFAttackGCHQ]
+	
+		[ConditionIds:AaW-EventCondition-FAFAttackGCHQ]	
+		[ConditionIds:AaW-EventCondition-FAFAttackGCHQ-PlayerNear]
+		
+		
+		[ActionExecution:All]
+		[ActionIds:AaW-EventAction-FAFAttackGCHQ-StartLiveBattle]
+
+      </Description>
+	</EntityComponent>	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-FAFAttackGCHQ-PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+
+	[CheckPlayerNear:true]
+	[PlayerNearCoords:{X:-1132574.38899227 Y:150769.749486583 Z:1240151.92102337}]
+	[PlayerNearDistanceFromCoords:6500]
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackGCHQ-StartLiveBattle</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:FAFAttackGCHQ]
+	[ToggleEventTagModes:false]	
+	
+	[ToggleEventTags:LiveFAFAttackGCHQ]
+	[ToggleEventTagModes:true]		
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:LiveFAFAttackGCHQ]	
+	
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-RemoveGPS]
+	[CustomActionArgumentsString:Battle for GCHQ]
+
+	
+	[SpawnEncounter:true]
+	[SpawnData:FAF-Spawner-MediumStrikeForce]
+	[SpawnFactionTags:FAF]
+	[SpawnCoords:{X:-1132574.38899227 Y:150769.749486583 Z:1240151.92102337}]
+
+	
+      </Description>
+      
+    </EntityComponent>		
+		
+		
+		
+<!--
+[AddTagstoPlayers:true]
+[AddTagsPlayerConditionIds:PlayerCondition-Position-NearSYNForgoneStation]
+[AddTags:WitnessFAFAttackGCHQ]
+	
+LiveFAFAttackGCHQ
+-->
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-LiveFAFAttackGCHQ-AttackerWins</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:false]	
+		[ConditionIds:AaW-EventCondition-FAFAttackGCHQ]
+		[ConditionIds:AaW-EventCondition-LiveFAFAttackGCHQ-AttackerWins]		
+		[Tags:LiveFAFAttackGCHQ]
+
+		[ActionIds:AaW-EventAction-FAFAttackGCHQ-Outcome-FAFWon]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-LiveFAFAttackGCHQ-AttackerWins</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	
+
+		
+      [CheckTrueBooleans:true]
+      [TrueBooleans:GC-HQDestroyed]
+	
+      </Description>
+      
+    </EntityComponent>			
+		
+
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-LiveFAFAttackGCHQ-DefenderWins</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:false]
+		[MinCooldownMs:11000]
+		[MaxCooldownMs:11001]	
+		
+		[ConditionIds:AaW-EventCondition-FAFAttackGCHQ]
+		[ConditionIds:AaW-EventCondition-LiveFAFAttackGCHQ-DefenderWins]		
+		[Tags:LiveFAFAttackGCHQ]
+		[Tags:FAFAliveCheck]
+		
+		
+		[ActionIds:AaW-EventAction-FAFAttackGCHQ-Outcome-GCWon]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-LiveFAFAttackGCHQ-DefenderWins</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	
+	      [CheckFalseBooleans:true]
+      [FalseBooleans:GC-HQDestroyed]
+	
+	
+
+
+      </Description>
+      
+    </EntityComponent>			
+		
+		
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-LiveFAFAttackGCHQ-DefenderWins-CheckAttackers</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[Tags:LiveFAFAttackGCHQ]		
+		[UniqueEvent:false]
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+		
+		[ConditionIds:AaW-EventCondition-FAFAttackGCHQ]
+		[ConditionIds:AaW-EventCondition-LiveFAFAttackGCHQ-DefenderWins]		
+
+
+		[ActionIds:AaW-EventAction-LiveFAFAttackGCHQ-DefenderWins-CheckAttackers]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-LiveFAFAttackGCHQ-DefenderWins-CheckAttackers</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:FAF-Command-FAFAliveCheck]
+	[CommandProfileOriginCoords:{X:-1132574.38899227 Y:150769.749486583 Z:1240151.92102337}]
+      </Description>
+      
+    </EntityComponent>					
+		
+		
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Command-FAFAliveCheck</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Command]
+      
+      [CommandCode:FAFAliveCheck]
+      
+	  [IgnoreAntennaRequirement:true]
+	  [IgnoreReceiverAntennaRequirement:true]
+	  [MatchSenderReceiverOwners:false]
+	  
+	  [Radius:9000]
+      </Description>
+      
+    </EntityComponent>		
+		
+		
+		
+		
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-FAFAttackGCHQ-Simulate</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:7200000]
+		[MaxCooldownMs:7200001]		
+		[ConditionIds:AaW-EventCondition-FAFAttackGCHQ]		
+		[Tags:FAFAttackGCHQ]
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+		[ActionIds:AaW-EventAction-FAFAttackGCHQ-Simulate-GCWon]
+		[ActionIds:AaW-EventAction-FAFAttackGCHQ-Outcome-GCWon]
+
+
+      </Description>
+	</EntityComponent>	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackGCHQ-Simulate-GCWon</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	
+	[ToggleEvents:true]
+	[ToggleEventTags:FAFAttackGCHQ]
+	[ToggleEventTagModes:false]	
+
+	[ToggleEventTags:LiveFAFAttackGCHQ]
+	[ToggleEventTagModes:false]	
+	
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-RemoveGPS]
+	[CustomActionArgumentsString:Battle for GCHQ]
+	
+	
+	[ChangeReputationWithPlayers:true]
+	[ReputationPlayerConditionIds:PlayerCondition-InitiatedFAFAttackGCHQ]	
+	[ReputationChangeFactions:FAF]
+	[ReputationChangeAmount:-500]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]	
+	
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-FAFAttackGCHQ-PlayerNotPresent]	
+      </Description>
+      
+    </EntityComponent>			
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-FAFAttackGCHQ-PlayerNotPresent</SubtypeId>
+      </Id> 
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:false]
+	  
+	[SendToSpecificPlayers:true]
+	[PlayerConditionIds:PlayerCondition-InitiatedFAFAttackGCHQ]
+
+      [Color:Green]
+      [Author:FAF]
+        
+      [ChatMessages:{PlayerName}! Where were you? We lost our attempt to destroy GCHQ]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+      </Description>
+    </EntityComponent>	
+
+	
+<!-- 
+
+Outcomes:
+
+GC defender win
+ -->
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackGCHQ-Outcome-GCWon</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:FAFAttackGCHQ]
+	[ToggleEventTagModes:false]
+	[ToggleEventTags:LiveFAFAttackGCHQ]
+	[ToggleEventTagModes:false]
+
+	[ChangeBooleans:true]
+	[SetBooleansFalse:FAFAttackGCHQ]	
+	
+
+	[ToggleEventTags:AaW-StoryEvent]
+	[ToggleEventTagModes:true]
+		
+			[ChangeBooleans:true]
+	[SetBooleansFalse:FAFAttackGCHQ]	
+	
+
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:AaW-StoryEvent]
+
+	
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-FAFAttackGCHQ-GCWon]			
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:FAF Attack on GCHQ Failed]
+	
+	[RemoveTagsFromPlayers:true]	
+	[RemoveTagsPlayerConditionIds:PlayerCondition-InitiatedFAFAttackGCHQ]
+	[RemoveTags:Initiated_FAFAttackGCHQ]	
+	
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-FAFAttackGCHQ-GCWon</SubtypeId>
+      </Id>
+	  
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Blue]
+      [Author:Ares News Station]
+        
+      [ChatMessages:The GC successfully repelled the FAF at their HQ]
+      [BroadcastChatType:Chat]
+      [ChatAudio:event_red_alert]  
+    	  
+      </Description>
+    </EntityComponent>		
+
+	
+<!-- 
+FAF win
+ -->	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackGCHQ-Outcome-FAFWon</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:FAFAttackGCHQ]
+	[ToggleEventTagModes:false]
+	[ToggleEventTags:LiveFAFAttackGCHQ]
+	[ToggleEventTagModes:false]
+	
+	[ToggleEventTags:AaW-StoryEvent]
+	[ToggleEventTagModes:true]
+	
+	
+	[ChangeBooleans:true]
+	[SetBooleansFalse:FAFAttackGCHQ]		
+	
+	
+	
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:AaW-StoryEvent]	
+	
+	[RemoveTagsFromPlayers:true]	
+	[RemoveTagsPlayerConditionIds:PlayerCondition-InitiatedFAFAttackGCHQ]
+	[RemoveTags:Initiated_FAFAttackGCHQ]
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+<!-- 
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-FAFAttackGCHQFAFWon-PlayersTags</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[Tags:FAFAttackGCHQFAFWon]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:4000]
+		[MaxCooldownMs:4001]	
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+		
+		
+		[ActionIds:AaW-EventAction-FAFAttackGCHQFAFWon-UpdateREP]
+		[ActionIds:AaW-EventAction-FAFAttackGCHQFAFWon-PlayersTags]
+		[ActionIds:AaW-EventAction-FAFAttackGCHQFAFWon-ThankPlayersPersonally]	
+		
+		
+      </Description>
+	</EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackGCHQFAFWon-UpdateREP</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	
+	
+	[ChangeReputationWithPlayers:true]
+	[ReputationPlayerConditionIds:PlayerCondition-GCHostile]
+	[ReputationPlayerConditionIds:PlayerCondition-SYNPositiveNeutral]
+	[ReputationChangeFactions:SYN]
+	[ReputationChangeAmount:1500]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackGCHQFAFWon-PlayersTags</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	
+	[AddTagstoPlayers:true]
+	[AddTagsPlayerConditionIds:PlayerCondition-Event-WitnessBattleforAHEHQ]
+	[AddTagsPlayerConditionIds:PlayerCondition-SYNFriendly]
+	[AddTags:SYNHeroAtForgoneStation]
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackGCHQFAFWon-ThankPlayersPersonally</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-FAFAttackGCHQFAFWon-ThankPlayersPersonally]
+      </Description>
+    </EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-FAFAttackGCHQFAFWon-ThankPlayersPersonally</SubtypeId>
+      </Id> 
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:false]
+	  
+	[SendToSpecificPlayers:true]
+	[PlayerConditionIds:PlayerCondition-Event-SYNHeroAtForgoneStation]
+
+	
+      [Color:Green]
+      [Author:AHE]
+        
+      [ChatMessages:{PlayerName}, we owe you. Thanks for coming to help us.]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+      </Description>
+    </EntityComponent>	
+	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-FAFAttackGCHQFAFWon-VictorySpeech</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event]
+		[Tags:FAFAttackGCHQFAFWon]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:60000]
+		[MaxCooldownMs:60001]	
+		
+		[ActionIds:AaW-EventAction-FAFAttackGCHQFAFWon-VictorySpeech]
+      </Description>
+	</EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-FAFAttackGCHQFAFWon-VictorySpeech</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-FAFAttackGCHQFAFWon-VictorySpeech]
+
+      </Description>
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-FAFAttackGCHQFAFWon-VictorySpeech</SubtypeId>
+      </Id>
+	  
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+
+      [Color:Green]
+      [Author:SYN]
+        
+      [ChatMessages:Today we repelled a GC assault on Forgone Station. Our victory is a testament to our strength. Onward to triumph!]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+    	  
+      </Description>
+    </EntityComponent>	
+-->
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

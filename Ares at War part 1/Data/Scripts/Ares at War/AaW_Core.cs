@@ -17,13 +17,14 @@ using AresAtWar.Init;
 using AaWSyncManager;
 using VRage.Game.ModAPI;
 using Sandbox.Game.Entities.Planet;
+using VRage.ModAPI;
 
 namespace AresAtWar.SessionCore
 {
     [MySessionComponentDescriptor(MyUpdateOrder.BeforeSimulation | MyUpdateOrder.AfterSimulation)]
     public class AaWSession : MySessionComponentBase
     {
-        public static string ModVersion = "0.5.1";
+        public static string ModVersion = "0.5.2";
 
         public static MESApi MESApi;
         public int counter = 0;
@@ -32,6 +33,8 @@ namespace AresAtWar.SessionCore
         public bool hasrun = false;
         public static string ModLocation;
 
+        public static Dictionary<string, MyDefinitionId> ConsumableItems;
+        //public MyObjectBuilder_ConsumableItem RescueRover = new MyObjectBuilder_ConsumableItem() { SubtypeName = "RescueRover" };
 
         public override void LoadData()
         {
@@ -48,6 +51,14 @@ namespace AresAtWar.SessionCore
             SyncManager.Setup();
 
             MyVisualScriptLogicProvider.RespawnShipSpawned += RespawnShipSpawned;
+            MyAPIGateway.Players.ItemConsumed += Players_ItemConsumed;
+
+
+            ConsumableItems = new Dictionary<string, MyDefinitionId>();
+            ConsumableItems.Add("FAFSquadron", MyDefinitionManager.Static.GetPhysicalItemDefinition(new MyDefinitionId(typeof(MyObjectBuilder_ConsumableItem), "FAFSquadron")).Id);
+
+
+
         }
 
         
@@ -144,8 +155,8 @@ namespace AresAtWar.SessionCore
             SyncManager.Close();
 
             MyVisualScriptLogicProvider.RespawnShipSpawned -= RespawnShipSpawned;
+            MyAPIGateway.Players.ItemConsumed -= Players_ItemConsumed;
 
-            
         }
 
 
@@ -169,7 +180,53 @@ namespace AresAtWar.SessionCore
         }
 
 
-        public static void RespawnShipSpawned(long shipEntityId, long playerId, string RespawnShipPrefabName) {
+        private void Players_ItemConsumed(IMyCharacter character, MyDefinitionId consumed)
+        {
+            
+
+
+            if (character == null || !character.IsPlayer) //how?!?
+                return;
+
+
+            long playerId = character.ControllerInfo.ControllingIdentityId;
+
+
+
+
+
+            if (!MESApi.MESApiReady)
+            {
+                MyLog.Default.WriteLineAndConsole("MES not ready");
+                return;
+            }
+
+
+
+            switch (consumed.SubtypeName)
+            {
+                case "FAFSquadron":
+                    if ((character.GetPosition() - new Vector3D(-1129033.5, 126871.5, 1293873.5)).Length() < 60000)
+                    {
+                        if(MESApi.ApiSpawnRequest(character.GetPosition(), "AaW", "PlanetaryCargoShip", true, true, new List<string> { "FAF-SpawnGroup-PlayerReinforcement-Squadron" }))
+                        {
+                            return;
+                        }
+                    }
+
+                    MyVisualScriptLogicProvider.SendChatMessage($"Sorry {character.DisplayName}, we are unable to reach your location", "FAF", playerId, "Green");
+                    MyVisualScriptLogicProvider.AddToPlayersInventory(playerId, ConsumableItems["FAFSquadron"]); // if it couldn't spawn the ship, refund the item
+
+
+
+                    break;
+            }
+        }
+
+
+
+
+        private void RespawnShipSpawned(long shipEntityId, long playerId, string RespawnShipPrefabName) {
 
             var player = GetPlayerfromId(playerId);
             if (player == null)

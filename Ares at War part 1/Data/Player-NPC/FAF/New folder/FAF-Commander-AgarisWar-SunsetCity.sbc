@@ -1,0 +1,415 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!-- 
+[Triggers:FAF-Commander-Trigger-AgarisWar-SunsetCity]
+[Triggers:FAF-Commander-Trigger-AgarisWar-SunsetCity-Busy]
+
+[Triggers:FAF-Commander-Trigger-AgarisWar-SunsetCity-TooWeak]
+[Triggers:FAF-Commander-Trigger-AgarisWar-SunsetCity-AlreadyAttacked]
+ -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Trigger-AgarisWar-SunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+	  	  [MinCooldownMs:2000]
+	  [MaxCooldownMs:2001]	  
+      [Type:ButtonPress]
+	[ButtonPanelName:FAF-Commander]
+	[ButtonPanelIndex:2]
+	[Conditions:FAF-Commander-Condition-AgarisWar-SunsetCity]
+	[Actions:FAF-Commander-Action-AgarisWar-SunsetCity]
+
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Condition-AgarisWar-SunsetCity</SubtypeId>
+      </Id>
+      <Description>
+    [RivalAI Condition]
+      
+    [UseConditions:true]
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:-499]
+	[MaxPlayerReputation:1500]
+	
+	[CheckTrueSandboxBooleans:true]
+	[TrueSandboxBooleans:GCSunsetCity]	  	
+	[TrueSandboxBooleans:FAFReadyForExpansion]	
+
+	[CheckFalseSandboxBooleans:true]
+	[FalseSandboxBooleans:FAFAttackAzuris]	
+	[FalseSandboxBooleans:FAFAttackCarcosa]
+	[FalseSandboxBooleans:FAFAttackSunsetCity]	
+	[FalseSandboxBooleans:FAFAttackGCHQ]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Action-AgarisWar-SunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+	  [ActivateEvent:true]
+	  [ActivateEventIds:AaW-Event-FAFAttackSunsetCity]
+	  
+	  
+	[SetSandboxCounters:FAF_Strength_Counter]
+	[SetSandboxCountersValues:0]
+	  
+	[UseChatBroadcast:true]
+	[ChatData:FAF-Commander-Chat-AgarisWar-SunsetCity]
+	  
+	 [AddTagstoPlayers:true]
+	[AddTags:Initiated_FAFAttackSunsetCity] 
+	[AddTagsIncludeSavedPlayerIdentity:true]
+	
+	  	  [ResetCooldownTimeOfTriggers:true]
+	  [ResetTriggerCooldownNames:FAF-Commander-Trigger-AgarisWar-SunsetCity-Busy]
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Chat-AgarisWar-SunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF]
+      [Color:Green]
+	  
+	  [MinTime:2]
+	  [MaxTime:3]	  
+      
+      [ChatMessages:Very well {PlayerName}, we will attack SunsetCity in 2 hours.]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+            
+      </Description>
+      
+    </EntityComponent>
+
+<!-- Busy -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Trigger-AgarisWar-SunsetCity-Busy</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+	  	  	  [MinCooldownMs:2000]
+	  [MaxCooldownMs:2001]
+      [Type:ButtonPress]
+	[ButtonPanelName:FAF-Commander]
+	[ButtonPanelIndex:2]
+	[Conditions:FAF-Commander-Condition-AgarisWar-SunsetCity-Busy]
+	[Actions:FAF-Commander-Action-AgarisWar-SunsetCity-Busy]
+
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Condition-AgarisWar-SunsetCity-Busy</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	[CheckPlayerReputation:true]
+	
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:-499]
+	[MaxPlayerReputation:1500]
+	
+	
+	[CheckTrueSandboxBooleans:true]
+	[TrueSandboxBooleans:FAFAttackAzuris]	
+	[TrueSandboxBooleans:FAFAttackCarcosa]
+	[TrueSandboxBooleans:FAFAttackSunsetCity]	
+	[TrueSandboxBooleans:FAFAttackGCHQ]
+	[AllowAnyTrueSandboxBoolean:true]
+	
+
+	[CheckFalseSandboxBooleans:true]
+	[FalseSandboxBooleans:FAFSunsetCity]	
+	
+	
+      </Description>     
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Action-AgarisWar-SunsetCity-Busy</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:FAF-Commander-Chat-AgarisWar-SunsetCity-Busy]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Chat-AgarisWar-SunsetCity-Busy</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF]
+      [Color:Green]
+	  
+	  [MinTime:2]
+	  [MaxTime:3]	  
+      
+      [ChatMessages:That won't be possible {PlayerName}. We have already commited our forces to something else.]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+            
+      </Description>
+      
+    </EntityComponent>
+	
+	
+
+
+
+<!-- -TooWeak-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Trigger-AgarisWar-SunsetCity-TooWeak</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:FAF-Commander]
+	[ButtonPanelIndex:2]
+	[Conditions:FAF-Commander-Condition-AgarisWar-SunsetCity-TooWeak]
+	[Actions:FAF-Commander-Action-AgarisWar-SunsetCity-TooWeak]
+
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Condition-AgarisWar-SunsetCity-TooWeak</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	[CheckPlayerReputation:true]
+	
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:-499]
+	[MaxPlayerReputation:1500]
+	
+	
+	[CheckTrueSandboxBooleans:true]
+	[TrueSandboxBooleans:GCSunsetCity]	  	
+	
+	[CheckFalseSandboxBooleans:true]
+	[FalseSandboxBooleans:FAFReadyForExpansion]	
+		
+
+
+	[FalseSandboxBooleans:FAFAttackAzuris]	
+	[FalseSandboxBooleans:FAFAttackCarcosa]
+	[FalseSandboxBooleans:FAFAttackSunsetCity]	
+	[FalseSandboxBooleans:FAFAttackGCHQ]
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Action-AgarisWar-SunsetCity-TooWeak</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:FAF-Commander-Chat-AgarisWar-SunsetCity-TooWeak]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Chat-AgarisWar-SunsetCity-TooWeak</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF]
+      [Color:Green]
+	  
+	  [MinTime:2]
+	  [MaxTime:3]	  
+      
+      [ChatMessages:Sorry, {PlayerName}. We are currently rebuilding our strength]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+            
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+<!-- -AlreadyAttacked-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Trigger-AgarisWar-SunsetCity-AlreadyAttacked</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:FAF-Commander]
+	[ButtonPanelIndex:2]
+	[Conditions:FAF-Commander-Condition-AgarisWar-SunsetCity-AlreadyAttacked]
+	[Actions:FAF-Commander-Action-AgarisWar-SunsetCity-AlreadyAttacked]
+
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Condition-AgarisWar-SunsetCity-AlreadyAttacked</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	[CheckPlayerReputation:true]
+	
+	[CheckReputationwithFaction:FAF]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:1500]
+	
+	
+	[CheckTrueSandboxBooleans:true]
+	[TrueSandboxBooleans:FAFSunsetCity]	
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Action-AgarisWar-SunsetCity-AlreadyAttacked</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:FAF-Commander-Chat-AgarisWar-SunsetCity-AlreadyAttacked]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Commander-Chat-AgarisWar-SunsetCity-AlreadyAttacked</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF]
+      [Color:Green]
+	  
+	  [MinTime:2]
+	  [MaxTime:3]	  
+      
+      [ChatMessages:Uhh, we already control SunsetCity.]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+            
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,760 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!-- Player Gets invited onfail reset cooldown
+
+
+
+
+
+-->
+
+
+    <!-- Persistant-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition-PreInvitedToFAFHQ</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+
+            [CheckPlayerTags:true]
+            [ExcludedPlayerTag:InvitedToFAFHQ]
+            [ExcludedPlayerTag:Visited-FAFHQ]
+
+
+
+            [CheckPlayerReputation:true]
+            [CheckReputationwithFaction:FAF]
+            [MinPlayerReputation:500]
+            [MaxPlayerReputation:1500]
+			
+            [CheckReputationwithFaction:GC]
+            [MinPlayerReputation:-1500]
+            [MaxPlayerReputation:-500]			
+        </Description>
+    </EntityComponent>
+	
+	
+	
+	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventPersistantCondition-PreInvitedToFAFHQ</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+            [CheckPlayerCondition:true]
+            [PlayerConditionIds:PlayerCondition-PreInvitedToFAFHQ]     
+		
+
+			[CheckTrueBooleans:true] 	
+			[TrueBooleans:AaWWorldStartUp]		
+			
+
+			[FalseBooleans:FAF-HQDestroyed]
+
+
+			[CheckCustomCounters:true]
+			[CustomCounters:FAFMode]
+			[CustomCountersTargets:2]
+			[CounterCompareTypes:LessOrEqual]
+
+
+        </Description>   
+    </EntityComponent>
+	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-Event-Area-InvitedToFAFHQ</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event]
+            [UseEvent:true]
+            [Tags:EventAreaGuideToFAFHQ]
+			[Tags:AaW-StoryEvent]				
+			
+            [UniqueEvent:false]    
+            [MinCooldownMs:600000]
+            [MaxCooldownMs:6000001]
+            [PersistantConditionIds:AaW-EventPersistantCondition-PreInvitedToFAFHQ]
+
+			[OnFailResetCooldown:true]
+            [UseAnyPassingCondition:true]
+			
+			
+			[ActionExecution:Sequential]
+			[TimeUntilNextActionMs:6000]
+
+            [ConditionIds:AaW-EventCondition-Area-InvitedToFAFHQ-A]
+			
+			[ActionIds:AaW-EventAction-Common-IncomingSecuredMessage]
+            [ActionIds:AaW-EventAction-Area-InvitedToFAFHQ-A]
+
+
+
+
+
+        </Description>
+    </EntityComponent>
+
+    <!-- Option A -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventCondition-Area-InvitedToFAFHQ-A</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+   
+   
+        </Description>   
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventAction-Area-InvitedToFAFHQ-A</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [AddTagstoPlayers:true]
+            [AddTagsPlayerConditionIds:PlayerCondition-PreInvitedToFAFHQ]
+            [AddTags:InvitedToFAFHQ]
+
+            [UseChatBroadcast:true]
+            [ChatData:AaW-EventChat-Area-InvitedToFAFHQ-A]
+
+			[AddGPSToPlayers:true]
+			[UseGPSObjective:true]
+
+			[GPSNames:Unknown Meeting]
+			[GPSDescriptions:Unknown]
+			[GPSVector3Ds:{X:-1083815.96550472 Y:160069.814863162 Z:1275676.37135292}]
+			[GPSColors:{X:240 Y:255 Z:240}]
+			[AddGPSPlayerConditionIds:PlayerCondition-InvitedToFAFHQ]
+
+
+			[ResetCooldownTimeOfEvents:true]
+			[ResetEventCooldownTags:AaW-StoryEvent]
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventChat-Area-InvitedToFAFHQ-A</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition-InvitedToFAFHQ]
+            [Color:White]
+            [Author:Unknown]
+            [ChatMessages:###{PlayerName} ### Meet #s here.####]
+            [BroadcastChatType:Chat]
+            [ChatAudio:]  
+        </Description>
+    </EntityComponent>
+
+
+    <!-- Persistant-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition-InvitedToFAFHQ</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+
+            [CheckPlayerTags:true]
+            [IncludedPlayerTag:InvitedToFAFHQ]
+            [ExcludedPlayerTag:Visited-FAFHQ]
+
+
+
+            [CheckPlayerReputation:true]
+            [CheckReputationwithFaction:FAF]
+            [MinPlayerReputation:500]
+            [MaxPlayerReputation:1500]
+			
+            [CheckReputationwithFaction:GC]
+            [MinPlayerReputation:-1500]
+            [MaxPlayerReputation:-500]			
+        </Description>
+    </EntityComponent>
+
+
+
+<!-- 
+
+
+Player arrives at the given location
+
+
+
+
+-->
+
+
+    <!-- Persistant-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition-Area-GuideToFAFHQ</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+
+            [CheckPlayerNear:true]    
+            [PlayerNearCoords:{X:-1083815.96550472 Y:160069.814863162 Z:1275676.37135292}]
+            [PlayerNearDistanceFromCoords:500]
+
+            [CheckPlayerTags:true]
+            [IncludedPlayerTag:InvitedToFAFHQ]
+            [ExcludedPlayerTag:Visited-FAFHQ]
+
+            [CheckPlayerReputation:true]
+            [CheckReputationwithFaction:FAF]
+            [MinPlayerReputation:500]
+            [MaxPlayerReputation:1500]
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition-Area-GuideToFAFHQ-ConsiderTriggered</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+            [CheckPlayerNear:true]    
+            [PlayerNearCoords:{X:-1083815.96550472 Y:160069.814863162 Z:1275676.37135292}]
+            [PlayerNearDistanceFromCoords:4500]
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventPersistantCondition-Area-GuideToFAFHQ</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+            [CheckPlayerCondition:true]
+            [PlayerConditionIds:PlayerCondition-Area-GuideToFAFHQ]     
+			
+			
+		[CheckFalseBooleans:true] 	
+		[FalseBooleans:FAF-HQDestroyed]
+        </Description>   
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-Event-Area-GuideToFAFHQ-A</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event]
+            [UseEvent:true]
+            [Tags:EventAreaGuideToFAFHQ]
+            [UniqueEvent:false]    
+            [MinCooldownMs:600000]
+            [MaxCooldownMs:600001]
+            [PersistantConditionIds:AaW-EventPersistantCondition-Area-GuideToFAFHQ]
+
+
+            [UseAnyPassingCondition:true]
+            [ActionExecution:Sequential]
+
+            [ConditionIds:AaW-EventCondition-Area-GuideToFAFHQ-A]
+            [ActionIds:AaW-EventAction-Area-GuideToFAFHQ-A]
+
+
+
+            [ActionIds:AaW-EventAction-Area-GuideToFAFHQ-B]
+
+
+        </Description>
+    </EntityComponent>
+
+    <!-- Option A -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventCondition-Area-GuideToFAFHQ-A</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+   
+        </Description>   
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventAction-Area-GuideToFAFHQ-A</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+
+            [UseChatBroadcast:true]
+            [ChatData:AaW-EventChat-Area-GuideToFAFHQ-A]
+
+			[AddGPSToPlayers:true]
+			[UseGPSObjective:true]
+			[GPSNames:Unknown Location]
+			[GPSDescriptions:oh]
+			[GPSVector3Ds:{X:-1096255.0144119 Y:175950.311543683 Z:1292544.96811812}]
+			[GPSColors:{X:240 Y:255 Z:240}]
+			[AddGPSPlayerConditionIds:PlayerCondition-Area-GuideToFAFHQ-ConsiderTriggered]
+			
+
+			
+			
+			
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventAction-Area-GuideToFAFHQ-B</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+			[RemoveGPSFromPlayers:true]
+			[GPSNames:Unknown Meeting]
+			[AddGPSPlayerConditionIds:PlayerCondition-Area-GuideToFAFHQ-ConsiderTriggered]
+			
+        </Description>
+    </EntityComponent>
+
+		
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventChat-Area-GuideToFAFHQ-A</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition-Area-GuideToFAFHQ-ConsiderTriggered]
+            [Color:White]
+            [Author:Unknown]
+            [ChatMessages:All Clear. {PlayerName} go to these coordinates.]
+            [BroadcastChatType:Chat]
+            [ChatAudio:]  
+        </Description>
+    </EntityComponent>
+
+
+<!-- 
+
+When Player Arrives at FAF HQ
+
+
+
+
+-->
+
+<!-- Persistant-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition-Area-FAFHQ</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+
+            [CheckPlayerNear:true]    
+            [PlayerNearCoords:{X:-1096255.0144119 Y:175950.311543683 Z:1292544.96811812}]
+            [PlayerNearDistanceFromCoords:1200]
+
+            [CheckPlayerTags:true]
+            [ExcludedPlayerTag:Visited-FAFHQ]
+
+            [CheckPlayerReputation:true]
+            [CheckReputationwithFaction:FAF]
+            [MinPlayerReputation:500]
+            [MaxPlayerReputation:1500]
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition-Area-FAFHQ-ConsiderTriggered</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+            [CheckPlayerNear:true]    
+            [PlayerNearCoords:{X:-1096255.0144119 Y:175950.311543683 Z:1292544.96811812}]
+            [PlayerNearDistanceFromCoords:4500]
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventPersistantCondition-Area-FAFHQ</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+            [CheckPlayerCondition:true]
+            [PlayerConditionIds:PlayerCondition-Area-FAFHQ]   
+
+
+		[CheckFalseBooleans:true] 	
+		[FalseBooleans:FAF-HQDestroyed]			
+        </Description>   
+    </EntityComponent>
+
+
+    <!-- Option FAFHeroAtBattleForAHEHQ -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-Event-Area-FAFHQ</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event]
+            [UseEvent:true]
+            [Tags:EventAreaFAFHQ]
+            [UniqueEvent:false]    
+            [MinCooldownMs:600000]
+            [MaxCooldownMs:600001]
+            [PersistantConditionIds:AaW-EventPersistantCondition-Area-FAFHQ]
+			
+			[UseAnyPassingCondition:true]
+            [ActionExecution:Condition]
+
+
+			[ConditionIds:AaW-EventCondition-Area-FAFHQ-Default]
+			[ActionIds:AaW-EventAction-Area-FAFHQ-Default]
+
+	
+			[ConditionIds:AaW-EventCondition-Area-FAFHQ-VeteranOfLostBattleForAHEHQ]
+            [ActionIds:AaW-EventAction-Area-FAFHQ-VeteranOfLostBattleForAHEHQ]
+
+            [ConditionIds:AaW-EventCondition-Area-FAFHQ-FAFHeroAtBattleForAHEHQ]
+            [ActionIds:AaW-EventAction-Area-FAFHQ-FAFHeroAtBattleForAHEHQ]
+			
+			
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventCondition-Area-FAFHQ-FAFHeroAtBattleForAHEHQ</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+   
+            [CheckPlayerCondition:true]
+            [PlayerConditionIds:PlayerCondition-Area-FAFHQ-FAFHeroAtBattleForAHEHQ]    
+        </Description>   
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition-Area-FAFHQ-FAFHeroAtBattleForAHEHQ</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+			
+			[CheckFalseBooleans:true]
+			[FalseBooleans:AHE-HQDestroyedDuringEvent]  
+			[FalseBooleans:AHE-HQDestroyed] 
+			[FalseBooleans:FAF-AHE-HQDestroyed]
+
+
+            [CheckPlayerTags:true]
+            [IncludedPlayerTag:FAFHeroAtBattleForAHEHQ]
+        </Description>
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventAction-Area-FAFHQ-FAFHeroAtBattleForAHEHQ</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [AddTagstoPlayers:true]
+            [AddTagsPlayerConditionIds:PlayerCondition-Area-FAFHQ-ConsiderTriggered]
+            [AddTags:Visited-FAFHQ]
+
+            [UseChatBroadcast:true]
+            [ChatData:AaW-EventChat-Area-FAFHQ-FAFHeroAtBattleForAHEHQ]
+		
+		
+			[RemoveGPSFromPlayers:true]
+			[GPSNames:Unknown Location]
+				[AddGPSPlayerConditionIds:PlayerCondition-Area-FAFHQ-ConsiderTriggered]	
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventChat-Area-FAFHQ-FAFHeroAtBattleForAHEHQ</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition-Area-FAFHQ-ConsiderTriggered]
+            [Color:Green]
+			
+            [Author:FAF HQ]
+            [ChatMessages:Hey, look who it is! It's the hero at AHE HQ. As a token of our gratitude, here, take this request beacon. If you ever find yourself in need, don't hesitate to use it. We'll do our best to dispatch a squadron to your location.]
+            [BroadcastChatType:Chat]
+            [ChatAudio:]  
+        </Description>
+    </EntityComponent>
+
+
+    <!-- Option VeteranOfLostBattleForAHEHQ 
+	
+	[ConditionIds:AaW-EventCondition-Area-FAFHQ-VeteranOfLostBattleForAHEHQ]
+	[ActionIds:AaW-EventAction-Area-FAFHQ-VeteranOfLostBattleForAHEHQ]	
+	
+	-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventCondition-Area-FAFHQ-VeteranOfLostBattleForAHEHQ</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+   
+            [CheckPlayerCondition:true]
+            [PlayerConditionIds:PlayerCondition-Area-FAFHQ-VeteranOfLostBattleForAHEHQ]    
+        </Description>   
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition-Area-FAFHQ-VeteranOfLostBattleForAHEHQ</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+
+            [CheckPlayerReputation:true]
+            [CheckReputationwithFaction:GC]
+            [MinPlayerReputation:-1500]
+            [MaxPlayerReputation:-500]
+
+            [CheckPlayerTags:true]
+            [IncludedPlayerTag:WitnessBattleforAHEHQ]
+            [ExcludedPlayerTag:FAFHeroAtBattleForAHEHQ]
+			
+			
+			[CheckTrueBooleans:true]
+			[TrueBooleans:AHE-HQDestroyedDuringEvent]  
+        </Description>
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventAction-Area-FAFHQ-VeteranOfLostBattleForAHEHQ</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [AddTagstoPlayers:true]
+            [AddTagsPlayerConditionIds:PlayerCondition-Area-FAFHQ-ConsiderTriggered]
+            [AddTags:Visited-FAFHQ]
+
+            [RemoveTagsFromPlayers:true]
+            [RemoveTagsPlayerConditionIds:PlayerCondition-Area-FAFHQ-ConsiderTriggered]
+            [RemoveTags:InvitedToFAFHQ]
+			[RemoveGPSFromPlayers:true]
+			[GPSNames:HQ]			
+			
+            [UseChatBroadcast:true]
+            [ChatData:AaW-EventChat-Area-FAFHQ-VeteranOfLostBattleForAHEHQ]
+
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventChat-Area-FAFHQ-VeteranOfLostBattleForAHEHQ</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition-Area-FAFHQ-ConsiderTriggered]
+            [Color:Green]
+			
+            [Author:FAF HQ]
+            [ChatMessages:{PlayerName}, You fought valiantly at AHE HQ, even though we faced defeat. As a token of our appreciation, please accept this request beacon. If you're ever in need, don't hesitate to signal us. We'll do our best to dispatch a squadron to your location.]
+            [BroadcastChatType:Chat]
+            [ChatAudio:]  
+        </Description>
+    </EntityComponent>
+	
+	
+   <!-- Option Default
+
+	[ConditionIds:AaW-EventCondition-Area-FAFHQ-Default]
+	[ActionIds:AaW-EventAction-Area-FAFHQ-Default]
+
+	-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventCondition-Area-FAFHQ-Default</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+   
+            [CheckPlayerCondition:true]
+            [PlayerConditionIds:PlayerCondition-Area-FAFHQ-Default]    
+        </Description>   
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition-Area-FAFHQ-Default</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+
+            [CheckPlayerReputation:true]
+            [CheckReputationwithFaction:GC]
+            [MinPlayerReputation:-1500]
+            [MaxPlayerReputation:-500]
+
+            [CheckReputationwithFaction:FAF]
+            [MinPlayerReputation:500]
+            [MaxPlayerReputation:1500]
+
+		
+        </Description>
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventAction-Area-FAFHQ-Default</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [AddTagstoPlayers:true]
+            [AddTagsPlayerConditionIds:PlayerCondition-Area-FAFHQ-ConsiderTriggered]
+            [AddTags:Visited-FAFHQ]
+
+            [RemoveTagsFromPlayers:true]
+            [RemoveTagsPlayerConditionIds:PlayerCondition-Area-FAFHQ-ConsiderTriggered]
+            [RemoveTags:InvitedToFAFHQ]
+			
+            [UseChatBroadcast:true]
+            [ChatData:AaW-EventChat-Area-FAFHQ-Default]
+			
+			[RemoveGPSFromPlayers:true]
+			[GPSNames:HQ]
+			
+			
+			[AddItemToPlayersInventory:true]
+			[AddItemPlayerConditionIds:PlayerCondition-Area-FAFHQ-ConsiderTriggered]
+			[ItemIds:Consumable/FAFSquadron]
+			
+
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW-EventChat-Area-FAFHQ-Default</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition-Area-FAFHQ-ConsiderTriggered]
+            [Color:Green]
+			
+            [Author:FAF HQ]
+            [ChatMessages:Welcome to Point Barentz {PlayerName}.  You have been a major distraction for the GC, so thanks for that. As a token of our appreciation, please accept this request beacon. If you're ever in need, don't hesitate to signal us. We'll do our best to dispatch a squadron to your location.]
+            [BroadcastChatType:Chat]
+            [ChatAudio:]  
+        </Description>
+    </EntityComponent>		
+	
+	
+  </EntityComponents>
+</Definitions>

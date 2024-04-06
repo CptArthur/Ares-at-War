@@ -2,7 +2,7 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 <!-- 
-[Triggers:GC-Common-Trigger-UCACargoResponse-NoCheck]
+[Triggers:FAC-Common-Trigger-FACAliveCheck]
 
 
 
@@ -11,7 +11,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>GC-Common-Trigger-GCAliveCheck</SubtypeId>
+        <SubtypeId>FAC-Common-Trigger-FACAliveCheck</SubtypeId>
       </Id>
       <Description>
 
@@ -19,11 +19,11 @@
 
         [UseTrigger:true]
         [Type:CommandReceived]
-        [CommandReceiveCode:GCAliveCheck]
+        [CommandReceiveCode:{Faction}AliveCheck]
 
         [StartsReady:true]
         [MaxActions:-1]
-        [Actions:GC-Common-Action-GCAliveCheck]
+        [Actions:FAC-Common-Action-FACAliveCheck]
       </Description>
 
     </EntityComponent>
@@ -32,14 +32,14 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>GC-Common-Action-GCAliveCheck</SubtypeId>
+        <SubtypeId>FAC-Common-Action-FACAliveCheck</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI Action]
 
 [ResetCooldownTimeOfEvents:true]
-[ResetEventCooldownTags:GCAliveCheck]
+[ResetEventCooldownTags:{Faction}AliveCheck]
 
       </Description>
 

@@ -2,16 +2,16 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 <!-- 
-[Triggers:FAF-LDrone-Trigger-GGCCargoResponse-NoCheck]
-[Triggers:FAF-LDrone-Trigger-GGCLDroneResponse-NoCheck]
-[Triggers:FAF-LDrone-Trigger-GGCMinorStaticResponse-NoCheck]
-[Triggers:FAF-LDrone-Trigger-GGCMajorStaticResponse-NoCheck]
+[Triggers:FAF-LDrone-Trigger-GCCargoResponse-NoCheck]
+[Triggers:FAF-LDrone-Trigger-GCLDroneResponse-NoCheck]
+[Triggers:FAF-LDrone-Trigger-GCMinorStaticResponse-NoCheck]
+[Triggers:FAF-LDrone-Trigger-GCMajorStaticResponse-NoCheck]
 
 
-[Triggers:FAF-LDrone-Trigger-GGCCargoResponse-Check]
-[Triggers:FAF-LDrone-Trigger-GGCLDroneResponse-Check]
-[Triggers:FAF-LDrone-Trigger-GGCMinorStaticResponse-Check]
-[Triggers:FAF-LDrone-Trigger-GGCMajorStaticResponse-Check]
+[Triggers:FAF-LDrone-Trigger-GCCargoResponse-Check]
+[Triggers:FAF-LDrone-Trigger-GCLDroneResponse-Check]
+[Triggers:FAF-LDrone-Trigger-GCMinorStaticResponse-Check]
+[Triggers:FAF-LDrone-Trigger-GCMajorStaticResponse-Check]
 
 
 
@@ -19,7 +19,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF-LDrone-Trigger-GGCCargoResponse-NoCheck</SubtypeId>
+        <SubtypeId>FAF-LDrone-Trigger-GCCargoResponse-NoCheck</SubtypeId>
       </Id>
       <Description>
 
@@ -27,7 +27,7 @@
 
         [UseTrigger:true]
         [Type:CommandReceived]
-        [CommandReceiveCode:GGC-Cargo-Command-Presence]
+        [CommandReceiveCode:GC-Cargo-Command-Presence]
 
         [StartsReady:true]
         [MaxActions:1]
@@ -40,7 +40,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF-LDrone-Trigger-GGCLDroneResponse-NoCheck</SubtypeId>
+        <SubtypeId>FAF-LDrone-Trigger-GCLDroneResponse-NoCheck</SubtypeId>
       </Id>
       <Description>
 
@@ -48,7 +48,7 @@
 
         [UseTrigger:true]
         [Type:CommandReceived]
-        [CommandReceiveCode:GGC-LDrone-Command-Presence]
+        [CommandReceiveCode:GC-LDrone-Command-Presence]
 
         [StartsReady:true]
         [MaxActions:1]
@@ -60,7 +60,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF-LDrone-Trigger-GGCMinorStaticResponse-NoCheck</SubtypeId>
+        <SubtypeId>FAF-LDrone-Trigger-GCMinorStaticResponse-NoCheck</SubtypeId>
       </Id>
       <Description>
 
@@ -68,7 +68,7 @@
 
         [UseTrigger:true]
         [Type:CommandReceived]
-        [CommandReceiveCode:GGC-MinorStatic-Command-Presence]
+        [CommandReceiveCode:GC-MinorStatic-Command-Presence]
 
         [StartsReady:true]
         [MaxActions:1]
@@ -80,7 +80,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF-LDrone-Trigger-GGCMajorStaticResponse-NoCheck</SubtypeId>
+        <SubtypeId>FAF-LDrone-Trigger-GCMajorStaticResponse-NoCheck</SubtypeId>
       </Id>
       <Description>
 
@@ -88,7 +88,7 @@
 
         [UseTrigger:true]
         [Type:CommandReceived]
-        [CommandReceiveCode:GGC-MajorStatic-Command-Presence]
+        [CommandReceiveCode:GC-MajorStatic-Command-Presence]
 
         [StartsReady:true]
         [MaxActions:1]
@@ -103,7 +103,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF-LDrone-Trigger-GGCCargoResponse-Check</SubtypeId>
+        <SubtypeId>FAF-LDrone-Trigger-GCCargoResponse-Check</SubtypeId>
       </Id>
       <Description>
 
@@ -111,7 +111,7 @@
 
         [UseTrigger:true]
         [Type:CommandReceived]
-        [CommandReceiveCode:GGC-Cargo-Command-Presence]
+        [CommandReceiveCode:GC-Cargo-Command-Presence]
 		[Conditions:FAC-Context-Condition-CompareCommandGridValue]
         [StartsReady:true]
         [MaxActions:1]
@@ -124,7 +124,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF-LDrone-Trigger-GGCLDroneResponse-Check</SubtypeId>
+        <SubtypeId>FAF-LDrone-Trigger-GCLDroneResponse-Check</SubtypeId>
       </Id>
       <Description>
 
@@ -132,7 +132,7 @@
 
         [UseTrigger:true]
         [Type:CommandReceived]
-        [CommandReceiveCode:GGC-LDrone-Command-Presence]
+        [CommandReceiveCode:GC-LDrone-Command-Presence]
 		[Conditions:FAC-Context-Condition-CompareCommandGridValue]
         [StartsReady:true]
         [MaxActions:1]
@@ -144,7 +144,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF-LDrone-Trigger-GGCMinorStaticResponse-Check</SubtypeId>
+        <SubtypeId>FAF-LDrone-Trigger-GCMinorStaticResponse-Check</SubtypeId>
       </Id>
       <Description>
 
@@ -152,7 +152,7 @@
 
         [UseTrigger:true]
         [Type:CommandReceived]
-        [CommandReceiveCode:GGC-MinorStatic-Command-Presence]
+        [CommandReceiveCode:GC-MinorStatic-Command-Presence]
 		[Conditions:FAC-Context-Condition-CompareCommandGridValue]
         [StartsReady:true]
         [MaxActions:1]
@@ -164,7 +164,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF-LDrone-Trigger-GGCMajorStaticResponse-Check</SubtypeId>
+        <SubtypeId>FAF-LDrone-Trigger-GCMajorStaticResponse-Check</SubtypeId>
       </Id>
       <Description>
 
@@ -172,7 +172,7 @@
 
         [UseTrigger:true]
         [Type:CommandReceived]
-        [CommandReceiveCode:GGC-MajorStatic-Command-Presence]
+        [CommandReceiveCode:GC-MajorStatic-Command-Presence]
 		[Conditions:FAC-Context-Condition-CompareCommandGridValue]
         [StartsReady:true]
         [MaxActions:1]

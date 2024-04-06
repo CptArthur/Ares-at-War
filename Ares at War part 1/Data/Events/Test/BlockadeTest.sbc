@@ -1,9 +1,139 @@
 <?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
+<!--
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition-Area-{Name}</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	
+	[CheckPlayerNear:true]	
+	[PlayerNearCoords:{Coords}]
+	[PlayerNearDistanceFromCoords:{Distance}]
+	
+	[CheckPlayerTags:true]
+	[ExcludedPlayerTag:Player_Triggered-Area-{Name}]
+      </Description>
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition-Area-{Name}-ConsiderTriggered</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerNear:true]	
+	[PlayerNearCoords:{Coords}]
+	[PlayerNearDistanceFromCoords:4500]
+	
+
+      </Description>
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES-Event-Area-{Name}</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:true]
+		
+		[UniqueEvent:false]	
+		[MinCooldownMs:1000]
+		[MaxCooldownMs:1001]	
+
+		[ConditionIds:MES-EventCondition-{Name}]
+		
+		[ActionExecution:ALl]
+
+		[ActionIds:MES-EventAction-{Name}]
+
+      </Description>
+	</EntityComponent>	
+      
+	  
+	  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES-EventCondition-Area-{Name}</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition-Area-{Name}]  	 
+
+	
+      </Description>   
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES-EventAction-Area-{Name}</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+
+[AddTagstoPlayers:true]
+[AddTagsPlayerConditionIds:PlayerCondition-Area-{Name}-ConsiderTriggered]
+[AddTags:Player_Triggered-Area-{Name}]
+
+[UseChatBroadcast:true]
+[ChatData:MES-EventChat-Area-{Name}]
+      </Description>
+      
+    </EntityComponent>	
 
 
 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES-EventChat-Area-{Name}</SubtypeId>
+      </Id> 
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:false]
+	  
+		[SendToSpecificPlayers:true]
+		[PlayerConditionIds:PlayerCondition-Area-{Name}-ConsiderTriggered]
+
+	
+      [Color:Green]
+      [Author:MES]
+        
+      [ChatMessages:{PlayerName}]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+      </Description>
+    </EntityComponent>
+	-->
 	
   </EntityComponents>
 </Definitions>
