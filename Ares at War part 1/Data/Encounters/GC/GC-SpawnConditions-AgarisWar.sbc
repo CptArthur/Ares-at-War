@@ -23,6 +23,11 @@ Bool GCAgarisDefeated
 [SpawnConditionsProfiles:GC-SpawnProfile-AgarisWar-Combat-HeavyPlayerBaseStrike]
 
 
+[SpawnConditionsProfiles:GC-SpawnProfile-AgarisWar-Combat-LightPlayerBaseStrike-Zone]
+[SpawnConditionsProfiles:GC-SpawnProfile-AgarisWar-Combat-MediumPlayerBaseStrike-Zone]
+[SpawnConditionsProfiles:GC-SpawnProfile-AgarisWar-Combat-HeavyPlayerBaseStrike-Zone]
+
+
 		[CustomApiConditions:AgarisDeepOcean]
 		[CustomApiConditions:AgarisLand]
 		
@@ -268,10 +273,7 @@ Bool GCAgarisDefeated
 	[ThreatScoreMinimum:222]	
 	[ThreatScoreMaximum:666]
 
-	[CheckCustomSandboxCounters:true]
-	[CustomSandboxCounters:GC_Aggression_Counter]
-	[CustomSandboxCountersTargets:50]
-	[SandboxCounterCompareTypes:GreaterOrEqual]
+
 
 
 	[UsePlayerFactionReputation:true]
@@ -316,10 +318,7 @@ Bool GCAgarisDefeated
 	[ThreatScoreMinimum:667]	
 	[ThreatScoreMaximum:999]
 
-	[CheckCustomSandboxCounters:true]
-	[CustomSandboxCounters:GC_Aggression_Counter]
-	[CustomSandboxCountersTargets:50]
-	[SandboxCounterCompareTypes:GreaterOrEqual]
+
 
 
 	[UsePlayerFactionReputation:true]
@@ -362,10 +361,7 @@ Bool GCAgarisDefeated
 	[ThreatScoreGridConfiguration:Static]
 	[ThreatScoreMinimum:1000]	
 
-	[CheckCustomSandboxCounters:true]
-	[CustomSandboxCounters:GC_Aggression_Counter]
-	[CustomSandboxCountersTargets:50]
-	[SandboxCounterCompareTypes:GreaterOrEqual]
+
 
 
 	[UsePlayerFactionReputation:true]
@@ -379,6 +375,145 @@ Bool GCAgarisDefeated
     </EntityComponent>
 	
 	
+<!-- Oof -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC-SpawnProfile-AgarisWar-Both-LightPlayerBaseStrike-Zone</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:GC]
+	[FalseSandboxVariables:GCAgarisDefeated]	
+
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:GCAgarisMode]
+	[CustomSandboxCountersTargets:2]
+	[SandboxCounterCompareTypes:GreaterOrEqual]
+
+	
+	[ZoneConditions:ZoneCondition-GC]			
+	[AtmosphericCargoShipChance:100]
+	[PlanetWhitelist:Planet Agaris]
+	[SkipAirDensityCheck:true]
+	[UseCombatPhase:true]
+	
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMinimum:222]	
+	[ThreatScoreMaximum:666]
+
+
+
+
+	[UsePlayerFactionReputation:true]
+	[PlayerReputationCheckRadius:4000]
+	[MinimumReputation:-1500]
+	[MaximumReputation:-500]
+
+
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+
+    </EntityComponent>		
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC-SpawnProfile-AgarisWar-Both-MediumPlayerBaseStrike-Zone</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:GC]
+	[FalseSandboxVariables:GCAgarisDefeated]	
+	
+		[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:GCAgarisMode]
+	[CustomSandboxCountersTargets:2]
+	[SandboxCounterCompareTypes:GreaterOrEqual]
+	
+		
+		
+	[ZoneConditions:ZoneCondition-GC]			
+	[AtmosphericCargoShipChance:100]
+	[PlanetWhitelist:Planet Agaris]
+	[SkipAirDensityCheck:true]
+	[UseCombatPhase:true]
+	
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMinimum:667]	
+	[ThreatScoreMaximum:999]
+
+
+
+
+	[UsePlayerFactionReputation:true]
+	[PlayerReputationCheckRadius:4000]
+	[MinimumReputation:-1500]
+	[MaximumReputation:-500]
+
+
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC-SpawnProfile-AgarisWar-Both-HeavyPlayerBaseStrike-Zone</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:GC]
+	[FalseSandboxVariables:GCAgarisDefeated]	
+	
+		[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:GCAgarisMode]
+	[CustomSandboxCountersTargets:2]
+	[SandboxCounterCompareTypes:GreaterOrEqual]
+	
+	[ZoneConditions:ZoneCondition-GC]			
+	[AtmosphericCargoShipChance:100]
+	[PlanetWhitelist:Planet Agaris]
+	[SkipAirDensityCheck:true]
+	[UseCombatPhase:true]
+	
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMinimum:1000]	
+
+
+
+
+	[UsePlayerFactionReputation:true]
+	[PlayerReputationCheckRadius:4000]
+	[MinimumReputation:-1500]
+	[MaximumReputation:-500]
+	
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+
+    </EntityComponent>
+	
+	
+
+
+
 
 
 

@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!--
+
+
+OnSpawn -> Mention that they are as Player Reinforcements
+[Triggers:FAF-PlayerReinforcement-Trigger-OnSpawn]
+
+
+
+	
+-->	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-PlayerReinforcement-Trigger-OnSpawn</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Timer]
+	[StartsReady:true]
+	[Conditions:FAF-PlayerReinforcement-Condition-OnSpawn]
+	[UseTrigger:true]
+
+	[MaxActions:1]
+	[Actions:FAF-PlayerReinforcement-Action-OnSpawn]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-PlayerReinforcement-Condition-OnSpawn</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+	  
+	[CheckForSpawnConditions:true]
+      [RequiredSpawnConditions:FAF-SpawnGroup-PlayerReinforcement-Squadron]
+      </Description>
+      
+    </EntityComponent>
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-PlayerReinforcement-Action-OnSpawn</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+
+
+
+	[UseChatBroadcast:true]
+	[ChatData:FAF-PlayerReinforcement-Chat-OnSpawn]
+
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-PlayerReinforcement-Chat-OnSpawn</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:FAF]
+      
+      [ChatMessages:{PlayerName}! We received your beacon. Anything we can help you with?]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+
+	
+
+
+	
+	
+  </EntityComponents>
+</Definitions>

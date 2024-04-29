@@ -124,7 +124,7 @@ def Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side):
         print("Biome File not inlcuded")
 
     if usebasicoremap:
-        BasicOremap = PIL.Image.open("D:/SEMods-Github/Ares at War part 2/Data/PlanetDataFiles/Python/basicoremap.png")
+        BasicOremap = PIL.Image.open("D:/SEMods-Github/Ares-at-War-part-1/Ares at War part 2/Data/PlanetDataFiles/Python/basicoremap.png")
         rgb_BasicOremap = BasicOremap.convert('RGB')
     else:
         print("usebasicoremap not inlcuded")       
@@ -192,27 +192,27 @@ MrhoekB = False
 
 
 
-Red = False
+Red = True
 Green = False 
-Blue = True 
+Blue = False 
 
 
 
 
 sides = ["back","down","front","left","right","up"]
-PlanetName = "Planet Thora 4" #Als Agaris of Thora4 dan moet (208,208,208) aan
+PlanetName = "Planet Lezuno" #Als Agaris of Thora4 dan moet (208,208,208) aan
 usebasicoremap = False
 
-location = f"D:/SEMods-Github/Ares at War part 2/Data/PlanetDataFiles/{PlanetName}/"
-Importlocation = f"D:/SEMods-Github/Ares at War part 2/Data/PlanetDataFiles/{PlanetName}/Import/"
-locationIO = f"D:/SEMods-Github/Ares at War part 2/Data/PlanetDataFiles/{PlanetName} - IO/"
+location = f"D:/SEMods-Github/Ares-at-War-part-1/Ares at War part 2/Data/PlanetDataFiles/{PlanetName}/"
+Importlocation = f"D:/SEMods-Github/Ares-at-War-part-1/Ares at War part 2/Data/PlanetDataFiles/{PlanetName}/Import/"
+locationIO = f"D:/SEMods-Github/Ares-at-War-part-1/Ares at War part 2/Data/PlanetDataFiles/{PlanetName} - IO/"
 
-# for side in sides:
-#     Mloc = location + side + "_mat.png"
-#     rloc = Importlocation + side + "vox.png"
-#     gloc = Importlocation + side + "biom.png"
-#     bloc = Importlocation + side + "ore.png"
-#     Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side)
+for side in sides:
+    Mloc = location + side + "_mat.png"
+    rloc = Importlocation + side + "vox.png"
+    gloc = Importlocation + side + "biom.png"
+    bloc = Importlocation + side + "ore.png"
+    Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side)
 
 for side in sides:
     Mloc = locationIO + side + "_mat.png"
