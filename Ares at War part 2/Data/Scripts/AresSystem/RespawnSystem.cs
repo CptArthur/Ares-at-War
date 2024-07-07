@@ -140,7 +140,27 @@ namespace RespawnSystem
                 return;
             }
 
-            if(RespawnShipPrefabName == "Ares-Campaign")
+            if (RespawnShipPrefabName == "Pod-A26")
+            {
+               
+                Vector3 up = new Vector3D(0.498514652252197, 0.561518847942352, 0.66043895483017);
+                Vector3 forward = new Vector3D(-0.0680525004863739, 0.784854471683502, -0.615931928157806);
+                Vector3D position = new Vector3D(-1283164.04550319, -286696.288185582, -1426821.56150548);
+                MatrixD matrix = MatrixD.CreateWorld(position, forward, up);
+
+
+                grid.Teleport(matrix);
+                grid.PositionComp.SetWorldMatrix(ref matrix, skipTeleportCheck: true);
+
+                MyVisualScriptLogicProvider.ScreenColorFadingStart(1, true, playerId);
+                MyVisualScriptLogicProvider.ScreenColorFadingMinimalizeHUD(true, playerId);
+
+                //MatrixD Player = MatrixD.CreateWorld(position + forward * _rnd.Next(3, 5), forward, up);
+                //player.Character.Teleport(Player);
+            }
+
+
+            if (RespawnShipPrefabName == "Ares-Campaign")
             {
 
                 block.RemovePilot();

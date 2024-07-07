@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>ITC-Zeoa-Socrates</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:Nobody]		
+
+			[TriggerCoords:{X:1260153.14568597 Y:-78042.7431952351 Z:-129948.087623604}]
+			[TriggerRadius:80000]
+
+			[ForceExactPositionAndOrientation:true]
+			[CutVoxelsAtAirtightCells:true]
+
+
+			[StaticEncounterCoords:{X:-1285935.70540655 Y:-286535.286913445 Z:-1425641.23401667}]
+			[StaticEncounterForward:{X:-0.056806061262537 Y:-0.661565480819123 Z:0.747732696885993}]
+			[StaticEncounterUp:{X:0.0216633486016924 Y:0.747948970982163 Z:0.663402619933089}]
+
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Lezuno]
+			[StaticEncounterPlanetDirection:{X:0.351290309790566 Y:0.644518769639428 Z:0.679110207425662}]
+			[StaticEncounterPlanetAltitude:-42.1907075510826]
+
+
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+		
+			[ZoneConditions:ZoneCondition-ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="ITC-Zeoa-Socrates">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>AnF-Zeoa-Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>
+
+
+
+		
+		
+		
+	</SpawnGroups>
+	
+</Definitions>

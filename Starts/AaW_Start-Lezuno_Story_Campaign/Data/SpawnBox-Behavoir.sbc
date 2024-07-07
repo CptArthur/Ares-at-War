@@ -1,16 +1,17 @@
 <?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
+  
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>SpawnBox-Behavior</SubtypeId>
+          <SubtypeId>SpawnBoxLezuno-Behavior</SubtypeId>
       </Id>
       <Description>
 	[RivalAI Behavior]
 	[BehaviorName:Passive]
 
-	[Triggers:SpawnBox-Trigger-StartTheCampaign]
+	[Triggers:SpawnBoxLezuno-Trigger-StartTheCampaign]
       </Description> 
     </EntityComponent>	
 
@@ -18,7 +19,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>SpawnBox-Trigger-StartTheCampaign</SubtypeId>
+          <SubtypeId>SpawnBoxLezuno-Trigger-StartTheCampaign</SubtypeId>
       </Id>
       <Description>
 
@@ -30,7 +31,7 @@
 	[StartsReady:true]
 	  [MaxActions:1]	  
 
-	  	[Actions:SpawnBox-Action-StartTheCampaign]
+	  	[Actions:SpawnBoxLezuno-Action-StartTheCampaign]
       </Description>
       
     </EntityComponent>
@@ -39,27 +40,26 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>SpawnBox-Action-StartTheCampaign</SubtypeId>
+          <SubtypeId>SpawnBoxLezuno-Action-StartTheCampaign</SubtypeId>
       </Id>
       <Description>
       [RivalAI Action]
 	  
 	  
-
+[ForceDespawn:true]
 	
 	
 	[AddTagsToPlayers:true]
 	[AddTagsPlayerConditionIds:AaW-PlayerCondition-SpawnBox]
-	[AddTags:StartedCampaign]
+	[AddTags:StartedLezunoCampaign]
 	[AddTagsOverridePositionInPlayerCondition:true]
 	
 	[ActivateEvent:true]
-	[ActivateEventIds:AaW-Event-TeleportPlayer]
+	[ActivateEventIds:AaW-Event-Lezuno_StoryCampaign-Start]
 
       </Description>
     
     </EntityComponent>	
-	
 	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -74,6 +74,10 @@
       </Description>
     </EntityComponent>	
 
+
+<!-- 	[CheckPlayerTags:true]
+	[IncludedPlayerTag:StartedLezunoCampaign]-->
+	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -82,49 +86,83 @@
       <Description>
 	[MES Player Condition]
 
+	
 	[CheckLastRespawnShipName:true]
-	[LastRespawnShipName:Ares-Campaign]
-	
-	
+	[LastRespawnShipName:Pod-A26]
       </Description>
     </EntityComponent>	
 	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+		<Id>
+		  <TypeId>Inventory</TypeId>
+		  <SubtypeId>AaW-EventCondition-Lezuno_StoryCampaign-Start1</SubtypeId>
+		</Id>
+		<Description>
+
+		[MES Event Condition]
+		[CheckPlayerCondition:true]
+		[PlayerConditionIds:AaW-PlayerCondition-AresCampaign]
+		
+		
+		
+		</Description>
+	</EntityComponent>	
+
 	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-Event-TeleportPlayer</SubtypeId>
+          <SubtypeId>AaW-Event-Lezuno_StoryCampaign-Start</SubtypeId>
       </Id>
       <Description>
 
 	[MES Event]
-	[UseEvent:false]
+	[UseEvent:true]
 	[UniqueEvent:true]		
 
 	[ActionExecution:Sequential]
-	[TimeUntilNextActionMs:4000]
-	
-	
-	
-	[ActionIds:AaW-EventAction-FadeIn]		
-	[ActionIds:AaW-EventAction-TeleportPlayer]
-	[ActionIds:AaW-EventAction-StartMusic]		
-	[ActionIds:AaW-EventAction-FadeOut]	
+	[TimeUntilNextActionMs:6400]
+	[ConditionIds:AaW-EventCondition-Lezuno_StoryCampaign-Start1]		
+
+
+	[ActionIds:AaW-EventAction-Lezuno_StoryCampaign-PassTime]	
+	[ActionIds:AaW-EventAction-Lezuno_StoryCampaign-PassTime]	
+	[ActionIds:AaW-EventAction-Lezuno_StoryCampaign-Message1]	
+	[ActionIds:AaW-EventAction-Lezuno_StoryCampaign-Message2]	
+	[ActionIds:AaW-EventAction-Lezuno_StoryCampaign-Message3]		
+	[ActionIds:AaW-EventAction-Lezuno_StoryCampaign-FadeOut]	
       </Description>
 	</EntityComponent>	
+
+
+
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Lezuno_StoryCampaign-PassTime</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+
+      </Description>
+      
+    </EntityComponent>
+
 
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventAction-FadeIn</SubtypeId>
+          <SubtypeId>AaW-EventAction-Lezuno_StoryCampaign-FadeIn</SubtypeId>
       </Id>
       <Description>
 	[MES Event Action]
 		
 	[FadeInPlayers:true]
 	[FadeInPlayerConditionIds:AaW-PlayerCondition-AresCampaign]
-
       </Description>
       
     </EntityComponent>
@@ -133,7 +171,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventAction-TeleportPlayer</SubtypeId>
+          <SubtypeId>AaW-EventAction-Lezuno_StoryCampaign-TeleportPlayer</SubtypeId>
       </Id>
       <Description>
 	[MES Event Action]
@@ -141,7 +179,6 @@
 	[TeleportPlayers:true]
 	[TeleportPlayerConditionIds:AaW-PlayerCondition-AresCampaign]
 	[TeleportPlayerCoords:{X:1477382.66 Y:-626260.71 Z:-2840273.36}]
-
       </Description>
       
     </EntityComponent>
@@ -150,14 +187,13 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventAction-StartMusic</SubtypeId>
+          <SubtypeId>AaW-EventAction-Lezuno_StoryCampaign-Message1</SubtypeId>
       </Id>
       <Description>
 	[MES Event Action]
 		
 	[UseChatBroadcast:true]
-	[ChatData:AaW-EventChat-StartMusic]
-
+	[ChatData:AaW-EventChat-Lezuno_StoryCampaign-Message1]
       </Description>
       
     </EntityComponent>	
@@ -166,9 +202,50 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventChat-StartMusic</SubtypeId>
+          <SubtypeId>AaW-EventChat-Lezuno_StoryCampaign-Message1</SubtypeId>
       </Id>
-	  
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:false]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Blue]
+      [Author:]
+        
+  	  [ChatMessages:Alert! We have unkown ships closing in our position. (Explosion)]
+      [BroadcastChatType:Notify]
+      [ChatAudio:]   	  
+      </Description>
+    </EntityComponent>
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Lezuno_StoryCampaign-Message2</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-Lezuno_StoryCampaign-Message2]
+      </Description>
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-Lezuno_StoryCampaign-Message2</SubtypeId>
+      </Id>
       <Description>
 
       [RivalAI Chat]
@@ -177,31 +254,69 @@
       [StartsReady:true]
       [Chance:100]
       [MaxChats:-1]
-      [BroadcastRandomly:true]
+      [BroadcastRandomly:false]
       [IgnoreAntennaRequirement:True]
       [IgnoredAntennaRangeOverride:1]
       [SendToAllOnlinePlayers:true]
 
-
       [Color:Blue]
-      [Author:Ares News Station]
+      [Author:]
         
-      [ChatMessages:{PlayerName} Wake up! Can you hear me?]
+  	  [ChatMessages:(Distant) we are going down! Abadoned ship!]
       [BroadcastChatType:Notify]
-      [ChatAudio:event_yellow_alert_01]   
+      [ChatAudio:]   	  
       </Description>
-      
     </EntityComponent>
-
-
-
-
 
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW-EventAction-FadeOut</SubtypeId>
+          <SubtypeId>AaW-EventAction-Lezuno_StoryCampaign-Message3</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW-EventChat-Lezuno_StoryCampaign-Message3]
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-Lezuno_StoryCampaign-Message3</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:false]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Blue]
+      [Author:]
+        
+  	  [ChatMessages:Brace for impact!]
+      [BroadcastChatType:Notify]
+      [ChatAudio:]   	  
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Lezuno_StoryCampaign-FadeOut</SubtypeId>
       </Id>
       <Description>
 	[MES Event Action]

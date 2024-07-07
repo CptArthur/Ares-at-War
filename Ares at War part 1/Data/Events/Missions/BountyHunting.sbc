@@ -1,0 +1,402 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+ <!--
+Variables:
+{EventName}
+{EventCoords}
+ {ContractGiver}
+ 
+On start Send GPS to Players; 
+ 
+PlayerNear Watcher 
+
+If playerclose spawnship
+
+
+
+If player leaves the area (50km) -> Fail the mission.
+
+If ships despawns (trigger) -> Fail the mission.
+
+
+
+ 
+ -->
+ 
+ 
+ 
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MES_Mission_Scrap</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:Buyable; Scrap Location]
+	[Description:]
+	
+
+	[InstanceEventGroupId:MissionGroup_BountyHunting]
+	
+	[ReplaceKeys:{EventName}]
+	[ReplaceValues:Last known location]
+
+	
+	[ReplaceKeys:{EventCoords}]
+	[ReplaceValues:{X:1034461 Y:2637 Z:-100891}]
+
+      </Description>
+
+    </EntityComponent>
+
+
+  
+  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MES_Mission_ClearThreat</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:Eliminate Threat]
+	[Description:A SPRT ship is disrupting the Agaris-Thora IV trade route; eliminate the threat. Rewards: 550k Credits; +50 REP]
+	
+
+	[InstanceEventGroupId:MissionGroup_BountyHunting]
+	
+	[ReplaceKeys:{EventName}]
+	[ReplaceValues:Last known location]
+
+	
+	[ReplaceKeys:{ContractGiver}]
+	[ReplaceValues:Station 27]	
+	
+	[ReplaceKeys:{EventCoords}]
+	[ReplaceValues:{X:1034461 Y:2637 Z:-100891}]
+
+
+      </Description>
+
+    </EntityComponent>
+	
+	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MissionGroup_BountyHunting</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event TemplateGroup]
+		
+		[TemplateEventIds:MES_EventTemplate_BountyHunting_Init]	
+		
+		
+		
+		[TemplateEventIds:MES_EventTemplate_BountyHunting_Success]
+		[TemplateEventIds:MES_EventTemplate_BountyHunting_Fail]
+		
+		
+		
+		
+		[TemplateEventIds:MES_EventTemplate_BountyHunting_PlayerNear]
+
+
+
+
+      </Description>
+	</EntityComponent>	
+	
+	
+	<!-- Standaard -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES_EventActionTemplate_BountyHunting_CloseInstance</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	[RemoveThisInstanceGroup:true]
+
+      </Description>
+    </EntityComponent>		
+
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES_EventTemplate_BountyHunting_Success</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:false]
+		[MinCooldownMs:5000]
+		[MaxCooldownMs:15001]			
+		
+		[UniqueEvent:true]		
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000] 
+
+		
+		
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		
+		[ActionIds:MES_EventActionTemplate_BountyHunting_Success]
+		[ActionIds:MES_EventActionTemplate_BountyHunting_CloseInstance]		
+		
+		
+
+      </Description>
+	</EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES_EventActionTemplate_BountyHunting_Success</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	[RemoveThisInstanceGroup:true]
+
+	
+	[UseChatBroadcast:true]
+	[ChatData:MES_EventChat_BountyHunting_Success]
+	
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeFactions:COL-B]
+	[ReputationChangeAmount:50]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+      </Description>
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES_EventChat_BountyHunting_Success</SubtypeId>
+      </Id> 
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+	
+      [Color:Green]
+      [Author:Station 27]
+        
+      [ChatMessages:Well done {PlayerName}! Here is your reward as promised]
+      [BroadcastChatType:Chat]
+      [ChatAudio:MES-ShipyardSell]  
+
+      </Description>
+    </EntityComponent>
+	
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES_EventTemplate_BountyHunting_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:false]
+		[UniqueEvent:true]		
+		[ActionExecution:All]
+		[ActionIds:MES_EventActionTemplate_BountyHunting_Fail]
+
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES_EventActionTemplate_BountyHunting_Fail</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	[RemoveThisInstanceGroup:true]
+	
+
+	[DebugHudMessage:Fail]
+      </Description>
+    </EntityComponent>			
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES_EventTemplate_BountyHunting_Init</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:true]
+		[UniqueEvent:true]	
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+		[ActionExecution:All]
+		[ActionIds:MES_EventActionTemplate_BountyHunting_CreateGPS]
+
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES_EventActionTemplate_BountyHunting_CreateGPS</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-CreateGPS]
+	[CustomActionArgumentsString:{EventName}]
+	[CustomActionArgumentsString:jiu]
+	[CustomActionArgumentsInt:120]		
+	[CustomActionArgumentsVector3D:{EventCoords}]	
+	
+      </Description>
+    </EntityComponent>	
+	
+		
+	
+
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES_EventTemplate_BountyHunting_PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:true]
+		
+		[UniqueEvent:true]	
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+
+		[ConditionIds:MES_EventConditionTemplate_BountyHunting_PlayerNear]	
+		
+		[ActionExecution:All]
+
+		[ActionIds:MES_EventActionTemplate_BountyHunting_Spawnbounty]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES_EventConditionTemplate_BountyHunting_PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Condition Template]
+
+
+	[CheckPlayerNear:true]
+	[PlayerNearCoords:{EventCoords}]
+	[PlayerNearDistanceFromCoords:2000]
+
+      </Description>
+      
+    </EntityComponent>		  
+	  
+	  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES_EventActionTemplate_BountyHunting_Spawnbounty</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+	[SpawnEncounter:true]
+	[SpawnData:SPRT-Spawner-Bounty]
+	[SpawnFactionTags:SPRT]
+	[SpawnCoords:{EventCoords}]
+	
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-RemoveGPS]
+	[CustomActionArgumentsString:{EventName}]
+	
+	[UseChatBroadcast:true]
+	[ChatData:MES_EventChat_BountyHunting_Start]
+	
+
+
+
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES_EventChat_BountyHunting_Start</SubtypeId>
+      </Id> 
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+	
+      [Color:Green]
+      [Author:MES DEBUG]
+        
+      [ChatMessages:Spawning grid]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+      </Description>
+    </EntityComponent>
+
+	
+  </EntityComponents>
+</Definitions>
+

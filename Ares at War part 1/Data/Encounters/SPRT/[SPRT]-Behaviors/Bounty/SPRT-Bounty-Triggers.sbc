@@ -2,10 +2,58 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
+<!--
+SPRT_Bounty_Trigger_PlayerNear
+SPRT_Bounty_Trigger_Despawn
+SPRT_Bounty_Trigger_DespawnMES
+SPRT_Bounty_Trigger_Compromised
+
+
+-->
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>SPRT-Bounty-Trigger-PlayerNear</SubtypeId>
+          <SubtypeId>SPRT_Bounty_Action_FailMission</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+
+	[ActivateEvent:true]
+	[ActivateEventIds:MES_EventTemplate_BountyHunting_Fail@{EventInstance}]
+
+
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SPRT_Bounty_Action_SuccessMission</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:MES_EventTemplate_BountyHunting_Success@{EventInstance}]
+
+	[ToggleEvents:true]
+	[ToggleEventIds:MES_EventTemplate_BountyHunting_Success@{EventInstance}]
+	[ToggleEventIdModes:true]
+      </Description>
+      
+    </EntityComponent>
+	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SPRT_Bounty_Trigger_PlayerNear</SubtypeId>
       </Id>
       <Description>
 
@@ -15,7 +63,7 @@
 	  [StartsReady:true]
 	  [TargetDistance:1200]
 	  [MaxActions:1]
-	  [Actions:SPRT-Bounty-Action-PlayerNear]
+	  [Actions:SPRT_Bounty_Action_PlayerNear]
 	  
       </Description>
       
@@ -25,13 +73,13 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>SPRT-Bounty-Action-PlayerNear</SubtypeId>
+          <SubtypeId>SPRT_Bounty_Action_PlayerNear</SubtypeId>
       </Id>
       <Description>
 
       [RivalAI Action]
       [UseChatBroadcast:true]
-      [ChatData:SPRT-Bounty-Chat-PlayerNear]
+      [ChatData:SPRT_Bounty_Chat_PlayerNear]
 
       </Description>
       
@@ -41,7 +89,7 @@
 		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>SPRT-Bounty-Chat-PlayerNear</SubtypeId>
+          <SubtypeId>SPRT_Bounty_Chat_PlayerNear</SubtypeId>
       </Id>
 	  
       <Description>
@@ -57,14 +105,145 @@
       [Author:{AntennaName}]
       [Color:Red]
       
-      [ChatMessages:{PlayerName}! You have a bounty on your head. Prepare to die!]
+      [ChatMessages:{PlayerName}! How did you find me? Agh it doesn't matter. Prepare to die!]
       [ChatAudio:ArcHudGPSNotification1]
       [BroadcastChatType:Chat]
       
+      </Description>
+    </EntityComponent>
+	
+	
+	
+	
 
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SPRT_Bounty_Trigger_Despawn</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Despawn]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	  [MaxActions:1]
+	  [Actions:SPRT_Bounty_Action_FailMission]
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SPRT_Bounty_Trigger_DespawnMES</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:DespawnMES]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	  [MaxActions:1]
+	  [Actions:SPRT_Bounty_Action_FailMission]
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SPRT_Bounty_Trigger_Compromised</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Compromised]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	  [MaxActions:1]
+	  [Actions:SPRT_Bounty_Action_Compromised]
+	  [Actions:SPRT_Bounty_Action_SuccessMission]	  
+      </Description>
+      
+    </EntityComponent>		
+		
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SPRT_Bounty_Action_Compromised</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      [UseChatBroadcast:true]
+      [ChatData:SPRT_Bounty_Chat_Compromised]
+
+[GenerateExplosion:true]
+[ExplosionRange:14]
+[ExplosionDamage:5]
+[ExplosionIgnoresVoxels:true]
       </Description>
       
     </EntityComponent>
+
+	
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SPRT_Bounty_Chat_Compromised</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:Pirate]
+      [Color:Red]
+      
+      [ChatMessages:NOOOOOOO!!!]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+	  
+	  [IgnoreAntennaRequirement:true]
+	  [IgnoredAntennaRangeOverride:10000]
+      </Description>
+    </EntityComponent>
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

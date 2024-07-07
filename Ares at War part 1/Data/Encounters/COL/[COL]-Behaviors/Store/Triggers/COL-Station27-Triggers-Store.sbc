@@ -98,8 +98,47 @@
 	[CustomDataFiles:COL_Land_Vehicles.xml]
 	[CustomDataFiles:COL_Air_Vehicles.xml]
 	[CustomDataFiles:COL_Space_Vehicles.xml]  
+	
+	
+	
+	
+	
+	
+	[ApplyContractProfiles:true]
+	[ClearContractContentsFirst:true]
+	[ContractBlocks:Contracts]
+	[ContractBlockProfiles:MES_ContractBlockProfiles_Test]
+
       </Description>
 
     </EntityComponent>
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MES_ContractBlockProfiles_Test</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Contract Block]
+	
+	[MissionIds:MES_Mission_ClearThreat]
+
+	[MissionIds:MES_Mission_Scrap]
+
+
+      </Description>
+
+    </EntityComponent>
+	
+
+	
+	
+	
+	
+	
+	
   </EntityComponents>
 </Definitions>

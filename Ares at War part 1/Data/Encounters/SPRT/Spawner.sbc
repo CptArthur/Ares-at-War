@@ -13,7 +13,7 @@ GC-SpawnGroup-MediumStrikeForce
 	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>GC-Spawner-SingleFighter</SubtypeId>
+          <SubtypeId>SPRT-Spawner-Bounty</SubtypeId>
       </Id>
       <Description>
 
@@ -26,7 +26,7 @@ GC-SpawnGroup-MediumStrikeForce
 
 	[MaxSpawns:-1]
 
-	[SpawnGroups:GC-SpawnGroup-SingleFighter]
+	[SpawnGroups:SPRT-SpawnGroup-Bounties_Space]
 	
 	
 	[UseRelativeSpawnPosition:false]
@@ -40,49 +40,13 @@ GC-SpawnGroup-MediumStrikeForce
       
     </EntityComponent>
 
-	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>GC-Spawner-MediumStrikeForce</SubtypeId>
-      </Id>
-      <Description>
-
-	[RivalAI Spawn]
-
-	[UseSpawn:true]
-
-	[StartsReady:true]
-	[SpawningType:CustomSpawn]
-
-	[MaxSpawns:-1]
-
-	[SpawnGroups:GC-SpawnGroup-MediumStrikeForce]
-	
-	
-	[UseRelativeSpawnPosition:false]
-	[MinDistance:800]
-	[MaxDistance:2500]
-	[MinAltitude:600]
-	[MaxAltitude:1000]
-	[IgnoreSafetyChecks:true]
-      
-      </Description>
-      
-    </EntityComponent>
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>GC-SpawnProfile-RivalAISpawn</SubtypeId>
+        <SubtypeId>SPRT-SpawnProfile-RivalAISpawn</SubtypeId>
       </Id>
       <Description>
 
@@ -98,7 +62,7 @@ GC-SpawnGroup-MediumStrikeForce
 		[ZoneConditions:ZoneCondition-ZoneAaW]	
 		
 		[RivalAiAnySpawn:true]
-		[FactionOwner:GC]	
+		[FactionOwner:SPRT]	
 
 
 	
@@ -107,7 +71,6 @@ GC-SpawnGroup-MediumStrikeForce
       </Description>
 
     </EntityComponent>		
-	
 
 	
 	
