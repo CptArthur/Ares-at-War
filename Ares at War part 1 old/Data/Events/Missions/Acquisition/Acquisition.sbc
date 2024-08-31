@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+ 
+ 
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MES_Mission_Acquisition</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[MissionType:Acquisition]
+	[StoreProfileId:MES_StoreProfile_Station27_Acquisition]
+
+
+      </Description>
+
+    </EntityComponent>
+
+
+      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MES_StoreProfile_Station27_Acquisition</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [MinOfferItems:20]
+        [MaxOfferItems:20]
+        [MinOrderItems:20]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+		
+        [FileSource:AaW-StoreItems-Station27.xml]
+
+
+        [Orders:Consumable/SpiceInhaler]
+        </Description>
+
+    </EntityComponent>
+
+	
+  </EntityComponents>
+</Definitions>
+

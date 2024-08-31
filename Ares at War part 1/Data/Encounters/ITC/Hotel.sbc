@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+<!--
+
+
+
+    <MyObjectBuilder_EntityBase xsi:type="MyObjectBuilder_VoxelMap">
+      <SubtypeName />
+      <EntityId>103862878859920051</EntityId>
+      <PersistentFlags>CastShadows InScene</PersistentFlags>
+      <Name>103862878859920051</Name>
+      <PositionAndOrientation>
+        <Position x="-1211.7310169881896" y="1517.7368107907678" z="4086.9033811364807" />
+        <Forward x="-0" y="-0" z="-1" />
+        <Up x="0" y="1" z="0" />
+        <Orientation>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <W>1</W>
+        </Orientation>
+      </PositionAndOrientation>
+      <LocalPositionAndOrientation xsi:nil="true" />
+      <ContentChanged>false</ContentChanged>
+      <BoulderPlanetId xsi:nil="true" />
+      <BoulderSectorId xsi:nil="true" />
+      <BoulderItemId xsi:nil="true" />
+      <CreatedByUser>false</CreatedByUser>
+      <StorageName>Argon</StorageName>
+    </MyObjectBuilder_EntityBase>
+	
+	
+	
+Grid Name:          B1 - Hotel
+
+Tags For SpawnGroup:
+[StaticEncounterCoords:{X:-987.142605375915 Y:1944.49996982224 Z:4763.60665666503}]
+[StaticEncounterForward:{X:-0.0167920144200677 Y:-0.517917102131092 Z:0.855265984107779}]
+[StaticEncounterUp:{X:0.328171520225952 Y:0.805145076122327 Z:0.494008967234969}]
+
+	
+			
+
+<AsteroidPosition x="-1017936" y="-1016967" z="-3585207" />
+
+
+	From Asteroid to Station27
+	x += 224.5884116122745
+	y += 426.7631590314686
+	z += 676.7032755285523
+
+
+
+-1017711.4115883877255
+
+
+
+
+	
+	-->
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>ITC-Hotel</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:CIVILIAN]		
+
+			[TriggerCoords:{X:-1018002.33077798 Y:-1016204.27518199 Z:-3585528.06290849]
+			[TriggerRadius:200000]
+
+			[ForceExactPositionAndOrientation:true]
+			[CutVoxelsAtAirtightCells:true]
+
+
+			[StaticEncounterCoords:{X:-1018160.84116122745 Y:-1016540.2368 Z:-3585883.70}]
+			
+
+			[StaticEncounterCoords:{X:-1017711.4115883877255 Y:-1016540.2368409685314 Z:-3584530.2967244714476}]
+			[StaticEncounterForward:{X:0 Y:0 Z:-1}]
+			[StaticEncounterUp:{X:0 Y:1 Z:0}]
+
+
+		[StaticEncounterCoords:{X:-1018002.33077798 Y:-1016204.27518199 Z:-3585528.06290849}]
+		[StaticEncounterForward:{X:-0.198673933934972 Y:0 Z:-0.980065644727333}]
+		[StaticEncounterUp:{X:0 Y:1 Z:0}]
+
+
+
+        [ShipyardSetup:true]
+        [ShipyardConsoleBlockNames:{Any}]
+        [ShipyardProfileNames:FAC-Shipyard-Shipyard]
+		
+		[GridsAreDestructable:false]
+	
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:Station27]			
+
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="B1 - Hotel">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>ITC_Hotel_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>
+		
+	</SpawnGroups>
+
+
+<EntityComponents>
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>ITC_Hotel_Behavior</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TriggerGroups:COL-Static-CommonTriggers]	 
+	[TriggerGroups:FAC-SpaceStation-CommonTriggers]	
+	
+
+      </Description>
+    </EntityComponent>
+
+</EntityComponents>
+
+
+
+
+
+
+
+	
+</Definitions>

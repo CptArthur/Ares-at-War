@@ -1,0 +1,22 @@
+Dynamic_Civillian_TriggersGroup:
+-go to civillian station.
+
+Cargoship:
+Ask the player why he is close. DialogueCue: CargoShipPlayerClose
+
+BountyHunter:
+When player (neutral and above) get close get angry. DialogueCue: BountyPlayerClose
+Will attack player if it has a bounty on its head.
+
+Merchant:
+Will actively go to the player (neutral and above), and Land. DialogueCue: MerchantMovingToPlayer
+Stop when player is close. DialogueCue: MerchantPlayerClose
+
+Nomad:
+Will land randomly. DialogueCue: NomadMovingToSurface
+Stop when player (neutral and above) is close. DialogueCue: NomadPlayerClose
+
+Salvager:
+Goes to salvage. Get angry if player gets close if in salvage mode. DialogueCue: SalvagerHasScrapPlayerClose 
+Stop when player (neutral and above) is close. SalvagerPlayerClose
+

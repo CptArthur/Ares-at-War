@@ -1,0 +1,63 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-Trigger-ArriveAtStation</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:BehaviorTriggerA]
+
+        [StartsReady:true]
+        [MaxActions:1]
+        [Actions:TOC-Action-ArriveAtStation]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-Action-ArriveAtStation</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Action]
+
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:TOC-Command-ArriveAtStation]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-Command-ArriveAtStation</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Command]
+
+        [CommandCode:TOCArriveAtStation]
+        [SingleRecipient:true]
+        [MatchSenderReceiverOwners:true]
+
+        [IgnoreAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:true]
+        [Radius:1000]
+
+      </Description>
+
+    </EntityComponent>
+    
+  </EntityComponents>
+</Definitions>

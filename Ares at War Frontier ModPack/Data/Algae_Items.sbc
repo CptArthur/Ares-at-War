@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <PhysicalItems>
+
+        <PhysicalItem xsi:type="MyObjectBuilder_ConsumableItemDefinition">
+            <Id>
+                <TypeId>ConsumableItem</TypeId>
+                <SubtypeId>AlgaeMeat</SubtypeId>
+            </Id>
+            <DisplayName>{LOC:DisplayName_AlgaeMeat}</DisplayName>
+            <Description>{LOC:Description_LT_AlgaeMeat}</Description>
+            <Icon>Textures\GUI\Icons\Items\AlgaeMeat.png</Icon>
+            <Size>
+                <X>0.25</X>
+                <Y>0.25</Y>
+                <Z>0.25</Z>
+            </Size>
+
+            <Mass>0.3</Mass>
+            <Volume>0.3</Volume>
+            <Model>Models\Items\AlgaeMeat.mwm</Model>
+            <PhysicalMaterial>None</PhysicalMaterial>
+			<Stats>
+			<Stat Name="Food" Value="0.05" Time="3"/>
+			</Stats>
+
+            <MinimalPricePerUnit>25</MinimalPricePerUnit>
+            <MinimumOfferAmount>100</MinimumOfferAmount>
+            <MaximumOfferAmount>1000</MaximumOfferAmount>
+            <CanPlayerOrder>true</CanPlayerOrder>
+        </PhysicalItem>
+		
+    </PhysicalItems>
+</Definitions>

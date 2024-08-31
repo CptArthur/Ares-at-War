@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Fort-Trigger-Death</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Compromised]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+
+	  [Actions:FAF-Fort-Action-Death]
+	  
+      </Description>
+      
+    </EntityComponent>
+	
+
+					
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Fort-Action-Death</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+      [UseChatBroadcast:true]
+      [ChatData:FAF-Fort-Chat-Death]
+
+	[ChangeZoneAtPosition:true]
+	[ZoneName:ZoneFAF]
+	[ZoneToggleActiveAtPosition:true]
+	[ZoneToggleActiveAtPositionMode:false]	
+      </Description>
+      
+    </EntityComponent>		
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF-Fort-Chat-Death</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:FAF]
+      [Color:Red]
+      
+      [ChatMessages:We have lost the the colony]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+	  
+	[IgnoreAntennaRequirement:true]
+	[IgnoredAntennaRangeOverride:5000]
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+  </EntityComponents>
+</Definitions>

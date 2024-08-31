@@ -18,17 +18,41 @@ namespace BylenBelt
         public static Example_Session Instance;
         public MyVoxelBase entity;
 
-        public static Vector3D PlanetCenter = new Vector3D(0, 0, 0);
+
+        public static Vector3D BylenCenter = new Vector3D(-2070540.14510301, -1017587.98462825, -3367463.76531797);
+
+
+        public static Vector3D MilaCenter = new Vector3D(2299140.85489699, 1166634.01537175, 2935888.23468203);
+
         public static Vector3D AgarisCenter = new Vector3D(-1129033.5, 126871.5, 1293873.5);
+
+        public static Vector3D NebulaCenter = new Vector3D(-17115, -4610, -8171);
+
+
         public override void LoadData()
         {
+            var allFactions = MyDefinitionManager.Static.GetFactionsFromDefinition();
 
+            foreach (var faction in allFactions)
+            {
+                if(faction.Id.SubtypeName == "SpacePirates")
+                {
+                    faction.Enabled = false;
+                    faction.IsDefault = false;
+                }
+
+                if (faction.Id.SubtypeName == "Factorum")
+                {
+                    faction.Enabled = false;
+                    faction.IsDefault = false;
+                }
+
+            }
         }
 
         public override void BeforeStart()
         {
 
-            //MyAPIGateway.Session.SessionSettings.ProceduralDensity = 0.75F;
 
 
 
@@ -38,32 +62,53 @@ namespace BylenBelt
         public override void UpdateAfterSimulation()
         {
 
-                List<VRage.ModAPI.IMyVoxelBase> outInstances = new List<VRage.ModAPI.IMyVoxelBase>();
+            List<VRage.ModAPI.IMyVoxelBase> outInstances = new List<VRage.ModAPI.IMyVoxelBase>();
 
 
-                MyAPIGateway.Session.VoxelMaps.GetInstances(outInstances);
+            MyAPIGateway.Session.VoxelMaps.GetInstances(outInstances);
 
-                foreach (var entity in outInstances)
+            foreach (var entity in outInstances)
+            {
+                if (entity is MyVoxelMap && !(entity is MyPlanet))
                 {
-                    if (entity is MyVoxelMap && !(entity is MyPlanet))
+                    var tja = entity.GetPosition();
+
+                    var agarisdisctance = Vector3.Distance(AgarisCenter, tja);
+                    var Nebuladisctance = Vector3.Distance(NebulaCenter, tja);
+                    var Bylendistance = Vector3D.Distance(BylenCenter, tja);
+                    var Bylenydistance = Math.Abs((tja.Y - BylenCenter.Y));
+
+                    var Miladistance = Vector3D.Distance(MilaCenter, tja);
+                    var Milaydistance = Math.Abs((tja.Y - MilaCenter.Y));
+
+                    if (agarisdisctance <= 70000)
                     {
-                        var tja = entity.GetPosition();
-
-                        var agarisdisctance = Vector3.Distance(AgarisCenter, tja);
-                        var distance = Vector3D.Distance(PlanetCenter, tja);
-                        var ydistance = Math.Abs((tja.Y - PlanetCenter.Y));
-
-                        if ((((650000 <= distance && distance <= 740000) || (780000 <= distance && distance <= 985000) || (1025000 <= distance && distance <= 1100000)) && ydistance <= 6000) ^ agarisdisctance<= 70000)
-                        {
-                            continue;
-                        }
-                        else
-                        {
-                            //MyVisualScriptLogicProvider.ShowNotificationToAll("Removing Entity", 1000);
-                            entity.Close();
-                        }
+                        continue;
                     }
+
+                    if (((650000 <= Bylendistance && Bylendistance <= 740000) || (780000 <= Bylendistance && Bylendistance <= 985000) || (1025000 <= Bylendistance && Bylendistance <= 1100000)) && Bylenydistance <= 6000)
+                    {
+                        continue;
+                    }
+
+
+                    if (((610000 <= Miladistance && Miladistance <= 700000) || (800000 <= Miladistance && Miladistance <= 835000) || (850000 <= Miladistance && Miladistance <= 880000)) && Milaydistance <= 5500)
+                    {
+                        continue;
+                    }
+
+                    if (Nebuladisctance <= 200000)
+                    {
+                        continue;
+                    }
+
+                    
+
+                    //MyVisualScriptLogicProvider.ShowNotificationToAll("Removing Entity", 1000);
+                    entity.Close();
+
                 }
+            }
 
 
 

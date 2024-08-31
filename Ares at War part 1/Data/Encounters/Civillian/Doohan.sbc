@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+<!--
+    <MyObjectBuilder_EntityBase xsi:type="MyObjectBuilder_VoxelMap">
+      <SubtypeName />
+      <EntityId>103862878859920051</EntityId>
+      <PersistentFlags>CastShadows InScene</PersistentFlags>
+      <Name>103862878859920051</Name>
+      <PositionAndOrientation>
+        <Position x="-1211.7310169881896" y="1517.7368107907678" z="4086.9033811364807" />
+        <Forward x="-0" y="-0" z="-1" />
+        <Up x="0" y="1" z="0" />
+        <Orientation>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <W>1</W>
+        </Orientation>
+      </PositionAndOrientation>
+      <LocalPositionAndOrientation xsi:nil="true" />
+      <ContentChanged>false</ContentChanged>
+      <BoulderPlanetId xsi:nil="true" />
+      <BoulderSectorId xsi:nil="true" />
+      <BoulderItemId xsi:nil="true" />
+      <CreatedByUser>false</CreatedByUser>
+      <StorageName>ProcAsteroid-0r0-103862878859920051</StorageName>
+    </MyObjectBuilder_EntityBase>
+
+        <Position x="-988.78345019827611" y="1940.4741969721508" z="4761.1365773519246" />
+
+
+
+	From Asteroid to Station27
+	x += 27.606285909
+	y += −20.5184300426955
+	z += 59.9282566267
+
+	
+	
+			
+For porting to AaW world:
+ <Position x="1573521" y="1166920" z="3320344" />
+
+
+{X:-2976927.393714091 Y:-1018178.5184300426955 Z:-3064112.0717433733}
+
+
+
+
+
+	
+	-->
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>Doohan</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:CIVILIAN]		
+
+			[TriggerCoords:{X:1573521 Y:1166920 Z:3320344}]
+			[TriggerRadius:30000]
+
+			[ForceExactPositionAndOrientation:true]
+			[CutVoxelsAtAirtightCells:true]
+
+			[StaticEncounterCoords:{X:1573459.05187182 Y:1167676.70389646 Z:3320013.77777762}]
+			[StaticEncounterForward:{X:-0.13359784906522 Y:0 Z:-0.991035627374287}]
+			[StaticEncounterUp:{X:0 Y:1 Z:0}]
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-AAW)]
+			[RandomGridNamePattern:Mack]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+
+
+			[ShipyardSetup:true]
+			[ShipyardConsoleBlockNames:{Any}]
+			[ShipyardProfileNames:FAC-Shipyard-Shipyard]
+
+			[GridsAreDestructable:false]
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:Station27]			
+
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="Doohan Engineering">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>COL-Station27-Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>
+
+		
+		
+		
+	</SpawnGroups>
+	
+	<EntityComponents>
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+		  <Id>
+			  <TypeId>Inventory</TypeId>
+			  <SubtypeId>CIVILIAN_Doohan_Behavior</SubtypeId>
+		  </Id>
+		  <Description>
+
+		[RivalAI Behavior]
+		[BehaviorName:Passive]
+		[TriggerGroups:COL-Static-CommonTriggers]	 
+		[TriggerGroups:FAC-SpaceStation-CommonTriggers]	
+
+
+		  </Description>
+		</EntityComponent>
+
+	</EntityComponents>	
+
+	
+	
+</Definitions>

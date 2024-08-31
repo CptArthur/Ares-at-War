@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-Drone-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Behavior]
+      [BehaviorName:Strike]
+
+	  [TargetData:AaW-Target-Main-A]
+	  
+	  
+	[TriggerGroups:ContextTriggers]	 		
+	[TriggerGroups:AHE-CommonTriggers] 	
+	[TriggerGroups:AHE-Drone-CommonTriggers] 		
+	[TriggerGroups:FAC-Drone-CommonTriggers] 	
+
+	
+	[Triggers:FAC-PointSystem-Trigger-Decrease3]
+
+	  
+
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-DefensiveEscortDrone-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Escort]
+
+	[AutopilotData:AHE-EscortAutopilot]
+	[SecondaryAutopilotData:RAI-Generic-Autopilot-Strike]	 	  
+
+	[TargetData:AaW-Target-ShortRange]
+	  
+	  
+	[TriggerGroups:ContextTriggers]	 		
+	[TriggerGroups:AHE-CommonTriggers] 	
+	[TriggerGroups:AHE-Drone-CommonTriggers] 		
+	[TriggerGroups:FAC-Drone-CommonTriggers] 	
+	
+	
+	
+	
+	[TriggerGroups:FAC-DefensiveEscortSystem-Drone-TriggerGroup] 	
+	[Triggers:FAC-PointSystem-Trigger-Decrease3]
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-OffensiveEscortDrone-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Escort]
+
+	[AutopilotData:AHE-EscortAutopilot]
+	[SecondaryAutopilotData:RAI-Generic-Autopilot-Strike]	 	  
+
+	[TargetData:AaW-Target-Main-A]
+	  
+	[TriggerGroups:ContextTriggers]	 		
+	[TriggerGroups:AHE-CommonTriggers] 	
+	[TriggerGroups:AHE-Drone-CommonTriggers] 		
+	[TriggerGroups:FAC-Drone-CommonTriggers] 	
+	
+	
+	
+	
+	
+	
+	
+	[TriggerGroups:FAC-OffensiveEscortSystem-Drone-TriggerGroup] 	
+
+
+	[Triggers:FAC-PointSystem-Trigger-Decrease3]
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-Squadron-1-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW-Target-Main-A]
+	
+	
+
+
+	[TriggerGroups:ContextTriggers]	 		
+	[TriggerGroups:AHE-CommonTriggers] 	
+	[TriggerGroups:AHE-Drone-CommonTriggers] 		
+	[TriggerGroups:FAC-Drone-CommonTriggers] 	
+
+
+
+	[TriggerGroups:FAC-Squadron1-Triggers]	
+
+	[EscortOffsets:{X:100 Y:0 Z:0}]
+	[EscortOffsets:{X:-100 Y:0 Z:0}]
+[Triggers:AHE-Squadleader-Trigger-selfpresence]	
+	[Triggers:AHE-Common-Trigger-NewTarget]
+	
+	
+	[Triggers:AHE-LDrone-Trigger-GGCCargoResponse-NoCheck]
+	[Triggers:AHE-LDrone-Trigger-GGCLDroneResponse-Check]
+	[Triggers:AHE-LDrone-Trigger-GGCMinorStaticResponse-Check]
+	[Triggers:AHE-LDrone-Trigger-GGCMajorStaticResponse-Check]	
+	
+	
+		[Triggers:FAC-PointSystem-Trigger-Decrease3]
+	
+	
+	
+	
+	
+      </Description>
+      
+    </EntityComponent>
+		
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-Squadron-2-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Escort]
+	[TargetData:AaW-Target-Main-A]
+	
+	[TriggerGroups:FAC-Squadron2-Triggers]	
+	[TriggerGroups:ContextTriggers]	 		
+	[TriggerGroups:AHE-CommonTriggers] 	
+	[TriggerGroups:AHE-Drone-CommonTriggers] 		
+	[TriggerGroups:FAC-Drone-CommonTriggers] 	
+	
+	[Triggers:FAC-PointSystem-Trigger-Decrease3]
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-Squadron-3-Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Escort]
+	[TargetData:AaW-Target-Main-A]
+
+	[TriggerGroups:FAC-Squadron3-Triggers]	
+	[TriggerGroups:ContextTriggers]	 		
+	[TriggerGroups:AHE-CommonTriggers] 	
+	[TriggerGroups:AHE-Drone-CommonTriggers] 		
+	[TriggerGroups:FAC-Drone-CommonTriggers] 	
+	
+	
+	
+	
+	[Triggers:FAC-PointSystem-Trigger-Decrease3]
+      </Description>
+      
+    </EntityComponent>
+
+	
+	
+	
+
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

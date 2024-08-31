@@ -1,0 +1,543 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PhysicalItems>
+    <PhysicalItem>
+        <Id>
+            <TypeId>Ore</TypeId>
+            <SubtypeId>Organic</SubtypeId>
+        </Id>
+        <DisplayName>DisplayName_Item_Organic</DisplayName>
+        <Icon>Textures\GUI\Icons\ore_biomass.dds</Icon>
+        <Size>
+            <X>0.07</X>
+            <Y>0.07</Y>
+            <Z>0.07</Z>
+        </Size>
+        <Mass>1</Mass>
+        <Volume>0.37</Volume>
+        <Model>Models\Components\Sphere.mwm</Model>
+        <PhysicalMaterial>Stone</PhysicalMaterial>
+        <IconSymbol>IconSymbol_Organic</IconSymbol>
+        <MinimalPricePerUnit>200</MinimalPricePerUnit>
+        <MinimumOfferAmount>100</MinimumOfferAmount>
+        <MaximumOfferAmount>1000</MaximumOfferAmount>
+        <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem>    
+    <PhysicalItem xsi:type="MyObjectBuilder_ConsumableItemDefinition">
+        <Id>
+            <TypeId>ConsumableItem</TypeId>
+            <SubtypeId>EuropaTea</SubtypeId>
+        </Id>
+        <DisplayName>Europa Ice Tea</DisplayName>
+        <Description>Europa Ice Tea</Description>
+        <Icon>Textures\GUI\Icons\Items\EuropaTea.dds</Icon>
+        <Size>
+            <X>0.1</X>
+            <Y>0.2</Y>
+            <Z>0.1</Z>
+        </Size>
+        <Mass>0.5</Mass>
+        <Volume>0.5</Volume>
+        <Model>Models\Items\EuropaTea.mwm</Model>
+        <PhysicalMaterial>Metal</PhysicalMaterial>
+        <Stats>
+          <Stat Name="Health" Value="0.04" Time="5"/>
+          <Stat Name="Water" Value="0.1" Time="5"/>
+        </Stats>
+        <MinimalPricePerUnit>150</MinimalPricePerUnit>
+        <MinimumOfferAmount>10</MinimumOfferAmount>
+        <MaximumOfferAmount>100</MaximumOfferAmount>
+        <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem>
+            
+    <PhysicalItem xsi:type="MyObjectBuilder_ConsumableItemDefinition">
+      <Id>
+        <TypeId>ConsumableItem</TypeId>
+        <SubtypeId>Apple</SubtypeId>
+      </Id>
+      <DisplayName>Apple</DisplayName>
+      <Description>a space-grown version of the red fruit</Description>
+      <Icon>Textures\GUI\Icons\Apple.png</Icon>
+      <Size>
+        <X>0.03</X>
+        <Y>0.03</Y>
+        <Z>0.03</Z>
+      </Size>
+      <Mass>0.05</Mass>
+      <Volume>0.05</Volume>
+      <Model>Models\Apple.mwm</Model>
+      <PhysicalMaterial>None</PhysicalMaterial>
+      <Stats>
+        <Stat Name="Health" Value="0.01" Time="1"/>
+        <Stat Name="Food" Value="0.05" Time="1"/>
+      </Stats>
+      <MinimalPricePerUnit>100</MinimalPricePerUnit>
+      <MinimumOfferAmount>1</MinimumOfferAmount>
+      <MaximumOfferAmount>10</MaximumOfferAmount>
+      <MinimumOrderAmount>1000</MinimumOrderAmount>
+      <MaximumOrderAmount>20000</MaximumOrderAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem>
+    
+    <PhysicalItem xsi:type="MyObjectBuilder_ConsumableItemDefinition">
+      <Id>
+        <TypeId>ConsumableItem</TypeId>
+        <SubtypeId>AppleJuice</SubtypeId>
+      </Id>
+      <DisplayName>Apple Juice</DisplayName>
+      <Description>a refreshing drink</Description>
+      <Icon>Textures\GUI\Icons\AppleJuice.png</Icon>
+      <Size>
+        <X>0.1</X>
+        <Y>0.2</Y>
+        <Z>0.1</Z>
+      </Size>
+      <Mass>0.5</Mass>
+      <Volume>0.5</Volume>
+      <Model>Models\AppleJuiceBottle.mwm</Model>
+      <PhysicalMaterial>None</PhysicalMaterial>
+      <Stats>
+        <Stat Name="Water" Value="0.25" Time="2"/>
+      </Stats>
+      <MinimalPricePerUnit>100</MinimalPricePerUnit>
+      <MinimumOfferAmount>1000</MinimumOfferAmount>
+      <MaximumOfferAmount>10000</MaximumOfferAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem>
+    
+    <PhysicalItem xsi:type="MyObjectBuilder_ConsumableItemDefinition">
+      <Id>
+        <TypeId>ConsumableItem</TypeId>
+        <SubtypeId>ApplePie</SubtypeId>
+      </Id>
+      <DisplayName>Apple Pie</DisplayName>
+      <Description>a delicious snack, high in carbs</Description>
+      <Icon>Textures\GUI\Icons\ApplePie.png</Icon>
+      <Size>
+        <X>0.05</X>
+        <Y>0.05</Y>
+        <Z>0.05</Z>
+      </Size>
+      <Mass>0.25</Mass>
+      <Volume>0.25</Volume>
+      <Model>Models\ApplePie.mwm</Model>
+      <PhysicalMaterial>None</PhysicalMaterial>
+      <Stats>
+        <Stat Name="Sleep" Value="-0.01" Time="5"/>
+        <Stat Name="Food" Value="0.1" Time="7"/>
+      </Stats>
+      <MinimalPricePerUnit>500</MinimalPricePerUnit>
+      <MinimumOfferAmount>100</MinimumOfferAmount>
+      <MaximumOfferAmount>1000</MaximumOfferAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem> 
+    
+    <PhysicalItem>
+      <Id>
+        <TypeId>Ingot</TypeId>
+        <SubtypeId>Wheat</SubtypeId>
+      </Id>
+      <DisplayName>Wheat</DisplayName>
+      <Description>Spike of gluten-full Wheat</Description>
+      <Icon>Textures\GUI\Icons\Wheat.png</Icon>
+      <Size>
+        <X>0.01</X>
+        <Y>0.02</Y>
+        <Z>0.01</Z>
+      </Size>
+      <Mass>0.01</Mass>
+      <Volume>0.01</Volume>
+      <Model>Models\Wheat.mwm</Model>
+      <PhysicalMaterial>None</PhysicalMaterial>
+      <IconSymbol></IconSymbol>
+      <MinimalPricePerUnit>100</MinimalPricePerUnit>
+      <MinimumOfferAmount>1</MinimumOfferAmount>
+      <MaximumOfferAmount>10</MaximumOfferAmount>
+      <MinimumOrderAmount>1000</MinimumOrderAmount>
+      <MaximumOrderAmount>20000</MaximumOrderAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem>
+    
+    <PhysicalItem>
+      <Id>
+        <TypeId>Ingot</TypeId>
+        <SubtypeId>Pumpkin</SubtypeId>
+      </Id>
+      <DisplayName>Pumpkin</DisplayName>
+      <Description>It is always autumn somewhere in the universe</Description>
+      <Icon>Textures\GUI\Icons\Pumpkin.png</Icon>
+      <Size>
+        <X>0.2</X>
+        <Y>0.2</Y>
+        <Z>0.2</Z>
+      </Size>
+      <Mass>1.0</Mass>
+      <Volume>1.0</Volume>
+      <Model>Models\Pumpkin.mwm</Model>
+      <PhysicalMaterial>None</PhysicalMaterial>
+      <IconSymbol></IconSymbol>
+      <MinimalPricePerUnit>200</MinimalPricePerUnit>
+      <MinimumOfferAmount>1</MinimumOfferAmount>
+      <MaximumOfferAmount>10</MaximumOfferAmount>
+      <MinimumOrderAmount>1000</MinimumOrderAmount>
+      <MaximumOrderAmount>20000</MaximumOrderAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem>
+    
+    <PhysicalItem>
+      <Id>
+        <TypeId>Ingot</TypeId>
+        <SubtypeId>Cabbage</SubtypeId>
+      </Id>
+      <DisplayName>Cabbage</DisplayName>
+      <Description>Just a plain, old, space grown cabbage. Nothing special about it.</Description>
+      <Icon>Textures\GUI\Icons\Cabbage.png</Icon>
+      <Size>
+        <X>0.1</X>
+        <Y>0.1</Y>
+        <Z>0.1</Z>
+      </Size>
+      <Mass>1.0</Mass>
+      <Volume>1.0</Volume>
+      <Model>Models\Cabbage.mwm</Model>
+      <PhysicalMaterial>None</PhysicalMaterial>
+      <IconSymbol></IconSymbol>
+      <MinimalPricePerUnit>200</MinimalPricePerUnit>
+      <MinimumOfferAmount>1</MinimumOfferAmount>
+      <MaximumOfferAmount>10</MaximumOfferAmount>
+      <MinimumOrderAmount>1000</MinimumOrderAmount>
+      <MaximumOrderAmount>20000</MaximumOrderAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem>
+
+    <PhysicalItem>
+      <Id>
+        <TypeId>Ingot</TypeId>
+        <SubtypeId>Soya</SubtypeId>
+      </Id>
+      <DisplayName>Soya Beans</DisplayName>
+      <Description>A handful of Soya Beans</Description>
+      <Icon>Textures\GUI\Icons\SoyaBeans.png</Icon>
+      <Size>
+        <X>0.01</X>
+        <Y>0.02</Y>
+        <Z>0.01</Z>
+      </Size>
+      <Mass>0.01</Mass>
+      <Volume>0.01</Volume>
+      <Model>Models\Soya.mwm</Model>
+      <PhysicalMaterial>None</PhysicalMaterial>
+      <IconSymbol></IconSymbol>
+      <MinimalPricePerUnit>100</MinimalPricePerUnit>
+      <MinimumOfferAmount>1</MinimumOfferAmount>
+      <MaximumOfferAmount>10</MaximumOfferAmount>
+      <MinimumOrderAmount>1000</MinimumOrderAmount>
+      <MaximumOrderAmount>20000</MaximumOrderAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem>
+
+    <PhysicalItem>
+      <Id>
+          <TypeId>Ingot</TypeId>
+          <SubtypeId>Herbs</SubtypeId>
+      </Id>
+      <DisplayName>Herbs</DisplayName>
+      <Description>Herbs</Description>
+      <Icon>Textures\GUI\Icons\Herbs.png</Icon>
+      <Size>
+          <X>0.1</X>
+          <Y>0.1</Y>
+          <Z>0.1</Z>
+      </Size>
+      <Mass>0.1</Mass>
+      <Volume>0.3</Volume>
+      <Model>Models\Herbs.mwm</Model>
+      <PhysicalMaterial>Wood</PhysicalMaterial>
+      <MinimalPricePerUnit>70</MinimalPricePerUnit>
+      <MinimumOfferAmount>1</MinimumOfferAmount>
+      <MaximumOfferAmount>10</MaximumOfferAmount>
+      <MinimumOrderAmount>1000</MinimumOrderAmount>
+      <MaximumOrderAmount>20000</MaximumOrderAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem>
+
+    <PhysicalItem xsi:type="MyObjectBuilder_ConsumableItemDefinition">
+      <Id>
+        <TypeId>ConsumableItem</TypeId>
+        <SubtypeId>Bread</SubtypeId>
+      </Id>
+      <DisplayName>Bread</DisplayName>
+      <Description>Right out of the oven.</Description>
+      <Icon>Textures\GUI\Icons\Bread.png</Icon>
+      <Size>
+        <X>0.03</X>
+        <Y>0.02</Y>
+        <Z>0.03</Z>
+      </Size>
+      <Mass>0.3</Mass>
+      <Volume>0.3</Volume>
+      <Model>Models\Bread.mwm</Model>
+      <PhysicalMaterial>None</PhysicalMaterial>
+      <Stats>
+        <Stat Name="Food" Value="0.05" Time="3"/>
+      </Stats>
+      <IconSymbol></IconSymbol>
+      <MinimalPricePerUnit>200</MinimalPricePerUnit>
+      <MinimumOfferAmount>1000</MinimumOfferAmount>
+      <MaximumOfferAmount>10000</MaximumOfferAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem>
+    
+    <PhysicalItem xsi:type="MyObjectBuilder_ConsumableItemDefinition">
+      <Id>
+        <TypeId>ConsumableItem</TypeId>
+        <SubtypeId>Burger</SubtypeId>
+      </Id>
+      <DisplayName>Burger</DisplayName>
+      <Description>You are what you eat.</Description>
+      <Icon>Textures\GUI\Icons\Burger.png</Icon>
+      <Size>
+        <X>0.03</X>
+        <Y>0.03</Y>
+        <Z>0.03</Z>
+      </Size>
+      <Mass>0.5</Mass>
+      <Volume>0.5</Volume>
+      <Model>Models\Burger.mwm</Model>
+      <PhysicalMaterial>None</PhysicalMaterial>
+      <Stats>
+        <Stat Name="Health" Value="0.02" Time="10"/>
+        <Stat Name="Food" Value="0.1" Time="10"/>
+      </Stats>
+      <IconSymbol></IconSymbol>
+      <MinimalPricePerUnit>750</MinimalPricePerUnit>
+      <MinimumOfferAmount>1000</MinimumOfferAmount>
+      <MaximumOfferAmount>10000</MaximumOfferAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem>
+
+    <PhysicalItem xsi:type="MyObjectBuilder_ConsumableItemDefinition">
+      <Id>
+        <TypeId>ConsumableItem</TypeId>
+        <SubtypeId>Meat</SubtypeId>
+      </Id>
+      <DisplayName>Meat</DisplayName>
+      <Description>raw meat harvested from a kill</Description>
+      <Icon>Textures\GUI\Icons\Meat.png</Icon>
+      <Size>
+        <X>0.03</X>
+        <Y>0.03</Y>
+        <Z>0.03</Z>
+      </Size>
+      <Mass>0.05</Mass>
+      <Volume>0.05</Volume>
+      <Model>Models\Consumables\Meat.mwm</Model>
+      <PhysicalMaterial>None</PhysicalMaterial>
+      <Stats>
+        <Stat Name="Health" Value="-0.05" Time="5"/>
+        <Stat Name="Food" Value="0.05" Time="5"/>
+      </Stats>
+      <MinimalPricePerUnit>400</MinimalPricePerUnit>
+      <MinimumOfferAmount>1</MinimumOfferAmount>
+      <MaximumOfferAmount>10</MaximumOfferAmount>
+      <MinimumOrderAmount>200</MinimumOrderAmount>
+      <MaximumOrderAmount>5000</MaximumOrderAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem>
+    
+    <PhysicalItem xsi:type="MyObjectBuilder_ConsumableItemDefinition">
+      <Id>
+        <TypeId>ConsumableItem</TypeId>
+        <SubtypeId>MeatRoasted</SubtypeId>
+      </Id>
+      <DisplayName>Roast Meat</DisplayName>
+      <Description>a filling meal</Description>
+      <Icon>Textures\GUI\Icons\MeatRoasted.png</Icon>
+      <Size>
+        <X>0.05</X>
+        <Y>0.05</Y>
+        <Z>0.05</Z>
+      </Size>
+      <Mass>0.25</Mass>
+      <Volume>0.25</Volume>
+      <Model>Models\Consumables\MeatRoasted.mwm</Model>
+      <PhysicalMaterial>None</PhysicalMaterial>
+      <Stats>
+        <Stat Name="Food" Value="0.05" Time="5"/>
+      </Stats>
+      <MinimalPricePerUnit>300</MinimalPricePerUnit>
+      <MinimumOfferAmount>100</MinimumOfferAmount>
+      <MaximumOfferAmount>1000</MaximumOfferAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem> 
+
+    <PhysicalItem xsi:type="MyObjectBuilder_ConsumableItemDefinition">
+      <Id>
+        <TypeId>ConsumableItem</TypeId>
+        <SubtypeId>Soup</SubtypeId>
+      </Id>
+      <DisplayName>Meat Soup</DisplayName>
+      <Description>Delicious, filling and healthy. Real super-food.</Description>
+      <Icon>Textures\GUI\Icons\Soup.png</Icon>
+      <Size>
+        <X>0.1</X>
+        <Y>0.1</Y>
+        <Z>0.1</Z>
+      </Size>
+      <Mass>0.5</Mass>
+      <Volume>0.5</Volume>
+      <Model>Models\Consumables\Goulash.mwm</Model>
+      <PhysicalMaterial>None</PhysicalMaterial>
+      <Stats>
+        <Stat Name="Health" Value="0.1" Time="5"/>
+        <Stat Name="Food" Value="0.2" Time="5"/>
+        <Stat Name="Water" Value="0.2" Time="5"/>
+      </Stats>
+      <IconSymbol></IconSymbol>
+      <MinimalPricePerUnit>750</MinimalPricePerUnit>
+      <MinimumOfferAmount>1000</MinimumOfferAmount>
+      <MaximumOfferAmount>10000</MaximumOfferAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem>
+
+    <PhysicalItem xsi:type="MyObjectBuilder_ConsumableItemDefinition">
+      <Id>
+        <TypeId>ConsumableItem</TypeId>
+        <SubtypeId>MushroomSoup</SubtypeId>
+      </Id>
+      <DisplayName>Mushroom Soup</DisplayName>
+      <Description>Something warm for the belly.</Description>
+      <Icon>Textures\GUI\Icons\MushroomSoup.png</Icon>
+      <Size>
+        <X>0.1</X>
+        <Y>0.1</Y>
+        <Z>0.1</Z>
+      </Size>
+      <Mass>0.5</Mass>
+      <Volume>0.5</Volume>
+      <Model>Models\Consumables\MushroomSoup.mwm</Model>
+      <PhysicalMaterial>None</PhysicalMaterial>
+      <Stats>
+        <Stat Name="Health" Value="0.02" Time="5"/>
+        <Stat Name="Food" Value="0.1" Time="5"/>
+        <Stat Name="Water" Value="0.1" Time="5"/>
+      </Stats>
+      <IconSymbol></IconSymbol>
+      <MinimalPricePerUnit>400</MinimalPricePerUnit>
+      <MinimumOfferAmount>1000</MinimumOfferAmount>
+      <MaximumOfferAmount>10000</MaximumOfferAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem>
+    
+    <PhysicalItem xsi:type="MyObjectBuilder_ConsumableItemDefinition">
+      <Id>
+        <TypeId>ConsumableItem</TypeId>
+        <SubtypeId>TofuSoup</SubtypeId>
+      </Id>
+      <DisplayName>Tofu Soup</DisplayName>
+      <Description>Some say it is almost as good as meat soup</Description>
+      <Icon>Textures\GUI\Icons\TofuSoup.png</Icon>
+      <Size>
+        <X>0.1</X>
+        <Y>0.1</Y>
+        <Z>0.1</Z>
+      </Size>
+      <Mass>0.5</Mass>
+      <Volume>0.5</Volume>
+      <Model>Models\Consumables\SoupWithBread.mwm</Model>
+      <PhysicalMaterial>None</PhysicalMaterial>
+      <Stats>
+        <Stat Name="Health" Value="0.05" Time="5"/>
+        <Stat Name="Food" Value="0.15" Time="5"/>
+        <Stat Name="Water" Value="0.15" Time="5"/>
+      </Stats>
+      <IconSymbol></IconSymbol>
+      <MinimalPricePerUnit>600</MinimalPricePerUnit>
+      <MinimumOfferAmount>1000</MinimumOfferAmount>
+      <MaximumOfferAmount>10000</MaximumOfferAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem>
+    
+    <PhysicalItem xsi:type="MyObjectBuilder_ConsumableItemDefinition">
+      <Id>
+        <TypeId>ConsumableItem</TypeId>
+        <SubtypeId>Tofu</SubtypeId>
+      </Id>
+      <DisplayName>Tofu</DisplayName>
+      <Description>When you are in a planet, that has no meet running around.</Description>
+      <Icon>Textures\GUI\Icons\Tofu.png</Icon>
+      <Size>
+        <X>0.05</X>
+        <Y>0.05</Y>
+        <Z>0.05</Z>
+      </Size>
+      <Mass>0.25</Mass>
+      <Volume>0.25</Volume>
+      <Model>Models\Consumables\Tofu.mwm</Model>
+      <PhysicalMaterial>None</PhysicalMaterial>
+      <Stats>
+        <Stat Name="Food" Value="0.05" Time="4"/>
+      </Stats>
+      <MinimalPricePerUnit>200</MinimalPricePerUnit>
+      <MinimumOfferAmount>100</MinimumOfferAmount>
+      <MaximumOfferAmount>1000</MaximumOfferAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem> 
+
+    <PhysicalItem xsi:type="MyObjectBuilder_ConsumableItemDefinition">
+      <Id>
+        <TypeId>ConsumableItem</TypeId>
+        <SubtypeId>Mushrooms</SubtypeId>
+      </Id>
+      <DisplayName>Mushrooms</DisplayName>
+      <Description>fungi of unknown origin</Description>
+      <Icon>Textures\GUI\Icons\Mushrooms.png</Icon>
+      <Size>
+        <X>0.05</X>
+        <Y>0.05</Y>
+        <Z>0.05</Z>
+      </Size>
+      <Mass>0.25</Mass>
+      <Volume>0.25</Volume>
+      <Model>Models\Consumables\Mushrooms.mwm</Model>
+      <PhysicalMaterial>None</PhysicalMaterial>
+      <Stats>
+        <Stat Name="Health" Value="-0.01" Time="5"/>
+        <Stat Name="Food" Value="0.05" Time="2"/>
+      </Stats>
+      <MinimalPricePerUnit>10</MinimalPricePerUnit>
+      <MinimumOfferAmount>1000</MinimumOfferAmount>
+      <MaximumOfferAmount>10000</MaximumOfferAmount>
+      <MinimumOrderAmount>1000</MinimumOrderAmount>
+      <MaximumOrderAmount>20000</MaximumOrderAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem>   
+
+    <PhysicalItem xsi:type="MyObjectBuilder_ConsumableItemDefinition">
+      <Id>
+        <TypeId>ConsumableItem</TypeId>
+        <SubtypeId>ShroomSteak</SubtypeId>
+      </Id>
+      <DisplayName>Steak with Mushrooms</DisplayName>
+      <Description>a filling meal</Description>
+      <Icon>Textures\GUI\Icons\ShroomSteak.png</Icon>
+      <Size>
+        <X>0.05</X>
+        <Y>0.05</Y>
+        <Z>0.05</Z>
+      </Size>
+      <Mass>0.25</Mass>
+      <Volume>0.25</Volume>
+      <Model>Models\Consumables\ShroomSteak.mwm</Model>
+      <PhysicalMaterial>None</PhysicalMaterial>
+      <Stats>
+        <Stat Name="Health" Value="0.02" Time="10"/>
+        <Stat Name="Food" Value="0.1" Time="10"/>
+      </Stats>
+      <MinimalPricePerUnit>750</MinimalPricePerUnit>
+      <MinimumOfferAmount>100</MinimumOfferAmount>
+      <MaximumOfferAmount>1000</MaximumOfferAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </PhysicalItem> 
+  </PhysicalItems>
+</Definitions>

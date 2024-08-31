@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+  
+    <Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
+      <Id>
+        <TypeId>Assembler</TypeId>
+        <SubtypeId>ShroomFarmT2</SubtypeId>
+      </Id>
+      <DisplayName>Mushroom Farm</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\ShroomFarmT2.dds</Icon>
+      <Description>The Mushroom Greenhouse maintains temperatur and humidity in a perfect level to support the growth of Mushrooms. Mushrooms can be prepared for delicious meals in the kitchen.</Description>
+      <CubeSize>Large</CubeSize>
+        <GuiVisible>false</GuiVisible>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <Model>Models\Cubes\Large\ShroomFarmT2.mwm</Model>
+      <ModelOffset x="0" y="0" z="0" />
+      <Components>
+        <Component Subtype="InteriorPlate" Count="10" />
+        <Component Subtype="Construction" Count="10" />
+        <Component Subtype="SmallTube" Count="8" />
+        <Component Subtype="BulletproofGlass" Count="8" />
+        <Component Subtype="Construction" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="BulletproofGlass" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.72"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Left" StartX="0.28" StartY="0.00" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Left" StartX="0.00" StartY="0.00" EndX="0.28" EndY="0.72"/>
+				<MountPoint Side="Left" StartX="0.14" StartY="0.72" EndX="0.28" EndY="0.86"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.00" EndX="0.72" EndY="1.00"/>
+				<MountPoint Side="Right" StartX="0.72" StartY="0.00" EndX="1.00" EndY="0.72"/>
+				<MountPoint Side="Right" StartX="0.72" StartY="0.72" EndX="0.86" EndY="0.86"/>
+				<MountPoint Side="Top" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.72"/>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\ShroomFarmT2_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.67" File="Models\Cubes\Large\ShroomFarmT2_BS2.mwm"/>
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\ShroomFarmT2_BS3.mwm"/>
+			</BuildProgressModels>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+      <EdgeType>Light</EdgeType>
+      <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+      <DamagedSound>ParticleElectrical</DamagedSound>
+      <BuildTimeSeconds>14</BuildTimeSeconds>
+      <ResourceSinkGroup>Factory</ResourceSinkGroup>
+      <InventoryMaxVolume>4</InventoryMaxVolume>
+      <InventorySize>
+        <X>1</X>
+        <Y>1</Y>
+        <Z>1</Z>
+      </InventorySize>
+      <StandbyPowerConsumption>0.0001</StandbyPowerConsumption>
+      <OperationalPowerConsumption>0.001</OperationalPowerConsumption>
+      <BlueprintClasses>
+        <Class>MushroomsFarm</Class>
+      </BlueprintClasses>
+      <PCU>100</PCU>
+      <IsAirTight>false</IsAirTight>
+    </Definition>
+
+    <Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
+      <Id>
+        <TypeId>Assembler</TypeId>
+        <SubtypeId>Wheatfarm</SubtypeId>
+      </Id>
+      <DisplayName>Wheat Farm</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\Wheatfarm.dds</Icon>
+      <Description>The Wheatfarm is designed for esspecially growing Wheatcrops. Cause of this specialisation, this Farm produces a large amount of Wheat. Wheat can be processed to Bread and Cakes in the Kitchen.</Description>
+      <CubeSize>Large</CubeSize>
+        <GuiVisible>false</GuiVisible>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <Model>Models\Cubes\Large\Wheatfarm.mwm</Model>
+      <ModelOffset x="0" y="0" z="0" />
+      <Components>
+        <Component Subtype="InteriorPlate" Count="10" />
+        <Component Subtype="Construction" Count="10" />
+        <Component Subtype="SmallTube" Count="8" />
+        <Component Subtype="Construction" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="BulletproofGlass" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.43" EndX="1.00" EndY="0.57"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.43" EndX="1.00" EndY="0.57"/>
+				<MountPoint Side="Left" StartX="0.00" StartY="0.43" EndX="1.00" EndY="0.57"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.43" EndX="1.00" EndY="0.57"/>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\Wheatfarm_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.67" File="Models\Cubes\Large\Wheatfarm_BS2.mwm"/>
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\Wheatfarm_BS3.mwm"/>
+			</BuildProgressModels>
+			<MirroringY>Z</MirroringY>
+      <EdgeType>Light</EdgeType>
+      <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+      <DamagedSound>ParticleElectrical</DamagedSound>
+      <BuildTimeSeconds>14</BuildTimeSeconds>
+      <ResourceSinkGroup>Factory</ResourceSinkGroup>
+      <InventoryMaxVolume>4</InventoryMaxVolume>
+      <InventorySize>
+        <X>1</X>
+        <Y>1</Y>
+        <Z>1</Z>
+      </InventorySize>
+      <StandbyPowerConsumption>0.0001</StandbyPowerConsumption>
+      <OperationalPowerConsumption>0.001</OperationalPowerConsumption>
+      <BlueprintClasses>
+        <Class>WheatFarm</Class>
+      </BlueprintClasses>
+      <PCU>100</PCU>
+      <IsAirTight>false</IsAirTight>
+    </Definition>
+    
+    <Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
+      <Id>
+        <TypeId>Assembler</TypeId>
+        <SubtypeId>Soya_Farm</SubtypeId>
+      </Id>
+      <DisplayName>Soya Farm</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\Soya_Farm.dds</Icon>
+      <Description>Like the Wheatfarm, the Soyafarm is specialised to grow Soya in a large amount.</Description>
+      <CubeSize>Large</CubeSize>
+        <GuiVisible>false</GuiVisible>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <Model>Models\Cubes\Large\Soya_Farm.mwm</Model>
+      <ModelOffset x="0" y="0" z="0" />
+      <Components>
+        <Component Subtype="InteriorPlate" Count="10" />
+        <Component Subtype="Construction" Count="15" />
+        <Component Subtype="SmallTube" Count="6" />
+        <Component Subtype="LargeTube" Count="4" />
+        <Component Subtype="Motor" Count="2" />
+        <Component Subtype="Computer" Count="2" />
+        <Component Subtype="SteelPlate" Count="6" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.15"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.15"/>
+				<MountPoint Side="Left" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.15"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.15"/>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\Soya_Farm_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.67" File="Models\Cubes\Large\Soya_Farm_BS2.mwm"/>
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\Soya_Farm_BS3.mwm"/>
+			</BuildProgressModels>
+			<MirroringY>Z</MirroringY>
+      <EdgeType>Light</EdgeType>
+      <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+      <DamagedSound>ParticleElectrical</DamagedSound>
+      <BuildTimeSeconds>14</BuildTimeSeconds>
+      <ResourceSinkGroup>Factory</ResourceSinkGroup>
+      <InventoryMaxVolume>4</InventoryMaxVolume>
+      <InventorySize>
+        <X>1</X>
+        <Y>1</Y>
+        <Z>1</Z>
+      </InventorySize>
+      <StandbyPowerConsumption>0.0001</StandbyPowerConsumption>
+      <OperationalPowerConsumption>0.001</OperationalPowerConsumption>
+      <BlueprintClasses>
+        <Class>Soya_Farm</Class>
+      </BlueprintClasses>
+      <PCU>100</PCU>
+      <IsAirTight>false</IsAirTight>
+    </Definition>
+    
+    <Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
+      <Id>
+        <TypeId>Assembler</TypeId>
+        <SubtypeId>HerbGrower</SubtypeId>
+      </Id>
+      <DisplayName>Herb Grower</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\HerbGrower.dds</Icon>
+      <Description>By keeping the nutrient in a perfect level, the Herb Hydroponics let grow extremly healthy Herbs.</Description>
+      <CubeSize>Large</CubeSize>
+        <GuiVisible>false</GuiVisible>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <Model>Models\Cubes\Large\HerbGrower.mwm</Model>
+      <ModelOffset x="0" y="0" z="0" />
+      <Components>
+        <Component Subtype="InteriorPlate" Count="23" />
+        <Component Subtype="Construction" Count="30" />
+        <Component Subtype="SmallTube" Count="15" />
+        <Component Subtype="LargeTube" Count="6" />
+        <Component Subtype="Computer" Count="4" />
+        <Component Subtype="Motor" Count="8" />
+        <Component Subtype="Display" Count="2" />
+        <Component Subtype="SteelPlate" Count="12" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\HerbGrower_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.67" File="Models\Cubes\Large\HerbGrower_BS2.mwm"/>
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\HerbGrower_BS3.mwm"/>
+			</BuildProgressModels>
+			<MountPoints>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.00" EndX="0.17" EndY="1.00"/>
+				<MountPoint Side="Front" StartX="0.83" StartY="0.00" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.00" EndX="0.17" EndY="1.00"/>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.17"/>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.83" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Front" StartX="0.66" StartY="0.66" EndX="0.83" EndY="0.83"/>
+				<MountPoint Side="Front" StartX="0.17" StartY="0.66" EndX="0.34" EndY="0.83"/>
+				<MountPoint Side="Front" StartX="0.66" StartY="0.17" EndX="0.83" EndY="0.34"/>
+				<MountPoint Side="Front" StartX="0.17" StartY="0.17" EndX="0.34" EndY="0.34"/>
+				<MountPoint Side="Back" StartX="0.83" StartY="0.00" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Back" StartX="0.83" StartY="0.00" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.00" EndX="0.17" EndY="1.00"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.83" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.17"/>
+				<MountPoint Side="Back" StartX="0.17" StartY="0.66" EndX="0.34" EndY="0.83"/>
+				<MountPoint Side="Back" StartX="0.66" StartY="0.66" EndX="0.83" EndY="0.83"/>
+				<MountPoint Side="Back" StartX="0.66" StartY="0.17" EndX="0.83" EndY="0.34"/>
+				<MountPoint Side="Back" StartX="0.17" StartY="0.17" EndX="0.34" EndY="0.34"/>
+				<MountPoint Side="Left" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Top" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+			</MountPoints>
+      <BlockPairName>HerbGrower</BlockPairName>
+			<MirroringY>Z</MirroringY>
+      <EdgeType>Light</EdgeType>
+      <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+      <DamagedSound>ParticleElectrical</DamagedSound>
+      <BuildTimeSeconds>14</BuildTimeSeconds>
+      <ResourceSinkGroup>Factory</ResourceSinkGroup>
+      <InventoryMaxVolume>4</InventoryMaxVolume>
+      <InventorySize>
+        <X>1</X>
+        <Y>1</Y>
+        <Z>1</Z>
+      </InventorySize>
+      <StandbyPowerConsumption>0.0001</StandbyPowerConsumption>
+      <OperationalPowerConsumption>0.001</OperationalPowerConsumption>
+      <BlueprintClasses>
+        <Class>HerbsFarm</Class>
+      </BlueprintClasses>
+      <PCU>100</PCU>
+      <IsAirTight>false</IsAirTight>
+    </Definition>
+	
+    <Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
+      <Id>
+        <TypeId>Assembler</TypeId>
+        <SubtypeId>VegetableGrower</SubtypeId>
+      </Id>
+      <DisplayName>Vegetable Grower</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\VegetableGrower_T2.dds</Icon>
+      <Description>Description_Planters</Description>
+      <CubeSize>Large</CubeSize>
+        <GuiVisible>false</GuiVisible>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <Model>Models\Cubes\Large\VegetableGrower_T2.mwm</Model>
+      <ModelOffset x="0" y="0" z="0" />
+      <Components>
+        <Component Subtype="InteriorPlate" Count="25" />
+        <Component Subtype="Construction" Count="30" />
+        <Component Subtype="SmallTube" Count="20" />
+        <Component Subtype="LargeTube" Count="4" />
+        <Component Subtype="SteelPlate" Count="12" />
+        <Component Subtype="Computer" Count="10" />
+        <Component Subtype="SteelPlate" Count="6" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\VegetableGrower_T2_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.67" File="Models\Cubes\Large\VegetableGrower_T2_BS2.mwm"/>
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\VegetableGrower_T2_BS3.mwm"/>
+			</BuildProgressModels>
+      <BlockPairName>VegetableGrower</BlockPairName>
+			<MirroringY>X</MirroringY>
+			<MountPoints>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.13"/>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.30" EndX="1.00" EndY="0.39"/>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.53" EndX="1.00" EndY="0.62"/>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.76" EndX="1.00" EndY="0.85"/>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.96" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.13"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.30" EndX="1.00" EndY="0.39"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.53" EndX="1.00" EndY="0.62"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.76" EndX="1.00" EndY="0.85"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.96" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Left" StartX="0.00" StartY="0.96" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Left" StartX="0.00" StartY="0.76" EndX="1.00" EndY="0.85"/>
+				<MountPoint Side="Left" StartX="0.00" StartY="0.53" EndX="1.00" EndY="0.62"/>
+				<MountPoint Side="Left" StartX="0.00" StartY="0.30" EndX="1.00" EndY="0.39"/>
+				<MountPoint Side="Left" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.15"/>
+				<MountPoint Side="Left" StartX="0.31" StartY="0.17" EndX="0.69" EndY="0.27"/>
+				<MountPoint Side="Left" StartX="0.37" StartY="0.28" EndX="0.63" EndY="1.00"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.96" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.76" EndX="1.00" EndY="0.85"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.53" EndX="1.00" EndY="0.62"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.30" EndX="1.00" EndY="0.39"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.15"/>
+				<MountPoint Side="Right" StartX="0.31" StartY="0.17" EndX="0.69" EndY="0.27"/>
+				<MountPoint Side="Right" StartX="0.37" StartY="0.28" EndX="0.63" EndY="1.00"/>
+				<MountPoint Side="Top" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+			</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+      <DamagedSound>ParticleElectrical</DamagedSound>
+      <BuildTimeSeconds>14</BuildTimeSeconds>
+      <ResourceSinkGroup>Factory</ResourceSinkGroup>
+      <InventoryMaxVolume>4</InventoryMaxVolume>
+      <InventorySize>
+        <X>1</X>
+        <Y>1</Y>
+        <Z>1</Z>
+      </InventorySize>
+      <StandbyPowerConsumption>0.0001</StandbyPowerConsumption>
+      <OperationalPowerConsumption>0.001</OperationalPowerConsumption>
+      <BlueprintClasses>
+        <Class>VegetablesFarm</Class>
+      </BlueprintClasses>
+      <PCU>100</PCU>
+      <IsAirTight>false</IsAirTight>
+    </Definition>
+
+    <Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
+			<Id>
+				<TypeId>Assembler</TypeId>
+				<SubtypeId>Applefarm</SubtypeId>
+			</Id>
+			<DisplayName>Apple Farm</DisplayName>
+			<Description>The Applefarm is designed for growing Appletrees in a special way. By let the appletree grow as a one single trunk, the tree let grow a large amount of apples and it doesn't need a huge amount of space, what is perfect for in space.</Description>
+			<Icon>Textures\GUI\Icons\Cubes\Applefarm.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="2" z="1"/>
+			<ModelOffset x="0" y="0" z="0"/>
+			<Model>Models\Cubes\Large\Applefarm.mwm</Model>
+			<Components>
+				<Component Subtype="SteelPlate" Count="10"/>
+        <Component Subtype="InteriorPlate" Count="5" />
+        <Component Subtype="Construction" Count="10" />
+        <Component Subtype="SmallTube" Count="8" />
+        <Component Subtype="Construction" Count="10" />
+			</Components>
+			<CriticalComponent Subtype="SteelPlate" Index="0"/>
+			<MountPoints>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.15"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.15"/>
+				<MountPoint Side="Left" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.15"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.15"/>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\Applefarm_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.67" File="Models\Cubes\Large\Applefarm_BS2.mwm"/>
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\Applefarm_BS3.mwm"/>
+			</BuildProgressModels>
+			<BlockPairName>Applefarm</BlockPairName>
+			<MirroringY>Z</MirroringY>
+      <EdgeType>Light</EdgeType>
+      <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+      <DamagedSound>ParticleElectrical</DamagedSound>
+      <BuildTimeSeconds>14</BuildTimeSeconds>
+      <ResourceSinkGroup>Factory</ResourceSinkGroup>
+      <InventoryMaxVolume>4</InventoryMaxVolume>
+      <InventorySize>
+        <X>1</X>
+        <Y>1</Y>
+        <Z>1</Z>
+      </InventorySize>
+      <StandbyPowerConsumption>0.0001</StandbyPowerConsumption>
+      <OperationalPowerConsumption>0.001</OperationalPowerConsumption>
+      <BlueprintClasses>
+        <Class>AppleFarm</Class>
+      </BlueprintClasses>
+      <PCU>100</PCU>
+      <IsAirTight>false</IsAirTight>
+		</Definition>
+
+    <Definition xsi:type="MyObjectBuilder_RefineryDefinition">
+      <Id>
+        <TypeId>Refinery</TypeId>
+        <SubtypeId>Composter</SubtypeId>
+      </Id>
+      <DisplayName>Composter</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\Composter.dds</Icon>
+      <Description>The Composter composing grown Biomatter into nutrient rich Organic Matter.
+!!Attention!! 
+The composter is set to "use conveyor systen" on, so be carefull and turn it off before it drains all crop and compost it!
+      </Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\Composter.mwm</Model>
+      <Components>
+        <Component Subtype="InteriorPlate" Count="80" />
+        <Component Subtype="Construction" Count="20" />
+        <Component Subtype="Girder" Count="20" />
+        <Component Subtype="Motor" Count="8" />
+        <Component Subtype="Computer" Count="7" />
+        <Component Subtype="Display" Count="2" />
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="Display" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.50"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.50"/>
+				<MountPoint Side="Left" StartX="0.10" StartY="0.00" EndX="0.90" EndY="0.67"/>
+				<MountPoint Side="Left" StartX="0.23" StartY="0.67" EndX="0.77" EndY="0.74"/>
+				<MountPoint Side="Right" StartX="0.10" StartY="0.00" EndX="0.90" EndY="0.67"/>
+				<MountPoint Side="Right" StartX="0.23" StartY="0.67" EndX="0.77" EndY="0.74"/>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\Composter_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.67" File="Models\Cubes\Large\Composter_BS2.mwm"/>
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\Composter_BS3.mwm"/>
+			</BuildProgressModels>
+			<BlockVariants> 
+			</BlockVariants>
+        <BlockPairName>Composter</BlockPairName>
+			<MirroringX>Y</MirroringX>
+			<MirroringY>X</MirroringY>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>40</BuildTimeSeconds>
+      <ResourceSinkGroup>Factory</ResourceSinkGroup>
+      <InventoryMaxVolume>1</InventoryMaxVolume>
+      <InventorySize>
+        <X>1</X>
+        <Y>1</Y>
+        <Z>1</Z>
+      </InventorySize>
+      <InventoryFillFactorMin>0.3</InventoryFillFactorMin>
+      <InventoryFillFactorMax>0.6</InventoryFillFactorMax>
+      <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+      <OperationalPowerConsumption>0.02</OperationalPowerConsumption>
+      <BlueprintClasses>
+        <Class>Composting</Class>
+      </BlueprintClasses>
+      <RefineSpeed>1.0</RefineSpeed>
+      <MaterialEfficiency>1.0</MaterialEfficiency>
+      <OreAmountPerPullRequest>300</OreAmountPerPullRequest>
+      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+      <DamagedSound>ParticleHeavyMech</DamagedSound>
+      <PrimarySound>BlockRafinery</PrimarySound>
+      <ActionSound>BlockRafineryProcess</ActionSound>
+      <EmissiveColorPreset>Default</EmissiveColorPreset>
+      <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>
+      <PCU>25</PCU>
+    </Definition>
+  </CubeBlocks>
+</Definitions>

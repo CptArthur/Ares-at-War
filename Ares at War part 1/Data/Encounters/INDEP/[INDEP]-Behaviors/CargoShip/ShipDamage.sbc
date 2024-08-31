@@ -1,0 +1,102 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--BanditDamage-->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-Trigger-ShipDamage</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Trigger]
+
+        [UseTrigger:true]
+        [Type:Damage]
+
+        [DamageTypes:Any]
+        [ExcludedDamageTypes:Environment]
+        [ExcludedDamageTypes:Deformation]
+
+        [Conditions:TOC-Condition-ShipDamage]
+
+        [MinCooldownMs:333]
+        [MaxCooldownMs:334]
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:TOC-Action-ShipDamage]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-Condition-ShipDamage</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Condition]
+
+        [CheckIfDamagerIsPlayer:true]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-Action-ShipDamage</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Action]
+
+        [ChangeAttackerReputation:true]
+        [ChangeAttackerReputationFaction:TRADE]
+        [ChangeAttackerReputationAmount:-1]
+        [ReputationChangesForAllAttackPlayerFactionMembers:true]
+
+        [UseChatBroadcast:true]
+        [ChatData:TOC-Chat-ShipDamage]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-Chat-ShipDamage</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:1]
+        [BroadcastRandomly:true]
+        [Author:Cargo Transport Pilot]
+        [Color:Blue]
+
+        [ChatMessages:Hey! Cut it out!!]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+
+        [ChatMessages:Attacking merchant ships is bad luck ya know!]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+
+        [MinTime:5000]
+        [MaxTime:10000]
+
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>

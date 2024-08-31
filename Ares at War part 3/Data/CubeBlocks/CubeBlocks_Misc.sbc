@@ -68,7 +68,7 @@
         <TypeId>Drill</TypeId>
         <SubtypeId>ReinforcedDrill</SubtypeId>
       </Id>
-      <DisplayName>Reinforced Drill</DisplayName>
+      <DisplayName>Reinforced Drill A</DisplayName>
       <Icon>Icons\ReinforcedDrill.dds</Icon>
       <Description>An idustrial-scale Drill equipped with Dorium-alloy teeth.
 	  Integrated sorting systems provide double ore yield.
@@ -83,16 +83,32 @@
       <PlaceDecals>false</PlaceDecals>
       <UseModelIntersection>true</UseModelIntersection>
       <UsesDeformation>false</UsesDeformation>
-      <Components>
-        <Component Subtype="SteelPlate" Count="100" />
-        <Component Subtype="Construction" Count="80" />
-        <Component Subtype="LargeTube" Count="30" />
-        <Component Subtype="Motor" Count="50" />
-        <Component Subtype="Computer" Count="35" />
-        <Component Subtype="ReinforcedDrillbit" Count="48" />
-        <Component Subtype="SteelPlate" Count="50" />
-      </Components>
-      <CriticalComponent Subtype="ReinforcedDrillbit" Index="0" />
+			<Components>
+               <Component Subtype="ITCTechFrame" Count="10">
+					<DeconstructId>
+						<TypeId>Ingot</TypeId>
+						<SubtypeId>PrototechScrap</SubtypeId>
+					</DeconstructId>
+				</Component>
+				<Component Subtype="Construction" Count="80" />
+				<Component Subtype="LargeTube" Count="30" />
+                <Component Subtype="ITCTechMachinery" Count="20">
+					<DeconstructId>
+						<TypeId>Ingot</TypeId>
+						<SubtypeId>PrototechScrap</SubtypeId>
+					</DeconstructId>
+				</Component>
+                <Component Subtype="ITCTechCoolingUnit" Count="3">
+					<DeconstructId>
+						<TypeId>Ingot</TypeId>
+						<SubtypeId>PrototechScrap</SubtypeId>
+					</DeconstructId>
+				</Component>
+				<Component Subtype="Computer" Count="20" />
+				<Component Subtype="ReinforcedDrillbit" Count="48" />				
+				<Component Subtype="SteelPlate" Count="50" />
+			</Components>
+            <CriticalComponent Subtype="ReinforcedDrillbit" Index="0" />
       <MountPoints>
         <MountPoint Side="Front" StartX="0.5" StartY="0.5" EndX="2.5" EndY="2.5" />
       </MountPoints>
@@ -140,6 +156,18 @@
       <PCU>190</PCU>      
     </Definition>
 	
+	<!-- 
+	ExoticMaterialRefinery:
+	
+	Originally refined Dorium, Cronyx, Spice, and Crystal
+	
+	Dorium moved to the default refinery.
+	
+	Spice is now refined in the prototech one.
+	
+
+	-->
+	
         <Definition xsi:type="MyObjectBuilder_RefineryDefinition">
             <Id>
                 <TypeId>Refinery</TypeId>
@@ -147,7 +175,7 @@
             </Id>
             <DisplayName>Exotic Material Refinery</DisplayName>
             <Icon>Icons\ExoticMaterialRefinery.dds</Icon>
-            <Description>Specialized refining equipment capable of safely processing exotic ores such as Crystal, Dorium, Cronyx, and Spice.
+            <Description>Specialized refining equipment capable of safely processing Cronyx and Crystals.
 			
 			Power Usage: 5 MW</Description>
             <CubeSize>Large</CubeSize>
@@ -157,16 +185,30 @@
             <ModelOffset x="0" y="0" z="0" />
             <Model>Models\ExoticMaterialRefinery.mwm</Model>
             <Components>
-				<Component Subtype="SteelPlate" Count="250" />
-				<Component Subtype="Construction" Count="100" />
-				<Component Subtype="LargeTube" Count="25" />
-				<Component Subtype="Motor" Count="60" />
-                <Component Subtype="BulletproofGlass" Count="50" />
-                <Component Subtype="MetalGrid" Count="50" />
-                <Component Subtype="Superconductor" Count="25" />
-                <Component Subtype="Display" Count="15" />
-				<Component Subtype="Computer" Count="20" />
-				<Component Subtype="SteelPlate" Count="50" />
+                <Component Subtype="PrototechFrame" Count="5">
+					<DeconstructId>
+						<TypeId>Ingot</TypeId>
+						<SubtypeId>PrototechScrap</SubtypeId>
+					</DeconstructId>
+				</Component>
+                <Component Subtype="SteelPlate" Count="375" />
+                <Component Subtype="Construction" Count="40" />
+                <Component Subtype="PrototechMachinery" Count="10">
+					<DeconstructId>
+						<TypeId>Ingot</TypeId>
+						<SubtypeId>PrototechScrap</SubtypeId>
+					</DeconstructId>
+				</Component>
+                <Component Subtype="PrototechCoolingUnit" Count="5">
+					<DeconstructId>
+						<TypeId>Ingot</TypeId>
+						<SubtypeId>PrototechScrap</SubtypeId>
+					</DeconstructId>
+				</Component>
+                <Component Subtype="LargeTube" Count="20" />
+                <Component Subtype="MetalGrid" Count="20" />
+                <Component Subtype="Computer" Count="20" />
+                <Component Subtype="SteelPlate" Count="250" />
             </Components>
             <CriticalComponent Subtype="Computer" Index="0" />
             <Center x="1" y="0" z="1" />
@@ -207,7 +249,7 @@
             <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
             <OperationalPowerConsumption>5</OperationalPowerConsumption>
             <BlueprintClasses>
-                <Class>StrategicIngots</Class>
+                <Class>CrystalCronyxIngot</Class>
             </BlueprintClasses>
             <RefineSpeed>1</RefineSpeed>
             <MaterialEfficiency>1</MaterialEfficiency>

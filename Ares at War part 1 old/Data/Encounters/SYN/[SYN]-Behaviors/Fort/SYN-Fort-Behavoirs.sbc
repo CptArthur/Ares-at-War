@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+  
+  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-ColonyController-Behavior</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW-Target-Main-B]	  
+	
+	[Triggers:FAC-Triggers-Despawn]		
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN-Fort-Behavior</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW-Target-Main-B]	
+	
+	[TriggerGroups:ContextTriggers]			
+	[TriggerGroups:SYN-CommonTriggers]		
+	[TriggerGroups:SYN-Fort-CommonTriggers]	 
+	[TriggerGroups:FAC-Fort-CommonTriggers]		
+	
+	
+	[TriggerGroups:SYN-TriggerGroup-HeavyDefense]	
+
+	
+	
+	[Triggers:SYN-MajorStatic-Trigger-selfpresence]
+	[Triggers:FAC-PointSystem-Trigger-Decrease150]
+	[Triggers:FAC-AggressionSystem-Trigger-Increase50]	
+      </Description>
+      
+    </EntityComponent>	
+	
+		
+	
+		
+	
+	
+
+
+	
+  </EntityComponents>
+</Definitions>

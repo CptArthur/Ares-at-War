@@ -22,18 +22,34 @@
             <ModelOffset x="0" y="0" z="0" />
             <Model>Models\LargeCronyxReactor.mwm</Model>
             <Components>
-                <Component Subtype="SteelPlate" Count="150" />
+                <Component Subtype="PrototechFrame" Count="5">
+					<DeconstructId>
+						<TypeId>Ingot</TypeId>
+						<SubtypeId>PrototechScrap</SubtypeId>
+					</DeconstructId>
+				</Component>
                 <Component Subtype="Construction" Count="150" />
                 <Component Subtype="MetalGrid" Count="50" />
                 <Component Subtype="LargeTube" Count="25" />
                 <Component Subtype="Reactor" Count="2500" />
                 <Component Subtype="Superconductor" Count="1000" />
-                <Component Subtype="Detector" Count="20" />
+
+                <Component Subtype="PrototechCoolingUnit" Count="5">
+					<DeconstructId>
+						<TypeId>Ingot</TypeId>
+						<SubtypeId>PrototechScrap</SubtypeId>
+					</DeconstructId>
+				</Component>				
 				<Component Subtype="Computer" Count="150" />
-                <Component Subtype="Motor" Count="50" />
+                <Component Subtype="PrototechMachinery" Count="8">
+					<DeconstructId>
+						<TypeId>Ingot</TypeId>
+						<SubtypeId>PrototechScrap</SubtypeId>
+					</DeconstructId>
+				</Component>	
                 <Component Subtype="SteelPlate" Count="50" />
             </Components>
-            <CriticalComponent Subtype="Motor" Index="0" />
+            <CriticalComponent Subtype="PrototechMachinery" Index="0" />
             <MountPoints>
                 <MountPoint Side="Right" StartX="1" StartY="1" EndX="2" EndY="2" />
                 <MountPoint Side="Left" StartX="1" StartY="1" EndX="2" EndY="2" />
@@ -121,18 +137,34 @@
             <Model>Models\SmallCronyxReactor.mwm</Model>
             <SilenceableByShipSoundSystem>true</SilenceableByShipSoundSystem>
             <Components>
-                <Component Subtype="SteelPlate" Count="25" />
+                <Component Subtype="PrototechFrame" Count="1">
+					<DeconstructId>
+						<TypeId>Ingot</TypeId>
+						<SubtypeId>PrototechScrap</SubtypeId>
+					</DeconstructId>
+				</Component>
                 <Component Subtype="Construction" Count="50" />
                 <Component Subtype="MetalGrid" Count="20" />
                 <Component Subtype="LargeTube" Count="10" />
                 <Component Subtype="Reactor" Count="200" />
                 <Component Subtype="Superconductor" Count="100" />
-                <Component Subtype="Detector" Count="10" />
+                <Component Subtype="PrototechCoolingUnit" Count="1">
+					<DeconstructId>
+						<TypeId>Ingot</TypeId>
+						<SubtypeId>PrototechScrap</SubtypeId>
+					</DeconstructId>
+				</Component>				
 				<Component Subtype="Computer" Count="75" />
-                <Component Subtype="Motor" Count="15" />
+                <Component Subtype="PrototechMachinery" Count="3">
+					<DeconstructId>
+						<TypeId>Ingot</TypeId>
+						<SubtypeId>PrototechScrap</SubtypeId>
+					</DeconstructId>
+				</Component>				
+
                 <Component Subtype="SteelPlate" Count="15" />
             </Components>
-            <CriticalComponent Subtype="Computer" Index="0" />
+            <CriticalComponent Subtype="PrototechMachinery" Index="0" />
             <MountPoints>
                 <MountPoint Side="Right" StartX="1" StartY="1" EndX="2" EndY="2" />
                 <MountPoint Side="Left" StartX="1" StartY="1" EndX="2" EndY="2" />
@@ -220,9 +252,19 @@
       <ModelOffset x="0" y="0" z="0" />
       <Model>Models\CronyxMunitionsFactory.mwm</Model>
       <Components>
-        <Component Subtype="SteelPlate" Count="120" />
+		<Component Subtype="PrototechFrame" Count="3">
+			<DeconstructId>
+				<TypeId>Ingot</TypeId>
+				<SubtypeId>PrototechScrap</SubtypeId>
+			</DeconstructId>
+		</Component>
         <Component Subtype="Construction" Count="80" />
-        <Component Subtype="Motor" Count="20" />
+	   <Component Subtype="PrototechMachinery" Count="10">
+			<DeconstructId>
+				<TypeId>Ingot</TypeId>
+				<SubtypeId>PrototechScrap</SubtypeId>
+			</DeconstructId>
+		</Component>
         <Component Subtype="Display" Count="10" />
         <Component Subtype="MetalGrid" Count="10" />
         <Component Subtype="Computer" Count="160" />

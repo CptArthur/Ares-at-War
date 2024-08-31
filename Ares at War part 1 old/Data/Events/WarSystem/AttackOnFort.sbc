@@ -1,0 +1,706 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Command_GCAliveCheck</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Command]
+      
+      [CommandCode:GCAliveCheck]
+      
+	  [IgnoreAntennaRequirement:true]
+	  [IgnoreReceiverAntennaRequirement:true]
+	  [MatchSenderReceiverOwners:false]
+	  
+	  [Radius:9000]
+      </Description>
+    </EntityComponent>		
+	
+<!--
+
+{InstanceId}
+AzurisFort (bool)
+AzurisFortCoords (Coords)
+AzurisFortUnderSiege (bool)
+
+{EventName}
+{NodeId} = Azuris
+{FancyName} = Azuris Sector
+{AttackingFaction} = FAF
+{DefendingFaction} = GC
+{Coords}
+{FrontLineId}
+
+
+
+
+
+
+-->
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>EventGroup_AttackOnfort</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event TemplateGroup]
+		
+[TemplateEventIds:AaW_EventTemplate_AttackOnFort_Init]
+
+[TemplateEventIds:AaW_EventTemplate_AttackOnFort_Simulate]
+[TemplateEventIds:AaW_EventTemplate_AttackOnFort_PlayerNear]
+[TemplateEventIds:AaW_EventTemplate_ImminentAttackOnFort_Timer]
+[TemplateEventIds:AaW_EventTemplate_LiveAttackOnFort_AttackerWins]
+[TemplateEventIds:AaW_EventTemplate_LiveAttackOnFort_DefenderWins]
+[TemplateEventIds:AaW_EventTemplate_LiveAttackOnFort_DefenderWins_CheckAttackers]
+[TemplateEventIds:AaW_EventTemplate_AttackOnFortDefenderWins_ThankPlayer]
+
+      </Description>
+	</EntityComponent>
+		
+		
+		
+		
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_AttackOnFort_Init</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:true]
+		[UniqueEvent:true]	
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+		
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+		
+		[ActionIds:AaW_EventActionTemplate_AttackOnFort_Start]
+		[ActionIds:AaW_EventAction_Common_IncomingMessage]
+		[ActionIds:AaW_EventActionTemplate_AttackOnFort_NewsAlert]	
+		
+
+      </Description>
+	</EntityComponent>	 
+	  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_AttackOnFort_Start</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action Template]
+	
+		[ToggleEvents:true]
+		
+		[ToggleEventTags:AttackOnFort@{InstanceId}]
+		[ToggleEventTagModes:true]
+		
+		[ToggleEventTags:AaW_StoryEvent]
+		[ToggleEventTagModes:false]
+		
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownTags:AttackOnFort@{InstanceId}]
+		
+
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-CreateGPS]
+		[CustomActionArgumentsString:{EventName}]
+		[CustomActionArgumentsString:The {AttackingFaction} attacks {FancyName}]
+		[CustomActionArgumentsInt:120]		
+		[CustomActionArgumentsVector3D:{Coords}]	
+
+      </Description>      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_AttackOnFort_NewsAlert</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action Template]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW_EventChat_TemplateNews]	
+	[UseChatOverrideMessage:true]
+	[ChatOverrideMessage:{DefendingFaction} {FancyName} stronghold comes under attack by the {AttackingFaction}]
+		
+	[UseChatOverrideAudio:true]
+	[ChatOverrideAudio:]
+	
+	
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:{DefendingFaction} {FancyName} stronghold comes under attack by the {AttackingFaction}]
+      </Description>
+    </EntityComponent>
+		
+			
+	
+	
+	<!-- AttackOnFort -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventConditionTemplate_AttackOnFort</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition Template]
+	
+	[CheckTrueBooleans:true]
+	[TrueBooleans:{NodeId}FortUnderSiege]  
+
+      </Description>
+    </EntityComponent>		
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_AttackOnFort_Simulate</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:7200000]
+		[MaxCooldownMs:7200001]		
+		[ConditionIds:AaW_EventConditionTemplate_AttackOnFort]		
+		[Tags:AttackOnFort@{InstanceId}]
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+		[ActionIds:AaW_EventActionTemplate_AttackOnFort_Simulate_AttackerWins]
+		[ActionIds:AaW_EventActionTemplate_AttackOnFort_Outcome_AttackerWins]
+      </Description>
+	</EntityComponent>	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_AttackOnFort_Simulate_AttackerWins</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action Template]
+	
+	[ToggleEvents:true]
+	[ToggleEventTags:AttackOnFort@{InstanceId}]
+	[ToggleEventTagModes:false]	
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-RemoveGPS]
+	[CustomActionArgumentsString:{EventName}]
+	
+	
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_AttackOnFort_PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Template]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[Tags:AttackOnFort@{InstanceId}]
+	
+		[ConditionIds:AaW_EventConditionTemplate_AttackOnFort]	
+		[ConditionIds:AaW_EventConditionTemplate_AttackOnFort_PlayerNear]
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+		
+		[ActionIds:AaW_EventActionTemplate_AttackOnFort_StartImminentBattle]
+		[ActionIds:AaW_EventActionTemplate_AttackOnFort_AddImminentGPS]
+      </Description>
+	</EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventConditionTemplate_AttackOnFort_PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Condition Template]
+
+	[CheckPlayerNear:true]
+	[PlayerNearCoords:{Coords}]
+	[PlayerNearDistanceFromCoords:1000]
+
+
+      </Description>
+    </EntityComponent>	
+	
+
+	
+	
+<!-- Imminent battle -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_AttackOnFort_StartImminentBattle</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action Template]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:AttackOnFort@{InstanceId}]
+	[ToggleEventTagModes:false]	
+	
+	[ToggleEventTags:ImminentAttackOnFort@{InstanceId}]
+	[ToggleEventTagModes:true]		
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:ImminentAttackOnFort@{InstanceId}]	
+		
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-RemoveGPS]
+	[CustomActionArgumentsString:{EventName}]		
+      </Description>
+    </EntityComponent>		
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_AttackOnFort_AddImminentGPS</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action Template]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:AttackOnFort@{InstanceId}]
+	[ToggleEventTagModes:false]	
+	
+	[ToggleEventTags:ImminentAttackOnFort@{InstanceId}]
+	[ToggleEventTagModes:true]		
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:ImminentAttackOnFort@{InstanceId}]	
+		
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-CreateGPS]
+	[CustomActionArgumentsString:Imminent {EventName}]
+	[CustomActionArgumentsString:The {AttackingFaction} attacks {FancyName}]
+	[CustomActionArgumentsInt:1]		
+	[CustomActionArgumentsVector3D:{Coords}]	
+      </Description>
+    </EntityComponent>	
+
+
+
+
+
+
+
+<!-- 5 min before battle starts
+
+15 seconds before the enemies spawn the defending station should go to red alert
+ -->	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_ImminentAttackOnFort_Timer</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:60000]
+		[MaxCooldownMs:60001]		
+		[ConditionIds:AaW_EventConditionTemplate_AttackOnFort]		
+		[Tags:ImminentAttackOnFort@{InstanceId}]
+
+		[ActionExecution:All]
+		[ActionIds:AaW_EventActionTemplate_AttackOnFort_StartLiveBattle]
+      </Description>
+	</EntityComponent>	
+ 
+ 
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_AttackOnFort_StartLiveBattle</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action Template]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:ImminentAttackOnFort@{InstanceId}]
+	[ToggleEventTagModes:false]	
+	
+	[ToggleEventTags:LiveAttackOnFort@{InstanceId}]
+	[ToggleEventTagModes:true]		
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:LiveAttackOnFort@{InstanceId}]	
+	
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-RemoveGPS]
+	[CustomActionArgumentsString:Imminent {EventName}]
+
+	
+	[SpawnEncounter:true]
+	[SpawnData:GC_Spawner_MediumStrikeForce]
+	[SpawnFactionTags:GC]
+	[SpawnCoords:{Coords}]
+	
+	
+      </Description>
+      
+    </EntityComponent>		
+		
+		
+		
+<!--
+LiveAttackOnFort
+-->
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_LiveAttackOnFort_AttackerWins</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:false]
+		[UniqueEvent:true]	
+		[ConditionIds:AaW_EventConditionTemplate_AttackOnFort]
+		[ConditionIds:AaW_EventConditionTemplate_LiveAttackOnFort_AttackerWins]		
+		[Tags:LiveAttackOnFort@{InstanceId}]
+
+		[ActionIds:AaW_EventActionTemplate_AttackOnFort_Outcome_AttackerWins]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventConditionTemplate_LiveAttackOnFort_AttackerWins</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition Template]
+	
+		[CheckFalseBooleans:true]
+	[FalseBooleans:{NodeId}Fort] 
+	
+
+      </Description>
+      
+    </EntityComponent>			
+		
+
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_LiveAttackOnFort_DefenderWins</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:11000]
+		[MaxCooldownMs:11001]	
+		
+		[ConditionIds:AaW_EventConditionTemplate_AttackOnFort]
+		[ConditionIds:AaW_EventConditionTemplate_LiveAttackOnFort_DefenderWins]		
+		[Tags:LiveAttackOnFort@{InstanceId}]
+		[Tags:GCAliveCheck]
+		
+		
+		[ActionIds:AaW_EventActionTemplate_AttackOnFort_Outcome_DefenderWins]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventConditionTemplate_LiveAttackOnFort_DefenderWins</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition Template]
+	
+	[CheckTrueBooleans:true]
+	[TrueBooleans:{NodeId}Fort] 
+
+      </Description>
+      
+    </EntityComponent>			
+		
+		
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_LiveAttackOnFort_DefenderWins_CheckAttackers</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:false]
+		[Tags:LiveAttackOnFort@{InstanceId}]		
+		[UniqueEvent:false]
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+		
+		[ConditionIds:AaW_EventConditionTemplate_AttackOnFort]
+		[ConditionIds:AaW_EventConditionTemplate_LiveAttackOnFort_DefenderWins]		
+
+
+		[ActionIds:AaW_EventActionTemplate_LiveAttackOnFort_DefenderWins_CheckAttackers]
+
+      </Description>
+	</EntityComponent>			
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_LiveAttackOnFort_DefenderWins_CheckAttackers</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action Template]
+
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:AaW_Command_{AttackingFaction}AliveCheck]
+	[CommandProfileOriginCoords:{Coords}]
+      </Description>
+      
+    </EntityComponent>					
+		
+		
+
+	
+	
+<!-- 
+GC wins
+ -->
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_AttackOnFort_Outcome_AttackerWins</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:AttackOnFort@{InstanceId}]
+	[ToggleEventTagModes:false]
+
+	[ToggleEventTags:AaW_StoryEvent]
+	[ToggleEventTagModes:true]
+		
+	[ToggleEventTags:LiveAttackOnFort@{InstanceId}]
+	[ToggleEventTagModes:false]
+
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:AaW_StoryEvent]
+
+
+	[ChangeBooleans:true] 
+	[SetBooleansFalse:{NodeId}Fort] 
+	[SetBooleansFalse:{NodeId}FortUnderSiege] 	
+	[SetBooleansFalse:{FrontLineId}HasSiege] 		
+	
+	[ActivateCustomAction:true]
+	[CustomActionName:AaW-WarNextRound]	
+
+	
+	[RemoveThisInstanceGroup:true]
+      </Description>
+    </EntityComponent>	
+
+	
+<!-- 
+Tags:
+
+DefenderWins
+
+-->
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_AttackOnFort_Outcome_DefenderWins</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action Template]
+
+	[ToggleEvents:true]
+	[ToggleEventTags:AttackOnFort@{InstanceId}]
+	[ToggleEventTagModes:false]
+
+	[ToggleEventTags:LiveAttackOnFort@{InstanceId}]
+	[ToggleEventTagModes:false]
+	
+	[ToggleEventTags:AaW_StoryEvent]
+	[ToggleEventTagModes:true]
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:AaW_StoryEvent]	
+	
+	
+	[ToggleEventTags:DefenderWins@{InstanceId}]
+	[ToggleEventTagModes:true]
+	
+	[ResetEventCooldownTags:DefenderWins@{InstanceId}]		
+		
+	[ChangeBooleans:true] 
+	[SetBooleansFalse:{NodeId}FortUnderSiege] 		
+	[SetBooleansFalse:{FrontLineId}HasSiege] 		
+
+		
+		
+	[ChangeCounters:true]
+	[SetCounters:{FrontLineId}Score]
+	[SetCountersAmount:0]
+
+	[SetCounters:{FrontLineId}Initiative]
+	[SetCountersAmount:0]		
+		
+		
+		
+		
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW_EventChat_TemplateNews]	
+	[UseChatOverrideMessage:true]
+	[ChatOverrideMessage:The {DefendingFaction} successfully repelled the {AttackingFaction} at {FancyName}]
+		
+	[UseChatOverrideAudio:true]
+	[ChatOverrideAudio:event_red_alert]
+	
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-AddNews]
+	[CustomActionArgumentsString:The {DefendingFaction} successfully repelled the {AttackingFaction} at {FancyName}]
+	
+      </Description>
+      
+    </EntityComponent>	
+	
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_AttackOnFortDefenderWins_ThankPlayer</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[Tags:DefenderWins@{InstanceId}]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:4000]
+		[MaxCooldownMs:4001]	
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+		
+		
+		[ActionIds:AaW_EventActionTemplate_AttackOnFortDefenderWins_UpdateREP]
+		[ActionIds:AaW_EventActionTemplate_AttackOnFortDefenderWins_ThankPlayersPersonally]
+      </Description>
+	</EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_AttackOnFortDefenderWins_UpdateREP</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	[OverridePlayerConditionPosition:true]
+	[OverridePosition:Coords]
+	
+	[ChangeReputationWithPlayers:true]
+	[ReputationPlayerConditionIds:PlayerCondition_{AttackingFaction}Hostile]
+	[ReputationPlayerConditionIds:PlayerCondition_{DefendingFaction}PositiveNeutral]
+	[ReputationPlayerConditionIds:PlayerCondition_Position_Near8km]
+	
+	[ReputationChangeFactions:{DefendingFaction}]
+	[ReputationChangeAmount:1500]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+      </Description>
+    </EntityComponent>	
+
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_AttackOnFortDefenderWins_ThankPlayersPersonally</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	[ActivateCustomAction:true]
+	[CustomActionName:AaW-WarNextRound]
+	[RemoveThisInstanceGroup:true]
+
+
+
+
+	[UseChatBroadcast:true]
+	[ChatData:AaW_EventChat_Template]
+
+	[OverridePlayerConditionPosition:true]
+	[OverridePosition:Coords]
+	
+	[ChatBroadcastToSpecificPlayers:true]
+	[ChatBroadcastPlayerConditionIds:PlayerCondition-{DefendingFaction}Friendly]
+	[ChatBroadcastPlayerConditionIds:PlayerCondition_Position_Near8km]
+	
+	[UseChatOverrideColor:true]
+	[ChatOverrideColor:Green]
+	
+	[UseChatOverrideAuthor:true]	
+	[ChatOverrideAuthor:{DefendingFaction}]
+	
+	[UseChatOverrideMessage:true]
+	[ChatOverrideMessage:{PlayerName}, thanks for coming to help us.]
+      </Description>
+    </EntityComponent>	
+	
+
+
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

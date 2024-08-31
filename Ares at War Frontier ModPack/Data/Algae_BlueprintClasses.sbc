@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BlueprintClasses>
+    <Class>
+      <Id>
+        <TypeId>BlueprintClassDefinition</TypeId>
+        <SubtypeId>BioLabBP</SubtypeId>
+      </Id>
+      <DisplayName>{LOC:DisplayName_BioResearch}</DisplayName>
+      <Description>BioLabBP</Description>
+      <Icon>Textures\GUI\Icons\buttons\Biotech.dds</Icon>
+      <HighlightIcon>Textures\GUI\Icons\buttons\Biotech.dds</HighlightIcon>
+      <FocusIcon>Textures\GUI\Icons\buttons\focus_Biotech.dds</FocusIcon>
+      <InputConstraintIcon>Textures\GUI\Icons\filter_labor.dds</InputConstraintIcon>
+      <OutputConstraintIcon>Textures\GUI\Icons\filter_labor.dds</OutputConstraintIcon>
+    </Class>
+    <Class>
+      <Id>
+        <TypeId>BlueprintClassDefinition</TypeId>
+        <SubtypeId>AlgaeFarm</SubtypeId>
+      </Id>
+      <DisplayName>{LOC:DisplayName_AlgaeCultivation}</DisplayName>
+      <Description>AlgaeFarm</Description>
+      <Icon>Textures\GUI\Icons\buttons\AlgaeContainerComp.dds</Icon>
+      <HighlightIcon>Textures\GUI\Icons\buttons\AlgaeContainerComp.dds</HighlightIcon>
+      <FocusIcon>Textures\GUI\Icons\buttons\focus_AlgaeContainerComp.dds</FocusIcon>
+      <InputConstraintIcon>Textures\GUI\Icons\filter_algae.dds</InputConstraintIcon>
+      <OutputConstraintIcon>Textures\GUI\Icons\filter_algae.dds</OutputConstraintIcon>
+    </Class>
+    <Class>
+      <Id>
+        <TypeId>BlueprintClassDefinition</TypeId>
+        <SubtypeId>SGAlgaeFarm</SubtypeId>
+      </Id>
+      <DisplayName>{LOC:DisplayName_AlgaeCultivation}</DisplayName>
+      <Description>AlgaeFarm</Description>
+      <Icon>Textures\GUI\Icons\buttons\AlgaeContainerComp.dds</Icon>
+      <HighlightIcon>Textures\GUI\Icons\buttons\AlgaeContainerComp.dds</HighlightIcon>
+      <FocusIcon>Textures\GUI\Icons\buttons\focus_AlgaeContainerComp.dds</FocusIcon>
+      <InputConstraintIcon>Textures\GUI\Icons\filter_algae.dds</InputConstraintIcon>
+      <OutputConstraintIcon>Textures\GUI\Icons\filter_algae.dds</OutputConstraintIcon>
+    </Class>
+    <Class>
+      <Id>
+        <TypeId>BlueprintClassDefinition</TypeId>
+        <SubtypeId>WaterFilter</SubtypeId>
+      </Id>
+      <DisplayName>AlgaeFilter</DisplayName>
+      <Description>AlgaeFilter</Description>
+      <Icon>Textures\GUI\Icons\buttons\component.dds</Icon>
+      <HighlightIcon>Textures\GUI\Icons\buttons\component.dds</HighlightIcon>
+      <FocusIcon>Textures\GUI\Icons\buttons\component_focus.dds</FocusIcon>
+      <InputConstraintIcon>Textures\GUI\Icons\filter_ore.dds</InputConstraintIcon>
+      <OutputConstraintIcon>Textures\GUI\Icons\filter_algae.dds</OutputConstraintIcon>
+    </Class>
+
+    <Class>
+      <Id>
+        <TypeId>BlueprintClassDefinition</TypeId>
+        <SubtypeId>Composting</SubtypeId>
+      </Id>
+      <DisplayName>Composting</DisplayName>
+      <Description>Composting</Description>
+      <Icon>Textures\GUI\Icons\buttons\component.dds</Icon>
+      <HighlightIcon>Textures\GUI\Icons\buttons\component.dds</HighlightIcon>
+      <FocusIcon>Textures\GUI\Icons\buttons\component_focus.dds</FocusIcon>
+      <InputConstraintIcon>Textures\GUI\Icons\filter_algae.dds</InputConstraintIcon>
+      <OutputConstraintIcon>Textures\GUI\Icons\filter_ore.dds</OutputConstraintIcon>
+    </Class>
+	
+  </BlueprintClasses>
+  <BlueprintClassEntries>     
+    <Entry Class="BioLabBP" BlueprintSubtypeId="Algaesample" />
+    <Entry Class="BioLabBP" BlueprintSubtypeId="GravelAlgaesample" />
+    <Entry Class="BioLabBP" BlueprintSubtypeId="HydrogenAlgaesample" />
+    <Entry Class="BioLabBP" BlueprintSubtypeId="GravelHydrogenAlgaesample" />
+    <Entry Class="AlgaeFarm" BlueprintSubtypeId="CultivatedAlgae" />
+    <Entry Class="AlgaeFarm" BlueprintSubtypeId="CultivatedHydrAlgae" />
+    <Entry Class="AlgaeFarm" BlueprintSubtypeId="FarmedAlgaes" />
+    <Entry Class="AlgaeFarm" BlueprintSubtypeId="FarmedHydrogenAlgaes" />
+    <Entry Class="SGAlgaeFarm" BlueprintSubtypeId="SGCultivatedAlgae" />
+    <Entry Class="SGAlgaeFarm" BlueprintSubtypeId="SGCultivatedHydrAlgae" />
+    <Entry Class="SGAlgaeFarm" BlueprintSubtypeId="FarmedAlgaes" />
+    <Entry Class="SGAlgaeFarm" BlueprintSubtypeId="FarmedHydrogenAlgaes" />
+    <Entry Class="WaterFilter" BlueprintSubtypeId="IcetoIcepAlg" />
+    <Entry Class="WaterFilter" BlueprintSubtypeId="IcetoIcepHydrAlg" />
+    <Entry Class="Composting" BlueprintSubtypeId="CompostingAlgae" />
+    <Entry Class="Composting" BlueprintSubtypeId="CompostingH2Algae" />
+    <Entry Class="Cooking" BlueprintSubtypeId="AlgaeMeat" />
+    <Entry Class="Ice" BlueprintSubtypeId="LIcetoOxygen" />
+    <Entry Class="Ice" BlueprintSubtypeId="ALIcetoOxygen" />
+
+    <Entry Class="LargeBlocks" BlueprintSubtypeId="Assembler/AlgaeFarm" />	
+    <Entry Class="LargeBlocks" BlueprintSubtypeId="Assembler/BioLabor" />	
+    <Entry Class="LargeBlocks" BlueprintSubtypeId="OxygenFarm/AlgaeHydrogenFarm" />	
+    <Entry Class="LargeBlocks" BlueprintSubtypeId="OxygenFarm/AlgaeOxygenFarm" />	
+    <Entry Class="LargeBlocks" BlueprintSubtypeId="Refinery/Waterfilter" />	
+    <Entry Class="LargeBlocks" BlueprintSubtypeId="Refinery/Composter" />	
+	
+    <Entry Class="SmallBlocks" BlueprintSubtypeId="Assembler/SG_AlgaeFarm" />
+    <Entry Class="SmallBlocks" BlueprintSubtypeId="OxygenFarm/SG_HydrodenAlgaeFarm" />		
+    <Entry Class="SmallBlocks" BlueprintSubtypeId="OxygenFarm/SG_OxygenAlgaeFarm" />			
+
+
+  </BlueprintClassEntries>
+</Definitions>

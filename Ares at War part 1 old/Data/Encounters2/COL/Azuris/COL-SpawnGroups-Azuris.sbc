@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>Azuris</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:COL-A]		
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:10000]
+
+		[ForceExactPositionAndOrientation:true]
+		[IgnoreCleanupRules:true]
+		[ZoneConditions:ZoneCondition-Agaris]
+
+		[GridsAreDestructable:false]
+
+
+[StaticEncounterCoords:{X:-1083758.95490802 Y:125933.592745608 Z:1256220.63219873}]
+[StaticEncounterForward:{X:0.020699248262501 Y:0.999785747608638 Z:-7.08941546358907E-08}]
+[StaticEncounterUp:{X:0.769129476579968 Y:-0.0159238590004976 Z:-0.638894575787239}]
+
+
+[StaticEncounterUsePlanetDirectionAndAltitude:true]
+[StaticEncounterPlanet:Planet Agaris]
+[StaticEncounterPlanetDirection:{X:0.768757465794767 Y:-0.015925575896397 Z:-0.639342110936841}]
+[StaticEncounterPlanetAltitude:-10.0376449957112]
+
+
+
+
+        [ShipyardSetup:true]
+        [ShipyardConsoleBlockNames:{Any}]
+        [ShipyardProfileNames:FAC-Shipyard-ScrapYard]
+		
+		
+
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-AAW)]
+			
+				[IgnoreCombatPhase:true]
+			[ReplenishSystems:true]
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="COL - Azuris Colony">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>COL-Azuris-Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>
+
+
+
+
+		
+		
+		
+		
+	</SpawnGroups>
+	
+</Definitions>

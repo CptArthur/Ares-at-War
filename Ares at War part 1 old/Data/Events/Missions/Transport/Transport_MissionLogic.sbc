@@ -1,0 +1,358 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+ <!--
+Variables:
+{EventName}
+{StartingLocation}
+{DestinationLocation}
+
+ 
+
+ContractBlockLocation
+
+
+ ContractBlockFaction
+ -->
+  
+  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_Transport</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:Transport]
+	[Description:sw]
+	
+
+	[InstanceEventGroupId:MissionGroup_Transport]
+	
+	[ReplaceKeys:{EventName}]
+	[ReplaceValues:Last known location]
+
+	
+	[ReplaceKeys:{ContractGiver}]
+	[ReplaceValues:Station 27]	
+	
+	[ReplaceKeys:{DestinationLocation}]
+	[ReplaceValues:{X:1034461 Y:2637 Z:-100891}]
+
+
+      </Description>
+
+    </EntityComponent>
+	
+	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MissionGroup_Transport</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event TemplateGroup]
+		
+		[TemplateEventIds:AaW_EventTemplate_Transport_Init]	
+
+		[TemplateEventIds:AaW_EventTemplate_Transport_Success]
+		[TemplateEventIds:AaW_EventTemplate_Transport_Fail]
+		
+
+		[TemplateEventIds:AaW_EventTemplate_Transport_SendCommand]
+
+      </Description>
+	</EntityComponent>	
+	
+	
+	<!-- Standaard -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_Transport_CloseInstance</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	[RemoveThisInstanceGroup:true]
+
+      </Description>
+    </EntityComponent>		
+
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_Transport_Success</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:false]
+		[MinCooldownMs:5000]
+		[MaxCooldownMs:15001]			
+		
+		[UniqueEvent:true]		
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000] 
+
+		
+		
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		
+		[ActionIds:AaW_EventActionTemplate_Transport_Success]
+		[ActionIds:AaW_EventActionTemplate_Transport_CloseInstance]		
+		
+		
+
+      </Description>
+	</EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_Transport_Success</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-RemoveGPS]
+	[CustomActionArgumentsString:{EventName}]
+	
+	[RemoveThisInstanceGroup:true]
+
+	
+	[UseChatBroadcast:true]
+	[ChatData:AaW_EventChat_Transport_Success]
+	
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeFactions:COL-B]
+	[ReputationChangeAmount:50]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+      </Description>
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventChat_Transport_Success</SubtypeId>
+      </Id> 
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+	
+      [Color:Green]
+      [Author:Station 27]
+        
+      [ChatMessages:Well done {PlayerName}! Here is your reward as promised]
+      [BroadcastChatType:Chat]
+      [ChatAudio:MES-ShipyardSell]  
+
+      </Description>
+    </EntityComponent>
+	
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_Transport_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:false]
+		[UniqueEvent:true]		
+		[ActionExecution:All]
+		[ActionIds:AaW_EventActionTemplate_Transport_Fail]
+
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_Transport_Fail</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	
+		[ActivateCustomAction:true]
+	[CustomActionName:ScT-RemoveGPS]
+	[CustomActionArgumentsString:{EventName}]
+	
+	[RemoveThisInstanceGroup:true]
+	
+
+	[DebugHudMessage:Fail]
+      </Description>
+    </EntityComponent>			
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_Transport_Init</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:true]
+		[UniqueEvent:true]	
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+		[ActionExecution:All]
+		[ActionIds:AaW_EventActionTemplate_Transport_CreateGPS]
+		
+		[ActionIds:AaW_EventActionTemplate_Transport_SpawnTransport]
+
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_Transport_CreateGPS</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-CreateGPS]
+	[CustomActionArgumentsString:{EventName}]
+	[CustomActionArgumentsString:jiu]
+	[CustomActionArgumentsInt:120]		
+	[CustomActionArgumentsVector3D:{DestinationLocation}]	
+	
+      </Description>
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_Transport_SpawnTransport</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+	[SpawnEncounter:true]
+	[SpawnData:AaW_Spawner_Transport]
+	[SpawnFactionTags:{ContractBlockFaction}]
+	[SpawnCoords:{ContractBlockLocation}]
+	
+	[UseChatBroadcast:true]
+	[ChatData:AaW_EventChat_Transport_Start]
+	
+
+      </Description>
+      
+    </EntityComponent>	
+			
+	
+
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_Transport_SendCommand</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:true]
+		
+		[UniqueEvent:false]	
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+
+
+		
+		[ActionExecution:All]
+
+		[ActionIds:AaW_EventActionTemplate_Transport_SendCommand]
+
+      </Description>
+	</EntityComponent>	
+      
+	  
+	  
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_Transport_SendCommand</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:AaW_DummyCommandProfile_800m]
+	[CommandProfileOriginCoords:{DestinationLocation}]
+	
+	[OverrideCommandCode:{InstanceId}]
+      </Description>
+    </EntityComponent>	  
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DummyCommandProfile_800m</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Command]
+      
+      [CommandCode:TestCode]
+      
+	  
+	  [SingleRecipient:true]
+	  [IgnoreAntennaRequirement:true]
+	  [IgnoreReceiverAntennaRequirement:true]
+	  
+	  [Radius:800]
+	  
+	  
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+	
+  </EntityComponents>
+</Definitions>
+

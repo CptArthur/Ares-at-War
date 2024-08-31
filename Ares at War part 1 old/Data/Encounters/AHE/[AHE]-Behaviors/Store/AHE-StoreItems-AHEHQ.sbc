@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE-StoreProfile-AHEHQ-Ingot</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW-StoreItems-AHEHQ.xml]
+        
+        [MinOfferItems:20]
+        [MaxOfferItems:20]
+        [MinOrderItems:20]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+
+        
+        [Orders:Ingot/Iron] 
+        [Orders:Ingot/Nickel] 
+        [Orders:Ingot/Silicon] 
+        [Orders:Ingot/Cobalt] 
+        [Orders:Ingot/Magnesium] 
+        [Orders:Ingot/Silver] 
+        [Orders:Ingot/Gold] 
+
+        [Offers:Ingot/Iron] 
+        [Offers:Ingot/Nickel] 
+        [Offers:Ingot/Cobalt] 
+        [Offers:Ingot/Silver] 
+
+
+      </Description>
+
+    </EntityComponent>
+    
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE-StoreProfile-AHEHQ-Civ</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW-StoreItems-AHEHQ.xml]
+        
+        [MinOfferItems:5]
+        [MaxOfferItems:20]
+        [MinOrderItems:5]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+
+        [Orders:Component/CivilianProductI] 
+        [Orders:Component/CivilianProductII] 
+        [Orders:Component/CivilianProductIII] 
+
+
+        [Offers:Tool/HandDrill2Item] 
+        [Offers:Tool/AngleGrinder2Item] 
+        [Offers:Tool/Welder2Item] 
+        [Offers:Consumable/Medkit] 
+        [Offers:Consumable/Powerkit] 
+
+        
+        [Offers:Component/SteelPlate] 
+        [Offers:Component/Motor]         
+        [Offers:Component/Girder] 
+        [Offers:Component/InteriorPlate] 
+        [Offers:Component/Construction]        
+        [Offers:Component/Display] 
+        [Offers:Component/MedicalComponent] 
+        [Offers:Component/MetalGrid] 
+
+      </Description>
+
+    </EntityComponent>
+    
+    
+    
+    
+    
+
+    
+
+
+    
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE-StoreProfile-AHEHQ-Fuel</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW-StoreItems-AHEHQ.xml]
+        
+        [MinOfferItems:5]
+        [MaxOfferItems:20]
+        [MinOrderItems:5]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+
+        [Offers:HydrogenOffer] 
+
+
+      </Description>
+
+    </EntityComponent>	
+	
+ 
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Blueprints>  
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>Algaesample</SubtypeId>
+      </Id>
+      <DisplayName>Researching Algaes</DisplayName>
+    <Icon>Textures\GUI\Icons\Items\AlgaeSample.dds</Icon>
+      <Prerequisites>
+        <Item Amount="5" TypeId="Ore" SubtypeId="Organic" />
+        <Item Amount="6" TypeId="Ore" SubtypeId="Ice" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="Ingot" SubtypeId="Algaesample" />
+      <BaseProductionTimeInSeconds>200</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>GravelAlgaesample</SubtypeId>
+      </Id>
+      <DisplayName>Researching Algaes</DisplayName>
+    <Icon>Textures\GUI\Icons\Items\AlgaeSample.dds</Icon>
+      <Prerequisites>
+        <Item Amount="20" TypeId="Ingot" SubtypeId="Stone" />
+        <Item Amount="18" TypeId="Ore" SubtypeId="Ice" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="Ingot" SubtypeId="Algaesample" />
+      <BaseProductionTimeInSeconds>400</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CultivatedAlgae</SubtypeId>
+      </Id>
+      <DisplayName>50x Algaeamples</DisplayName>
+    <Icon>Textures\GUI\Icons\Items\AlgaeSample.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ingot" SubtypeId="Algaesample" />
+        <Item Amount="10" TypeId="Ore" SubtypeId="Organic" />
+        <Item Amount="20" TypeId="Ore" SubtypeId="Ice" />
+      </Prerequisites>
+      <Result Amount="50" TypeId="Ingot" SubtypeId="Algaesample" />
+      <BaseProductionTimeInSeconds>1000</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>SGCultivatedAlgae</SubtypeId>
+      </Id>
+      <DisplayName>10x Algaeamples</DisplayName>
+    <Icon>Textures\GUI\Icons\Items\AlgaeSample.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ingot" SubtypeId="Algaesample" />
+        <Item Amount="10" TypeId="Ore" SubtypeId="Organic" />
+        <Item Amount="20" TypeId="Ore" SubtypeId="Ice" />
+      </Prerequisites>
+      <Result Amount="10" TypeId="Ingot" SubtypeId="Algaesample" />
+      <BaseProductionTimeInSeconds>400</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>FarmedAlgaes</SubtypeId>
+      </Id>
+      <DisplayName>AlgaeContainer</DisplayName>
+    <Icon>Textures\GUI\Icons\Items\AlgaeContainer1.dds</Icon>
+      <Prerequisites>
+        <Item Amount="100" TypeId="Ingot" SubtypeId="Algaesample" />
+        <Item Amount="20" TypeId="Ore" SubtypeId="Organic" />
+        <Item Amount="50" TypeId="Ore" SubtypeId="Ice" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="Component" SubtypeId="AlgaeContainer" />
+      <BaseProductionTimeInSeconds>20</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+	<Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CultivatedHydrAlgae</SubtypeId>
+      </Id>
+      <DisplayName>50x H2-synthesizing Algaesamples</DisplayName>
+    <Icon>Textures\GUI\Icons\Items\H2AlgaeSample1.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ingot" SubtypeId="HydrogenAlgaesample" />
+        <Item Amount="10" TypeId="Ore" SubtypeId="Organic" />
+        <Item Amount="20" TypeId="Ore" SubtypeId="Ice" />
+      </Prerequisites>
+      <Result Amount="50" TypeId="Ingot" SubtypeId="HydrogenAlgaesample" />
+      <BaseProductionTimeInSeconds>1000</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+	<Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>SGCultivatedHydrAlgae</SubtypeId>
+      </Id>
+      <DisplayName>10x H2-synthesizing Algaesamples</DisplayName>
+    <Icon>Textures\GUI\Icons\Items\H2AlgaeSample1.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ingot" SubtypeId="HydrogenAlgaesample" />
+        <Item Amount="10" TypeId="Ore" SubtypeId="Organic" />
+        <Item Amount="20" TypeId="Ore" SubtypeId="Ice" />
+      </Prerequisites>
+      <Result Amount="10" TypeId="Ingot" SubtypeId="HydrogenAlgaesample" />
+      <BaseProductionTimeInSeconds>400</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>HydrogenAlgaesample</SubtypeId>
+      </Id>
+      <DisplayName>Researching H2-synthesizing Algae</DisplayName>
+    <Icon>Textures\GUI\Icons\Items\H2AlgaeSample1.dds</Icon>
+      <Prerequisites>
+        <Item Amount="5" TypeId="Ingot" SubtypeId="Algaesample" />
+        <Item Amount="5" TypeId="Ore" SubtypeId="Organic" />
+        <Item Amount="6" TypeId="Ore" SubtypeId="AlienLakeIce" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="Ingot" SubtypeId="HydrogenAlgaesample" />
+      <BaseProductionTimeInSeconds>200</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>GravelHydrogenAlgaesample</SubtypeId>
+      </Id>
+      <DisplayName>Researching H2-synthesizing Algae</DisplayName>
+    <Icon>Textures\GUI\Icons\Items\H2AlgaeSample1.dds</Icon>
+      <Prerequisites>
+        <Item Amount="10" TypeId="Ingot" SubtypeId="Algaesample" />
+        <Item Amount="20" TypeId="Ore" SubtypeId="Organic" />
+        <Item Amount="24" TypeId="Ore" SubtypeId="Ice" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="Ingot" SubtypeId="HydrogenAlgaesample" />
+      <BaseProductionTimeInSeconds>700</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>FarmedHydrogenAlgaes</SubtypeId>
+      </Id>
+      <DisplayName>H2-synthesizing Algaes Container</DisplayName>
+    <Icon>Textures\GUI\Icons\Items\H2AlgaeContainer.dds</Icon>
+      <Prerequisites>
+        <Item Amount="100" TypeId="Ingot" SubtypeId="HydrogenAlgaesample" />
+        <Item Amount="20" TypeId="Ore" SubtypeId="Organic" />
+        <Item Amount="50" TypeId="Ore" SubtypeId="Ice" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="Component" SubtypeId="HydrogenAlgaeContainer" />
+      <BaseProductionTimeInSeconds>20</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>AlgaeMeat</SubtypeId>
+      </Id>
+      <DisplayName>AlgaeMeat</DisplayName>
+      <Icon>Textures\GUI\Icons\Items\AlgaeMeat.png</Icon>
+      <Prerequisites>
+        <Item Amount="3" TypeId="Ingot" SubtypeId="Algaesample" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="ConsumableItem" SubtypeId="AlgaeMeat" />
+      <BaseProductionTimeInSeconds>30</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CompostingAlgae</SubtypeId>
+      </Id>
+      <DisplayName>AlgaeContainer</DisplayName>
+    <Icon>Textures\GUI\Icons\Items\AlgaeContainer1.dds</Icon>
+      <Prerequisites>
+        <Item Amount="10" TypeId="Ingot" SubtypeId="Algaesample" />
+      </Prerequisites>
+      <Result Amount="9" TypeId="Ore" SubtypeId="Organic" />
+      <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CompostingH2Algae</SubtypeId>
+      </Id>
+      <DisplayName>AlgaeContainer</DisplayName>
+    <Icon>Textures\GUI\Icons\Items\AlgaeContainer1.dds</Icon>
+      <Prerequisites>
+        <Item Amount="10" TypeId="Ingot" SubtypeId="HydrogenAlgaesample" />
+      </Prerequisites>
+      <Result Amount="9" TypeId="Ore" SubtypeId="Organic" />
+      <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>IcetoIcepAlg</SubtypeId>
+      </Id>
+      <DisplayName>Photosynthesize Algaes</DisplayName>
+      <Icon>Textures\GUI\Icons\Items\AlgaeContainer1.dds</Icon>
+      <Prerequisites>
+        <Item Amount="30" TypeId="Ore" SubtypeId="LakeIce" />
+      </Prerequisites>
+      <Results>
+        <Item Amount="25" TypeId="Ore" SubtypeId="Ice" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="Algaesample" />
+      </Results>
+      <BaseProductionTimeInSeconds>40</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>IcetoIcepHydrAlg</SubtypeId>
+      </Id>
+      <DisplayName>Hydrogensynthesize Algaes</DisplayName>
+      <Icon>Textures\GUI\Icons\Items\AlgaeContainer1.dds</Icon>
+      <Prerequisites>
+        <Item Amount="50" TypeId="Ore" SubtypeId="AlienLakeIce" />
+      </Prerequisites>
+      <Results>
+        <Item Amount="40" TypeId="Ore" SubtypeId="Ice" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="HydrogenAlgaesample" />
+      </Results>
+      <BaseProductionTimeInSeconds>40</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>ALIcetoOxygen</SubtypeId>
+      </Id>
+      <DisplayName>DisplayName_Item_Oxygen</DisplayName>
+      <Icon>Textures\GUI\Icons\ingot\gravel_ingot.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="AlienLakeIce" />
+      </Prerequisites>
+      <Result Amount="0.9" TypeId="Ingot" SubtypeId="Stone" />
+      <BaseProductionTimeInSeconds>0.1</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+	 <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>LIcetoOxygen</SubtypeId>
+      </Id>
+      <DisplayName>DisplayName_Item_Oxygen</DisplayName>
+      <Icon>Textures\GUI\Icons\ingot\gravel_ingot.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="LakeIce" />
+      </Prerequisites>
+      <Result Amount="0.9" TypeId="Ingot" SubtypeId="Stone" />
+      <BaseProductionTimeInSeconds>0.1</BaseProductionTimeInSeconds>
+    </Blueprint>
+ 
+ </Blueprints>
+</Definitions>

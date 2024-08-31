@@ -1,0 +1,475 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!-- 
+[Triggers:AHE-DefenseSystem-Trigger-ReceivedRedAlert]
+[Triggers:AHE-DefenseSystem-Trigger-ReceivedSOS]
+
+[Triggers:AHE-DefenseSystem-Trigger-SOS]
+
+[Triggers:AHE-DefenseSystem-Trigger-MediumGarrison
+
+[Triggers:AHE-DefenseSystem-Trigger-LaunchingPatrolCraft]
+[Triggers:AHE-DefenseSystem-Trigger-HeavyGarrison]
+
+-->
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-DefenseSystem-Trigger-ReceivedRedAlert</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+		[UseTrigger:true]
+	[Type:CommandReceived]
+	[StartsReady:true]		
+	
+	[MinCooldownMs:90000]
+	[MaxCooldownMs:120000]
+	
+	[CommandReceiveCode:AHE-RedAlert]
+
+	[MaxActions:-1]
+	[ActionExecution:All]
+
+	[Actions:FAC-Context-Action-InitBattle]
+	
+      </Description>
+      
+    </EntityComponent> 
+
+
+  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-DefenseSystem-Trigger-ReceivedSOS</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+		[UseTrigger:true]
+		[StartsReady:true]		
+		
+	[Type:CommandReceived]
+	
+	[MinCooldownMs:90000]
+	[MaxCooldownMs:120000]
+	
+	[Conditions:FAC-Context-Condition-SettingNormal]
+	[CommandReceiveCode:AHE-SOS]
+
+	[MaxActions:-1]
+	[ActionExecution:All]
+
+	[Actions:AHE-DefenseSystem-Action-ReceivedSOS]
+  [Actions:FAC-Context-Action-InitHighAlert]
+	
+      </Description>
+      
+    </EntityComponent> 
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-DefenseSystem-Action-ReceivedSOS</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+[InheritLastAttackerFromCommand:true]
+      </Description>
+      
+    </EntityComponent>   
+  
+ 
+  
+  
+ <!-- UnderAttack Beacon -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-DefenseSystem-Trigger-SOS</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Damage]
+	[UseTrigger:true]
+	[StartsReady:true]		
+	[DamageTypes:Any]
+
+	[ExcludedDamageTypes:Environment]
+	[ExcludedDamageTypes:Deformation]
+	[ExcludedDamageTypes:Fire]
+
+	[MinCooldownMs:90000]
+	[MaxCooldownMs:120000]
+	[Conditions:FAC-Context-Condition-SettingBattle]
+	[MaxActions:-1]
+	[Actions:AHE-DefenseSystem-Action-SOS]
+	
+      </Description>
+      
+    </EntityComponent>  
+
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-DefenseSystem-Action-SOS</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	
+	[UseChatBroadcast:true]
+	[ChatData:AHE-DefenseSystem-Chat-SOS]
+	
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:AHE-DefenseSystem-Command-SOS]
+
+
+      </Description>
+      
+    </EntityComponent>    
+  
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-DefenseSystem-Chat-SOS</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+	[MinTime:180]
+	[MaxTime:360]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Red]
+      
+      [ChatMessages:This is {AntennaName}, we require inmediate assistance!]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>  
+    
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-DefenseSystem-Command-SOS</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Command]
+      
+	[CommandCode:AHE-SOS]
+	[MatchSenderReceiverOwners:true]
+	[SendTargetEntityId:true]
+
+	[CommandDelayTicks:180]
+
+      </Description>
+      
+    </EntityComponent>  
+  
+  
+  
+  
+  
+  
+  <!-- MediumGarrison -->  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-DefenseSystem-Trigger-MediumGarrison</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:true]
+	[Type:Timer]	
+	[StartsReady:true]	
+
+	[MinCooldownMs:1800000]
+	[MaxCooldownMs:1800001]
+	[Conditions:FAC-Context-Condition-SettingBattle]
+	[MaxActions:-1]
+	[Actions:AHE-DefenseSystem-Action-MediumGarrison]
+	
+      </Description>
+      
+    </EntityComponent>
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-DefenseSystem-Action-MediumGarrison</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	
+	[UseChatBroadcast:true]
+	[ChatData:AHE-DefenseSystem-Chat-Garrison]
+ 
+ [SpawnEncounter:true]
+[Spawner:AHE-Spawner-MediumGarrison]
+
+      </Description>
+      
+    </EntityComponent>  
+  
+
+  <!-- HeavyGarrison -->  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-DefenseSystem-Trigger-HeavyGarrison</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:true]
+	[Type:Timer]	
+	[StartsReady:true]	
+
+	[MinCooldownMs:1800000]
+	[MaxCooldownMs:1800001]
+	[Conditions:FAC-Context-Condition-SettingBattle]
+	[MaxActions:-1]
+	[Actions:AHE-DefenseSystem-Action-HeavyGarrison]
+	
+      </Description>
+      
+    </EntityComponent>
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-DefenseSystem-Action-HeavyGarrison</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	
+	[UseChatBroadcast:true]
+	[ChatData:AHE-DefenseSystem-Chat-Garrison]
+ 
+ [SpawnEncounter:true]
+[Spawner:AHE-Spawner-HeavyGarrison]
+
+      </Description>
+      
+    </EntityComponent>  
+  
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-DefenseSystem-Chat-Garrison</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Red]
+      
+      [ChatMessages:Alert Alert! Launching Garrison]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>  
+  
+  
+ 
+  
+<!-- PatrolSystem -->  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-DefenseSystem-Trigger-LaunchingPatrolCraft</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:true]
+	[Type:Timer]	
+	[StartsReady:true]	
+
+	[MinCooldownMs:1800000]
+	[MaxCooldownMs:1800001]
+	[Conditions:FAC-Context-Condition-SettingHighAlert]
+	[MaxActions:-1]
+	[Actions:AHE-DefenseSystem-Action-LaunchingPatrolCraft]
+	
+      </Description>
+      
+    </EntityComponent>
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-DefenseSystem-Action-LaunchingPatrolCraft</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	
+	[UseChatBroadcast:true]
+	[ChatData:AHE-DefenseSystem-Chat-LaunchingPatrolCraft]
+ 
+ [SpawnEncounter:true]
+[Spawner:AHE-Spawner-Patrol]
+
+      </Description>
+      
+    </EntityComponent>  
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-DefenseSystem-Chat-LaunchingPatrolCraft</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:White]
+      
+      [ChatMessages:We have detected eniemies in the area, launching intercept forces. Godverdomme kut zooi]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>
+	  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ <!-- Spawners --> 
+  
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-Spawner-Patrol</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Spawn]
+
+	[UseSpawn:true]
+	[StartsReady:true]
+	[SpawnGroups:AHE-SpawnGroup-Patrol]
+
+	[UseRelativeSpawnPosition:false]
+	[MinDistance:1000]
+	[MaxDistance:1500]
+	[MinAltitude:2000]
+	[MaxAltitude:2500]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-Spawner-MediumGarrison</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Spawn]
+	[UseSpawn:true]
+	[StartsReady:true]
+	[SpawnGroups:AHE-SpawnGroup-MediumGarrison]
+	[UseRelativeSpawnPosition:false]
+	[MinDistance:1000]
+	[MaxDistance:1500]
+	[MinAltitude:2000]
+	[MaxAltitude:2500]
+
+      </Description>
+      
+    </EntityComponent>
+
+<!-- AHE-Spawner-HeavyGarrison-->
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE-Spawner-HeavyGarrison</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Spawn]
+	[UseSpawn:true]
+	
+[StartsReady:true]
+
+	[SpawnGroups:AHE-SpawnGroup-HeavyGarrison1]
+	
+	[UseRelativeSpawnPosition:false]
+	[MinDistance:1000]
+	[MaxDistance:1500]
+	[MinAltitude:2000]
+	[MaxAltitude:2500]
+      
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
+
+  </EntityComponents>
+</Definitions>

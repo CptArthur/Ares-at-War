@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+	<!--
+[Triggers:COL-Azuris-Triggers-EnableGreetings]
+[Triggers:COL-Azuris-Triggers-DisableGreetings]
+[Triggers:COL-Azuris-Triggers-Greeting]
+[Triggers:COL-Azuris-Triggers-PlayerFar]
+
+
+	-->
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Azuris-Triggers-EnableGreetings</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[TargetDistance:5000]
+	[MinCooldownMs:10000]
+	[MaxCooldownMs:10001]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	  	 
+	[Actions:COL-Azuris-Action-EnableGreetings]
+
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Azuris-Triggers-DisableGreetings</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[TargetDistance:5000]
+	[MinCooldownMs:10000]
+	[MaxCooldownMs:10001]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	  	 
+	[UseFailCondition:true]
+
+	[Actions:COL-Azuris-Action-DisableGreetings]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Azuris-Action-EnableGreetings</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+        
+	[EnableTriggers:true]
+	[EnableTriggerNames:COL-Azuris-Triggers-Greeting]
+	
+	
+	[EnableTriggerNames:COL-Azuris-Triggers-PlayerFar]
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Azuris-Action-DisableGreetings</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	[DisableTriggers:true]
+	[DisableTriggerNames:COL-Azuris-Triggers-Greeting]
+
+
+	[DisableTriggerNames:COL-Azuris-Triggers-PlayerFar]
+       
+
+      </Description>
+      
+    </EntityComponent>	
+
+	
+	
+<!-- Azuris
+
+COL-Azuris-Triggers-Greeting
+
+COL-Azuris-Triggers-PlayerFar
+
+
+ -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Azuris-Triggers-Greeting</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[TargetDistance:2000]
+	[UsePlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition-ExcludedPlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	  
+	[Actions:COL-Azuris-Action-Greeting]	  
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Azuris-Action-Greeting</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+        
+	[UseChatBroadcast:true]
+    [ChatData:COL-Azuris-Chat-Greeting]    
+	
+	[AddTagsToPlayers:true]
+	[AddTags:PlayerNear]
+	[AddTagsIncludeSavedPlayerIdentity:true]
+	
+
+	[SavePlayerIdentity:true]
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Azuris-Chat-Greeting</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [MinTime:2]
+      [MaxTime:3]
+
+      [Author:Azuris]
+      [Color:Green]
+      
+	[ChatMessages:Greetings {PlayerName}! Welcome to Azuris]
+	[BroadcastChatType:Chat]
+    [ChatAudio:ArcHudGPSNotification2]
+
+	[ChatMessages:Greetings {PlayerName}! Welcome to the pearl of the south]
+	[BroadcastChatType:Chat]
+	[ChatAudio:ArcHudGPSNotification2]
+      </Description>
+      
+    </EntityComponent>
+
+	
+	<!-- The unsubscribe one -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Azuris-Triggers-PlayerFar</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerFar]
+	[TargetDistance:3500]
+	[UsePlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition-IncludedPlayerNear]
+	
+	[UseTrigger:true]
+	[StartsReady:true]
+
+	  
+	[Actions:COL-Azuris-Action-PlayerFar]	  
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>COL-Azuris-Action-PlayerFar</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+        
+	[RemoveTagsFromPlayers:true]
+	[RemoveTags:PlayerNear]
+	[RemoveTagsIncludeSavedPlayerIdentity:true]
+	
+	
+	[RemovePlayerIdentity:true]
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

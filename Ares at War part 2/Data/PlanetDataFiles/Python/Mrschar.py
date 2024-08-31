@@ -137,8 +137,8 @@ def run():
 
 
 #Setup
-# Planet = "Planet Thora 4"
-# filename = "thora4" 
+#Planet = "Planet Thora 4"
+#filename = "thora4" 
 
 Planet = "Planet Lezuno"
 filename = "lezuno" 

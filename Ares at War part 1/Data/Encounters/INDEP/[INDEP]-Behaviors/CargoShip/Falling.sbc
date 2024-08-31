@@ -1,0 +1,99 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-Trigger-Falling</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+        [MinCooldownMs:2000]
+        [MaxCooldownMs:4000]
+
+        [Conditions:TOC-Condition-Falling]
+        
+        [StartsReady:false]
+        [MaxActions:1]
+        [Actions:TOC-Action-Falling]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-Condition-Falling</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Condition]
+
+        [UseFailCondition:true]
+        [CheckSufficientUpwardThrust:true]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-Action-Falling</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:TOC-Chat-Falling]
+
+        [ToggleBlocksOfType:true]
+
+        [BlockTypesToToggle:MyObjectBuilder_Parachute/LgParachute]
+        [BlockTypeToggles:On]
+
+        [BlockTypesToToggle:MyObjectBuilder_Parachute/SmParachute]
+        [BlockTypeToggles:On]
+
+        [TerminateBehavior:true]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-Chat-Falling</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:1]
+        [BroadcastRandomly:true]
+        [Author:Cargo Transport Pilot]
+        [Color:Blue]
+
+        [ChatMessages:Flight systems damaged! I can't keep it in the air!!]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+
+        [ChatMessages:They got the thrusters! We're going down!]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+
+      </Description>
+    </EntityComponent>
+    
+  </EntityComponents>
+</Definitions>

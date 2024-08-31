@@ -1,0 +1,148 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-Trigger-BanditAttack</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Trigger]
+
+        [UseTrigger:false]
+        [Type:Timer]
+
+        [MinCooldownMs:30000]
+        [MaxCooldownMs:60000]
+        [StartsReady:false]
+
+        [MaxActions:1]
+        [Actions:TOC-Action-BanditAttackA]
+        [Actions:TOC-Action-BanditAttackB]
+        [ActionExecution:Random]
+
+      </Description>
+
+    </EntityComponent>
+    
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-Action-BanditAttackA</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:TOC-Chat-BanditAttackA]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-Chat-BanditAttackA</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:1]
+        [BroadcastRandomly:true]
+        [Author:Cargo Transport Pilot]
+        [Color:Blue]
+
+        [ChatMessages:No hostiles on the radar. Looks like this trip is gonna be an easy one!]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+
+        [ChatMessages:I guess the raiders overslept today. Oh well, you won't see me complaining!]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-Action-BanditAttackB</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:TOC-Chat-BanditAttackB]
+
+        [SpawnEncounter:true]
+        [Spawner:TOC-Spawn-BanditAttackB]
+
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-Spawn-BanditAttackB</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Spawn]
+
+        [UseSpawn:true]
+        [StartsReady:true]
+        [MaxSpawns:1]
+
+        [SpawnGroups:TOC-SpawnGroup-BanditA]
+        [SpawnGroups:TOC-SpawnGroup-BanditB]
+        [SpawnGroups:TOC-SpawnGroup-BanditC]
+
+        [MinDistance:3000]
+        [MaxDistance:4000]
+        [MinAltitude:1000]
+        [MaxAltitude:1500]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TOC-Chat-BanditAttackB</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:1]
+        [BroadcastRandomly:true]
+        [Author:Cargo Transport Pilot]
+        [Color:Blue]
+
+        [ChatMessages:So much for a easy-going delivery... If there are any friendlies in the area, we could use a hand with these raiders!]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+
+        [ChatMessages:Raiders on approach! Any assistance we can get holding them off will be greatly appreciated!]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+
+      </Description>
+    </EntityComponent>
+
+
+  </EntityComponents>
+</Definitions>

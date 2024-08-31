@@ -1,0 +1,107 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>Incon-Trigger-AggressionSwitch</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:PlayerNear]
+
+        [TargetDistance:1500]
+        [MaxPlayerReputation:-1450]
+
+        [Conditions:Incon-Condition-AggressionSwitch]
+
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:Incon-Action-AggressionSwitch]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>Incon-Condition-AggressionSwitch</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+
+        [UseConditions:true]
+
+        [CheckIfGridNameMatches:true]
+        [AllowPartialGridNameMatches:true]
+        [GridNamesToCheck:SS-]
+        [GridNamesToCheck:AS-]
+        [GridNamesToCheck:Gremlin]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>Incon-Action-AggressionSwitch</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:Incon-Chat-AggressionSwitch]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:HorseFighter]
+
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Tertiary]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:Incon-Trigger-AggressionSwitch]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:Incon-Trigger-PassiveSwitch]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>Incon-Chat-AggressionSwitch</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:1]
+        [BroadcastRandomly:true]
+        [Author:Incon Crew]
+        [Color:Red]
+
+        [ChatMessages: So you like picking on Incon ships eh? Let's see how you like a more direct confrontation!.]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+
+        [ChatMessages:We've heard about you. I'll bet there's a nice reward up for grabs if we bring back your crispy rear.]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>

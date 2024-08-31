@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+  
+<!--
+    <Definition xsi:type="MyObjectBuilder_VendingMachineDefinition">
+      <Id>
+        <TypeId>VendingMachine</TypeId>
+        <SubtypeId>FoodDispenser</SubtypeId>
+      </Id>
+      <DisplayName>DisplayName_Block_FoodDispenser</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\FoodDispenser.dds</Icon>
+      <Description>Description_FoodDispenser</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <Model>Models\Cubes\Large\FoodDispenser.mwm</Model>
+      <ModelOffset x="0" y="0" z="0" />
+      <Components>        
+          <Component Subtype="InteriorPlate" Count="10" />
+          <Component Subtype="Construction" Count="10" />
+          <Component Subtype="Motor" Count="4" />
+          <Component Subtype="Display" Count="10" />
+          <Component Subtype="Computer" Count="10" />
+          <Component Subtype="InteriorPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+      <BuildTimeSeconds>12</BuildTimeSeconds>
+      <MountPoints>
+          <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="0.5" EndY="1" />
+          <MountPoint Side="Front" StartX="0.5" StartY="0" EndX="1.0" EndY="1" />
+          <MountPoint Side="Back" StartX="0" StartY="0" EndX="0.5" EndY="1" />
+          <MountPoint Side="Top" StartX="0" StartY="0" EndX="0.5" EndY="1" />
+          <MountPoint Side="Left" StartX="0" StartY="0" EndX="1.0" EndY="1" />
+      </MountPoints>
+      <RequiredPowerInput>0.002</RequiredPowerInput>
+        <DefaultItems>
+        </DefaultItems>
+        <ThrowOutDummy>FoodDispenserSpawn</ThrowOutDummy>
+        <BlockPairName>FoodDispenser</BlockPairName>
+      <ScreenAreas>
+        <ScreenArea Name="VendingScreen_01" DisplayName="DisplayName_Screen_Large" TextureResolution="1024" ScreenWidth="15" ScreenHeight="9" Script="TSS_VendingMachine"/>
+      </ScreenAreas>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\FoodDispenserConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\FoodDispenserConstruction_2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\FoodDispenserConstruction_3.mwm" />
+      </BuildProgressModels>
+      <MirroringX>Y</MirroringX>
+      <MirroringY>X</MirroringY>
+      <EdgeType>Light</EdgeType>
+      <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+      <DamagedSound>ParticleElectrical</DamagedSound>
+      <ActionSound>BlockCollect</ActionSound>
+      <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>
+      <PCU>10</PCU>
+      <EmissiveColorPreset>Default</EmissiveColorPreset>
+      <DLC>DecorativeBlocks2</DLC>
+      <AdditionalEmissiveMaterials>
+          <string>FoodDispenser</string>
+      </AdditionalEmissiveMaterials>
+    </Definition>
+
+    <Definition xsi:type="MyObjectBuilder_VendingMachineDefinition">
+      <Id>
+        <TypeId>VendingMachine</TypeId>
+        <SubtypeId>FoodDispenserSmall_3223</SubtypeId>
+      </Id>
+      <DisplayName>DisplayName_Block_FoodDispenser</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\FoodDispenser.dds</Icon>
+      <Description>Description_FoodDispenser</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="2" y="5" z="5" />
+      <Model>Models\Cubes\Large\FoodDispenser.mwm</Model>
+      <ModelOffset x="0.75" y="0" z="0" />
+      <Components>        
+          <Component Subtype="InteriorPlate" Count="10" />
+          <Component Subtype="Construction" Count="10" />
+          <Component Subtype="Motor" Count="4" />
+          <Component Subtype="Display" Count="10" />
+          <Component Subtype="Computer" Count="10" />
+          <Component Subtype="InteriorPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+      <BuildTimeSeconds>12</BuildTimeSeconds>
+      <MountPoints>
+          <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="0.5" EndY="1" />
+          <MountPoint Side="Front" StartX="0.5" StartY="0" EndX="1.0" EndY="1" />
+          <MountPoint Side="Back" StartX="0" StartY="0" EndX="0.5" EndY="1" />
+          <MountPoint Side="Top" StartX="0" StartY="0" EndX="0.5" EndY="1" />
+          <MountPoint Side="Left" StartX="0" StartY="0" EndX="1.0" EndY="1" />
+      </MountPoints>
+      <RequiredPowerInput>0.002</RequiredPowerInput>
+        <DefaultItems>
+        </DefaultItems>
+        <ThrowOutDummy>FoodDispenserSpawn</ThrowOutDummy>
+        <BlockPairName>FoodDispenser</BlockPairName>
+      <ScreenAreas>
+        <ScreenArea Name="VendingScreen_01" DisplayName="DisplayName_Screen_Large" TextureResolution="1024" ScreenWidth="15" ScreenHeight="9" Script="TSS_VendingMachine"/>
+      </ScreenAreas>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\FoodDispenserConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\FoodDispenserConstruction_2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\FoodDispenserConstruction_3.mwm" />
+      </BuildProgressModels>
+      <MirroringX>Y</MirroringX>
+      <MirroringY>X</MirroringY>
+      <EdgeType>Light</EdgeType>
+      <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+      <DamagedSound>ParticleElectrical</DamagedSound>
+      <ActionSound>BlockCollect</ActionSound>
+      <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>
+      <PCU>10</PCU>
+      <EmissiveColorPreset>Default</EmissiveColorPreset>
+      <DLC>DecorativeBlocks2</DLC>
+      <AdditionalEmissiveMaterials>
+          <string>FoodDispenser</string>
+      </AdditionalEmissiveMaterials>
+    </Definition>
+	-->
+  </CubeBlocks>
+</Definitions>

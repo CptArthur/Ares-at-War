@@ -1,19 +1,29 @@
 <?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    
 	<BlueprintClasses>
-	
         <Class>
             <Id>
                 <TypeId>BlueprintClassDefinition</TypeId>
-                <SubtypeId>StrategicIngots</SubtypeId>
+                <SubtypeId>CrystalCronyxIngot</SubtypeId>
             </Id>
 			<DisplayName>Strategic Ingot Refining</DisplayName>
 			<Icon>Textures\GUI\Icons\ingot\ingot_class.dds</Icon>
             <InputConstraintIcon>Textures\GUI\Icons\filter_ore.dds</InputConstraintIcon>
             <OutputConstraintIcon>Textures\GUI\Icons\filter_ingot.dds</OutputConstraintIcon>
         </Class>
-	
+
+        <Class>
+            <Id>
+                <TypeId>BlueprintClassDefinition</TypeId>
+                <SubtypeId>SpiceIngot</SubtypeId>
+            </Id>
+			<DisplayName>Spice Refining</DisplayName>
+			<Icon>Textures\GUI\Icons\ingot\ingot_class.dds</Icon>
+            <InputConstraintIcon>Textures\GUI\Icons\filter_ore.dds</InputConstraintIcon>
+            <OutputConstraintIcon>Textures\GUI\Icons\filter_ingot.dds</OutputConstraintIcon>
+        </Class>
+
+		
         <Class>
             <Id>
                 <TypeId>BlueprintClassDefinition</TypeId>
@@ -45,8 +55,34 @@
             <InputConstraintIcon>Textures\GUI\Icons\filter_ingot.dds</InputConstraintIcon>
         </Class>
 		
-	</BlueprintClasses>
+		<Class>
+			<Id>                   
+				<TypeId>BlueprintClassDefinition</TypeId>
+				<SubtypeId>NanoAssemblerComponents</SubtypeId>
+			</Id>
+		  <DisplayName>Components</DisplayName>
+		  <Icon>Textures\GUI\Icons\buttons\component.dds</Icon>
+		  <FocusIcon>Textures\GUI\Icons\buttons\component.dds</FocusIcon>
+		  <HighlightIcon>Textures\GUI\Icons\buttons\component_focus.dds</HighlightIcon>
+		  <InputConstraintIcon>Textures\GUI\Icons\filter_ingot.dds</InputConstraintIcon>
+		</Class>
 		
+		
+        <Class>
+            <Id>
+                <TypeId>BlueprintClassDefinition</TypeId>
+                <SubtypeId>NanoTools</SubtypeId>
+            </Id>
+            <DisplayName>DisplayName_BlueprintClass_Tools</DisplayName>
+            <Description>Description_BlueprintClass_Tools</Description>
+            <Icon>Textures\GUI\Icons\buttons\tool.dds</Icon>
+            <HighlightIcon>Textures\GUI\Icons\buttons\tool.dds</HighlightIcon>
+            <FocusIcon>Textures\GUI\Icons\buttons\tool_focus.dds</FocusIcon>
+            <InputConstraintIcon>Textures\GUI\Icons\filter_ingot.dds</InputConstraintIcon>
+        </Class>	
+	
+	</BlueprintClasses>
+	
     <BlueprintClassEntries>
 	
         <Entry Class="Ingots" BlueprintSubtypeId="CatalyzedIronOreToIngot" />
@@ -58,11 +94,13 @@
         <Entry Class="Ingots" BlueprintSubtypeId="CatalyzedPlatinumOreToIngot" />
         <Entry Class="Ingots" BlueprintSubtypeId="CatalyzedUraniumOreToIngot" />
         <Entry Class="Ingots" BlueprintSubtypeId="CatalyzedMagnesiumOreToIngot" />
+        <Entry Class="Ingots" BlueprintSubtypeId="RefineDorium" />
 		
-        <Entry Class="StrategicIngots" BlueprintSubtypeId="FuseCrystal" />
-        <Entry Class="StrategicIngots" BlueprintSubtypeId="RefineDorium" />
-        <Entry Class="StrategicIngots" BlueprintSubtypeId="StabilizeCronyx" />
-        <Entry Class="StrategicIngots" BlueprintSubtypeId="RefineSpice" />
+        <Entry Class="CrystalCronyxIngot" BlueprintSubtypeId="FuseCrystal" />
+	    <Entry Class="CrystalCronyxIngot" BlueprintSubtypeId="StabilizeCronyx" />	
+		
+        <Entry Class="SpiceIngot" BlueprintSubtypeId="RefineSpice" />
+
 		
         <Entry Class="OreCatalyzer" BlueprintSubtypeId="CatalyzeIronOre" />
         <Entry Class="OreCatalyzer" BlueprintSubtypeId="CatalyzeNickelOre" />
@@ -73,16 +111,26 @@
         <Entry Class="OreCatalyzer" BlueprintSubtypeId="CatalyzePlatinumOre" />
         <Entry Class="OreCatalyzer" BlueprintSubtypeId="CatalyzeUraniumOre" />
         <Entry Class="OreCatalyzer" BlueprintSubtypeId="CatalyzeMagnesiumOre" />
-		
+	
         <Entry Class="EliteConsumables" BlueprintSubtypeId="SpiceInhaler" />
 		
         <Entry Class="ActivatedSpice" BlueprintSubtypeId="ActivatedSpice" />
 		
         <Entry Class="Components" BlueprintSubtypeId="ReinforcedDrillbit" />
         <Entry Class="Components" BlueprintSubtypeId="ReinforcedPlate" />
-        <Entry Class="Components" BlueprintSubtypeId="LaserAmplifier" />
-        <Entry Class="Components" BlueprintSubtypeId="JumpCore" />
-        <Entry Class="Components" BlueprintSubtypeId="CompatRecipe" />
+		
+		
+		
+        <Entry Class="NanoAssemblerComponents" BlueprintSubtypeId="LaserAmplifier" />
+        <Entry Class="NanoAssemblerComponents" BlueprintSubtypeId="JumpCore" />
+        <Entry Class="NanoAssemblerComponents" BlueprintSubtypeId="CompatRecipe" />
+        <Entry Class="NanoAssemblerComponents" BlueprintSubtypeId="GravityGeneratorComponent" />
+        <Entry Class="NanoAssemblerComponents" BlueprintSubtypeId="ThrustComponent" />
+		
+		
+		<Entry Class="NanoTools" BlueprintSubtypeId="Welder4" />
+		<Entry Class="NanoTools" BlueprintSubtypeId="HandDrill4" />
+		<Entry Class="NanoTools" BlueprintSubtypeId="AngleGrinder4" />	
 		
         <Entry Class="CronyxAmmo" BlueprintSubtypeId="CronyxNATO_25x184mm" />
         <Entry Class="CronyxAmmo" BlueprintSubtypeId="CronyxMissile200mm" />
