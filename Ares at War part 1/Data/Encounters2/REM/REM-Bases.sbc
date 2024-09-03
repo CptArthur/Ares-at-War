@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+	
+
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>REM_LezunoHQ</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:REMNANTS]		
+
+		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+		[TriggerRadius:10000]
+
+		[ForceExactPositionAndOrientation:true]
+
+
+		[StaticEncounterCoords:{X:-1308380.83074186 Y:-309148.219564624 Z:-1408842.20772734}]
+		[StaticEncounterForward:{X:0.429190634457179 Y:0.872649428740001 Z:-0.232977195909803}]
+		[StaticEncounterUp:{X:-0.0215506444615484 Y:0.267762932253143 Z:0.96324378110346}]
+
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Lezuno]
+		[StaticEncounterPlanetDirection:{X:-0.0220707318468992 Y:0.269647865089264 Z:0.962706035946874}]
+		[StaticEncounterPlanetAltitude:12.6183289822147]
+
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:Outpost Braz]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+
+        [ShipyardSetup:true]
+        [ShipyardConsoleBlockNames:{Any}]
+        [ShipyardProfileNames:FAC-Shipyard-ScrapYard]
+		
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:REM_LezunoHQDestroyed]			
+		[ZoneConditions:ZoneCondition_ZoneAaW]	
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="REM-HQ">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>REM_HQ_Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+		
+	</SpawnGroup>
+	
+	
+	
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>REM_AgarisCrashedPegasus</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:REMNANTS]		
+
+		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+		[TriggerRadius:4500]
+
+		[ForceExactPositionAndOrientation:true]
+
+			[StaticEncounterCoords:{X:6825462.25378619 Y:-1260133.73453076 Z:-459770.405508989}]
+			[StaticEncounterForward:{X:0.40683346586055 Y:0.455514635129365 Z:-0.791828862974099}]
+			[StaticEncounterUp:{X:0.485073905525971 Y:0.626781297779219 Z:0.609793826577459}]
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Agaris]
+			[StaticEncounterPlanetDirection:{X:-0.36523891419477 Y:-0.51208548713028 Z:-0.777411724524636}]
+			[StaticEncounterPlanetAltitude:-3.81032417688402]
+
+
+		
+		
+			[ReplenishSystems:true]
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:REM_AgarisCrashedPegasus]			
+			[ZoneConditions:ZoneCondition_ZoneAaW]	
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="REM-PegasusCrashed">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour></Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+		
+	</SpawnGroup>	
+	
+	
+	
+	
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>REM_AgarisPegasusSurvivorsCamp</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:REMNANTS]		
+
+		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+		[TriggerRadius:10000]
+
+		[ForceExactPositionAndOrientation:true]
+
+[ZoneConditions:ZoneCondition_Agaris]
+
+[StaticEncounterCoords:{X:6825255.54245916 Y:-1260128.75153984 Z:-459703.061844646}]
+[StaticEncounterForward:{X:-0.812649942695924 Y:0.582752151979008 Z:-3.83247499518064E-07}]
+[StaticEncounterUp:{X:-0.367663251620061 Y:-0.512708218564315 Z:-0.775856955904096}]
+
+
+[StaticEncounterUsePlanetDirectionAndAltitude:true]
+[StaticEncounterPlanet:Planet Agaris]
+[StaticEncounterPlanetDirection:{X:-0.368590928802107 Y:-0.511820574875842 Z:-0.776002852017029}]
+[StaticEncounterPlanetAltitude:0.0738005516905105]
+
+			[ReplenishSystems:true]
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:REM_AgarisPegasusSurvivorsCamp]			
+			[ZoneConditions:ZoneCondition_ZoneAaW]	
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="REM-PegasusSurvivorsCamp">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour></Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+		
+	</SpawnGroup>	
+
+
+
+
+
+	</SpawnGroups>
+</Definitions>

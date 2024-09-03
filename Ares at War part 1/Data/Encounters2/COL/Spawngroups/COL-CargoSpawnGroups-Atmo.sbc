@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<SpawnGroups>
+	<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>CIVIL_SpawnGroup_AtmoCargo</SubtypeId>
+			</Id>
+			<Description>
+
+		[Modular Encounters SpawnGroup]
+		
+[SpawnConditionsProfiles:CIVIL-SpawnProfile-Agaris-Both-Zone]
+
+[SpawnConditionsProfiles:CIVIL-SpawnProfile-Agaris-Both-ZoneAHE]
+[SpawnConditionsProfiles:CIVIL-SpawnProfile-Agaris-Both-ZoneAHE-FriendlyBase]
+
+[SpawnConditionsProfiles:CIVIL-SpawnProfile-Agaris-Both-ZoneGC]
+[SpawnConditionsProfiles:CIVIL-SpawnProfile-Agaris-Both-ZoneGC-FriendlyBase]
+
+[SpawnConditionsProfiles:CIVIL-SpawnProfile-Agaris-Both-ZoneFAF]
+[SpawnConditionsProfiles:CIVIL-SpawnProfile-Agaris-Both-ZoneFAF-FriendlyBase]
+
+
+[SpawnConditionsProfiles:CIVIL-SpawnProfile-Agaris-Both-Outside]
+[SpawnConditionsProfiles:CIVIL-SpawnProfile-Agaris-Both-Outside-FriendlyBase]
+[SpawnConditionsProfiles:CIVIL-SpawnProfile-Agaris-Both-Outside-Sea]
+
+
+
+[SpawnConditionsProfiles:CIVIL-SpawnProfile-Thora4-Both-Zone]
+[SpawnConditionsProfiles:CIVIL-SpawnProfile-Thora4-Both-Outside]
+
+[SpawnConditionsProfiles:CIVIL-SpawnProfile-Thora4-Both-Outside-FriendlyBase]
+
+
+
+
+
+
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		
+		[UseSpawnGroupPrefabSpawningMode:true]
+		[PrefabSpawningMode:RandomSelectedIndexes]
+
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:0]
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:1]	
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:2]					
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:3]	
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:4]	
+
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:ExplorerNoun-CRandomNumberRandomNumber]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]	
+		</Description>
+			
+			
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+						
+		<Prefabs>			
+
+			<Prefab SubtypeId="CIVIL-B980 ">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>CIVIL_Cargo_Behavior</Behaviour>
+			</Prefab>
+			
+			<Prefab SubtypeId="CIVIL-BuddyMiner">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>CIVIL_Cargo_Behavior</Behaviour>
+			</Prefab>			
+
+			<Prefab SubtypeId="CIVIL-MiniHauler">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>CIVIL_Cargo_Behavior</Behaviour>
+			</Prefab>	
+			
+			<Prefab SubtypeId="CIVIL-TT15">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>CIVIL_Cargo_Behavior</Behaviour>
+			</Prefab>			
+
+			<Prefab SubtypeId="CIVIL-TT420">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>CIVIL_Cargo_Behavior</Behaviour>
+			</Prefab>	
+			
+		</Prefabs>	
+	</SpawnGroup>		
+		
+		
+		
+
+
+
+		
+		
+	</SpawnGroups>
+</Definitions>

@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_PrefabData_Fighter</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Prefab Data]
+      
+      [Prefabs:(SYN) SD-1]
+      [Prefabs:(SYN) SD-2]
+      [Prefabs:(SYN) SD-3]	  
+	  
+      [ManipulationProfiles:SYN-Manipulation-Fighter]     
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SYN_Manipulation_Fighter</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Manipulation]
+		
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:SD-RandomLetterRandomNumberRandomNumber]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+		
+		
+		[UseBlockReplacerProfile:true]
+        [IgnoreGlobalBlockReplacer:true]
+        [BlockReplacerProfileNames:MES-NpcThrusters-Hydro]
+
+        [ConfigureSpecialNpcThrusters:true]
+        [NpcHydroThrustPowerMultiply:0.0001]
+      </Description>
+
+    </EntityComponent>
+		
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_PrefabData_CargoTransport</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Prefab Data]
+      
+      [Prefabs:SYN-LargeCargoTransport-0]
+      [Prefabs:SYN-LargeCargoTransport-1]
+      [Prefabs:SYN-LargeCargoTransport-2]	  
+      [Prefabs:SYN-LargeCargoTransport-3]	  
+	  
+	  
+      [ManipulationProfiles:SYN-Manipulation-CargoTransport]     
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SYN_Manipulation_CargoTransport</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Manipulation]
+		
+		[UseBlockReplacerProfile:true]
+        [IgnoreGlobalBlockReplacer:true]
+        [BlockReplacerProfileNames:MES-NpcThrusters-Hydro]
+
+        [ConfigureSpecialNpcThrusters:true]
+        [NpcHydroThrustPowerMultiply:0.0001]		
+		
+		
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:CargoTransport-RandomLetterRandomNumberRandomNumber]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+
+      </Description>
+
+    </EntityComponent>		
+	
+	
+  </EntityComponents>
+</Definitions>

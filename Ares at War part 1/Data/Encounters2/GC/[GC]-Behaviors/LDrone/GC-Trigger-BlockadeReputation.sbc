@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!--
+[Triggers:GC-BlockadeLeader-Trigger-PlayerAgarisOuterOrbit]
+[Triggers:GC-BlockadeLeader-Trigger-PlayerAgarisOuterOrbit-ReputationLoss]
+
+[Triggers:GC-BlockadeLeader-Trigger-PlayerAgarisInnerOrbit]
+[Triggers:GC-BlockadeLeader-Trigger-PlayerAgarisInnerOrbit-ReputationLoss]
+
+[Triggers:GC-BlockadeLeader-Trigger-PlayerAgarisOrbit-ReputationLoss]
+-->
+
+<!-- PlayerAgarisOuterOrbit-->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_BlockadeLeader_Trigger_PlayerAgarisOuterOrbit</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UsePlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition-Position-Agaris-OuterOrbit]
+	[PlayerConditionIds:PlayerCondition-GCNeutral]
+	[TargetDistance:9000]
+	[UseTrigger:true]
+	[StartsReady:true]
+	
+	[MinCooldownMs:450000]
+	[MaxCooldownMs:600000]
+	[Conditions:FAC-Context-Condition-SettingNormal]
+
+	  [Actions:GC-BlockadeLeader-Action-PlayerAgarisOuterOrbit]	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_BlockadeLeader_Trigger_PlayerAgarisOuterOrbit_ReputationLoss</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UsePlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition-Position-Agaris-OuterOrbit]
+	[PlayerConditionIds:PlayerCondition-GCNeutral]
+	[TargetDistance:9000]
+	[UseTrigger:true]
+	[StartsReady:true]
+	
+	[MinCooldownMs:5000]
+	[MaxCooldownMs:5001]
+	[Conditions:FAC-Context-Condition-SettingNormal]
+	[Actions:GC-BlockadeLeader-Action-PlayerAgarisOuterOrbit-ReputationLoss]	  
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_BlockadeLeader_Action_PlayerAgarisOuterOrbit</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+      [UseChatBroadcast:true]
+      [ChatData:GC-BlockadeLeader-Chat-PlayerAgarisOuterOrbit]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_BlockadeLeader_Action_PlayerAgarisOuterOrbit_ReputationLoss</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+      
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:9000]
+	[ReputationPlayerConditionIds:PlayerCondition-Position-Agaris-OuterOrbit]
+	[ReputationPlayerConditionIds:PlayerCondition-GCNeutral]
+	[ReputationChangeFactions:GC]
+	[ReputationChangeAmount:-10]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+	
+      </Description>
+      
+    </EntityComponent>	
+
+
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_BlockadeLeader_Chat_PlayerAgarisOuterOrbit</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:GC Command]
+      [Color:Red]
+      
+      [ChatMessages:Martial Law is now in effect for Agaris. No one is allowed to enter the planet. Leave immediately! ]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+	  
+	[IgnoreAntennaRequirement:true]
+	[IgnoredAntennaRangeOverride:20000]
+	  
+	  
+      </Description>
+      
+    </EntityComponent>
+
+<!-- InnerOrbit -->
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_BlockadeLeader_Trigger_PlayerAgarisInnerOrbit</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UsePlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition-Position-Agaris-InnerOrbit]
+	[PlayerConditionIds:PlayerCondition-GCNeutral]
+	[TargetDistance:9000]
+	[UseTrigger:true]
+	[StartsReady:true]
+	
+	[MinCooldownMs:450000]
+	[MaxCooldownMs:600000]
+	[Conditions:FAC-Context-Condition-SettingNormal]
+
+	  [Actions:GC-BlockadeLeader-Action-PlayerAgarisInnerOrbit]	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_BlockadeLeader_Trigger_PlayerAgarisInnerOrbit_ReputationLoss</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UsePlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition-Position-Agaris-InnerOrbit]
+	[PlayerConditionIds:PlayerCondition-GCNeutral]
+	[TargetDistance:9000]
+	[UseTrigger:true]
+	[StartsReady:true]
+	
+	[MinCooldownMs:5000]
+	[MaxCooldownMs:5001]
+	[Conditions:FAC-Context-Condition-SettingNormal]
+	[Actions:GC-BlockadeLeader-Action-PlayerAgarisInnerOrbit-ReputationLoss]	  
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_BlockadeLeader_Action_PlayerAgarisInnerOrbit</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+      [UseChatBroadcast:true]
+      [ChatData:GC-BlockadeLeader-Chat-PlayerAgarisInnerOrbit]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_BlockadeLeader_Action_PlayerAgarisInnerOrbit_ReputationLoss</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+      
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:9000]	
+	[ReputationPlayerConditionIds:PlayerCondition-Position-Agaris-InnerOrbit]
+	[ReputationPlayerConditionIds:PlayerCondition-GCNeutral]
+	
+	[ReputationChangeFactions:GC]
+	[ReputationChangeAmount:-10]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+      </Description>
+      
+    </EntityComponent>	
+
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_BlockadeLeader_Chat_PlayerAgarisInnerOrbit</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:GC Command]
+      [Color:Red]
+      
+      [ChatMessages:Martial Law is now in effect for Agaris. No one is allowed to leave the planet. Return to the surface immediately! ]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+	  
+	[IgnoreAntennaRequirement:true]
+	[IgnoredAntennaRangeOverride:20000]
+	  
+	  
+      </Description>
+      
+    </EntityComponent>
+
+<!-- Orbit-->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_BlockadeLeader_Trigger_PlayerAgarisOrbit_ReputationLoss</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UsePlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition-Position-Agaris-CenterOrbit]
+	[PlayerConditionIds:PlayerCondition-GCNeutral]
+	[TargetDistance:9000]
+	[UseTrigger:true]
+	[StartsReady:true]
+	
+	[MinCooldownMs:5000]
+	[MaxCooldownMs:5001]
+	[Conditions:FAC-Context-Condition-SettingNormal]
+	[Actions:GC-BlockadeLeader-Action-PlayerAgarisOrbit-ReputationLoss]	  
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_BlockadeLeader_Action_PlayerAgarisOrbit_ReputationLoss</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:9000]	
+	[ReputationPlayerConditionIds:PlayerCondition-Position-Agaris-CenterOrbit]
+	[ReputationPlayerConditionIds:PlayerCondition-GCNeutral]
+	[ReputationChangeFactions:GC]
+	[ReputationChangeAmount:-3000]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+      </Description>
+      
+    </EntityComponent>	
+	
+
+	
+	
+  </EntityComponents>
+</Definitions>

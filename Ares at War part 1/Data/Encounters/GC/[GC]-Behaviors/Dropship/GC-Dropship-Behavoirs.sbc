@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_Dropship_Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Horsefly]
+
+	[AutopilotData:FAC-Dropship-Autopilot]
+	[SecondaryAutopilotData:FAC_Dropship_Autopilot_PreLanding]	
+	[TertiaryAutopilotData:FAC_Dropship_Autopilot_Landing]
+
+
+
+
+
+	[TargetData:AaW_Target_ShortRange]
+
+	[TriggerGroups:ContextTriggers]	
+	[TriggerGroups:GC_CommonTriggers]	
+  	[TriggerGroups:GC_Dropship_CommonTriggers]	
+  	[TriggerGroups:FAC_Dropship_CommonTriggers]
+	
+
+
+	[Triggers:GC_PointSystem_Trigger_Decrease1]
+
+      </Description>
+      
+    </EntityComponent>
+	
+	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_Dropship_Behavior_Retaliation</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Horsefly]
+
+	[AutopilotData:FAC-Dropship-Autopilot]
+	[SecondaryAutopilotData:FAC_Dropship_Autopilot_PreLanding]	
+	[TertiaryAutopilotData:FAC_Dropship_Autopilot_Landing]
+
+
+
+
+
+	[TargetData:AaW_Target_ShortRange]
+
+	[TriggerGroups:ContextTriggers]	
+  	[TriggerGroups:RetaliationTriggers]
+
+	
+	
+	
+	[TriggerGroups:GC_CommonTriggers]	
+  	[TriggerGroups:GC_Dropship_CommonTriggers]	
+  	[TriggerGroups:FAC_Dropship_CommonTriggers]
+	
+
+
+	[Triggers:GC_PointSystem_Trigger_Decrease1]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+	
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>Nyx</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:CIVILIAN]		
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:10000]
+			[IgnoreCombatPhase:true]
+			[ForceExactPositionAndOrientation:true]
+
+			[IgnoreCleanupRules:true]
+
+			[GridsAreDestructable:false]
+
+			[StaticEncounterCoords:{X:-628437.84816184 Y:-1095745.2316062 Z:-3508361.90560372}]
+			[StaticEncounterForward:{X:-0.626871420279157 Y:-0.0866885650595697 Z:-0.774285034806373}]
+			[StaticEncounterUp:{X:0.766986026076872 Y:0.106064843034452 Z:-0.632837012883163}]
+
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Thora 4]
+			[StaticEncounterPlanetDirection:{X:0.766985117852218 Y:0.108670028331084 Z:-0.632395962934411}]
+			[StaticEncounterPlanetAltitude:40.5076341087624]
+
+			[ShipyardSetup:true]
+			[ShipyardConsoleBlockNames:{Any}]
+			[ShipyardProfileNames:FAC-Shipyard-Garage]
+		
+			[ReplenishSystems:true]
+			
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-DoNotDelete)]		
+			[RandomGridNamePattern:Nyx Platform]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]	
+			
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="CIVILIAN-Nyx">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>CIVILIAN_Nyx_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+		</SpawnGroup>
+	</SpawnGroups>
+	
+  <EntityComponents>
+	
+ 
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Nyx_Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+ 
+	[TriggerGroups:COL_Static_CommonTriggers]	 
+	[TriggerGroups:FAC_Static_CommonTriggers]	
+	[TriggerGroups:FAC_Capturable_CommonTriggers]
+
+	
+	[Triggers:COL_Carcosa_Triggers_EnableGreetings]
+	[Triggers:COL_Carcosa_Triggers_DisableGreetings]
+	[Triggers:COL_Carcosa_Triggers_Greeting_FAF]
+	[Triggers:COL_Carcosa_Triggers_PlayerFar]
+
+
+[Triggers:COL_Trigger_Static_PopulateStores_Carcosa]
+[Triggers:COL_Trigger_Static_PopulateStores_CarcosaIO]
+	
+
+	
+      </Description>
+      
+    </EntityComponent>	
+
+
+	</EntityComponents>	
+</Definitions>

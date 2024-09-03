@@ -1,0 +1,314 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+<!-- 
+
+[Triggers:FAC-Context-Trigger-HasNoTarget]
+
+[Triggers:FAC-Context-Trigger-Target]
+
+
+
+-->
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_HasTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	
+	[TrueBooleans:HasTarget]
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_NoTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[UseFailCondition:true]
+	
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:NoTarget]
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_TargetLight</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:HasTarget]
+
+	[CheckThreatScore:true]
+	[CheckThreatScoreMinimum:50]
+	[CheckThreatScoreMaximum:500]
+	{CheckThreatScoreIncludeOtherNpcOwners:true]	
+	[CheckThreatScoreRadius:3000]
+	[CheckThreatScoreFromTargetPosition:true]
+	[CheckThreatScoreGridConfiguration:All]
+	
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_TargetMedium</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:HasTarget]
+
+	[CheckThreatScore:true]
+	[CheckThreatScoreMinimum:501]
+	[CheckThreatScoreMaximum:1000]
+	{CheckThreatScoreIncludeOtherNpcOwners:true]	
+	[CheckThreatScoreRadius:3000]
+	[CheckThreatScoreFromTargetPosition:true]
+	[CheckThreatScoreGridConfiguration:All]
+	
+      </Description>
+    </EntityComponent>	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_TargetMediumOrGreater</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:HasTarget]
+
+	[CompareThreatScore:true]
+	[CompareThreatScoreValue:501]
+	
+	[CompareThreatScoreMode:GreaterOrEqual]
+	[CompareThreatScoreRadius:3000]
+	[CompareThreatScoreIncludeOtherNpcOwners:true]
+	[CompareThreatScoreGridConfiguration:All]
+	[CompareThreatScoreFromTargetPosition:true]	
+      </Description>
+    </EntityComponent>	
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_TargetHard</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:HasTarget]
+
+	[CheckThreatScore:true]
+	[CheckThreatScoreMinimum:1001]
+	[CheckThreatScoreMaximum:1500]
+	{CheckThreatScoreIncludeOtherNpcOwners:true]	
+	[CheckThreatScoreRadius:3000]
+	[CheckThreatScoreFromTargetPosition:true]
+	[CheckThreatScoreGridConfiguration:All]
+	
+      </Description>
+    </EntityComponent>	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_TargetVeryHard</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:HasTarget]
+
+	[CheckThreatScore:true]
+	[CheckThreatScoreMinimum:1501]
+	[CheckThreatScoreMaximum:99999999999999]
+	{CheckThreatScoreIncludeOtherNpcOwners:true]	
+	[CheckThreatScoreRadius:3000]
+	[CheckThreatScoreFromTargetPosition:true]
+	[CheckThreatScoreGridConfiguration:All]
+	
+      </Description>
+    </EntityComponent>	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Trigger_HasTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:HasTarget]
+	[UseTrigger:true]
+	[StartsReady:false]
+	[MinCooldownMs:10000]
+	[MaxCooldownMs:10001]
+	[MaxActions:-1]
+
+	[Actions:FAC-Context-Action-HasTarget]
+
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Action_HasTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[SetBooleansTrue:HasTarget]
+	[SetBooleansFalse:NoTarget]
+		</Description>
+      
+    </EntityComponent>
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Trigger_HasNoTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:HasTarget]
+	[UseTrigger:true]
+	[StartsReady:false]
+	[MinCooldownMs:10000]
+	[MaxCooldownMs:10001]
+	[MaxActions:-1]
+	
+	
+[UseFailCondition:true]
+	[Actions:FAC-Context-Action-HasNoTarget]
+
+      </Description>
+    </EntityComponent>	
+	
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Action_HasNoTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[SetBooleansTrue:NoTarget]
+
+	[SetBooleansFalse:HasTarget]
+
+		</Description>
+      
+    </EntityComponent>	
+
+
+
+  </EntityComponents>
+</Definitions>

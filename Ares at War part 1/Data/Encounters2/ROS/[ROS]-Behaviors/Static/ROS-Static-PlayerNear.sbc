@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+   <!--
+[Triggers:ROS-Station-Triggers-PlayerNear12000-Unwanted]
+[Triggers:ROS-Station-Triggers-PlayerNear12000-Neutral-ReputationLoss]
+   -->
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>ROS_Station_Triggers_PlayerNear12000_Unwanted</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:12000]
+	[MinCooldownMs:450000]
+	[MaxCooldownMs:600000]
+	[Conditions:FAC-Context-Condition-NormalNeutral]
+
+
+	  [Actions:ROS-Station-Action-PlayerNear12000-Neutral]	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>ROS_Station_Triggers_PlayerNear12000_Neutral_ReputationLoss</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:12000]
+	[MinCooldownMs:5000]
+	[MaxCooldownMs:5001]
+	[Conditions:FAC-Context-Condition-NormalNeutral]
+	[Actions:ROS-Station-Action-PlayerNear12000-Neutral-ReputationLoss]	  
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>ROS_Station_Action_PlayerNear12000_Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+      [UseChatBroadcast:true]
+      [ChatData:ROS-Station-Chat-PlayerNear12000-Neutral]
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>ROS_Station_Action_PlayerNear12000_Neutral_ReputationLoss</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+      
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:12000]
+	[ReputationChangeFactions:{Self}]
+	[ReputationChangeAmount:-10]
+	
+	[ReputationChangeFactions:GC]
+	[ReputationChangeAmount:-10]
+	
+	
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>ROS_Station_Chat_PlayerNear12000_Neutral</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:White]
+      
+      [ChatMessages:Attention {PlayerName}! This is a restricted area! Leave now!]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+      [ChatMessages:Attention {PlayerName}! Your entering restricted Airspace! Leave immediately!]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

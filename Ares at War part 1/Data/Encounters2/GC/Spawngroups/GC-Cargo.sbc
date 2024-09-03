@@ -1,0 +1,342 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<SpawnGroups>
+
+	<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>GC_SpawnGroup_Cargo_Escort</SubtypeId>
+			</Id>
+			<Description>
+
+		[Modular Encounters SpawnGroup]
+		
+		[SpawnConditionsProfiles:GC-SpawnProfile-AgarisWar-Both-Zone]
+		[SpawnConditionsProfiles:GC-SpawnProfile-AgarisWar-Both-Outside]
+		
+		[SpawnConditionsProfiles:GC-SpawnProfile-AgarisPeace-Both-Outside]	
+		[SpawnConditionsProfiles:GC-SpawnProfile-AgarisPeace-Both-Outside-FriendlyBase]
+		
+	
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		
+		[UseSpawnGroupPrefabSpawningMode:true]
+		[PrefabSpawningMode:RandomSelectedIndexes]
+
+        [PrefabIndexGroupNames:Escort 1]
+        [PrefabIndexGroupValues:0]
+
+        [PrefabIndexGroupNames:Escort 2]
+        [PrefabIndexGroupValues:1]
+	
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:2]
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:3]	
+				
+
+		[UseContainerTypeAssignment:true]
+		[ContainerTypeAssignBlockName:GC-CargoA]
+		[ContainerTypeAssignSubtypeId:CargoIngot]
+		[ContainerTypeAssignBlockName:GC-CargoB]
+		[ContainerTypeAssignSubtypeId:CargoComponent]		
+		[ContainerTypeAssignBlockName:GC-CargoC]
+		[ContainerTypeAssignSubtypeId:CargoToolsConsumablesAmmo]		
+		[SpawnRandomCargo:true]
+		</Description>
+			
+			
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+						
+		<Prefabs>			
+		<Prefab SubtypeId="GC-Fighter-MK3">
+			<Position>
+				<X>-100.0</X>
+				<Y>0.0</Y>
+				<Z>0.0</Z>
+			</Position>
+			<Speed>25</Speed>
+			<Behaviour>GC_DefensiveEscortDrone_Behavior1</Behaviour>
+		</Prefab>			
+
+	
+			<Prefab SubtypeId="GC-Fighter-MK3">
+				<Position>
+					<X>100.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>GC_DefensiveEscortDrone_Behavior1</Behaviour>
+			</Prefab>	
+
+
+
+			<Prefab SubtypeId="GC-MediumCargoTransport">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>GC_Cargo_Behavior</Behaviour>
+			</Prefab>
+
+			<Prefab SubtypeId="GC-SmallCargoTransport">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>GC_Cargo_Behavior</Behaviour>
+			</Prefab>
+			
+		</Prefabs>	
+	</SpawnGroup>
+
+	
+	
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>GC_SpawnGroup_Cargo_NoEscort</SubtypeId>
+			</Id>
+			<Description>
+
+		[Modular Encounters SpawnGroup]
+		
+		[SpawnConditionsProfiles:GC-SpawnProfile-AgarisPeace-Both-Zone]
+
+
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		
+		[UseSpawnGroupPrefabSpawningMode:true]
+		[PrefabSpawningMode:RandomSelectedIndexes]
+
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:0]
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:1]	
+				
+
+		[UseContainerTypeAssignment:true]
+		[ContainerTypeAssignBlockName:GC-CargoA]
+		[ContainerTypeAssignSubtypeId:CargoIngot]
+		[ContainerTypeAssignBlockName:GC-CargoB]
+		[ContainerTypeAssignSubtypeId:CargoComponent]		
+		[ContainerTypeAssignBlockName:GC-CargoC]
+		[ContainerTypeAssignSubtypeId:CargoToolsConsumablesAmmo]		
+		[SpawnRandomCargo:true]
+		</Description>
+			
+			
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+						
+		<Prefabs>			
+
+			<Prefab SubtypeId="GC-MediumCargoTransport">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>GC_Cargo_Behavior</Behaviour>
+			</Prefab>
+
+			<Prefab SubtypeId="GC-SmallCargoTransport">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>GC_Cargo_Behavior</Behaviour>
+			</Prefab>
+			
+		</Prefabs>	
+	</SpawnGroup>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>GC_SpawnGroup_SpaceCargo</SubtypeId>
+			</Id>
+			<Description>
+
+		[Modular Encounters SpawnGroup]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+	
+	
+		[UseSpawnGroupPrefabSpawningMode:true]
+		[PrefabSpawningMode:RandomSelectedIndexes]
+
+		
+        [PrefabIndexGroupNames:First]
+        [PrefabIndexGroupValues:0]
+        [PrefabIndexGroupNames:First]
+        [PrefabIndexGroupValues:1]
+        [PrefabIndexGroupNames:First]
+        [PrefabIndexGroupValues:2]
+		
+        [PrefabIndexGroupNames:Second]
+        [PrefabIndexGroupValues:0]
+        [PrefabIndexGroupNames:Second]
+        [PrefabIndexGroupValues:1]
+        [PrefabIndexGroupNames:Second]
+        [PrefabIndexGroupValues:3]
+
+        [PrefabIndexGroupNames:Third]
+        [PrefabIndexGroupValues:0]
+        [PrefabIndexGroupNames:Third]
+        [PrefabIndexGroupValues:1]
+        [PrefabIndexGroupNames:Third]
+        [PrefabIndexGroupValues:4]
+		
+		
+		[SpawnConditionsProfiles:GC-SpawnProfile-GCBylenRing-Both-Zone]	
+		[SpawnConditionsProfiles:GC-SpawnProfile-GCBylenRing-Both-Outside-Str2]
+		[SpawnConditionsProfiles:GC-SpawnProfile-GCBylenRing-Both-Outside-Str3]
+		[SpawnConditionsProfiles:GC-SpawnProfile-GCBylenRing-Both-Outside-Str4]
+
+
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:G-RandomNumberRandomNumber Cargo Transport]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]		
+			</Description>
+			
+			
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+			<Prefab SubtypeId="GC-Fighter-MK3">
+				<Position>
+					<X>-100.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>GC_DefensiveEscortDrone_Behavior</Behaviour>
+			</Prefab>					
+		
+			<Prefab SubtypeId="GC-Fighter-MK3">
+				<Position>
+					<X>100.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>GC_DefensiveEscortDrone_Behavior</Behaviour>
+			</Prefab>					
+
+		
+		
+					<Prefab SubtypeId="GC-SpaceCargo1">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>GC_Cargo_Behavior</Behaviour>
+			</Prefab>
+			
+		
+					<Prefab SubtypeId="GC-SpaceCargo2">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>GC_Cargo_Behavior</Behaviour>
+			</Prefab>
+			
+			<Prefab SubtypeId="GC-HydroVessel1">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>GC_Cargo_Behavior</Behaviour>
+			</Prefab>
+				
+				
+				
+			</Prefabs>			
+		</SpawnGroup>		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+		
+		
+	</SpawnGroups>
+</Definitions>

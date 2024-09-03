@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+<!--
+Bool ITCAgarisDefeated
+
+[SpawnConditionsProfiles:ITC-SpawnProfile-Thora4-Both-Zone]
+[SpawnConditionsProfiles:ITC-SpawnProfile-Thora4-Both-Outside]
+
+[SpawnConditionsProfiles:ITC-SpawnProfile-Thora4-Both-Outside-FriendlyBase]
+
+
+
+
+-->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>ITC_SpawnProfile_Thora4_Both_Zone</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:ITC]
+
+
+	
+	[ZoneConditions:ZoneCondition_ITC]			
+	[PlanetWhitelist:Planet Thora 4]
+	[SkipAirDensityCheck:true]
+	[AtmosphericCargoShipChance:100]		
+	
+	[IgnoreCombatPhase:true]
+	
+	[UseSpawnGroupPrefabSpawningMode:true]
+	
+      </Description>
+
+    </EntityComponent>
+
+ 
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>ITC_SpawnProfile_Thora4_Both_Outside</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:ITC]
+	
+	[PlanetWhitelist:Planet Thora 4]	
+	[SkipAirDensityCheck:true]
+	[AtmosphericCargoShipChance:10]	
+	[IgnoreCombatPhase:true]
+	
+	
+		
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:true]	
+
+			[CustomApiConditions:AgarisLand]
+	
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>ITC_SpawnProfile_Thora4_Both_Outside_FriendlyBase</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:ITC]
+	[FalseSandboxVariables:ITCAgarisDefeated]
+
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:ITCAgarisMode]
+	[CustomSandboxCountersTargets:1]
+	[SandboxCounterCompareTypes:LessOrEqual]
+	
+	
+	[PlanetWhitelist:Planet Thora 4]	
+	[SkipAirDensityCheck:true]
+	[AtmosphericCargoShipChance:10]	
+	[IgnoreCombatPhase:true]
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMinimum:300]	
+	[ThreatIncludeOtherNpcOwners:true]
+	
+	[UsePlayerFactionReputation:true]
+	[PlayerReputationCheckRadius:4000]
+	[MinimumReputation:-499]
+	[MaximumReputation:1500]
+	
+	
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,301 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!-- 
+[Triggers:AnF-Harbinger-Trigger-DifficultyEasy]
+[Triggers:AnF-Harbinger-Trigger-DifficultyMedium]
+[Triggers:AnF-Harbinger-Trigger-DifficultyHard]
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Harbinger_Trigger_DifficultyEasy</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:PlayerNear]
+		[TargetDistance:15000]
+		
+		[Conditions:AnF-Harbinger-Condition-DifficultyEasy]
+        [StartsReady:true]
+		
+		[MinCooldownMs:240000]
+		[MaxCooldownMs:240001]	
+
+        [MaxActions:-1]
+
+        [Actions:AnF-Harbinger-Action-DifficultyEasy]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Harbinger_Condition_DifficultyEasy</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+      
+      [UseConditions:true]
+
+		[CheckThreatScore:true]
+		[CheckThreatScoreRadius:500000]
+		[CheckThreatScoreMinimum:0]
+		[CheckThreatScoreMaximum:800]
+
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Harbinger_Action_DifficultyEasy</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:AnF-Harbinger-Chat-DifficultyEasy]
+
+      </Description>
+
+    </EntityComponent>
+
+        <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Harbinger_Chat_DifficultyEasy</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+        [BroadcastRandomly:false]
+        [Author:PURGE]
+        [Color:Red]
+
+[IgnoreAntennaRequirement:true]
+[IgnoredAntennaRangeOverride:200000]
+
+
+        [ChatMessages:Easy Mode]
+        [ChatAudio:]
+        [ChatVolumeMultiplier:1]
+        [BroadcastChatType:Chat]
+
+      </Description>
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Harbinger_Trigger_DifficultyMedium</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:PlayerNear]
+		[TargetDistance:15000]
+		
+		[Conditions:AnF-Harbinger-Condition-DifficultyMedium]
+        [StartsReady:true]
+		
+		[MinCooldownMs:240000]
+		[MaxCooldownMs:240001]	
+
+        [MaxActions:-1]
+
+        [Actions:AnF-Harbinger-Action-DifficultyMedium]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Harbinger_Condition_DifficultyMedium</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+      
+      [UseConditions:true]
+
+		[CheckThreatScore:true]
+		[CheckThreatScoreRadius:500000]
+		[CheckThreatScoreMinimum:801]
+		[CheckThreatScoreMaximum:1600]
+
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Harbinger_Action_DifficultyMedium</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:AnF-Harbinger-Chat-DifficultyMedium]
+
+      </Description>
+
+    </EntityComponent>
+
+        <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Harbinger_Chat_DifficultyMedium</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+        [BroadcastRandomly:false]
+        [Author:PURGE]
+        [Color:Red]
+
+[IgnoreAntennaRequirement:true]
+[IgnoredAntennaRangeOverride:200000]
+
+
+        [ChatMessages:Medium Mode]
+        [ChatAudio:]
+        [ChatVolumeMultiplier:1]
+        [BroadcastChatType:Chat]
+
+      </Description>
+    </EntityComponent>		
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Harbinger_Trigger_DifficultyHard</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:PlayerNear]
+		[TargetDistance:15000]
+		
+		[Conditions:AnF-Harbinger-Condition-DifficultyHard]
+        [StartsReady:true]
+		
+		[MinCooldownMs:240000]
+		[MaxCooldownMs:240001]	
+
+        [MaxActions:-1]
+
+        [Actions:AnF-Harbinger-Action-DifficultyHard]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Harbinger_Condition_DifficultyHard</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+      
+      [UseConditions:true]
+
+		[CheckThreatScore:true]
+		[CheckThreatScoreRadius:500000]
+		[CheckThreatScoreMinimum:1601]
+		[CheckThreatScoreMaximum:900000000]
+
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Harbinger_Action_DifficultyHard</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:AnF-Harbinger-Chat-DifficultyHard]
+
+      </Description>
+
+    </EntityComponent>
+
+        <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Harbinger_Chat_DifficultyHard</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+        [BroadcastRandomly:false]
+        [Author:PURGE]
+        [Color:Red]
+
+[IgnoreAntennaRequirement:true]
+[IgnoredAntennaRangeOverride:200000]
+
+
+
+
+
+
+        [ChatMessages:Hard Mode]
+        [ChatAudio:]
+        [ChatVolumeMultiplier:1]
+        [BroadcastChatType:Chat]
+
+      </Description>
+    </EntityComponent>		
+	
+-->	
+		
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

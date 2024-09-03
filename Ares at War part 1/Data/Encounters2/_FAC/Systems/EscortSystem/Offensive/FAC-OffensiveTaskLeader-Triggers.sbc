@@ -1,0 +1,658 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+  <!-- RequestEscortSlot
+  
+  
+	[Triggers:FAC-OffensiveTaskLeader-Trigger-ProcessEscortRequest]		
+	[Triggers:FAC-OffensiveTaskLeader-Trigger-TargetNear1500]	
+	
+	[Triggers:FAC-OffensiveTaskLeader-Trigger-HasTarget]	
+	[Triggers:FAC-OffensiveTaskLeader-Trigger-NoTarget]	
+	[Triggers:FAC-OffensiveTaskLeader-Trigger-SwitchtoCargo]
+
+
+
+
+  -->
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC_OffensiveTaskLeader_Trigger_ProcessEscortRequest</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:OffensiveEscortDroneRequest]
+
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:FAC-OffensiveTaskLeader-Action-ProcessEscortRequest]
+
+      </Description>
+
+    </EntityComponent>
+
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC_OffensiveTaskLeader_Action_ProcessEscortRequest</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+      [AssignEscortFromCommand:true]
+      [UseChatBroadcast:true]
+      [ChatData:FAC-OffensiveTaskLeader-Chat-Escort]		
+
+      </Description>
+
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Chat_Escort</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:false]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Green]
+      
+      [ChatMessages:This is {AntennaName}. Accepted escort request]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>	
+
+<!--==========================
+
+
+
+
+===========================-->	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Trigger_TargetNear1500</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:TargetNear]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	  [TargetDistance:1500]
+	  [MinCooldownMs:450000]
+	  [MaxCooldownMs:600000]
+
+	
+	  [Actions:FAC-OffensiveTaskLeader-Action-TargetNear1500]	
+	  
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Action_TargetNear1500</SubtypeId>
+      </Id>
+      <Description>
+
+    [RivalAI Action]
+  
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:FAC-OffensiveTaskLeader-Command-LooseFighters]
+
+	[UseChatBroadcast:true]
+	[ChatData:FAC-OffensiveTaskLeader-Chat-TargetNear1500]
+
+
+
+
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Chat_TargetNear1500</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:false]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Green]
+      
+      [ChatMessages:Fighters Engage!]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+<!--==========================
+
+
+
+
+===========================-->		
+	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Trigger_HasTarget</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:HasTarget]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+
+	  [MaxActions:-1]
+	  [Actions:FAC-OffensiveTaskLeader-Action-HasTarget]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Action_HasTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	[ChangeBehaviorSubclass:true]  
+	[NewBehaviorSubclass:Horsefly]
+
+	[ChangeAutopilotProfile:true]
+	[AutopilotProfile:Secondary]	
+
+	[UseChatBroadcast:true]
+	[ChatData:FAC-OffensiveTaskLeader-Chat-HasTarget]
+	
+	[EnableTriggers:true]
+	[EnableTriggerNames:FAC-OffensiveTaskLeader-Trigger-NoTarget]
+	
+	[DisableTriggers:true]
+	[DisableTriggerNames:FAC-OffensiveTaskLeader-Trigger-HasTarget]	
+	
+	[SwitchToReceivedTarget:true]
+
+	
+	[SetBooleansFalse:OffensiveTaskLeaderHasnoTarget]	
+
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:FAC-OffensiveTaskLeader-Command-HasTarget]
+		
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Chat_HasTarget</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:false]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Red]
+      
+      [ChatMessages:I have a target, switching behavoir]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC_OffensiveTaskLeader_Command_HasTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Command]
+
+	[CommandCode:TaskLeaderisNotReady]
+	[MatchSenderReceiverOwners:true]
+	[IgnoreAntennaRequirement:true]
+	[IgnoreReceiverAntennaRequirement:true]
+	[Radius:5000]
+
+      </Description>
+
+    </EntityComponent>		
+	
+<!--==========================
+
+
+
+
+===========================-->		
+	
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Trigger_NoTarget</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:NoTarget]
+	  [UseTrigger:false]
+	  [StartsReady:true]
+	  [MaxActions:-1]
+	  [Actions:FAC-OffensiveTaskLeader-Action-NoTarget]
+	  
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Action_NoTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	[SetBooleansTrue:OffensiveTaskLeaderHasnoTarget]
+
+	[DisableTriggers:true]
+	[DisableTriggerNames:FAC-OffensiveTaskLeader-Trigger-NoTarget]
+
+
+	[EnableTriggers:true]
+	[EnableTriggerNames:FAC-OffensiveTaskLeader-Trigger-SwitchtoCargo]
+	
+	[ResetCooldownTimeOfTriggers:true]
+	[ResetTriggerCooldownNames:FAC-OffensiveTaskLeader-Trigger-SwitchtoCargo]	
+	
+	
+	[EnableTriggers:true]
+	[EnableTriggerNames:FAC-OffensiveTaskLeader-Trigger-HasTarget]
+	[DisableTriggers:true]
+	[DisableTriggerNames:FAC-OffensiveTaskLeader-Trigger-NoTarget]		
+
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+
+<!--==========================
+
+
+
+
+===========================-->		
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Trigger_SwitchtoCargo</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Timer]
+	[UseTrigger:false]
+	[StartsReady:false]
+	[Conditions:FAC-OffensiveTaskLeader-Condition-NoTarget]
+	  
+	[MinCooldownMs:6000]
+	[MaxCooldownMs:9000]
+	  
+	[Actions:FAC-OffensiveTaskLeader-Action-SwitchtoCargo]
+	  
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Condition_NoTarget</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Condition]
+      
+	[UseConditions:true]
+	[MatchAnyCondition:true]
+	[CheckTrueBooleans:true]
+	[TrueBooleans:OffensiveTaskLeaderHasnoTarget]
+	  
+	  
+	  
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Action_SwitchtoCargo</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[DisableTriggers:true]
+	[DisableTriggerNames:FAC-OffensiveTaskLeader-Trigger-SwitchtoCargo]
+
+	[ChangeBehaviorSubclass:true]  
+	[NewBehaviorSubclass:CargoShip]
+
+	[ChangeAutopilotProfile:true]
+	[AutopilotProfile:Primary]	
+
+	[UseChatBroadcast:true]
+	[ChatData:FAC-OffensiveTaskLeader-Chat-SwitchtoCargo]
+
+	[BroadcastCommandProfiles:true]
+    [CommandProfileIds:FAC-OffensiveTaskLeader-Command-SwitchtoCargo]
+		
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC_OffensiveTaskLeader_Command_SwitchtoCargo</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Command]
+
+	[CommandCode:TaskLeaderisReady]
+	[MatchSenderReceiverOwners:true]
+	[IgnoreAntennaRequirement:true]
+	[IgnoreReceiverAntennaRequirement:true]
+	[Radius:5000]
+
+      </Description>
+
+    </EntityComponent>
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Chat_SwitchtoCargo</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:false]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Red]
+      
+      [ChatMessages:No Targets, switching to cargoship]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>	
+	
+<!-- Hunter-->
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Trigger_NoTarget_Hunter</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:NoTarget]
+	  [UseTrigger:false]
+	  [StartsReady:true]
+	  [MaxActions:-1]
+	  [Actions:FAC-OffensiveTaskLeader-Action-NoTarget-Hunter]
+	  
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Action_NoTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	[SetBooleansTrue:OffensiveTaskLeaderHasnoTarget]
+
+	[DisableTriggers:true]
+	[DisableTriggerNames:FAC-OffensiveTaskLeader-Trigger-NoTarget-Hunter]
+
+
+	[EnableTriggers:true]
+	[EnableTriggerNames:FAC-OffensiveTaskLeader-Trigger-SwitchtoCargo-Hunter]
+	
+	[ResetCooldownTimeOfTriggers:true]
+	[ResetTriggerCooldownNames:FAC-OffensiveTaskLeader-Trigger-SwitchtoCargo-Hunter]	
+	
+	
+	[EnableTriggers:true]
+	[EnableTriggerNames:FAC-OffensiveTaskLeader-Trigger-HasTarget-Hunter]
+	[DisableTriggers:true]
+	[DisableTriggerNames:FAC-OffensiveTaskLeader-Trigger-NoTarget-Hunter]		
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Trigger_HasTarget_Hunter</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:HasTarget]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+
+	  [MaxActions:-1]
+	  [Actions:FAC-OffensiveTaskLeader-Action-HasTarget-Hunter]
+	  
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Action_HasTarget_Hunter</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	[ChangeBehaviorSubclass:true]  
+	[NewBehaviorSubclass:Hunter]
+
+	[ChangeAutopilotProfile:true]
+	[AutopilotProfile:Secondary]	
+	
+	
+	[UseChatBroadcast:true]
+	[ChatData:FAC-OffensiveTaskLeader-Chat-HasTarget]
+	
+	[EnableTriggers:true]
+	[EnableTriggerNames:FAC-OffensiveTaskLeader-Trigger-NoTarget-Hunter]
+	
+	[DisableTriggers:true]
+	[DisableTriggerNames:FAC-OffensiveTaskLeader-Trigger-HasTarget-Hunter]	
+	
+	[SwitchToReceivedTarget:true]
+
+	
+	[SetBooleansFalse:OffensiveTaskLeaderHasnoTarget]	
+
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:FAC-OffensiveTaskLeader-Command-HasTarget]
+		
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Trigger_SwitchtoCargo_Hunter</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Timer]
+	[UseTrigger:false]
+	[StartsReady:false]
+	[Conditions:FAC-OffensiveTaskLeader-Condition-NoTarget]
+	  
+	[MinCooldownMs:6000]
+	[MaxCooldownMs:9000]
+	  
+	[Actions:FAC-OffensiveTaskLeader-Action-SwitchtoCargo-Hunter]
+	  
+      </Description>
+      
+    </EntityComponent>
+	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_OffensiveTaskLeader_Action_SwitchtoCargo_Hunter</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[DisableTriggers:true]
+	[DisableTriggerNames:FAC-OffensiveTaskLeader-Trigger-SwitchtoCargo-Hunter]
+
+	[ChangeBehaviorSubclass:true]  
+	[NewBehaviorSubclass:Hunter]
+
+	[ChangeAutopilotProfile:true]
+	[AutopilotProfile:Primary]	
+
+	[UseChatBroadcast:true]
+	[ChatData:FAC-OffensiveTaskLeader-Chat-SwitchtoCargo]
+
+	[BroadcastCommandProfiles:true]
+    [CommandProfileIds:FAC-OffensiveTaskLeader-Command-SwitchtoCargo]
+		
+      </Description>
+      
+    </EntityComponent>
+
+
+
+	
+	
+  </EntityComponents>
+</Definitions>

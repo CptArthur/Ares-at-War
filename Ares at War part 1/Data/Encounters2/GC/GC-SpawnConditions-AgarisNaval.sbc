@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+<!--
+0: Peace
+1: Insurgents
+2: AgarisNaval 
+3: NotYetLost
+4: No surrender
+Bool GCAgarisDefeated
+
+
+
+[SpawnConditionsProfiles:GC-SpawnProfile-AgarisNaval-Both-Zone]
+
+
+
+[SpawnConditionsProfiles:GC-SpawnProfile-AgarisNaval-Both-Outside]
+
+
+[SpawnConditionsProfiles:GC-SpawnProfile-AgarisNaval-Combat]
+
+
+
+
+
+		[CustomApiConditions:AgarisDeepOcean]
+		[CustomApiConditions:AgarisDeepOcean]
+		
+-->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC_SpawnProfile_AgarisNaval_Both_Zone</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[PlanetaryInstallation:true]
+	[InstallationSpawnsOnWaterSurface:true]
+	[InstallationSpawnsOnDryLand:false]
+
+	[FactionOwner:GC]
+	[FalseSandboxVariables:GCAgarisDefeated]
+	
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:GCAgarisMode]
+	[CustomSandboxCountersTargets:1]
+	[SandboxCounterCompareTypes:LessOrEqual]
+	
+	
+	[ZoneConditions:ZoneCondition_GC]			
+	[PlanetWhitelist:Planet Agaris]
+	[SkipAirDensityCheck:true]
+	[AtmosphericCargoShipChance:100]		
+			[CustomApiConditions:AgarisDeepOcean]
+	[IgnoreCombatPhase:true]
+	
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC_SpawnProfile_AgarisNaval_Both_Outside</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[PlanetaryInstallation:true]
+	[InstallationSpawnsOnWaterSurface:true]
+	[InstallationSpawnsOnDryLand:false]
+
+	[FactionOwner:GC]
+	[FalseSandboxVariables:GCAgarisDefeated]
+
+	
+	
+	[PlanetWhitelist:Planet Agaris]	
+	[SkipAirDensityCheck:true]
+	[IgnoreCombatPhase:true]
+	
+	
+	[CustomApiConditions:AgarisDeepOcean]	
+	
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>
+
+		
+		
+	<!-- Outside Combat -->	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC_SpawnProfile_AgarisNaval_Combat_Outside</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[PlanetaryInstallation:true]
+	[InstallationSpawnsOnWaterSurface:true]
+	[InstallationSpawnsOnDryLand:false]
+
+	[FactionOwner:GC]
+	[FalseSandboxVariables:GCAgarisDefeated]
+
+	[CheckCustomSandboxCounters:true]
+	[CustomSandboxCounters:GCAgarisMode]
+	[CustomSandboxCountersTargets:1]
+	[SandboxCounterCompareTypes:LessOrEqual]
+	
+	
+	[PlanetWhitelist:Planet Agaris]	
+	[SkipAirDensityCheck:true]
+
+	[UseCombatPhase:true]
+
+
+
+
+		[CustomApiConditions:AgarisDeepOcean]
+		
+		
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>
+
+
+
+    
+  </EntityComponents>
+</Definitions>

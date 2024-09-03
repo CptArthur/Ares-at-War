@@ -1,0 +1,73 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--ScreamBroadcast-->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Trigger_HasTarget</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:HasTarget]
+        [MinCooldownMs:60000]
+        [MaxCooldownMs:180000]
+        [StartsReady:true]
+        [MaxActions:1]
+        [Actions:AnF-Action-HasTarget]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Action_HasTarget</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [Chance:50]
+        [UseChatBroadcast:true]
+        [ChatData:AnF-Chat-HasTarget]
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+        <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Chat_HasTarget</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+        [BroadcastRandomly:false]
+        [Author:AnF]
+        [Color:Red]
+
+        [ChatMessages:9_()TARGET_#%^()ACQUIRED]
+        [ChatAudio:AnF-Target]
+        [ChatVolumeMultiplier:1]
+        [BroadcastChatType:Both]
+
+      </Description>
+    </EntityComponent>
+
+
+  </EntityComponents>
+</Definitions>

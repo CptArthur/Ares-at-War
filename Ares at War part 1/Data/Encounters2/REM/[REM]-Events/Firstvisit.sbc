@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!--
+
+	  
+	  [CheckCustomCounters:true]
+	  [CustomCounters:FAFMode]
+	  [CustomCountersTargets:0]
+	  [CounterCompareTypes:Equal]	 
+-->
+	
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>REM_Event_PlayerFirstVisit</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		[Tags:AaW-StoryEvent]		
+		[ConditionIds:REM-EventCondition-PlayerFirstVisit]
+	
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:15000]
+		
+		[ActionIds:REM-EventAction-PlayerFirstVisit-SpawnREM]	
+		[ActionIds:REM-EventAction-PlayerFirstVisit-REMMessage]
+
+      </Description>
+	</EntityComponent>	
+     
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>REM_EventCondition_PlayerFirstVisit</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	 
+	[CheckPlayerNear:true]
+	[PlayerNearCoords:{X:-1316100.24 Y:-302948.13 Z:-1409059.89}]
+	[PlayerNearDistanceFromCoords:6000]
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>REM_EventAction_PlayerFirstVisit_SpawnREM</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+
+	
+	[SpawnEncounter:true]
+	[SpawnData:REM-Spawner-Patrol]
+	[SpawnFactionTags:REM]
+	[SpawnCoords:{X:-1316100.24 Y:-302948.13 Z:-1409059.89}]	
+	
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>REM_EventAction_PlayerFirstVisit_REMMessage</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action]
+
+		[UseChatBroadcast:true]
+		[ChatData:REM-EventChat-PlayerFirstVisit]
+      </Description>
+      
+    </EntityComponent>		
+	
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>REM_EventChat_PlayerFirstVisit</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Green]
+      [Author:Remnants]
+        
+      [ChatMessages:No sign of GC scouts.. All Good. Hey there dusty, we got a base nearby. Here are the coordinates GPS:Braz Outpost #1:-1308359.41:-309276.29:-1408817.81:#FF75C9F1:]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+   	  
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

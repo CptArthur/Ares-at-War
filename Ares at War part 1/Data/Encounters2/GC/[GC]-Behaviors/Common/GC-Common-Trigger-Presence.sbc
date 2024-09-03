@@ -1,0 +1,64 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC_Common_Trigger_selfpresence</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+      [UseTrigger:true]
+      [Type:Timer]
+      [MinCooldownMs:9000]
+      [MaxCooldownMs:15000]
+      [StartsReady:false]
+      [Conditions:FAC-Context-Condition-Normal]		
+      [MaxActions:-1]
+      [Actions:GC-Common-Action-selfpresence]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC_Common_Action_selfpresence</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:GC-Common-Command-selfpresence]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC_Common_Command_selfpresence</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Command]
+
+        [CommandCode:GCPresence]
+        [SendSelfAsTargetEntityId:true]
+        [SingleRecipient:false]
+        [MatchSenderReceiverOwners:false]
+        [IgnoreReceiverAntennaRequirement:true]
+
+      </Description>
+
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_PlanetHunter_Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Behavior]
+      [BehaviorName:Hunter]
+
+	  [TargetData:AaW_Target_Main_A]
+	  [AutopilotData:FAC-HunterAutopilot-Passive]
+       [SecondaryAutopilotData:FAC_HunterAutopilot_Aggressive]
+	  
+	[TriggerGroups:ContextTriggers]	 		
+	[TriggerGroups:GC_CommonTriggers] 	
+	[TriggerGroups:GC_PlanetHunter_CommonTriggers] 		
+	[TriggerGroups:FAC_PlanetHunter_CommonTriggers] 	
+	
+	[Triggers:GC_PointSystem_Trigger_Decrease1]
+
+
+	  
+
+      </Description>
+      
+    </EntityComponent>	
+	
+
+	
+  </EntityComponents>
+</Definitions>

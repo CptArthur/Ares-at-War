@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+<!-- Pike -->
+	<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>GC_Marra</SubtypeId>
+			</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		[AtmosphericCargoShip:false]
+		[FactionOwner:GC]
+
+
+		[FalseSandboxVariables:GC_MarraDestroyed]	
+		[FalseSandboxVariables:GC_MarraSpawned]
+
+	
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		
+		[ZoneConditions:ZoneCondition_ZoneAaW]		
+		</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+
+
+				<Prefab SubtypeId="GC-Flagship-Hydro">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>GC_FleetLeader_Behavior</Behaviour>
+				</Prefab>
+	
+	
+				<Prefab SubtypeId="GC-Fighter-MK3">
+					<Position>
+						<X>-100</X>
+						<Y>-100</Y>
+						<Z>-400</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>GC_OffensiveEscortDrone_Behavior</Behaviour>
+				</Prefab>
+
+				<Prefab SubtypeId="GC-Fighter-MK3">
+					<Position>
+						<X>100</X>
+						<Y>-100</Y>
+						<Z>-400</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>GC_OffensiveEscortDrone_Behavior</Behaviour>
+				</Prefab>
+								
+							
+				<Prefab SubtypeId="GC-Gunship-Mk3">
+					<Position>
+						<X>0</X>
+						<Y>-100</Y>
+						<Z>-400</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>GC_GunshipTaskLeader_Behavior</Behaviour>
+				</Prefab>
+			
+	
+
+					
+			</Prefabs>			
+		</SpawnGroup>
+		
+
+
+		
+		
+	</SpawnGroups>
+</Definitions>

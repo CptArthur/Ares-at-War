@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+  <!-- [Triggers:AHE-Trigger-Static-PopulateStores-AHE] -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE_Trigger_Static_PopulateStores_AHE</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Session]
+        [Conditions:AHE-Condition-Static-PopulateStores-AHE]
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:AHE-Action-Static-PopulateStores-AHE]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE_Condition_Static_PopulateStores_AHE</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+              
+        [UseConditions:true]
+        [UseFailCondition:true]
+        [CheckAllLoadedModIDs:true]
+        [AllModIDsToCheck:2344068716]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE_Action_Static_PopulateStores_AHE</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [ApplyStoreProfiles:true]
+        [ClearStoreContentsFirst:true]
+
+        
+      [StoreBlocks:Store {ITC}]
+      [StoreProfiles:CIVIL-StoreProfile-S27-ITC]		
+		
+	  [StoreBlocks:Store {SYN}]
+      [StoreProfiles:CIVIL-StoreProfile-S27-SYN]	
+		
+      [StoreBlocks:Store Add]
+      [StoreProfiles:AHE-StoreProfile-AHE-Add]
+  
+      [StoreBlocks:Store Comp]
+      [StoreProfiles:AHE-StoreProfile-AHE-Comp]
+  
+      [StoreBlocks:Store Ingot]
+      [StoreProfiles:AHE-StoreProfile-AHE-Ingot]
+  
+      [StoreBlocks:Store Fuel]
+      [StoreProfiles:AHE-StoreProfile-AHE-Fuel]
+  
+      [StoreBlocks:Store Outpost]
+      [StoreProfiles:AHE-StoreProfile-AHE-Outpost]  
+	  
+	  
+	[AddCustomDataToBlocks:true]
+	[CustomDataBlockNames:EconomySurvival Store Water Vehicles,EconomySurvival Store Land Vehicles,EconomySurvival Store Air Vehicles,EconomySurvival Store Space Vehicles]
+	[CustomDataFiles:AHE_Water_Vehicles.xml]
+	[CustomDataFiles:AHE_Land_Vehicles.xml]
+	[CustomDataFiles:AHE_Air_Vehicles.xml]
+	[CustomDataFiles:AHE_Space_Vehicles.xml]  
+      </Description>
+
+    </EntityComponent>
+  </EntityComponents>
+</Definitions>

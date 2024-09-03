@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_LDrone_Trigger_OnSpawn</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:3000]
+        [StartsReady:true]
+        [MaxActions:1]
+        [Actions:AnF-LDrone-Action-OnSpawn]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_LDrone_Action_OnSpawn</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:AnF-LDrone-Chat-OnSpawn]
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+        <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_LDrone_Chat_OnSpawn</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+        [BroadcastRandomly:false]
+        [Author:AnF]
+        [Color:Red]
+
+        [ChatMessages:{AntennaName} signal detected]
+        [ChatAudio:AnF-Spawn]
+        [ChatVolumeMultiplier:1]
+        [BroadcastChatType:Notify]
+
+      </Description>
+    </EntityComponent>
+	
+	<!-- HealthPercentage -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_LDrone_Trigger_HealthPercentage</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:HealthPercentage]
+        [StartsReady:true]
+        [MaxActions:1]
+		[UseFailCondition:true]
+		
+		[PercentageOfHealthRemaining:90]
+
+        [Actions:AnF-LDrone-Action-HealthPercentage]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_LDrone_Action_HealthPercentage</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:AnF-LDrone-Chat-HealthPercentage]
+		
+		 [SpawnEncounter:true]
+		[Spawner:AnF-Spawner-Squadron]
+      </Description>
+
+    </EntityComponent>
+
+
+
+        <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_LDrone_Chat_HealthPercentage</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+        [BroadcastRandomly:false]
+        [Author:AnF]
+        [Color:Red]
+
+        [ChatMessages:Unintelligible]
+        [ChatAudio:AnF-Defensive]
+        [ChatVolumeMultiplier:1]
+        [BroadcastChatType:Notify]
+
+      </Description>
+    </EntityComponent>	
+	
+
+	
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!--================= 
+[Triggers:FAC-Context-Trigger-Event-TargetGettingAway]
+
+[Triggers:FAC-Context-Trigger-TargetHasBeenClose]
+[Triggers:FAC-Context-Trigger-LostTarget]
+[Triggers:FAC-Context-Trigger-SwitchTarget]
+ ==================-->
+ 
+ 
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_TargetHasBeenClose</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	
+	[TrueBooleans:TargetHasBeenClose]
+
+      </Description>
+      
+    </EntityComponent>	
+ 
+ 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Trigger_Event_TargetGettingAway</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:TargetFar]
+	[Distance:5000]
+	[UseTrigger:true]
+	[StartsReady:false]
+	[MinCooldownMs:5000]
+	[MaxCooldownMs:5001]
+	[MaxActions:-1]
+	[Conditions:FAC-Context-Condition-TargetHasBeenClose]
+
+
+	[Actions:FAC-Context-Action-Event-TargetGettingAway]
+
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Action_Event_TargetGettingAway</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[SetBooleansFalse:TargetHasBeenClose]
+
+
+[DebugMessage:ShipEvent TargetGettingAway] 
+		</Description>
+      
+    </EntityComponent>	 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Trigger_TargetHasBeenClose</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:TargetNear]
+	[Distance:1000]
+	[UseTrigger:true]
+	[StartsReady:false]
+	[MinCooldownMs:5000]
+	[MaxCooldownMs:5001]
+	[MaxActions:-1]
+
+	[Actions:FAC-Context-Action-TargetHasBeenClose]
+
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Action_TargetHasBeenClose</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[SetBooleansTrue:TargetHasBeenClose]
+		</Description>
+      
+    </EntityComponent>	
+
+
+
+
+	<!-- No FirstTarget-->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Trigger_LostTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:LostTarget]
+	[UseTrigger:true]
+	[StartsReady:false]
+	[MaxActions:-1]
+
+	[Actions:FAC-Context-Action-LostTarget]
+
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Action_LostTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[SetBooleansFalse:TargetHasBeenClose]
+		</Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Trigger_SwitchTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:SwitchTarget]
+	[UseTrigger:true]
+	[StartsReady:false]
+	[MaxActions:-1]
+
+	[Actions:FAC-Context-Action-SwitchTarget]
+
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Action_SwitchTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[SetBooleansFalse:TargetHasBeenClose]
+		</Description>
+      
+    </EntityComponent>	
+	
+	
+
+
+	
+	
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,338 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!--
+
+GC-Interaction-Trigger-PeaceTimeAgaris-Neutral
+GC-Interaction-Trigger-MartialLawAgaris-Neutral
+
+
+
+
+-->
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_Interaction_Trigger_PeaceTimeAgaris_Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:false]
+	[TargetDistance:6000]
+	[MinCooldownMs:450000]
+	[MaxCooldownMs:600000]
+	[Conditions:FAC-Context-Condition-NormalNeutral]
+	[Conditions:GC-Interaction-Condition-PeaceTimeAgaris-Neutral]
+
+[MaxActions:1]
+
+	  [Actions:GC-Interaction-Action-PeaceTimeAgaris-Neutral]	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_Interaction_Condition_PeaceTimeAgaris_Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+      
+	  [CheckCustomSandboxCounters:true]
+	  
+	  [CustomSandboxCounters:GCAgarisMode]
+	  [CustomSandboxCountersTargets:1]
+	  [SandboxCounterCompareTypes:LessOrEqual]
+	  
+	  
+      </Description>
+      
+    </EntityComponent>
+
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_Interaction_Action_PeaceTimeAgaris_Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+    
+	[Chance:15]
+	
+      [UseChatBroadcast:true]
+      [ChatData:GC-Interaction-Chat-PeaceTimeAgaris-Neutral]
+      </Description>
+      
+    </EntityComponent>
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC_Interaction_Chat_PeaceTimeAgaris_Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+
+        [MaxChats:-1]
+
+
+        [StartsReady:true]
+		
+		[MinTime:28800]
+		[MaxTime:28801]
+
+
+        [BroadcastRandomly:true]
+        [Author:{AntennaName}]
+        [Color:White]
+
+
+
+	  [ChatMessages:Attention {PlayerName}! As we navigate these times of peace, we remind all citizens to adhere to GC regulations and enjoy the tranquility of the Ares system.]
+	  [ChatAudio:ArcHudGPSNotification2]
+	  [BroadcastChatType:Chat]
+
+	  [ChatMessages:Attention {PlayerName}! The GC reminds all citizens to stay informed through official channels and exercise discretion when consuming information from external sources. Be vigilant against misinformation and rely on verified updates from authorized GC communications]
+	  [ChatAudio:ArcHudGPSNotification2]
+	  [BroadcastChatType:Chat]
+	  	  
+	  [ChatMessages:Attention {PlayerName}! The GC is delighted to report a substantial decline in the illegal spice trade. However, we reminds all citizens to remain vigilant and report any suspicious activity that may threaten our progress.]
+	  [ChatAudio:ArcHudGPSNotification2]
+	  [BroadcastChatType:Chat]
+
+
+      </Description>
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_Interaction_Trigger_MartialLawAgaris_Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:4150]
+	[MinCooldownMs:450000]
+	[MaxCooldownMs:600000]
+	[Conditions:FAC-Context-Condition-NormalNeutral]
+	[Conditions:GC-Interaction-Condition-MartialLawAgaris-Neutral]
+
+[MaxActions:1]
+	  [Actions:GC-Interaction-Action-MartialLawAgaris-Neutral]	  
+      </Description>
+      
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_Interaction_Condition_MartialLawAgaris_Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+[CheckTrueSandboxBooleans:true]
+[TrueSandboxBooleans:GCAgarisMartialLaw]
+
+	  
+	  
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_Interaction_Action_MartialLawAgaris_Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+   
+	[Chance:15]
+
+	
+      [UseChatBroadcast:true]
+      [ChatData:GC-Interaction-Chat-MartialLawAgaris-Neutral]
+      </Description>
+      
+    </EntityComponent>
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC_Interaction_Chat_MartialLawAgaris_Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+		
+		[MinTime:28800]
+		[MaxTime:28801]
+
+        [BroadcastRandomly:true]
+        [Author:{AntennaName}]
+        [Color:White]
+
+
+	  [ChatMessages:Attention {PlayerName}! In this state of martial law, your actions matter greatly. Be a responsible citizen, respect the authority of the GC, and contribute to the restoration of peace and stability in Agaris.]
+	  [ChatAudio:ArcHudGPSNotification2]
+	  [BroadcastChatType:Chat]
+	  	  
+	  [ChatMessages:Attention {PlayerName}! We remind you that Agaris is currently under martial law. Observe all regulations and cooperate with GC authorities to maintain order and security.]
+	  [ChatAudio:ArcHudGPSNotification2]
+	  [BroadcastChatType:Chat]
+
+	  [ChatMessages:Attention {PlayerName}! The Free Agaris Forces pose a significant danger to our society. We implore you to report any sightings, suspicious behavior, or information that may aid in their apprehension.]
+	  [ChatAudio:ArcHudGPSNotification2]
+	  [BroadcastChatType:Chat]
+
+	  [ChatMessages:Attention {PlayerName}! We must stand united against the Free Agaris Forces. Report any suspicious activities, recruitment efforts, or illegal actions to the GC. Together, we can eradicate this threat and restore peace to Agaris.]
+	  [ChatAudio:ArcHudGPSNotification2]
+	  [BroadcastChatType:Chat]
+
+      </Description>
+    </EntityComponent>		
+	
+	
+
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_Interaction_Trigger_PeaceTimeBylen_Neutral_HostileArea</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:4150]
+	[MinCooldownMs:450000]
+	[MaxCooldownMs:600000]
+	[Conditions:FAC-Context-Condition-NormalNeutral]
+
+[MaxActions:1]
+	  [Actions:GC-Interaction-Action-PeaceTimeBylen-Neutral]	  
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_Interaction_Action_PeaceTimeBylen_Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+    
+	
+		[Chance:15]
+		
+		
+      [UseChatBroadcast:true]
+      [ChatData:GC-Interaction-Chat-PeaceTimeBylen-Neutral]
+      </Description>
+      
+    </EntityComponent>
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC_Interaction_Chat_PeaceTimeBylen_Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+		
+		[MinTime:3600]
+		[MaxTime:3601]
+
+        [BroadcastRandomly:true]
+        [Author:{AntennaName}]
+        [Color:White]
+
+
+
+	[ChatMessages:Attention {PlayerName}! Be advised that GC patrols have been increased in response to recent security concerns. Comply with instructions for a trouble-free journey]
+	[ChatAudio:ArcHudGPSNotification2]
+	[BroadcastChatType:Chat]
+
+	[ChatMessages:Attention {PlayerName}! We've detected suspicious activity in your vicinity. Stay alert and report any unusual sightings immediately]
+	[ChatAudio:ArcHudGPSNotification2]
+	[BroadcastChatType:Chat]	  
+	  
+	[ChatMessages:Attention {PlayerName}! Remember to regularly scan and monitor your surroundings for any anomalous energy readings or potential threats. Stay alert to ensure your safety.]
+	[ChatAudio:ArcHudGPSNotification2]
+	[BroadcastChatType:Chat]	    
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+
+      </Description>
+    </EntityComponent>	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+  </EntityComponents>
+</Definitions>

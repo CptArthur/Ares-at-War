@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<EntityComponents>
+<!--
+	GC-Reputation-Trigger-Compromised-UpdateREPSYN
+ -->	
+	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_Reputation_Condition_UpdateREPSYN</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+	[CheckPlayerReputation:true]
+	[MaxPlayerReputationDistanceCheck:2500]
+	[AllPlayersReputationMustMatch:true]
+
+	[CheckReputationwithFaction:SYN]
+	[MinPlayerReputation:-499]
+	[MaxPlayerReputation:1500]
+
+
+	[CheckCustomCounters:true]
+	[CustomCounters:CountPlayerDamage]
+	[CustomCountersTargets:15]
+	[CounterCompareTypes:GreaterOrEqual]
+      </Description>
+      
+    </EntityComponent>		
+		
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_Reputation_Trigger_Compromised_UpdateREPSYN</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Compromised]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[MaxActions:1]
+	
+	[Conditions:GC-Reputation-Condition-UpdateREPSYN]	
+	[Actions:GC-Reputation-Action-Compromised-UpdateREPSYN]	
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_Reputation_Action_Compromised_UpdateREPSYN</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:5000]
+	[ReputationChangeFactions:SYN]
+	[ReputationChangeAmount:250]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+	[ReputationPlayerConditionIds:PlayerCondition-Position-SYNTerritory]
+
+
+
+
+	[ChangeAttackerReputation:true]
+	[ChangeAttackerReputationFaction:SYN]
+	[ChangeAttackerReputationAmount:250]
+	[ReputationChangesForAllAttackPlayerFactionMembers:true]
+	
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:GC-Reputation-Command-Compromised-SYNThanksPlayer]
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_Reputation_Command_Compromised_SYNThanksPlayer</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Command]
+
+	[CommandCode:SYNThanksPlayer]
+	[MatchSenderReceiverOwners:false]
+
+	[SingleRecipient:true]
+	[IgnoreAntennaRequirement:true]
+	[IgnoreReceiverAntennaRequirement:true]
+	[Radius:8000]
+	
+	</Description>
+      
+    </EntityComponent>
+
+
+
+
+		
+  </EntityComponents>
+</Definitions>

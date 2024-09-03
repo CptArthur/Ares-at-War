@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+<!-- Pike -->
+	<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>GC_Dropship</SubtypeId>
+			</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		[AtmosphericCargoShip:false]
+		[FactionOwner:GC]
+
+	
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+						[IgnoreCombatPhase:true]
+		[ZoneConditions:ZoneCondition_ZoneAaW]		
+		</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+
+
+				<Prefab SubtypeId="GC-Dropship">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>GC_Dropship_Behavior</Behaviour>
+				</Prefab>
+	
+	
+
+
+					
+			</Prefabs>			
+		</SpawnGroup>
+		
+
+
+		
+		
+	</SpawnGroups>
+</Definitions>

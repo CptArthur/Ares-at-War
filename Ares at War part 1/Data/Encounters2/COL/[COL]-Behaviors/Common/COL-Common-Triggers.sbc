@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+
+<!--================= Setting Normal ==================-->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVIL_Common_Trigger_Hostile_PlayerDamage</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Damage]
+	[DamageTypes:Any]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	[Conditions:FAC-Context-Condition-Hostile-PlayerDamage]
+
+	[MinCooldownMs:1000]
+	[MaxCooldownMs:1001]
+	[MaxActions:-1]
+
+
+	[Actions:CIVIL-Common-Action-Hostile/Neutral-PlayerDamage]	
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVIL_Common_Trigger_Neutral_PlayerDamage</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Damage]
+	[DamageTypes:Any]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	[Conditions:FAC-Context-Condition-Neutral-PlayerDamage]
+
+	[MinCooldownMs:1000]
+	[MaxCooldownMs:1001]
+	[MaxActions:-1]
+
+
+	[Actions:CIVIL-Common-Action-Hostile/Neutral-PlayerDamage]	
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+<!-- Actions --> 
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVIL_Common_Action_Hostile/Neutral_PlayerDamage</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:2000]
+	[ReputationChangeFactions:CIVIL-A]
+	[ReputationChangeAmount:-50]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:2000]
+	[ReputationChangeFactions:CIVIL-B]
+	[ReputationChangeAmount:-50]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:2000]
+	[ReputationChangeFactions:CIVIL-T4]
+	[ReputationChangeAmount:-50]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:2000]
+	[ReputationChangeFactions:AHE]
+	[ReputationChangeAmount:-50]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:2000]
+	[ReputationChangeFactions:ITC]
+	[ReputationChangeAmount:-50]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:2000]
+	[ReputationChangeFactions:FAF]
+	[ReputationChangeAmount:-50]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:2000]
+	[ReputationChangeFactions:GC]
+	[ReputationChangeAmount:-50]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+
+
+
+	
+	
+  </EntityComponents>
+</Definitions>

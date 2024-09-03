@@ -1,0 +1,653 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+<!-- NormalNeutral
+Plaernear
+HasNoTarget
+
+
+-->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_NormalNeutralPlayerNearNoTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:SettingNormal]
+	[TrueBooleans:PlayerNear]
+	[TrueBooleans:NoTarget]	
+	
+[CheckPlayerReputation:true]
+[MaxPlayerReputationDistanceCheck:4500]
+[AllPlayersReputationMustMatch:true]
+[CheckReputationwithFaction:{self}]
+[MinPlayerReputation:-500]
+[MaxPlayerReputation:500]	
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+
+
+
+
+
+
+<!-- Check command value -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC_Context_Condition_CompareCommandGridValue</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+		[UseConditions:true]
+
+
+
+        [CompareCommandGridValue:true]
+        [CompareCommandGridValueMode:Less]
+        
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_ReadyforNormal</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:ReadyforNormal]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+<!-- Settings -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_Normal</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:SettingNormal]
+
+      </Description>
+      
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_SettingNormal</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:SettingNormal]
+
+      </Description>
+      
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_SettingHighAlert</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:SettingHighAlert]
+
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_SettingBattle</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:SettingBattle]
+
+      </Description>
+      
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_SettingHighAlertOrBattle</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:true]
+	[CheckTrueBooleans:true]
+
+	[AllowAnyTrueBoolean:true] 
+	[TrueBooleans:SettingHighAlert]
+	[TrueBooleans:SettingBattle]
+      </Description>
+      
+    </EntityComponent>	
+
+	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_SettingNormalOrHighAlert</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:true]
+	[CheckTrueBooleans:true]
+
+	[AllowAnyTrueBoolean:true] 	
+	[TrueBooleans:SettingNormal]
+	[TrueBooleans:SettingHighAlert]
+      </Description>
+      
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_SettingNormalOrHighAlert_HostileDamage</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+
+	[AllowAnyTrueBoolean:true] 
+	[TrueBooleans:SettingNormal]
+	[TrueBooleans:SettingHighAlert]
+	
+	[IsAttackerHostile:true]
+	
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+<!-- Player -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_PlayerHostile</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+[CheckPlayerReputation:true]
+[MaxPlayerReputationDistanceCheck:4500]
+[AllPlayersReputationMustMatch:true]
+
+[CheckReputationwithFaction:{self}]
+[MinPlayerReputation:-1500]
+[MaxPlayerReputation:-499]
+
+      </Description>
+      
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_PlayerNeutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+[CheckPlayerReputation:true]
+[MaxPlayerReputationDistanceCheck:4500]
+[AllPlayersReputationMustMatch:true]
+
+[CheckReputationwithFaction:{self}]
+[MinPlayerReputation:-500]
+[MaxPlayerReputation:500]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_PlayerFriendly</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+[CheckPlayerReputation:true]
+[MaxPlayerReputationDistanceCheck:4500]
+[AllPlayersReputationMustMatch:true]
+
+[CheckReputationwithFaction:{self}]
+[MinPlayerReputation:501]
+[MaxPlayerReputation:1500]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_NormalHostile</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:SettingNormal]
+
+
+
+[CheckPlayerReputation:true]
+[MaxPlayerReputationDistanceCheck:4500]
+[AllPlayersReputationMustMatch:true]
+
+[CheckReputationwithFaction:{self}]
+[MinPlayerReputation:-1500]
+[MaxPlayerReputation:-499]
+
+      </Description>
+      
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_NormalNeutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:SettingNormal]
+
+[CheckPlayerReputation:true]
+[MaxPlayerReputationDistanceCheck:4500]
+[AllPlayersReputationMustMatch:true]
+[CheckReputationwithFaction:{self}]
+[MinPlayerReputation:-500]
+[MaxPlayerReputation:500]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_NormalFriendly</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:SettingNormal]
+
+
+
+[CheckPlayerReputation:true]
+[MaxPlayerReputationDistanceCheck:4500]
+[AllPlayersReputationMustMatch:true]
+
+[CheckReputationwithFaction:{self}]
+[MinPlayerReputation:501]
+[MaxPlayerReputation:1500]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+
+
+<!-- Battle -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_BattleHostile</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:SettingBattle]
+[CheckPlayerReputation:true]
+[MaxPlayerReputationDistanceCheck:4500]
+[AllPlayersReputationMustMatch:true]
+
+[CheckReputationwithFaction:{self}]
+[MinPlayerReputation:-1500]
+[MaxPlayerReputation:-499]
+
+      </Description>
+      
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_BattleNeutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:SettingBattle]
+[CheckPlayerReputation:true]
+[MaxPlayerReputationDistanceCheck:4500]
+[AllPlayersReputationMustMatch:true]
+[CheckReputationwithFaction:{self}]
+[MinPlayerReputation:-500]
+[MaxPlayerReputation:500]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_BattleFriendly</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+	[TrueBooleans:SettingBattle]
+[CheckPlayerReputation:true]
+[MaxPlayerReputationDistanceCheck:4500]
+[AllPlayersReputationMustMatch:true]
+
+[CheckReputationwithFaction:{self}]
+[MinPlayerReputation:501]
+[MaxPlayerReputation:1500]
+
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+	<!-- ============== DAMAGE ============= -->
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_Hostile_PlayerDamage</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+
+	[IsAttackerHostile:true]
+	[CheckIfDamagerIsPlayer:true]
+
+      </Description>
+      
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_Neutral_PlayerDamage</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+
+	[IsAttackerNeutral:true]
+	[CheckIfDamagerIsPlayer:true]
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_Friendly_PlayerDamage</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+
+	[IsAttackerFriendly:true] 
+	[CheckIfDamagerIsPlayer:true]
+      </Description>
+      
+    </EntityComponent>
+
+
+
+<!-- Underattack -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_AttackedbyNPC</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+	[CheckTrueBooleans:true]
+	[TrueBooleans:SettingNormal]
+	
+	
+	[CheckIfDamagerIsNpc:true]
+      </Description>
+      
+    </EntityComponent>	
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_AttackedbyPlayer</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+
+[CheckTrueBooleans:true]
+
+[CheckPlayerReputation:true]
+[MaxPlayerReputationDistanceCheck:4500]
+[AllPlayersReputationMustMatch:true]
+
+[CheckReputationwithFaction:{self}]
+[MinPlayerReputation:-1500]
+[MaxPlayerReputation:-500]
+
+
+	[TrueBooleans:SettingNormal]
+	[CheckIfDamagerIsPlayer:true]	
+      </Description>
+      
+    </EntityComponent>		
+	
+	<!-- ============= NPC INVOLVED ============ -->
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_DamagerIsNPC</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+	[CheckIfDamagerIsNpc:true]
+      </Description>
+      
+    </EntityComponent>			
+	
+	<!-- PlayerInvloded + NPC -->
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Context_Condition_PlayerHelpedNPC</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+	[CheckCustomCounters:true]
+	[CustomCounters:CountPlayerDamage]
+	[CustomCountersTargets:15]
+	[CounterCompareTypes:GreaterOrEqual]
+
+
+      </Description>
+      
+    </EntityComponent>			
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

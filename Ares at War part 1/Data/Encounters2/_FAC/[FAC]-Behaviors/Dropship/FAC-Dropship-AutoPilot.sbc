@@ -1,0 +1,100 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC_Dropship_Autopilot</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Autopilot]
+
+        [DisableInertiaDampeners:false]
+        [SlowDownOnWaypointApproach:true]
+        [FlyLevelWithGravity:true]
+        [MinimumPlanetAltitude:200]
+        [IdealPlanetAltitude:300]
+        [WaypointTolerance:30]
+        [OffsetSpaceMinDistFromTarget:150]
+        [OffsetSpaceMaxDistFromTarget:300]
+        [OffsetPlanetMinDistFromTarget:150]
+        [OffsetPlanetMaxDistFromTarget:300]
+        [OffsetPlanetMinTargetAltitude:-200]
+        [OffsetPlanetMaxTargetAltitude:200]
+      </Description>
+
+    </EntityComponent>	
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC_Dropship_Autopilot_PreLanding</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Autopilot]
+
+		[IdealPlanetAltitude:100]
+		[MinimumPlanetAltitude:50]
+		
+        [DisableInertiaDampeners:false]
+        [FlyLevelWithGravity:true]
+
+        [IdealMinSpeed:40]
+        [IdealMaxSpeed:60]
+        [MaxSpeedTolerance:5]
+        [SlowDownOnWaypointApproach:true]
+	
+		[UseSurfaceHoverThrustMode:true]
+		[MaxVerticalSpeed:20]
+		[MaxAngleForLeveledAscent:40]
+
+
+
+      </Description>
+
+    </EntityComponent>	
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC_Dropship_Autopilot_Landing</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Autopilot]
+
+		[IdealPlanetAltitude:0]
+
+        [DisableInertiaDampeners:false]
+        [FlyLevelWithGravity:true]
+        [IdealMinSpeed:1]
+        [IdealMaxSpeed:7]
+        [MaxSpeedTolerance:5]
+        [SlowDownOnWaypointApproach:false]
+	
+		[UseSurfaceHoverThrustMode:true]
+		[MaxVerticalSpeed:20]
+		[MaxAngleForLeveledAscent:40]
+
+
+
+      </Description>
+
+    </EntityComponent>	
+
+
+
+
+
+	
+	
+	
+	
+	
+    
+  </EntityComponents>
+</Definitions>

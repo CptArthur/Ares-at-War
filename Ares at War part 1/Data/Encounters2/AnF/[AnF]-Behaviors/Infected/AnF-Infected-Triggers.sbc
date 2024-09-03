@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	
+	<!-- PlayerNear -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Infected_Trigger_PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:PlayerNear]
+        [StartsReady:true]
+		
+		[MinCooldownMs:300000]
+		[MaxCooldownMs:600000]	
+
+
+        [MaxActions:-1]
+[TargetDistance:3000]
+
+
+        [Actions:AnF-Infected-Action-PlayerNear]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Infected_Action_PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+        [UseChatBroadcast:true]
+        [ChatData:AnF-Infected-Chat-PlayerNear]
+      </Description>
+
+    </EntityComponent>
+
+
+        <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AnF_Infected_Chat_PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+        [BroadcastRandomly:false]
+        [Author:AnF]
+        [Color:Red]
+
+        [ChatMessages:Transmitting]
+        [ChatAudio:AnF-Target]
+        [ChatVolumeMultiplier:1]
+        [BroadcastChatType:Chat]
+		
+		
+
+      </Description>
+    </EntityComponent>	
+		
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

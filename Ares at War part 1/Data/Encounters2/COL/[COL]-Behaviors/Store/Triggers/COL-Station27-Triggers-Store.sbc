@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+  <!-- [Triggers:CIVIL-Trigger-Static-PopulateStores-Station27] -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVIL_Trigger_Static_PopulateStores_Station27</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Session]
+        [Conditions:CIVIL-Condition-Static-PopulateStores-Station27]
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:CIVIL-Action-Static-PopulateStores-Station27]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVIL_Condition_Static_PopulateStores_Station27</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+              
+        [UseConditions:true]
+        [UseFailCondition:true]
+        [CheckAllLoadedModIDs:true]
+        [AllModIDsToCheck:2344068716]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVIL_Action_Static_PopulateStores_Station27</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [ApplyStoreProfiles:true]
+        [ClearStoreContentsFirst:true]
+
+        
+      [StoreBlocks:Store {ITC}]
+      [StoreProfiles:CIVIL-StoreProfile-Station27-ITC]		
+		
+	  [StoreBlocks:Store {SYN}]
+      [StoreProfiles:CIVIL-StoreProfile-Station27-SYN]	
+		
+      
+	  [StoreBlocks:Store {FAF}]
+      [StoreProfiles:CIVIL-StoreProfile-Station27-FAF]	
+
+      [StoreBlocks:Store Civ]
+      [StoreProfiles:CIVIL-StoreProfile-Station27-Civ]
+  
+      [StoreBlocks:Store Salvage]
+      [StoreProfiles:CIVIL-StoreProfile-Station27-Salvage]
+
+      [StoreBlocks:Store Ammo]
+      [StoreProfiles:CIVIL-StoreProfile-Station27-Ammo]
+
+      [StoreBlocks:Store Ingot]
+      [StoreProfiles:CIVIL-StoreProfile-Station27-Ingot]
+  
+      [StoreBlocks:Store Tool]
+      [StoreProfiles:CIVIL-StoreProfile-Station27-Tool]      
+
+      [StoreBlocks:Store Prefab]
+      [StoreProfiles:CIVIL-StoreProfile-Station27-Prefab]      
+
+      
+      [StoreBlocks:Store Fuel]
+      [StoreProfiles:CIVIL-StoreProfile-Station27-Fuel]
+  
+      
+      [StoreBlocks:Store Outpost]
+      [StoreProfiles:CIVIL-StoreProfile-Station27-Outpost]
+
+	  
+	  
+	[AddCustomDataToBlocks:true]
+	[CustomDataBlockNames:EconomySurvival Store Water Vehicles,EconomySurvival Store Land Vehicles,EconomySurvival Store Air Vehicles,EconomySurvival Store Space Vehicles]
+	[CustomDataFiles:CIVIL_Water_Vehicles.xml]
+	[CustomDataFiles:CIVIL_Land_Vehicles.xml]
+	[CustomDataFiles:CIVIL_Air_Vehicles.xml]
+	[CustomDataFiles:CIVIL_Space_Vehicles.xml]  
+      </Description>
+
+    </EntityComponent>
+  </EntityComponents>
+</Definitions>

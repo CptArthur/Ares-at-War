@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SPRT_Bounty_Trigger_PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:PlayerNear]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	  [TargetDistance:1200]
+	  [MaxActions:1]
+	  [Actions:SPRT-Bounty-Action-PlayerNear]
+	  
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SPRT_Bounty_Action_PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      [UseChatBroadcast:true]
+      [ChatData:SPRT-Bounty-Chat-PlayerNear]
+
+      </Description>
+      
+    </EntityComponent>
+
+	
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SPRT_Bounty_Chat_PlayerNear</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Red]
+      
+      [ChatMessages:{PlayerName}! You have a bounty on your head. Prepare to die!]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	
+  </EntityComponents>
+</Definitions>

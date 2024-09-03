@@ -1,0 +1,42 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SpawnGroups>
+    
+    <!--Crimson Tormentor-->
+    <SpawnGroup>
+      <Id>
+        <TypeId>SpawnGroupDefinition</TypeId>
+        <SubtypeId>AaW_Reaver_SpawnGroup_CrimsonTormentor</SubtypeId>
+      </Id>
+      <Description>
+
+        [Modular Encounters SpawnGroup]
+
+        [PersistentConditions:AaW-PersistentSpawnConditions-Environment-Bylen]
+        [SpawnConditionsProfiles:Reaver-SpawnConditions-VeryHard]
+
+        [ManipulationProfiles:Reaver-Manipulation-Common]
+        [ManipulationProfiles:Reaver-Manipulation-Loot]
+        [ManipulationProfiles:Reaver-Manipulation-Thrust]
+        [ManipulationProfiles:Reaver-Manipulation-PaintAndBuildStates]
+
+        [ReplenishSystems:true]
+
+      </Description>
+      <IsPirate>true</IsPirate>
+      <Frequency>1.0</Frequency>
+      <Prefabs>
+        <Prefab SubtypeId="(NPC-RVR) Crimson Tormentor">
+          <Position>
+            <X>0.0</X>
+            <Y>0.0</Y>
+            <Z>0.0</Z>
+          </Position>
+          <Speed>25</Speed>
+          <Behaviour>Reaver_Behavior_LargeShip</Behaviour>
+        </Prefab>
+      </Prefabs>
+    </SpawnGroup>
+
+  </SpawnGroups>
+</Definitions>

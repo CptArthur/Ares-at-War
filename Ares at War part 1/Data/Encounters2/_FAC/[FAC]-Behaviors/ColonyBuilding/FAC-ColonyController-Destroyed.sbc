@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!--
+
+[Triggers:FAC-ColonyController-Triggers-Destroyed-ResetCooldown]
+[Triggers:FAC-ColonyController-Triggers-Destroyed]
+
+-->
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_ColonyController_Triggers_Destroyed</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Compromised]
+	[UseTrigger:true]
+	[StartsReady:false]
+
+
+
+	  [Actions:FAC-ColonyController-Action-Destroyed]	  
+      </Description>
+      
+    </EntityComponent>	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_ColonyController_Action_Destroyed</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+	[GenerateExplosion:true]
+	[ExplosionRange:300]
+	[ExplosionDamage:100]
+	[ExplosionIgnoresVoxels:true]
+
+
+	[SetSandboxBooleansFalse:{SpawnGroupName}]
+	
+	[ResetThisStaticEncounter:true]
+
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownNames:AaW-Event-Set{SpawnGroupName}]
+
+
+
+	[ForceDespawn:true]
+	
+	[GenerateExplosion:true]
+	[ExplosionRange:200]
+	[ExplosionDamage:100]
+	[ExplosionIgnoresVoxels:true]
+
+
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

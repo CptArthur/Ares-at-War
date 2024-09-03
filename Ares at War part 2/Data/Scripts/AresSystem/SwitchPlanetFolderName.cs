@@ -83,8 +83,8 @@ namespace IndustrialOreRemap
 				new List<string>
 				{
 					// Filtered out components. So compared to vanilla. Which should be removed
-					"SolarCell",
-					"ComputerComponent",
+					//"SolarCell",
+					//"ComputerComponent",
 
 					//Scrapyard does this:
 					//SolarCell
@@ -129,9 +129,9 @@ namespace IndustrialOreRemap
 			new List<string>
 			{
 				// Filtered out components. So compared to vanilla. Which should be removed
-				"PowerCell",
-				"SolarCell",
-				"ComputerComponent",
+				//"PowerCell",
+				//"SolarCell",
+				//"ComputerComponent",
 			},
 			new List<string>
 			{

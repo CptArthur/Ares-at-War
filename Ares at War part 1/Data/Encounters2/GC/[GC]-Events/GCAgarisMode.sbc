@@ -1,0 +1,495 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!--
+GCAgarisMode
+
+
+0: Peace
+1: Insurgents
+2: War 
+3: NotYetLost
+4: No surrender
+Bool GCAgarisDefeated
+GCAgarisMartialLaw
+
+
+-->
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2_Event_SetGCAgarisPeace</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:false]
+		[Tags:GCAgaris]
+		[ConditionIds:AaW-EventCondition-SetGCAgarisPeace]
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-SetGCAgarisPeace]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventCondition_SetGCAgarisPeace</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+	  [CheckCustomCounters:true]
+	  [CustomCounters:GCAgarisMode]
+	  [CustomCountersTargets:0]
+	  [CounterCompareTypes:NotEqual]
+	  
+	  [CheckTrueBooleans:true]
+      [TrueBooleans:GCSunsetCity]
+      [TrueBooleans:GCCarcosa]
+      [TrueBooleans:GCAzuris]
+
+      [CheckFalseBooleans:true]	  
+      [FalseBooleans:GCvsAHE]	 
+	  
+
+	  [CustomCounters:FAFMode]
+	  [CustomCountersTargets:0]
+	  [CounterCompareTypes:Equal]	  	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_SetGCAgarisPeace</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		[ChangeCounters:true]
+		[SetCounters:GCAgarisMode]
+		[SetCountersAmount:0]
+		
+	[ToggleEvents:true]
+	[ToggleEventIds:Aaw-Event-GCMartialLaw-Disable]
+	[ToggleEventIdModes:true]
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:Aaw-Event-GCMartialLaw-Disable]	
+		
+		
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2_Event_SetGCAgarisInsurgents</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:false]
+		[Tags:GCAgaris]
+		[ConditionIds:AaW-EventCondition-SetGCAgarisInsurgents]
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-SetGCAgarisInsurgents]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventCondition_SetGCAgarisInsurgents</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Event Condition]
+	  
+	  [CheckCustomCounters:true]
+	  
+	  [CustomCounters:GCAgarisMode]
+	  [CustomCountersTargets:1]
+	  [CounterCompareTypes:NotEqual]
+	  
+	  [CustomCounters:FAFMode]
+	  [CustomCountersTargets:1]
+	  [CounterCompareTypes:Equal]	  
+	  
+	  [CheckTrueBooleans:true]
+      [TrueBooleans:GCSunsetCity]
+      [TrueBooleans:GCCarcosa]
+      [TrueBooleans:GCAzuris]
+
+      [CheckFalseBooleans:true]	  
+      [FalseBooleans:GCvsAHE]	 
+
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_SetGCAgarisInsurgents</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		[ChangeCounters:true]
+		[SetCounters:GCAgarisMode]
+		[SetCountersAmount:1]
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2_Event_SetGCAgarisWar</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:false]
+		[Tags:GCAgaris]
+		[UseAnyPassingCondition:true]
+		[ConditionIds:AaW-EventCondition-SetGCAgarisWar]
+		[ConditionIds:AaW-EventCondition-SetGCAgarisWar1]		
+		
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-SetGCAgarisWar]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventCondition_SetGCAgarisWar</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+
+	[CheckCustomCounters:true]
+	[CustomCounters:GCAgarisMode]
+	[CustomCountersTargets:2]
+	[CounterCompareTypes:NotEqual]
+
+	[CheckFalseBooleans:true]	 
+	[AllowAnyFalseBoolean:true]	  
+	[FalseBooleans:GCSunsetCity]	
+	[FalseBooleans:GCCarcosa]		  
+	[FalseBooleans:GCAzuris]  
+	  
+	[CheckTrueBooleans:true]
+	[AllowAnyTrueBoolean:true]	  
+	[TrueBooleans:GCSunsetCity]	
+	[TrueBooleans:GCCarcosa]		  
+	[TrueBooleans:GCAzuris]  	  
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventCondition_SetGCAgarisWar1</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+
+	[CheckCustomCounters:true]
+	[CustomCounters:GCAgarisMode]
+	[CustomCountersTargets:2]
+	[CounterCompareTypes:NotEqual]
+
+	[CheckTrueBooleans:true]
+	[TrueBooleans:GCSunsetCity]
+	[TrueBooleans:GCCarcosa]
+	[TrueBooleans:GCAzuris]
+	[TrueBooleans:GCvsAHE]		  
+	  
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+	
+	
+	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_SetGCAgarisWar</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action]
+	[ChangeCounters:true]
+	[SetCounters:GCAgarisMode]
+	[SetCountersAmount:2]
+	
+
+	[ToggleEvents:true]
+	[ToggleEventIds:Aaw-Event-GCMartialLaw-Activate]
+	[ToggleEventIdModes:true]
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:Aaw-Event-GCMartialLaw-Activate]
+	
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2_Event_SetGCAgarisNotYetLost</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:false]
+		[Tags:GCAgaris]
+		[ConditionIds:AaW-EventCondition-SetGCAgarisNotYetLost]
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-SetGCAgarisNotYetLost]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventCondition_SetGCAgarisNotYetLost</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	  
+	[CheckCustomCounters:true]
+	[CustomCounters:GCAgarisMode]
+	[CustomCountersTargets:3]
+	[CounterCompareTypes:NotEqual]
+	  
+
+	[CheckFalseBooleans:true]	  
+	[FalseBooleans:GCSunsetCity]	
+	[FalseBooleans:GCCarcosa]		  
+	[FalseBooleans:GCAzuris]  
+	[FalseBooleans:GC-HQDestroyed]  
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_SetGCAgarisNotYetLost</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		[ChangeCounters:true]
+		[SetCounters:GCAgarisMode]
+		[SetCountersAmount:3]
+		
+	[ToggleEvents:true]
+	[ToggleEventIds:Aaw-Event-GCMartialLaw-Disable]
+	[ToggleEventIdModes:true]
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:Aaw-Event-GCMartialLaw-Disable]	
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2_Event_SetGCAgarisNoSurrender</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:false]
+		[Tags:GCAgaris]
+		[ConditionIds:AaW-EventCondition-SetGCAgarisNoSurrender]
+		[ConditionIds:AaW-EventCondition-SetGCAgarisNoSurrender2]		
+		
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-SetGCAgarisNoSurrender]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventCondition_SetGCAgarisNoSurrender</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	  
+	[CheckCustomCounters:true]
+	[CustomCounters:GCAgarisMode]
+	[CustomCountersTargets:4]
+	[CounterCompareTypes:NotEqual]
+	  	  
+	[CheckTrueBooleans:true]
+	[TrueBooleans:GC-HQDestroyed]
+
+	[CheckFalseBooleans:true]	  
+	[FalseBooleans:GCSunsetCity]	
+	[FalseBooleans:GCCarcosa]		  
+	[FalseBooleans:GCAzuris]  
+
+
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventCondition_SetGCAgarisNoSurrender2</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+
+	[CheckFalseBooleans:true]	
+	[AllowAnyFalseBoolean:true]
+	[FalseBooleans:GC-AgarisMarsaBaseDestroyed]		  
+	[FalseBooleans:GC-AgarisMidWayBaseDestroyed]  
+	 
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_SetGCAgarisNoSurrender</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		[ChangeCounters:true]
+		[SetCounters:GCAgarisMode]
+		[SetCountersAmount:4]
+		
+	[ToggleEvents:true]
+	[ToggleEventIds:Aaw-Event-GCMartialLaw-Disable]
+	[ToggleEventIdModes:true]
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:Aaw-Event-GCMartialLaw-Disable]		
+      </Description>
+      
+    </EntityComponent>	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW2_Event_SetGCAgarisDefeated</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:false]
+		[Tags:GCAgaris]
+		[ConditionIds:AaW-EventCondition-SetGCAgarisDefeated]
+		[ActionExecution:All]
+
+		[ActionIds:AaW-EventAction-SetGCAgarisDefeated]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventCondition_SetGCAgarisDefeated</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+	  
+	[CheckTrueBooleans:true]
+	[TrueBooleans:GC-HQDestroyed]
+	[TrueBooleans:GC-AgarisMarsaBaseDestroyed]		  
+	[TrueBooleans:GC-AgarisMidWayBaseDestroyed]  
+
+
+	[CheckFalseBooleans:true]
+	[FalseBooleans:GCAgarisDefeated]
+	[FalseBooleans:GCSunsetCity]	
+	[FalseBooleans:GCCarcosa]		  
+	[FalseBooleans:GCAzuris]  
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_SetGCAgarisDefeated</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+		
+		[ChangeBooleans:true]
+		[SetBooleansTrue:GCAgarisDefeated]
+		
+		
+	[ToggleEvents:true]
+	[ToggleEventIds:Aaw-Event-GCMartialLaw-Disable]
+	[ToggleEventIdModes:true]
+	
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:Aaw-Event-GCMartialLaw-Disable]	
+      </Description>
+      
+    </EntityComponent>	
+
+	
+	
+  </EntityComponents>
+</Definitions>

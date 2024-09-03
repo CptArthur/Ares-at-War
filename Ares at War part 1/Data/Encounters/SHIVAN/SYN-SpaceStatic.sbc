@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+	
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>SYN_ForegoneStation</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:SHIVAN]		
+
+		[TriggerCoords:{X:-1222071.74514634 Y:-519946.691023537 Z:-1835853.98295402}]
+		[TriggerRadius:200000]
+
+		[ForceExactPositionAndOrientation:true]
+
+
+		[StaticEncounterCoords:{X:2601932.05322663 Y:1166322.50690445 Z:3744821.84129579}]
+		[StaticEncounterForward:{X:2.02567762476071E-09 Y:0.999014973207353 Z:0.0443743541644369}]
+		[StaticEncounterUp:{X:-8.21561662788461E-09 Y:-0.0443743541644369 Z:0.999014973207353}]
+
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Lorus]
+		[StaticEncounterPlanetDirection:{X:-0.451700498432615 Y:-0.443125155703889 Z:-0.774342789788948}]
+		[StaticEncounterPlanetAltitude:264692.878727294]
+
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:Foregone Station]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:SYN_ForegoneStationDestroyed]			
+		[ZoneConditions:ZoneCondition_ZoneAaW]	
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="(SYN) Foregone Bar and Tradestation">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>SYN_ForgoneStation_Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+	</SpawnGroup>
+
+
+
+	
+	
+	</SpawnGroups>
+</Definitions>

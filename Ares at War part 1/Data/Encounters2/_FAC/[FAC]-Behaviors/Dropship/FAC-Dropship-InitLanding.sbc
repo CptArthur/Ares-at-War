@@ -1,0 +1,308 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	<!--
+	
+	
+	[AutopilotData:FAC-Dropship-Autopilot-1]
+	[SecondaryAutopilotData:FAC-Dropship-Autopilot-2]	
+	
+	
+
+	[Triggers:FAC-Dropship-Trigger-MoveToLanding]
+	[Triggers:FAC-Dropship-Trigger-StartLanding]	
+	
+	[Triggers:FAC-Dropship-Trigger-ArrivedAtLandingSite]	
+
+	[Triggers:FAC-Dropship-Trigger-LeaveLandingSite]	
+	
+	-->
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Dropship_Trigger_MoveToLanding</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+	  [Type:TargetNear]
+	  [UseTrigger:true]
+	  [TargetDistance:800]
+	[Conditions:FAC-Dropship-Condition-MoveToLanding]
+	  [MaxActions:1]
+	  [Actions:FAC-Dropship-Action-MoveToLanding]
+      </Description>
+    </EntityComponent>
+
+
+<!--
+	[ChangeBehaviorSubclass:true]  
+	[NewBehaviorSubclass:CargoShip]
+	
+
+	[AddWaypoints:true]
+	[WaypointsToAdd:FAC-Dropship-Waypoint-LandingSite]
+
+	-->
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC_Dropship_Condition_MoveToLanding</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+
+        [UseConditions:true]
+
+        [IsTargetStatic:true]
+		
+		[CheckAllLoadedModIDs:true]
+[AnyModIDsToCheck:2596208372]
+
+		
+      </Description>
+
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Dropship_Action_MoveToLanding</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+
+
+	[ChangeAutopilotProfile:true]
+	[AutopilotProfile:Secondary]	
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Dropship_Trigger_StartLanding</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+	  [Type:TargetNear]
+	  [UseTrigger:true]
+	  [TargetDistance:400]
+	  [MaxActions:1]
+	  [Actions:FAC-Dropship-Action-StartLanding]
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Dropship_Action_StartLanding</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+		[ChangeAutopilotProfile:true]
+	[AutopilotProfile:Tertiary]  
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	 <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Dropship_Waypoint_LandingSite</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Waypoint]
+      
+      [Waypoint:RelativeRandom]
+      [RelativeEntity:Target]
+
+      [MinDistance:20]
+      [MaxDistance:100]
+      [MinAltitude:1999]
+      [MaxAltitude:2000]
+      
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC_Dropship_Trigger_ArrivedAtLandingSite</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+	  [Type:Timer]
+	  [UseTrigger:true]
+	[StartsReady:true]
+		[Conditions:FAC-Dropship-Condition-ArrivedAtLandingSite]
+
+		
+	  [MaxActions:1]
+	  [Actions:FAC-Dropship-Action-ArrivedAtLandingSite]
+      </Description>
+    </EntityComponent>		
+	
+	
+	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC_Dropship_Condition_ArrivedAtLandingSite</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+
+        [UseConditions:true]
+
+        [AltitudeCheck:true]
+        [MaxAltitude:8]
+
+        [CheckGridSpeed:true]
+        [MaxGridSpeed:15]
+
+      </Description>
+
+    </EntityComponent>
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC_Dropship_Action_ArrivedAtLandingSite</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:FAC-Dropship-Trigger-LeaveLandingSite]
+
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:FAC-Dropship-Trigger-LeaveLandingSite]
+		
+		
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Passive]
+
+		[SetBooleansTrue:SpawnEncounters]
+		
+		
+		[DebugMessage:Deploying troops]
+      </Description>
+
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	<!-- Oi -->
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC_Dropship_Trigger_LeaveLandingSite</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:false]
+        [Type:Timer]
+
+        [Conditions:FAC-Dropship-Condition-LeaveLandingSite]
+
+        [MinCooldownMs:1500]
+        [MaxCooldownMs:1501]
+        [StartsReady:false]
+
+        [MaxActions:1]
+        [Actions:FAC-Dropship-Action-LeaveLandingSite]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC_Dropship_Condition_LeaveLandingSite</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+
+        [UseConditions:true]
+
+        [AltitudeCheck:true]
+        [MaxAltitude:8]
+
+        [CheckGridSpeed:true]
+        [MaxGridSpeed:10]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>FAC_Dropship_Action_LeaveLandingSite</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Horsefly]
+
+
+	[ChangeAutopilotProfile:true]
+	[AutopilotProfile:Primary]	
+
+
+		
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+	
+	
+	
+  </EntityComponents>
+</Definitions>

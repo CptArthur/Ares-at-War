@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+<!--
+
+[SpawnConditionsProfiles:AHE-SpawnProfile-Standard-Both-Zone]
+[SpawnConditionsProfiles:AHE-SpawnProfile-Standard-Peace-Outside]
+
+[SpawnConditionsProfiles:AHE-SpawnProfile-Standard-Both-Outside]
+
+[SpawnConditionsProfiles:AHE-SpawnProfile-Standard-Combat-Outside]
+
+
+
+
+-->
+
+
+
+	<!-- AHE-SpawnProfile-Zone-AHEStr-1 -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE_SpawnProfile_Standard_Both_Zone</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:AHE]
+	[SandboxVariables:AHEActive]
+	[ZoneConditions:ZoneCondition_AHE]			
+	[PlanetWhitelist:Planet Agaris]
+	[SkipAirDensityCheck:true]
+	[IgnoreCombatPhase:true]
+
+      </Description>
+
+    </EntityComponent>
+	
+	<!-- AHE-SpawnProfile-Zone-AHEStr-1 -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE_SpawnProfile_Standard_Peace_Outside</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:AHE]
+	[SandboxVariables:AHEActive]		
+	[PlanetWhitelist:Planet Agaris]
+
+
+      </Description>
+
+    </EntityComponent>
+
+	<!-- AHE-SpawnProfile-Zone-AHEStr-1 -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE_SpawnProfile_Standard_Peace_GC</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[FactionOwner:AHE]
+	[SandboxVariables:AHEActive]
+	[ZoneConditions:ZoneCondition_GC]			
+	[PlanetWhitelist:Planet Agaris]
+
+
+      </Description>
+
+    </EntityComponent>
+
+	
+
+    
+  </EntityComponents>
+</Definitions>

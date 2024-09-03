@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+  <!-- [Triggers:AHE-Trigger-Static-PopulateStores-OutpostIO] -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE_Trigger_Static_PopulateStores_OutpostIO</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Session]
+        [Conditions:AHE-Condition-Static-PopulateStores-OutpostIO]
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:AHE-Action-Static-PopulateStores-OutpostIO]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE_Condition_Static_PopulateStores_OutpostIO</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+              
+        [UseConditions:true]
+        
+        [CheckAllLoadedModIDs:true]
+        [AllModIDsToCheck:2344068716]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE_Action_Static_PopulateStores_OutpostIO</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [ApplyStoreProfiles:true]
+        [ClearStoreContentsFirst:true]
+
+        
+      [StoreBlocks:Store {ITC}]
+      [StoreProfiles:CIVIL-StoreProfile-OutpostIO-ITC]		
+		
+	  [StoreBlocks:Store {SYN}]
+      [StoreProfiles:CIVIL-StoreProfile-OutpostIO-SYN]	
+		
+      
+
+
+      [StoreBlocks:Store Civ]
+      [StoreProfiles:AHE-StoreProfile-OutpostIO-Civ]
+  
+      [StoreBlocks:Store Salvage]
+      [StoreProfiles:AHE-StoreProfile-OutpostIO-Salvage]
+
+      [StoreBlocks:Store Ammo]
+      [StoreProfiles:AHE-StoreProfile-OutpostIO-Ammo]
+
+      [StoreBlocks:Store Ingot]
+      [StoreProfiles:AHE-StoreProfile-OutpostIO-Ingot]
+  
+      [StoreBlocks:Store Tool]
+      [StoreProfiles:AHE-StoreProfile-OutpostIO-Tool]      
+
+      [StoreBlocks:Store Prefab]
+      [StoreProfiles:AHE-StoreProfile-OutpostIO-Prefab]      
+
+      
+      [StoreBlocks:Store Fuel]
+      [StoreProfiles:AHE-StoreProfile-OutpostIO-Fuel]
+  
+      
+      [StoreBlocks:Store Outpost]
+      [StoreProfiles:AHE-StoreProfile-OutpostIO-Outpost]
+
+	  
+	  
+	[AddCustomDataToBlocks:true]
+	[CustomDataBlockNames:EconomySurvival Store Water Vehicles,EconomySurvival Store Land Vehicles,EconomySurvival Store Air Vehicles,EconomySurvival Store Space Vehicles]
+	[CustomDataFiles:AHE_Water_Vehicles.xml]
+	[CustomDataFiles:AHE_Land_Vehicles.xml]
+	[CustomDataFiles:AHE_Air_Vehicles.xml]
+	[CustomDataFiles:AHE_Space_Vehicles.xml]  
+      </Description>
+
+    </EntityComponent>
+  </EntityComponents>
+</Definitions>

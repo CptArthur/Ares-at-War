@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVIL_SafeZoneProfile_test</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES SafeZone]
+
+        [Shape:Sphere]
+		[Coordinates:{0,0,0}]
+		[Radius:250]
+		
+
+      </Description>
+
+    </EntityComponent>
+  
+  
+  
+  
+  
+  
+  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVIL_Trigger_Static_SafeZone</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Session]
+        [StartsReady:true]
+        [MaxActions:1]
+        [Actions:CIVIL-Action-Static-SafeZone]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVIL_Action_Static_SafeZone</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+		[SafeZoneProfile:CIVIL-SafeZoneProfile-test]
+		[SafeZonePositionGridCenter:true]
+		
+  
+
+      </Description>
+
+    </EntityComponent>
+    
+  </EntityComponents>
+</Definitions>

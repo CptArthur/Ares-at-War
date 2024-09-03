@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+<!--
+
+CIVIL-Common-Trigger-CommandReceived-CIVILThanksPlayer
+
+
+
+-->
+
+<!--================= Command Normal ==================-->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVIL_Common_Trigger_CommandReceived_CIVILThanksPlayer</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:CommandReceived]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[CommandReceiveCode:CIVILThanksPlayer]
+	[MaxActions:1]
+
+	[Actions:CIVIL-Common-Action-CommandReceived-CIVILThanksPlayer]	
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVIL_Common_Action_CommandReceived_CIVILThanksPlayer</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[UseChatBroadcast:true]
+	[ChatData:CIVIL-Common-Chat-CommandReceived-CIVILThanksPlayer]
+
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:3500]
+	[ReputationChangeFactions:CIVIL]
+	[ReputationChangeAmount:500]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+	
+	[ChangeAttackerReputation:true]
+	[ChangeAttackerReputationFaction:CIVIL]
+	[ChangeAttackerReputationAmount:-500]
+	[ReputationChangesForAllAttackPlayerFactionMembers:true]
+
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVIL_Common_Chat_CommandReceived_CIVILThanksPlayer</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+	[UseChat:true]
+	[StartsReady:true]
+	[Chance:100]
+	[MaxChats:-1]
+	[BroadcastRandomly:true]
+	[IgnoreAntennaRequirement:true]
+	[IgnoredAntennaRangeOverride:10000]      
+	[Author:{AntennaName}]
+	[Color:Green]
+      [BroadcastRandomly:true]
+	
+      [ChatMessages:Enemy control block destroyed! Nice work {PlayerName}]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+      [ChatMessages:Enemy control block destroyed! Thanks {PlayerName}]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+      [ChatMessages:Good work {PlayerName}! Enemy control block destroyed! ]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+  </EntityComponents>
+</Definitions>

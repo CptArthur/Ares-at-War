@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF_LDroneTaskLeader_Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[AutopilotData:FAF-LDroneAutopilot-KeepDistance]	
+	[SecondaryAutopilotData:FAF_LDroneAutopilot_Horsefly]	
+	[TargetData:AaW_Target_Main_A]		
+	
+	
+	[TriggerGroups:ContextTriggers]
+	[TriggerGroups:FAF_CommonTriggers] 	
+	[TriggerGroups:FAF_LDrone_CommonTriggers] 		
+	[TriggerGroups:FAC_LDrone_CommonTriggers] 		
+	
+	
+	[Triggers:FAF_Interaction_Trigger_Recruitment]
+	
+	
+	[TriggerGroups:FAC_OffensiveEscortSystem_TaskLeader_TriggerGroup] 		
+
+
+	[Triggers:FAC_PointSystem_Trigger_Decrease25]
+	[Triggers:FAC_AggressionSystem_Trigger_Increase15]
+
+
+
+	[EscortOffsets:{X:-500 Y:0 Z:0}]
+	[EscortOffsets:{X:500 Y:0 Z:0}]
+	 
+	 
+      </Description>
+      
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF_LDroneEscort_Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Escort]
+	[AutopilotData:FAF-LDroneAutopilot]	
+	[SecondaryAutopilotData:FAF_LDroneAutopilot_Horsefly]	
+	[TargetData:AaW_Target_Main_A]		
+	
+	
+	[TriggerGroups:ContextTriggers]
+	[TriggerGroups:FAF_CommonTriggers] 	
+	[TriggerGroups:FAF_LDrone_CommonTriggers] 		
+	[TriggerGroups:FAC_LDrone_CommonTriggers] 		
+	
+
+	[TriggerGroups:FAC_OffensiveEscortSystem_LDrone_TriggerGroup] 		
+	[Triggers:FAC_PointSystem_Trigger_Decrease25]
+	[Triggers:FAC_AggressionSystem_Trigger_Increase15]
+	
+
+
+
+	[EscortOffsets:{X:-100 Y:0 Z:0}]
+	[EscortOffsets:{X:100 Y:0 Z:0}]
+	 
+	 
+      </Description>
+      
+    </EntityComponent>
+		
+	
+	
+	
+	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>

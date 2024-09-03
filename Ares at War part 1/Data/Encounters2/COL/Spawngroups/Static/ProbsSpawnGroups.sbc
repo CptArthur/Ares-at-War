@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>CIVIL_Bridge</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:CIVIL-A]		
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:4500]
+
+			[ForceExactPositionAndOrientation:true]
+			[CutVoxelsAtAirtightCells:true]
+
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-AAW)]
+			[RandomGridNamePattern:Bridge]
+			[ReplaceAntennaNameWithRandomizedName:Southern Bridge]
+
+
+			[StaticEncounterCoords:{X:6804193.52833379 Y:-1256705.82392972 Z:-383401.155370268}]
+			[StaticEncounterForward:{X:-0.43455395609363 Y:-0.241838562329119 Z:-0.867569575892309}]
+			[StaticEncounterUp:{X:-0.735262473341032 Y:-0.461057585225524 Z:0.49680478902929}]
+
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Agaris]
+			[StaticEncounterPlanetDirection:{X:-0.727497322823263 Y:-0.456822463814432 Z:0.511918823486202}]
+			[StaticEncounterPlanetAltitude:29.6266411888137]
+
+		[ManipulationGroups:CIVIL-Manipulation-Group]
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:CIVIL_Bridge]			
+			[ZoneConditions:ZoneCondition_ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="AHE-Bridge">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>CIVIL_Standaard_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>	
+
+
+	</SpawnGroups>
+	
+</Definitions>

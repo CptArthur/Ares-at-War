@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+  
+  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF_ColonyController_Behavior</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW_Target_Main_B]	  
+	
+	[Triggers:FAC_Triggers_Despawn]		
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF_CapturableController_Behavior</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW_Target_Main_B]	
+	
+	[TriggerGroups:ContextTriggers]			
+	[TriggerGroups:FAF_CommonTriggers]		
+	[TriggerGroups:FAF_CapturableController_CommonTriggers]	 
+	[TriggerGroups:FAC_CapturableController_CommonTriggers]		
+	
+	
+	[TriggerGroups:FAF_TriggerGroup_HeavyDefense]	
+
+	
+	
+	[Triggers:FAF_MajorStatic_Trigger_selfpresence]
+	[Triggers:FAC_PointSystem_Trigger_Decrease150]
+	[Triggers:FAC_AggressionSystem_Trigger_Increase50]	
+      </Description>
+      
+    </EntityComponent>	
+	
+		
+	
+		
+	
+	
+
+
+	
+  </EntityComponents>
+</Definitions>

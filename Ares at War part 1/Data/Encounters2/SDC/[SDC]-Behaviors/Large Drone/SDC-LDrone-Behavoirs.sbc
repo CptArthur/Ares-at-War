@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CRUSADERS_LDroneTaskLeader_Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[AutopilotData:CRUSADERS-LDroneAutopilot]	
+	[SecondaryAutopilotData:CRUSADERS_LDroneAutopilot_Horsefly]	
+	[TargetData:AaW_Target_Main_A]		
+	
+	
+	[TriggerGroups:ContextTriggers]	 
+	[TriggerGroups:CRUSADERS_CommonTriggers] 	
+	[TriggerGroups:CRUSADERS_LDrone_CommonTriggers] 		
+	[TriggerGroups:FAC_LDrone_CommonTriggers] 		
+
+	
+	[TriggerGroups:FAC_OffensiveEscortSystem_TaskLeader_TriggerGroup] 		
+
+		[Triggers:FAC_PointSystem_Trigger_Decrease25]
+	[Triggers:FAC_AggressionSystem_Trigger_Increase15]
+
+
+	[EscortOffsets:{X:-100 Y:0 Z:0}]
+	[EscortOffsets:{X:100 Y:0 Z:0}]
+	 
+	 
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CRUSADERS_LDroneAutopilot</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Autopilot]
+		
+        [DisableInertiaDampeners:false]
+        [SlowDownOnWaypointApproach:true]
+        [FlyLevelWithGravity:true]
+        [MinimumPlanetAltitude:400]
+        [IdealPlanetAltitude:500]
+        [WaypointTolerance:30]
+
+        [IdealMaxSpeed:75]
+        [MaxSpeedTolerance:5]
+		
+		
+        [OffsetSpaceMinDistFromTarget:150]
+        [OffsetSpaceMaxDistFromTarget:300]
+        [OffsetPlanetMinDistFromTarget:150]
+        [OffsetPlanetMaxDistFromTarget:300]
+        [OffsetPlanetMinTargetAltitude:-200]
+        [OffsetPlanetMaxTargetAltitude:200]
+
+      </Description>
+
+    </EntityComponent>	
+	
+	
+	   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CRUSADERS_LDroneAutopilot_Horsefly</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Autopilot]
+		
+        [DisableInertiaDampeners:false]
+        [SlowDownOnWaypointApproach:true]
+        [FlyLevelWithGravity:true]
+        [MinimumPlanetAltitude:400]
+        [IdealPlanetAltitude:500]
+        [WaypointTolerance:30]
+
+        [IdealMaxSpeed:75]
+        [MaxSpeedTolerance:5]
+		
+		
+        [OffsetSpaceMinDistFromTarget:150]
+        [OffsetSpaceMaxDistFromTarget:300]
+        [OffsetPlanetMinDistFromTarget:150]
+        [OffsetPlanetMaxDistFromTarget:300]
+        [OffsetPlanetMinTargetAltitude:-200]
+        [OffsetPlanetMaxTargetAltitude:200]
+
+      </Description>
+
+    </EntityComponent>	
+	
+		
+	
+	
+	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>

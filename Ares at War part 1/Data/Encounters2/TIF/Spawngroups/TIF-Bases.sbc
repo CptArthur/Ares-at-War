@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+	
+
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>TIF_HQ</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:IRONFIST]		
+
+		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+		[TriggerRadius:15000]
+
+		[ForceExactPositionAndOrientation:true]
+
+
+		[StaticEncounterCoords:{X:-1247612.66937121 Y:-539425.079872128 Z:-1787266.33051882}]
+		[StaticEncounterForward:{X:0.970212095120719 Y:-0.117654054530474 Z:-0.21176877469071}]
+		[StaticEncounterUp:{X:0.0575104357542052 Y:-0.73730195616355 Z:0.673110967981331}]
+
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Lorus]
+		[StaticEncounterPlanetDirection:{X:0.0600485129833792 Y:-0.737100963657815 Z:0.673109460238976}]
+		[StaticEncounterPlanetAltitude:2.63930107419583]
+
+
+[UseRandomNameGenerator:true]
+[RandomGridNamePrefix:(NPC-AAW)]
+[RandomGridNamePattern:Fortress]
+[ReplaceAntennaNameWithRandomizedName:Antenna]
+
+
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:TIF_HQDestroyed]			
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="TIF-Fortress">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>TIF_HQ_Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+		
+	</SpawnGroup>
+
+
+
+	</SpawnGroups>
+</Definitions>

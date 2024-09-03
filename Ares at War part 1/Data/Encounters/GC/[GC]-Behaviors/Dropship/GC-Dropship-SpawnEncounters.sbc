@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	<!--
+	
+	
+	[AutopilotData:GC-Dropship-Autopilot-1]
+	[SecondaryAutopilotData:GC-Dropship-Autopilot-2]	
+	
+	
+
+	[Triggers:GC-Dropship-Trigger-MoveToLanding]
+	[Triggers:GC-Dropship-Trigger-StartLanding]	
+	
+	[Triggers:GC-Dropship-Trigger-ArrivedAtLandingSite]	
+
+	[Triggers:GC-Dropship-Trigger-SpawnEncounters]	
+	
+	-->
+	
+	
+	<!-- Oi -->
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC_Dropship_Trigger_SpawnEncounters</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+
+        [Conditions:GC-Dropship-Condition-SpawnEncounters]
+
+
+        [StartsReady:true]
+
+        [MaxActions:1]
+        [Actions:GC-Dropship-Action-SpawnEncounters]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC_Dropship_Condition_SpawnEncounters</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+
+        [UseConditions:true]
+	[CheckTrueBooleans:true]
+	[TrueBooleans:SpawnEncounters]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC_Dropship_Action_SpawnEncounters</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [SpawnEncounter:true]
+        [Spawner:GC-Dropship-Spawner-SpawnEncounters]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC_Dropship_Spawner_SpawnEncounters</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Spawn]
+
+        [UseSpawn:true]
+
+        [MaxSpawns:-1]
+        [SpawningType:Creature]
+        [SpawnGroups:GC-Dropship-SpawnGroup-Raiders]
+        [ProcessAsAdminSpawn:true]
+
+      </Description>
+
+    </EntityComponent>
+	
+
+	
+	
+	
+  </EntityComponents>
+</Definitions>

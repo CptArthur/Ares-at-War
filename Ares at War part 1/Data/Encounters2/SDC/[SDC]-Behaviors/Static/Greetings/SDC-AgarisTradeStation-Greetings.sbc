@@ -1,0 +1,351 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+	<!--
+[Triggers:CRUSADERS-TradeStation-Triggers-EnableGreetings]
+[Triggers:CRUSADERS-TradeStation-Triggers-DisableGreetings]
+
+[Triggers:CRUSADERS-TradeStation-Triggers-PlayerFar]
+
+
+
+[Triggers:CRUSADERS-TradeStation-Triggers-Greeting-Neutral]
+[Triggers:CRUSADERS-TradeStation-Triggers-Greeting-Friendly]
+
+
+	-->
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CRUSADERS_TradeStation_Triggers_EnableGreetings</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[TargetDistance:5000]
+	[MinCooldownMs:10000]
+	[MaxCooldownMs:10001]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	  	 
+	[Actions:CRUSADERS-TradeStation-Action-EnableGreetings]
+
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CRUSADERS_TradeStation_Triggers_DisableGreetings</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[TargetDistance:5000]
+	[MinCooldownMs:10000]
+	[MaxCooldownMs:10001]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	  	 
+	[UseFailCondition:true]
+
+	[Actions:CRUSADERS-TradeStation-Action-DisableGreetings]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CRUSADERS_TradeStation_Action_EnableGreetings</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+        
+	[EnableTriggers:true]
+	[EnableTriggerNames:CRUSADERS-TradeStation-Triggers-Greeting-Neutral]
+	[EnableTriggerNames:CRUSADERS-TradeStation-Triggers-Greeting-Friendly]	
+	
+	[EnableTriggerNames:CRUSADERS-TradeStation-Triggers-PlayerFar]
+	
+	
+	
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CRUSADERS_TradeStation_Action_DisableGreetings</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	[DisableTriggers:true]
+	[DisableTriggerNames:CRUSADERS-TradeStation-Triggers-Greeting-Neutral]
+	[DisableTriggerNames:CRUSADERS-TradeStation-Triggers-Greeting-Friendly]
+
+	[DisableTriggerNames:CRUSADERS-TradeStation-Triggers-PlayerFar]
+       
+
+      </Description>
+      
+    </EntityComponent>	
+
+	
+	
+<!-- TradeStation
+
+CRUSADERS-TradeStation-Triggers-Greeting
+
+
+
+
+
+
+CRUSADERS-TradeStation-Triggers-PlayerFar
+
+
+ -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CRUSADERS_TradeStation_Triggers_Greeting_Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[TargetDistance:2000]
+	[UsePlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition-ExcludedPlayerNear]
+	[PlayerConditionIds:PlayerCondition-CRUSADERSNeutral]
+	
+	
+	[UseTrigger:true]
+	[StartsReady:true]
+	  
+	[Actions:CRUSADERS-TradeStation-Action-Greeting-Neutral]	  
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CRUSADERS_TradeStation_Action_Greeting_Neutral</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+        
+	[UseChatBroadcast:true]
+    [ChatData:CRUSADERS-TradeStation-Chat-Greeting-Neutral]    
+	
+	[SavePlayerIdentityToSandboxList:true]
+	[PlayerIdentitySandboxList:PlayerNear]
+
+	[SavePlayerIdentity:true]
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CRUSADERS_TradeStation_Chat_Greeting_Neutral</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [MinTime:2]
+      [MaxTime:3]
+
+      [Author:{AntennaName}]
+      [Color:{PlayerRelation}]
+      
+	[ChatMessages:Welcome {PlayerName} of the {PlayerFactionName}. We offer only the best deals for your faction.]
+	[BroadcastChatType:Chat]
+    [ChatAudio:ArcHudGPSNotification2]
+
+	[ChatMessages:Welcome {PlayerName}. None of the best things in life are free. But here at CRUSADERS, they're cheap.]
+	[BroadcastChatType:Chat]
+	[ChatAudio:ArcHudGPSNotification2]
+      </Description>
+      
+    </EntityComponent>
+
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CRUSADERS_TradeStation_Triggers_Greeting_Friendly</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[TargetDistance:2000]
+	[UsePlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition-ExcludedPlayerNear]
+	[PlayerConditionIds:PlayerCondition-CRUSADERSFriendly]
+	
+	
+	[UseTrigger:true]
+	[StartsReady:true]
+	  
+	[Actions:CRUSADERS-TradeStation-Action-Greeting-Friendly]	  
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CRUSADERS_TradeStation_Action_Greeting_Friendly</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+        
+	[UseChatBroadcast:true]
+    [ChatData:CRUSADERS-TradeStation-Chat-Greeting-Friendly]    
+	
+	[AddTagsToPlayers:true]
+	[AddTags:PlayerNear]
+	[AddTagsIncludeSavedPlayerIdentity:true]
+	
+
+	[SavePlayerIdentity:true]
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CRUSADERS_TradeStation_Chat_Greeting_Friendly</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [MinTime:2]
+      [MaxTime:3]
+
+      [Author:{AntennaName}]
+      [Color:{PlayerRelation}]
+      
+	[ChatMessages:Greetings {PlayerName}. As a token of respect, we'll try to arrange for a reduced price on some of our goods.]
+	[BroadcastChatType:Chat]
+    [ChatAudio:ArcHudGPSNotification2]
+
+	[ChatMessages:Welcome {PlayerName}. Always a pleasure to see to a sensible business partner.]
+	[BroadcastChatType:Chat]
+	[ChatAudio:ArcHudGPSNotification2]
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- The unsubscribe one -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CRUSADERS_TradeStation_Triggers_PlayerFar</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerFar]
+	[TargetDistance:3500]
+	[UsePlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition-IncludedPlayerNear]
+	
+	[UseTrigger:true]
+	[StartsReady:true]
+
+	  
+	[Actions:CRUSADERS-TradeStation-Action-PlayerFar]	  
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CRUSADERS_TradeStation_Action_PlayerFar</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+        
+	[RemoveTagsFromPlayers:true]
+	[RemoveTags:PlayerNear]
+	[RemoveTagsIncludeSavedPlayerIdentity:true]
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!-- Sunset City -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_Static_Triggers_InitializeStores</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Session]
+	[UseTrigger:true]
+	  
+	[Actions:GC-Static-Action-InitializeStores]	  
+      </Description>
+      
+    </EntityComponent>
+
+<!-- Sunset City-->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_Static_Action_InitializeStores</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+	[AddCustomDataToBlocks:true]
+	[CustomDataBlockNames:EconomySurvival Store Ingot,EconomySurvival Store Comp,EconomySurvival Store Add,EconomySurvival Store Water Vehicles,EconomySurvival Store Land Vehicles,EconomySurvival Store Air Vehicles,EconomySurvival Store Food,EconomySurvival Store Faction,EconomySurvival Store Outpost]
+	[CustomDataFiles:GC_Ingot.xml]
+	[CustomDataFiles:GC_Comp.xml]
+	[CustomDataFiles:GC_Add.xml]
+	[CustomDataFiles:GC_Water_Vehicles.xml]
+	[CustomDataFiles:GC_Land_Vehicles.xml]
+	[CustomDataFiles:GC_Air_Vehicles.xml]
+	[CustomDataFiles:DailyNeeds_Food.xml]	
+	[CustomDataFiles:GC_Faction.xml]
+	[CustomDataFiles:GC_Outpost.xml]		
+	
+      </Description>
+      
+    </EntityComponent>	
+
+	
+	
+	
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

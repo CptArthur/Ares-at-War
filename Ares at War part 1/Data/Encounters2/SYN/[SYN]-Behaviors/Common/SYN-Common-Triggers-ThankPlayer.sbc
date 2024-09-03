@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+<!--
+
+[Triggers:SYN-Common-Trigger-CommandReceived-SYNThanksPlayer]
+
+
+
+-->
+
+<!--================= Command Normal ==================-->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Common_Trigger_CommandReceived_SYNThanksPlayer</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:CommandReceived]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[CommandReceiveCode:SYNThanksPlayer]
+	[MaxActions:1]
+
+	[Actions:SYN-Common-Action-CommandReceived-SYNThanksPlayer]	
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Common_Action_CommandReceived_SYNThanksPlayer</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[UseChatBroadcast:true]
+	[ChatData:SYN-Common-Chat-CommandReceived-SYNThanksPlayer]
+
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:3500]
+	[ReputationChangeFactions:SYN]
+	[ReputationChangeAmount:500]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+	
+	[ChangeAttackerReputation:true]
+	[ChangeAttackerReputationFaction:SYN]
+	[ChangeAttackerReputationAmount:-500]
+	[ReputationChangesForAllAttackPlayerFactionMembers:true]
+
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Common_Chat_CommandReceived_SYNThanksPlayer</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+	[UseChat:true]
+	[StartsReady:true]
+	[Chance:100]
+	[MaxChats:-1]
+	[BroadcastRandomly:true]
+	[IgnoreAntennaRequirement:true]
+	[IgnoredAntennaRangeOverride:10000]      
+	[Author:SYN]
+	[Color:Green]
+      [BroadcastRandomly:true]
+	
+      [ChatMessages:Enemy craft destroyed! Nice work {PlayerName}]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+      [ChatMessages:Enemy ship destroyed! Thanks {PlayerName}]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+      [ChatMessages:Good work {PlayerName}! Enemy ship destroyed! ]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+  </EntityComponents>
+</Definitions>

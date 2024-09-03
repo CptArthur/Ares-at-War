@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_HQ_Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+ 	[TargetData:AaW_Target_Main_B]
+
+	[TriggerGroups:ContextTriggers]		
+	[TriggerGroups:SYN_CommonTriggers]
+	[TriggerGroups:SYN_Static_CommonTriggers]	
+	[TriggerGroups:FAC_Static_CommonTriggers]	
+	[TriggerGroups:FAC_Static_PlayerNear_Unwanted]		
+	
+	[Triggers:SYN_DefenseSystem_Trigger_LaunchingPatrolCraft]
+	[Triggers:SYN_DefenseSystem_Trigger_LightGarrison]		
+	[Triggers:FAC_Static_Trigger_CallAtmoCargoShip_SYNCode]
+
+	[Triggers:FAC_PointSystem_Trigger_Decrease100]
+	[Triggers:FAC_AggressionSystem_Trigger_Increase100]
+	
+		
+	
+	
+		[Triggers:FAC_Static_Trigger_Death_PurgeCounter]
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_MinorStation_Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW_Target_Main_B]	
+
+	[TriggerGroups:ContextTriggers]		
+	[TriggerGroups:SYN_CommonTriggers]
+	[TriggerGroups:SYN_Static_CommonTriggers]	
+	[TriggerGroups:FAC_Static_CommonTriggers]		
+	[TriggerGroups:FAC_Static_PlayerNear_Unwanted]	
+	
+
+	[Triggers:SYN_DefenseSystem_Trigger_LaunchingPatrolCraft]
+	[Triggers:SYN_DefenseSystem_Trigger_LightGarrison]	
+
+	[Triggers:FAC_PointSystem_Trigger_Decrease50]
+	[Triggers:FAC_AggressionSystem_Trigger_Increase50]
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_StripMiningPlatform_Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW_Target_Main_B]	
+
+	[TriggerGroups:ContextTriggers]		
+	[TriggerGroups:SYN_CommonTriggers]
+	[TriggerGroups:SYN_Static_CommonTriggers]	
+	[TriggerGroups:FAC_Static_CommonTriggers]		
+	
+	[TriggerGroups:FAC_Static_PlayerNear_ShortRange_Unwanted]	
+
+
+
+
+
+
+	[Triggers:FAC_PointSystem_Trigger_Decrease50]
+	[Triggers:FAC_AggressionSystem_Trigger_Increase50]
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_TalisOutpost_Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+ 	[TargetData:AaW_Target_Main_B]	
+	
+	[TriggerGroups:ContextTriggers]		
+	[TriggerGroups:SYN_CommonTriggers]
+	[TriggerGroups:SYN_Static_CommonTriggers]	
+	[TriggerGroups:FAC_Static_CommonTriggers]	
+
+	[Triggers:SYN_DefenseSystem_Trigger_LaunchingPatrolCraft]
+	[Triggers:SYN_DefenseSystem_Trigger_LightGarrison]			
+
+	[Triggers:FAC_PointSystem_Trigger_Decrease75]
+	[Triggers:FAC_AggressionSystem_Trigger_Increase75]
+	
+[Triggers:SYN_Trigger_Static_PopulateStores_SYNTalisOutpost]
+[Triggers:SYN_Trigger_Static_PopulateStores_SYNTalisOutpostIO]	
+	
+      </Description>
+      
+    </EntityComponent>	
+	
+  </EntityComponents>
+</Definitions>

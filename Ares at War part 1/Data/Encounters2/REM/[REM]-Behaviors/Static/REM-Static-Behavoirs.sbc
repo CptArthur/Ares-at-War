@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>REM_HQ_Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW_Target_Main_B]	
+	
+	[TriggerGroups:ContextTriggers]
+	[TriggerGroups:REM_CommonTriggers]
+	[TriggerGroups:REM_Static_CommonTriggers]
+	[TriggerGroups:FAC_Static_CommonTriggers]
+
+[Triggers:REM_Trigger_Static_PopulateStores_REMHQ]
+
+[Triggers:REM_Trigger_Static_PopulateStores_REMHQIO]
+
+[Triggers:REM_ZoneController_Trigger_Death]
+
+	
+	[Triggers:FAC_PointSystem_Trigger_Decrease100]
+	[Triggers:FAC_AggressionSystem_Trigger_Increase100]
+	
+	[Triggers:FAC_Static_Trigger_Death_PurgeCounter]
+      </Description>
+      
+    </EntityComponent>	
+	
+
+
+
+
+
+
+
+	
+  </EntityComponents>
+</Definitions>

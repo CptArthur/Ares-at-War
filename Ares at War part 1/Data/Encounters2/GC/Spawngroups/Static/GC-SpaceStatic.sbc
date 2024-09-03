@@ -1,0 +1,333 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>GC_DefensePlatform_Heavy</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		[ForceStaticGrid:true]
+		[FactionOwner:GC]		
+		[IgnoreCombatPhase:true]
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[RivalAiSpawn:true]
+
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+		[IgnoreCleanupRules:true]
+
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+		
+		
+			<Prefab SubtypeId="GC-DefensePlatform-Heavy">
+				<Position>
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>GC_DefensePlatform_Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+
+		</Prefabs>
+		
+	</SpawnGroup>
+
+
+
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>GC_LezunoStation</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:GC]		
+
+		[TriggerCoords:{X:-268926.92 Y:-2226.93 Z:-1045083.29}]
+		[TriggerRadius:200000]
+
+		[ForceExactPositionAndOrientation:true]
+
+
+		[StaticEncounterCoords:{X:-1385652.10665074 Y:-323878.762990902 Z:-1524230.34566519}]
+		[StaticEncounterForward:{X:0.675498563043309 Y:-0.240806824380095 Z:-0.696931678615916}]
+		[StaticEncounterUp:{X:-0.185920007975409 Y:-0.970255113084822 Z:0.15504440063151}]
+
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Lezuno]
+		[StaticEncounterPlanetDirection:{X:-0.805741812356587 Y:0.0144835669231833 Z:-0.592089822670094}]
+		[StaticEncounterPlanetAltitude:37800.7030812066]
+
+
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:Lezuno Station]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:GC_LezunoStationDestroyed]			
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+		
+		
+			<Prefab SubtypeId="GC-SpaceStation">
+				<Position>
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>GC_SpaceStation_Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+
+		</Prefabs>
+		
+	</SpawnGroup>
+	
+	
+	<!-- BylenKoraStation  The main oneBase -->
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>GC_BylenStation</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:GC]		
+
+		[TriggerCoords:{X:-595839.722064192 Y:-1111.90539129573 Z:675312.442522661}]
+		[TriggerRadius:200000]
+
+		[ForceExactPositionAndOrientation:true]
+
+		[StaticEncounterCoords:{X:-743011.512893762 Y:-642.058501805947 Z:764039.700828268}]
+		[StaticEncounterForward:{X:-0.480694791668031 Y:0.0149043097180552 Z:0.876761300933758}]
+		[StaticEncounterUp:{X:0.876308538727628 Y:-0.0281772588341407 Z:0.480925552489823}]
+
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Agaris]
+		[StaticEncounterPlanetDirection:{X:0.578024569283489 Y:-0.190937232055972 Z:-0.793366605498014}]
+		[StaticEncounterPlanetAltitude:608311.131098844]
+
+
+
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:Bylen Station]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+
+
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:GC_BylenStationDestroyed]			
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+		
+		
+			<Prefab SubtypeId="GC-SpaceStation">
+				<Position>
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>GC_SpaceStation_Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+
+		</Prefabs>
+		
+	</SpawnGroup>
+	
+	<!-- BylenYetiStation Base Aka Crait -->
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>GC_CraitStation</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:GC]		
+
+		[TriggerCoords:{X:1436450.75 Y:-599990.49 Z:-2801182.58}]
+		[TriggerRadius:200000]
+
+		[ForceExactPositionAndOrientation:true]
+
+
+
+		[StaticEncounterCoords:{X:1436450.75 Y:-599990.49 Z:-2801182.58}]
+		[StaticEncounterForward:{X:-1 Y:0 Z:0}]
+		[StaticEncounterUp:{X:0 Y:0 Z:1}]
+
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Crait]
+		[StaticEncounterPlanetDirection:{X:-0.218745130014023 Y:0.384762381627 Z:0.896720958704472}]
+		[StaticEncounterPlanetAltitude:28334.045246133]
+
+
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:Crait Station]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+
+
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:GC_CraitStationDestroyed]			
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+		
+		
+			<Prefab SubtypeId="GC-SpaceStation">
+				<Position>
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>GC_SpaceStation_Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+
+		</Prefabs>
+		
+	</SpawnGroup>		
+	
+
+	<!-- BylenYetiStation Base Aka Crait -->
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>GC_LorusStation</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:GC]		
+
+		[TriggerCoords:{X:1436450.75 Y:-599990.49 Z:-2801182.58}]
+		[TriggerRadius:200000]
+
+		[ForceExactPositionAndOrientation:true]
+
+
+		[StaticEncounterCoords:{X:-1215952.01421887 Y:-529934.19014557 Z:-1781219.0955059}]
+		[StaticEncounterForward:{X:0.911868158880997 Y:0.0331412480691005 Z:0.409143151592941}]
+		[StaticEncounterUp:{X:-0.409333645189219 Y:0.147958753616275 Z:0.900307821883396}]
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Lorus]
+		[StaticEncounterPlanetDirection:{X:0.808606735124184 Y:-0.209005342379451 Z:0.549974467378856}]
+		[StaticEncounterPlanetAltitude:16420.577756384]
+
+
+
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:Lorus Station]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+
+		[SandboxVariables:GCInvasionOfLorus]	
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:GC_LorusStationDestroyed]			
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+		
+		
+			<Prefab SubtypeId="GC-SpaceStation">
+				<Position>
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>GC_SpaceStation_Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+
+		</Prefabs>
+		
+	</SpawnGroup>	
+
+
+
+
+
+
+
+
+
+
+
+	</SpawnGroups>
+</Definitions>

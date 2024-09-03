@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+	<!-- ==================FOB=================== -->
+	<!-- ==================FOB=================== -->	
+	<!-- ==================FOB=================== -->	
+	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF_HQ_Behavior</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW_Target_Static_A]	  
+	
+	[TriggerGroups:ContextTriggers]			
+	[TriggerGroups:FAF_CommonTriggers]
+	[TriggerGroups:FAF_Static_CommonTriggers]	 
+	[TriggerGroups:FAC_Static_CommonTriggers]		
+	
+	
+	[TriggerGroups:FAF_TriggerGroup_HeavyDefense]	
+	[TriggerGroups:FAC_Static_PlayerNear_Unwanted]
+	
+	
+	[TriggerGroups:FAF_Commander_CommonTriggers]
+		
+	[Triggers:FAF_ZoneController_Trigger_Death]
+	[Triggers:FAF_MajorStatic_Trigger_selfpresence]	
+	[Triggers:FAC_PointSystem_Trigger_Decrease100]
+	[Triggers:FAC_AggressionSystem_Trigger_Increase100]	
+	
+	[Triggers:FAF_Trigger_Static_PopulateStores_FAFHQ]
+[Triggers:FAF_Trigger_Static_PopulateStores_FAFHQIO]
+      </Description>
+      
+    </EntityComponent>		
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF_AHEHQ_Behavior</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW_Target_Static_A]	  
+	
+	[TriggerGroups:ContextTriggers]			
+	[TriggerGroups:FAF_CommonTriggers]
+	[TriggerGroups:FAF_Static_CommonTriggers]	 
+	[TriggerGroups:FAC_Static_CommonTriggers]		
+	
+	[TriggerGroups:FAF_TriggerGroup_HeavyDefense]	
+
+
+	[Triggers:AHE_Trigger_Static_PopulateStores_AHE]
+	[Triggers:AHE_Trigger_Static_PopulateStores_AHEIO]
+	
+	
+	
+	[Triggers:FAF_ZoneController_Trigger_Death]
+	[Triggers:FAF_MajorStatic_Trigger_selfpresence]	
+	[Triggers:FAC_PointSystem_Trigger_Decrease100]
+	[Triggers:FAC_AggressionSystem_Trigger_Increase100]	
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAF_AHE_Station_Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:AaW_Target_Main_B]
+
+
+	[TriggerGroups:ContextTriggers]			
+	[TriggerGroups:FAF_CommonTriggers]
+	[TriggerGroups:FAF_Static_CommonTriggers]	 
+	[TriggerGroups:FAC_Static_CommonTriggers]	 
+
+	[TriggerGroups:FAF_TriggerGroup_MediumDefense]	
+
+	[Triggers:AHE_Trigger_Static_PopulateStores_AHE]
+	[Triggers:AHE_Trigger_Static_PopulateStores_AHEIO]	
+	
+	[Triggers:FAC_PointSystem_Trigger_Decrease25]
+	[Triggers:FAC_AggressionSystem_Trigger_Increase15]
+
+	[Triggers:FAF_MinorStatic_Trigger_selfpresence]
+
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

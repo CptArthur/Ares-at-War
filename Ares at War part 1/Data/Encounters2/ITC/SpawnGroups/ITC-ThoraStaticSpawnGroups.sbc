@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>ITC_Thora4Capital</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+			[FactionOwner:ITC]		
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:10000]
+
+			[ForceExactPositionAndOrientation:true]
+
+			[StaticEncounterCoords:{X:1238833.16743399 Y:-47657.4255804523 Z:-123927.554322716}]
+			[StaticEncounterForward:{X:0.162615079180366 Y:0.226631750536186 Z:-0.96030952597174}]
+			[StaticEncounterUp:{X:-0.955643242148651 Y:-0.206048368831541 Z:-0.210452045458049}]
+
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Thora 4]
+			[StaticEncounterPlanetDirection:{X:-0.953422595388708 Y:-0.216312054956621 Z:-0.210224759442614}]
+			[StaticEncounterPlanetAltitude:-14.8310477132327]
+
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-AAW)]
+			[RandomGridNamePattern:StarLight City]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+
+		
+			[ReplenishSystems:true]
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:ITC_Thora4CapitalDestroyed]			
+			[ZoneConditions:ZoneCondition_ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="ITC-StarLightCity">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>ITC_Capital_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+		</SpawnGroup>
+
+	
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>ITC_ProcessingPlant</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+			[FactionOwner:ITC]		
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:10000]
+
+			[ForceExactPositionAndOrientation:true]
+
+			[StaticEncounterCoords:{X:1239863.49195 Y:-37592.416121595 Z:-95703.7844483427}]
+			[StaticEncounterForward:{X:-0.226071801273135 Y:-0.756123173489245 Z:-0.614141097128073}]
+			[StaticEncounterUp:{X:-0.932629426537132 Y:-0.0140130684414682 Z:0.360563429468207}]
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Thora 4]
+			[StaticEncounterPlanetDirection:{X:-0.931914923482079 Y:-0.0119877975431297 Z:0.362478782967301}]
+			[StaticEncounterPlanetAltitude:2.65783264583297]
+	
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-AAW)]
+			[RandomGridNamePattern:Dorium Processing Plant]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			
+			
+
+	
+			[ReplenishSystems:true]
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:ITC_ProcessingPlantDestroyed]			
+			[ZoneConditions:ZoneCondition_ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="ITC-ProcessingPlant">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>ITC_ProcessingPlant_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+		</SpawnGroup>
+
+
+
+	</SpawnGroups>
+</Definitions>
