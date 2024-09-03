@@ -31,12 +31,12 @@
 	[MinCooldownMs:90000]
 	[MaxCooldownMs:120000]
 	
-	[CommandReceiveCode:ITC-RedAlert]
+	[CommandReceiveCode:ITC_RedAlert]
 
 	[MaxActions:-1]
 	[ActionExecution:All]
 
-	[Actions:FAC-Context-Action-InitBattle]
+	[Actions:FAC_Context_Action_InitBattle]
 	
       </Description>
       
@@ -60,14 +60,14 @@
 	[MinCooldownMs:90000]
 	[MaxCooldownMs:120000]
 	
-	[Conditions:FAC-Context-Condition-SettingNormal]
-	[CommandReceiveCode:ITC-SOS]
+	[Conditions:FAC_Context_Condition_SettingNormal]
+	[CommandReceiveCode:ITC_SOS]
 
 	[MaxActions:-1]
 	[ActionExecution:All]
 
-	[Actions:ITC-DefenseSystem-Action-ReceivedSOS] 
-  [Actions:FAC-Context-Action-InitHighAlert]
+	[Actions:ITC_DefenseSystem_Action_ReceivedSOS] 
+  [Actions:FAC_Context_Action_InitHighAlert]
 	
       </Description>
       
@@ -109,9 +109,9 @@
 
 	[MinCooldownMs:90000]
 	[MaxCooldownMs:120000]
-	[Conditions:FAC-Context-Condition-SettingBattle]
+	[Conditions:FAC_Context_Condition_SettingBattle]
 	[MaxActions:-1]
-	[Actions:ITC-DefenseSystem-Action-SOS]
+	[Actions:ITC_DefenseSystem_Action_SOS]
 	
       </Description>
       
@@ -128,7 +128,7 @@
 	[RivalAI Action]
 	
 	[UseChatBroadcast:true]
-	[ChatData:ITC-DefenseSystem-Chat-SOS]
+	[ChatData:ITC_DefenseSystem_Chat_SOS]
 	
 	[BroadcastCommandProfiles:true]
 	[CommandProfileIds:ITC-DefenseSystem-Command-SOS]
@@ -178,7 +178,7 @@
 
       [RivalAI Command]
       
-	[CommandCode:ITC-SOS]
+	[CommandCode:ITC_SOS]
 	[MatchSenderReceiverOwners:true]
 	[SendTargetEntityId:true]
 
@@ -208,9 +208,9 @@
 
 	[MinCooldownMs:1800000]
 	[MaxCooldownMs:1800001]
-	[Conditions:FAC-Context-Condition-SettingBattle]
+	[Conditions:FAC_Context_Condition_SettingBattle]
 	[MaxActions:-1]
-	[Actions:ITC-DefenseSystem-Action-LightGarrison]
+	[Actions:ITC_DefenseSystem_Action_LightGarrison]
 	
       </Description>
       
@@ -226,7 +226,7 @@
 	[RivalAI Action]
 	
 	[UseChatBroadcast:true]
-	[ChatData:ITC-DefenseSystem-Chat-Garrison]
+	[ChatData:ITC_DefenseSystem_Chat_Garrison]
  
  [SpawnEncounter:true]
 [Spawner:ITC-LightDefense-Spawner]
@@ -251,9 +251,9 @@
 
 	[MinCooldownMs:1800000]
 	[MaxCooldownMs:1800001]
-	[Conditions:FAC-Context-Condition-SettingBattle]
+	[Conditions:FAC_Context_Condition_SettingBattle]
 	[MaxActions:-1]
-	[Actions:ITC-DefenseSystem-Action-MediumGarrison]
+	[Actions:ITC_DefenseSystem_Action_MediumGarrison]
 	
       </Description>
       
@@ -269,7 +269,7 @@
 	[RivalAI Action]
 	
 	[UseChatBroadcast:true]
-	[ChatData:ITC-DefenseSystem-Chat-Garrison]
+	[ChatData:ITC_DefenseSystem_Chat_Garrison]
  
  [SpawnEncounter:true]
 [Spawner:ITC-MediumDefense-Spawner]
@@ -325,9 +325,9 @@
 
 	[MinCooldownMs:1800000]
 	[MaxCooldownMs:1800001]
-	[Conditions:FAC-Context-Condition-SettingHighAlert]
+	[Conditions:FAC_Context_Condition_SettingHighAlert]
 	[MaxActions:-1]
-	[Actions:ITC-DefenseSystem-Action-LaunchingPatrolCraft]
+	[Actions:ITC_DefenseSystem_Action_LaunchingPatrolCraft]
 	
       </Description>
       
@@ -343,7 +343,7 @@
 	[RivalAI Action]
 	
 	[UseChatBroadcast:true]
-	[ChatData:ITC-DefenseSystem-Chat-LaunchingPatrolCraft]
+	[ChatData:ITC_DefenseSystem_Chat_LaunchingPatrolCraft]
  
  [SpawnEncounter:true]
 [Spawner:ITC-Spawner-Patrol]

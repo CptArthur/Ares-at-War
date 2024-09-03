@@ -31,12 +31,12 @@
 	[MinCooldownMs:90000]
 	[MaxCooldownMs:120000]
 	
-	[CommandReceiveCode:AHE-RedAlert]
+	[CommandReceiveCode:AHE_RedAlert]
 
 	[MaxActions:-1]
 	[ActionExecution:All]
 
-	[Actions:FAC-Context-Action-InitBattle]
+	[Actions:FAC_Context_Action_InitBattle]
 	
       </Description>
       
@@ -60,14 +60,14 @@
 	[MinCooldownMs:90000]
 	[MaxCooldownMs:120000]
 	
-	[Conditions:FAC-Context-Condition-SettingNormal]
-	[CommandReceiveCode:AHE-SOS]
+	[Conditions:FAC_Context_Condition_SettingNormal]
+	[CommandReceiveCode:AHE_SOS]
 
 	[MaxActions:-1]
 	[ActionExecution:All]
 
-	[Actions:AHE-DefenseSystem-Action-ReceivedSOS]
-  [Actions:FAC-Context-Action-InitHighAlert]
+	[Actions:AHE_DefenseSystem_Action_ReceivedSOS]
+  [Actions:FAC_Context_Action_InitHighAlert]
 	
       </Description>
       
@@ -109,9 +109,9 @@
 
 	[MinCooldownMs:90000]
 	[MaxCooldownMs:120000]
-	[Conditions:FAC-Context-Condition-SettingBattle]
+	[Conditions:FAC_Context_Condition_SettingBattle]
 	[MaxActions:-1]
-	[Actions:AHE-DefenseSystem-Action-SOS]
+	[Actions:AHE_DefenseSystem_Action_SOS]
 	
       </Description>
       
@@ -128,7 +128,7 @@
 	[RivalAI Action]
 	
 	[UseChatBroadcast:true]
-	[ChatData:AHE-DefenseSystem-Chat-SOS]
+	[ChatData:AHE_DefenseSystem_Chat_SOS]
 	
 	[BroadcastCommandProfiles:true]
 	[CommandProfileIds:AHE-DefenseSystem-Command-SOS]
@@ -178,7 +178,7 @@
 
       [RivalAI Command]
       
-	[CommandCode:AHE-SOS]
+	[CommandCode:AHE_SOS]
 	[MatchSenderReceiverOwners:true]
 	[SendTargetEntityId:true]
 
@@ -208,9 +208,9 @@
 
 	[MinCooldownMs:1800000]
 	[MaxCooldownMs:1800001]
-	[Conditions:FAC-Context-Condition-SettingBattle]
+	[Conditions:FAC_Context_Condition_SettingBattle]
 	[MaxActions:-1]
-	[Actions:AHE-DefenseSystem-Action-MediumGarrison]
+	[Actions:AHE_DefenseSystem_Action_MediumGarrison]
 	
       </Description>
       
@@ -226,7 +226,7 @@
 	[RivalAI Action]
 	
 	[UseChatBroadcast:true]
-	[ChatData:AHE-DefenseSystem-Chat-Garrison]
+	[ChatData:AHE_DefenseSystem_Chat_Garrison]
  
  [SpawnEncounter:true]
 [Spawner:AHE-Spawner-MediumGarrison]
@@ -251,9 +251,9 @@
 
 	[MinCooldownMs:1800000]
 	[MaxCooldownMs:1800001]
-	[Conditions:FAC-Context-Condition-SettingBattle]
+	[Conditions:FAC_Context_Condition_SettingBattle]
 	[MaxActions:-1]
-	[Actions:AHE-DefenseSystem-Action-HeavyGarrison]
+	[Actions:AHE_DefenseSystem_Action_HeavyGarrison]
 	
       </Description>
       
@@ -269,7 +269,7 @@
 	[RivalAI Action]
 	
 	[UseChatBroadcast:true]
-	[ChatData:AHE-DefenseSystem-Chat-Garrison]
+	[ChatData:AHE_DefenseSystem_Chat_Garrison]
  
  [SpawnEncounter:true]
 [Spawner:AHE-Spawner-HeavyGarrison]
@@ -325,9 +325,9 @@
 
 	[MinCooldownMs:1800000]
 	[MaxCooldownMs:1800001]
-	[Conditions:FAC-Context-Condition-SettingHighAlert]
+	[Conditions:FAC_Context_Condition_SettingHighAlert]
 	[MaxActions:-1]
-	[Actions:AHE-DefenseSystem-Action-LaunchingPatrolCraft]
+	[Actions:AHE_DefenseSystem_Action_LaunchingPatrolCraft]
 	
       </Description>
       
@@ -343,7 +343,7 @@
 	[RivalAI Action]
 	
 	[UseChatBroadcast:true]
-	[ChatData:AHE-DefenseSystem-Chat-LaunchingPatrolCraft]
+	[ChatData:AHE_DefenseSystem_Chat_LaunchingPatrolCraft]
  
  [SpawnEncounter:true]
 [Spawner:AHE-Spawner-Patrol]

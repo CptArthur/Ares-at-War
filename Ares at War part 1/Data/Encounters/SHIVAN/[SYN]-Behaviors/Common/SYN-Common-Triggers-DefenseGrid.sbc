@@ -31,12 +31,12 @@
 	[MinCooldownMs:90000]
 	[MaxCooldownMs:120000]
 	
-	[CommandReceiveCode:SYN-RedAlert]
+	[CommandReceiveCode:SYN_RedAlert]
 
 	[MaxActions:-1]
 	[ActionExecution:All]
 
-	[Actions:FAC-Context-Action-InitBattle]
+	[Actions:FAC_Context_Action_InitBattle]
 	
       </Description>
       
@@ -60,14 +60,14 @@
 	[MinCooldownMs:90000]
 	[MaxCooldownMs:120000]
 	
-	[Conditions:FAC-Context-Condition-SettingNormal]
-	[CommandReceiveCode:SYN-SOS]
+	[Conditions:FAC_Context_Condition_SettingNormal]
+	[CommandReceiveCode:SYN_SOS]
 
 	[MaxActions:-1]
 	[ActionExecution:All]
 
-	[Actions:SYN-DefenseSystem-Action-ReceivedSOS]
-  [Actions:FAC-Context-Action-InitHighAlert]
+	[Actions:SYN_DefenseSystem_Action_ReceivedSOS]
+  [Actions:FAC_Context_Action_InitHighAlert]
 	
       </Description>
       
@@ -109,9 +109,9 @@
 
 	[MinCooldownMs:90000]
 	[MaxCooldownMs:120000]
-	[Conditions:FAC-Context-Condition-SettingBattle]
+	[Conditions:FAC_Context_Condition_SettingBattle]
 	[MaxActions:-1]
-	[Actions:SYN-DefenseSystem-Action-RedAlert]
+	[Actions:SYN_DefenseSystem_Action_RedAlert]
 	
       </Description>
       
@@ -130,7 +130,7 @@
 	[RivalAI Action]
 	
 	[UseChatBroadcast:true]
-	[ChatData:SYN-DefenseSystem-Chat-RedAlert]
+	[ChatData:SYN_DefenseSystem_Chat_RedAlert]
 	
 	[BroadcastCommandProfiles:true]
 	[CommandProfileIds:SYN-DefenseSystem-Command-RedAlert]
@@ -180,7 +180,7 @@
 
       [RivalAI Command]
       
-	[CommandCode:SYN-RedAlert]
+	[CommandCode:SYN_RedAlert]
 	[MatchSenderReceiverOwners:true]
 	[SendTargetEntityId:true]
 
@@ -207,11 +207,11 @@
 	[UseTrigger:true]
 	[Type:Timer]	
 	[StartsReady:true]	
-	[Conditions:FAC-Context-Condition-SettingBattle]
+	[Conditions:FAC_Context_Condition_SettingBattle]
 	[MinCooldownMs:1800000]
 	[MaxCooldownMs:1800001]
 	[MaxActions:-1]
-	[Actions:SYN-DefenseSystem-Action-LightGarrison]
+	[Actions:SYN_DefenseSystem_Action_LightGarrison]
 	
       </Description>
       
@@ -227,7 +227,7 @@
 	[RivalAI Action]
 	
 	[UseChatBroadcast:true]
-	[ChatData:SYN-DefenseSystem-Chat-Garrison]
+	[ChatData:SYN_DefenseSystem_Chat_Garrison]
  
  [SpawnEncounter:true]
 [Spawner:SYN-Spawner-LightGarrison]
@@ -252,9 +252,9 @@
 
 	[MinCooldownMs:1800000]
 	[MaxCooldownMs:1800001]
-	[Conditions:FAC-Context-Condition-SettingBattle]
+	[Conditions:FAC_Context_Condition_SettingBattle]
 	[MaxActions:-1]
-	[Actions:SYN-DefenseSystem-Action-MediumGarrison]
+	[Actions:SYN_DefenseSystem_Action_MediumGarrison]
 	
       </Description>
       
@@ -270,7 +270,7 @@
 	[RivalAI Action]
 	
 	[UseChatBroadcast:true]
-	[ChatData:SYN-DefenseSystem-Chat-Garrison]
+	[ChatData:SYN_DefenseSystem_Chat_Garrison]
  
  [SpawnEncounter:true]
 [Spawner:SYN-Spawner-MediumGarrison]
@@ -326,9 +326,9 @@
 
 	[MinCooldownMs:1800000]
 	[MaxCooldownMs:1800001]
-	[Conditions:FAC-Context-Condition-SettingHighAlert]
+	[Conditions:FAC_Context_Condition_SettingHighAlert]
 	[MaxActions:-1]
-	[Actions:SYN-DefenseSystem-Action-LaunchingPatrolCraft]
+	[Actions:SYN_DefenseSystem_Action_LaunchingPatrolCraft]
 	
       </Description>
       
@@ -344,7 +344,7 @@
 	[RivalAI Action]
 	
 	[UseChatBroadcast:true]
-	[ChatData:SYN-DefenseSystem-Chat-LaunchingPatrolCraft]
+	[ChatData:SYN_DefenseSystem_Chat_LaunchingPatrolCraft]
  
  [SpawnEncounter:true]
 [Spawner:SYN-Spawner-Patrol]

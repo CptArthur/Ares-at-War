@@ -48,9 +48,9 @@ Grid:
 
 	[MinCooldownMs:9000]
 	[MaxCooldownMs:9001]
-	[Conditions:FAC-Context-Condition-SettingBattle]
+	[Conditions:FAC_Context_Condition_SettingBattle]
 	[MaxActions:-1]
-	[Actions:GC-DefenseSystem-Action-RedAlert]
+	[Actions:GC_DefenseSystem_Action_RedAlert]
 	
       </Description>
       
@@ -84,7 +84,7 @@ Grid:
 
       [RivalAI Command]
       
-	[CommandCode:GC-RedAlert]
+	[CommandCode:GC_RedAlert]
 	[MatchSenderReceiverOwners:true]
 	[SendTargetEntityId:true]
 
@@ -109,12 +109,12 @@ Grid:
 	[MinCooldownMs:90000]
 	[MaxCooldownMs:120000]
 	
-	[CommandReceiveCode:GC-RedAlert]
+	[CommandReceiveCode:GC_RedAlert]
 
 	[MaxActions:-1]
 	[ActionExecution:All]
 
-	[Actions:GC-DefenseSystem-Action-ReceivedRedAlert]
+	[Actions:GC_DefenseSystem_Action_ReceivedRedAlert]
 	
       </Description>
       
@@ -152,9 +152,9 @@ Grid:
 
 	[MinCooldownMs:600000]
 	[MaxCooldownMs:600001]
-	[Conditions:FAC-Context-Condition-SettingBattle]
+	[Conditions:FAC_Context_Condition_SettingBattle]
 	[MaxActions:-1]
-	[Actions:GC-DefenseSystem-Action-SOS-Chat]
+	[Actions:GC_DefenseSystem_Action_SOS_Chat]
 	
       </Description>
       
@@ -170,7 +170,7 @@ Grid:
 	[RivalAI Action]
 	
 	[UseChatBroadcast:true]
-	[ChatData:GC-DefenseSystem-Chat-SOS]
+	[ChatData:GC_DefenseSystem_Chat_SOS]
 
       </Description>
       
@@ -223,9 +223,9 @@ Grid:
 
 	[MinCooldownMs:9000]
 	[MaxCooldownMs:9001]
-	[Conditions:FAC-Context-Condition-SettingBattle]
+	[Conditions:FAC_Context_Condition_SettingBattle]
 	[MaxActions:-1]
-	[Actions:GC-DefenseSystem-Action-SOS]
+	[Actions:GC_DefenseSystem_Action_SOS]
 	
       </Description>
       
@@ -259,7 +259,7 @@ Grid:
 
       [RivalAI Command]
       
-	[CommandCode:GC-SOS]
+	[CommandCode:GC_SOS]
 	[MatchSenderReceiverOwners:true]
 	[SendTargetEntityId:true]
 
@@ -286,14 +286,14 @@ Grid:
 	[MinCooldownMs:600000]
 	[MaxCooldownMs:600001]
 	
-	[Conditions:FAC-Context-Condition-SettingNormalOrHighAlert]
-	[CommandReceiveCode:GC-SOS]
+	[Conditions:FAC_Context_Condition_SettingNormalOrHighAlert]
+	[CommandReceiveCode:GC_SOS]
 
 	[MaxActions:-1]
 	[ActionExecution:All]
 
-	[Actions:GC-DefenseSystem-Action-ReceivedSOS]
-  [Actions:FAC-Context-Action-InitHighAlert]
+	[Actions:GC_DefenseSystem_Action_ReceivedSOS]
+  [Actions:FAC_Context_Action_InitHighAlert]
 	
       </Description>
       
@@ -310,7 +310,7 @@ Grid:
 	[InheritLastAttackerFromCommand:true]
 
 	[UseChatBroadcast:true]
-	[ChatData:GC-DefenseSystem-Chat-LaunchingInterceptForces]
+	[ChatData:GC_DefenseSystem_Chat_LaunchingInterceptForces]
  
  	[BroadcastCommandProfiles:true]
 	[CommandProfileIds:GC-DefenseSystem-Command-LaunchCodes-InterceptForces]
@@ -358,7 +358,7 @@ Grid:
 
       [RivalAI Command]
       
-	[CommandCode:GC-LaunchCodes-InterceptForces]
+	[CommandCode:GC_LaunchCodes_InterceptForces]
 	[MatchSenderReceiverOwners:true]
 	[SendTargetEntityId:true]
 
@@ -387,12 +387,12 @@ Grid:
 	[MinCooldownMs:90000]
 	[MaxCooldownMs:120000]
 	
-	[CommandReceiveCode:GC-LaunchCodes-InterceptForces]
+	[CommandReceiveCode:GC_LaunchCodes_InterceptForces]
 
 	[MaxActions:-1]
 	[ActionExecution:All]
 
-	[Actions:GC-DefenseSystem-Action-ReceivedLaunchCodes-InterceptForces]
+	[Actions:GC_DefenseSystem_Action_ReceivedLaunchCodes_InterceptForces]
 	
       </Description>
       
@@ -430,9 +430,9 @@ Grid:
 
 	[MinCooldownMs:1800000]
 	[MaxCooldownMs:1800001]
-	[Conditions:FAC-Context-Condition-SettingBattle]
+	[Conditions:FAC_Context_Condition_SettingBattle]
 	[MaxActions:-1]
-	[Actions:GC-DefenseSystem-Action-LightGarrison]
+	[Actions:GC_DefenseSystem_Action_LightGarrison]
 	
       </Description>
       
@@ -448,7 +448,7 @@ Grid:
 	[RivalAI Action]
 	
 	[UseChatBroadcast:true]
-	[ChatData:GC-DefenseSystem-Chat-Garrison]
+	[ChatData:GC_DefenseSystem_Chat_Garrison]
  
  [SpawnEncounter:true]
 [Spawner:GC-Spawner-LightGarrison]
@@ -473,9 +473,9 @@ Grid:
 
 	[MinCooldownMs:1800000]
 	[MaxCooldownMs:1800001]
-	[Conditions:FAC-Context-Condition-SettingBattle]
+	[Conditions:FAC_Context_Condition_SettingBattle]
 	[MaxActions:-1]
-	[Actions:GC-DefenseSystem-Action-MediumGarrison]
+	[Actions:GC_DefenseSystem_Action_MediumGarrison]
 	
       </Description>
       
@@ -514,9 +514,9 @@ Grid:
 
 	[MinCooldownMs:1800000]
 	[MaxCooldownMs:1800001]
-	[Conditions:FAC-Context-Condition-SettingBattle]
+	[Conditions:FAC_Context_Condition_SettingBattle]
 	[MaxActions:-1]
-	[Actions:GC-DefenseSystem-Action-HeavyGarrison]
+	[Actions:GC_DefenseSystem_Action_HeavyGarrison]
 	
       </Description>
       
@@ -532,7 +532,7 @@ Grid:
 	[RivalAI Action]
 	
 	[UseChatBroadcast:true]
-	[ChatData:GC-DefenseSystem-Chat-Garrison]
+	[ChatData:GC_DefenseSystem_Chat_Garrison]
  
  [SpawnEncounter:true]
 [Spawner:GC-Spawner-HeavyGarrison]
@@ -589,9 +589,9 @@ Grid:
 
 	[MinCooldownMs:1800000]
 	[MaxCooldownMs:1800001]
-	[Conditions:FAC-Context-Condition-SettingHighAlert]
+	[Conditions:FAC_Context_Condition_SettingHighAlert]
 	[MaxActions:-1]
-	[Actions:GC-DefenseSystem-Action-LaunchingPatrolCraft]
+	[Actions:GC_DefenseSystem_Action_LaunchingPatrolCraft]
 	
       </Description>
       

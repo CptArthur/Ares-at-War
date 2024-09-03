@@ -25,9 +25,9 @@
 
 	[MinCooldownMs:600000]
 	[MaxCooldownMs:600001]
-	[Conditions:FAC-Context-Condition-SettingBattle]
+	[Conditions:FAC_Context_Condition_SettingBattle]
 	[MaxActions:-1]
-	[Actions:COL-DefenseSystem-Action-SOS-Chat]
+	[Actions:COL_DefenseSystem_Action_SOS_Chat]
 	
       </Description>
       
@@ -43,7 +43,7 @@
 	[RivalAI Action]
 	
 	[UseChatBroadcast:true]
-	[ChatData:COL-DefenseSystem-Chat-SOS]
+	[ChatData:COL_DefenseSystem_Chat_SOS]
 
       </Description>
       
@@ -96,9 +96,9 @@
 
 	[MinCooldownMs:9000]
 	[MaxCooldownMs:9001]
-	[Conditions:FAC-Context-Condition-SettingBattle]
+	[Conditions:FAC_Context_Condition_SettingBattle]
 	[MaxActions:-1]
-	[Actions:COL-DefenseSystem-Action-SOS]
+	[Actions:COL_DefenseSystem_Action_SOS]
 	
       </Description>
       
@@ -142,7 +142,7 @@
 
       [RivalAI Command]
       
-	[CommandCode:COL-SOS]
+	[CommandCode:COL_SOS]
 	[MatchSenderReceiverOwners:true]
 	[SendTargetEntityId:true]
 
@@ -167,13 +167,13 @@
 	[MinCooldownMs:600000]
 	[MaxCooldownMs:600001]
 	
-	[Conditions:FAC-Context-Condition-SettingNormalOrHighAlert]
-	[CommandReceiveCode:COL-SOS]
+	[Conditions:FAC_Context_Condition_SettingNormalOrHighAlert]
+	[CommandReceiveCode:COL_SOS]
 
 	[MaxActions:-1]
 	[ActionExecution:All]
 
-  [Actions:FAC-Context-Action-InitHighAlert]
+  [Actions:FAC_Context_Action_InitHighAlert]
 	
       </Description>
       

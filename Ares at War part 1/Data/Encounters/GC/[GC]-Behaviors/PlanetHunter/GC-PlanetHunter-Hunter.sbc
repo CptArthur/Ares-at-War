@@ -32,13 +32,13 @@ FAC-Context-Condition-PlayerNear
 	[Type:Timer]
 	[UseTrigger:true]
 	[StartsReady:true]
-	[Conditions:FAC-Context-Condition-NormalNeutralPlayerNearNoTarget]
+	[Conditions:FAC_Context_Condition_NormalNeutralPlayerNearNoTarget]
 	
 	[MinCooldownMs:40000]
 	[MaxCooldownMs:60001]
 	[MaxActions:1]
 
-	[Actions:GC-PlanetHunter-Action-FoundNothing]	
+	[Actions:GC_PlanetHunter_Action_FoundNothing]	
 	  
       </Description>
     </EntityComponent>
@@ -53,10 +53,10 @@ FAC-Context-Condition-PlayerNear
         [RivalAI Action]
 
         [UseChatBroadcast:true]
-        [ChatData:GC-PlanetHunter-Chat-FoundNothing]
+        [ChatData:GC_PlanetHunter_Chat_FoundNothing]
 		
 		[EnableTriggers:true]
-		[EnableTriggerNames:GC-PlanetHunter-Trigger-FoundNothingRespond]
+		[EnableTriggerNames:GC_PlanetHunter_Trigger_FoundNothingRespond]
 
 		[ResetCooldownTimeOfTriggers:true]
 		[ResetTriggerCooldownNames:GC-PlanetHunter-Trigger-FoundNothingRespond]
@@ -110,7 +110,7 @@ FAC-Context-Condition-PlayerNear
 
         [StartsReady:false]
         [MaxActions:1]
-        [Actions:GC-PlanetHunter-Action-FoundNothingRespond]
+        [Actions:GC_PlanetHunter_Action_FoundNothingRespond]
 
       </Description>
     </EntityComponent>
@@ -125,7 +125,7 @@ FAC-Context-Condition-PlayerNear
         [RivalAI Action]
 	
 		[UseChatBroadcast:true]
-		[ChatData:GC-PlanetHunter-Chat-FoundNothingRespond]
+		[ChatData:GC_PlanetHunter_Chat_FoundNothingRespond]
 
       </Description>
     </EntityComponent>	
@@ -181,11 +181,11 @@ GC-PlanetHunter-Trigger-RequestMissles-TargetMedium
         [UseTrigger:true]
         [Type:ChangedTarget]
 		
-		[Conditions:FAC-Context-Condition-TargetMediumOrGreater]		
+		[Conditions:FAC_Context_Condition_TargetMediumOrGreater]		
 	
         [StartsReady:true]
         [MaxActions:1]
-        [Actions:GC-PlanetHunter-Action-RequestMissles-TargetMedium]
+        [Actions:GC_PlanetHunter_Action_RequestMissles_TargetMedium]
 
       </Description>
 
@@ -201,7 +201,7 @@ GC-PlanetHunter-Trigger-RequestMissles-TargetMedium
         [RivalAI Action]
 
         [UseChatBroadcast:true]
-        [ChatData:GC-PlanetHunter-Chat-RequestMissles-TargetMedium]
+        [ChatData:GC_PlanetHunter_Chat_RequestMissles_TargetMedium]
 
       </Description>
 
