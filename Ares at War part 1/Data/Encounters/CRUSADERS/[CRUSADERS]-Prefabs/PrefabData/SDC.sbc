@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CRUSADERS_PrefabData_Fighter</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Prefab Data]
+      
+      [Prefabs:CRUSADERS-IceCursher]
+
+      [ManipulationProfiles:CRUSADERS-Manipulation-Fighter]     
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CRUSADERS_Manipulation_Fighter</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Manipulation]
+		
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:Drone-RandomLetterRandomNumberRandomNumber]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+		
+		
+		[UseBlockReplacerProfile:true]
+        [IgnoreGlobalBlockReplacer:true]
+        [BlockReplacerProfileNames:MES-NpcThrusters-Atmo]
+
+        [ConfigureSpecialNpcThrusters:true]
+        [NpcHydroThrustPowerMultiply:0.0001]
+		
+		[NpcAtmoThrustForceMultiply:2]
+
+      </Description>
+
+    </EntityComponent>
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

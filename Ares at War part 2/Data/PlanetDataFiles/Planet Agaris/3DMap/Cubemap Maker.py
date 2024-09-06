@@ -8,7 +8,6 @@ from collections import Counter
 import time
 from tkinter import *
 from tkinter import filedialog, Text
-
 import os
 
 # get the path of the current script
@@ -22,10 +21,6 @@ os.chdir(script_directory)
 
 # print the new current working directory
 print("New current working directory:", os.getcwd())
-
-
-
-
 
 
 
@@ -122,6 +117,9 @@ def Clear():
     rloc = 2
     gloc = 2
     bloc = 2
+    red_btn.configure(text = 'Red channel')
+    green_btn.configure(text='Green channel')
+    blue_btn.configure(text='Blue channel')
     mat_btn.configure(text = 'Mat file')
 def show():
     checklabelB = Label(root, text=varB.get())
@@ -354,10 +352,10 @@ def run():
     right = PIL.Image.open(Rloc)
     up = PIL.Image.open(Uloc)
 
-    cubemap.paste(left,box=(0,2048))
-    cubemap.paste(front,box=(2048,2048))
-    cubemap.paste(right,box=(4096,2048))
-    cubemap.paste(back,box=(6144,2048))
+    cubemap.paste(front,box=(0,2048))
+    cubemap.paste(right,box=(2048,2048))
+    cubemap.paste(back,box=(4096,2048))
+    cubemap.paste(left,box=(6144,2048))
     cubemap.paste(up,box=(2048,0))
     cubemap.paste(down,box=(2048,4096))
     cubemap.show()

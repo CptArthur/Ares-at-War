@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>{FAC}_Raider_Behavior</SubtypeId>
+      </Id>
+      <Description>
+    [RivalAI Behavior]
+    [BehaviorName:Passive]
+    [TargetData:MSB_Raider_Target]
+
+    [DialogueBanks:{FAC}.xml] 
+    [DialogueBanks:AaW.xml] 
+    [DialogueBanks:MSB.xml] 
+
+
+    [TriggerGroups:{FAC}_StaticCommon_TriggersGroup]
+    [TriggerGroups:AaW_StaticCommon_TriggersGroup]    
+    [TriggerGroups:MSB_StaticCommon_TriggersGroup]    
+
+    [TriggerGroups:{FAC}_FixedStatic_TriggersGroup]        
+    [TriggerGroups:AaW_FixedStatic_TriggersGroup]
+    [TriggerGroups:MSB_FixedStatic_TriggersGroup]    
+
+    [TriggerGroups:{FAC}_Raider_TriggersGroup]    
+    [TriggerGroups:AaW_Raider_TriggersGroup]     
+    [TriggerGroups:MSB_Raider_TriggersGroup]     
+
+      </Description>
+      
+    </EntityComponent>        
+  </EntityComponents>
+</Definitions>

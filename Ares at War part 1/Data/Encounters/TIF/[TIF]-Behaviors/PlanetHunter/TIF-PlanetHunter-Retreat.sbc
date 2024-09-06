@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!--
+[Triggers:TIF-PlanetHunter-Trigger-TargetClose]
+[Triggers:TIF-PlanetHunter-Trigger-Retreat]
+-->
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF_PlanetHunter_Trigger_TargetClose</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:TargetNear]
+		[TargetDistance:1200]
+
+        [StartsReady:true]
+        [MaxActions:1]
+        [Actions:TIF-PlanetHunter-Action-TargetClose]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF_PlanetHunter_Action_TargetClose</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+[ResetCooldownTimeOfTriggers:true]
+[ResetTriggerCooldownNames:TIF-PlanetHunter-Trigger-Retreat]
+[EnableTriggers:true]
+[EnableTriggerNames:TIF-PlanetHunter-Trigger-Retreat]
+
+
+
+        [UseChatBroadcast:true]
+        [ChatData:TIF-PlanetHunter-Chat-TargetClose]
+
+
+      </Description>
+
+    </EntityComponent>
+	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF_PlanetHunter_Chat_TargetClose</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+        [BroadcastRandomly:false]
+        [Author:{AntennaName}]
+        [Color:Red]
+
+      [ChatMessages:Oh Oh... What do we have here]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+	  
+	  
+      [ChatMessages:Your ships would probably fetch a pretty penny at the salvage yard.]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+	  	  
+
+	  
+	  
+	  
+	  
+      </Description>
+    </EntityComponent>	
+	
+	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF_PlanetHunter_Trigger_Retreat</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:false]
+        [Type:Timer]
+		[MinCooldownMs:240000]
+		[MaxCooldownMs:340001]
+
+
+        [StartsReady:false]
+        [MaxActions:1]
+        [Actions:TIF-PlanetHunter-Action-Retreat]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF_PlanetHunter_Action_Retreat</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+		[Retreat:true]
+
+      </Description>
+
+    </EntityComponent>	
+
+<!--
+	    [UseChatBroadcast:true]
+        [ChatData:TIF-Dynamic-Chat-Retreat]
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>TIF_Dynamic_Chat_Retreat</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+        [BroadcastRandomly:false]
+        [Author:{AntennaName}]
+        [Color:Red]
+
+        [ChatMessages:Byeeee]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+      </Description>
+    </EntityComponent>	
+-->
+	
+	
+  </EntityComponents>
+</Definitions>

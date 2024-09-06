@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>DRA_SpawnGroup_Patrol</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			[SpaceCargoShip:false]
+			[LunarCargoShip:false]
+			[SpaceRandomEncounter:false]
+			[AtmosphericCargoShip:false]
+			[PlanetaryInstallation:false]
+			
+			[RivalAiSpawn:true]
+	        [FactionOwner:DRA]	
+			[ZoneConditions:ZoneCondition_ZoneAaW]	
+						[IgnoreCombatPhase:true]
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			[SkipVoxelSpawnChecks:true]
+			[SkipGridSpawnChecks:true]
+			
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+
+				<Prefab SubtypeId="DRA - R-41 Striker">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>DRA_Patrol_Behavior</Behaviour>
+				</Prefab>
+			</Prefabs>			
+		</SpawnGroup>
+		
+		
+		
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>DRA_SpawnGroup_MediumGarrison</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			[SpaceCargoShip:false]
+			[LunarCargoShip:false]
+			[SpaceRandomEncounter:false]
+			[AtmosphericCargoShip:false]
+			[PlanetaryInstallation:false]
+			
+			[RivalAiSpawn:true]
+	        [FactionOwner:DRA]	
+			[ZoneConditions:ZoneCondition_ZoneAaW]	
+			[IgnoreCombatPhase:true]	
+			
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			[SkipVoxelSpawnChecks:true]
+			[SkipGridSpawnChecks:true]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="DRA - R-41 Striker">
+					<Position>
+						<X>-100.0</X>
+						<Y>100.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>DRA_Drone2_Behavior</Behaviour>
+				</Prefab>
+
+				<Prefab SubtypeId="DRA - R-41 Striker">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>DRA_Drone1_Behavior</Behaviour>
+				</Prefab>
+
+				<Prefab SubtypeId="DRA - R-41 Striker">
+					<Position>
+						<X>100.0</X>
+						<Y>-100.0</Y>
+						<Z>100.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>DRA_Drone3_Behavior</Behaviour>
+				</Prefab>
+			</Prefabs>			
+		</SpawnGroup>
+
+		
+		
+		
+
+		
+	</SpawnGroups>
+</Definitions>

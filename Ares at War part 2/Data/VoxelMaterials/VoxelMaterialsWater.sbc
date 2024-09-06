@@ -2,6 +2,82 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <VoxelMaterials>
   
+<!--
+Farm land
+
+-->
+
+        <!-- Farm_Land -->
+        <VoxelMaterial xsi:type="MyObjectBuilder_Dx11VoxelMaterialDefinition">
+            <Id>
+                <TypeId>VoxelMaterialDefinition</TypeId>
+                <SubtypeId>Farm_Land</SubtypeId>
+            </Id>
+            <SpawnsInAsteroids>false</SpawnsInAsteroids>
+            <SpawnsFromMeteorites>false</SpawnsFromMeteorites>
+            <MaterialTypeName>GrassDry</MaterialTypeName>
+            <MinedOre>Stone</MinedOre>
+            <MinedOreRatio>1</MinedOreRatio>
+            <CanBeHarvested>true</CanBeHarvested>
+            <IsRare>false</IsRare>
+
+            <VoxelHandPreview>Textures\Voxels\Grass_old_Thumbnail.dds</VoxelHandPreview>
+            <ColorMetalXZnY>Textures\Voxels\Grass_old_cm.dds</ColorMetalXZnY>
+            <NormalGlossXZnY>Textures\Voxels\Grass_old_ng.dds</NormalGlossXZnY>
+            <ExtXZnY>Textures\Voxels\Dummy_add.dds</ExtXZnY>
+
+            <ExtDetailScale>0.001</ExtDetailScale>
+
+            <ColorMetalXZnYFar1>Textures\Voxels\Grass_old_Far1_cm.dds</ColorMetalXZnYFar1>
+            <NormalGlossXZnYFar1>Textures\Voxels\Grass_old_Far1_ng.dds</NormalGlossXZnYFar1>
+            <ExtXZnYFar1>Textures\Voxels\Dummy_add.dds</ExtXZnYFar1>
+
+            <ColorMetalXZnYFar2>Textures\Voxels\Grass_old_Far2_cm.dds</ColorMetalXZnYFar2>
+            <NormalGlossXZnYFar2>Textures\Voxels\Grass_old_Far2_ng.dds</NormalGlossXZnYFar2>
+            <ExtXZnYFar2>Textures\Voxels\Dummy_add.dds</ExtXZnYFar2>
+
+            <!--Foliage-->
+		  <FoliageColorTextureArray>
+			<Color>Textures\Models\Environment\Grass\DarinusGrass2_01_cm.dds</Color>
+			<Color>Textures\Models\Environment\Grass\DarinusGrass2_02_cm.dds</Color>
+			<Color>Textures\Models\Environment\Grass\DarinusGrass2_03_cm.dds</Color>
+			<Color>Textures\Models\Environment\Grass\DarinusGrass2_04_cm.dds</Color>
+		  </FoliageColorTextureArray>
+		  <FoliageNormalTextureArray>
+			<Normal>Textures\Models\Environment\Grass\DarinusGrass_01_ng.dds</Normal>
+			<Normal>Textures\Models\Environment\Grass\DarinusGrass_02_ng.dds</Normal>
+			<Normal>Textures\Models\Environment\Grass\DarinusGrass_03_ng.dds</Normal>
+			<Normal>Textures\Models\Environment\Grass\DarinusGrass_04_ng.dds</Normal>
+		  </FoliageNormalTextureArray>
+
+            <FoliageDensity>3</FoliageDensity>
+            <FoliageScale>
+                <X>1</X>
+                <Y>1</Y>
+            </FoliageScale>
+            <FoliageRandomRescaleMult>0.20</FoliageRandomRescaleMult>
+
+            <Far3Distance>5000</Far3Distance>
+            <Far3Color>
+                <X>0.29</X>
+                <Y>0.17</Y>
+                <Z>0.03</Z>
+                <W>1.0</W>
+            </Far3Color>
+
+            <ExtDetailScale>0.005</ExtDetailScale>
+            <Scale>2</Scale>
+            <Far1Distance>22</Far1Distance>
+            <Far2Distance>500</Far2Distance>
+            <Far1Scale>200</Far1Scale>
+            <Far2Scale>1000</Far2Scale>
+
+            <DamagedMaterial>Soil</DamagedMaterial>
+
+            <ColorKey Hex="#BCBB56"/>
+
+            <BareVariant>Grass_old bare</BareVariant>
+        </VoxelMaterial>
 
 
 	

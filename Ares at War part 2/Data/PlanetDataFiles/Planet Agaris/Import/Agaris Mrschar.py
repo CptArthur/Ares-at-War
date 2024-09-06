@@ -154,7 +154,7 @@ Planet = "Planet Agaris"
 filename = "agaris"
 
 height = True
-Vox = False
+Vox = True
 Biome = False
 Ore = False   
 

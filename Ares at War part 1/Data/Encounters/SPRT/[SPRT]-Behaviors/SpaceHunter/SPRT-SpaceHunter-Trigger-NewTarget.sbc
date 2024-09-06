@@ -1,0 +1,143 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--
+	
+
+	
+	* EventFirstContact
+	= Ship first encounter with player (sort of greet)
+	
+	
+	* EventShipWeak
+	= Low weapons count or major hull damage
+	Too much risk, too little reward. It is time to go.
+	This isn't worth it. We're heading out.
+	Fire at will	
+
+	* EventShipSuperWeak
+	= Low weapons count or major hull damage
+	Retreat! Evasive action Prepare for jump
+	Ramming Speed
+	Divert all power to the weapons
+	
+	
+	
+	* EventPlayersTargetGettingAway
+	= 4.5 km away.  Must be same target, so use lost Target stuff
+	Where do you think your going {PlayerName}? 
+	
+	
+
+	
+	
+	
+	
+	
+
+	
+	It is all quiet here.
+	
+	Coast is clear
+	
+	
+	
+	
+	-->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SPRT_SpaceHunter_Trigger_AcquiredTarget</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:AcquiredTarget]
+        [MinCooldownMs:120000]
+        [MaxCooldownMs:120001]
+        [StartsReady:true]
+        [MaxActions:1]
+        [Actions:SPRT-SpaceHunter-Action-AcquiredTarget]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SPRT_SpaceHunter_Action_AcquiredTarget</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:SPRT-SpaceHunter-Chat-AcquiredTarget]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SPRT_SpaceHunter_Chat_AcquiredTarget</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:-1]
+        [BroadcastRandomly:true]
+        [Author:SPRT]
+        [Color:Red]
+
+        [ChatMessages:Nothing personal {PlayerName}, I just wanna be rich]
+        [ChatAudio:ArcHudGPSNotification2]
+        [BroadcastChatType:Chat]
+
+        [ChatMessages:Nothing personal {PlayerName}, Business is Business]
+        [ChatAudio:ArcHudGPSNotification2]
+        [BroadcastChatType:Chat]
+
+
+
+	
+      </Description>
+    </EntityComponent>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+  </EntityComponents>
+</Definitions>

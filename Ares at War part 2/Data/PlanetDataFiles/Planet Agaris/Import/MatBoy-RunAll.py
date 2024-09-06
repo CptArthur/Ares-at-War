@@ -172,16 +172,16 @@ def Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side):
 
 
 
-MrhoekR = False
+MrhoekR = True
 MrhoekG = False
 MrhoekB = False
 
 
 
 
-Red = False #off
+Red = True #off
 Green = False #off
-Blue = True #on
+Blue = False #on
 
 
 
@@ -190,9 +190,9 @@ sides = ["back","down","front","left","right","up"]
 PlanetName = "Planet Agaris"
 
 
-location = f"D:/SEMods-Github/Ares at War part 2/Data/PlanetDataFiles/{PlanetName}/"
-Importlocation = f"D:/SEMods-Github/Ares at War part 2/Data/PlanetDataFiles/{PlanetName}/Import/"
-locationIO = f"D:/SEMods-Github/Ares at War part 2/Data/PlanetDataFiles/{PlanetName} - IO/"
+location = f"D:/SEMods-Github/Ares-at-War-part-1/Ares at War part 2/Data/PlanetDataFiles/{PlanetName}/"
+Importlocation = f"D:/SEMods-Github/Ares-at-War-part-1/Ares at War part 2/Data/PlanetDataFiles/{PlanetName}/Import/"
+locationIO = f"D:/SEMods-Github/Ares-at-War-part-1/Ares at War part 2/Data/PlanetDataFiles/{PlanetName} - IO/"
 
 for side in sides:
     Mloc = location + side + "_mat.png"
@@ -202,13 +202,13 @@ for side in sides:
     Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side)
 
 #IO
-print("Starting IO")
-for side in sides:
-    Mloc = locationIO + side + "_mat.png"
-    rloc = Importlocation + side + "vox.png"
-    gloc = Importlocation + side + "biomIO.png"
-    bloc = Importlocation + side + "oreIO.png"
-    Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side)
+#print("Starting IO")
+#for side in sides:
+#    Mloc = locationIO + side + "_mat.png"
+#    rloc = Importlocation + side + "vox.png"
+#    gloc = Importlocation + side + "biomIO.png"
+#    bloc = Importlocation + side + "oreIO.png"
+#    Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side)
 
 
 

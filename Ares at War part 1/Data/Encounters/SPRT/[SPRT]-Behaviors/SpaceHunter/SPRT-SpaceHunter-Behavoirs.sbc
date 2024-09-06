@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SPRT_SpaceHunter_Behavior_Leader</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Behavior]
+
+        [BehaviorName:Hunter]
+
+        [AutopilotData:FAC-HunterAutopilot-Passive]
+        [SecondaryAutopilotData:FAC_HunterAutopilot_Aggressive]
+
+		[TargetData:AaW_Target_SpaceHunters]		
+
+		[TriggerGroups:ContextTriggers]	 
+		[TriggerGroups:SPRT_CommonTriggers] 	
+		[TriggerGroups:SPRT_SpaceHunter_CommonTriggers] 		
+		[TriggerGroups:FAC_SpaceHunter_CommonTriggers] 		
+
+
+		[TriggerGroups:FAC_OffensiveEscortSystem_TaskLeader_TriggerGroup_Hunter] 		
+		[TriggerGroups:FAC_OffensiveJumpSystem_TriggerGroup] 	
+
+
+	[EscortOffsets:{X:0 Y:-200 Z:0}]
+      </Description>
+
+    </EntityComponent>
+
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SPRT_SpaceHunter_Behavior_Solo</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Behavior]
+
+        [BehaviorName:Hunter]
+
+        [AutopilotData:FAC-HunterAutopilot-Passive]
+        [SecondaryAutopilotData:FAC_HunterAutopilot_Aggressive]
+
+		[TargetData:AaW_Target_SpaceHunters]		
+
+		[TriggerGroups:ContextTriggers]	 
+		[TriggerGroups:SPRT_CommonTriggers] 	
+		[TriggerGroups:SPRT_SpaceHunter_CommonTriggers] 		
+		[TriggerGroups:FAC_SpaceHunter_CommonTriggers] 		
+
+      </Description>
+
+    </EntityComponent>	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>

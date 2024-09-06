@@ -15,6 +15,13 @@ namespace AresAtWar.SessionCore
     {
         public static Vector3D PlanetCenter = new Vector3D(0, 0, 0);
 
+        public static bool AaW(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
+        {
+            return true; 
+    
+        }
+
+
 
         public static bool BylenRing(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
         {

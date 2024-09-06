@@ -102,7 +102,7 @@ namespace AresAtWar.SessionCore
                 }
 
 
-
+                MESApi.RegisterCustomSpawnCondition(true, "AaW", CustomSpawnCodtions.AaW);
                 MESApi.RegisterCustomSpawnCondition(true, "BylenRing", CustomSpawnCodtions.BylenRing);
                 MESApi.RegisterCustomSpawnCondition(true, "AgarisDeepOcean", CustomSpawnCodtions.AgarisDeepOcean);
                 MESApi.RegisterCustomSpawnCondition(true, "AgarisLand", CustomSpawnCodtions.AgarisLand);
