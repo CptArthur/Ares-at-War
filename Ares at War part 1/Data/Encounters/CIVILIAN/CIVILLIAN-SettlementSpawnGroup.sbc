@@ -28,19 +28,21 @@
 
 		[ForceExactPositionAndOrientation:true]
 		[IgnoreCleanupRules:true]
-		[ZoneConditions:ZoneCondition_Agaris]
+		[ZoneConditions:ZoneCondition_ZoneAaW]
 
 		[GridsAreDestructable:false]
 
-		[StaticEncounterCoords:{X:-1083758.95490802 Y:125933.592745608 Z:1256220.63219873}]
-		[StaticEncounterForward:{X:0.020699248262501 Y:0.999785747608638 Z:-7.08941546358907E-08}]
-		[StaticEncounterUp:{X:0.769129476579968 Y:-0.0159238590004976 Z:-0.638894575787239}]
+
+		[StaticEncounterCoords:{X:-3710210.19492672 Y:-1279156.70952922 Z:-2566853.09682448}]
+		[StaticEncounterForward:{X:0.507363685725798 Y:0.852061822721588 Z:-0.128735157074896}]
+		[StaticEncounterUp:{X:-0.803313128301526 Y:0.521728965657775 Z:0.287205334720795}]
 
 
 		[StaticEncounterUsePlanetDirectionAndAltitude:true]
 		[StaticEncounterPlanet:Planet Agaris]
-		[StaticEncounterPlanetDirection:{X:0.768757465794767 Y:-0.015925575896397 Z:-0.639342110936841}]
-		[StaticEncounterPlanetAltitude:-10.0376449957112]
+		[StaticEncounterPlanetDirection:{X:-0.801367074312952 Y:0.523477908839719 Z:0.289450671382697}]
+		[StaticEncounterPlanetAltitude:-9.99325889955799]
+
 
         [ShipyardSetup:true]
         [ShipyardConsoleBlockNames:{Any}]
@@ -91,7 +93,7 @@
 			[TriggerRadius:10000]
 			[IgnoreCombatPhase:true]
 			[ForceExactPositionAndOrientation:true]
-			[ZoneConditions:ZoneCondition_Agaris]
+		[ZoneConditions:ZoneCondition_ZoneAaW]
 			[IgnoreCleanupRules:true]
 
 			[GridsAreDestructable:false]
@@ -143,7 +145,7 @@
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>SunsetCity</SubtypeId>
+				<SubtypeId>SunsetCity2</SubtypeId>
 			</Id>
 			<Description>
 			[Modular Encounters SpawnGroup]
@@ -152,7 +154,8 @@
 			[ForceStaticGrid:true]
 			[RotateFirstCockpitToForward:false]
 	        [FactionOwner:CIVILIAN]		
-
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+			
 			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
 			[TriggerRadius:10000]
 
@@ -161,16 +164,15 @@
 			[IgnoreCombatPhase:true]
 
 
-
-			[StaticEncounterCoords:{X:-3661158.51019633 Y:-1301788.86251079 Z:-2642200.21084398}]
+			[StaticEncounterCoords:{X:-3661158.51037331 Y:-1301788.8634505 Z:-2642200.20693819}]
 			[StaticEncounterForward:{X:-0.999396018556893 Y:0.00660401624276742 Z:-0.0341172252988828}]
 			[StaticEncounterUp:{X:0.0347046904629859 Y:0.139274625883751 Z:-0.989645473411974}]
 
+
 			[StaticEncounterUsePlanetDirectionAndAltitude:true]
 			[StaticEncounterPlanet:Planet Agaris]
-			[StaticEncounterPlanetDirection:{X:0.0315201258322209 Y:0.139162696809372 Z:-0.989767763409308}]
-			[StaticEncounterPlanetAltitude:-7.52206609224231]
-
+			[StaticEncounterPlanetDirection:{X:0.0315201249692638 Y:0.139162690311329 Z:-0.989767764350423}]
+			[StaticEncounterPlanetAltitude:-7.52206609228597]
 
 
 			[IgnoreCleanupRules:true]
@@ -207,12 +209,157 @@
 				</Prefab>
 			</Prefabs>
 			
-		</SpawnGroup>		
+		</SpawnGroup>	
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>Thorrix</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:true]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:CIVILIAN]		
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+		
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:10000]
+
+			[ForceExactPositionAndOrientation:true]
+			[CutVoxelsAtAirtightCells:true]
+			[IgnoreCombatPhase:true]
+
+			[StaticEncounterCoords:{X:-3666954.82069556 Y:-1319040.62689992 Z:-2525488.18610298}]
+			[StaticEncounterForward:{X:-0.872877492193164 Y:0.487645454848448 Z:0.016934993009253}]
+			[StaticEncounterUp:{X:0.0692444462589543 Y:0.158153037905631 Z:-0.984983666495801}]
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Agaris]
+			[StaticEncounterPlanetDirection:{X:-0.0665032358895237 Y:-0.152845836349384 Z:0.986009873138641}]
+			[StaticEncounterPlanetAltitude:-1.20340763250715]
+
+			[IgnoreCleanupRules:true]
+
+			[GridsAreDestructable:false]
+			[ReplenishSystems:true]
+			
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-DoNotDelete)]		
+			[RandomGridNamePattern:Thorrix]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="CIVILIAN - Thorrix">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>CIVILIAN_Thorrix_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>
+		
+		
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>Bratis</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:CIVILIAN]		
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:10000]
+
+			[ForceExactPositionAndOrientation:true]
+			[CutVoxelsAtAirtightCells:true]
+			[IgnoreCombatPhase:true]
+
+			[ZoneConditions:ZoneCondition_AaW]
+
+
+
+			[StaticEncounterCoords:{X:-3620611.28523971 Y:-1307127.10992653 Z:-2624833.4389046}]
+			[StaticEncounterForward:{X:0.694582697495186 Y:-0.0181272215297166 Z:0.719184454907031}]
+			[StaticEncounterUp:{X:0.71906540481103 Y:0.0485594986384272 Z:-0.69324376571011}]
+
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Agaris]
+			[StaticEncounterPlanetDirection:{X:0.71862422043418 Y:0.0484497545852527 Z:-0.693708765323026}]
+			[StaticEncounterPlanetAltitude:-0.00399309853673913]
+
+
+
+
+			[IgnoreCleanupRules:true]
+
+
+			[GridsAreDestructable:false]
+
+			[ReplenishSystems:true]
+			
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-AAW)]		
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="COL-Bratis">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>CIVILIAN_Bratis_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>
+		
+		
+		
+		
+		
+		
 		
 		
 	</SpawnGroups>
 	
 
+	
+	
+	
+	
+	
 	
 	
 	

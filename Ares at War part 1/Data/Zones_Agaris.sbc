@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!--
+Restrict false zones:
+
+Alien: Crait
+Wasteland: Here only the desperate come here. Lezuno, Lorus
+EarthNature: Agaris, Thora
+
+
+Restrict true zones:
+Barren: Agaris north pole
+Rural: watch out for pirates (Agaris Desert, Azuris , Islands)
+Urban: (Starlight city, Sunset City, Station 27, Rak Station, AHE HQ, Carcosa)
+Military: (Agaris South Pole, Trench)
+
+
+
+
+
+
+
+
+
+
+
+
+[PublicName:ZoneInhospitable] 
+[PublicName:ZoneWasteland] 
+[PublicName:ZoneRural] 
+[PublicName:ZoneUrban] 
+[PublicName:ZoneMilitary] 
+
+
+
+GPS:Thorrix 18000m:-3668737.4577525:-1323824.21080772:-2524678.20423235:#FFF5F5DC:
+GPS:AHE 20000m:-3695102.128059:-1296078.08567696:-2534069.11965355:#FFF5F5DC:
+GPS:Carcosa 20000m:-3713255.29596565:-1328026.43875531:-2555371.56866436:#FFF5F5DC:
+GPS:Islands 20000m:-3715948.9155995:-1286743.24066376:-2568000.09232012:#FFF5F5DC:
+
+
+-->
+	
+
+	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+	  <Id>
+		<TypeId>Inventory</TypeId>
+		<SubtypeId>ZoneThorrix</SubtypeId>
+	  </Id>
+	  <Description>
+
+		[MES Zone]
+
+		[PublicName:ZoneRural] 
+
+		[Active:true]
+		[Persistent:true]
+		[Strict:true]
+
+		[Coordinates:{X:-3668737.4577525 Y:-1323824.21080772 Z:-2524678.20423235}]
+		[Radius:18000]
+
+		[PlanetaryZone:true]
+		[PlanetName:Planet Agaris]
+		[Direction:X:-0.0936771483557792 Y:-0.226538752109338 Z:0.969486867197629]		
+		[HeightOffset:1656.27910699146]		
+
+		[UseZoneAnnounce:true]
+		[ZoneEnterAnnounce:Entering Thorrix]
+		[ZoneLeaveAnnounce:Leaving Thorrix]		
+
+	  </Description>
+
+	</EntityComponent>
+
+
+
+	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+	  <Id>
+		<TypeId>Inventory</TypeId>
+		<SubtypeId>ZoneAHE</SubtypeId>
+	  </Id>
+	  <Description>
+
+		[MES Zone]
+
+		[PublicName:ZoneUrban] 
+
+		[Active:true]
+		[Persistent:true]
+		[Strict:true]
+
+		[Coordinates:{X:-3695102.128059 Y:-1296078.08567696 Z:-2534069.11965355}]
+		[Radius:20000]
+
+		[PlanetaryZone:true]
+		[PlanetName:Planet Agaris]
+		[Direction:X:-0.527072637255762 Y:0.228456286744027 Z:0.818536596679334]		
+		[HeightOffset:1981.59555906396]		
+
+		[UseZoneAnnounce:true]
+		[ZoneEnterAnnounce:Entering AHE]
+		[ZoneLeaveAnnounce:Leaving AHE]		
+
+	  </Description>
+
+	</EntityComponent>
+
+
+
+	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+	  <Id>
+		<TypeId>Inventory</TypeId>
+		<SubtypeId>ZoneCarcosa</SubtypeId>
+	  </Id>
+	  <Description>
+
+		[MES Zone]
+
+		[PublicName:ZoneUrban] 
+
+		[Active:true]
+		[Persistent:true]
+		[Strict:true]
+
+		[Coordinates:{X:-3713255.29596565 Y:-1328026.43875531 Z:-2555371.56866436}]
+		[Radius:20000]
+
+		[PlanetaryZone:true]
+		[PlanetName:Planet Agaris]
+		[Direction:X:-0.830059895327097 Y:-0.298061554498581 Z:0.471338392133993]		
+		[HeightOffset:1288.99634081958]		
+
+		[UseZoneAnnounce:true]
+		[ZoneEnterAnnounce:Entering Carcosa]
+		[ZoneLeaveAnnounce:Leaving Carcosa]		
+
+	  </Description>
+
+	</EntityComponent>
+	
+	
+
+	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+	  <Id>
+		<TypeId>Inventory</TypeId>
+		<SubtypeId>ZoneIslands</SubtypeId>
+	  </Id>
+	  <Description>
+
+		[MES Zone]
+
+		[PublicName:ZoneRural] 
+
+		[Active:true]
+		[Persistent:true]
+		[Strict:true]
+
+		[Coordinates:{X:-3715948.9155995 Y:-1286743.24066376 Z:-2568000.09232012}]
+		[Radius:20000]
+
+		[PlanetaryZone:true]
+		[PlanetName:Planet Agaris]
+		[Direction:X:-0.88284172514293 Y:0.387647885011932 Z:0.265178441040049]		
+		[HeightOffset:1061.992816327]		
+
+		[UseZoneAnnounce:true]
+		[ZoneEnterAnnounce:Entering Islands]
+		[ZoneLeaveAnnounce:Leaving Islands]		
+
+	  </Description>
+
+	</EntityComponent>	
+	
+	
+	
+	
+				
+  </EntityComponents>
+</Definitions>
