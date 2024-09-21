@@ -67,9 +67,7 @@
 		
 	</SpawnGroup>
 	
-	
-	
-	
+
 	<SpawnGroup>
 		<Id>
 			<TypeId>SpawnGroupDefinition</TypeId> 
@@ -93,7 +91,7 @@
 		[RandomGridNamePrefix:(NPC-AAW)]
 		[RandomGridNamePattern:South Pole Base]
 		[ReplaceAntennaNameWithRandomizedName:Antenna]
-
+		[ReplaceAntennaHudTextInsteadOfName:true]	
 
 		[StaticEncounterCoords:{X:-3668943.69425404 Y:-1368590.0046958 Z:-2579805.05860558}]
 		[StaticEncounterForward:{X:0.338972777228586 Y:-0.100620582729569 Z:-0.935399890222947}]
@@ -135,8 +133,141 @@
 
 
 
+<!-- Carcosa starting base -->
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>GC_CarcosaBase</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:GC]		
+
+		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+		[TriggerRadius:10000]
+
+		[ForceExactPositionAndOrientation:true]
+
+		[ZoneConditions:ZoneCondition_Agaris]
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:Carcosa Base]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+		[ReplaceAntennaHudTextInsteadOfName:true]	
+
+		[StaticEncounterCoords:{X:-3707838.9730467 Y:-1342020.98487312 Z:-2562220.14979517}]
+		[StaticEncounterForward:{X:-0.298291538102603 Y:-0.21399154050032 Z:-0.930177283581298}]
+		[StaticEncounterUp:{X:-0.756271963338804 Y:-0.541555706258711 Z:0.367110520805793}]
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Agaris]
+		[StaticEncounterPlanetDirection:{X:-0.757074740114488 Y:-0.541071358640363 Z:0.366168844578088}]
+		[StaticEncounterPlanetAltitude:0.633893749472918]
 
 
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:GC_CarcosaBaseDestroyed]			
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="GC-HeavyBase">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>GC_AgarisHeavyBase_Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+	</SpawnGroup>
+	
+	
+	
+	
+<!-- Bratis starting base -->
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>GC_BratisBase</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:GC]		
+
+		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+		[TriggerRadius:10000]
+
+		[ForceExactPositionAndOrientation:true]
+
+		[ZoneConditions:ZoneCondition_Agaris]
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:Bratis Base]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+		[ReplaceAntennaHudTextInsteadOfName:true]	
+
+
+		[StaticEncounterCoords:{X:-3715028.32314452 Y:-1284294.30765805 Z:-2572561.20657818}]
+		[StaticEncounterForward:{X:-0.189400513066811 Y:0.0952177887739422 Z:-0.977272233490254}]
+		[StaticEncounterUp:{X:-0.873142468781611 Y:0.438956999671931 Z:0.211988163936033}]
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Agaris]
+		[StaticEncounterPlanetDirection:{X:-0.879938250413324 Y:0.434641568436845 Z:0.191821225223641}]
+		[StaticEncounterPlanetAltitude:-1.74175114187528]
+
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:GC_BratisBaseDestroyed]			
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="GC-MediumBase">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>GC_AgarisHeavyBase_Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+	</SpawnGroup>	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	<!-- MidWay Base -->
 	<SpawnGroup>

@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+<!--
+[SpawnConditionsProfiles:GC-SpawnProfile-RivalAISpawn]
+
+GC-SpawnGroup-MediumStrikeForce
+
+-->
+	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Spawner_Transport</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Spawn]
+
+	[UseSpawn:true]
+
+	[StartsReady:true]
+	[SpawningType:CustomSpawn]
+
+	[MaxSpawns:-1]
+
+	[SpawnGroups:AaW_SpawnGroup_Transport]
+	
+	
+	[UseRelativeSpawnPosition:false]
+	[MinDistance:800]
+	[MaxDistance:2500]
+	[MinAltitude:600]
+	[MaxAltitude:1000]
+	[IgnoreSafetyChecks:true]
+      
+      </Description>
+      
+    </EntityComponent>
+
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_RivalAISpawn</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+
+		[SpaceCargoShip:false]
+		[LunarCargoShip:false]
+		[SpaceRandomEncounter:false]
+		[AtmosphericCargoShip:false]
+		[PlanetaryInstallation:false]
+		
+		[IgnoreCombatPhase:true]
+		[ZoneConditions:ZoneCondition-ZoneAaW]	
+		
+		[RivalAiAnySpawn:true]
+		[FactionOwner:COL-A]	
+	
+		[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+    </EntityComponent>		
+
+	
+	
+	
+	
+	<!-- Behavior -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Transport_Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+
+
+	[Triggers:AaW_TransportTrigger_ReceivedCommand]
+	[Triggers:AaW_TransportTrigger_Despawn]
+	[Triggers:AaW_TransportTrigger_DespawnMES]
+	[Triggers:AaW_TransportTrigger_Compromised]	  
+      </Description>
+      
+    </EntityComponent>
+	
+
+<!--
+[Triggers:AaW_TransportTrigger_ReceivedCommand]
+[Triggers:AaW_TransportTrigger_Despawn]
+[Triggers:AaW_TransportTrigger_DespawnMES]
+[Triggers:AaW_TransportTrigger_Compromised]
+
+
+-->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_TransportAction_FailMission</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+
+	[ActivateEvent:true]
+	[ActivateEventIds:AaW_EventTemplate_BountyHunting_Fail@{EventInstance}]
+
+
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_TransportAction_SuccessMission</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:AaW_EventTemplate_Transport_Success@{EventInstance}]
+
+	[ToggleEvents:true]
+	[ToggleEventIds:AaW_EventTemplate_Transport_Success@{EventInstance}]
+	[ToggleEventIdModes:true]
+	
+	[ForceDespawn:true]
+	[TryToDespawnThisGridOnly:true]
+	
+      </Description>
+      
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_TransportTrigger_ReceivedCommand</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:CommandReceived]
+	  [CommandReceiveCode:{EventInstance}]
+	  
+	  [UseTrigger:true]
+	  [StartsReady:true]
+
+	  [MaxActions:1]
+	  	
+	  [Actions:AaW_TransportAction_SuccessMission]
+      </Description>
+    </EntityComponent>
+	
+	
+
+
+	
+	
+	
+	
+
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_TransportTrigger_Despawn</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Despawn]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	  [MaxActions:1]
+	  [Actions:AaW_TransportAction_FailMission]
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_TransportTrigger_DespawnMES</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:DespawnMES]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	  [MaxActions:1]
+	  [Actions:AaW_TransportAction_FailMission]
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_TransportTrigger_Compromised</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Compromised]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	  [MaxActions:1]
+	  [Actions:AaW_TransportAction_Compromised]
+	  [Actions:AaW_TransportAction_FailMission]	  
+      </Description>
+    </EntityComponent>		
+		
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_TransportAction_Compromised</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      [UseChatBroadcast:true]
+      [ChatData:AaW_TransportChat_Compromised]
+
+[GenerateExplosion:true]
+[ExplosionRange:14]
+[ExplosionDamage:5]
+[ExplosionIgnoresVoxels:true]
+      </Description>
+      
+    </EntityComponent>
+
+	
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_TransportChat_Compromised</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:Pirate]
+      [Color:Red]
+      
+      [ChatMessages:NOOOOOOO!!!]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+	  
+	  [IgnoreAntennaRequirement:true]
+	  [IgnoredAntennaRangeOverride:10000]
+      </Description>
+    </EntityComponent>
+	
+	
+	
+	
+	
+	
+	
+	
+    
+  </EntityComponents>
+</Definitions>

@@ -2,8 +2,6 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<SpawnGroups>
 	
-
-	
 	<!-- 1 Cobalt -->
 	<SpawnGroup>
 		<Id>
@@ -12,7 +10,6 @@
 		</Id>
 		<Description>
 		[Modular Encounters SpawnGroup]
-
 
 		[StaticEncounter:True]
 		[ForceStaticGrid:true]
@@ -28,7 +25,7 @@
 		[RandomGridNamePrefix:(NPC-AAW)]
 		[RandomGridNamePattern:Mining outpost]
 		[ReplaceAntennaNameWithRandomizedName:Antenna]
-
+		[ReplaceAntennaHudTextInsteadOfName:true]				
 
 
 		[StaticEncounterCoords:{X:6874287.98702018 Y:-1209612.38668658 Z:-462743.720068893}]
@@ -39,10 +36,6 @@
 		[StaticEncounterPlanet:Planet Agaris]
 		[StaticEncounterPlanetDirection:{X:0.455296544133965 Y:0.337532711248803 Z:-0.823879072277419}]
 		[StaticEncounterPlanetAltitude:2.46671922277164]
-
-
-
-			
 
 		[ReplenishSystems:true]
 		[UseRivalAi:true]
@@ -65,7 +58,7 @@
 					<Z>0.0</Z>
 				</Position>
 				<Speed>0</Speed>
-				<Behaviour>GC_MiningStation_Behavior</Behaviour>
+				<Behaviour>GC_RestrictedOutpost_Behavior</Behaviour>
 			<PlaceToGridOrigin>true</PlaceToGridOrigin>
 			</Prefab>
 		</Prefabs>
@@ -96,11 +89,12 @@
 			[RandomGridNamePrefix:(NPC-AAW)]
 			[RandomGridNamePattern:Mining outpost]
 			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]				
+
 
 			[StaticEncounterCoords:{X:6851321.33919683 Y:-1228205.45817966 Z:-472504.768112758}]
 			[StaticEncounterForward:{X:0.0708472746486211 Y:0.0252400493987457 Z:-0.997167791086942}]
 			[StaticEncounterUp:{X:0.382713709674397 Y:0.922483514402786 Z:0.0505408951478612}]
-
 
 			[StaticEncounterUsePlanetDirectionAndAltitude:true]
 			[StaticEncounterPlanet:Planet Agaris]
@@ -129,13 +123,12 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>0</Speed>
-					<Behaviour>GC_MiningStation_Behavior</Behaviour>
+					<Behaviour>GC_RestrictedOutpost_Behavior</Behaviour>
 				<PlaceToGridOrigin>true</PlaceToGridOrigin>
 				</Prefab>
 			</Prefabs>
 			
 		</SpawnGroup>		
-		
 		
 		
 		
@@ -158,12 +151,11 @@
 				
 			[ForceExactPositionAndOrientation:true]
 
-
 			[UseRandomNameGenerator:true]
 			[RandomGridNamePrefix:(NPC-AAW)]
 			[RandomGridNamePattern:Mining outpost]
 			[ReplaceAntennaNameWithRandomizedName:Antenna]
-
+			[ReplaceAntennaHudTextInsteadOfName:true]
 
 			[StaticEncounterCoords:{X:6841201.99575802 Y:-1258835.14089857 Z:-464628.928628473}]
 			[StaticEncounterForward:{X:-0.101006627889564 Y:-0.493632320531996 Z:-0.863785154565981}]
@@ -197,22 +189,18 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>0</Speed>
-					<Behaviour>GC_MiningStation_Behavior</Behaviour>
+					<Behaviour>GC_RestrictedOutpost_Behavior</Behaviour>
 				<PlaceToGridOrigin>true</PlaceToGridOrigin>
 				</Prefab>
 			</Prefabs>
 			
 		</SpawnGroup>
-
-
-
-
 		
-		<!-- 6 Mining outpost -->
+		<!-- 4 -->
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>GC_AgarisMiningOutpost6</SubtypeId>
+				<SubtypeId>GC_AgarisMiningOutpost4</SubtypeId>
 			</Id>
 			<Description>
 			[Modular Encounters SpawnGroup]
@@ -229,19 +217,21 @@
 
 			[UseRandomNameGenerator:true]
 			[RandomGridNamePrefix:(NPC-AAW)]
-			[RandomGridNamePattern:Magnesium Mining outpost]
+			[RandomGridNamePattern:Cobalt Mining outpost]
 			[ReplaceAntennaNameWithRandomizedName:Antenna]
-				
+			[ReplaceAntennaHudTextInsteadOfName:true]				
 
-			[StaticEncounterCoords:{X:-1101747.11482369 Y:135055.238751439 Z:1241867.11371879}]
-			[StaticEncounterForward:{X:-0.826957769420425 Y:-0.279903324888189 Z:-0.48764226263905}]
-			[StaticEncounterUp:{X:0.461900857964199 Y:0.156341209294509 Z:-0.873043540545526}]
+
+			[StaticEncounterCoords:{X:-3710718.2034793 Y:-1307922.36240061 Z:-2548919.18007753}]
+			[StaticEncounterForward:{X:-0.592321036375896 Y:0.0624968146794606 Z:-0.803274509754608}]
+			[StaticEncounterUp:{X:-0.803050655046821 Y:0.0350218352856934 Z:0.594880758204612}]
 
 
 			[StaticEncounterUsePlanetDirectionAndAltitude:true]
 			[StaticEncounterPlanet:Planet Agaris]
-			[StaticEncounterPlanetDirection:{X:0.460161384457215 Y:0.138011705455496 Z:-0.877042911955672}]
-			[StaticEncounterPlanetAltitude:4.8724203079546]
+			[StaticEncounterPlanetDirection:{X:-0.805928102249612 Y:0.0348642456541435 Z:0.590985937547846}]
+			[StaticEncounterPlanetAltitude:10.2421526673788]
+
 
 
 			[ReplenishSystems:true]
@@ -249,7 +239,7 @@
 			[RivalAiReplaceRemoteControl:true]
 			[IgnoreCombatPhase:true]
 			[IgnoreCleanupRules:true]
-			[FalseSandboxVariables:GC_AgarisMiningOutpost6Destroyed]
+			[FalseSandboxVariables:GC_AgarisMiningOutpost4Destroyed]
 			[ZoneConditions:ZoneCondition_ZoneAaW]				
 			</Description>
 			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
@@ -264,24 +254,82 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>0</Speed>
-					<Behaviour>GC_MiningStation_Behavior</Behaviour>
+					<Behaviour>GC_RestrictedOutpost_Behavior</Behaviour>
 					<PlaceToGridOrigin>true</PlaceToGridOrigin>
 				</Prefab>
 			</Prefabs>
 			
 		</SpawnGroup>		
+
+
 		
+		<!-- 5 Magnesium-->
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>GC_AgarisMiningOutpost5</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+			[FactionOwner:GC]		
+
+			[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+			[TriggerRadius:4500]
+				
+			[ForceExactPositionAndOrientation:true]
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-AAW)]
+			[RandomGridNamePattern:Mining outpost]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+				[ReplaceAntennaHudTextInsteadOfName:true]				
+		
+			
+
+			[StaticEncounterCoords:{X:-3679038.36557577 Y:-1328048.09721959 Z:-2530019.34816002}]
+			[StaticEncounterForward:{X:-0.270803955762918 Y:-0.306435939917476 Z:0.912558070628959}]
+			[StaticEncounterUp:{X:0.402628716152077 Y:0.825021318665809 Z:0.396522307918053}]
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Agaris]
+			[StaticEncounterPlanetDirection:{X:-0.271381948127378 Y:-0.305914239317018 Z:0.912561404188057}]
+			[StaticEncounterPlanetAltitude:2.53749009897729]
+
+
+
+			[ReplenishSystems:true]
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:GC_AgarisMiningOutpost5Destroyed]
+			[ZoneConditions:ZoneCondition_ZoneAaW]				
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="GC - MINING STATION MK2">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>GC_RestrictedOutpost_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>			
 		
 		
 
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		

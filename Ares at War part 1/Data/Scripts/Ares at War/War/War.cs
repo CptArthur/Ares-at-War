@@ -29,13 +29,13 @@ namespace AresAtWar.War
 {
     public static partial class WarSim
     {
-        public static readonly List<Node> _nodes = new List<Node>(); //SAVE
-        public static readonly List<Frontline> _frontlines = new List<Frontline>();  //SAVE
-        public static readonly List<StaticEncounter> _staticEncounters = new List<StaticEncounter>();  //SAVE
-
+        public static readonly List<Node> _nodes = new List<Node>(); 
+        public static readonly List<Frontline> _frontlines = new List<Frontline>();  
+        public static readonly List<StaticEncounter> _staticEncounters = new List<StaticEncounter>();  
+        public static readonly List<TradeRoute> _TradeRoutes = new List<TradeRoute>();
 
         private static Faction GC = new Faction("GC", new Color(255, 0, 0)); // red
-        private static Faction FAF = new Faction("FAF", new Color(0, 255, 0)); // green
+        private static Faction AHE = new Faction("AHE", new Color(0, 255, 0)); // green
         private static Faction SYN = new Faction("SYN", new Color(255, 165, 0)); // orange
 
         private static Faction PURGE = new Faction("Purge", new Color(139, 0, 0), EventFaction: true); // darkred
@@ -47,86 +47,163 @@ namespace AresAtWar.War
 
 
 
-        public static Faction[] _factions = { FAF, SYN, GC, PURGE, SDC };
+        public static Faction[] _factions = { AHE, SYN, GC, PURGE, SDC };
 
-        public static Faction[] _allfactions = { FAF, SYN, GC, PURGE, SDC, REM, TIF, ITC };
+        public static Faction[] _allfactions = { AHE, SYN, GC, PURGE, SDC, REM, TIF, ITC };
 
         private const int Rounds = 67;
         private static readonly Random _random = new Random();
 
 
+        public class TradeRoute
+        {
+            public List<string> Locations;
 
-        // Define the factions
+            public int Importance;
+
+            // Constructor
+            public TradeRoute(List<string> Locations, int importance)
+            {
+                this.Locations = Locations;
+
+                Importance = importance;
+            }
+        }
 
 
         public static void Init()
         {
-            //var agarisOrbit = new Node("AgarisOrbit", "Agraris Space", GC, new Vector3D(-1129033.50, 126871.50, 1293873.50));
-            var agarisOrbit = new Node("AgarisOrbit", "Agraris Space", GC, new Vector3D(-1127291, 223414.47, 1507151.44));
-            agarisOrbit.SpaceNode = true;
+            var agarisSpace = new Node("AgarisSpace", "Agaris Space", GC, new Vector3D(-3512604, -1232206, -2690052), 350000);
+            agarisSpace.SpaceNode = true;
+            _nodes.Add(agarisSpace);
 
+            var sunsetCity = new Node("SunsetCity", "Sector Sunset City", GC, new Vector3D(-3662454, -1299814, -2643727), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Urban);
+            _staticEncounters.Add(new StaticEncounter(sunsetCity.Id, "SunsetCity", "CIVILIAN", new Vector3D(-3661158.5103733, -1301788.86345045, -2642200.20693818), false));
 
-            var sunsetCity = new Node("SunsetCity", "Sector Sunset City", GC, new Vector3D(-1127111.42, 136759.17, 1233915.55));
-            var azuris = new Node("Azuris", "Sector Azuris", GC, new Vector3D(-1085148.41, 132345.68, 1252869.66));
-            var carcosa = new Node("Carcosa", "Sector Carcosa", GC, new Vector3D(-1179270, 108838, 1323048));
-
+            var azuris = new Node("Azuris", "Sector Azuris", GC, new Vector3D(-3619303, -1302582, -2625850), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Rural);
+            _staticEncounters.Add(new StaticEncounter(azuris.Id, "Azuris", "CIVILIAN", new Vector3D(-3620611.28859755, -1307127.11006586, -2624833.43832917), false));
             
 
+            var carcosa = new Node("Carcosa", "Sector Carcosa", GC, new Vector3D(-3713255, -1328026, -2555371), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Urban);
+            _staticEncounters.Add(new StaticEncounter(carcosa.Id, "Carcosa", "CIVILIAN", new Vector3D(-3705652.28656772, -1337580.22062336, -2554087.27439561), false));
 
 
-            var station27 = new Node("Station27", "Station 27", GC, new Vector3D(1021847.01, 2624.77, -240317.27));
+            var ahe = new Node("AHE", "Sector AHE", AHE, new Vector3D(-3695102, -1296077, -2534068), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Urban);
+            _staticEncounters.Add(new StaticEncounter(ahe.Id, "AHE_HQ", "AHE", new Vector3D(-3695935.39711949, -1297736.31794599, -2536595.20992627), false));
+            _staticEncounters.Add(new StaticEncounter(ahe.Id, "AHE_Outpost3", "AHE", new Vector3D(-3703442.66211895, -1300817.03738934, -2541847.28840769), false));
+            _staticEncounters.Add(new StaticEncounter(ahe.Id, "AHE_Outpost2", "AHE", new Vector3D(-3710629.45681993, -1308011.02317491, -2548826.88948266), false));
+            _staticEncounters.Add(new StaticEncounter(ahe.Id, "AHE_Outpost1", "AHE", new Vector3D(-3700830.81050136, -1312992.16548631, -2537729.80624713), false));
+            
+
+            var thorrix = new Node("Thorrix", "Sector Thorrix", SYN, new Vector3D(-3713255, -1328026, -2555371), 18000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Rural); //Agaris Desert
+            _staticEncounters.Add(new StaticEncounter(thorrix.Id, "Thorrix", "CIVILIAN", new Vector3D(-3666954.82093188, -1319040.62686428, -2525488.18626478), false));
+
+
+
+            var bratis = new Node("Bratis", "Sector Bratis", GC, new Vector3D(-3715949, -1286742, -2567999), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Rural); //ZoneIslands
+            _staticEncounters.Add(new StaticEncounter(bratis.Id, "Bratis", "CIVILIAN", new Vector3D(-3710210, -1279156, -2566853), false));
+
+
+
+            var midway = new Node("Midway", "Sector Midway", GC, new Vector3D(-3715949, -1286742, -2567999), 17500, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Military); 
+
+            _nodes.Add(sunsetCity);
+            _nodes.Add(azuris);
+            _nodes.Add(carcosa);
+            _nodes.Add(ahe);
+            _nodes.Add(thorrix);
+            _nodes.Add(bratis);
+            _nodes.Add(midway);
+
+            var station27 = new Node("Station27", "Station 27", GC, new Vector3D(-1972242, -1017989, -2314831),50000, macro: MarcoLocation.Bylen, planet: Planet.Space, feel: Feel.Urban);
             station27.SpaceNode = true;
+            _nodes.Add(station27);
+            _staticEncounters.Add(new StaticEncounter(station27.Id, "Station27", "CIVILIAN", new Vector3D(-1970922.053788, -1016003.00749572, -2313711.812254), false));
 
-            var craitOrbit = new Node("CraitOrbit", "Crait Orbit", GC, new Vector3D(1400279.11, -616717.41, -2772159.72));
-            craitOrbit.SpaceNode = true;
 
-            var lezunoLorusOrbit = new Node("LezunoLorusOrbit", "Lezuno&Lorus Orbit", GC, new Vector3D(-1400516.03, -394463.12, -1619521.91));
-            lezunoLorusOrbit.SpaceNode = true;
 
-            var spice = new Node("SpiceLorus", "Spicefields", SYN, new Vector3D(-1254616.19, -523298.60, -1828837.31));
+
+
+            //Doohan space
+            _staticEncounters.Add(new StaticEncounter(null, "Doohan", "CIVILIAN", new Vector3D(1573459.05187182, 1167676.70389646, 3320013.77777762), false));
+
+
+            var moonSpace = new Node("MoonSpace", "Moon Space", AHE, new Vector3D(-2578714, -1046592, -4663973), 200000);
+            moonSpace.SpaceNode = true;
+            var moon = new Node("Moon", "Moon", AHE, new Vector3D(-2613043, -1055747, -4763524), 32000);
+            _nodes.Add(moonSpace);
+            _nodes.Add(moon);
+
+            var thora4Space = new Node("Thora4Space", "Thora 4 Space", ITC, new Vector3D(-759347, -1089606, -3471518), 200000);
+            thora4Space.SpaceNode = true;
+            var thora4 = new Node("Thora4", "Thora 4", ITC, new Vector3D(-666090, -1101079, -3477316), 94894);
+
+            _staticEncounters.Add(new StaticEncounter(thora4.Id, "Nyx", "CIVILIAN", new Vector3D(-628437.849787989, -1095745.23158828, -3508361.90366662), false));
+
+            _nodes.Add(thora4Space);
+            _nodes.Add(thora4);
+
+
+            var rakSpace = new Node("RakSpace", "RakSpace", GC, new Vector3D(-37016, -4831, 52338), 300000, Tags: new List<string> { "Bylen", "Rural" });
+            rakSpace.SpaceNode = true;
+            _staticEncounters.Add(new StaticEncounter(rakSpace.Id, "Rak", "CIVILIAN", new Vector3D(-34995.4115883877, -3251.23684096853, 48703.7032755286), false));
+
+            _nodes.Add(rakSpace);
+
+            var lezunoSpace = new Node("LezunoSpace", "Lezuno Space", GC, new Vector3D(668643, 561533, 3606399), 250000);
+            lezunoSpace.SpaceNode = true;
+            var lezuno = new Node("Lezuno", "Lezuno", REM, new Vector3D(595790, 474550, 3465430), 94894);
+            _nodes.Add(lezunoSpace);
+            _nodes.Add(lezuno);
+
+            var lorusSpace = new Node("LorusSpace", "Lorus Space", SYN, new Vector3D(2730463, 1286599, 3912652), 200000);
+            lorusSpace.SpaceNode = true;
+            var lorus = new Node("Lorus", "Lorus", SYN, new Vector3D(2732579, 1294490, 3968789), 40894);
+            _nodes.Add(lorusSpace);
+            _nodes.Add(lorus);
+
+            var craitSpace = new Node("CraitSpace", "Crait Space", GC, new Vector3D(2896731, 1043674, 1886515), 200000);
+            craitSpace.SpaceNode = true;
+            var crait = new Node("Crait", "Crait", GC, new Vector3D(2934898, 1019809, 1826268), 49000);
+            _nodes.Add(craitSpace);
+            _nodes.Add(crait);
+
+
+
 
             //DoriumThora4
 
 
-            var fafFaction = new Node("FAFFaction", "...", FAF, new Vector3D(-1129033.50, 126871.50, 1293873.50), true); // Agaris
-            var gcFaction = new Node("GCFaction", "...", GC, new Vector3D(0, 0, 0), true); //Bylen
-            var synFaction = new Node("SYNFaction", "...", SYN, new Vector3D(-1249083.5, -521370.5, -1803753.5), true); //Lorus 
+            //var fafFaction = new Node("FAFFaction", "...", AHE, new Vector3D(-1129033.50, 126871.50, 1293873.50), 0, true); // Agaris
+            var gcFaction = new Node("GCFaction", "...", GC, new Vector3D(0, 0, 0), 0, true); //Bylen
+            var synFaction = new Node("SYNFaction", "...", SYN, new Vector3D(-1249083.5, -521370.5, -1803753.5), 0, true); //Lorus 
 
-            var PURGEFaction = new Node("PURGEFaction", "...", PURGE, new Vector3D(0, 0, 0), true); // Bylen
-            var SDCFaction = new Node("SDCFaction", "...", SDC, new Vector3D(0, 0, 0), true); //Some place
-
-
-            var TIFFaction = new Node("TIFFaction", "...", TIF, new Vector3D(-1249083.5, -521370.5, -1803753.5), true); //Lorus 
-            var ITCFaction = new Node("ITCFaction", "...", ITC, new Vector3D(x: 1404449.5, y: -83492.5, z: -109853.5), true); //Thora 4
-            var REMFaction = new Node("REMFaction", "...", REM, new Vector3D(x: -1307059.5, y: -325291.5, z: -1466477.5), true); //Lezuno C
-            
-
-            _nodes.Add(agarisOrbit);
-
-            _nodes.Add(sunsetCity);
-
-            _nodes.Add(azuris);
-
-            _nodes.Add(carcosa);
-
-            _nodes.Add(station27);
-
-            _nodes.Add(craitOrbit);
-
-            _nodes.Add(lezunoLorusOrbit);
-
-            _nodes.Add(spice);
-            _staticEncounters.Add(new StaticEncounter(spice.Id,"SYN-HQ", "SYN", new Vector3D(-1253813.36256464, -522694.97793912, -1828182.16404181), false));
+            var PURGEFaction = new Node("PURGEFaction", "...", PURGE, new Vector3D(0, 0, 0), 0, true); // Bylen
+            var SDCFaction = new Node("SDCFaction", "...", SDC, new Vector3D(0, 0, 0),0, true); //Some place
 
 
-
-
-            _nodes.Add(fafFaction);
-
+            _nodes.Add(PURGEFaction);
+            _nodes.Add(SDCFaction);
             _nodes.Add(gcFaction);
-
-
             _nodes.Add(synFaction);
+
+
+            //Agaria run
+            _TradeRoutes.Add(new TradeRoute(new List<string> { "Carcosa", "Thorrix", "AHE_HQ", "Bratis" }, 5));
+
+            //The great ocean run
+            _TradeRoutes.Add(new TradeRoute(new List<string> { "Carcosa", "SunsetCity", "AHE_HQ", "Bratis" }, 3));
+
+
+            //Global run
+            _TradeRoutes.Add(new TradeRoute(new List<string> { "Azuris", "SunsetCity", "AHE_HQ", "Bratis", "Carcosa", "Thorrix", "Station27" }, 1));
+
+            //Space run
+            _TradeRoutes.Add(new TradeRoute(new List<string> { "Rak", "Station27", "Doohan", "Nyx" }, 3));
+
+
+
+            /*
             _staticEncounters.Add(new StaticEncounter(synFaction.Id,"SYN-MiningOutpost3", "SYN", new Vector3D(-1229434.03820444, -521175.882389913, -1789244.09383711), false));
             _staticEncounters.Add(new StaticEncounter(synFaction.Id, "SYN-MiningOutpost2", "SYN", new Vector3D(-1224847.84297878, -523019.024865274, -1801070.01883598), false));
             _staticEncounters.Add(new StaticEncounter(synFaction.Id, "SYN-StripMiningPlatform4", "SYN", new Vector3D(-1254874.33395561, -521010.475227488, -1827504.95448953), false));
@@ -134,9 +211,6 @@ namespace AresAtWar.War
             _staticEncounters.Add(new StaticEncounter(synFaction.Id, "SYN-FuelDepot3", "SYN", new Vector3D(-1231876.8267543, -525240.903534725, -1786703.49699656), false));
             _staticEncounters.Add(new StaticEncounter(synFaction.Id, "SYN-FuelDepot2", "SYN", new Vector3D(-1251503.78547039, -532230.449342892, -1825666.96640694), false));
             _staticEncounters.Add(new StaticEncounter(synFaction.Id, "SYN-FuelDepot1", "SYN", new Vector3D(-1264759.02008796, -517528.282412784, -1822256.60960163), false));
-
-
-
             _staticEncounters.Add(new StaticEncounter(,"SYN-TalisOutpost", "SYN", new Vector3D(-1129254.57184159, 104270.56515784, 1348435.49548304), false));
 
 
@@ -145,16 +219,7 @@ namespace AresAtWar.War
 
 
 
-            _nodes.Add(PURGEFaction);
-            _nodes.Add(SDCFaction);
-
-
-            _nodes.Add(TIFFaction);
-            _staticEncounters.Add(new StaticEncounter(TIFFaction.Id, "TIF-HQ", "TIF", new Vector3D(-1247612.66927268, -539425.082150115, -1787266.32893023), true));
-
-
-            _nodes.Add(ITCFaction);
-            _nodes.Add(REMFaction);
+            
 
             _frontlines.Add(new Frontline("CraitOrbit", "PURGEFaction", new Vector3D(0, 0, 0)));
 
@@ -181,7 +246,7 @@ namespace AresAtWar.War
             _frontlines.Add(new Frontline("LezunoLorusOrbit", "Station27", new Vector3D(-163848.09, -49.47, -1023686.9)));
             _frontlines.Add(new Frontline("LezunoLorusOrbit", "SpiceLorus", new Vector3D(-1283460.48, -521102.40, -1847874.03)));
 
-
+            */
 
 
 
@@ -190,57 +255,34 @@ namespace AresAtWar.War
 
 
             /*
-            _staticEncounters.Add(new StaticEncounter("SDC-Baza", "SDC", new Vector3D(1414374.76539063, -66285.1791060999, -155320.696131601), false));
-            _staticEncounters.Add(new StaticEncounter("SDC-Factory", "SDC", new Vector3D(1448417.80036266, -82188.5341196633, -132838.215067967), false));
-            _staticEncounters.Add(new StaticEncounter("SDC-IceStation", "SDC", new Vector3D(1449425.42494408, -67461.5408470133, -97827.3649669675), false));
-            _staticEncounters.Add(new StaticEncounter("ROS-AgarisSouthPoleStation", "ROS", new Vector3D(-1135613.40506584, 68368.3731023855, 1288864.77397775), false));
-            _staticEncounters.Add(new StaticEncounter("ROS-DeepSpaceStation", "ROS", new Vector3D(1409212.66274555, 1269755.79727905, 4322539.1548167), false));
-            _staticEncounters.Add(new StaticEncounter("ROS-LezunoCronyxResearch", "ROS", new Vector3D(-1345321.68316333, -311274.775460122, -1512622.3198324), false));
-            _staticEncounters.Add(new StaticEncounter("ROS-CraitCrystalResearch", "ROS", new Vector3D(1442645.12944524, -609572.594204612, -2826836.7311291), false));
-            _staticEncounters.Add(new StaticEncounter("REM-AgarisPegasusSurvivorsCamp", "REM", new Vector3D(-1150920.75767096, 96479.1380086092, 1247793.75913681), false));
-            _staticEncounters.Add(new StaticEncounter("REM-AgarisCrashedPegasus", "REM", new Vector3D(-1150714.04777446, 96474.1523835873, 1247726.41140944), false));
-            _staticEncounters.Add(new StaticEncounter("REM-LezunoHQ", "REM", new Vector3D(-1308380.83074185, -309148.219564841, -1408842.20772728), false));
-            _staticEncounters.Add(new StaticEncounter("CrashedAmbassador", "", new Vector3D(-1337641.2377426, -282640.186555188, -1436612.79788229), false));
-            _staticEncounters.Add(new StaticEncounter("AHE HQ Wasted Event", "AHE", new Vector3D(-1161953.74881786, 139121.165492067, 1341178.05079544), false));
-            _staticEncounters.Add(new StaticEncounter("ITC-ProcessingPlant", "ITC", new Vector3D(1358512.49187609, -84083.4160778683, -91985.7865920572), false));
-            _staticEncounters.Add(new StaticEncounter("ITC-Thora4Capital", "ITC", new Vector3D(1357482.16759975, -94148.4256546545, -120209.554021562), false));
-            _staticEncounters.Add(new StaticEncounter("ITC-Aether", "ITC", new Vector3D(1471331.9089127, -71413.8339805347, -52528.3761462755), false));
-            _staticEncounters.Add(new StaticEncounter("ITC-AgarisWarehouse", "ITC", new Vector3D(-1082120.45148516, 108108.325993618, 1324693.95112241), false));
-            _staticEncounters.Add(new StaticEncounter("ITC-AgarisStopNGO", "ITC", new Vector3D(-1175351.26863503, 122715.874160074, 1330273.09240926), false));
-            _staticEncounters.Add(new StaticEncounter("ITC-AgarisVinyTradeOutpost", "ITC", new Vector3D(-1094787.67563701, 137852.392834221, 1245950.13934922), false));
-            _staticEncounters.Add(new StaticEncounter("ITC-AgarisAtlas", "ITC", new Vector3D(-1173526.5894738, 153122.39634304, 1322481.33507799), false));
-            _staticEncounters.Add(new StaticEncounter("GC-AgarisMiningOutpost6", "GC", new Vector3D(-1101747.1153222, 135055.239345568, 1241867.1173033), false));
-            _staticEncounters.Add(new StaticEncounter("GC-AgarisMiningOutpost3", "GC", new Vector3D(-1134974.30634451, 97772.7486602582, 1242867.89204989), false));
-            _staticEncounters.Add(new StaticEncounter("GC-AgarisMiningOutpost2", "GC", new Vector3D(-1124854.96257951, 128402.428934341, 1234992.04506256), false));
-            _staticEncounters.Add(new StaticEncounter("GC-AgarisMiningOutpost1", "GC", new Vector3D(-1101888.31636439, 146995.498614052, 1244753.09662791), false));
-            _staticEncounters.Add(new StaticEncounter("GC-AgarisMidWayBase", "GC", new Vector3D(-1179079.18723259, 144839.837898291, 1268477.76925947), false));
-            _staticEncounters.Add(new StaticEncounter("GC-AgarisMarsaBase", "GC", new Vector3D(-1107394.66345341, 97948.4919168743, 1247027.94896228), false));
-            _staticEncounters.Add(new StaticEncounter("GC-HQ", "GC", new Vector3D(-1132538.71527543, 150710.787186924, 1240143.78988613), false));
-            _staticEncounters.Add(new StaticEncounter("GC-LorusStation", "GC", new Vector3D(-1215952.01296593, -529934.190624479, -1781219.09465844), false));
-            _staticEncounters.Add(new StaticEncounter("GC-CraitStation", "GC", new Vector3D(1436450.74967084, -599990.490504346, -2801182.58223604), false));
-            _staticEncounters.Add(new StaticEncounter("GC-BylenStation", "GC", new Vector3D(-743011.513424989, -642.058053975779, 764039.700333453), false));
-            _staticEncounters.Add(new StaticEncounter("GC-LezunoStation", "GC", new Vector3D(-1385652.10310275, -323878.76312341, -1524230.34517791), false));
-            _staticEncounters.Add(new StaticEncounter("FAF-HQ", "FAF", new Vector3D(-1096295.71439344, 175964.317905326, 1292565.09279302), false));
-            _staticEncounters.Add(new StaticEncounter("DRA-MiningOutpost2", "DRA", new Vector3D(-1101867.00574666, 115247.364510054, 1344971.30117802), false));
-            _staticEncounters.Add(new StaticEncounter("DRA-MiningOutpost1", "DRA", new Vector3D(-1145111.00912276, 108910.693586212, 1347768.57348853), false));
-            _staticEncounters.Add(new StaticEncounter("DRA-HQ", "DRA", new Vector3D(-1133029.74927066, 117696.204587734, 1352265.55189385), false));
-            _staticEncounters.Add(new StaticEncounter("Bratis", "", new Vector3D(1430093.57173546, -83370.5986257671, -67588.9682139887), false));
-            _staticEncounters.Add(new StaticEncounter("Thorrix", "", new Vector3D(1388533.32514774, -76047.6219617924, -62924.0242155304), false));
-            _staticEncounters.Add(new StaticEncounter("COL-Bridge", "COL", new Vector3D(-1171982.7759584, 99902.0615879026, 1324095.6664353), false));
-            _staticEncounters.Add(new StaticEncounter("Azuris", "", new Vector3D(-1083758.95479578, 125933.59277764, 1256220.63233289), false));
-            _staticEncounters.Add(new StaticEncounter("Carcosa", "", new Vector3D(-1171670.64146471, 99277.2640048867, 1323685.99092236), false));
-            _staticEncounters.Add(new StaticEncounter("SunsetCity", "", new Vector3D(-1133703.76683291, 133985.403589644, 1235588.47353097), false));
-            _staticEncounters.Add(new StaticEncounter("Anf-Zaoa", "Anf", new Vector3D(1378746.28881089, -124494.791459621, -126237.140862596), false));
-            _staticEncounters.Add(new StaticEncounter("Anf-Harbinger", "Anf", new Vector3D(-103.709755313563, -297.249276173619, 2578132.43704597), false));
-            _staticEncounters.Add(new StaticEncounter("FAF-AHE-Outpost3", "FAF", new Vector3D(-1169461.01701594, 136040.447238912, 1335925.97691028), false));
-            _staticEncounters.Add(new StaticEncounter("FAF-AHE-Outpost2", "FAF", new Vector3D(-1176647.81171692, 128846.461453344, 1328946.37583531), false));
-            _staticEncounters.Add(new StaticEncounter("FAF-AHE-Outpost1", "FAF", new Vector3D(-1166849.16539835, 123865.319141937, 1340043.45907084), false));
-            _staticEncounters.Add(new StaticEncounter("FAF-AHE-HQ", "FAF", new Vector3D(-1161953.75201648, 139121.166682262, 1341178.0553917), false));
-            _staticEncounters.Add(new StaticEncounter("AHE-Outpost3", "AHE", new Vector3D(-1169461.01701594, 136040.447238912, 1335925.97691028), false));
-            _staticEncounters.Add(new StaticEncounter("AHE-Outpost2", "AHE", new Vector3D(-1176647.81171692, 128846.461453344, 1328946.37583531), false));
-            _staticEncounters.Add(new StaticEncounter("AHE-Outpost1", "AHE", new Vector3D(-1166849.16539835, 123865.319141937, 1340043.45907084), false));
-            _staticEncounters.Add(new StaticEncounter("AHE-HQ", "AHE", new Vector3D(-1161953.75201648, 139121.166682262, 1341178.0553917), false));
-            _staticEncounters.Add(new StaticEncounter("SYN-ForegoneStation", "SYN", new Vector3D(-1222071.7453009, -519946.691144704, -1835853.98113092), false));
+_staticEncounters.Add(new StaticEncounter(tifHQ.Id, "TIF_HQ", "TIF", new Vector3D(2734050.68562431, 1276435.43322163, 3985276.4057518), false));
+_staticEncounters.Add(new StaticEncounter(synForegoneStation.Id, "SYN_ForegoneStation", "SYN", new Vector3D(2601932.05315993, 1166322.50770169, 3744821.84143732), false));
+_staticEncounters.Add(new StaticEncounter(rosCrashedROS1.Id, "ROS_CrashedROS1", "ROS", new Vector3D(480945.174339629, 569786.094115278, 3605482.07872022), false));
+_staticEncounters.Add(new StaticEncounter(rosAgarisSouthPoleStation.Id, "ROS_AgarisSouthPoleStation", "ROS", new Vector3D(-3669595.05016885, -1368489.11152586, -2588908.49134022), false));
+_staticEncounters.Add(new StaticEncounter(rosDeepSpaceStation.Id, "ROS_DeepSpaceStation", "ROS", new Vector3D(1409212.66274555, 1269755.79727905, 4322539.1548167), false));
+_staticEncounters.Add(new StaticEncounter(rosLezunoCronyxResearch.Id, "ROS_LezunoCronyxResearch", "ROS", new Vector3D(557528.671733663, 488566.739911628, 3419285.41484963), false));
+_staticEncounters.Add(new StaticEncounter(rosCraitCrystalResearch.Id, "ROS_CraitCrystalResearch", "ROS", new Vector3D(2928114.48434223, 1033055.92116714, 1853819.00355293), false));
+_staticEncounters.Add(new StaticEncounter(remAgarisPegasusSurvivorsCamp.Id, "REM_AgarisPegasusSurvivorsCamp", "REM", new Vector3D(-3684858.9828521, -1340318.05365089, -2629888.09211866), false));
+_staticEncounters.Add(new StaticEncounter(remAgarisCrashedPegasus.Id, "REM_AgarisCrashedPegasus", "REM", new Vector3D(-3684660.37842435, -1340333.81857279, -2629971.68203353), false));
+_staticEncounters.Add(new StaticEncounter(remLezunoHQ.Id, "REM_LezunoHQ", "REM", new Vector3D(638654.102948221, 480874.683314898, 3424420.31737057), false));
+_staticEncounters.Add(new StaticEncounter(itcHotel.Id, "ITC_Hotel", "ITC", new Vector3D(-1018002.33077798, -1016204.27518199, -3585528.06290849), false));
+_staticEncounters.Add(new StaticEncounter(itcAether.Id, "ITC_Aether", "ITC", new Vector3D(1999675.78774544, 1167867.71608667, 2124757.03013696), false));
+_staticEncounters.Add(new StaticEncounter(indepMack.Id, "INDEP_Mack", "INDEP", new Vector3D(-2976927.87489875, -1018098.76513987, -3064150.67856171), false));
+_staticEncounters.Add(new StaticEncounter(gcAgarisMiningOutpost6.Id, "GC_AgarisMiningOutpost6", "GC", new Vector3D(-3635728.76042521, -1301802.24528268, -2635906.14801467), false));
+_staticEncounters.Add(new StaticEncounter(gcAgarisMiningOutpost3.Id, "GC_AgarisMiningOutpost3", "GC", new Vector3D(-3668955.95144752, -1339084.73596799, -2634905.37326808), false));
+_staticEncounters.Add(new StaticEncounter(gcAgarisMiningOutpost2.Id, "GC_AgarisMiningOutpost2", "GC", new Vector3D(-3658836.60768252, -1308455.05569391, -2642781.22025541), false));
+_staticEncounters.Add(new StaticEncounter(gcAgarisMiningOutpost1.Id, "GC_AgarisMiningOutpost1", "GC", new Vector3D(-3635869.9614674, -1289861.9860142, -2633020.16869006), false));
+_staticEncounters.Add(new StaticEncounter(gcAgarisMidWayBase.Id, "GC_AgarisMidWayBase", "GC", new Vector3D(-3713060.8323356, -1292017.64672996, -2609295.4960585), false));
+_staticEncounters.Add(new StaticEncounter(gcAgarisSouthPoleBase.Id, "GC_AgarisSouthPoleBase", "GC", new Vector3D(-3668943.69378092, -1368590.00081129, -2579805.05893874), false));
+_staticEncounters.Add(new StaticEncounter(gcHQ.Id, "GC_HQ", "GC", new Vector3D(-3666520.36037844, -1286146.69744133, -2637629.47543184), false));
+_staticEncounters.Add(new StaticEncounter(draMiningOutpost2.Id, "DRA_MiningOutpost2", "DRA", new Vector3D(-3635898.90866217, -1321588.61523538, -2532896.49538995), false));
+_staticEncounters.Add(new StaticEncounter(draMiningOutpost1.Id, "DRA_MiningOutpost1", "DRA", new Vector3D(-3679092.65422577, -1327946.79104204, -2530004.69182944), false));
+_staticEncounters.Add(new StaticEncounter(draHQ.Id, "DRA_HQ", "DRA", new Vector3D(-3667011.40316274, -1319161.30054833, -2525507.58842412), false));
+_staticEncounters.Add(new StaticEncounter(crusadersBaza.Id, "CRUSADERS_Baza", "CRUSADERS", new Vector3D(-656164.879712379, -1083872.66373435, -3522783.96144957), false));
+_staticEncounters.Add(new StaticEncounter(crusadersFactory.Id, "CRUSADERS_Factory", "CRUSADERS", new Vector3D(-623016.227552846, -1099802.54340612, -3499833.93546406), false));
+_staticEncounters.Add(new StaticEncounter(crusadersIceStation.Id, "CRUSADERS_IceStation", "CRUSADERS", new Vector3D(-621560.298283929, -1085208.02156901, -3465409.90665213), false));
+
+
             */
 
 
@@ -267,6 +309,23 @@ namespace AresAtWar.War
             return isAtWar;
         }
         */
+
+        public static void ShuffleStaticEncounters()
+        {
+
+            int n = _staticEncounters.Count;
+
+            for (int i = n - 1; i > 0; i--)
+            {
+                // Pick a random index from 0 to i
+                int j = AaWSessionCore.GetRandomNumber(0,i + 1);
+
+                // Swap staticEncounter[i] with the element at random index j
+                var temp = _staticEncounters[i];
+                _staticEncounters[i] = _staticEncounters[j];
+                _staticEncounters[j] = temp;
+            }
+        }
 
         private static bool FactionsAtWar(string factionA, string factionB)
         {
@@ -302,8 +361,8 @@ namespace AresAtWar.War
             var modifiedStrengthB = factionB.Strength + factionB.Modifier + bBonus;
 
 
-            var forceA = Utils.NextGaussian(modifiedStrengthA, 75); ;
-            var forceB = Utils.NextGaussian(modifiedStrengthB, 75); ;
+            var forceA = Utils.NextGaussian(modifiedStrengthA, 75);
+            var forceB = Utils.NextGaussian(modifiedStrengthB, 75);
 
             if (forceA < forceB)
             {

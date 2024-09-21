@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+  <!-- [Triggers:SYN_Trigger_Static_PopulateStores_SYNForegone] -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SYN_Trigger_Static_PopulateStores_SYNForegone</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Session]
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+        [Conditions:SYN_Condition_Static_PopulateStores_SYNForegone]
+        [StartsReady:false]
+        [MaxActions:1]
+        [Actions:SYN_Action_Static_PopulateStores_SYNForegone]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SYN_Condition_Static_PopulateStores_SYNForegone</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+              
+        [UseConditions:true]
+        [UseFailCondition:true]
+        [CheckAllLoadedModIDs:true]
+        [AllModIDsToCheck:2344068716]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SYN_Action_Static_PopulateStores_SYNForegone</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [ApplyStoreProfiles:true]
+        [ClearStoreContentsFirst:true]
+
+        
+      [StoreBlocks:Store {ITC}]
+      [StoreProfiles:SYN_StoreProfile_SYNForegone_ITC]		
+		
+	    [StoreBlocks:Store {SYN}]
+      [StoreProfiles:SYN_StoreProfile_SYNForegone_SYN]	
+		
+	    [StoreBlocks:Store {FAF}]
+      [StoreProfiles:SYN_StoreProfile_SYNForegone_FAF]	
+
+      [StoreBlocks:Store Civ]
+      [StoreProfiles:SYN_StoreProfile_SYNForegone_Civ]
+  
+      [StoreBlocks:Store Salvage]
+      [StoreProfiles:SYN_StoreProfile_SYNForegone_Salvage]
+
+      [StoreBlocks:Store Ammo]
+      [StoreProfiles:SYN_StoreProfile_SYNForegone_Ammo]
+
+      [StoreBlocks:Store Ingot]
+      [StoreProfiles:SYN_StoreProfile_SYNForegone_Ingot]
+  
+      [StoreBlocks:Store Tool]
+      [StoreProfiles:SYN_StoreProfile_SYNForegone_Tool]      
+
+      [StoreBlocks:Store Prefab]
+      [StoreProfiles:SYN_StoreProfile_SYNForegone_Prefab]      
+
+      
+      [StoreBlocks:Store Fuel]
+      [StoreProfiles:SYN_StoreProfile_SYNForegone_Fuel]
+  
+      
+      [StoreBlocks:Store Outpost]
+      [StoreProfiles:SYN_StoreProfile_SYNForegone_Outpost]
+
+
+      [AddCustomDataToBlocks:true]
+      [CustomDataBlockNames:EconomySurvival Store Water Vehicles,EconomySurvival Store Land Vehicles,EconomySurvival Store Air Vehicles,EconomySurvival Store Space Vehicles]
+      [CustomDataFiles:SYN_Water_Vehicles.xml]
+      [CustomDataFiles:SYN_Land_Vehicles.xml]
+      [CustomDataFiles:SYN_Air_Vehicles.xml]
+      [CustomDataFiles:SYN_Space_Vehicles.xml]  
+        
+
+      [ApplyContractProfiles:true]
+      [ClearContractContentsFirst:true]
+      [ContractBlocks:Contracts]
+      [ContractBlockProfiles:SYN_ContractBlockProfile_SYNForegone]
+    
+      </Description>
+
+    </EntityComponent>
+  </EntityComponents>
+</Definitions>

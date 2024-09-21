@@ -60,6 +60,10 @@
     [TriggerGroups:AaW_Settlement_TriggersGroup]     
     [TriggerGroups:MSB_Settlement_TriggersGroup]     
 
+[Triggers:CIVILIAN_Trigger_Static_PopulateStores_Azuris]
+
+[Triggers:CIVILIAN_Trigger_Static_PopulateStores_AzurisIO]
+
       </Description>
       
     </EntityComponent>  
@@ -91,6 +95,11 @@
     [TriggerGroups:AaW_Settlement_TriggersGroup]     
     [TriggerGroups:MSB_Settlement_TriggersGroup]     
 
+
+[Triggers:CIVILIAN_Trigger_Static_PopulateStores_Carcosa]
+
+[Triggers:CIVILIAN_Trigger_Static_PopulateStores_CarcosaIO]
+
       </Description>
       
     </EntityComponent>  
@@ -121,13 +130,75 @@
     [TriggerGroups:CIVILIAN_Settlement_TriggersGroup]    
     [TriggerGroups:AaW_Settlement_TriggersGroup]     
     [TriggerGroups:MSB_Settlement_TriggersGroup]     
+[Triggers:CIVILIAN_Trigger_Static_PopulateStores_SunsetCity]
 
+[Triggers:CIVILIAN_Trigger_Static_PopulateStores_SunsetCityIO]
       </Description>
       
     </EntityComponent>  
 
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Thorrix_Behavior</SubtypeId>
+      </Id>
+      <Description>
+    [RivalAI Behavior]
+    [BehaviorName:Passive]
+    [TargetData:MSB_Settlement_Target]
 
+    [DialogueBanks:Thorrix.xml] 
+    [DialogueBanks:CIVILIAN.xml] 
+    [DialogueBanks:AaW.xml] 
+    [DialogueBanks:MSB.xml] 
+
+    [TriggerGroups:CIVILIAN_StaticCommon_TriggersGroup]
+    [TriggerGroups:AaW_StaticCommon_TriggersGroup]    
+    [TriggerGroups:MSB_StaticCommon_TriggersGroup]    
+
+    [TriggerGroups:CIVILIAN_FixedStatic_TriggersGroup]        
+    [TriggerGroups:AaW_FixedStatic_TriggersGroup]
+    [TriggerGroups:MSB_FixedStatic_TriggersGroup]    
+
+    [TriggerGroups:CIVILIAN_Settlement_TriggersGroup]    
+    [TriggerGroups:AaW_Settlement_TriggersGroup]     
+    [TriggerGroups:MSB_Settlement_TriggersGroup]     
+
+      </Description>
+      
+    </EntityComponent>  
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Bratis_Behavior</SubtypeId>
+      </Id>
+      <Description>
+    [RivalAI Behavior]
+    [BehaviorName:Passive]
+    [TargetData:MSB_Settlement_Target]
+
+    [DialogueBanks:SunsetCity.xml] 
+    [DialogueBanks:CIVILIAN.xml] 
+    [DialogueBanks:AaW.xml] 
+    [DialogueBanks:MSB.xml] 
+
+    [TriggerGroups:CIVILIAN_StaticCommon_TriggersGroup]
+    [TriggerGroups:AaW_StaticCommon_TriggersGroup]    
+    [TriggerGroups:MSB_StaticCommon_TriggersGroup]    
+
+    [TriggerGroups:CIVILIAN_FixedStatic_TriggersGroup]        
+    [TriggerGroups:AaW_FixedStatic_TriggersGroup]
+    [TriggerGroups:MSB_FixedStatic_TriggersGroup]    
+
+    [TriggerGroups:CIVILIAN_Settlement_TriggersGroup]    
+    [TriggerGroups:AaW_Settlement_TriggersGroup]     
+    [TriggerGroups:MSB_Settlement_TriggersGroup]     
+
+      </Description>
+      
+    </EntityComponent>  	
 
 	
   </EntityComponents>

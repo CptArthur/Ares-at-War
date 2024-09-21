@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+ <!--
+ 
+ -->
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AHE_EventCondition_MissionDestroyDRAHQ</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:DRA_HQDestroyed]  
+	[FalseBooleans:AHE_HQDestroyed]  
+
+      </Description>
+      
+    </EntityComponent>	
+
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AHE_Mission_DestroyDRAHQ</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:Eliminate DRA]
+	[Description:The DRA have been anoyance. Destroy their HQ]
+	
+	[OverrideFaction:AHE]
+	
+	[Reward:5000000]
+	[Collateral:80000]
+	[ReputationReward:200]
+	[FailReputationPrice:20]
+	[Duration:300]
+
+	[PersistantEventConditionIds:AHE_EventCondition_MissionDestroyDRAHQ]
+
+	[ReplaceKeys:{StaticEncounterSandboxBoolName}]
+	[ReplaceValues:DRA_HQDestroyed]
+	
+	[ReplaceKeys:{EventName}]
+	[ReplaceValues:Destroy DRA HQ]	
+
+	[ReplaceKeys:{EventCoords}]
+	[ReplaceValues:{X:-3631334.68361371 Y:-1326304.76052412 Z:-2536825.59381119}]	
+	
+	
+	
+	[InstanceEventGroupId:MissionGroup_EliminateStaticEncounter]
+
+      </Description>
+
+    </EntityComponent>
+
+
+ 
+
+	
+  </EntityComponents>
+</Definitions>
+

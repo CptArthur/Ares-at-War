@@ -37,8 +37,10 @@
 
 		[ManipulationGroups:AHE-Manipulation-Group]
 		
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+	
 
-			[SandboxVariables:AHEActive]			
 			[IgnoreCombatPhase:true]
 			[IgnoreCleanupRules:true]
 			[FalseSandboxVariables:AHE_HQDestroyed]			
@@ -47,7 +49,7 @@
 			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
 			<IsPirate>true</IsPirate>
 			
-			<Frequency>5.0</Frequency>
+			<Frequency>4.9</Frequency>
 			<Prefabs>
 				<Prefab SubtypeId="AHE HQ">
 					<Position>
@@ -56,7 +58,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>0</Speed>
-					<Behaviour>AHE_Settlement_Behavior</Behaviour>
+					<Behaviour>AHE_HQ_Behavior</Behaviour>
 				<PlaceToGridOrigin>true</PlaceToGridOrigin>
 				</Prefab>
 			</Prefabs>

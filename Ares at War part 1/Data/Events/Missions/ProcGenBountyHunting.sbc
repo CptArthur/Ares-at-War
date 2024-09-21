@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+ <!--
+Variables:
+{EventName}
+{EventCoords}
+ {ContractGiver}
+ 
+On start Send GPS to Players; 
+PlayerNear Watcher 
+If playerclose spawnship
+If player leaves the area (50km) -> Fail the mission.
+If ships despawns (trigger) -> Fail the mission.
+
+
+ -->
+  
+  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_ClearThreat</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:Eliminate Threat]
+	[Description:A SPRT ship is disrupting the Agaris-Thora IV trade route; eliminate the threat. Rewards: 550k Credits; +50 REP]
+	
+
+	[InstanceEventGroupId:MissionGroup_BountyHunting]
+	
+	[ReplaceKeys:{EventName}]
+	[ReplaceValues:Last known location]
+
+	
+	[ReplaceKeys:{ContractGiver}]
+	[ReplaceValues:Station 27]	
+	
+	[ReplaceKeys:{EventCoords}]
+	[ReplaceValues:{X:1034461 Y:2637 Z:-100891}]
+
+
+      </Description>
+    </EntityComponent>
+	
+	
+	
+  </EntityComponents>
+</Definitions>
+

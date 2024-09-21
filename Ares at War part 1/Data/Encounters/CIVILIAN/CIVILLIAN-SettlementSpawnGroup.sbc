@@ -32,16 +32,15 @@
 
 		[GridsAreDestructable:false]
 
-
-		[StaticEncounterCoords:{X:-3710210.19492672 Y:-1279156.70952922 Z:-2566853.09682448}]
-		[StaticEncounterForward:{X:0.507363685725798 Y:0.852061822721588 Z:-0.128735157074896}]
-		[StaticEncounterUp:{X:-0.803313128301526 Y:0.521728965657775 Z:0.287205334720795}]
+		[StaticEncounterCoords:{X:-3620606.9244365 Y:-1307122.85325701 Z:-2624827.86220142}]
+		[StaticEncounterForward:{X:0.696209599870979 Y:0.00542303958851264 Z:0.717818071442279}]
+		[StaticEncounterUp:{X:0.71680028409974 Y:0.0485114945155358 Z:-0.695588950181356}]
 
 
 		[StaticEncounterUsePlanetDirectionAndAltitude:true]
 		[StaticEncounterPlanet:Planet Agaris]
-		[StaticEncounterPlanetDirection:{X:-0.801367074312952 Y:0.523477908839719 Z:0.289450671382697}]
-		[StaticEncounterPlanetAltitude:-9.99325889955799]
+		[StaticEncounterPlanetDirection:{X:0.718704554844669 Y:0.0485223271641048 Z:-0.693620462942167}]
+		[StaticEncounterPlanetAltitude:-0.54952671121282]
 
 
         [ShipyardSetup:true]
@@ -49,7 +48,10 @@
         [ShipyardProfileNames:FAC-Shipyard-ScrapYard]
 
 			[UseRandomNameGenerator:true]
-			[RandomGridNamePrefix:(NPC-AAW)]
+			[RandomGridNamePrefix:(NPC-DoNotDelete)]		
+			[RandomGridNamePattern:Azuris]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]
 			
 				[IgnoreCombatPhase:true]
 			[ReplenishSystems:true]
@@ -63,7 +65,7 @@
 			
 			<Frequency>5.0</Frequency>
 			<Prefabs>
-				<Prefab SubtypeId="COL - Azuris Colony">
+				<Prefab SubtypeId="CIVILIAN - Azuris">
 					<Position>
 						<X>0.0</X>
 						<Y>0.0</Y>
@@ -117,7 +119,10 @@
 			[ReplenishSystems:true]
 			
 			[UseRandomNameGenerator:true]
-			[RandomGridNamePrefix:(NPC-AAW)]
+			[RandomGridNamePrefix:(NPC-DoNotDelete)]		
+			[RandomGridNamePattern:Carcosa]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]
 
 			[UseRivalAi:true]
 			[RivalAiReplaceRemoteControl:true]
@@ -128,7 +133,7 @@
 			
 			<Frequency>5.0</Frequency>
 			<Prefabs>
-				<Prefab SubtypeId="COL - Carcosa Colony">
+				<Prefab SubtypeId="CIVILIAN - Carcosa">
 					<Position>
 						<X>0.0</X>
 						<Y>0.0</Y>
@@ -145,7 +150,7 @@
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>SunsetCity2</SubtypeId>
+				<SubtypeId>SunsetCity</SubtypeId>
 			</Id>
 			<Description>
 			[Modular Encounters SpawnGroup]
@@ -299,15 +304,17 @@
 
 
 
-			[StaticEncounterCoords:{X:-3620611.28523971 Y:-1307127.10992653 Z:-2624833.4389046}]
-			[StaticEncounterForward:{X:0.694582697495186 Y:-0.0181272215297166 Z:0.719184454907031}]
-			[StaticEncounterUp:{X:0.71906540481103 Y:0.0485594986384272 Z:-0.69324376571011}]
+
+			[StaticEncounterCoords:{X:-3710210.19152186 Y:-1279156.71001915 Z:-2566853.09927972}]
+			[StaticEncounterForward:{X:0.507363685725798 Y:0.852061822721588 Z:-0.128735157074896}]
+			[StaticEncounterUp:{X:-0.803313128301526 Y:0.521728965657775 Z:0.287205334720795}]
 
 
 			[StaticEncounterUsePlanetDirectionAndAltitude:true]
 			[StaticEncounterPlanet:Planet Agaris]
-			[StaticEncounterPlanetDirection:{X:0.71862422043418 Y:0.0484497545852527 Z:-0.693708765323026}]
-			[StaticEncounterPlanetAltitude:-0.00399309853673913]
+			[StaticEncounterPlanetDirection:{X:-0.801367066786411 Y:0.523477933370171 Z:0.289450647856656}]
+			[StaticEncounterPlanetAltitude:-9.99269356634613]
+
 
 
 
@@ -320,18 +327,21 @@
 			[ReplenishSystems:true]
 			
 			[UseRandomNameGenerator:true]
-			[RandomGridNamePrefix:(NPC-AAW)]		
+			[RandomGridNamePrefix:(NPC-DoNotDelete)]		
+			[RandomGridNamePattern:Bratis]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]		
 
 			[UseRivalAi:true]
 			[RivalAiReplaceRemoteControl:true]
-
+		[ZoneConditions:ZoneCondition_ZoneAaW]
 			</Description>
 			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
 			<IsPirate>true</IsPirate>
 			
 			<Frequency>5.0</Frequency>
 			<Prefabs>
-				<Prefab SubtypeId="COL-Bratis">
+				<Prefab SubtypeId="CIVILIAN - Bratis">
 					<Position>
 						<X>0.0</X>
 						<Y>0.0</Y>

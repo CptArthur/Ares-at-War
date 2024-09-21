@@ -20,25 +20,34 @@ using Sandbox.Game.Entities.Planet;
 using VRage.ModAPI;
 using AresAtWar.Logging;
 using AresAtWar.GPSManagers;
+using System.Security.Cryptography;
+
 namespace AresAtWar.SessionCore
 {
     [MySessionComponentDescriptor(MyUpdateOrder.BeforeSimulation | MyUpdateOrder.AfterSimulation)]
     public class AaWSessionCore : MySessionComponentBase
     {
+        public static AaWSessionCore Instance;
+
         public static string ModVersion = "0.5.2";
 
         public static MESApi MESApi;
         public static int counter = 0;
         public static int counter2 = 0;
+        public static int counter3 = 0;
         public bool restart = false;
         public bool hasrun = false;
         public static string ModLocation;
+
+        internal static readonly Random _rnd = new Random();
+
 
         public static Dictionary<string, MyDefinitionId> ConsumableItems;
         //public MyObjectBuilder_ConsumableItem RescueRover = new MyObjectBuilder_ConsumableItem() { SubtypeName = "RescueRover" };
 
         public override void LoadData()
         {
+
             MESApi = new MESApi();
             ModLocation= ModContext.ModPath;
 
@@ -50,6 +59,9 @@ namespace AresAtWar.SessionCore
             AaWMain.CheckValues();
 
             SyncManager.Setup();
+            CustomMissionMapping.ActiveDestinations = new List<string>();
+
+
 
             MyVisualScriptLogicProvider.RespawnShipSpawned += RespawnShipSpawned;
             MyAPIGateway.Players.ItemConsumed += Players_ItemConsumed;
@@ -58,8 +70,7 @@ namespace AresAtWar.SessionCore
             ConsumableItems = new Dictionary<string, MyDefinitionId>();
             ConsumableItems.Add("FAFSquadron", MyDefinitionManager.Static.GetPhysicalItemDefinition(new MyDefinitionId(typeof(MyObjectBuilder_ConsumableItem), "FAFSquadron")).Id);
 
-
-
+            Instance = this;
         }
 
         
@@ -138,6 +149,10 @@ namespace AresAtWar.SessionCore
             //Every 9 seconds
             if (counter2 > 540)
             {
+
+
+
+
                 //GPS check
                 for (int i = 0; i < GPSManager.AllActiveGPS.Count; i++)
                 {
@@ -150,6 +165,16 @@ namespace AresAtWar.SessionCore
             counter2++;
 
 
+            if (counter3 > 600)
+            {
+                CustomMissionMapping.ActiveDestinations.Clear();
+
+
+                counter3 = 0;
+            }
+            counter3++;
+
+
         }
 
         protected override void UnloadData()
@@ -160,6 +185,7 @@ namespace AresAtWar.SessionCore
             MyVisualScriptLogicProvider.RespawnShipSpawned -= RespawnShipSpawned;
             MyAPIGateway.Players.ItemConsumed -= Players_ItemConsumed;
 
+            Instance = null; // important for avoiding this object to remain allocated in memory
         }
 
 
@@ -289,6 +315,13 @@ namespace AresAtWar.SessionCore
 
 
         }
+
+        public static int GetRandomNumber(int minValue, int maxValue)
+        {
+            return _rnd.Next(minValue, maxValue);
+        }
     }
+
+
 }
 

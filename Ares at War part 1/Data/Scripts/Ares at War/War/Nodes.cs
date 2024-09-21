@@ -13,6 +13,34 @@ namespace AresAtWar.War
 {
     public partial class WarSim
     {
+        public enum MarcoLocation
+        {
+            Bylen,
+            Mila,
+            Rak
+        }
+
+        public enum Planet
+        {
+            Space,
+            Agaris,
+            Thora4,
+            Lezuno,
+            Lorus,
+            Moon,
+            Crait,
+            Europa,
+        }
+
+        public enum Feel
+        {
+            Military,
+            Urban,
+            Rural,
+            Barren
+        }
+
+
 
         public class StaticEncounter
         {
@@ -21,7 +49,7 @@ namespace AresAtWar.War
             public string FactionTag;
             public Vector3D Coords;
             public bool StarterFort;
-
+            public List<string> Tags;
             private Node _node;
 
             public Node Node
@@ -51,14 +79,14 @@ namespace AresAtWar.War
                 }
             }
 
-            public StaticEncounter(string nodeId, string spawngroupname, string factionTag, Vector3D coords,bool starterFort = false)
+            public StaticEncounter(string nodeId, string spawngroupname, string factionTag, Vector3D coords,bool starterFort, List<string> Tags = null)
             {
                 this.NodeId = nodeId;
                 this.Spawngroupname = spawngroupname;
                 this.FactionTag = factionTag;
                 this.Coords = coords;
                 this.StarterFort = starterFort;
-
+                this.Tags = Tags ?? new List<string>();
             }
         }
 
@@ -70,6 +98,8 @@ namespace AresAtWar.War
             public string FancyName;
 
             public bool StartNode;
+
+            public int Radius;
 
             public Vector3D Location;
 
@@ -203,7 +233,7 @@ namespace AresAtWar.War
 
                         foreach (var staticEncounter in _staticEncounters)
                         {
-                            if (staticEncounter.NodeId == Id && staticEncounter.StarterFort)
+                            if (staticEncounter.NodeId != null && staticEncounter.NodeId == Id && staticEncounter.StarterFort)
                             {
                                 _starterForts.Add(staticEncounter);
                                 return _starterForts;
@@ -375,14 +405,26 @@ namespace AresAtWar.War
 
             public bool SpaceNode;
 
-            public Node(string iD,string fancyName,Faction faction,Vector3D location, bool startNode = false)
+            public List<string> Tags;
+
+            public MarcoLocation Macro;
+            public Planet Planet;
+            public Feel Feel;
+
+            public Node(string iD,string fancyName,Faction faction,Vector3D location,int radius, bool startNode = false, List<string> Tags = null, MarcoLocation macro = MarcoLocation.Bylen, Planet planet = Planet.Agaris, Feel feel = Feel.Military)
             {
                 this.Id = iD;
                 this.FancyName = fancyName;
                 this.StartNode = startNode;
                 this.startingFaction = faction;
-
+                this.Radius = radius;
                 this.Location = location;
+
+                this.Tags = Tags ?? new List<string>();
+
+                this.Macro = macro;
+                this.Planet = planet;
+                this.Feel = feel;
 
                 _refreshFaction = true;
                 var thisissodumbbutIneedtodoit = Faction;
