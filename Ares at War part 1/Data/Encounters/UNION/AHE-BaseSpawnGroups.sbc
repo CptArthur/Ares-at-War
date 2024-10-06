@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+	
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>UNION_CarcosaBase</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:UNION]		
+
+		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+		[TriggerRadius:10000]
+
+		[ForceExactPositionAndOrientation:true]
+
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:Carcosa Base]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+		[ReplaceAntennaHudTextInsteadOfName:true]	
+
+
+		[StaticEncounterCoords:{X:-3707826.79485456 Y:-1342082.52170636 Z:-2562314.51742445}]
+		[StaticEncounterForward:{X:-0.610023909478113 Y:0.786486021515997 Z:-0.0964912836735873}]
+		[StaticEncounterUp:{X:-0.756419278193401 Y:-0.541733025538309 Z:0.366544955794626}]
+
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Agaris]
+		[StaticEncounterPlanetDirection:{X:-0.757001650763137 Y:-0.542205691748024 Z:0.364638846775727}]
+		[StaticEncounterPlanetAltitude:-9.78195681260695]
+
+
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:UNION_CarcosaBaseDestroyed]			
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="UNION-Base">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>UNION_MilitaryBase_Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+	</SpawnGroup>
+
+	</SpawnGroups>
+</Definitions>

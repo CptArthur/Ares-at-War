@@ -79,17 +79,21 @@ namespace AresAtWar.War
 
             var sunsetCity = new Node("SunsetCity", "Sector Sunset City", GC, new Vector3D(-3662454, -1299814, -2643727), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Urban);
             _staticEncounters.Add(new StaticEncounter(sunsetCity.Id, "SunsetCity", "CIVILIAN", new Vector3D(-3661158.5103733, -1301788.86345045, -2642200.20693818), false));
+            _staticEncounters.Add(new StaticEncounter(sunsetCity.Id, "GC_HQ", "GC", new Vector3D(-3666520.36037844, -1286146.69744133, -2637629.47543184), true)); //Replace code
+
 
             var azuris = new Node("Azuris", "Sector Azuris", GC, new Vector3D(-3619303, -1302582, -2625850), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Rural);
             _staticEncounters.Add(new StaticEncounter(azuris.Id, "Azuris", "CIVILIAN", new Vector3D(-3620611.28859755, -1307127.11006586, -2624833.43832917), false));
-            
+            _staticEncounters.Add(new StaticEncounter(azuris.Id, "GC_Azuris", "GC", new Vector3D(-3621083.44123095, -1305017.63823832, -2626367.6057209), true));
+
 
             var carcosa = new Node("Carcosa", "Sector Carcosa", GC, new Vector3D(-3713255, -1328026, -2555371), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Urban);
             _staticEncounters.Add(new StaticEncounter(carcosa.Id, "Carcosa", "CIVILIAN", new Vector3D(-3705652.28656772, -1337580.22062336, -2554087.27439561), false));
+            _staticEncounters.Add(new StaticEncounter(carcosa.Id, "GC_CarcosaBase", "GC", new Vector3D(-3707838.9730467, -1342020.98487312, -2562220.14979517), true));
 
 
             var ahe = new Node("AHE", "Sector AHE", AHE, new Vector3D(-3695102, -1296077, -2534068), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Urban);
-            _staticEncounters.Add(new StaticEncounter(ahe.Id, "AHE_HQ", "AHE", new Vector3D(-3695935.39711949, -1297736.31794599, -2536595.20992627), false));
+            _staticEncounters.Add(new StaticEncounter(ahe.Id, "AHE_HQ", "AHE", new Vector3D(-3695935.39711949, -1297736.31794599, -2536595.20992627), true));
             _staticEncounters.Add(new StaticEncounter(ahe.Id, "AHE_Outpost3", "AHE", new Vector3D(-3703442.66211895, -1300817.03738934, -2541847.28840769), false));
             _staticEncounters.Add(new StaticEncounter(ahe.Id, "AHE_Outpost2", "AHE", new Vector3D(-3710629.45681993, -1308011.02317491, -2548826.88948266), false));
             _staticEncounters.Add(new StaticEncounter(ahe.Id, "AHE_Outpost1", "AHE", new Vector3D(-3700830.81050136, -1312992.16548631, -2537729.80624713), false));
@@ -99,9 +103,9 @@ namespace AresAtWar.War
             _staticEncounters.Add(new StaticEncounter(thorrix.Id, "Thorrix", "CIVILIAN", new Vector3D(-3666954.82093188, -1319040.62686428, -2525488.18626478), false));
 
 
-
             var bratis = new Node("Bratis", "Sector Bratis", GC, new Vector3D(-3715949, -1286742, -2567999), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Rural); //ZoneIslands
             _staticEncounters.Add(new StaticEncounter(bratis.Id, "Bratis", "CIVILIAN", new Vector3D(-3710210, -1279156, -2566853), false));
+            _staticEncounters.Add(new StaticEncounter(bratis.Id, "GC_BratisBase", "GC", new Vector3D(-3715028.32314452, -1284294.30765805, -2572561.20657818), true));
 
 
 

@@ -4,9 +4,9 @@
 
 <!--Damage 
 
-[Triggers:MSB_Common_Trigger_DamageByNeutral]
+[Triggers:TriggerGroup_Common_Trigger_DamageByNeutral]
 
-[Triggers:MSB_Common_Trigger_DamageByFriendly]
+[Triggers:TriggerGroup_Common_Trigger_DamageByFriendly]
 
 
 
@@ -22,7 +22,7 @@ DamageByFriendly
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Common_Trigger_DamageByNeutral</SubtypeId>
+          <SubtypeId>TriggerGroup_Common_Trigger_DamageByNeutral</SubtypeId>
       </Id>
       <Description>
 
@@ -32,14 +32,14 @@ DamageByFriendly
 
 	[UseTrigger:true]
 	[StartsReady:true]
-	[Conditions:MSB_Common_Condition_Neutral_PlayerDamage]
+	[Conditions:TriggerGroup_Common_Condition_Neutral_PlayerDamage]
 
 	[MinCooldownMs:1000]
 	[MaxCooldownMs:1001]
 	[MaxActions:-1]
 
 
-	[Actions:MSB_Common_Action_DamageByNeutral]	
+	[Actions:TriggerGroup_Common_Action_DamageByNeutral]	
 	  
       </Description>
       
@@ -50,7 +50,7 @@ DamageByFriendly
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Common_Action_DamageByNeutral</SubtypeId>
+          <SubtypeId>TriggerGroup_Common_Action_DamageByNeutral</SubtypeId>
       </Id>
       <Description>
 
@@ -74,7 +74,7 @@ DamageByFriendly
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Common_Trigger_DamageByFriendly</SubtypeId>
+          <SubtypeId>TriggerGroup_Common_Trigger_DamageByFriendly</SubtypeId>
       </Id>
       <Description>
 
@@ -84,12 +84,12 @@ DamageByFriendly
 
 	[UseTrigger:true]
 	[StartsReady:true]
-	[Conditions:MSB_Common_Condition_Friendly_PlayerDamage]
+	[Conditions:TriggerGroup_Common_Condition_Friendly_PlayerDamage]
 
 	[MinCooldownMs:1000]
 	[MaxCooldownMs:1001]
 	[MaxActions:-1]
-	[Actions:MSB_Common_Action_DamageByFriendly]	
+	[Actions:TriggerGroup_Common_Action_DamageByFriendly]	
 	
       </Description>
       
@@ -99,7 +99,7 @@ DamageByFriendly
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Common_Action_DamageByFriendly</SubtypeId>
+          <SubtypeId>TriggerGroup_Common_Action_DamageByFriendly</SubtypeId>
       </Id>
       <Description>
 
