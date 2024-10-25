@@ -6,7 +6,7 @@
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>CIVILIAN_StoreProfile_CarcosaIO_Ingot</SubtypeId>
+        <SubtypeId>CIVILIAN_StoreProfile_CarcosaIO_Settlement</SubtypeId>
       </Id>
       <Description>
 
@@ -14,29 +14,21 @@
 
         [FileSource:AaW_StoreItems_CarcosaIO.xml]
         
-        [MinOfferItems:20]
-        [MaxOfferItems:20]
-        [MinOrderItems:20]
-        [MaxOrderItems:20]
+        [MinOfferItems:99]
+        [MaxOfferItems:99]
+        [MinOrderItems:99]
+        [MaxOrderItems:99]
 
         [ItemsRequireInventory:false]
 
         
-        [Orders:Ingot/Iron] 
-        [Orders:Ingot/Nickel] 
-        [Orders:Ingot/Silicon] 
-        [Orders:Ingot/Copper] 
-        [Orders:Ingot/Cobalt] 
-        [Orders:Ingot/Silver] 
-        [Orders:Ingot/Gold] 
-        [Orders:Ingot/Aluminum] 
-        [Orders:Ingot/Titanium] 
-        [Orders:Ingot/Sulfur] 
-        [Orders:Ingot/Carbon] 
-        [Orders:Ingot/Polymer] 
-        [Orders:Ingot/FuelOil] 
-        [Orders:Ingot/Niter] 
-        [Orders:Ingot/Lithium] 
+        [Orders:Ore/Iron] 
+        [Orders:Ore/Nickel] 
+        [Orders:Ore/Silicon] 
+        [Orders:Ore/Copper] 
+        [Orders:Ore/Aluminum] 
+        [Orders:Ore/Titanium] 
+        [Orders:Ore/Niter] 
 
         [Offers:Ingot/Iron] 
         [Offers:Ingot/Nickel] 
@@ -47,85 +39,48 @@
         [Offers:Ingot/Niter] 
 
 
-      </Description>
-
-    </EntityComponent>
-    
-  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>CIVILIAN_StoreProfile_CarcosaIO_Civ</SubtypeId>
-      </Id>
-      <Description>
-
-        [MES Store]
-
-        [FileSource:AaW_StoreItems_CarcosaIO.xml]
         
-        [MinOfferItems:5]
-        [MaxOfferItems:20]
-        [MinOrderItems:5]
-        [MaxOrderItems:20]
-
-        [ItemsRequireInventory:false]
-
-
+        
         [Orders:Component/CivilianProductI] 
         [Orders:Component/CivilianProductII] 
         [Orders:Component/CivilianProductIII] 
 
-
-        [Offers:Tool/HandDrill2Item] 
-        [Offers:Tool/AngleGrinder2Item] 
-        [Offers:Tool/Welder2Item] 
-        [Offers:Consumable/Medkit] 
-        [Offers:Consumable/Powerkit] 
-
         [Offers:Component/SteelPlate] 
-        [Offers:Component/Motor]         
+        [Offers:Component/Construction] 
         [Offers:Component/Girder] 
         [Offers:Component/InteriorPlate] 
-        [Offers:Component/Construction]        
+        [Offers:Component/Construction] 
+        [Offers:Component/SmallTube] 
+        [Offers:Component/LargeTube] 
+        [Offers:Component/BulletproofGlass] 
+        [Offers:Component/Motor] 
         [Offers:Component/Display] 
+        [Offers:Component/Computer] 
+        [Offers:Component/RadioCommunicationComponent] 
+        [Offers:Component/Detector] 
+        [Offers:Component/Canvas] 
+        [Offers:Component/SolarCell] 
+        [Offers:Component/PowerCell] 
+        [Offers:Component/Explosives] 
         [Offers:Component/MedicalComponent] 
+        [Offers:Component/ReactorComponent] 
         [Offers:Component/MetalGrid] 
-        [Offers:Component/Cupper] 
-        [Offers:Component/Lightbulb] 
-        [Offers:Component/AcidPowerCell] 
+        [Offers:Component/ThrustComponent] 
+        [Offers:Component/GravityGeneratorComponent] 
+        [Offers:Component/Superconductor] 
+        [Offers:Component/ReinforcedDrillbit] 
+        [Offers:Component/ReinforcedPlate] 
+        [Offers:Component/LaserAmplifier]        
       </Description>
 
     </EntityComponent>
+  
+    
+
     
     
-  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>CIVILIAN_StoreProfile_CarcosaIO-Ammo</SubtypeId>
-      </Id>
-      <Description>
-
-        [MES Store]
-
-        [FileSource:AaW_StoreItems_CarcosaIO.xml]
-        
-        [MinOfferItems:5]
-        [MaxOfferItems:20]
-        [MinOrderItems:5]
-        [MaxOrderItems:20]
-
-        [ItemsRequireInventory:false]
-
-
-        [Offers:Ammo/NATO_25x184mm] 
-        [Offers:Ammo/missile] 
-        [Offers:Ammo/MediumCalibreAmmo] 
-        [Offers:Ammo/LargeCalibreAmmo] 
-        [Offers:Ammo/LargeRailgunAmmo] 
-        [Offers:Ammo/SmallRailgunAmmo] 
-        [Offers:Ammo/AutocannonClip] 
-      </Description>
-
-    </EntityComponent>
+    
+    
     
     
     

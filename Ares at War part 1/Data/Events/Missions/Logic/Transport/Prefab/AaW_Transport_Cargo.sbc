@@ -6,95 +6,43 @@
       <CubeGrids>
         <CubeGrid>
           <SubtypeName />
-          <EntityId>142370222154579518</EntityId>
+          <EntityId>72888481585560911</EntityId>
           <PersistentFlags>CastShadows InScene</PersistentFlags>
-          <Name>142370222154579518</Name>
+          <Name>72888481585560911</Name>
           <PositionAndOrientation>
             <Position x="0" y="0" z="0" />
-            <Forward x="-0.936701357" y="-0.2672645" z="0.226186812" />
-            <Up x="0.346565038" y="-0.7996792" z="0.490312159" />
+            <Forward x="-0.8462779" y="0.365817338" z="0.387286723" />
+            <Up x="0.2225591" y="-0.4177258" z="0.8808929" />
             <Orientation>
-              <X>0.720364451</X>
-              <Y>0.3068688</Y>
-              <Z>0.6171828</Z>
-              <W>0.07740792</W>
+              <X>0.7564784</X>
+              <Y>0.348401785</Y>
+              <Z>0.3695989</Z>
+              <W>0.412011266</W>
             </Orientation>
           </PositionAndOrientation>
           <LocalPositionAndOrientation xsi:nil="true" />
           <GridSizeEnum>Small</GridSizeEnum>
           <CubeBlocks>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_TextPanel">
-              <SubtypeName>SmallFullBlockLCDPanel</SubtypeName>
-              <EntityId>101428247113235422</EntityId>
-              <Min x="1" y="0" z="1" />
-              <BlockOrientation Forward="Left" Up="Up" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-              <ShareMode>Faction</ShareMode>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CargoContainer">
+              <SubtypeName>SmallBlockModularContainer</SubtypeName>
+              <EntityId>130223907819929404</EntityId>
+              <Min x="-3" y="-1" z="-2" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Battered_Armor</SkinSubtypeId>
               <ComponentContainer>
                 <Components>
                   <ComponentData>
-                    <TypeId>MyLcdSurfaceComponent</TypeId>
-                    <Component xsi:type="MyObjectBuilder_LcdSurfaceComponent">
-                      <SelectedRotationIndex>0</SelectedRotationIndex>
-                      <TextPanelContent>
-                        <ChangeInterval>0</ChangeInterval>
-                        <Font Type="MyObjectBuilder_FontDefinition" Subtype="Debug" />
-                        <FontSize>1.361</FontSize>
-                        <Text>Press the button to deliver 
-or dump the cargo.
-
-</Text>
-                        <ShowText>NONE</ShowText>
-                        <FontColor>
-                          <PackedValue>4294967295</PackedValue>
-                          <X>255</X>
-                          <Y>255</Y>
-                          <Z>255</Z>
-                          <R>255</R>
-                          <G>255</G>
-                          <B>255</B>
-                          <A>255</A>
-                        </FontColor>
-                        <BackgroundColor>
-                          <PackedValue>4278190080</PackedValue>
-                          <X>0</X>
-                          <Y>0</Y>
-                          <Z>0</Z>
-                          <R>0</R>
-                          <G>0</G>
-                          <B>0</B>
-                          <A>255</A>
-                        </BackgroundColor>
-                        <CurrentShownTexture>0</CurrentShownTexture>
-                        <Alignment>2</Alignment>
-                        <ContentType>TEXT_AND_IMAGE</ContentType>
-                        <SelectedScript />
-                        <TextPadding>2</TextPadding>
-                        <ScriptBackgroundColor>
-                          <PackedValue>4288108544</PackedValue>
-                          <X>0</X>
-                          <Y>88</Y>
-                          <Z>151</Z>
-                          <R>0</R>
-                          <G>88</G>
-                          <B>151</B>
-                          <A>255</A>
-                        </ScriptBackgroundColor>
-                        <ScriptForegroundColor>
-                          <PackedValue>4294962611</PackedValue>
-                          <X>179</X>
-                          <Y>237</Y>
-                          <Z>255</Z>
-                          <R>179</R>
-                          <G>237</G>
-                          <B>255</B>
-                          <A>255</A>
-                        </ScriptForegroundColor>
-                        <Sprites>
-                          <Length>0</Length>
-                        </Sprites>
-                      </TextPanelContent>
+                    <TypeId>MyInventoryBase</TypeId>
+                    <Component xsi:type="MyObjectBuilder_Inventory">
+                      <CanPutItems>true</CanPutItems>
+                      <Items />
+                      <nextItemId>0</nextItemId>
+                      <Volume>10</Volume>
+                      <Mass>9223372036854.775807</Mass>
+                      <MaxItemCount>2147483647</MaxItemCount>
+                      <Size xsi:nil="true" />
+                      <InventoryFlags>CanReceive CanSend</InventoryFlags>
+                      <RemoveEntityOnEmpty>false</RemoveEntityOnEmpty>
                     </Component>
                   </ComponentData>
                 </Components>
@@ -103,72 +51,180 @@ or dump the cargo.
               <ShowInTerminal>true</ShowInTerminal>
               <ShowInToolbarConfig>true</ShowInToolbarConfig>
               <ShowInInventory>true</ShowInInventory>
+              <NumberInGrid>1</NumberInGrid>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallBlockArmorBlock</SubtypeName>
+              <Min x="3" y="2" z="0" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallBlockArmorBlock</SubtypeName>
+              <Min x="2" y="2" z="1" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_BatteryBlock">
+              <SubtypeName>SmallBlockSmallBatteryBlock</SubtypeName>
+              <EntityId>108572344204656304</EntityId>
+              <Min x="0" y="2" z="1" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+              <ShareMode>Faction</ShareMode>
+              <ShowOnHUD>false</ShowOnHUD>
+              <ShowInTerminal>true</ShowInTerminal>
+              <ShowInToolbarConfig>true</ShowInToolbarConfig>
+              <ShowInInventory>true</ShowInInventory>
+              <NumberInGrid>1</NumberInGrid>
+              <Enabled>true</Enabled>
+              <CurrentStoredPower>0.0499997</CurrentStoredPower>
+              <ProducerEnabled>true</ProducerEnabled>
+              <MaxStoredPower>0</MaxStoredPower>
+              <SemiautoEnabled>false</SemiautoEnabled>
+              <OnlyDischargeEnabled>false</OnlyDischargeEnabled>
+              <ChargeMode>0</ChargeMode>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallBlockArmorBlock</SubtypeName>
+              <Min x="-3" y="2" z="1" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallBlockArmorBlock</SubtypeName>
+              <Min x="-2" y="2" z="1" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallBlockArmorBlock</SubtypeName>
+              <Min x="-2" y="2" z="-1" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_BatteryBlock">
+              <SubtypeName>SmallBlockSmallBatteryBlock</SubtypeName>
+              <EntityId>103230348874181569</EntityId>
+              <Min x="-1" y="2" z="0" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+              <ShareMode>Faction</ShareMode>
+              <ShowOnHUD>false</ShowOnHUD>
+              <ShowInTerminal>true</ShowInTerminal>
+              <ShowInToolbarConfig>true</ShowInToolbarConfig>
+              <ShowInInventory>true</ShowInInventory>
+              <NumberInGrid>4</NumberInGrid>
+              <Enabled>true</Enabled>
+              <CurrentStoredPower>0.0499997</CurrentStoredPower>
+              <ProducerEnabled>true</ProducerEnabled>
+              <MaxStoredPower>0</MaxStoredPower>
+              <SemiautoEnabled>false</SemiautoEnabled>
+              <OnlyDischargeEnabled>false</OnlyDischargeEnabled>
+              <ChargeMode>0</ChargeMode>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_BatteryBlock">
+              <SubtypeName>SmallBlockSmallBatteryBlock</SubtypeName>
+              <EntityId>112585423071878692</EntityId>
+              <Min x="0" y="2" z="-1" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+              <ShareMode>Faction</ShareMode>
+              <ShowOnHUD>false</ShowOnHUD>
+              <ShowInTerminal>true</ShowInTerminal>
+              <ShowInToolbarConfig>true</ShowInToolbarConfig>
+              <ShowInInventory>true</ShowInInventory>
               <NumberInGrid>3</NumberInGrid>
               <Enabled>true</Enabled>
-              <Description />
-              <Title>Title</Title>
-              <AccessFlag>READ_AND_WRITE_FACTION</AccessFlag>
-              <ChangeInterval>0</ChangeInterval>
-              <Font Type="MyObjectBuilder_FontDefinition" Subtype="Debug" />
-              <FontSize>1</FontSize>
-              <PublicDescription />
-              <PublicTitle>Public title</PublicTitle>
-              <ShowText>NONE</ShowText>
-              <FontColor>
-                <PackedValue>4294967295</PackedValue>
-                <X>255</X>
-                <Y>255</Y>
-                <Z>255</Z>
-                <R>255</R>
-                <G>255</G>
-                <B>255</B>
-                <A>255</A>
-              </FontColor>
-              <BackgroundColor>
-                <PackedValue>4278190080</PackedValue>
-                <X>0</X>
-                <Y>0</Y>
-                <Z>0</Z>
-                <R>0</R>
-                <G>0</G>
-                <B>0</B>
-                <A>255</A>
-              </BackgroundColor>
-              <CurrentShownTexture>0</CurrentShownTexture>
-              <TextPadding>2</TextPadding>
-              <Version>0</Version>
-              <ScriptBackgroundColor>
-                <PackedValue>4288108544</PackedValue>
-                <X>0</X>
-                <Y>88</Y>
-                <Z>151</Z>
-                <R>0</R>
-                <G>88</G>
-                <B>151</B>
-                <A>255</A>
-              </ScriptBackgroundColor>
-              <ScriptForegroundColor>
-                <PackedValue>4294962611</PackedValue>
-                <X>179</X>
-                <Y>237</Y>
-                <Z>255</Z>
-                <R>179</R>
-                <G>237</G>
-                <B>255</B>
-                <A>255</A>
-              </ScriptForegroundColor>
-              <Sprites>
-                <Length>0</Length>
-              </Sprites>
-              <SelectedRotationIndex xsi:nil="true" />
+              <CurrentStoredPower>0.0499997</CurrentStoredPower>
+              <ProducerEnabled>true</ProducerEnabled>
+              <MaxStoredPower>0</MaxStoredPower>
+              <SemiautoEnabled>false</SemiautoEnabled>
+              <OnlyDischargeEnabled>false</OnlyDischargeEnabled>
+              <ChargeMode>0</ChargeMode>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Parachute">
+              <SubtypeName>SmParachute</SubtypeName>
+              <EntityId>126028095612745159</EntityId>
+              <Min x="0" y="2" z="0" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+              <ShareMode>Faction</ShareMode>
+              <ComponentContainer>
+                <Components>
+                  <ComponentData>
+                    <TypeId>MyInventoryBase</TypeId>
+                    <Component xsi:type="MyObjectBuilder_Inventory">
+                      <CanPutItems>true</CanPutItems>
+                      <Items>
+                        <MyObjectBuilder_InventoryItem>
+                          <Amount>1</Amount>
+                          <PhysicalContent xsi:type="MyObjectBuilder_Component">
+                            <SubtypeName>Canvas</SubtypeName>
+                          </PhysicalContent>
+                          <ItemId>0</ItemId>
+                        </MyObjectBuilder_InventoryItem>
+                      </Items>
+                      <nextItemId>1</nextItemId>
+                      <Volume>0.008</Volume>
+                      <Mass>9223372036854.775807</Mass>
+                      <MaxItemCount>2147483647</MaxItemCount>
+                      <Size xsi:nil="true" />
+                      <InventoryFlags>CanReceive</InventoryFlags>
+                      <RemoveEntityOnEmpty>false</RemoveEntityOnEmpty>
+                    </Component>
+                  </ComponentData>
+                </Components>
+              </ComponentContainer>
+              <CustomName>Parachute Hatch</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <ShowInTerminal>true</ShowInTerminal>
+              <ShowInToolbarConfig>true</ShowInToolbarConfig>
+              <ShowInInventory>true</ShowInInventory>
+              <NumberInGrid>2</NumberInGrid>
+              <Enabled>true</Enabled>
+              <AnyoneCanUse>true</AnyoneCanUse>
+              <AutoDeploy>true</AutoDeploy>
+              <DeployHeight>101.388313</DeployHeight>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallBlockArmorBlock</SubtypeName>
+              <Min x="2" y="2" z="-1" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallBlockArmorBlock</SubtypeName>
+              <Min x="1" y="2" z="1" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallBlockArmorBlock</SubtypeName>
+              <Min x="1" y="2" z="-1" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallBlockArmorBlock</SubtypeName>
+              <Min x="-1" y="2" z="1" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallBlockArmorBlock</SubtypeName>
+              <Min x="-1" y="2" z="-1" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
             </MyObjectBuilder_CubeBlock>
             <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_RemoteControl">
               <SubtypeName>SmallBlockRemoteControl</SubtypeName>
-              <EntityId>91803283522387884</EntityId>
-              <Min x="0" y="0" z="1" />
-              <BlockOrientation Forward="Backward" Up="Up" />
-              <ColorMaskHSV x="0" y="-0.8" z="0.4" />
-              <SkinSubtypeId>Clean_Armor</SkinSubtypeId>
+              <EntityId>75327968032941954</EntityId>
+              <Min x="2" y="2" z="0" />
+              <BlockOrientation Forward="Right" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
               <ShareMode>Faction</ShareMode>
               <ComponentContainer>
                 <Components>
@@ -203,11 +259,12 @@ or dump the cargo.
                   </ComponentData>
                 </Components>
               </ComponentContainer>
+              <CustomName>Remote Control</CustomName>
               <ShowOnHUD>false</ShowOnHUD>
               <ShowInTerminal>true</ShowInTerminal>
               <ShowInToolbarConfig>true</ShowInToolbarConfig>
               <ShowInInventory>true</ShowInInventory>
-              <NumberInGrid>1</NumberInGrid>
+              <NumberInGrid>2</NumberInGrid>
               <UseSingleWeaponMode>false</UseSingleWeaponMode>
               <Toolbar>
                 <ToolbarType>Character</ToolbarType>
@@ -245,813 +302,786 @@ or dump the cargo.
               <WaitForFreeWay>false</WaitForFreeWay>
               <IsUpdatedSave>true</IsUpdatedSave>
             </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CargoContainer">
-              <SubtypeName>SmallBlockMediumContainer</SubtypeName>
-              <EntityId>100732959466495813</EntityId>
-              <Min x="-1" y="-1" z="2" />
-              <BlockOrientation Forward="Right" Up="Up" />
-              <ColorMaskHSV x="0" y="-0.8" z="0.4" />
-              <SkinSubtypeId>Clean_Armor</SkinSubtypeId>
-              <ShareMode>Faction</ShareMode>
-              <ComponentContainer>
-                <Components>
-                  <ComponentData>
-                    <TypeId>MyInventoryBase</TypeId>
-                    <Component xsi:type="MyObjectBuilder_Inventory">
-                      <CanPutItems>true</CanPutItems>
-                      <Items />
-                      <nextItemId>0</nextItemId>
-                      <Volume>3.375</Volume>
-                      <Mass>9223372036854.775807</Mass>
-                      <MaxItemCount>2147483647</MaxItemCount>
-                      <Size xsi:nil="true" />
-                      <InventoryFlags>CanReceive CanSend</InventoryFlags>
-                      <RemoveEntityOnEmpty>false</RemoveEntityOnEmpty>
-                    </Component>
-                  </ComponentData>
-                </Components>
-              </ComponentContainer>
-              <ShowOnHUD>false</ShowOnHUD>
-              <ShowInTerminal>true</ShowInTerminal>
-              <ShowInToolbarConfig>true</ShowInToolbarConfig>
-              <ShowInInventory>true</ShowInInventory>
-              <NumberInGrid>1</NumberInGrid>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_TextPanel">
-              <SubtypeName>SmallFullBlockLCDPanel</SubtypeName>
-              <EntityId>112004315796472601</EntityId>
-              <Min x="-1" y="0" z="1" />
-              <BlockOrientation Forward="Left" Up="Up" />
-              <ColorMaskHSV x="0" y="-0.8" z="0.4" />
-              <SkinSubtypeId>Clean_Armor</SkinSubtypeId>
-              <ShareMode>Faction</ShareMode>
-              <ComponentContainer>
-                <Components>
-                  <ComponentData>
-                    <TypeId>MyLcdSurfaceComponent</TypeId>
-                    <Component xsi:type="MyObjectBuilder_LcdSurfaceComponent">
-                      <SelectedRotationIndex>0</SelectedRotationIndex>
-                      <TextPanelContent>
-                        <ChangeInterval>0</ChangeInterval>
-                        <SelectedImages>
-                          <string>LCD_Economy_SC_Here</string>
-                        </SelectedImages>
-                        <Font Type="MyObjectBuilder_FontDefinition" Subtype="Debug" />
-                        <FontSize>1</FontSize>
-                        <ShowText>NONE</ShowText>
-                        <FontColor>
-                          <PackedValue>4294967295</PackedValue>
-                          <X>255</X>
-                          <Y>255</Y>
-                          <Z>255</Z>
-                          <R>255</R>
-                          <G>255</G>
-                          <B>255</B>
-                          <A>255</A>
-                        </FontColor>
-                        <BackgroundColor>
-                          <PackedValue>4278190080</PackedValue>
-                          <X>0</X>
-                          <Y>0</Y>
-                          <Z>0</Z>
-                          <R>0</R>
-                          <G>0</G>
-                          <B>0</B>
-                          <A>255</A>
-                        </BackgroundColor>
-                        <CurrentShownTexture>0</CurrentShownTexture>
-                        <ContentType>TEXT_AND_IMAGE</ContentType>
-                        <SelectedScript>TSS_VendingMachine</SelectedScript>
-                        <TextPadding>2</TextPadding>
-                        <CustomizeScripts>true</CustomizeScripts>
-                        <ScriptBackgroundColor>
-                          <PackedValue>4288108544</PackedValue>
-                          <X>0</X>
-                          <Y>88</Y>
-                          <Z>151</Z>
-                          <R>0</R>
-                          <G>88</G>
-                          <B>151</B>
-                          <A>255</A>
-                        </ScriptBackgroundColor>
-                        <ScriptForegroundColor>
-                          <PackedValue>4294962611</PackedValue>
-                          <X>179</X>
-                          <Y>237</Y>
-                          <Z>255</Z>
-                          <R>179</R>
-                          <G>237</G>
-                          <B>255</B>
-                          <A>255</A>
-                        </ScriptForegroundColor>
-                        <Sprites>
-                          <Length>0</Length>
-                        </Sprites>
-                      </TextPanelContent>
-                    </Component>
-                  </ComponentData>
-                </Components>
-              </ComponentContainer>
-              <ShowOnHUD>false</ShowOnHUD>
-              <ShowInTerminal>true</ShowInTerminal>
-              <ShowInToolbarConfig>true</ShowInToolbarConfig>
-              <ShowInInventory>true</ShowInInventory>
-              <NumberInGrid>2</NumberInGrid>
-              <Enabled>true</Enabled>
-              <Description />
-              <Title>Title</Title>
-              <AccessFlag>READ_AND_WRITE_FACTION</AccessFlag>
-              <ChangeInterval>0</ChangeInterval>
-              <Font Type="MyObjectBuilder_FontDefinition" Subtype="Debug" />
-              <FontSize>1</FontSize>
-              <PublicDescription />
-              <PublicTitle>Public title</PublicTitle>
-              <ShowText>NONE</ShowText>
-              <FontColor>
-                <PackedValue>4294967295</PackedValue>
-                <X>255</X>
-                <Y>255</Y>
-                <Z>255</Z>
-                <R>255</R>
-                <G>255</G>
-                <B>255</B>
-                <A>255</A>
-              </FontColor>
-              <BackgroundColor>
-                <PackedValue>4278190080</PackedValue>
-                <X>0</X>
-                <Y>0</Y>
-                <Z>0</Z>
-                <R>0</R>
-                <G>0</G>
-                <B>0</B>
-                <A>255</A>
-              </BackgroundColor>
-              <CurrentShownTexture>0</CurrentShownTexture>
-              <TextPadding>2</TextPadding>
-              <Version>0</Version>
-              <ScriptBackgroundColor>
-                <PackedValue>4288108544</PackedValue>
-                <X>0</X>
-                <Y>88</Y>
-                <Z>151</Z>
-                <R>0</R>
-                <G>88</G>
-                <B>151</B>
-                <A>255</A>
-              </ScriptBackgroundColor>
-              <ScriptForegroundColor>
-                <PackedValue>4294962611</PackedValue>
-                <X>179</X>
-                <Y>237</Y>
-                <Z>255</Z>
-                <R>179</R>
-                <G>237</G>
-                <B>255</B>
-                <A>255</A>
-              </ScriptForegroundColor>
-              <Sprites>
-                <Length>0</Length>
-              </Sprites>
-              <SelectedRotationIndex xsi:nil="true" />
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_ButtonPanel">
-              <SubtypeName>ButtonPanelSmall</SubtypeName>
-              <EntityId>100875049864144214</EntityId>
-              <BlockOrientation Forward="Right" Up="Forward" />
-              <ColorMaskHSV x="0" y="-0.8" z="0.4" />
-              <SkinSubtypeId>Clean_Armor</SkinSubtypeId>
-              <ShareMode>Faction</ShareMode>
-              <CustomName>Button Panel</CustomName>
-              <ShowOnHUD>false</ShowOnHUD>
-              <ShowInTerminal>true</ShowInTerminal>
-              <ShowInToolbarConfig>true</ShowInToolbarConfig>
-              <ShowInInventory>true</ShowInInventory>
-              <NumberInGrid>2</NumberInGrid>
-              <Enabled>true</Enabled>
-              <Toolbar>
-                <ToolbarType>Character</ToolbarType>
-                <SelectedSlot xsi:nil="true" />
-                <Slots>
-                  <Slot>
-                    <Index>0</Index>
-                    <Item />
-                    <Data xsi:type="MyObjectBuilder_ToolbarItemTerminalBlock">
-                      <Action>TriggerNow</Action>
-                      <BlockEntityId>88466699671372883</BlockEntityId>
-                    </Data>
-                  </Slot>
-                </Slots>
-                <SlotsGamepad />
-              </Toolbar>
-              <AnyoneCanUse>true</AnyoneCanUse>
-              <CustomButtonNames>
-                <dictionary>
-                  <item>
-                    <Key>0</Key>
-                    <Value>Deliver or Dump</Value>
-                  </item>
-                </dictionary>
-              </CustomButtonNames>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_TimerBlock">
-              <SubtypeName>TimerBlockSmall</SubtypeName>
-              <EntityId>88466699671372883</EntityId>
-              <Min x="1" y="-1" z="1" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Clean_Armor</SkinSubtypeId>
-              <ShareMode>Faction</ShareMode>
-              <ShowOnHUD>false</ShowOnHUD>
-              <ShowInTerminal>true</ShowInTerminal>
-              <ShowInToolbarConfig>true</ShowInToolbarConfig>
-              <ShowInInventory>true</ShowInInventory>
-              <NumberInGrid>1</NumberInGrid>
-              <Enabled>true</Enabled>
-              <Toolbar>
-                <ToolbarType>Character</ToolbarType>
-                <SelectedSlot xsi:nil="true" />
-                <Slots />
-                <SlotsGamepad />
-              </Toolbar>
-              <Delay>10000</Delay>
-              <CurrentTime>0</CurrentTime>
-              <IsCountingDown>false</IsCountingDown>
-              <Silent>false</Silent>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallBlockArmorBlock</SubtypeName>
+              <Min x="3" y="2" z="-1" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
             </MyObjectBuilder_CubeBlock>
             <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_BatteryBlock">
               <SubtypeName>SmallBlockSmallBatteryBlock</SubtypeName>
-              <EntityId>117427426697448632</EntityId>
-              <Min x="0" y="-1" z="1" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
+              <EntityId>109335729470124155</EntityId>
+              <Min x="1" y="2" z="0" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
               <SkinSubtypeId>Corrugated</SkinSubtypeId>
               <ShareMode>Faction</ShareMode>
               <ShowOnHUD>false</ShowOnHUD>
               <ShowInTerminal>true</ShowInTerminal>
               <ShowInToolbarConfig>true</ShowInToolbarConfig>
               <ShowInInventory>true</ShowInInventory>
-              <NumberInGrid>5</NumberInGrid>
+              <NumberInGrid>2</NumberInGrid>
               <Enabled>true</Enabled>
-              <CurrentStoredPower>0.05</CurrentStoredPower>
+              <CurrentStoredPower>0.0499997</CurrentStoredPower>
               <ProducerEnabled>true</ProducerEnabled>
               <MaxStoredPower>0</MaxStoredPower>
               <SemiautoEnabled>false</SemiautoEnabled>
               <OnlyDischargeEnabled>false</OnlyDischargeEnabled>
               <ChargeMode>0</ChargeMode>
             </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallBlockArmorBlock</SubtypeName>
-              <Min x="-1" y="-1" z="1" />
-              <ColorMaskHSV x="0" y="-0.8" z="0.4" />
-              <SkinSubtypeId>Clean_Armor</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>79507865248086934</EntityId>
-              <Min x="-2" y="-1" z="1" />
-              <BlockOrientation Forward="Backward" Up="Down" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>89646805603671409</EntityId>
-              <Min x="2" y="-1" z="1" />
-              <BlockOrientation Forward="Backward" Up="Up" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>82689330622403384</EntityId>
-              <Min x="2" y="-1" z="2" />
-              <BlockOrientation Forward="Backward" Up="Up" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>113494595760309449</EntityId>
-              <Min x="2" y="-1" z="3" />
-              <BlockOrientation Forward="Backward" Up="Up" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>116801575874387076</EntityId>
-              <Min x="2" y="-1" z="4" />
-              <BlockOrientation Forward="Backward" Up="Up" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>129696233948093674</EntityId>
-              <Min x="2" y="0" z="1" />
-              <BlockOrientation Forward="Backward" Up="Up" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>107117412278487886</EntityId>
-              <Min x="2" y="0" z="2" />
-              <BlockOrientation Forward="Backward" Up="Up" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>73555402522306837</EntityId>
-              <Min x="2" y="0" z="3" />
-              <BlockOrientation Forward="Backward" Up="Up" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>106439642344004553</EntityId>
-              <Min x="2" y="0" z="4" />
-              <BlockOrientation Forward="Backward" Up="Up" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>127090998121110516</EntityId>
-              <Min x="2" y="1" z="1" />
-              <BlockOrientation Forward="Backward" Up="Up" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>102886905518685559</EntityId>
-              <Min x="2" y="1" z="2" />
-              <BlockOrientation Forward="Backward" Up="Up" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>115941638223847775</EntityId>
-              <Min x="2" y="1" z="3" />
-              <BlockOrientation Forward="Backward" Up="Up" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>139433291183354774</EntityId>
-              <Min x="2" y="1" z="4" />
-              <BlockOrientation Forward="Backward" Up="Up" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>88829982982855632</EntityId>
-              <Min x="1" y="-1" z="0" />
-              <BlockOrientation Forward="Down" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>81793598797882469</EntityId>
-              <Min x="0" y="-1" z="0" />
-              <BlockOrientation Forward="Up" Up="Left" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>140800319047072429</EntityId>
-              <Min x="1" y="2" z="1" />
-              <BlockOrientation Forward="Backward" Up="Left" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>84677430464123391</EntityId>
-              <Min x="-1" y="-1" z="0" />
-              <BlockOrientation Forward="Up" Up="Left" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_RadioAntenna">
-              <SubtypeName>SmallBlockRadioAntenna</SubtypeName>
-              <EntityId>112396954396152334</EntityId>
-              <Min x="0" y="1" z="1" />
-              <BlockOrientation Forward="Left" Up="Up" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Beacon">
+              <SubtypeName>SmallBlockBeaconReskin</SubtypeName>
+              <EntityId>79737196707492944</EntityId>
+              <Min x="-3" y="2" z="0" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
               <SkinSubtypeId>Corrugated</SkinSubtypeId>
               <ShareMode>Faction</ShareMode>
-              <CustomName>Antenna</CustomName>
-              <ShowOnHUD>false</ShowOnHUD>
-              <ShowInTerminal>true</ShowInTerminal>
-              <ShowInToolbarConfig>true</ShowInToolbarConfig>
-              <ShowInInventory>true</ShowInInventory>
-              <NumberInGrid>4</NumberInGrid>
-              <Enabled>true</Enabled>
-              <BroadcastRadius>50.0000038</BroadcastRadius>
-              <ShowShipName>false</ShowShipName>
-              <EnableBroadcasting>true</EnableBroadcasting>
-              <AttachedPB>0</AttachedPB>
-              <IgnoreAllied>false</IgnoreAllied>
-              <IgnoreOther>true</IgnoreOther>
-              <HudText />
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>125637524358656294</EntityId>
-              <Min x="1" y="2" z="4" />
-              <BlockOrientation Forward="Right" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>72907850933901008</EntityId>
-              <Min x="1" y="2" z="3" />
-              <BlockOrientation Forward="Right" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>136681702756781287</EntityId>
-              <Min x="1" y="2" z="2" />
-              <BlockOrientation Forward="Right" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>131421289929975160</EntityId>
-              <Min x="0" y="2" z="1" />
-              <BlockOrientation Forward="Backward" Up="Left" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>99723912342095722</EntityId>
-              <Min x="0" y="2" z="4" />
-              <BlockOrientation Forward="Right" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>129567086238387922</EntityId>
-              <Min x="0" y="2" z="3" />
-              <BlockOrientation Forward="Right" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>108291116634539854</EntityId>
-              <Min x="0" y="2" z="2" />
-              <BlockOrientation Forward="Right" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>74370036695911052</EntityId>
-              <Min x="-2" y="-1" z="2" />
-              <BlockOrientation Forward="Backward" Up="Down" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>87908432944948164</EntityId>
-              <Min x="-1" y="2" z="4" />
-              <BlockOrientation Forward="Right" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>142936262402275497</EntityId>
-              <Min x="-1" y="2" z="3" />
-              <BlockOrientation Forward="Right" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>84282586804202072</EntityId>
-              <Min x="-1" y="2" z="2" />
-              <BlockOrientation Forward="Right" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>107767636085323206</EntityId>
-              <Min x="-1" y="2" z="1" />
-              <BlockOrientation Forward="Right" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>128007199674984517</EntityId>
-              <Min x="1" y="-1" z="5" />
-              <BlockOrientation Forward="Up" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>128782192304896206</EntityId>
-              <Min x="1" y="0" z="5" />
-              <BlockOrientation Forward="Up" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>97137454203210062</EntityId>
-              <Min x="1" y="1" z="5" />
-              <BlockOrientation Forward="Up" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>109253149193191863</EntityId>
-              <Min x="0" y="-1" z="5" />
-              <BlockOrientation Forward="Up" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>92687171771983610</EntityId>
-              <Min x="0" y="0" z="5" />
-              <BlockOrientation Forward="Up" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>141988409779436131</EntityId>
-              <Min x="0" y="1" z="5" />
-              <BlockOrientation Forward="Up" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>115828821474961772</EntityId>
-              <Min x="-1" y="-1" z="5" />
-              <BlockOrientation Forward="Up" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>131653895003438222</EntityId>
-              <Min x="-1" y="0" z="5" />
-              <BlockOrientation Forward="Up" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>90050901334552372</EntityId>
-              <Min x="-1" y="1" z="5" />
-              <BlockOrientation Forward="Up" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>117236495778617280</EntityId>
-              <Min x="-2" y="1" z="4" />
-              <BlockOrientation Forward="Up" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>78379106229485769</EntityId>
-              <Min x="0" y="1" z="0" />
-              <BlockOrientation Forward="Down" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>76046967973447883</EntityId>
-              <Min x="1" y="1" z="0" />
-              <BlockOrientation Forward="Down" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_BatteryBlock">
-              <SubtypeName>SmallBlockSmallBatteryBlock</SubtypeName>
-              <EntityId>103203123914569574</EntityId>
-              <Min x="-1" y="1" z="1" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-              <ShareMode>Faction</ShareMode>
+              <CustomName>Beacon</CustomName>
               <ShowOnHUD>false</ShowOnHUD>
               <ShowInTerminal>true</ShowInTerminal>
               <ShowInToolbarConfig>true</ShowInToolbarConfig>
               <ShowInInventory>true</ShowInInventory>
               <NumberInGrid>3</NumberInGrid>
               <Enabled>true</Enabled>
-              <CurrentStoredPower>0.05</CurrentStoredPower>
-              <ProducerEnabled>true</ProducerEnabled>
-              <MaxStoredPower>0</MaxStoredPower>
-              <SemiautoEnabled>false</SemiautoEnabled>
-              <OnlyDischargeEnabled>false</OnlyDischargeEnabled>
-              <ChargeMode>0</ChargeMode>
+              <BroadcastRadius>449.999878</BroadcastRadius>
+              <HudText />
             </MyObjectBuilder_CubeBlock>
             <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>86929485710933802</EntityId>
-              <Min x="-2" y="0" z="2" />
-              <BlockOrientation Forward="Up" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
+              <SubtypeName>SmallBlockArmorBlock</SubtypeName>
+              <Min x="-3" y="2" z="-1" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallBlockArmorBlock</SubtypeName>
+              <Min x="3" y="2" z="1" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
               <SkinSubtypeId>Corrugated</SkinSubtypeId>
             </MyObjectBuilder_CubeBlock>
             <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
               <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>92344801266217563</EntityId>
-              <Min x="-2" y="0" z="3" />
-              <BlockOrientation Forward="Up" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
+              <EntityId>75684893685777007</EntityId>
+              <Min x="-2" y="1" z="-3" />
+              <BlockOrientation Forward="Right" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
               <SkinSubtypeId>Corrugated</SkinSubtypeId>
             </MyObjectBuilder_CubeBlock>
             <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
               <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>122651206211684057</EntityId>
-              <Min x="-2" y="0" z="4" />
-              <BlockOrientation Forward="Up" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
+              <EntityId>127830862725069740</EntityId>
+              <Min x="-1" y="1" z="-3" />
+              <BlockOrientation Forward="Right" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
               <SkinSubtypeId>Corrugated</SkinSubtypeId>
             </MyObjectBuilder_CubeBlock>
             <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
               <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>113958738785726345</EntityId>
-              <Min x="-2" y="1" z="2" />
-              <BlockOrientation Forward="Up" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
+              <EntityId>105916675182460946</EntityId>
+              <Min x="2" y="1" z="-3" />
+              <BlockOrientation Forward="Right" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
               <SkinSubtypeId>Corrugated</SkinSubtypeId>
             </MyObjectBuilder_CubeBlock>
             <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
               <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>112865034510868370</EntityId>
+              <EntityId>136772216410749680</EntityId>
+              <Min x="1" y="1" z="-3" />
+              <BlockOrientation Forward="Right" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>113583525635656524</EntityId>
+              <Min x="-3" y="-1" z="3" />
+              <BlockOrientation Forward="Left" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>143684591995604771</EntityId>
+              <Min x="-3" y="1" z="3" />
+              <BlockOrientation Forward="Left" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>76124954067966957</EntityId>
               <Min x="-2" y="1" z="3" />
-              <BlockOrientation Forward="Up" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
+              <BlockOrientation Forward="Left" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
               <SkinSubtypeId>Corrugated</SkinSubtypeId>
             </MyObjectBuilder_CubeBlock>
             <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
               <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>111897133508280404</EntityId>
-              <Min x="-2" y="-1" z="4" />
+              <EntityId>101574627000822154</EntityId>
+              <Min x="-1" y="1" z="3" />
+              <BlockOrientation Forward="Left" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>137752644776154453</EntityId>
+              <Min x="3" y="1" z="3" />
+              <BlockOrientation Forward="Left" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>141422150560281069</EntityId>
+              <Min x="2" y="1" z="3" />
+              <BlockOrientation Forward="Left" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>142945475195118395</EntityId>
+              <Min x="1" y="1" z="3" />
+              <BlockOrientation Forward="Left" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>73126271891453053</EntityId>
+              <Min x="0" y="1" z="-3" />
+              <BlockOrientation Forward="Right" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>134559021313283303</EntityId>
+              <Min x="0" y="1" z="3" />
+              <BlockOrientation Forward="Left" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedPanelLight</SubtypeName>
+              <EntityId>104346878126012594</EntityId>
+              <Min x="0" y="2" z="-2" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedPanelLight</SubtypeName>
+              <EntityId>116365286022322866</EntityId>
+              <Min x="-1" y="2" z="-2" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedPanelLight</SubtypeName>
+              <EntityId>114548833319773914</EntityId>
+              <Min x="-2" y="2" z="-2" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedPanelLight</SubtypeName>
+              <EntityId>126219239889583726</EntityId>
+              <Min x="-3" y="2" z="-2" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedSidePanelLight</SubtypeName>
+              <EntityId>137974110395087173</EntityId>
+              <Min x="4" y="2" z="2" />
+              <BlockOrientation Forward="Down" Up="Backward" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedPanelLight</SubtypeName>
+              <EntityId>119786564237704002</EntityId>
+              <Min x="1" y="2" z="-2" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedPanelLight</SubtypeName>
+              <EntityId>141941001839195703</EntityId>
+              <Min x="2" y="2" z="-2" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedPanelLight</SubtypeName>
+              <EntityId>99242223129722274</EntityId>
+              <Min x="3" y="2" z="-2" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedSidePanelLight</SubtypeName>
+              <EntityId>127418128550092121</EntityId>
+              <Min x="-4" y="2" z="2" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedPanelLight</SubtypeName>
+              <EntityId>136158799065362172</EntityId>
+              <Min x="0" y="2" z="2" />
+              <BlockOrientation Forward="Backward" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedPanelLight</SubtypeName>
+              <EntityId>115105379161404052</EntityId>
+              <Min x="-1" y="2" z="2" />
+              <BlockOrientation Forward="Backward" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedPanelLight</SubtypeName>
+              <EntityId>108151059210080192</EntityId>
+              <Min x="-2" y="2" z="2" />
+              <BlockOrientation Forward="Backward" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedPanelLight</SubtypeName>
+              <EntityId>99578807639407195</EntityId>
+              <Min x="-3" y="2" z="2" />
+              <BlockOrientation Forward="Backward" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedSidePanelLight</SubtypeName>
+              <EntityId>74351110463423601</EntityId>
+              <Min x="4" y="2" z="-2" />
+              <BlockOrientation Forward="Backward" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedPanelLight</SubtypeName>
+              <EntityId>111425527677222938</EntityId>
+              <Min x="1" y="2" z="2" />
+              <BlockOrientation Forward="Backward" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedPanelLight</SubtypeName>
+              <EntityId>133710932816833988</EntityId>
+              <Min x="2" y="2" z="2" />
+              <BlockOrientation Forward="Backward" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedPanelLight</SubtypeName>
+              <EntityId>105837046798001710</EntityId>
+              <Min x="3" y="2" z="2" />
+              <BlockOrientation Forward="Backward" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorSlopedSidePanelLight</SubtypeName>
+              <EntityId>76191872482155921</EntityId>
+              <Min x="-4" y="2" z="-2" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>126149293967959430</EntityId>
+              <Min x="-4" y="2" z="1" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>82704870445684334</EntityId>
+              <Min x="4" y="2" z="1" />
+              <BlockOrientation Forward="Backward" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>120276321228624425</EntityId>
+              <Min x="-4" y="2" z="-1" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>94528080453979656</EntityId>
+              <Min x="4" y="2" z="-1" />
+              <BlockOrientation Forward="Backward" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>118372777551431454</EntityId>
+              <Min x="-4" y="2" z="0" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>83668325767051750</EntityId>
+              <Min x="4" y="2" z="0" />
+              <BlockOrientation Forward="Backward" Up="Up" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Wheel">
+              <SubtypeName>SmallWheel2x2</SubtypeName>
+              <EntityId>138983728797821943</EntityId>
+              <Min x="2" y="-2" z="1" />
               <BlockOrientation Forward="Backward" Up="Down" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Battered_Armor</SkinSubtypeId>
+              <YieldLastComponent>true</YieldLastComponent>
             </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>135430289272595503</EntityId>
-              <Min x="-1" y="-2" z="1" />
-              <BlockOrientation Forward="Backward" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>85202762229529356</EntityId>
-              <Min x="-1" y="-2" z="2" />
-              <BlockOrientation Forward="Backward" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>115025950054428958</EntityId>
-              <Min x="-1" y="-2" z="3" />
-              <BlockOrientation Forward="Backward" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>124435688173375414</EntityId>
-              <Min x="-1" y="-2" z="4" />
-              <BlockOrientation Forward="Backward" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>72385183983144290</EntityId>
-              <Min x="0" y="-2" z="1" />
-              <BlockOrientation Forward="Backward" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>108252861499189821</EntityId>
-              <Min x="0" y="-2" z="2" />
-              <BlockOrientation Forward="Backward" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>131889270125208850</EntityId>
-              <Min x="0" y="-2" z="3" />
-              <BlockOrientation Forward="Backward" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>131310484261702476</EntityId>
-              <Min x="0" y="-2" z="4" />
-              <BlockOrientation Forward="Backward" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>112083538485351169</EntityId>
-              <Min x="1" y="-2" z="4" />
-              <BlockOrientation Forward="Backward" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>105601573492524079</EntityId>
-              <Min x="1" y="-2" z="3" />
-              <BlockOrientation Forward="Backward" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>101351426857128718</EntityId>
-              <Min x="1" y="-2" z="2" />
-              <BlockOrientation Forward="Backward" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>89068644795861048</EntityId>
-              <Min x="-2" y="-1" z="3" />
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Wheel">
+              <SubtypeName>SmallWheel2x2</SubtypeName>
+              <EntityId>123268902062361018</EntityId>
+              <Min x="2" y="-2" z="-2" />
               <BlockOrientation Forward="Backward" Up="Down" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Battered_Armor</SkinSubtypeId>
+              <YieldLastComponent>true</YieldLastComponent>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Wheel">
+              <SubtypeName>SmallWheel2x2</SubtypeName>
+              <EntityId>143597095249053895</EntityId>
+              <Min x="-3" y="-2" z="1" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Battered_Armor</SkinSubtypeId>
+              <YieldLastComponent>true</YieldLastComponent>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Wheel">
+              <SubtypeName>SmallWheel2x2</SubtypeName>
+              <EntityId>85715739094529902</EntityId>
+              <Min x="-3" y="-2" z="-2" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Battered_Armor</SkinSubtypeId>
+              <YieldLastComponent>true</YieldLastComponent>
             </MyObjectBuilder_CubeBlock>
             <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
               <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>89535438731713880</EntityId>
+              <EntityId>80017264154772517</EntityId>
               <Min x="1" y="-2" z="1" />
-              <BlockOrientation Forward="Backward" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>115075178471542681</EntityId>
+              <Min x="0" y="-2" z="0" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>139905324975764035</EntityId>
+              <Min x="1" y="-2" z="-1" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>87038857645256620</EntityId>
+              <Min x="1" y="-2" z="0" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>95304668857138776</EntityId>
+              <Min x="0" y="-2" z="1" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>97424315074789355</EntityId>
+              <Min x="0" y="-2" z="-1" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>117746877661735967</EntityId>
+              <Min x="-1" y="-2" z="-1" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>142107124845054226</EntityId>
+              <Min x="-1" y="-2" z="1" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>134882772640010137</EntityId>
+              <Min x="-1" y="-2" z="0" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>137628651019754847</EntityId>
+              <Min x="4" y="1" z="1" />
+              <BlockOrientation Forward="Forward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>75124995056926868</EntityId>
+              <Min x="4" y="1" z="0" />
+              <BlockOrientation Forward="Forward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>131723855463026908</EntityId>
+              <Min x="4" y="1" z="-1" />
+              <BlockOrientation Forward="Forward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>103184320845522118</EntityId>
+              <Min x="4" y="0" z="1" />
+              <BlockOrientation Forward="Forward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>112936750454719885</EntityId>
+              <Min x="4" y="0" z="0" />
+              <BlockOrientation Forward="Forward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>114284053238374944</EntityId>
+              <Min x="4" y="0" z="-1" />
+              <BlockOrientation Forward="Forward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>109444157372137732</EntityId>
+              <Min x="4" y="-1" z="1" />
+              <BlockOrientation Forward="Forward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>141602328936506122</EntityId>
+              <Min x="4" y="-1" z="0" />
+              <BlockOrientation Forward="Forward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>118428345945174929</EntityId>
+              <Min x="4" y="-1" z="-1" />
+              <BlockOrientation Forward="Forward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>94617610979390718</EntityId>
+              <Min x="-4" y="1" z="-1" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>75387654347272077</EntityId>
+              <Min x="-4" y="1" z="0" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>111515336116964160</EntityId>
+              <Min x="-4" y="1" z="1" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>125700144449176555</EntityId>
+              <Min x="-4" y="0" z="-1" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>85076798170941405</EntityId>
+              <Min x="-4" y="0" z="0" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>95667685887958418</EntityId>
+              <Min x="-4" y="0" z="1" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>73508379930372904</EntityId>
+              <Min x="-4" y="-1" z="-1" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>82408441386687911</EntityId>
+              <Min x="-4" y="-1" z="0" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>132114265153243888</EntityId>
+              <Min x="-4" y="-1" z="1" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Dust_Armor</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>130229841166949981</EntityId>
+              <Min x="4" y="1" z="2" />
+              <BlockOrientation Forward="Forward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
               <SkinSubtypeId>Corrugated</SkinSubtypeId>
             </MyObjectBuilder_CubeBlock>
             <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
               <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>105414380542724887</EntityId>
-              <Min x="-1" y="1" z="0" />
+              <EntityId>129291365923249775</EntityId>
+              <Min x="-4" y="1" z="2" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>133343169713916737</EntityId>
+              <Min x="4" y="1" z="-2" />
+              <BlockOrientation Forward="Forward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>109194328167996088</EntityId>
+              <Min x="-4" y="1" z="-2" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>105351068590588885</EntityId>
+              <Min x="3" y="-1" z="3" />
+              <BlockOrientation Forward="Right" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>83934951007079950</EntityId>
+              <Min x="3" y="-1" z="-3" />
+              <BlockOrientation Forward="Left" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>78475818902389438</EntityId>
+              <Min x="-3" y="-1" z="-3" />
+              <BlockOrientation Forward="Left" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>99107480571026821</EntityId>
+              <Min x="3" y="0" z="-3" />
+              <BlockOrientation Forward="Left" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>105745840242202587</EntityId>
+              <Min x="-3" y="0" z="-3" />
+              <BlockOrientation Forward="Left" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>101099774651533653</EntityId>
+              <Min x="3" y="0" z="3" />
+              <BlockOrientation Forward="Right" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>104170807482537136</EntityId>
+              <Min x="-3" y="0" z="3" />
+              <BlockOrientation Forward="Right" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>90626430422444460</EntityId>
+              <Min x="3" y="1" z="-3" />
+              <BlockOrientation Forward="Left" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>95453096101053677</EntityId>
+              <Min x="-3" y="1" z="-3" />
+              <BlockOrientation Forward="Left" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>138622931236759562</EntityId>
+              <Min x="0" y="0" z="3" />
+              <BlockOrientation Forward="Right" Up="Down" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>122504439063805878</EntityId>
+              <Min x="2" y="3" z="0" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="-0.8" z="0.4" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>123663279097582628</EntityId>
+              <Min x="1" y="3" z="0" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="-0.8" z="0.4" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>103751412678919623</EntityId>
+              <Min x="-1" y="3" z="0" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="-0.8" z="0.4" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>87016443897243137</EntityId>
+              <Min x="-2" y="3" z="0" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="-0.8" z="0.4" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>131127940395646588</EntityId>
+              <Min x="-3" y="3" z="0" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="-0.8" z="0.4" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>141710272705924048</EntityId>
+              <Min x="0" y="3" z="1" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="-0.8" z="0.4" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>142914314373085809</EntityId>
+              <Min x="0" y="3" z="-1" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="-0.8" z="0.4" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorHalfPanelLight</SubtypeName>
+              <EntityId>127806253373275151</EntityId>
+              <Min x="0" y="3" z="0" />
+              <BlockOrientation Forward="Right" Up="Backward" />
+              <ColorMaskHSV x="0" y="-0.8" z="0.4" />
+              <SkinSubtypeId>Corrugated</SkinSubtypeId>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>SmallArmorPanelLight</SubtypeName>
+              <EntityId>86681020729995230</EntityId>
+              <Min x="0" y="0" z="-3" />
               <BlockOrientation Forward="Down" Up="Right" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>99604994004850068</EntityId>
-              <Min x="-2" y="0" z="1" />
-              <BlockOrientation Forward="Up" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
-              <SkinSubtypeId>Corrugated</SkinSubtypeId>
-            </MyObjectBuilder_CubeBlock>
-            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
-              <SubtypeName>SmallArmorPanelLight</SubtypeName>
-              <EntityId>107991307345970218</EntityId>
-              <Min x="-2" y="1" z="1" />
-              <BlockOrientation Forward="Up" Up="Backward" />
-              <ColorMaskHSV x="0.333333343" y="-0.48" z="-0.25" />
+              <ColorMaskHSV x="0" y="-0.8" z="-0.13" />
               <SkinSubtypeId>Corrugated</SkinSubtypeId>
             </MyObjectBuilder_CubeBlock>
           </CubeBlocks>
+          <XMirroxPlane x="0" y="2" z="-1" />
+          <ZMirroxPlane x="0" y="0" z="0" />
           <DisplayName>AaW_Transport_Cargo</DisplayName>
           <DestructibleBlocks>true</DestructibleBlocks>
           <CreatePhysics>false</CreatePhysics>
@@ -1059,6 +1089,7 @@ or dump the cargo.
           <IsRespawnGrid>false</IsRespawnGrid>
           <LocalCoordSys>0</LocalCoordSys>
           <TargetingTargets />
+          <GridPresenceTier>Tier1</GridPresenceTier>
           <NPCGridClaimElapsed xsi:nil="true" />
         </CubeGrid>
       </CubeGrids>

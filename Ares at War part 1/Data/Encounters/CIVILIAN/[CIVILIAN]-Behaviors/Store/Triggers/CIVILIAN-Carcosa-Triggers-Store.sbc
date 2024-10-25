@@ -17,7 +17,7 @@
         [MinCooldownMs:10000]
         [MaxCooldownMs:10001]
         [Conditions:CIVILIAN_Condition_Static_PopulateStores_Carcosa]
-        [StartsReady:false]
+        [StartsReady:true]
         [MaxActions:1]
         [Actions:CIVILIAN_Action_Static_PopulateStores_Carcosa]
 
@@ -55,7 +55,11 @@
         [ApplyStoreProfiles:true]
         [ClearStoreContentsFirst:true]
 
-        
+       [StoreBlocks:Store Settlement]
+      [StoreProfiles:CIVILIAN_StoreProfile_Carcosa_Settlement]		
+
+
+
       [StoreBlocks:Store {ITC}]
       [StoreProfiles:CIVILIAN_StoreProfile_Carcosa_ITC]		
 		
@@ -90,6 +94,12 @@
       
       [StoreBlocks:Store Outpost]
       [StoreProfiles:CIVILIAN_StoreProfile_Carcosa_Outpost]
+
+
+      [StoreBlocks:Vending Machine]
+      [StoreProfiles:CIVILIAN_StoreProfile_Carcosa_VendingMachine]
+
+
 
 
       [AddCustomDataToBlocks:true]

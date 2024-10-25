@@ -17,7 +17,7 @@
         [MinCooldownMs:10000]
         [MaxCooldownMs:10001]
         [Conditions:SYN_Condition_Static_PopulateStores_SYNTalisOutpost]
-        [StartsReady:false]
+        [StartsReady:true]
         [MaxActions:1]
         [Actions:SYN_Action_Static_PopulateStores_SYNTalisOutpost]
 
@@ -55,7 +55,11 @@
         [ApplyStoreProfiles:true]
         [ClearStoreContentsFirst:true]
 
-        
+       [StoreBlocks:Store Settlement]
+      [StoreProfiles:SYN_StoreProfile_SYNTalisOutpost_Settlement]		
+
+
+
       [StoreBlocks:Store {ITC}]
       [StoreProfiles:SYN_StoreProfile_SYNTalisOutpost_ITC]		
 		
@@ -90,6 +94,12 @@
       
       [StoreBlocks:Store Outpost]
       [StoreProfiles:SYN_StoreProfile_SYNTalisOutpost_Outpost]
+
+
+      [StoreBlocks:Vending Machine]
+      [StoreProfiles:SYN_StoreProfile_SYNTalisOutpost_VendingMachine]
+
+
 
 
       [AddCustomDataToBlocks:true]
