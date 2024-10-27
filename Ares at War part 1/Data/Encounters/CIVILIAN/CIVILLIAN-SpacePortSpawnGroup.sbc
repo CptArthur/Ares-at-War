@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+	<!--
+Station 27
+
+Rak
+-->	
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>Station27</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:CIVILIAN]		
+
+			[TriggerCoords:{X:-1970922.05378800002 Y:-1016003.00749572 Z:-2313711.812254}]
+			[TriggerRadius:200000]
+
+			[ForceExactPositionAndOrientation:true]
+			[CutVoxelsAtAirtightCells:true]
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+
+			[StaticEncounterCoords:{X:-1970922.05378800002 Y:-1016003.00749572 Z:-2313711.812254}]
+			[StaticEncounterForward:{X:0 Y:0 Z:-1}]
+			[StaticEncounterUp:{X:0 Y:1 Z:0}]
+
+			[ReplenishSystems:true]
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-DoNotDelete)]		
+			[RandomGridNamePattern:Station 27]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]		
+
+
+
+        [ShipyardSetup:true]
+        [ShipyardConsoleBlockNames:{Any}]
+        [ShipyardProfileNames:FAC-Shipyard-Shipyard]
+		
+		[GridsAreDestructable:false]
+	
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:Station27]			
+
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="CIVILIAN - Station 27">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>CIVILIAN_Station27_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>	
+
+
+		
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>Rak</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:CIVILIAN]		
+
+			[TriggerCoords:{X:-34995.4115883877255 Y:-3251.2368409685314 Z:48703.7032755285524}]
+			[TriggerRadius:200000]
+
+			[ForceExactPositionAndOrientation:true]
+			[CutVoxelsAtAirtightCells:true]
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+
+			[StaticEncounterCoords:{X:-34995.4115883877255 Y:-3251.2368409685314 Z:48703.7032755285524}]
+			
+
+			[StaticEncounterForward:{X:-0.0167920144200677 Y:-0.517917102131092 Z:0.855265984107779}]
+			[StaticEncounterUp:{X:0.328171520225952 Y:0.805145076122327 Z:0.494008967234969}]
+
+			[IgnoreCleanupRules:true]
+
+			[GridsAreDestructable:false]
+
+			[ReplenishSystems:true]
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-DoNotDelete)]		
+			[RandomGridNamePattern:Rak]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]		
+
+
+			[ShipyardSetup:true]
+			[ShipyardConsoleBlockNames:{Any}]
+			[ShipyardProfileNames:FAC-Shipyard-Shipyard]
+
+			[GridsAreDestructable:false]
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:Rak]			
+
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="CIVILIAN - Rak Station">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>CIVILIAN_Rak_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>		
+
+		
+		
+	</SpawnGroups>
+	
+
+
+	
+	
+	
+</Definitions>

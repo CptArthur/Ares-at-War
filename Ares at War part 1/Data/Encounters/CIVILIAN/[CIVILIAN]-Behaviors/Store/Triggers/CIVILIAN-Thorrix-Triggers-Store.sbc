@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+  <!-- [Triggers:CIVILIAN_Trigger_Static_PopulateStores_Thorrix] -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_Trigger_Static_PopulateStores_Thorrix</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Session]
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+        [Conditions:CIVILIAN_Condition_Static_PopulateStores_Thorrix]
+        [StartsReady:false]
+        [MaxActions:1]
+        [Actions:CIVILIAN_Action_Static_PopulateStores_Thorrix]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_Condition_Static_PopulateStores_Thorrix</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+              
+        [UseConditions:true]
+        [UseFailCondition:true]
+        [CheckAllLoadedModIDs:true]
+        [AllModIDsToCheck:2344068716]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_Action_Static_PopulateStores_Thorrix</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [ApplyStoreProfiles:true]
+        [ClearStoreContentsFirst:true]
+
+       [StoreBlocks:Store Settlement]
+      [StoreProfiles:CIVILIAN_StoreProfile_Thorrix_Settlement]		
+
+
+
+      [StoreBlocks:Store {ITC}]
+      [StoreProfiles:CIVILIAN_StoreProfile_Thorrix_ITC]		
+		
+	    [StoreBlocks:Store {SYN}]
+      [StoreProfiles:CIVILIAN_StoreProfile_Thorrix_SYN]	
+		
+	    [StoreBlocks:Store {FAF}]
+      [StoreProfiles:CIVILIAN_StoreProfile_Thorrix_FAF]	
+
+      [StoreBlocks:Store Civ]
+      [StoreProfiles:CIVILIAN_StoreProfile_Thorrix_Civ]
+  
+      [StoreBlocks:Store Salvage]
+      [StoreProfiles:CIVILIAN_StoreProfile_Thorrix_Salvage]
+
+      [StoreBlocks:Store Ammo]
+      [StoreProfiles:CIVILIAN_StoreProfile_Thorrix_Ammo]
+
+      [StoreBlocks:Store Ingot]
+      [StoreProfiles:CIVILIAN_StoreProfile_Thorrix_Ingot]
+  
+      [StoreBlocks:Store Tool]
+      [StoreProfiles:CIVILIAN_StoreProfile_Thorrix_Tool]      
+
+      [StoreBlocks:Store Prefab]
+      [StoreProfiles:CIVILIAN_StoreProfile_Thorrix_Prefab]      
+
+      
+      [StoreBlocks:Store Fuel]
+      [StoreProfiles:CIVILIAN_StoreProfile_Thorrix_Fuel]
+  
+      
+      [StoreBlocks:Store Outpost]
+      [StoreProfiles:CIVILIAN_StoreProfile_Thorrix_Outpost]
+
+
+      [StoreBlocks:Vending Machine]
+      [StoreProfiles:CIVILIAN_StoreProfile_Thorrix_VendingMachine]
+
+
+
+
+      [AddCustomDataToBlocks:true]
+      [CustomDataBlockNames:EconomySurvival Store Water Vehicles,EconomySurvival Store Land Vehicles,EconomySurvival Store Air Vehicles,EconomySurvival Store Space Vehicles]
+      [CustomDataFiles:CIVILIAN_Water_Vehicles.xml]
+      [CustomDataFiles:CIVILIAN_Land_Vehicles.xml]
+      [CustomDataFiles:CIVILIAN_Air_Vehicles.xml]
+      [CustomDataFiles:CIVILIAN_Space_Vehicles.xml]  
+        
+
+      [ApplyContractProfiles:true]
+      [ClearContractContentsFirst:true]
+      [ContractBlocks:Contracts]
+      [ContractBlockProfiles:CIVILIAN_ContractBlockProfile_Thorrix]
+    
+      </Description>
+
+    </EntityComponent>
+  </EntityComponents>
+</Definitions>

@@ -3,14 +3,10 @@
   <EntityComponents>
 
     
-  
-    
-
-    
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>CIVILIAN_StoreProfile_SunsetCity_Ingot</SubtypeId>
+        <SubtypeId>CIVILIAN_StoreProfile_SunsetCity_Settlement</SubtypeId>
       </Id>
       <Description>
 
@@ -18,21 +14,18 @@
 
         [FileSource:AaW_StoreItems_SunsetCity.xml]
         
-        [MinOfferItems:20]
-        [MaxOfferItems:20]
-        [MinOrderItems:20]
-        [MaxOrderItems:20]
+        [MinOfferItems:99]
+        [MaxOfferItems:99]
+        [MinOrderItems:99]
+        [MaxOrderItems:99]
 
         [ItemsRequireInventory:false]
 
         
-        [Orders:Ingot/Iron] 
-        [Orders:Ingot/Nickel] 
-        [Orders:Ingot/Silicon] 
-        [Orders:Ingot/Cobalt] 
-        [Orders:Ingot/Magnesium] 
-        [Orders:Ingot/Silver] 
-        [Orders:Ingot/Gold] 
+        [Orders:Ore/Iron] 
+        [Orders:Ore/Nickel] 
+        [Orders:Ore/Cobalt] 
+        [Orders:Ore/Magnesium] 
 
         [Offers:Ingot/Iron] 
         [Offers:Ingot/Nickel] 
@@ -40,14 +33,49 @@
         [Offers:Ingot/Magnesium] 
 
 
+        
+        
+        [Orders:Component/CivilianProductI] 
+        [Orders:Component/CivilianProductII] 
+        [Orders:Component/CivilianProductIII] 
+
+        [Offers:Component/SteelPlate] 
+        [Offers:Component/Construction] 
+        [Offers:Component/Girder] 
+        [Offers:Component/InteriorPlate] 
+        [Offers:Component/Construction] 
+        [Offers:Component/SmallTube] 
+        [Offers:Component/LargeTube] 
+        [Offers:Component/BulletproofGlass] 
+        [Offers:Component/Motor] 
+        [Offers:Component/Display] 
+        [Offers:Component/Computer] 
+        [Offers:Component/RadioCommunicationComponent] 
+        [Offers:Component/Detector] 
+        [Offers:Component/Canvas] 
+        [Offers:Component/SolarCell] 
+        [Offers:Component/PowerCell] 
+        [Offers:Component/Explosives] 
+        [Offers:Component/MedicalComponent] 
+        [Offers:Component/ReactorComponent] 
+        [Offers:Component/MetalGrid] 
+
+  
       </Description>
 
     </EntityComponent>
+  
     
-  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+
+    
+    
+    
+    
+    
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>CIVILIAN_StoreProfile_SunsetCity_Civ</SubtypeId>
+        <SubtypeId>CIVILIAN_StoreProfile_SunsetCity_SYN</SubtypeId>
       </Id>
       <Description>
 
@@ -62,33 +90,10 @@
 
         [ItemsRequireInventory:false]
 
-        [Orders:Component/CivilianProductI] 
-        [Orders:Component/CivilianProductII] 
-        [Orders:Component/CivilianProductIII] 
-
-
-        [Offers:Tool/HandDrill2Item] 
-        [Offers:Tool/AngleGrinder2Item] 
-        [Offers:Tool/Welder2Item] 
-        [Offers:Consumable/Medkit] 
-        [Offers:Consumable/Powerkit] 
-
-        
-        [Offers:Component/SteelPlate] 
-        [Offers:Component/Motor]         
-        [Offers:Component/Girder] 
-        [Offers:Component/InteriorPlate] 
-        [Offers:Component/Construction]        
-        [Offers:Component/Display] 
-        [Offers:Component/MedicalComponent] 
-        [Offers:Component/MetalGrid] 
-
+        [Offers:Consumable/SpiceInhaler]
+        [Orders:Consumable/SpiceInhaler]		
       </Description>
-
     </EntityComponent>
-    
-    
-    
     
     
 
@@ -128,9 +133,6 @@
         [MinContracts:5]
         [MaxContracts:15]
         
-        [MissionIds:AaW_Mission_Acquisition] 
-        [MissionIds:AaW_Mission_Acquisition] 
-        [MissionIds:AaW_Mission_Acquisition] 
         [MissionIds:AaW_Mission_Transport] 
         [MissionIds:AaW_Mission_Transport] 
         [MissionIds:AaW_Mission_Transport] 

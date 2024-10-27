@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>UNION_StoreProfile_HQ_Settlement</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_AHE.xml]
+        
+        [MinOfferItems:99]
+        [MaxOfferItems:99]
+        [MinOrderItems:99]
+        [MaxOrderItems:99]
+
+        [ItemsRequireInventory:false]
+
+        
+        [Orders:Ore/Iron] 
+        [Orders:Ore/Nickel] 
+        [Orders:Ore/Cobalt] 
+        [Orders:Ore/Silver] 
+
+        [Offers:Ingot/Iron] 
+        [Offers:Ingot/Nickel] 
+        [Offers:Ingot/Cobalt] 
+        [Offers:Ingot/Silver] 
+
+
+        
+        
+        [Orders:Component/CivilianProductI] 
+        [Orders:Component/CivilianProductII] 
+        [Orders:Component/CivilianProductIII] 
+
+        [Offers:Component/SteelPlate] 
+        [Offers:Component/Construction] 
+        [Offers:Component/Girder] 
+        [Offers:Component/InteriorPlate] 
+        [Offers:Component/Construction] 
+        [Offers:Component/SmallTube] 
+        [Offers:Component/LargeTube] 
+        [Offers:Component/BulletproofGlass] 
+        [Offers:Component/Motor] 
+        [Offers:Component/Display] 
+        [Offers:Component/Computer] 
+        [Offers:Component/RadioCommunicationComponent] 
+        [Offers:Component/Detector] 
+        [Offers:Component/Canvas] 
+        [Offers:Component/SolarCell] 
+        [Offers:Component/PowerCell] 
+        [Offers:Component/Explosives] 
+        [Offers:Component/MedicalComponent] 
+        [Offers:Component/ReactorComponent] 
+        [Offers:Component/MetalGrid] 
+
+  
+      </Description>
+
+    </EntityComponent>
+  
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>UNION_StoreProfile_HQ_Fuel</SubtypeId>
+      </Id>
+      <Description>
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_AHE.xml]
+        
+        [MinOfferItems:5]
+        [MaxOfferItems:20]
+        [MinOrderItems:5]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+
+        [Offers:HydrogenOffer] 
+      </Description>
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>UNION_ContractBlockProfile_HQ</SubtypeId>
+      </Id>
+      <Description>
+        [MES Contract Block]
+
+        [StoreProfileId:UNION_StoreProfile_HQ_Ingot]
+        
+        [MinContracts:5]
+        [MaxContracts:15]
+        
+        [MissionIds:AaW_Mission_Transport] 
+        [MissionIds:AaW_Mission_Transport] 
+        [MissionIds:AaW_Mission_Transport] 
+
+        
+      </Description>
+    </EntityComponent>	    
+
+    
+ 
+  </EntityComponents>
+</Definitions>

@@ -14,8 +14,8 @@
 
         [UseTrigger:true]
         [Type:Session]
-        [MinCooldownMs:10000]
-        [MaxCooldownMs:10001]
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
         [Conditions:SYN_Condition_Static_PopulateStores_SYNForegoneIO]
         [StartsReady:false]
         [MaxActions:1]
@@ -55,7 +55,11 @@
         [ApplyStoreProfiles:true]
         [ClearStoreContentsFirst:true]
 
-        
+       [StoreBlocks:Store Settlement]
+      [StoreProfiles:SYN_StoreProfile_SYNForegoneIO_Settlement]		
+
+
+
       [StoreBlocks:Store {ITC}]
       [StoreProfiles:SYN_StoreProfile_SYNForegoneIO_ITC]		
 		
@@ -90,6 +94,12 @@
       
       [StoreBlocks:Store Outpost]
       [StoreProfiles:SYN_StoreProfile_SYNForegoneIO_Outpost]
+
+
+      [StoreBlocks:Vending Machine]
+      [StoreProfiles:SYN_StoreProfile_SYNForegoneIO_VendingMachine]
+
+
 
 
       [AddCustomDataToBlocks:true]

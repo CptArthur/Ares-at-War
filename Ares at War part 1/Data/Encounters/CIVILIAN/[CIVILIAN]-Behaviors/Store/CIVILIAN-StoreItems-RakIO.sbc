@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_StoreProfile_RakIO_Settlement</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_BylenBeltIO.xml]
+        
+        [MinOfferItems:99]
+        [MaxOfferItems:99]
+        [MinOrderItems:99]
+        [MaxOrderItems:99]
+
+        [ItemsRequireInventory:false]
+
+        
+        [Orders:Ore/Iron] 
+        [Orders:Ore/Nickel] 
+        [Orders:Ore/Silicon] 
+        [Orders:Ore/Copper] 
+        [Orders:Ore/Cobalt] 
+        [Orders:Ore/Silver] 
+        [Orders:Ore/Gold] 
+        [Orders:Ore/Aluminum] 
+        [Orders:Ore/Titanium] 
+        [Orders:Ore/Sulfur] 
+        [Orders:Ore/Platinum] 
+        [Orders:Ore/Uranium] 
+        [Orders:Ore/Lithium] 
+        [Orders:Ore/Tantalum] 
+
+        [Offers:Ingot/Iron] 
+        [Offers:Ingot/Nickel] 
+        [Offers:Ingot/Silicon] 
+        [Offers:Ingot/Copper] 
+        [Offers:Ingot/Cobalt] 
+        [Offers:Ingot/Silver] 
+        [Offers:Ingot/Gold] 
+        [Offers:Ingot/Aluminum] 
+        [Offers:Ingot/Titanium] 
+        [Offers:Ingot/Sulfur] 
+        [Offers:Ingot/Platinum] 
+        [Offers:Ingot/Uranium] 
+        [Offers:Ingot/Lithium] 
+        [Offers:Ingot/Tantalum] 
+
+
+        
+        
+        [Orders:Component/CivilianProductI] 
+        [Orders:Component/CivilianProductII] 
+        [Orders:Component/CivilianProductIII] 
+
+        [Offers:Component/SteelPlate] 
+        [Offers:Component/Construction] 
+        [Offers:Component/Girder] 
+        [Offers:Component/InteriorPlate] 
+        [Offers:Component/Construction] 
+        [Offers:Component/SmallTube] 
+        [Offers:Component/LargeTube] 
+        [Offers:Component/BulletproofGlass] 
+        [Offers:Component/Motor] 
+        [Offers:Component/Display] 
+        [Offers:Component/Computer] 
+        [Offers:Component/RadioCommunicationComponent] 
+        [Offers:Component/Detector] 
+        [Offers:Component/Canvas] 
+        [Offers:Component/SolarCell] 
+        [Offers:Component/PowerCell] 
+        [Offers:Component/Explosives] 
+        [Offers:Component/MedicalComponent] 
+        [Offers:Component/ReactorComponent] 
+        [Offers:Component/MetalGrid] 
+
+  
+      </Description>
+
+    </EntityComponent>
+  
+    
+
+    
+    
+    
+    
+    
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_StoreProfile_RakIO_SYN</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_BylenBeltIO.xml]
+        
+        [MinOfferItems:20]
+        [MaxOfferItems:20]
+        [MinOrderItems:20]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+
+        [Offers:Consumable/SpiceInhaler]
+        [Orders:Consumable/SpiceInhaler]		
+      </Description>
+
+    </EntityComponent>		
+    
+    
+
+    
+    
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_StoreProfile_RakIO_Fuel</SubtypeId>
+      </Id>
+      <Description>
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_BylenBeltIO.xml]
+        
+        [MinOfferItems:5]
+        [MaxOfferItems:20]
+        [MinOrderItems:5]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+
+        [Offers:HydrogenOffer] 
+      </Description>
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_ContractBlockProfile_RakIO</SubtypeId>
+      </Id>
+      <Description>
+        [MES Contract Block]
+
+        [StoreProfileId:CIVILIAN_StoreProfile_RakIO_Ingot]
+        
+        [MinContracts:5]
+        [MaxContracts:15]
+        
+        [MissionIds:AaW_Mission_Transport] 
+        [MissionIds:AaW_Mission_Transport] 
+        [MissionIds:AaW_Mission_Transport] 
+
+        
+      </Description>
+    </EntityComponent>	    
+
+    
+ 
+  </EntityComponents>
+</Definitions>
