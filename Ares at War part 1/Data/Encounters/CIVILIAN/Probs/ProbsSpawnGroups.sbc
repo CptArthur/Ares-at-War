@@ -5,7 +5,7 @@
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>COL_Bridge</SubtypeId>
+				<SubtypeId>CIVILIAN_Bridge</SubtypeId>
 			</Id>
 			<Description>
 			[Modular Encounters SpawnGroup]
@@ -13,7 +13,7 @@
 			[StaticEncounter:True]
 			[ForceStaticGrid:true]
 			[RotateFirstCockpitToForward:false]
-	        [FactionOwner:COL-A]		
+	        [FactionOwner:CIVILIAN]		
 
 			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
 			[TriggerRadius:4500]
@@ -38,10 +38,9 @@
 			[StaticEncounterPlanetDirection:{X:-0.727497322823263 Y:-0.456822463814432 Z:0.511918823486202}]
 			[StaticEncounterPlanetAltitude:29.6266411888137]
 
-		[ManipulationGroups:COL-Manipulation-Group]
 			[IgnoreCombatPhase:true]
 			[IgnoreCleanupRules:true]
-			[FalseSandboxVariables:COL_Bridge]			
+			[FalseSandboxVariables:CIVILIAN_BridgeDestroyed]			
 			[ZoneConditions:ZoneCondition_ZoneAaW]
 			</Description>
 			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
@@ -56,7 +55,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>0</Speed>
-					<Behaviour>COL_Standaard_Behavior</Behaviour>
+					<Behaviour></Behaviour>
 				<PlaceToGridOrigin>true</PlaceToGridOrigin>
 				</Prefab>
 			</Prefabs>
