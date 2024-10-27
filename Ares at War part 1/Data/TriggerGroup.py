@@ -14,7 +14,7 @@ def replace_text_in_files(directory, replacement_text):
                         file_content = file.read()
                     
                     # Replace "Triggers" with the replacement text
-                    new_content = file_content.replace("TriggersGroup", replacement_text)
+                    new_content = file_content.replace("[TriggerGroups:TriggerGroup_", "[TriggerGroups:MSB_")
                     
                     # Write the updated content back to the file
                     with open(filepath, 'w', encoding='utf-8') as file:
