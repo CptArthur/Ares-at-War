@@ -65,10 +65,10 @@ redlist = {
 #medi = (53, 70, 27) : (70),
 #iceland = (106, 138, 201) : (75)
 greenlist = {
-#Bolders: Platina
+#Bolders: Niter/MAg
 (204, 255, 255) : (200),
 
-#Bolders: Niter/MAg
+#Bolders: 
 (153, 153, 255) : (190),
 #Bolders: Platina
 (106, 138, 201) : (180),
@@ -77,7 +77,7 @@ greenlist = {
 #Bolders: Cobalt
 (153, 255, 153) : (170),
 
-#Bolders: GOLD
+#Bolders: Silicon
 (255, 204, 255) : (160),
 
 #Bolders: BackGround

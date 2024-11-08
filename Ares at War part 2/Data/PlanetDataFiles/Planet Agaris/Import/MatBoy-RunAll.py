@@ -172,7 +172,7 @@ def Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side):
 
 
 
-MrhoekR = True
+MrhoekR = False
 MrhoekG = False
 MrhoekB = False
 
@@ -180,8 +180,8 @@ MrhoekB = False
 
 
 Red = True #off
-Green = False #off
-Blue = False #on
+Green = True #off
+Blue = True #on
 
 
 
@@ -201,14 +201,14 @@ for side in sides:
     bloc = Importlocation + side + "ore.png"
     Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side)
 
-#IO
-#print("Starting IO")
-#for side in sides:
-#    Mloc = locationIO + side + "_mat.png"
-#    rloc = Importlocation + side + "vox.png"
-#    gloc = Importlocation + side + "biomIO.png"
-#    bloc = Importlocation + side + "oreIO.png"
-#    Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side)
+IO
+print("Starting IO")
+for side in sides:
+    Mloc = locationIO + side + "_mat.png"
+    rloc = Importlocation + side + "vox.png"
+    gloc = Importlocation + side + "biomIO.png"
+    bloc = Importlocation + side + "oreIO.png"
+    Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side)
 
 
 

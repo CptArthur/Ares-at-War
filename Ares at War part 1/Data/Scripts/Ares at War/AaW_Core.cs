@@ -41,6 +41,8 @@ namespace AresAtWar.SessionCore
 
         internal static readonly Random _rnd = new Random();
 
+        int timer = 0;
+        long wealthMaintain = 1000000000;
 
         public static Dictionary<string, MyDefinitionId> ConsumableItems;
         //public MyObjectBuilder_ConsumableItem RescueRover = new MyObjectBuilder_ConsumableItem() { SubtypeName = "RescueRover" };
@@ -128,8 +130,13 @@ namespace AresAtWar.SessionCore
                 WarSim.Init();
 
 
+
                 hasrun = true;
             }
+
+
+
+
 
         }
 
@@ -173,6 +180,27 @@ namespace AresAtWar.SessionCore
                 counter3 = 0;
             }
             counter3++;
+
+
+
+            if (MyAPIGateway.Session.IsServer)
+            {
+                if (timer == 70)
+                {
+                    if (MyAPIGateway.Session.Factions.FactionTagExists("CIVILIAN"))
+                    {
+                        var mainF = MyAPIGateway.Session.Factions.TryGetFactionByTag("CIVILIAN");
+
+                        var playerCollection = MyAPIGateway.Multiplayer.Players;
+
+
+                        playerCollection.RequestChangeBalance(mainF.FounderId, wealthMaintain);
+                        MyVisualScriptLogicProvider.ShowNotificationToAll("I LIKE MONEY!",5000);
+                    }
+                }
+            }
+            
+            timer += 1;
 
 
         }

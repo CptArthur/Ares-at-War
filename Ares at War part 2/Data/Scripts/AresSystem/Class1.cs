@@ -24,7 +24,7 @@ namespace BylenBelt
 
         public static Vector3D MilaCenter = new Vector3D(2299140.85489699, 1166634.01537175, 2935888.23468203);
 
-        public static Vector3D AgarisCenter = new Vector3D(-1129033.5, 126871.5, 1293873.5);
+        public static Vector3D AgarisCenter = new Vector3D(-3663015.14510301, -1309985.98462825, -2583899.76531797);
 
         public static Vector3D NebulaCenter = new Vector3D(-17115, -4610, -8171);
 

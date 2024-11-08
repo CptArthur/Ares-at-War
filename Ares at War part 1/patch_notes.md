@@ -1,1 +1,1 @@
-will this fix contracts?
+Remove factions.sbc

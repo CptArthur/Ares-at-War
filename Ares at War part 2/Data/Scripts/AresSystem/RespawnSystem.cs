@@ -165,12 +165,14 @@ namespace RespawnSystem
 
                 block.RemovePilot();
 
-                Vector3 up = new Vector3D(-1, 0, 0);
-                Vector3 forward = new Vector3D(0, -1, 0);
-                Vector3D position = new Vector3D(2730886, -410779, 583541);
+                Vector3 up = new Vector3D(0, 1, 0);
+                Vector3 forward = new Vector3D(-1, 0, 0);
+                Vector3D position = new Vector3D(-1971126.63, -1015993.3, -2313164.75);
                 MatrixD matrix = MatrixD.CreateWorld(position, forward, up);
 
                 player.Character.Teleport(matrix);
+
+
             }
 
 

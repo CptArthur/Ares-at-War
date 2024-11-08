@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+
+<!-- 	[CheckPlayerTags:true]
+	[IncludedPlayerTag:StartedAresCampaign]-->
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_PlayerCondition_AresCampaign_FirstTime</SubtypeId>
+      </Id>
+      <Description>
+	[MES Player Condition]
+
+	
+	[CheckLastRespawnShipName:true]
+	[LastRespawnShipName:Ares-Campaign]
+	
+	[CheckPlayerTags:true]
+	[ExcludedPlayerTag:StartedAresCampaign]
+      </Description>
+    </EntityComponent>	
+	
+
+
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+		<Id>
+		  <TypeId>Inventory</TypeId>
+		  <SubtypeId>AaW_EventCondition_CampaignOpening_FirstTime</SubtypeId>
+		</Id>
+		<Description>
+
+		[MES Event Condition]
+		[CheckPlayerCondition:true]
+		[PlayerConditionIds:AaW_PlayerCondition_AresCampaign_FirstTime]
+		
+		</Description>
+	</EntityComponent>	
+
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Event_CampaignOpening_Start</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event]
+	[UseEvent:true]
+	[UniqueEvent:false]		
+
+	
+	[ActionExecution:Sequential]
+	[TimeUntilNextActionMs:6400]
+	[ConditionIds:AaW_EventCondition_CampaignOpening_FirstTime]		
+
+
+	[ActionIds:AaW_EventAction_CampaignOpening_FadeIn]	
+	[ActionIds:AaW_EventAction_CampaignOpening_Message1]	
+	[ActionIds:AaW_EventAction_CampaignOpening_Message2]	
+	[ActionIds:AaW_EventAction_CampaignOpening_Message3]		
+	[ActionIds:AaW_EventAction_CampaignOpening_FadeOut]	
+	[ActionIds:AaW_EventAction_CampaignOpening_End]		
+	
+      </Description>
+	</EntityComponent>	
+
+
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_CampaignOpening_FadeIn</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+		
+	[FadeInPlayers:true]
+	[FadeInPlayerConditionIds:AaW_PlayerCondition_AresCampaign_FirstTime]
+	
+	[ToggleEvents:true]
+	[ToggleEventIds:AaW_Event_CampaignOpening_Start]
+	[ToggleEventIdModes:false]
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_CampaignOpening_PassTime</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+
+      </Description>
+      
+    </EntityComponent>
+
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_CampaignOpening_Message1</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW_EventChat-CampaignOpening_Message1]
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventChat-CampaignOpening_Message1</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:false]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToSpecificPlayers:true]
+	  [PlayerConditionIds:AaW_PlayerCondition_AresCampaign_FirstTime]
+
+      [Color:Blue]
+      [Author:]
+        
+  	  [ChatMessages:We're no strangers to love ]
+      [BroadcastChatType:Notify]
+      [ChatAudio:]   	  
+      </Description>
+    </EntityComponent>
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_CampaignOpening_Message2</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW_EventChat-CampaignOpening_Message2]
+      </Description>
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventChat-CampaignOpening_Message2</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:false]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToSpecificPlayers:true]
+	  [PlayerConditionIds:AaW_PlayerCondition_AresCampaign_FirstTime]
+
+      [Color:Red]
+      [Author:]
+        
+  	  [ChatMessages:You know the rules and so do I (do I) ]
+      [BroadcastChatType:Notify]
+      [ChatAudio:]   	  
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_CampaignOpening_Message3</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW_EventChat-CampaignOpening_Message3]
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventChat-CampaignOpening_Message3</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:false]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToSpecificPlayers:true]
+	  [PlayerConditionIds:AaW_PlayerCondition_AresCampaign_FirstTime]
+
+      [Color:Blue]
+      [Author:]
+        
+  	  [ChatMessages:A full commitment's what I'm thinking of]
+      [BroadcastChatType:Notify]
+      [ChatAudio:]   	  
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_CampaignOpening_FadeOut</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+		
+	[FadeOutPlayers:true]
+	[FadeOutPlayerConditionIds:AaW_PlayerCondition_AresCampaign_FirstTime]
+
+
+	[ToggleEvents:true]
+	[ToggleEventIds:AaW_Event_CampaignOpening_Start]
+	[ToggleEventIdModes:true]
+	
+      </Description>
+    
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_CampaignOpening_End</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+
+	[AddTagstoPlayers:true]
+	[AddTagsPlayerConditionIds:AaW_PlayerCondition_AresCampaign_FirstTime]
+	[AddTags:StartedAresCampaign]
+
+	[ToggleEvents:true]
+	[ToggleEventIds:AaW_Event_CampaignOpening_Start]
+	[ToggleEventIdModes:true]
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+	</EntityComponents>
+</Definitions>

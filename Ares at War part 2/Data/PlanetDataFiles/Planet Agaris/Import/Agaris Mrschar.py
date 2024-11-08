@@ -153,10 +153,10 @@ def run():
 Planet = "Planet Agaris"
 filename = "agaris"
 
-height = False
+height = True
 Vox = True
-Biome = False
-Ore = False   
+Biome = True
+Ore = True
 
 #Normal
 upcoords = (0,0,2048,2048)
