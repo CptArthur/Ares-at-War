@@ -8,18 +8,23 @@ def replace_text_in_files(directory, replacement_text):
             if filename.endswith(".sbc"):
                 filepath = os.path.join(root, filename)
                 
-                # Open the file and read its contents
-                with open(filepath, 'r') as file:
-                    file_content = file.read()
-                
-                # Replace {FAC} with the replacement text
-                new_content = file_content.replace("MSB", replacement_text)
-                
-                # Write the updated content back to the file
-                with open(filepath, 'w') as file:
-                    file.write(new_content)
-                
-                print(f"Updated: {filepath}")
+                # Open the file and read its contents with UTF-8 encoding
+                try:
+                    # Open the file and read its contents
+                    with open(filepath, 'r', encoding='utf-8') as file:
+                        file_content = file.read()
+                    
+                    # Replace {FAC} with the replacement text
+                    new_content = file_content.replace("[TriggerGroups:MSB_MilitaryBase_TriggerGroup]", "")
+                    
+                    # Write the updated content back to the file
+                    with open(filepath, 'w', encoding='utf-8') as file:
+                        file.write(new_content)
+                    
+                    print(f"Updated: {filepath}")
+                    
+                except UnicodeDecodeError as e:
+                    print(f"Error reading {filepath}: {e}")
 
 # Get the name of the current Python script, without the .py extension
 current_script_name = os.path.splitext(os.path.basename(__file__))[0]
