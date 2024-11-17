@@ -1,32 +1,20 @@
 <?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
 	<SpawnGroups>
 
 
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>SPRT_SpawnGroup_BountyHunter_A</SubtypeId>
+				<SubtypeId>SPRT_SpawnGroup_Bounties_Atmo</SubtypeId>
 			</Id>
 			<Description>
 			[Modular Encounters SpawnGroup]
-			[AtmosphericCargoShip:true]
-			[AtmosphericCargoShipChance:100]
 
-
-			
-			[UsePlayerFactionReputation:true]
-			[PlayerReputationCheckRadius:15000]
-			[CheckReputationAgainstOtherNPCFaction:SYN]
-			[MaximumReputation:-499]
-
-			
-			[UseThreatLevelCheck:true]
-			[ThreatLevelCheckRange:5000]
-			[ThreatIncludeOtherNpcOwners:true]
-			[ThreatScoreMaximum:30]
-
-			
+			[SpawnConditionsProfiles:AaW_SpawnProfile_RivalAISpawn]
+			[FactionOverride:SPRT]
 			
 			[PrefabSpawningMode:RandomSelectedIndexes]
 			
@@ -48,18 +36,11 @@
 			[PrefabIndexGroupNames:Main]
 			[PrefabIndexGroupValues:5]			
 			
-			[AtmosphericCargoShip:true]
-			[AtmosphericCargoShipChance:0]
-
-			[SkipAirDensityCheck:true]
-			[FactionOwner:SPRT]
 
 
-			[MaxGravity:2]
 			[UseRivalAi:true]
 			[RivalAiReplaceRemoteControl:true]
-		
-		
+			
 			</Description>
 			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
 			<IsPirate>true</IsPirate>
@@ -74,7 +55,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>SPRT_BountyA1_Behavior</Behaviour>
+					<Behaviour>SPRT_BountyA_Behavior</Behaviour>
 				</Prefab>
 				
 				<Prefab SubtypeId="SPRT-Bounty-A2">
@@ -84,7 +65,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>SPRT_BountyA2_Behavior</Behaviour>
+					<Behaviour>SPRT_BountyA_Behavior</Behaviour>
 				</Prefab>				
 				
 					<Prefab SubtypeId="SPRT-Bounty-A3">
@@ -94,7 +75,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>SPRT_BountyA3_Behavior</Behaviour>
+					<Behaviour>SPRT_BountyA_Behavior</Behaviour>
 				</Prefab>			
 				
 				<Prefab SubtypeId="SPRT-Bounty-A4">
@@ -104,7 +85,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>SPRT_BountyA4_Behavior</Behaviour>
+					<Behaviour>SPRT_BountyA_Behavior</Behaviour>
 				</Prefab>
 					
 				<Prefab SubtypeId="SPRT-Bounty-A5">
@@ -114,7 +95,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>SPRT_BountyA5_Behavior</Behaviour>
+					<Behaviour>SPRT_BountyA_Behavior</Behaviour>
 				</Prefab>
 				
 				
@@ -125,11 +106,80 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>SPRT_BountyA6_Behavior</Behaviour>
+					<Behaviour>SPRT_BountyA_Behavior</Behaviour>
 				</Prefab>
 				
 			</Prefabs>			
 		</SpawnGroup>
+		
+		
+		
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>SPRT_SpawnGroup_Bounties_Space</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+
+			[SpawnConditionsProfiles:AaW_SpawnProfile_RivalAISpawn]
+			[FactionOverride:SPRT]
+			
+			[PrefabSpawningMode:RandomSelectedIndexes]
+			
+			[PrefabIndexGroupNames:Main]
+			[PrefabIndexGroupValues:0]
+
+			[PrefabIndexGroupNames:Main]
+			[PrefabIndexGroupValues:1]
+
+			[PrefabIndexGroupNames:Main]
+			[PrefabIndexGroupValues:2]
+
+			[PrefabIndexGroupNames:Main]
+			[PrefabIndexGroupValues:3]
+
+			[PrefabIndexGroupNames:Main]
+			[PrefabIndexGroupValues:4]
+
+			[PrefabIndexGroupNames:Main]
+			[PrefabIndexGroupValues:5]			
+			
+
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+		
+		
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+
+				<Prefab SubtypeId="SPRT-Bounty-S1">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SPRT_BountyA_Behavior</Behaviour>
+				</Prefab>
+				
+
+			</Prefabs>			
+		</SpawnGroup>		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	
 		
 

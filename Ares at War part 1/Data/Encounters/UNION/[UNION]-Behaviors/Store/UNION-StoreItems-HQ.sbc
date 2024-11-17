@@ -66,7 +66,39 @@
     </EntityComponent>
   
     
+    
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>UNION_StoreProfile_HQ_VendingMachine</SubtypeId>
+      </Id>
+      <Description>
 
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_AHE.xml]
+        
+        [MinOfferItems:99]
+        [MaxOfferItems:99]
+        [MinOrderItems:99]
+        [MaxOrderItems:99]
+
+        [ItemsRequireInventory:false]
+
+        [Offers:Tool/HandDrill2Item] 
+        [Offers:Tool/HandDrill3Item] 
+        [Offers:Tool/AngleGrinder2Item] 
+        [Offers:Tool/AngleGrinder3Item] 
+        [Offers:Tool/Welder2Item] 
+        [Offers:Tool/Welder3Item] 
+
+        [Offers:Consumable/Medkit] 
+        [Offers:Consumable/Powerkit] 
+
+
+      </Description>
+
+    </EntityComponent>
     
     
     
@@ -74,6 +106,8 @@
     
     
     
+
+
 
     
     
@@ -111,15 +145,14 @@
         [MinContracts:5]
         [MaxContracts:15]
         
-        [MissionIds:AaW_Mission_Transport] 
-        [MissionIds:AaW_Mission_Transport] 
-        [MissionIds:AaW_Mission_Transport] 
+        [MissionIds:AaW_Mission_ProcCIVILIAN] 
+        [MissionIds:AaW_Mission_ProcCIVILIAN] 
+        [MissionIds:AaW_Mission_ProcCIVILIAN] 
 
         
       </Description>
     </EntityComponent>	    
 
-    
  
   </EntityComponents>
 </Definitions>

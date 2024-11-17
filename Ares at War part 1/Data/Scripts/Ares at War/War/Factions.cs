@@ -74,6 +74,26 @@ namespace AresAtWar.War
                 _refreshmodifier = true;
             }
 
+            public bool AtWar()
+            {
+                
+                foreach (var faction in _allfactions)
+                {
+                    if (this.Tag == faction.Tag)
+                        continue;
+
+                    if (WarSim.FactionsAtWar(this.Tag, faction.Tag))
+                        return true;
+                }
+
+
+                return false;
+
+            }
+
+
+
+
 
         }
 

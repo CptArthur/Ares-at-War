@@ -87,7 +87,37 @@ namespace AresAtWar.War
                 this.Coords = coords;
                 this.StarterFort = starterFort;
                 this.Tags = Tags ?? new List<string>();
+
+                _staticEncounters.Add(this);
             }
+
+
+            public bool ReadyToReceiveTransportFromFaction(string sendingFaction, StaticEncounter sendingEncounter)
+            {
+                if (this.Node.FrontLineCount > 0)
+                    return false;
+
+                //ITC at Station27, to AHE HQ (ITC-AHE WAR)
+                if (WarSim.FactionsAtWar(sendingFaction, this.FactionTag))
+                    return false;
+
+                //ITC at Station27, to Carcosa (ITC-AHE War) 
+                if (WarSim.FactionsAtWar(sendingFaction, this.Node.Faction.Tag))
+                    return false;
+
+
+                //No smuggle 
+                if (WarSim.FactionsAtWar(sendingEncounter.Node.Faction.Tag, this.Node.Faction.Tag))
+                    return false;
+
+
+
+
+
+                return true;
+            }
+
+
         }
 
 
@@ -153,7 +183,7 @@ namespace AresAtWar.War
                         else
                         {
                             bool foundFaction = false;
-                            foreach (var faction in _factions)
+                            foreach (var faction in _allfactions)
                             {
 
                                 bool temp;
@@ -207,7 +237,7 @@ namespace AresAtWar.War
                         MyAPIGateway.Utilities.SetVariable<bool>(value.Tag + Id, true);
 
                         // Set the other factions' tags to false
-                        foreach (var faction in _factions)
+                        foreach (var faction in _allfactions)
                         {
                             if (faction.Tag != value.Tag)
                             {
@@ -429,7 +459,70 @@ namespace AresAtWar.War
                 _refreshFaction = true;
                 var thisissodumbbutIneedtodoit = Faction;
                 Refresh();
+
+                _nodes.Add(this);
             }
+
+
+
+            public Vector3D GetRandomPoint(Vector3D currentposition)
+            {
+                Random random = new Random();
+
+                if(this.Id == "Station27")
+                {
+                    return Helper.GeneratePointInBylenBelt(currentposition,1, 15).GetValueOrDefault();
+                }
+
+                if (this.Id == "MilaBelt")
+                {
+                    return Helper.GeneratePointInMilaBelt(currentposition,1, 15).GetValueOrDefault();
+                }
+
+
+                var planet = MyGamePruningStructure.GetClosestPlanet(Location);
+                var planetcenter = planet.PositionComp.GetPosition();
+                double randomRadius = random.NextDouble() * Radius;
+
+                if ((planet.PositionComp.GetPosition()-Location).Length() < 80000)
+                {
+                    //Onplanet
+                    var upAtPosition = Vector3D.Normalize(Location - planetcenter);
+
+
+                    // Generate a random point around the current location within the radius
+
+                    double randomAngle = random.NextDouble() * Math.PI * 2; // Random angle between 0 and 2*PI
+
+
+                    // Calculate x and y offsets relative to the plane tangent to the surface
+                    double offsetX = randomRadius * Math.Cos(randomAngle);
+                    double offsetY = randomRadius * Math.Sin(randomAngle);
+
+                    // Create a vector offset in the local tangent plane
+                    Vector3D tangentOffset = (upAtPosition.Cross(Vector3D.Right) * offsetX) +
+                                             (upAtPosition.Cross(Vector3D.Up) * offsetY);
+
+                    // Return a new position adjusted by the tangent offset
+
+                    var newposition = planet.GetClosestSurfacePointGlobal(Location + tangentOffset);
+
+                    return newposition + (upAtPosition * 150);
+
+
+
+                }
+
+
+
+                randomRadius = random.NextDouble() * Radius;
+                var randomvector =  MyUtils.GetRandomVector3D();
+
+                return Location + (randomRadius * randomvector);
+
+
+            }
+
 
 
 

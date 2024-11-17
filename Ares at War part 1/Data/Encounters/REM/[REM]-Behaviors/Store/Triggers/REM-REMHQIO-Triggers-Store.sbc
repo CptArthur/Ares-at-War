@@ -13,12 +13,12 @@
         [RivalAI Trigger]
 
         [UseTrigger:true]
-        [Type:Session]
-        [MinCooldownMs:1000]
-        [MaxCooldownMs:1001]
+        [Type:Timer]
+        [MinCooldownMs:1200000]
+        [MaxCooldownMs:1200001]
         [Conditions:REM_Condition_Static_PopulateStores_REMHQIO]
-        [StartsReady:false]
-        [MaxActions:1]
+        [StartsReady:true]
+        [MaxActions:-1]
         [Actions:REM_Action_Static_PopulateStores_REMHQIO]
 
       </Description>
@@ -65,9 +65,7 @@
 		
 	    [StoreBlocks:Store {SYN}]
       [StoreProfiles:REM_StoreProfile_REMHQIO_SYN]	
-		
-	    [StoreBlocks:Store {FAF}]
-      [StoreProfiles:REM_StoreProfile_REMHQIO_FAF]	
+
 
       [StoreBlocks:Store Civ]
       [StoreProfiles:REM_StoreProfile_REMHQIO_Civ]
@@ -109,12 +107,27 @@
       [CustomDataFiles:REM_Air_Vehicles.xml]
       [CustomDataFiles:REM_Space_Vehicles.xml]  
         
+      [ChangeBlockOwnership:true]
+      [OwnershipBlockNames:Contracts {SYN}]
+      [OwnershipBlockFactions:SHIVAN]
+
+      [OwnershipBlockNames:Contracts {ITC}]
+      [OwnershipBlockFactions:ITC]
+    
 
       [ApplyContractProfiles:true]
       [ClearContractContentsFirst:true]
       [ContractBlocks:Contracts]
       [ContractBlockProfiles:REM_ContractBlockProfile_REMHQIO]
-    
+
+       [ContractBlocks:Contracts {SYN}]
+      [ContractBlockProfiles:SYN_ContractBlockProfile_Civilian]
+
+       [ContractBlocks:Contracts {ITC}]
+      [ContractBlockProfiles:ITC_ContractBlockProfile_Civilian]
+      
+
+
       </Description>
 
     </EntityComponent>

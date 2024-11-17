@@ -13,12 +13,12 @@
         [RivalAI Trigger]
 
         [UseTrigger:true]
-        [Type:Session]
-        [MinCooldownMs:1000]
-        [MaxCooldownMs:1001]
+        [Type:Timer]
+        [MinCooldownMs:1200000]
+        [MaxCooldownMs:1200001]
         [Conditions:CIVILIAN_Condition_Static_PopulateStores_AzurisIO]
-        [StartsReady:false]
-        [MaxActions:1]
+        [StartsReady:true]
+        [MaxActions:-1]
         [Actions:CIVILIAN_Action_Static_PopulateStores_AzurisIO]
 
       </Description>
@@ -65,9 +65,7 @@
 		
 	    [StoreBlocks:Store {SYN}]
       [StoreProfiles:CIVILIAN_StoreProfile_AzurisIO_SYN]	
-		
-	    [StoreBlocks:Store {FAF}]
-      [StoreProfiles:CIVILIAN_StoreProfile_AzurisIO_FAF]	
+
 
       [StoreBlocks:Store Civ]
       [StoreProfiles:CIVILIAN_StoreProfile_AzurisIO_Civ]
@@ -109,12 +107,27 @@
       [CustomDataFiles:CIVILIAN_Air_Vehicles.xml]
       [CustomDataFiles:CIVILIAN_Space_Vehicles.xml]  
         
+      [ChangeBlockOwnership:true]
+      [OwnershipBlockNames:Contracts {SYN}]
+      [OwnershipBlockFactions:SHIVAN]
+
+      [OwnershipBlockNames:Contracts {ITC}]
+      [OwnershipBlockFactions:ITC]
+    
 
       [ApplyContractProfiles:true]
       [ClearContractContentsFirst:true]
       [ContractBlocks:Contracts]
       [ContractBlockProfiles:CIVILIAN_ContractBlockProfile_AzurisIO]
-    
+
+       [ContractBlocks:Contracts {SYN}]
+      [ContractBlockProfiles:SYN_ContractBlockProfile_Civilian]
+
+       [ContractBlocks:Contracts {ITC}]
+      [ContractBlockProfiles:ITC_ContractBlockProfile_Civilian]
+      
+
+
       </Description>
 
     </EntityComponent>

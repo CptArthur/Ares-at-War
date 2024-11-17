@@ -45,7 +45,7 @@
 
         [ShipyardSetup:true]
         [ShipyardConsoleBlockNames:{Any}]
-        [ShipyardProfileNames:FAC-Shipyard-ScrapYard]
+        [ShipyardProfileNames:AaW_Shipyard_MainProfile]
 
 			[UseRandomNameGenerator:true]
 			[RandomGridNamePrefix:(NPC-DoNotDelete)]		
@@ -113,7 +113,7 @@
 
 			[ShipyardSetup:true]
 			[ShipyardConsoleBlockNames:{Any}]
-			[ShipyardProfileNames:FAC-Shipyard-Garage]
+			[ShipyardProfileNames:AaW_Shipyard_MainProfile]
 			
 			
 			[ReplenishSystems:true]
@@ -180,6 +180,12 @@
 			[StaticEncounterPlanetAltitude:-7.52206609228597]
 
 
+
+			[ShipyardSetup:true]
+			[ShipyardConsoleBlockNames:{Any}]
+			[ShipyardProfileNames:AaW_Shipyard_MainProfile]
+			
+			
 			[IgnoreCleanupRules:true]
 
 
@@ -248,6 +254,11 @@
 [StaticEncounterPlanetAltitude:0.544637259336014]
 
 
+			[ShipyardSetup:true]
+			[ShipyardConsoleBlockNames:{Any}]
+			[ShipyardProfileNames:AaW_Shipyard_MainProfile]
+			
+			
 			[IgnoreCleanupRules:true]
 
 			[GridsAreDestructable:false]
@@ -317,7 +328,10 @@
 			[StaticEncounterPlanetDirection:{X:-0.801367066786411 Y:0.523477933370171 Z:0.289450647856656}]
 			[StaticEncounterPlanetAltitude:-9.99269356634613]
 
-
+			[ShipyardSetup:true]
+			[ShipyardConsoleBlockNames:{Any}]
+			[ShipyardProfileNames:AaW_Shipyard_MainProfile]
+			
 
 
 
@@ -359,11 +373,172 @@
 		
 		
 		
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>Basin</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:CIVILIAN]		
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:10000]
+
+		[ForceExactPositionAndOrientation:true]
+		[IgnoreCleanupRules:true]
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+
+		[GridsAreDestructable:false]
+
+		[StaticEncounterCoords:{X:2738157.54045823 Y:-1256858.85231482 Z:-1292858.52607186}]
+		[StaticEncounterForward:{X:-0.215398816088968 Y:0.421407993371578 Z:0.880919209207071}]
+		[StaticEncounterUp:{X:-0.306618000909974 Y:-0.885659087993985 Z:0.34870242524484}]
+
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Crait]
+		[StaticEncounterPlanetDirection:{X:-0.216657629726509 Y:0.423037535629053 Z:0.87982879864789}]
+		[StaticEncounterPlanetAltitude:13.4318165565455]
+
+
+        [ShipyardSetup:true]
+        [ShipyardConsoleBlockNames:{Any}]
+        [ShipyardProfileNames:AaW_Shipyard_MainProfile]
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-DoNotDelete)]		
+			[RandomGridNamePattern:Basin]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]
+			
+				[IgnoreCombatPhase:true]
+			[ReplenishSystems:true]
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="CIVILIAN - Basin">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>CIVILIAN_Basin_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+		</SpawnGroup>		
+		
+		
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>Voss</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:CIVILIAN]		
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:10000]
+
+		[ForceExactPositionAndOrientation:true]
+		[IgnoreCleanupRules:true]
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+
+		[GridsAreDestructable:false]
+
+
+		[StaticEncounterCoords:{X:2962691.88014531 Y:1031337.89800127 Z:1816996.52505869}]
+		[StaticEncounterForward:{X:0.885124191150425 Y:0.361313038741542 Z:-0.293271298076814}]
+		[StaticEncounterUp:{X:-0.460032902707513 Y:0.774411336297766 Z:-0.434346417781946}]
+
+		Optional Tags For Dynamic Planet Spawning:
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Crait]
+		[StaticEncounterPlanetDirection:{X:0.882726698517344 Y:0.366165698416144 Z:-0.294476241873749}]
+		[StaticEncounterPlanetAltitude:6.68607679003617]
+
+
+
+        [ShipyardSetup:true]
+        [ShipyardConsoleBlockNames:{Any}]
+        [ShipyardProfileNames:AaW_Shipyard_MainProfile]
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-DoNotDelete)]		
+			[RandomGridNamePattern:Voss]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]
+			
+				[IgnoreCombatPhase:true]
+			[ReplenishSystems:true]
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="CIVILIAN - Voss">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>CIVILIAN_Voss_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+		</SpawnGroup>			
 		
 		
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		Grid Name:          
+
+Tags For SpawnGroup:
+[StaticEncounterCoords:{X:2904193.46822567 Y:1024058.47685133 Z:1832150.1315701}]
+[StaticEncounterForward:{X:-0.973291945133285 Y:0.132226289894108 Z:0.187667252869292}]
+[StaticEncounterUp:{X:-0.217732806898479 Y:-0.272563631889198 Z:-0.937177406562642}]
+
+Optional Tags For Dynamic Planet Spawning:
+[StaticEncounterUsePlanetDirectionAndAltitude:true]
+[StaticEncounterPlanet:Planet Crait]
+[StaticEncounterPlanetDirection:{X:-0.973193733215151 Y:0.134684813636655 Z:0.186424136330085}]
+[StaticEncounterPlanetAltitude:5.38854466819976]
+
+
 	</SpawnGroups>
 	
 

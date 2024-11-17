@@ -15,7 +15,7 @@ def replace_text_in_files(directory, replacement_text):
                         file_content = file.read()
                     
                     # Replace {FAC} with the replacement text
-                    new_content = file_content.replace("[TriggerGroups:MSB_MilitaryBase_TriggerGroup]", "")
+                    new_content = file_content.replace("FAC-Shipyard-Shipyard", "AaW_Shipyard_MainProfile")
                     
                     # Write the updated content back to the file
                     with open(filepath, 'w', encoding='utf-8') as file:

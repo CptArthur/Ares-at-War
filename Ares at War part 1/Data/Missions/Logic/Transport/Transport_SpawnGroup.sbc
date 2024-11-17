@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>AaW_SpawnGroup_Transport</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+
+		[SpawnConditionsProfiles:AaW_SpawnProfile_RivalAISpawn]
+
+
+
+			
+			[PrefabSpawningMode:RandomSelectedIndexes]
+			
+			[PrefabIndexGroupNames:Main]
+			[PrefabIndexGroupValues:0]
+
+			[PrefabIndexGroupNames:Main]
+			[PrefabIndexGroupValues:1]
+
+			[PrefabIndexGroupNames:Main]
+			[PrefabIndexGroupValues:2]
+
+			[PrefabIndexGroupNames:Main]
+			[PrefabIndexGroupValues:3]
+
+			[PrefabIndexGroupNames:Main]
+			[PrefabIndexGroupValues:4]
+
+			[PrefabIndexGroupNames:Main]
+			[PrefabIndexGroupValues:5]			
+			
+
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+		
+		
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+
+				<Prefab SubtypeId="AaW_Transport_Cargo">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>AaW_Transport_Behavior</Behaviour>
+				</Prefab>
+	
+			</Prefabs>			
+		</SpawnGroup>
+		
+
+	</SpawnGroups>
+</Definitions>

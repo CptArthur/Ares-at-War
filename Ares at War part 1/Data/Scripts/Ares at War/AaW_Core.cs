@@ -35,6 +35,8 @@ namespace AresAtWar.SessionCore
         public static int counter = 0;
         public static int counter2 = 0;
         public static int counter3 = 0;
+        public static int counter4 = 0;
+
         public bool restart = false;
         public bool hasrun = false;
         public static string ModLocation;
@@ -115,10 +117,10 @@ namespace AresAtWar.SessionCore
                 }
 
 
-                MESApi.RegisterCustomSpawnCondition(true, "AaW", CustomSpawnCodtions.AaW);
-                MESApi.RegisterCustomSpawnCondition(true, "BylenRing", CustomSpawnCodtions.BylenRing);
-                MESApi.RegisterCustomSpawnCondition(true, "AgarisDeepOcean", CustomSpawnCodtions.AgarisDeepOcean);
-                MESApi.RegisterCustomSpawnCondition(true, "AgarisLand", CustomSpawnCodtions.AgarisLand);
+                MESApi.RegisterCustomSpawnCondition(true, "AaW", CustomSpawnConditions.AaW);
+                MESApi.RegisterCustomSpawnCondition(true, "BylenRing", CustomSpawnConditions.BylenRing);
+                MESApi.RegisterCustomSpawnCondition(true, "AgarisDeepOcean", CustomSpawnConditions.AgarisDeepOcean);
+                MESApi.RegisterCustomSpawnCondition(true, "AgarisLand", CustomSpawnConditions.AgarisLand);
 
                 MESApi.RegisterCustomAction(true, "FireSuperWeapon", CustomActions.FireSuperWeapon);
                 MESApi.RegisterCustomAction(true, "DestroyTheSystem", CustomActions.DestroyTheSystem);
@@ -175,7 +177,7 @@ namespace AresAtWar.SessionCore
             if (counter3 > 600)
             {
                 CustomMissionMapping.ActiveDestinations.Clear();
-
+                CustomMissionMapping.ActiveContracts.Clear();
 
                 counter3 = 0;
             }
@@ -183,6 +185,7 @@ namespace AresAtWar.SessionCore
 
 
 
+            /*
             if (MyAPIGateway.Session.IsServer)
             {
                 if (timer == 70)
@@ -201,7 +204,7 @@ namespace AresAtWar.SessionCore
             }
             
             timer += 1;
-
+            */
 
         }
 

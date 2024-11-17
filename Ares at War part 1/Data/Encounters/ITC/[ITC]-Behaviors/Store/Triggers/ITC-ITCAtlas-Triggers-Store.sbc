@@ -13,12 +13,12 @@
         [RivalAI Trigger]
 
         [UseTrigger:true]
-        [Type:Session]
-        [MinCooldownMs:1000]
-        [MaxCooldownMs:1001]
+        [Type:Timer]
+        [MinCooldownMs:1200000]
+        [MaxCooldownMs:1200001]
         [Conditions:ITC_Condition_Static_PopulateStores_ITCAtlas]
-        [StartsReady:false]
-        [MaxActions:1]
+        [StartsReady:true]
+        [MaxActions:-1]
         [Actions:ITC_Action_Static_PopulateStores_ITCAtlas]
 
       </Description>
@@ -65,9 +65,7 @@
 		
 	    [StoreBlocks:Store {SYN}]
       [StoreProfiles:ITC_StoreProfile_ITCAtlas_SYN]	
-		
-	    [StoreBlocks:Store {FAF}]
-      [StoreProfiles:ITC_StoreProfile_ITCAtlas_FAF]	
+
 
       [StoreBlocks:Store Civ]
       [StoreProfiles:ITC_StoreProfile_ITCAtlas_Civ]
@@ -109,12 +107,27 @@
       [CustomDataFiles:ITC_Air_Vehicles.xml]
       [CustomDataFiles:ITC_Space_Vehicles.xml]  
         
+      [ChangeBlockOwnership:true]
+      [OwnershipBlockNames:Contracts {SYN}]
+      [OwnershipBlockFactions:SHIVAN]
+
+      [OwnershipBlockNames:Contracts {ITC}]
+      [OwnershipBlockFactions:ITC]
+    
 
       [ApplyContractProfiles:true]
       [ClearContractContentsFirst:true]
       [ContractBlocks:Contracts]
       [ContractBlockProfiles:ITC_ContractBlockProfile_ITCAtlas]
-    
+
+       [ContractBlocks:Contracts {SYN}]
+      [ContractBlockProfiles:SYN_ContractBlockProfile_Civilian]
+
+       [ContractBlocks:Contracts {ITC}]
+      [ContractBlockProfiles:ITC_ContractBlockProfile_Civilian]
+      
+
+
       </Description>
 
     </EntityComponent>

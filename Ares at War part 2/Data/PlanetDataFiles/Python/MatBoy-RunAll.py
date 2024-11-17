@@ -200,7 +200,7 @@ Blue = False
 
 
 sides = ["back","down","front","left","right","up"]
-PlanetName = "Planet Lezuno" #Als Agaris of Thora4 dan moet (208,208,208) aan
+PlanetName = "Planet Lorus" #Als Agaris of Thora4 dan moet (208,208,208) aan
 usebasicoremap = False
 
 location = f"D:/SEMods-Github/Ares-at-War-part-1/Ares at War part 2/Data/PlanetDataFiles/{PlanetName}/"

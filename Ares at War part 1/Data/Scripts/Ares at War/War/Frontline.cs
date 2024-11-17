@@ -38,7 +38,8 @@ namespace AresAtWar.War
 
 
 
-
+            public Vector3D NodeACoords;
+            public Vector3D NodeBCoords;
             public Vector3D MiddleCoords;
 
             private bool _refreshActive;
@@ -218,14 +219,14 @@ namespace AresAtWar.War
                             if (_score > 33)
                             {
                                 Initiative = InitiativeState.Positive;
-                                GPS gps2 = new GPS(GPSName, $"{_nodeB.Faction.Tag} has the initiative and is advancing on {_nodeA.Faction.Tag} {_nodeA.FancyName} ", _nodeA.Location, _nodeB.Faction.Color);
+                                GPS gps2 = new GPS(GPSName, $"{_nodeB.Faction.Tag} has the initiative and is advancing on {_nodeA.Faction.Tag} {_nodeA.FancyName} ", NodeACoords, _nodeB.Faction.Color);
                                 GPSManager.AllActiveGPS.Add(gps2);
                                 MyAPIGateway.Utilities.ShowMessage("FrontLine Updates", $"{_nodeB.Faction.Tag} has the initiative and is advancing on {_nodeA.Faction.Tag} {_nodeA.FancyName}");
                             }
                             // If initiative is Neutral and score is less than -30, set initiative to Negative
                             else if (_score < -33)
                             {
-                                GPS gps3 = new GPS(GPSName, $"{_nodeA.Faction.Tag} has the initiative and is advancing on {_nodeB.Faction.Tag} {_nodeB.FancyName} ", _nodeB.Location, _nodeA.Faction.Color);
+                                GPS gps3 = new GPS(GPSName, $"{_nodeA.Faction.Tag} has the initiative and is advancing on {_nodeB.Faction.Tag} {_nodeB.FancyName} ", NodeBCoords, _nodeA.Faction.Color);
                                 GPSManager.AllActiveGPS.Add(gps3);
                                 MyAPIGateway.Utilities.ShowMessage("FrontLine Updates", $"{_nodeA.Faction.Tag} has the initiative and is advancing on {_nodeB.Faction.Tag} {_nodeB.FancyName}");
 
@@ -282,10 +283,80 @@ namespace AresAtWar.War
 
                 Refresh();
 
+            }
+
+            public Frontline(string nodeAId, string nodeBId)
+            {
+                // Ensure nodeAId is alphabetically before nodeBId
+                if (string.Compare(nodeAId, nodeBId, StringComparison.Ordinal) > 0)
+                {
+                    // Swap nodeAId and nodeBId if nodeAId is later in the alphabet
+                    var temp = nodeAId;
+                    nodeAId = nodeBId;
+                    nodeBId = temp;
+                }
+
+                Id = "FrontLine" + nodeAId + nodeBId;
+                NodeAId = nodeAId;
+                NodeBId = nodeBId;
 
 
+
+                //MiddleCoords = middleCoords;
+
+                _nodeA = _nodes.FirstOrDefault(n => n.Id == NodeAId);
+                _nodeB = _nodes.FirstOrDefault(n => n.Id == NodeBId);
+                GPSName = "FrontLine: " + _nodeA.Faction.Tag + " - " + _nodeB.Faction.Tag;
+
+                if (_nodeA.SpaceNode == false && _nodeB.SpaceNode == false)
+                {
+                    //both on planets
+
+                    NodeACoords = _nodeA.Location;
+                    NodeBCoords = _nodeB.Location;
+
+
+
+
+                    // Calculate the middle coordinates as the average of the two
+                    var tempMiddleCoords = new Vector3D(
+                        (NodeACoords.X + NodeBCoords.X) / 2,
+                        (NodeACoords.Y + NodeBCoords.Y) / 2,
+                        (NodeACoords.Z + NodeBCoords.Z) / 2
+                    );
+
+                    var planet = MyGamePruningStructure.GetClosestPlanet(tempMiddleCoords);
+
+                    var closestpointtosurface = planet.GetClosestSurfacePointGlobal(tempMiddleCoords);
+                    var localUp = (closestpointtosurface - planet.PositionComp.GetPosition()).Normalized();
+
+                    MiddleCoords = localUp * 250 + closestpointtosurface;
+
+
+                }
+                else
+                {
+                    NodeACoords = _nodeA.Location;
+                    NodeBCoords = _nodeB.Location;
+
+
+
+
+                    // Calculate the middle coordinates as the average of the two
+                    MiddleCoords = new Vector3D(
+                        (NodeACoords.X + NodeBCoords.X) / 2,
+                        (NodeACoords.Y + NodeBCoords.Y) / 2,
+                        (NodeACoords.Z + NodeBCoords.Z) / 2
+                    );
+                }
+
+
+
+                Refresh();
 
             }
+
+
 
             public void Deactivate(bool changeActivity = true)
             {

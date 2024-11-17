@@ -140,11 +140,11 @@ def run():
 #Planet = "Planet Thora 4"
 #filename = "thora4" 
 
-Planet = "Planet Lezuno"
-filename = "lezuno" 
+#Planet = "Planet Lezuno"
+#filename = "lezuno" 
 
-#Planet = "Planet Lorus"
-#filename = "lorus" 
+Planet = "Planet Lorus"
+filename = "lorus" 
 
 #Planet = "Planet Agaris"
 #filename = "agaris" 

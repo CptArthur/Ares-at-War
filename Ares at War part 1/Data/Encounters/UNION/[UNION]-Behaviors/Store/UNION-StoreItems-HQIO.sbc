@@ -80,7 +80,34 @@
     </EntityComponent>
   
     
+    
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>UNION_StoreProfile_HQIO_Tool</SubtypeId>
+      </Id>
+      <Description>
 
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_AHEIO.xml]
+        
+        [MinOfferItems:5]
+        [MaxOfferItems:20]
+        [MinOrderItems:5]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+
+        [Offers:Tool/HandDrill2Item] 
+        [Offers:Tool/HandDrill3Item] 
+        [Offers:Tool/AngleGrinder2Item] 
+        [Offers:Tool/AngleGrinder3Item] 
+        [Offers:Tool/Welder2Item] 
+        [Offers:Tool/Welder3Item] 
+      </Description>
+
+    </EntityComponent>
     
     
     
@@ -88,6 +115,8 @@
     
     
     
+
+
 
     
     
@@ -125,15 +154,14 @@
         [MinContracts:5]
         [MaxContracts:15]
         
-        [MissionIds:AaW_Mission_Transport] 
-        [MissionIds:AaW_Mission_Transport] 
-        [MissionIds:AaW_Mission_Transport] 
+        [MissionIds:AaW_Mission_ProcCIVILIAN] 
+        [MissionIds:AaW_Mission_ProcCIVILIAN] 
+        [MissionIds:AaW_Mission_ProcCIVILIAN] 
 
         
       </Description>
     </EntityComponent>	    
 
-    
  
   </EntityComponents>
 </Definitions>
