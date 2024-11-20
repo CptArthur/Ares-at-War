@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+<!--
+Spawn everywhere
+[SpawnConditionsProfiles:AaW_SpawnProfile_RivalAISpawn]
+-->
+
+	
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_RivalAISpawn</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Spawn Conditions]
+
+		[SpaceCargoShip:false]
+		[LunarCargoShip:false]
+		[SpaceRandomEncounter:false]
+		[AtmosphericCargoShip:false]
+		[PlanetaryInstallation:false]
+		
+		[IgnoreCombatPhase:true]
+		[ZoneConditions:ZoneCondition_ZoneAaW]	
+		
+		[RivalAiAnySpawn:true]
+		[FactionOwner:SPRT]	
+
+	
+		[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+
+    </EntityComponent>		
+
+	
+	
+	
+    
+  </EntityComponents>
+</Definitions>

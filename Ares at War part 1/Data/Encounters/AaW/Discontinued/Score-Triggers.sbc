@@ -1,0 +1,597 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!-- 
+
+
+
+
+
+
+[Triggers:MSB_Common_Triggers_SendScore]
+[Triggers:MSB_Common_Trigger_AddScoreToTotalScore]
+[Triggers:MSB_Common_Trigger_LeaderDead]
+[Triggers:MSB_Common_Trigger_IsNotStrongest]
+[Triggers:MSB_Common_Trigger_OtherIsLeader]
+[Triggers:MSB_Common_Trigger_MakeLeader]
+[Triggers:MSB_Common_Trigger_MakeSubordinate]
+
+
+MSB_Common_Trigger_DebugMentionRetreat
+Variables
+TotalScore: 0
+
+Leader:false
+Subordinate:false
+
+
+[SetBooleansTrue:Subordinate]
+[SetBooleansFalse:Leader]
+[SetBooleansTrue:InGroup]
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Common_Triggers_SendScore</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Timer]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[MinCooldownMs:0]
+	[MaxCooldownMs:2001]
+	
+	[Conditions:MSB_Common_Condition_SendScore]
+
+	  [Actions:MSB_Common_Action_SendScore]	  
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+//Do not send score if it is a cargoship or station.
+		
+		//Only send if task force?
+		
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Common_Condition_SendScore</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+		
+	[CheckFalseBooleans:true]
+	[FalseBooleans:dummy]
+
+      </Description>
+    </EntityComponent>	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Common_Action_SendScore</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Action]
+	
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:MSB_Common_Command_SendScore]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Common_Command_SendScore</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Command]
+
+	[CommandCode:SendScore]
+	
+	[MatchSenderReceiverOwners:true]
+	[SingleRecipient:false]
+	[IgnoreAntennaRequirement:true]
+	[IgnoreReceiverAntennaRequirement:true]
+	[SendScoreValue:true]
+	[Radius:2500]
+	
+	</Description>
+    </EntityComponent>
+	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Trigger_AddScoreToTotalScore</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:SendScore]
+		[AllowUniqueCommandCodeSenderOnly:true]
+
+			
+			
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:MSB_Common_Action_AddScoreToTotalScore]
+      </Description>
+
+    </EntityComponent>
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Action_AddScoreToTotalScore</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[IncreaseCounters:TotalScore]
+	[IncreaseCountersUseCommandScore:true]
+	
+
+	[SetBooleansTrue:InGroup]
+
+      </Description>
+	  
+	  
+	  
+    </EntityComponent>	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Trigger_DebugMentionRetreat</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:LeaderDead]
+		[AllowUniqueCommandCodeSenderOnly:false]
+		
+
+		
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:MSB_Common_Action_DebugMentionRetreat]
+		
+      </Description>
+
+    </EntityComponent>
+
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Action_DebugMentionRetreat</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	
+      [UseChatBroadcast:true]
+      [ChatData:MSB_Common_Chat_DebugMentionRetreat]		
+
+      </Description>
+
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Common_Chat_DebugMentionRetreat</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Green]
+      
+      [ChatMessages:Retreating!]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+      </Description>
+      </EntityComponent>    	
+	
+	
+
+
+MSB_Common_Trigger_LeaderDead -> Leader management:
+	
+	
+MSB_Common_Trigger_IsNotStrongest -> Fail
+MSB_Common_Trigger_OtherIsLeader -> Fail
+
+	
+MSB_Common_Trigger_MakeLeader -> LeaderTriggers	
+	
+	
+
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Trigger_LeaderDead</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:LeaderDead]
+		[AllowUniqueCommandCodeSenderOnly:false]
+		
+
+		
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:MSB_Common_Action_LeaderDead]
+		
+      </Description>
+
+    </EntityComponent>
+
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Action_LeaderDead</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[SetBooleansFalse:IsNotStrongest]
+	[SetBooleansFalse:Leader]
+	[SetBooleansFalse:Subordinate]
+	
+	[EnableTriggers:true]
+	[EnableTriggerNames:MSB_Common_Trigger_IsNotStrongest]
+	[EnableTriggerNames:MSB_Common_Trigger_MakeLeader]	
+	[EnableTriggerNames:MSB_Common_Trigger_OtherIsLeader]
+	
+	[ResetCooldownTimeOfTriggers:true]
+	[ResetTriggerCooldownNames:MSB_Common_Trigger_MakeLeader]
+
+
+	[DisableTriggers:true]
+	[DisableTriggerTags:Subordinate]
+	[DisableTriggerTags:Leader]
+
+
+
+	[ChangeBehaviorSubclass:true]
+	[NewBehaviorSubclass:CargoShip]
+	
+      [UseChatBroadcast:true]
+      [ChatData:MSB_Common_Chat_LeaderDead]		
+
+      </Description>
+
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Common_Chat_LeaderDead</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Green]
+      
+      [ChatMessages:Oh no leader is dead. Switching to CargoShip]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+      </Description>
+      </EntityComponent>    
+
+
+
+
+
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Trigger_IsNotStrongest</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:SendScore]
+		[AllowUniqueCommandCodeSenderOnly:false]
+		
+		[Conditions:MSB_Common_Condition_IsNotStrongest]
+		
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:MSB_Common_Action_FailMakeLead]
+		
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Common_Condition_IsNotStrongest</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	[CheckCustomCounters:true]
+
+	[CustomCounters:{CommandScore}]
+	[CustomCountersTargets:0]
+
+
+	[CounterCompareTypes:Greater]
+
+	[CustomCountersTargetOverrideSelfScore:true]
+      </Description>
+    </EntityComponent>
+			
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Trigger_OtherIsLeader</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:OtherIsLeader]
+		[AllowUniqueCommandCodeSenderOnly:false]
+	
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:MSB_Common_Action_FailMakeLead]
+		
+      </Description>
+    </EntityComponent>
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Action_FailMakeLead</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[SetBooleansTrue:IsNotStrongest]
+
+	[DisableTriggers:true]
+	[DisableTriggerNames:MSB_Common_Trigger_OtherIsLeader]
+	[DisableTriggerNames:MSB_Common_Trigger_IsNotStrongest]	
+	[DisableTriggerNames:MSB_Common_Trigger_MakeLeader]	
+
+      </Description>
+    </EntityComponent>		
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Trigger_MakeLeader</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+		
+        [MinCooldownMs:2500]
+        [MaxCooldownMs:5001]
+        [StartsReady:false]
+		
+		[Conditions:MSB_Common_Condition_IsStrongestInGroup]
+		[ConditionCheckResetsTimer:true]
+
+
+        [MaxActions:-1]
+        [Actions:MSB_Common_Action_MakeLeader]
+      </Description>
+    </EntityComponent>
+	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Common_Condition_IsStrongestInGroup</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	[CheckFalseBooleans:True]
+	[FalseBooleans:IsNotStrongest]
+	
+	[CheckTrueBooleans:True]
+	[TrueBooleans:InGroup]	
+
+      </Description>
+    </EntityComponent>
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Action_MakeLeader</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Action]
+
+
+	[DisableTriggers:true]
+	[DisableTriggerNames:MSB_Common_Trigger_IsNotStrongest]
+	[DisableTriggerNames:MSB_Common_Trigger_MakeLeader]	
+	[DisableTriggerNames:MSB_Common_Trigger_OtherIsLeader]	
+	
+	[SetBooleansTrue:Leader]
+
+	[EnableTriggers:true]
+	[EnableTriggerTags:Leader]
+
+	[ResetCooldownTimeOfTriggers:true]
+	[ResetTriggerCooldownTags:Leader]
+	
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:MSB_Common_Command_OtherIsLeader]
+      </Description>
+    </EntityComponent>
+	
+	
+	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Common_Command_OtherIsLeader</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Command]
+
+	[CommandCode:OtherIsLeader]
+	
+	[MatchSenderReceiverOwners:true]
+	[SingleRecipient:false]
+	[IgnoreAntennaRequirement:true]
+	[IgnoreReceiverAntennaRequirement:true]
+	[SendScoreValue:true]
+	[Radius:2500]
+	
+	</Description>
+    </EntityComponent>
+	
+
+	
+	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Trigger_MakeSubordinate</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:NewLeader]
+		[AllowUniqueCommandCodeSenderOnly:false]
+		
+
+		
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:MSB_Common_Action_MakeSubordinate]
+		
+      </Description>
+
+    </EntityComponent>
+
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Action_MakeSubordinate</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[DisableTriggers:true]
+	[DisableTriggerNames:MSB_Common_Trigger_IsNotStrongest]
+	[DisableTriggerNames:MSB_Common_Trigger_MakeLeader]	
+	[DisableTriggerNames:MSB_Common_Trigger_OtherIsLeader]	
+	
+	[SetBooleansTrue:Subordinate]
+
+	[EnableTriggers:true]
+	[EnableTriggerTags:Subordinate]
+
+	[ResetCooldownTimeOfTriggers:true]
+	[ResetTriggerCooldownTags:Subordinate]
+	
+
+		
+		
+      </Description>
+    </EntityComponent>			
+	
+	
+	
+	-->
+	
+	
+	
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>GC_SpawnGroup_LightTaskForce</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+		
+			[FactionOverride:GC]
+			
+			[SpawnConditionsProfiles:AaW_SpawnProfile_Debug_AtmosphericCargoShip]
+		
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+
+				<Prefab SubtypeId="GC-Fighter-MK3">
+					<Position>
+						<X>-100.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>GC-OffensiveEscortDrone-Behavior</Behaviour>
+				</Prefab>
+
+				<Prefab SubtypeId="GC-Fighter-MK3">
+					<Position>
+						<X>100.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>GC-OffensiveEscortDrone-Behavior</Behaviour>
+				</Prefab>
+				
+				
+				<Prefab SubtypeId="GC-Gunship-Mk1">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>GC-GunshipTaskLeader-Behavior</Behaviour>
+				</Prefab>
+				
+
+
+
+				
+			</Prefabs>			
+		</SpawnGroup>	
+
+
+	</SpawnGroups>
+</Definitions>
