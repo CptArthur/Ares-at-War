@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using AresAtWar.API;
+using AresAtWar.Managers;
 using Sandbox.Definitions;
 using Sandbox.Game;
 using Sandbox.Game.Entities;
 using Sandbox.ModAPI;
 using VRage.Game;
 using VRage.Game.Components;
+using VRage.Game.ModAPI;
 using VRage.Utils;
 using VRageMath;
 namespace AresAtWar.SessionCore
@@ -44,9 +46,19 @@ namespace AresAtWar.SessionCore
         {
             var position = new Vector3D(-1725718.78, 1493440.69, -698321.45);
             MyVisualScriptLogicProvider.CreateParticleEffectAtPosition("PurgeArrival", position);
+
+
         }
 
+        public static void PurgeGravityWeapon(params object[] arguments)
+        {
+            var position = (Vector3D)arguments[0];
 
+            new Gravity(position, 60000);
+
+            //MyVisualScriptLogicProvider.CreateParticleEffectAtPosition("MonolithAwaken", position);
+
+        }
 
 
     }

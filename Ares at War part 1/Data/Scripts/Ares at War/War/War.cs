@@ -19,7 +19,7 @@ using VRage.Game.ObjectBuilders.Definitions;
 using VRageMath;
 using Sandbox.Game;
 using System.Drawing;
-using AresAtWar.GPSManagers;
+using AresAtWar.Managers;
 using AresAtWar.Logging;
 using AresAtWar.Configuration;
 using Sandbox.ModAPI;
@@ -97,7 +97,7 @@ namespace AresAtWar.War
 
             var carcosaNode = new Node("Carcosa", "Sector Carcosa", UNION, new Vector3D(-3713255, -1328026, -2555371), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Urban);
             var carcosa = new StaticEncounter(carcosaNode.Id, "Carcosa", "CIVILIAN", new Vector3D(-3705652.28656772, -1337580.22062336, -2554087.27439561), false, new List<string>() { "Settlement" });
-            var carcosaEncounter2 = new StaticEncounter(carcosaNode.Id, "GC_CarcosaBase", "GC", new Vector3D(-3707838.9730467, -1342020.98487312, -2562220.14979517), true, new List<string>() { "MilitaryBase" });
+            //var carcosaEncounter2 = new StaticEncounter(carcosaNode.Id, "GC_CarcosaBase", "GC", new Vector3D(-3707838.9730467, -1342020.98487312, -2562220.14979517), true, new List<string>() { "MilitaryBase" });
 
 
             // Nodes and StaticEncounters for AHE and related locations

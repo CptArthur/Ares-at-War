@@ -1,0 +1,305 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+
+     
+	 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventCondition-Purge-Defeated</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Condition]
+		
+	[CheckTrueBooleans:true]
+	[TrueBooleans:PurgeActive]	  
+      </Description>
+  
+    </EntityComponent>	
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-Purge-FireSuperWeapon-1</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UniqueEvent:true]
+		[UseEvent:true]
+		[ConditionIds:AaW-EventCondition-Purge-Defeated]
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:1500]
+		[ActionIds:AaW-EventAction-Purge-FireSuperWeapon-Announce]
+		[ActionIds:AaW-EventAction-Purge-FireSuperWeapon-2]
+		[ActionIds:AaW-EventAction-Purge-FireSuperWeapon-1]	
+		[ActionIds:AaW-EventAction-Purge-FireSuperWeapon]
+		[ActionIds:AaW-EventAction-Purge-FireSuperWeaponChat]
+      </Description>
+	</EntityComponent>	
+ 
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-FireSuperWeapon-Announce</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+	
+		[UseChatBroadcast:true]
+		[ChatData:AaW-EventChat-Purge-FireSuperWeapon-Announce]
+	
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-Purge-FireSuperWeapon-Announce</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Red]
+      [Author:Purge]
+        
+      [ChatMessages:Firing Superweapon in 3]
+      [BroadcastChatType:Chat]
+      [ChatAudio:laser-of-doom]  
+   	  
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-FireSuperWeapon-2</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+	
+		[UseChatBroadcast:true]
+		[ChatData:AaW-EventChat-Purge-FireSuperWeapon-2]
+
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-Purge-FireSuperWeapon-2</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Red]
+      [Author:Purge]
+        
+      [ChatMessages:2]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+   	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-FireSuperWeapon-1</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+	
+		[UseChatBroadcast:true]
+		[ChatData:AaW-EventChat-Purge-FireSuperWeapon-1]
+
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-Purge-FireSuperWeapon-1</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Red]
+      [Author:Purge]
+        
+      [ChatMessages:1]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+   	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+
+ 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-FireSuperWeapon</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+	
+		[ActivateCustomAction:true]
+		[CustomActionName:PurgeGravityWeapon]
+		[CustomActionArgumentsVector3D:{X:-2609812.67049465 Y:-1056266.49472556 Z:-4738708.18098562}]	
+
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-FireSuperWeaponChat</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+	
+		[UseChatBroadcast:true]
+		[ChatData:AaW-EventChat-Purge-FireSuperWeaponChat]
+	
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventChat-Purge-FireSuperWeaponChat</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+      [Color:Red]
+      [Author:Purge]
+        
+      [ChatMessages:Massive subspace distortion detected!]
+      [BroadcastChatType:Notify]
+      [ChatAudio:]  
+   	  
+      </Description>
+      
+    </EntityComponent>		
+
+
+
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-Event-Purge-DestroyTheSystem</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:8000]
+		[MaxCooldownMs:8001]
+
+		
+		[ConditionIds:AaW-EventCondition-Purge-EndGame]
+
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:3000]
+		
+		[ActionIds:AaW-EventAction-Purge-DestroyTheSystem]
+      </Description>
+	</EntityComponent>	 
+	
+	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW-EventAction-Purge-DestroyTheSystem</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Action]
+	
+		[ActivateCustomAction:true]
+		[CustomActionName:DestroyTheSystem]
+
+      </Description>
+      
+    </EntityComponent>		
+	
+  </EntityComponents>
+</Definitions>

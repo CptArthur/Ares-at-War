@@ -9,7 +9,7 @@ using VRage.Game.Components;
 using VRage.Utils;
 using VRageMath;
 using ProtoBuf;
-using AresAtWar.GPSManagers;
+using AresAtWar.Managers;
 using System.Linq;
 
 namespace AresAtWar.War

@@ -12,7 +12,7 @@ using VRageMath;
 using ProtoBuf;
 
 
-namespace AresAtWar.GPSManagers
+namespace AresAtWar.Managers
 {
 	public class GPSManager
     {

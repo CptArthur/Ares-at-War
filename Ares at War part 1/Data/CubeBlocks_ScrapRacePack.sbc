@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <CubeBlocks>
+        <Definition xsi:type="MyObjectBuilder_ExhaustBlockDefinition">
+            <Id>
+                <TypeId>ExhaustBlock</TypeId>
+                <SubtypeId>LargeExhaustPipeAaW</SubtypeId>
+            </Id>
+            <DisplayName>DisplayName_Block_ExhaustPipe AaW</DisplayName>
+            <Icon>Textures\GUI\Icons\Cubes\ExhaustPipe_Racing_Large.dds</Icon>
+            <Description>Description_ExhaustPipe</Description>
+            <CubeSize>Large</CubeSize>
+            <GuiVisible>false</GuiVisible>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="1" y="1" z="1" />
+            <Model>Models\Cubes\Large\ExhaustPipe_Racing.mwm</Model>
+            <ModelOffset x="0" y="0" z="0" />
+            <Components>
+                <Component Subtype="SteelPlate" Count="5" />
+                <Component Subtype="Construction" Count="10" />
+                <Component Subtype="LargeTube" Count="2" />
+                <Component Subtype="Motor" Count="4" />
+                <Component Subtype="SteelPlate" Count="10" />
+            </Components>
+            <CriticalComponent Subtype="Motor" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Bottom" StartX="0.1" StartY="0.1" EndX="0.9" EndY="0.9" Default="true" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\ExhaustPipe_Racing_Construction1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\ExhaustPipe_Racing_Construction2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\ExhaustPipe_Racing_Construction3.mwm" />
+            </BuildProgressModels>
+            <BlockPairName>ExhaustPipe</BlockPairName>
+            <MirroringX>Y</MirroringX>
+            <MirroringY>X</MirroringY>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>14</BuildTimeSeconds>
+            <PCU>50</PCU>
+            <IsAirTight>false</IsAirTight>
+            <AvailableEffects>
+                <string>BigGiantLaserBeam</string>
+            </AvailableEffects>
+            <RequiredPowerInput>0.0002</RequiredPowerInput>
+            <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+            <DamagedSound>ParticleElectrical</DamagedSound>
+            <DLC>ScrapRace</DLC>
+        </Definition>
+
+
+
+    </CubeBlocks>
+</Definitions>

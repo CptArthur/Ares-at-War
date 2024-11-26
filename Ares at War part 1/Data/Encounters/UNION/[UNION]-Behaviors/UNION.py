@@ -13,7 +13,7 @@ def replace_text_in_files(directory, replacement_text):
                     file_content = file.read()
                 
                 # Replace {FAC} with the replacement text
-                new_content = file_content.replace("AHE", replacement_text)
+                new_content = file_content.replace("{FAC}", replacement_text)
                 
                 # Write the updated content back to the file
                 with open(filepath, 'w') as file:

@@ -19,7 +19,7 @@ using VRage.Game.ModAPI;
 using Sandbox.Game.Entities.Planet;
 using VRage.ModAPI;
 using AresAtWar.Logging;
-using AresAtWar.GPSManagers;
+using AresAtWar.Managers;
 using System.Security.Cryptography;
 
 namespace AresAtWar.SessionCore
@@ -56,13 +56,17 @@ namespace AresAtWar.SessionCore
             ModLocation= ModContext.ModPath;
 
             MyAPIGateway.Utilities.SetVariable<bool>("AaWWorldStartUp", false);
-
-
             MyAPIGateway.Utilities.SetVariable<bool>("ResetCapturableController", false);
 
-            AaWMain.CheckValues();
+            //AaWMain.CheckValues();
 
             SyncManager.Setup();
+            GPSManager.Setup();
+            GravityManager.Setup();
+
+
+
+
             CustomMissionMapping.ActiveDestinations = new List<string>();
 
 
@@ -125,6 +129,7 @@ namespace AresAtWar.SessionCore
                 MESApi.RegisterCustomAction(true, "FireSuperWeapon", CustomActions.FireSuperWeapon);
                 MESApi.RegisterCustomAction(true, "DestroyTheSystem", CustomActions.DestroyTheSystem);
                 MESApi.RegisterCustomAction(true, "PurgeArrivalEffect", CustomActions.PurgeArrivalEffect);
+                MESApi.RegisterCustomAction(true, "PurgeGravityWeapon", CustomActions.PurgeGravityWeapon);
                 MESApi.RegisterCustomAction(true, "AaW-WarNextRound", WarSim.SimulateWarRound);
 
                 MESApi.RegisterCustomMissionMapping(true, "AaW-MissionMapping", CustomMissionMapping.InternalMissionMapping);
@@ -147,6 +152,12 @@ namespace AresAtWar.SessionCore
         {
 
 
+            //Gravity check
+            for (int i = GravityManager.AllActiveGravity.Count - 1; i >= 0; i--)
+            {
+                GravityManager.AllActiveGravity[i].Update();
+            }
+
             if (counter > 60)
             {
                 Logger.ProcessQueue();
@@ -158,19 +169,16 @@ namespace AresAtWar.SessionCore
             //Every 9 seconds
             if (counter2 > 540)
             {
-
-
-
-
                 //GPS check
                 for (int i = 0; i < GPSManager.AllActiveGPS.Count; i++)
                 {
                     GPSManager.AllActiveGPS[i].Update();
                     counter2 = 0;
-                    return;
+
                 }
                 counter2 = 0;
             }
+
             counter2++;
 
 
@@ -182,6 +190,8 @@ namespace AresAtWar.SessionCore
                 counter3 = 0;
             }
             counter3++;
+
+
 
 
 
@@ -213,11 +223,28 @@ namespace AresAtWar.SessionCore
 
             SyncManager.Close();
 
+
+
+
+
             MyVisualScriptLogicProvider.RespawnShipSpawned -= RespawnShipSpawned;
             MyAPIGateway.Players.ItemConsumed -= Players_ItemConsumed;
 
             Instance = null; // important for avoiding this object to remain allocated in memory
         }
+
+
+        public override void SaveData()
+        {
+            // executed AFTER world was saved
+
+            GPSManager.SaveData();
+            GravityManager.SaveData();
+
+
+        }
+
+
 
 
 
