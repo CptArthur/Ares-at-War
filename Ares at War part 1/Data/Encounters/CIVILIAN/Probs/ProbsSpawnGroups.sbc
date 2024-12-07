@@ -63,6 +63,76 @@
 		</SpawnGroup>	
 
 
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>CIVILIAN_NorthernBridge</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:CIVILIAN]		
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:4500]
+
+			[ForceExactPositionAndOrientation:true]
+			[CutVoxelsAtAirtightCells:true]
+
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-AAW)]
+			[RandomGridNamePattern:Bridge]
+			[ReplaceAntennaNameWithRandomizedName:Southern Bridge]
+
+
+			[StaticEncounterCoords:{X:-3702866.14069994 Y:-1301256.50047804 Z:-2541200.80913542}]
+			[StaticEncounterForward:{X:-0.56665812747283 Y:0.523469437229609 Z:-0.636300491006807}]
+			[StaticEncounterUp:{X:-0.674682144055487 Y:0.148509074187295 Z:0.723013872188303}]
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Agaris]
+			[StaticEncounterPlanetDirection:{X:-0.67481022813063 Y:0.147819272834471 Z:0.723035696621526}]
+			[StaticEncounterPlanetAltitude:0.728318415523972]
+
+
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:CIVILIAN_NorthernBridgeDestroyed]			
+			[ZoneConditions:ZoneCondition_ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="Northern Bridge">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour></Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>	
+
+
+
+
+
+
+
+
+
+
+
 	</SpawnGroups>
 	
 </Definitions>
