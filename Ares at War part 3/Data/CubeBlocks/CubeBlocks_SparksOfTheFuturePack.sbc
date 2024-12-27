@@ -11,9 +11,9 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>SmallBlockSmallThrustSciFi</SubtypeId>
             </Id>
-            <DisplayName>DisplayName_Block_SmallThrustITC</DisplayName>
+            <DisplayName>StarLight Ion Thruster</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\Small_IonThrusterSmall_SciFi.dds</Icon>
-            <Description>Description_IonITCThrust</Description>
+            <Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Designed by Starlight, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -23,30 +23,17 @@
             <ThrusterType>Ion</ThrusterType>
             <SilenceableByShipSoundSystem>true</SilenceableByShipSoundSystem>
             <Components>
-                <Component Subtype="ITCTechFrame" Count="1">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-				</Component>
-                <Component Subtype="Construction" Count="1" />
+                <Component Subtype="SteelPlate" Count="1" />
+                <Component Subtype="Construction" Count="4" />
+                <Component Subtype="SmallTube" Count="4" />
+                <Component Subtype="Superconductor" Count="2" />
                 <Component Subtype="LargeTube" Count="1" />
-                <Component Subtype="ITCTechCoolingUnit" Count="1">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-                </Component>
-                <Component Subtype="ITCTechPropulsionUnit" Count="1">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-                </Component>
+                <Component Subtype="Thrust" Count="1" />
+                <Component Subtype="MetalGrid" Count="2" />
                 <Component Subtype="Construction" Count="1" />
-   				<Component Subtype="ReinforcedPlate" Count="1" />
+                <Component Subtype="SteelPlate" Count="1" />
             </Components>
-            <CriticalComponent Subtype="ITCTechPropulsionUnit" Index="0" />
+            <CriticalComponent Subtype="Thrust" Index="0" />
             <MountPoints>
                 <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
                 <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
@@ -78,8 +65,8 @@
             <EdgeType>Light</EdgeType>
 
             <ResourceSinkGroup>Thrust</ResourceSinkGroup>
-            <ForceMagnitude>14400</ForceMagnitude>
-            <MaxPowerConsumption>0.200</MaxPowerConsumption>
+            <ForceMagnitude>28800</ForceMagnitude>
+            <MaxPowerConsumption>0.300</MaxPowerConsumption>
             <MinPowerConsumption>0.000002</MinPowerConsumption>
             <SlowdownFactor>1</SlowdownFactor>
 
@@ -125,9 +112,9 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>SmallBlockLargeThrustSciFi</SubtypeId>
             </Id>
-            <DisplayName>DisplayName_Block_LargeThrustITC</DisplayName>
+            <DisplayName>StarLight Large Ion Thruster</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\Small_IonThrusterLarge_SciFi.dds</Icon>
-            <Description>Description_IonITCThrust</Description>
+            <Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Designed by Starlight, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.</Description>
             <CubeSize>Small</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="3" y="2" z="4" />
@@ -136,31 +123,18 @@
             <ThrusterType>Ion</ThrusterType>
             <SilenceableByShipSoundSystem>true</SilenceableByShipSoundSystem>
             <Components>
-                <Component Subtype="ITCTechFrame" Count="1">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-				</Component>
-                <Component Subtype="Construction" Count="1" />
+                <Component Subtype="SteelPlate" Count="1" />
+                <Component Subtype="Construction" Count="16" />
                 <Component Subtype="LargeTube" Count="5" />
-				
-                <Component Subtype="ITCTechCoolingUnit" Count="1">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-                </Component>
-                <Component Subtype="ITCTechPropulsionUnit" Count="8">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-                </Component>								
+                <Component Subtype="SmallTube" Count="16" />
+                <Component Subtype="Thrust" Count="12" />
+                <Component Subtype="Superconductor" Count="10" />
+                <Component Subtype="MetalGrid" Count="10" />
                 <Component Subtype="Construction" Count="1" />
-				<Component Subtype="ReinforcedPlate" Count="3" />
+                <Component Subtype="SteelPlate" Count="4" />
             </Components>
-            <CriticalComponent Subtype="ITCTechPropulsionUnit" Index="0" />
+            <CriticalComponent Subtype="Thrust" Index="0" />
+
             <MountPoints>
                 <MountPoint Side="Back" StartX="0" StartY="0" EndX="3" EndY="2" Default="true" />
                 <MountPoint Side="Top" StartX="0" StartY="0" EndX="3" EndY="2" />
@@ -192,8 +166,8 @@
             <EdgeType>Light</EdgeType>
 
             <ResourceSinkGroup>Thrust</ResourceSinkGroup>
-            <ForceMagnitude>172800</ForceMagnitude>
-            <MaxPowerConsumption>2.4</MaxPowerConsumption>
+            <ForceMagnitude>345600</ForceMagnitude>
+            <MaxPowerConsumption>3.6</MaxPowerConsumption>
             <MinPowerConsumption>0.000002</MinPowerConsumption>
             <SlowdownFactor>1</SlowdownFactor>
 
@@ -239,9 +213,9 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>LargeBlockSmallThrustSciFi</SubtypeId>
             </Id>
-            <DisplayName>DisplayName_Block_SmallThrustITC</DisplayName>
+            <DisplayName>StarLight Ion Thruster</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\large_IonThrusterSmall_SciFi.dds</Icon>
-            <Description>Description_IonITCThrust</Description>
+            <Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Designed by Starlight, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -251,31 +225,17 @@
             <ThrusterType>Ion</ThrusterType>
             <SilenceableByShipSoundSystem>true</SilenceableByShipSoundSystem>
             <Components>
-			   <Component Subtype="ITCTechFrame" Count="3">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-				</Component>
-
-                <Component Subtype="Construction" Count="40" />
+                <Component Subtype="SteelPlate" Count="15" />
+                <Component Subtype="Construction" Count="70" />
                 <Component Subtype="LargeTube" Count="8" />
-                <Component Subtype="ITCTechCoolingUnit" Count="2">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-                </Component>
-                <Component Subtype="ITCTechPropulsionUnit" Count="18">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-				 </Component>
+                <Component Subtype="SmallTube" Count="40" />
+                <Component Subtype="Thrust" Count="80" />
+                <Component Subtype="Superconductor" Count="30" />
+                <Component Subtype="MetalGrid" Count="25" />
                 <Component Subtype="Construction" Count="20" />
-                <Component Subtype="ReinforcedPlate" Count="6" />
+                <Component Subtype="SteelPlate" Count="10" />
             </Components>
-            <CriticalComponent Subtype="ITCTechPropulsionUnit" Index="0" />
+            <CriticalComponent Subtype="Thrust" Index="0" />
             <MountPoints>
                 <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
                 <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
@@ -308,8 +268,8 @@
             <BuildTimeSeconds>40</BuildTimeSeconds>
 
             <ResourceSinkGroup>Thrust</ResourceSinkGroup>
-            <ForceMagnitude>345600</ForceMagnitude>
-            <MaxPowerConsumption>3.36</MaxPowerConsumption>
+            <ForceMagnitude>691200</ForceMagnitude>
+            <MaxPowerConsumption>5.04</MaxPowerConsumption>
             <MinPowerConsumption>0.000002</MinPowerConsumption>
             <SlowdownFactor>1</SlowdownFactor>
 
@@ -354,9 +314,9 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>LargeBlockLargeThrustSciFi</SubtypeId>
             </Id>
-            <DisplayName>DisplayName_Block_LargeThrustITC</DisplayName>
+            <DisplayName>StarLight Large Ion Thruster</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\large_IonThrusterLarge_SciFi.dds</Icon>
-            <Description>Description_IonITCThrust</Description>
+            <Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Designed by Starlight, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.</Description>
             <CubeSize>Large</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="3" y="2" z="4" />
@@ -365,30 +325,17 @@
             <ThrusterType>Ion</ThrusterType>
             <SilenceableByShipSoundSystem>true</SilenceableByShipSoundSystem>
             <Components>
-				<Component Subtype="ITCTechFrame" Count="15">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-				</Component>
-                <Component Subtype="Construction" Count="70" />
+                <Component Subtype="SteelPlate" Count="100" />
+                <Component Subtype="Construction" Count="340" />
                 <Component Subtype="LargeTube" Count="40" />
-                <Component Subtype="ITCTechCoolingUnit" Count="5">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-                </Component>
-                <Component Subtype="ITCTechPropulsionUnit" Count="100">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-				 </Component>
+                <Component Subtype="SmallTube" Count="360" />
+                <Component Subtype="Thrust" Count="960" />
+                <Component Subtype="Superconductor" Count="270" />
+                <Component Subtype="MetalGrid" Count="225" />
                 <Component Subtype="Construction" Count="30" />
-                <Component Subtype="ReinforcedPlate" Count="30" />
+                <Component Subtype="SteelPlate" Count="50" />
             </Components>
-            <CriticalComponent Subtype="ITCTechPropulsionUnit" Index="0" />
+            <CriticalComponent Subtype="Thrust" Index="0" />
             <MountPoints>
                 <MountPoint Side="Back" StartX="0" StartY="0" EndX="3" EndY="2" Default="true" />
                 <MountPoint Side="Top" StartX="0" StartY="0" EndX="3" EndY="2" />
@@ -423,8 +370,8 @@
             <BuildTimeSeconds>90</BuildTimeSeconds>
 
             <ResourceSinkGroup>Thrust</ResourceSinkGroup>
-            <ForceMagnitude>4320000</ForceMagnitude>
-            <MaxPowerConsumption>33.6</MaxPowerConsumption>
+            <ForceMagnitude>8640000</ForceMagnitude>
+            <MaxPowerConsumption>50.4</MaxPowerConsumption>
             <MinPowerConsumption>0.000002</MinPowerConsumption>
             <SlowdownFactor>1</SlowdownFactor>
 
@@ -464,16 +411,24 @@
             </TargetingGroups>
         </Definition>
 
-        <!--Atmospheric Thrusters-->
+        <!--Atmospheric Thrusters
+		
+	Ion thrusters are advanced thrusters that function best in zero gravity environments.
+		
+		
+		Atmospheric thrusters can only function in planetary atmospheres.  Designed by Starlight, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.	
+		
+		
+		-->
 
         <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
             <Id>
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>LargeBlockLargeAtmosphericThrustSciFi</SubtypeId>
             </Id>
-            <DisplayName>DisplayName_Block_LargeAtmoThrustITC</DisplayName>
+            <DisplayName>StarLight Large Atmospheric Thruster</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\Large_AtmosphericThrusterLarge_SciFi.dds</Icon>
-            <Description>Description_AtmosphericITCThrust</Description>
+            <Description>Atmospheric thrusters can only function in planetary atmospheres.  Designed by Starlight, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.</Description>
             <CubeSize>Large</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="3" y="3" z="5" />
@@ -482,25 +437,17 @@
             <ThrusterType>Atmospheric</ThrusterType>
             <SilenceableByShipSoundSystem>true</SilenceableByShipSoundSystem>
             <Components>
-				<Component Subtype="ITCTechFrame" Count="15">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-				</Component>
-                <Component Subtype="Construction" Count="40" />
+                <Component Subtype="SteelPlate" Count="100" />
+                <Component Subtype="Construction" Count="310" />
                 <Component Subtype="LargeTube" Count="50" />
-                <Component Subtype="MetalGrid" Count="40" />				
-                <Component Subtype="ITCTechMachinery" Count="100">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-				</Component>				
+                <Component Subtype="SmallTube" Count="360" />
+                <Component Subtype="MetalGrid" Count="265" />
+                <Component Subtype="Motor" Count="1100" />
+                <Component Subtype="Superconductor" Count="270" />
                 <Component Subtype="Construction" Count="20" />
-                <Component Subtype="ReinforcedPlate" Count="30" />
+                <Component Subtype="SteelPlate" Count="130" />
             </Components>
-            <CriticalComponent Subtype="ITCTechMachinery" Index="0" />
+            <CriticalComponent Subtype="Motor" Index="0" />
             <MountPoints>
                 <MountPoint Side="Top" StartX="1" StartY="1" EndX="2" EndY="3" Default="true" />
                 <MountPoint Side="Bottom" StartX="1" StartY="2" EndX="2" EndY="4" />
@@ -531,7 +478,7 @@
             <BuildTimeSeconds>90</BuildTimeSeconds>
 
             <ResourceSinkGroup>Thrust</ResourceSinkGroup>
-            <ForceMagnitude>6480000</ForceMagnitude>
+            <ForceMagnitude>12960000</ForceMagnitude>
             <MaxPowerConsumption>16.8</MaxPowerConsumption>
             <MinPowerConsumption>0.000002</MinPowerConsumption>
             <SlowdownFactor>1</SlowdownFactor>
@@ -586,9 +533,9 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>LargeBlockSmallAtmosphericThrustSciFi</SubtypeId>
             </Id>
-            <DisplayName>DisplayName_Block_SmallAtmoThrustITC</DisplayName>
+            <DisplayName>StarLight Atmospheric Thruster</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\Large_AtmosphericThrusterSmall_SciFi.dds</Icon>
-            <Description>Description_AtmosphericITCThrust</Description>
+            <Description>Atmospheric thrusters can only function in planetary atmospheres.  Designed by Starlight, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -598,25 +545,17 @@
             <ThrusterType>Atmospheric</ThrusterType>
             <SilenceableByShipSoundSystem>true</SilenceableByShipSoundSystem>
             <Components>
-			   <Component Subtype="ITCTechFrame" Count="3">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-				</Component>
-                <Component Subtype="Construction" Count="30" />
+                <Component Subtype="SteelPlate" Count="15" />
+                <Component Subtype="Construction" Count="60" />
                 <Component Subtype="LargeTube" Count="8" />
-                <Component Subtype="MetalGrid" Count="10" />
-                <Component Subtype="ITCTechMachinery" Count="18">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-				 </Component>
+                <Component Subtype="SmallTube" Count="40" />
+                <Component Subtype="Superconductor" Count="30" />
+                <Component Subtype="MetalGrid" Count="35" />
+                <Component Subtype="Motor" Count="110" />
                 <Component Subtype="Construction" Count="20" />
-                <Component Subtype="ReinforcedPlate" Count="6" />
+                <Component Subtype="SteelPlate" Count="20" />
             </Components>
-            <CriticalComponent Subtype="ITCTechMachinery" Index="0" />
+            <CriticalComponent Subtype="Motor" Index="0" />
             <MountPoints>
                 <MountPoint Side="Top" StartX="0" StartY="1" EndX="1" EndY="2" Default="true"/>
                 <MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
@@ -648,8 +587,8 @@
             <BuildTimeSeconds>40</BuildTimeSeconds>
 
             <ResourceSinkGroup>Thrust</ResourceSinkGroup>
-            <ForceMagnitude>648000</ForceMagnitude>
-            <MaxPowerConsumption>2.4</MaxPowerConsumption>
+            <ForceMagnitude>1296000</ForceMagnitude>
+            <MaxPowerConsumption>3.6</MaxPowerConsumption>
             <MinPowerConsumption>0.000002</MinPowerConsumption>
             <SlowdownFactor>1</SlowdownFactor>
 
@@ -703,9 +642,9 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>SmallBlockLargeAtmosphericThrustSciFi</SubtypeId>
             </Id>
-            <DisplayName>DisplayName_Block_LargeAtmoThrustITC</DisplayName>
+            <DisplayName>StarLight Large Atmospheric Thruster</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\Small_AtmosphericThrusterLarge_SciFi.dds</Icon>
-            <Description>Description_AtmosphericITCThrust</Description>
+            <Description>Description_AtmosphericThrust</Description>
             <CubeSize>Small</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="3" y="3" z="5" />
@@ -714,26 +653,17 @@
             <ThrusterType>Atmospheric</ThrusterType>
             <SilenceableByShipSoundSystem>true</SilenceableByShipSoundSystem>
             <Components>
-                <Component Subtype="ITCTechFrame" Count="1">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-				</Component>
-                <Component Subtype="Construction" Count="20" />
+                <Component Subtype="SteelPlate" Count="10" />
+                <Component Subtype="Construction" Count="35" />
                 <Component Subtype="LargeTube" Count="4" />
-                <Component Subtype="MetalGrid" Count="8" />
-
-                <Component Subtype="ITCTechMachinery" Count="8">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-                </Component>
+                <Component Subtype="SmallTube" Count="16" />
+                <Component Subtype="Superconductor" Count="10" />
+                <Component Subtype="MetalGrid" Count="18" />
+                <Component Subtype="Motor" Count="90" />
                 <Component Subtype="Construction" Count="10" />
-                <Component Subtype="ReinforcedPlate" Count="3" />
+                <Component Subtype="SteelPlate" Count="10" />
             </Components>
-            <CriticalComponent Subtype="ITCTechMachinery" Index="0" />
+            <CriticalComponent Subtype="Motor" Index="0" />
             <MountPoints>
                 <MountPoint Side="Top" StartX="1" StartY="1" EndX="2" EndY="4" Default="true"/>
                 <MountPoint Side="Bottom" StartX="1" StartY="1" EndX="2" EndY="4" />
@@ -764,8 +694,8 @@
             <BuildTimeSeconds>20</BuildTimeSeconds>
 
             <ResourceSinkGroup>Thrust</ResourceSinkGroup>
-            <ForceMagnitude>576000</ForceMagnitude>
-            <MaxPowerConsumption>2.4</MaxPowerConsumption>
+            <ForceMagnitude>1152000</ForceMagnitude>
+            <MaxPowerConsumption>3.6</MaxPowerConsumption>
             <MinPowerConsumption>0.000002</MinPowerConsumption>
             <SlowdownFactor>1</SlowdownFactor>
 
@@ -820,9 +750,9 @@
                 <TypeId>Thrust</TypeId>
                 <SubtypeId>SmallBlockSmallAtmosphericThrustSciFi</SubtypeId>
             </Id>
-            <DisplayName>DisplayName_Block_SmallAtmoThrustITC</DisplayName>
+            <DisplayName>StarLight Atmospheric Thruster</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\Small_AtmosphericThrusterSmall_SciFi.dds</Icon>
-            <Description>Description_AtmosphericITCThrust</Description>
+            <Description>Atmospheric thrusters can only function in planetary atmospheres.  Designed by Starlight, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -832,23 +762,15 @@
             <ThrusterType>Atmospheric</ThrusterType>
             <SilenceableByShipSoundSystem>true</SilenceableByShipSoundSystem>
             <Components>
-                <Component Subtype="ITCTechFrame" Count="1">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-				</Component>
-                <Component Subtype="Construction" Count="20" />
+                <Component Subtype="SteelPlate" Count="2" />
+                <Component Subtype="Construction" Count="23" />
                 <Component Subtype="LargeTube" Count="1" />
-                <Component Subtype="MetalGrid" Count="1" />
-                <Component Subtype="ITCTechMachinery" Count="1">
-					<DeconstructId>
-						<TypeId>Ingot</TypeId>
-						<SubtypeId>PrototechScrap</SubtypeId>
-					</DeconstructId>
-                </Component>
+                <Component Subtype="SmallTube" Count="4" />
+                <Component Subtype="Superconductor" Count="2" />
+                <Component Subtype="MetalGrid" Count="3" />
+                <Component Subtype="Motor" Count="18" />
                 <Component Subtype="Construction" Count="2" />
-                <Component Subtype="ReinforcedPlate" Count="1" />
+                <Component Subtype="SteelPlate" Count="1" />
             </Components>
             <CriticalComponent Subtype="Motor" Index="0" />
             <MountPoints>
@@ -881,8 +803,8 @@
             <EdgeType>Light</EdgeType>
 
             <ResourceSinkGroup>Thrust</ResourceSinkGroup>
-            <ForceMagnitude>96000</ForceMagnitude>
-            <MaxPowerConsumption>0.600</MaxPowerConsumption>
+            <ForceMagnitude>192000</ForceMagnitude>
+            <MaxPowerConsumption>0.9</MaxPowerConsumption>
             <MinPowerConsumption>0.000002</MinPowerConsumption>
             <SlowdownFactor>1</SlowdownFactor>
 

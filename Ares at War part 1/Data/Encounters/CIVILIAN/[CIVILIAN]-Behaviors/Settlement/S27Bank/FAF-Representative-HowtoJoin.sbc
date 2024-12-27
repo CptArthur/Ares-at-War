@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!--
+[Triggers:CIVILIAN_Station27Bank_Trigger_Take5]
+[Triggers:CIVILIAN_Station27Bank_Trigger_Take20]
+
+[Triggers:CIVILIAN_Station27Bank_Trigger_Pay5]
+[Triggers:CIVILIAN_Station27Bank_Trigger_Pay20]
+
+
+
+
+-->
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Station27Bank_Trigger_Take5</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:true]
+	[Type:ButtonPress]
+	[ButtonPanelName:Bank Loaning]
+	[ButtonPanelIndex:0]
+
+	[Actions:CIVILIAN_Station27Bank_Action_Denied]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Station27Bank_Trigger_Take20</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:true]
+	[Type:ButtonPress]
+	[ButtonPanelName:Bank Loaning]
+	[ButtonPanelIndex:1]
+
+	[Actions:CIVILIAN_Station27Bank_Action_Denied]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Station27Bank_Action_Denied</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:CIVILIAN_Station27Bank_Chat_Denied]
+	  
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Station27Bank_Chat_Denied</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:Bank]
+      [Color:Blue]
+      
+      [ChatMessages:Loan application denied: insufficient credit history and lack of collateral flagged as primary reasons.]
+      [ChatAudio:]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]	
+      
+      </Description>
+    </EntityComponent>
+
+
+<!-- pay back -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Station27Bank_Trigger_Pay5</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:true]
+	[Type:ButtonPress]
+	[ButtonPanelName:Bank Loaning]
+	[ButtonPanelIndex:2]
+
+	[Actions:CIVILIAN_Station27Bank_Action_ErrorNoLoan]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Station27Bank_Trigger_Pay20</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[UseTrigger:true]
+	[Type:ButtonPress]
+	[ButtonPanelName:Bank Loaning]
+	[ButtonPanelIndex:3]
+
+	[Actions:CIVILIAN_Station27Bank_Action_ErrorNoLoan]
+      
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Station27Bank_Action_ErrorNoLoan</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:CIVILIAN_Station27Bank_Chat_ErrorNoLoan]
+	  
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Station27Bank_Chat_ErrorNoLoan</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:Bank]
+      [Color:Blue]
+      
+      [ChatMessages:Error: No active loans detected on your account. Payment request cannot be processed.]
+      [ChatAudio:]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]	
+      
+      </Description>
+    </EntityComponent>
+	
+	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>

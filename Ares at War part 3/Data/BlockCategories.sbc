@@ -157,17 +157,21 @@
 	
 	
 	
-	<Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition"> <!-- ROSTech -->
+	<Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition"> <!-- Relic -->
 	<Id>
 		<TypeId>GuiBlockCategoryDefinition</TypeId>
-		<SubtypeId>Prototech</SubtypeId>
+		<SubtypeId>RelicTech</SubtypeId>
 	</Id>
-	<DisplayName>ROS Tech</DisplayName>
-	<Name>AaW_AHETech</Name>
+	<DisplayName>Relic Tech</DisplayName>
+	<Name>Section1_Position0_AaW_RelicTech</Name>
 	<StrictSearch>true</StrictSearch>
 	<ItemIds>
-		<string>JumpDrive/LargePrototechJumpDrive</string>
-		<string>JumpDrive/SmallPrototechJumpDrive</string>
+	    <string>Thrust/SmallImpulseThrusterSmall</string>
+        <string>Thrust/SmallImpulseThrusterLarge</string>
+        <string>Assembler/OreCatalyzer</string>
+        <string>OxygenGenerator/SpiceEnergizer</string>
+        <string>OxygenTank/LargeSpiceTank</string>
+        <string>OxygenTank/SmallSpiceTank</string>	
         <string>SmallMissileLauncher/LargeFixedAmplifiedLaser</string>
         <string>SmallMissileLauncher/SmallFixedAmplifiedLaser</string>
         <string>LargeMissileTurret/LargeAmplifiedLaserTurret</string>
@@ -181,21 +185,65 @@
 		<string>Reactor/LargeCronyxReactor</string>
         <string>Reactor/SmallCronyxReactor</string>
 	    <string>Collector/NebulaRamscoop</string>
+	</ItemIds>
+	</Category>
+	
+	
+	
+
+	<Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition"> <!-- ZenovaTech -->
+	<Id>
+		<TypeId>GuiBlockCategoryDefinition</TypeId>
+		<SubtypeId>ZenovaTech</SubtypeId>
+	</Id>
+	<DisplayName>Zenova</DisplayName>
+	<Name>Section1_Position0_AaW_ZenovaTech</Name>
+	<StrictSearch>true</StrictSearch>
+	<ItemIds>
 		<string>Thrust/LargeBlockLargeModularThruster</string>
 		<string>Thrust/LargeBlockSmallModularThruster</string>
 		<string>Thrust/SmallBlockLargeModularThruster</string>
-		<string>Thrust/SmallBlockSmallModularThruster</string>				
-	</ItemIds>
-	</Category>
+		<string>Thrust/SmallBlockSmallModularThruster</string>
+		
+		
+		
+		<string>Reactor/LargeBlockSmallGeneratorWarfare2</string>
+		<string>Reactor/LargeBlockLargeGeneratorWarfare2</string>
+		<string>Reactor/SmallBlockSmallGeneratorWarfare2</string>
+		<string>Reactor/SmallBlockLargeGeneratorWarfare2</string>
+		<string>BatteryBlock/LargeBlockBatteryBlockWarfare2</string>
+		<string>BatteryBlock/SmallBlockBatteryBlockWarfare2</string>
 
+	</ItemIds>
+	</Category>	
+	
+	<Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition"> <!-- KuotoTech -->
+	<Id>
+		<TypeId>GuiBlockCategoryDefinition</TypeId>
+		<SubtypeId>KuotoTech</SubtypeId>
+	</Id>
+	<DisplayName>Kuoto Solutions</DisplayName>
+	<Name>Section1_Position0_AaW_KuotoTech</Name>
+	<StrictSearch>true</StrictSearch>
+	<ItemIds>
+		<string>Drill/LargeBlockGravDrill</string>		
+		<string>Drill/SmallBlockGravDrill</string>		
+		<string>ShipGrinder/LargeShipLaserGrinder</string>		
+		<string>ShipGrinder/SmallShipLaserGrinder</string>		
+		<string>ShipWelder/LargeShipLaserWelder</string>		
+		<string>ShipWelder/SmallShipLaserWelder</string>	
+	</ItemIds>
+	</Category>	
+	
+	
 		
 	<Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition"> <!-- ITCTech -->
       <Id>
         <TypeId>GuiBlockCategoryDefinition</TypeId>
         <SubtypeId/>
       </Id>
-      <DisplayName>ITC Tech</DisplayName>
-      <Name>AaW_ITCTech</Name>
+      <DisplayName>Starlight</DisplayName>
+      <Name>Section1_Position0_AaW_ITCTech</Name>
 	   <StrictSearch>true</StrictSearch>
       <ItemIds>
         <string>Drill/ReinforcedDrill</string>
@@ -203,8 +251,7 @@
         <string>CubeBlock/LargeReinforcedArmorSlope2x1x1Base</string>
         <string>CubeBlock/LargeReinforcedArmorCorner2x1x1Base</string>
         <string>CubeBlock/LargeSlopedCornerReinforcedArmorTip</string>
-		<string>Drill/LargeBlockPrototechDrill</string>		
-		
+	
 		<string>Thrust/SmallBlockLargeThrustSciFi</string>
 		<string>Thrust/SmallBlockSmallThrustSciFi</string>
 		<string>Thrust/SmallBlockLargeAtmosphericThrustSciFi</string>
@@ -212,10 +259,7 @@
 		<string>Thrust/LargeBlockLargeThrustSciFi</string>
 		<string>Thrust/LargeBlockSmallThrustSciFi</string>
 		<string>Thrust/LargeBlockLargeAtmosphericThrustSciFi</string>
-		<string>Thrust/LargeBlockSmallAtmosphericThrustSciFi</string>		
-		
-		
-		
+		<string>Thrust/LargeBlockSmallAtmosphericThrustSciFi</string>				
       </ItemIds>
     </Category>
 	
@@ -225,42 +269,54 @@
         <TypeId>GuiBlockCategoryDefinition</TypeId>
         <SubtypeId/>
       </Id>
-      <DisplayName>AHE Tech</DisplayName>
-      <Name>AaW-AHETech</Name>
+      <DisplayName>Agaris Heavy Engineering</DisplayName>
+      <Name>Section1_Position0_AaW-AHETech</Name>
 	  	<StrictSearch>true</StrictSearch>
       <ItemIds>
+			<string>Drill/SmallBlockHeavyDrill</string>		
+			<string>Drill/LargeBlockHeavyDrill</string>		
+			<string>ShipGrinder/LargeShipHeavyGrinder</string>		
+			<string>ShipGrinder/SmallShipHeavyGrinder</string>		
+			<string>ShipWelder/LargeShipHeavyWelder</string>		
+			<string>ShipWelder/SmallShipHeavyWelder</string>		
+
+      </ItemIds>
+    </Category>
+		
+	<Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition"> <!-- AHETech -->
+      <Id>
+        <TypeId>GuiBlockCategoryDefinition</TypeId>
+        <SubtypeId/>
+      </Id>
+      <DisplayName>Sol Cooperative</DisplayName>
+      <Name>Section1_Position0_AaW_SOLTech</Name>
+	  	<StrictSearch>true</StrictSearch>
+      <ItemIds>
+	<string>JumpDrive/LargeJumpDrive</string>		
+	<string>Thrust/LargeBlockLargeThrust</string>
+	<string>Thrust/LargeBlockSmallThrust</string>
+	<string>Thrust/SmallBlockLargeThrust</string>
+	<string>Thrust/SmallBlockSmallThrust</string>	
+	<string>Refinery/LargeRefinery</string>	
+	<string>Assembler/LargeAssembler</string>	
+
+
+		<string>JumpDrive/LargePrototechJumpDrive</string>
+		<string>JumpDrive/SmallPrototechJumpDrive</string>
 		<string>Thrust/LargeBlockPrototechThruster</string>
 		<string>Thrust/SmallBlockPrototechThruster</string>
 		<string>Gyro/LargeBlockPrototechGyro</string>
 		<string>Gyro/SmallBlockPrototechGyro</string>
 		<string>BatteryBlock/LargeBlockPrototechBattery</string>
-		<string>BatteryBlock/SmallBlockPrototechBattery</string>		
-      </ItemIds>
-    </Category>
-		
-	<Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition"> <!-- Spice Tech -->
-      <Id>
-        <TypeId>GuiBlockCategoryDefinition</TypeId>
-        <SubtypeId/>
-      </Id>
-      <DisplayName>Spice</DisplayName>
-      <Name>AaW-Spice</Name>
-	  	<StrictSearch>true</StrictSearch>
-		
-      <ItemIds>
-	    <string>Thrust/SmallImpulseThrusterSmall</string>
-        <string>Thrust/SmallImpulseThrusterLarge</string>
-        <string>Assembler/OreCatalyzer</string>
-        <string>OxygenGenerator/SpiceEnergizer</string>
-        <string>OxygenTank/LargeSpiceTank</string>
-        <string>OxygenTank/SmallSpiceTank</string>
+		<string>BatteryBlock/SmallBlockPrototechBattery</string>	
 		<string>Refinery/LargePrototechRefinery</string>
-		<string>Refinery/SmallPrototechRefinery</string>
+		<string>Refinery/SmallPrototechRefinery</string>	
+		<string>Assembler/LargePrototechAssembler</string>		
+		<string>Drill/LargeBlockPrototechDrill</string>		
+		
+		
       </ItemIds>
     </Category>
-	
-	
-
 	
 	
 	

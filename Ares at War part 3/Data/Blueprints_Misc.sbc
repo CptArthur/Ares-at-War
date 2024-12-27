@@ -39,6 +39,108 @@
             <BaseProductionTimeInSeconds>1</BaseProductionTimeInSeconds>
         </Blueprint>
 	
+	
+	<!-- IO to vanilla components -->
+	
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>PowerCell</SubtypeId>
+      </Id>
+      <DisplayName>Lithium Power Cell</DisplayName>
+      <Icon>Textures\GUI\Icons\component\BatteryComponent.dds</Icon>
+      <Prerequisites>
+		<Item Amount="8" TypeId="Ingot" SubtypeId="Iron" />
+		<Item Amount="1" TypeId="Ingot" SubtypeId="Silicon" />
+		<Item Amount="2" TypeId="Ingot" SubtypeId="Nickel" />>
+        <Item Amount="10" TypeId="Ingot" SubtypeId="Lithium" />		
+      </Prerequisites>
+      <Result Amount="1" TypeId="Component" SubtypeId="PowerCell" />
+      <BaseProductionTimeInSeconds>6</BaseProductionTimeInSeconds>
+      <IsPrimary>true</IsPrimary>
+    </Blueprint>
+
+	
+	
+	    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>ElectronMatrix</SubtypeId>
+      </Id>
+      <DisplayName>Electron-Matrix Cell</DisplayName>
+			<Icon>Icons\ElectronMatrixCell.dds</Icon>
+      <Prerequisites>
+			<Item Amount="3" TypeId="Ingot" SubtypeId="Iron" />
+			<Item Amount="2" TypeId="Ingot" SubtypeId="Cobalt" />
+			<Item Amount="5" TypeId="Ingot" SubtypeId="Silicon" />
+			<Item Amount="2" TypeId="Ingot" SubtypeId="Silver" />			
+			<Item Amount="50" TypeId="Ingot" SubtypeId="Uranium" />
+			<Item Amount="15" TypeId="Ingot" SubtypeId="Platinum" />		
+      </Prerequisites>
+      <Result Amount="1" TypeId="Component" SubtypeId="ElectronMatrix" />
+      <BaseProductionTimeInSeconds>15</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>Capacitor</SubtypeId>
+      </Id>
+      <DisplayName>Capacitor Cell</DisplayName>
+			<Icon>Icons\CapacitorCell.dds</Icon>
+      <Prerequisites>
+		<Item Amount="10" TypeId="Ingot" SubtypeId="Iron" />
+		<Item Amount="1" TypeId="Ingot" SubtypeId="Silicon" />
+		<Item Amount="2" TypeId="Ingot" SubtypeId="Nickel" />
+		
+      </Prerequisites>
+      <Result Amount="1" TypeId="Component" SubtypeId="Capacitor" />
+      <BaseProductionTimeInSeconds>3</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>AcidPowerCell</SubtypeId>
+      </Id>
+      <DisplayName>Acid Power Cell</DisplayName>
+      <Icon>Icons\AcidPowerCell.dds</Icon>
+      <Prerequisites>
+		<Item Amount="5" TypeId="Ingot" SubtypeId="Iron" />
+		<Item Amount="1" TypeId="Ingot" SubtypeId="Silicon" />
+		<Item Amount="1" TypeId="Ingot" SubtypeId="Nickel" />
+        <Item Amount="5" TypeId="Ingot" SubtypeId="Sulfur" />
+        <Item Amount="4" TypeId="Ore" SubtypeId="Ice" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="Component" SubtypeId="AcidPowerCell" />
+      <BaseProductionTimeInSeconds>8</BaseProductionTimeInSeconds>
+    </Blueprint>
+	
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>AlkalinePowerCell</SubtypeId>
+      </Id>
+      <DisplayName>Alkaline Power Cell</DisplayName>
+      <Icon>Icons\AlkalineCell.dds</Icon>
+      <Prerequisites>
+	    <Item Amount="8" TypeId="Ingot" SubtypeId="Iron" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="Silicon" />
+        <Item Amount="2" TypeId="Ingot" SubtypeId="Nickel" />
+        <Item Amount="2" TypeId="Ore" SubtypeId="Ice" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="Component" SubtypeId="AlkalinePowerCell" />
+      <BaseProductionTimeInSeconds>6</BaseProductionTimeInSeconds>
+    </Blueprint>	
+	
+	
+	
+	
+	
+	
+	
 	<!-- Jump Drive -->
 		
         <Blueprint>

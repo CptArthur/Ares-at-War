@@ -6,7 +6,7 @@
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>GC_SpawnGroup_LightTaskForce</SubtypeId>
+				<SubtypeId>GC_SpawnGroup_AtmosphericMediumTaskForce</SubtypeId>
 			</Id>
 			<Description>
 			[Modular Encounters SpawnGroup]
@@ -23,7 +23,59 @@
 			
 			<Frequency>5.0</Frequency>
 			<Prefabs>
+				<Prefab SubtypeId="GC-Fighter-MK3">
+					<Position>
+						<X>-100.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>GC_OffensiveEscort_Behavior</Behaviour>
+				</Prefab>
 
+				<Prefab SubtypeId="GC-Fighter-MK3">
+					<Position>
+						<X>100.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>GC_OffensiveEscort_Behavior</Behaviour>
+				</Prefab>
+				
+				
+				<Prefab SubtypeId="GC-Dropship">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>GC_TaskForceLeader_Behavior</Behaviour>
+				</Prefab>
+			</Prefabs>			
+		</SpawnGroup>
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>GC_SpawnGroup_AtmosphericHeavyTaskForce</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+		
+			[FactionOverride:GC]
+			
+			[SpawnConditionsProfiles:AaW_SpawnProfile_Debug_AtmosphericCargoShip]
+		
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
 				<Prefab SubtypeId="GC-Fighter-MK3">
 					<Position>
 						<X>-100.0</X>
@@ -54,13 +106,21 @@
 					<Speed>25</Speed>
 					<Behaviour>GC_TaskForceLeader_Behavior</Behaviour>
 				</Prefab>
-				
-
-
-
-				
 			</Prefabs>			
-		</SpawnGroup>	
+		</SpawnGroup>
+
+
+
+
+
+
+
+
+
+
+
+
+		
 
 
 	</SpawnGroups>
