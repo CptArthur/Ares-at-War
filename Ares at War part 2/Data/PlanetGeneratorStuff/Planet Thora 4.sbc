@@ -15,7 +15,7 @@
     <!--!!!Important!! Read if you want to mod Planets! -->
     <!--Following tag switches off loading from certain color channels. Its performance measure in cases where channels are not used-->
     <!--Make sure you are not modding a switched off channel-->
-    <PlanetMaps Material="true" Ores="true" Biome="false" Occlusion="true"/>
+    <PlanetMaps Material="true" Ores="true" Biome="true" Occlusion="true"/>
 
     <MesherPostprocessing xsi:type="MyObjectBuilder_VoxelMesherComponentDefinition">
       <PostprocessingSteps>
@@ -365,6 +365,7 @@
         <Rule>
           <Layers>
             <Layer Material="TritonIce" Depth="5"/>
+			<Layer Material="Ice" Depth="2500"/>
           </Layers>
           <Height Min="0" Max="1"/>
           <Latitude Min="0" Max="90"/>
@@ -374,7 +375,8 @@
 		
         <Rule>
           <Layers>
-            <Layer Material="Ice" Depth="5"/>
+            <Layer Material="Ice" Depth="2500"/>
+						
           </Layers>
           <Height Min="0" Max="1"/>
           <Latitude Min="0" Max="90"/>
@@ -609,9 +611,41 @@
 	  
   
 	  
-	  
-	  
-	  
+
+            <Item>
+                <Biomes>
+                    <Biome>0</Biome>
+                </Biomes>
+                <Materials>
+                    <Material>TritonIce</Material>
+                </Materials>
+                <Items>
+                    <Item TypeId="MyObjectBuilder_VoxelMapStorageDefinition" GroupId="SnowCoverageIronCore" ModifierId="Thora4" Density="0.003" />
+                </Items>
+                <Rule>
+                    <Height Min="0.5" Max="1"/>
+                    <Latitude Min="0" Max="90"/>
+                    <Slope Min="0" Max="15"/>
+                </Rule>
+            </Item>
+
+
+            <Item>
+                <Biomes>
+                    <Biome>250</Biome>
+                </Biomes>
+                <Materials>
+                    <Material>TritonIce</Material>
+                </Materials>
+                <Items>
+                    <Item TypeId="MyObjectBuilder_VoxelMapStorageDefinition" GroupId="SnowCoverageIronCore" ModifierId="Thora4Crack" Density="0.02" />
+                </Items>
+                <Rule>
+                    <Height Min="0.5" Max="1"/>
+                    <Latitude Min="0" Max="90"/>
+                    <Slope Min="0" Max="70"/>
+                </Rule>
+            </Item>
 	  
 	  
 	  
@@ -648,13 +682,13 @@
 		<RayleighHeight>12.098</RayleighHeight>
 		<RayleighHeightSpace>8.192</RayleighHeightSpace>
 		<RayleighTransitionModifier>0.4</RayleighTransitionModifier>
-		<MieHeight>30</MieHeight>
+		<MieHeight>15</MieHeight>
 		<MieG>0.995</MieG>
 		<Intensity>4.518</Intensity>
-		<SeaLevelModifier>0.980</SeaLevelModifier>
+		<SeaLevelModifier>0.90</SeaLevelModifier>
 		<AtmosphereTopModifier>1.1</AtmosphereTopModifier>
 		<FogIntensity>0.643</FogIntensity>
-		<Scale>2</Scale>
+		<Scale>1</Scale>
       </AtmosphereSettings>
 	  
 	  
@@ -785,6 +819,34 @@
 				</Weather>
 			</Weathers>
 		</WeatherGenerator>
+
+		<WeatherGenerator>
+			<Voxel>Ice</Voxel>
+			<Weathers>
+				<Weather>
+					<Name>Blizard</Name>
+					<Weight>5</Weight>
+					<MinLength>600</MinLength>
+					<MaxLength>1800</MaxLength>
+				</Weather>
+
+				<Weather>
+					<Name>FogLight</Name>
+					<Weight>1</Weight>
+					<MinLength>300</MinLength>
+					<MaxLength>900</MaxLength>
+				</Weather>
+            	<Weather>
+					<Name>FogHeavy</Name>
+					<Weight>1</Weight>
+					<MinLength>300</MinLength>
+					<MaxLength>900</MaxLength>
+				</Weather>
+			</Weathers>
+		</WeatherGenerator>
+
+
+
 
 		<WeatherGenerator>
 			<Voxel>Soil</Voxel>

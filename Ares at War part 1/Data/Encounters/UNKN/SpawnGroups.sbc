@@ -132,7 +132,67 @@
 
 
 
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>UNKN_AbandonedHomeShip</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:UNKN]		
 
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:50000]
+
+			[ForceExactPositionAndOrientation:true]
+			[CutVoxelsAtAirtightCells:true]
+
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-AAW)]
+			[RandomGridNamePattern:Abandoned Home Ship]
+			[ReplaceAntennaNameWithRandomizedName:Home Ship]
+
+
+
+			[StaticEncounterCoords:{X:-679579.801035216 Y:-1057468.57376769 Z:-3499401.77318483}]
+			[StaticEncounterForward:{X:-0.847302789312022 Y:-0.427856353307772 Z:-0.314669547554641}]
+			[StaticEncounterUp:{X:-0.25698470280472 Y:0.848775052129474 Z:-0.462103639248793}]
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Thora 4]
+			[StaticEncounterPlanetDirection:{X:-0.266006931767583 Y:0.859987656570011 Z:-0.435501484267066}]
+			[StaticEncounterPlanetAltitude:0.0742092979853624]
+
+
+
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:UNKN_AbandonedHomeShipDestroyed]			
+			[ZoneConditions:ZoneCondition_ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="UNKN - Abandoned Home Ship">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour></Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>	
 
 
 

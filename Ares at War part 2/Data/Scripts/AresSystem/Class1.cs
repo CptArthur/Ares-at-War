@@ -26,6 +26,8 @@ namespace BylenBelt
 
         public static Vector3D AgarisCenter = new Vector3D(-3663015.14510301, -1309985.98462825, -2583899.76531797);
 
+        public static Vector3D Thora4Center = new Vector3D(-666090.14510301, -1101079.98462825, -3477316.76531797);
+
         public static Vector3D NebulaCenter = new Vector3D(-17115, -4610, -8171);
 
 
@@ -74,6 +76,7 @@ namespace BylenBelt
                     var tja = entity.GetPosition();
 
                     var agarisdisctance = Vector3.Distance(AgarisCenter, tja);
+                    var thora4disctance = Vector3.Distance(Thora4Center, tja);
                     var Nebuladisctance = Vector3.Distance(NebulaCenter, tja);
                     var Bylendistance = Vector3D.Distance(BylenCenter, tja);
                     var Bylenydistance = Math.Abs((tja.Y - BylenCenter.Y));
@@ -82,6 +85,11 @@ namespace BylenBelt
                     var Milaydistance = Math.Abs((tja.Y - MilaCenter.Y));
 
                     if (agarisdisctance <= 70000)
+                    {
+                        continue;
+                    }
+
+                    if(thora4disctance <= 53000)
                     {
                         continue;
                     }

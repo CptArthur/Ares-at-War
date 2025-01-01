@@ -16,6 +16,7 @@ namespace IndustrialOreRemap
 	[MySessionComponentDescriptor(MyUpdateOrder.AfterSimulation)]
 	public class OreRemapping : MySessionComponentBase
 	{
+		/*
 		public struct ComponentBlueprintManager
 		{
 			public string ClassName;
@@ -69,9 +70,11 @@ namespace IndustrialOreRemap
 				}
 			}
 		}
-
+		*/
 		public override void LoadData()
 		{
+			/*
+
 			// Initialize for BasicComponents
 			var basicComponentsManager = new ComponentBlueprintManager(
 				"BasicComponents",
@@ -190,7 +193,7 @@ namespace IndustrialOreRemap
 			);
 
 			eliteToolsManager.ProcessBlueprints();
-
+			*/
 
 
 

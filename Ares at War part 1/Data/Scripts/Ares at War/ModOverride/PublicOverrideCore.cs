@@ -16,8 +16,8 @@ namespace PublicOverride
 	public class PublicOverrideCore : MySessionComponentBase
 	{
         DefinitionExtensionsAPI defext;
-		MyStringId PublicOverrideGroup = MyStringId.GetOrCompute("AaWTech");
-		MyStringId PublicID = MyStringId.GetOrCompute("TechId");
+		MyStringId PublicOverrideGroup = MyStringId.GetOrCompute("AaWShipyard");
+		MyStringId PublicID = MyStringId.GetOrCompute("ShipyardId");
 		public PublicOverrideCore()
 		{
 			defext = new DefinitionExtensionsAPI(onEnabled);
@@ -27,12 +27,14 @@ namespace PublicOverride
 		{
 			MyAPIGateway.Utilities.ShowMessage("AaW block replacer", $"enabled");
 			var defs = MyDefinitionManager.Static.GetAllDefinitions();
+
+
 			foreach(var def in defs)
 			{
 				string overridepublic = "";
 				if(defext.TryGetString(def.Id, PublicOverrideGroup, PublicID, out overridepublic))
 				{
-					MyAPIGateway.Utilities.ShowMessage($"{overridepublic}", $"{def.Id}");
+					//MyAPIGateway.Utilities.ShowMessage($"{overridepublic}", $"{def.Id}");
 
 					MyCubeBlockDefinition cubeBlockDef = def as MyCubeBlockDefinition;
 					if (cubeBlockDef != null)
@@ -41,11 +43,23 @@ namespace PublicOverride
 
 						// New component to insert
 						MyCubeBlockDefinition.Component newComponent = new MyCubeBlockDefinition.Component();
-						newComponent.Count = 1;
+
+						if(cubeBlockDef.CubeSize == MyCubeSize.Large)
+                        {
+							newComponent.Count = 5;
+						}
+                        else
+                        {
+							newComponent.Count = 1;
+						}
+						var Scrap = MyDefinitionManager.Static.GetPhysicalItemDefinition(new MyDefinitionId(typeof(MyObjectBuilder_Ore), "Scrap"));
+						newComponent.DeconstructItem = Scrap;
+
+
 						var compdef = new MyComponentDefinition();
 
 
-						if(MyDefinitionManager.Static.TryGetComponentDefinition(new MyDefinitionId(typeof(MyObjectBuilder_Component), "PrototechFrame"), out compdef))
+						if(MyDefinitionManager.Static.TryGetComponentDefinition(new MyDefinitionId(typeof(MyObjectBuilder_Component), overridepublic), out compdef))
                         {
 							newComponent.Definition = compdef;
 

@@ -1,0 +1,392 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+ <!--
+Variables:
+
+
+
+{EventName}
+{EventCoords}
+On start Send GPS to Players; 
+PlayerNear Watcher 
+
+If playerclose spawnship -> Close contract
+
+
+Almost Intact ship:
+[SpawnGroups:Encounter Ghoul Corvette A]
+[SpawnGroups:Encounter Ghoul Corvette B]
+[SpawnGroups:Encounter Ghoul Corvette C]
+[SpawnGroups:Encounter Imp A]
+[SpawnGroups:Encounter Imp B]
+[SpawnGroups:Encounter Pirate Raider]
+	
+	
+
+Heavy Scrap 1.5m
+
+
+	
+Intact station
+[SpawnGroups:Encounter Droneyard]
+
+	[SpawnGroups:Encounter Salvage station]
+
+	[SpawnGroups:Encounter Stealth pirate station]
+
+Misc:
+[SpawnGroups:Encounter Homing beacon]
+[SpawnGroups:Encounter Skyheart B]
+[SpawnGroups:Encounter HEC Debris B]	
+[SpawnGroups:Encounter Ambasador B]	
+[SpawnGroups:Encounter Debris B]
+[SpawnGroups:Encounter Corvette B]
+[SpawnGroups:Encounter Ponos-F1 B]
+[SpawnGroups:Encounter MushStation B]
+
+
+too good:
+
+	[SpawnGroups:Encounter Prometheus A]
+	
+	
+Asteroid mission:
+	
+	[SpawnGroups:Encounter Hermit Station]
+	[SpawnGroups:Encounter Mining Outpost]	
+	[SpawnGroups:Encounter RoidStation]
+	[SpawnGroups:Encounter Safehouse station]	
+	
+	
+ -->
+  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Spawner_SpaceHeavyScrap</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Spawn]
+      
+      [UseSpawn:true]
+      [StartsReady:true]
+      [SpawningType:CustomSpawn]
+	  	  
+	[SpawnGroups:Encounter Corvette A]
+	[SpawnGroups:Encounter Hydro Tanker]
+	[SpawnGroups:Encounter MushStation A]
+	[SpawnGroups:Encounter Ponos-F1 A]
+	[SpawnGroups:Encounter RS-1217 Transporter A]
+	[SpawnGroups:Encounter Section-F]
+	[SpawnGroups:Encounter Stingray II A]
+	[SpawnGroups:Encounter HEC Debris A]	
+	[SpawnGroups:Encounter Red A]	
+	[SpawnGroups:Encounter Mercenary Wreckage]
+	[SpawnGroups:Encounter Minefield]
+
+	
+	  
+      [UseRelativeSpawnPosition:false]
+      [MinDistance:25]
+      [MaxDistance:500]
+      [MinAltitude:500]
+      [MaxAltitude:1000]
+      [IgnoreSafetyChecks:true]
+      
+      </Description>
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Spawner_SpaceScrap</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Spawn]
+      
+      [UseSpawn:true]
+      [StartsReady:true]
+      [SpawningType:CustomSpawn]
+	  	  
+	[SpawnGroups:Encounter Debris A]
+	[SpawnGroups:Encounter Ambasador A]
+	[SpawnGroups:Encounter Blue frame]
+	[SpawnGroups:Encounter Skyheart A]
+	[SpawnGroups:Encounter Habitat Pods]
+	[SpawnGroups:Encounter Haunted Section]
+	[SpawnGroups:Encounter RespawnShip]
+	[SpawnGroups:Encounter Severed Bow]
+	[SpawnGroups:Encounter Mining Vessel]
+	[SpawnGroups:Encounter Shuttle]
+	
+	  
+      [UseRelativeSpawnPosition:false]
+      [MinDistance:25]
+      [MaxDistance:500]
+      [MinAltitude:500]
+      [MaxAltitude:1000]
+      [IgnoreSafetyChecks:true]
+      
+      </Description>
+    </EntityComponent>		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MissionGroup_SpaceScrap</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event TemplateGroup]
+		
+		[TemplateEventIds:AaW_EventTemplate_SpaceScrap_Failed]
+		[TemplateEventIds:AaW_EventTemplate_SpaceScrap_Abandoned]
+		[TemplateEventIds:AaW_EventTemplate_SpaceScrap_Init]
+		[TemplateEventIds:AaW_EventTemplate_SpaceScrap_PlayerNear]
+
+      </Description>
+	</EntityComponent>	
+	
+	
+	<!-- Abandoned -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_SpaceScrap_Abandoned</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[Tags:Abandoned@{InstanceId}]
+		[UseEvent:false]
+		[UniqueEvent:true]		
+		[ActionExecution:All]
+		[ActionIds:AaW_EventActionTemplate_SpaceScrap_CloseInstance]
+
+      </Description>
+	</EntityComponent>		
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_SpaceScrap_CloseInstance</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	[RemoveThisInstanceGroup:true]
+	
+	[RemoveGPSFromPlayers:true]
+	[RemoveGPSNames:{EventName}]
+	[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	
+	[AddPlayerConditionPlayerTags:true]
+	[AddIncludedPlayerTags:@{InstanceId}]	
+      </Description>
+    </EntityComponent>		
+
+	
+	<!-- Fail -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_SpaceScrap_Failed</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[Tags:Failed@{InstanceId}]
+		[UseEvent:false]
+		
+		[UniqueEvent:true]		
+		[ActionExecution:All]
+		[ActionIds:AaW_EventActionTemplate_SpaceScrap_Failed]
+
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_SpaceScrap_Failed</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	[TryContractFail:true]
+	
+
+	[AddPlayerConditionPlayerTags:true]
+	[AddIncludedPlayerTags:@{InstanceId}]	
+	
+      </Description>
+    </EntityComponent>		
+	
+	<!-- End required -->
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_SpaceScrap_Init</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:true]
+		[UniqueEvent:true]	
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+		[ActionExecution:All]
+		[ActionIds:AaW_EventActionTemplate_SpaceScrap_CreateGPS]
+
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_SpaceScrap_CreateGPS</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+	[AddGPSToPlayers:true]
+	[AddGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	[UseGPSObjective:false]
+	
+	[GPSNames:{EventName}]
+	[GPSVector3Ds:{EventCoords}]
+	
+	
+	[AddPlayerConditionPlayerTags:true]
+	[AddIncludedPlayerTags:@{InstanceId}]
+      </Description>
+    </EntityComponent>	
+	
+	
+		
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_SpaceScrap_PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:true]
+		
+		[UniqueEvent:true]	
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+
+		[ConditionIds:AaW_EventConditionTemplate_SpaceScrap_PlayerNear]	
+		
+		[ActionExecution:All]
+
+		[ActionIds:AaW_EventActionTemplate_SpaceScrap_SpawnScrap]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventConditionTemplate_SpaceScrap_PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Condition Template]
+
+
+	[CheckPlayerNear:true]
+	[PlayerNearCoords:{EventCoords}]
+	[PlayerNearDistanceFromCoords:2000]
+
+      </Description>
+      
+    </EntityComponent>		  
+	  
+	  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_SpaceScrap_SpawnScrap</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+	[SpawnEncounter:true]
+	[SpawnData:{EventSpawner}]
+	[SpawnFactionTags:SPRT]
+	[SpawnCoords:{EventCoords}]
+	
+	[RemoveGPSFromPlayers:true]
+	[RemoveGPSNames:{EventName}]
+	[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	
+	[UseChatBroadcast:true]
+	[ChatData:AaW_EventChat_SpaceScrap_Start]
+	
+	[TryContractFail:true]
+	
+	
+      </Description>
+    </EntityComponent>	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventChat_SpaceScrap_Start</SubtypeId>
+      </Id> 
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:true]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToAllOnlinePlayers:true]
+
+	
+      [Color:Green]
+      [Author:MES DEBUG]
+        
+      [ChatMessages:Spawning grid]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]  
+
+      </Description>
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>
+

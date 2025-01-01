@@ -71,6 +71,21 @@
         <Class>
             <Id>
                 <TypeId>BlueprintClassDefinition</TypeId>
+                <SubtypeId>PrototechComponents</SubtypeId>
+            </Id>
+            <DisplayName>Relic Tech</DisplayName>
+            <Description>Relic Tech</Description>
+            <Icon>Textures\GUI\Icons\buttons\component.dds</Icon>
+            <FocusIcon>Textures\GUI\Icons\buttons\component.dds</FocusIcon>
+            <HighlightIcon>Textures\GUI\Icons\buttons\component_focus.dds</HighlightIcon>
+            <InputConstraintIcon>Textures\GUI\Icons\filter_ingot.dds</InputConstraintIcon>
+        </Class>		
+		
+		
+		
+        <Class>
+            <Id>
+                <TypeId>BlueprintClassDefinition</TypeId>
                 <SubtypeId>NanoTools</SubtypeId>
             </Id>
             <DisplayName>DisplayName_BlueprintClass_Tools</DisplayName>
@@ -112,25 +127,79 @@
         <Entry Class="OreCatalyzer" BlueprintSubtypeId="CatalyzeUraniumOre" />
         <Entry Class="OreCatalyzer" BlueprintSubtypeId="CatalyzeMagnesiumOre" />
 	
-        <Entry Class="EliteConsumables" BlueprintSubtypeId="SpiceInhaler" />
+        <Entry Class="EliteEquipment" BlueprintSubtypeId="SpiceInhaler" />
 		
         <Entry Class="ActivatedSpice" BlueprintSubtypeId="ActivatedSpice" />
 		
+		
+		<!-- Basic Assembler -->
+		<Entry Class="SimpleComponents" BlueprintSubtypeId="Capacitor" />
+		<Entry Class="SimpleComponents" BlueprintSubtypeId="AcidPowerCell" />
+		<Entry Class="SimpleComponents" BlueprintSubtypeId="AlkalinePowerCell" />
+
+	
+        <Entry Class="SimpleComponents" BlueprintSubtypeId="PowerCell">   
+            <Enabled>false</Enabled>
+        </Entry>		
+
+		
+		
+		
+		
+		<!-- Assembler -->
         <Entry Class="Components" BlueprintSubtypeId="ReinforcedDrillbit" />
         <Entry Class="Components" BlueprintSubtypeId="ReinforcedPlate" />
+		<Entry Class="Components" BlueprintSubtypeId="Capacitor" />
+		<Entry Class="Components" BlueprintSubtypeId="AcidPowerCell" />
+		<Entry Class="Components" BlueprintSubtypeId="AlkalinePowerCell" />		
+		<Entry Class="Components" BlueprintSubtypeId="GravityGeneratorComponent">   
+			<Enabled>false</Enabled>
+		</Entry>		
+	    <Entry Class="Components" BlueprintSubtypeId="ThrustComponent">   
+            <Enabled>false</Enabled>
+        </Entry>		
+										
+
+
+	    <Entry Class="EliteTools" BlueprintSubtypeId="Position0120_Welder4">   
+            <Enabled>false</Enabled>
+        </Entry>
 		
+		<Entry Class="EliteTools" BlueprintSubtypeId="Position0080_HandDrill4">   
+            <Enabled>false</Enabled>
+        </Entry>
 		
-		
+		<Entry Class="EliteTools" BlueprintSubtypeId="Position0040_AngleGrinder4">   
+            <Enabled>false</Enabled>
+        </Entry>
+	
+
+
+
+	
+		<!-- new -->
         <Entry Class="NanoAssemblerComponents" BlueprintSubtypeId="LaserAmplifier" />
         <Entry Class="NanoAssemblerComponents" BlueprintSubtypeId="JumpCore" />
         <Entry Class="NanoAssemblerComponents" BlueprintSubtypeId="CompatRecipe" />
         <Entry Class="NanoAssemblerComponents" BlueprintSubtypeId="GravityGeneratorComponent" />
         <Entry Class="NanoAssemblerComponents" BlueprintSubtypeId="ThrustComponent" />
+        <Entry Class="NanoAssemblerComponents" BlueprintSubtypeId="ElectronMatrix" />
+		
+	
+        <Entry Class="NanoTools" BlueprintSubtypeId="Position0010_AngleGrinder" />
+        <Entry Class="NanoTools" BlueprintSubtypeId="Position0020_AngleGrinder2" />
+        <Entry Class="NanoTools" BlueprintSubtypeId="Position0030_AngleGrinder3" />
+        <Entry Class="NanoTools" BlueprintSubtypeId="Position0050_HandDrill" />
+        <Entry Class="NanoTools" BlueprintSubtypeId="Position0060_HandDrill2" />
+        <Entry Class="NanoTools" BlueprintSubtypeId="Position0070_HandDrill3" />
+        <Entry Class="NanoTools" BlueprintSubtypeId="Position0090_Welder" />
+        <Entry Class="NanoTools" BlueprintSubtypeId="Position0100_Welder2" />
+        <Entry Class="NanoTools" BlueprintSubtypeId="Position0110_Welder3" />
 		
 		
-		<Entry Class="NanoTools" BlueprintSubtypeId="Welder4" />
-		<Entry Class="NanoTools" BlueprintSubtypeId="HandDrill4" />
-		<Entry Class="NanoTools" BlueprintSubtypeId="AngleGrinder4" />	
+		<Entry Class="NanoTools" BlueprintSubtypeId="Position0120_Welder4" />
+		<Entry Class="NanoTools" BlueprintSubtypeId="Position0080_HandDrill4" />
+		<Entry Class="NanoTools" BlueprintSubtypeId="Position0040_AngleGrinder4" />	
 		
         <Entry Class="CronyxAmmo" BlueprintSubtypeId="CronyxNATO_25x184mm" />
         <Entry Class="CronyxAmmo" BlueprintSubtypeId="CronyxMissile200mm" />

@@ -465,18 +465,18 @@ namespace AresAtWar.War
 
 
 
-            public Vector3D GetRandomPoint(Vector3D currentposition)
+            public Vector3D GetRandomPoint(Vector3D currentposition, float MinrotationDegrees = 1f, float MaxrotationDegrees =6f)
             {
                 Random random = new Random();
 
-                if(this.Id == "Station27")
+                if(this.Id == "Station27Space")
                 {
-                    return Helper.GeneratePointInBylenBelt(currentposition,1, 15).GetValueOrDefault();
+                    return Helper.GeneratePointInBylenBelt(currentposition, MinrotationDegrees, MaxrotationDegrees).GetValueOrDefault();
                 }
 
                 if (this.Id == "MilaBelt")
                 {
-                    return Helper.GeneratePointInMilaBelt(currentposition,1, 15).GetValueOrDefault();
+                    return Helper.GeneratePointInMilaBelt(currentposition, MinrotationDegrees, MaxrotationDegrees).GetValueOrDefault();
                 }
 
 

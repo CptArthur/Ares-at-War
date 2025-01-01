@@ -14,6 +14,7 @@ using Sandbox.Game.GameSystems;
 using Sandbox.Game.World;
 using Sandbox.Game.Entities.Planet;
 using VRage.ModAPI;
+using AresSystem.API;
 
 namespace RespawnSystem
 {
@@ -25,6 +26,13 @@ namespace RespawnSystem
         public long TLL;
     }
 
+    public struct FadeOutData
+    {
+        public long playerId;
+        public long TLL;
+    }
+
+
     [MySessionComponentDescriptor(MyUpdateOrder.BeforeSimulation | MyUpdateOrder.AfterSimulation)]
     public class RespawnSystem : MySessionComponentBase
     {
@@ -33,6 +41,7 @@ namespace RespawnSystem
         int count = 0;
 
         public static List<RespawnData> _RespawnData = new List<RespawnData>();
+        public static List<FadeOutData> _FadeOutData = new List<FadeOutData>();
 
         public static RespawnSystem Instance;
         //public MyVoxelBase entity;
@@ -44,13 +53,14 @@ namespace RespawnSystem
         public static Vector3D PlanetCenter = new Vector3D(0, 0, 0);
         public static Vector3D AgarisCenter = new Vector3D(-1129033.5, 126871.5, 1293873.5);
         public static Vector3D Carcosa = new Vector3D(-1174736.16, 106319.66, 1325749.58);
+        public static Vector3D Thora4Ice = new Vector3D(-677376.160958611, -1056251.32781255, -3498327.91690333);
         public static Vector3D Azuris = new Vector3D(-1080910.05, 135510.47, 1258013.98);
-
-
         public static Vector3D LezunoCoords = new Vector3D(-1266529.78125, -314814.913085938, -1422814.98828125);
 
         public static Vector3D LezunoNorth = new Vector3D(-1312209.11, -264051.53, -1470507.23);
         private static string PlanetName = "Planet Lezuno";
+
+        public static MESApi MESApi;
 
 
         public override void LoadData()
@@ -58,6 +68,7 @@ namespace RespawnSystem
             MyVisualScriptLogicProvider.SetCustomLoadingScreenText("Ares at War");
             MyVisualScriptLogicProvider.SetCustomLoadingScreenImage("Data/Screens/thumb.png");
 
+            MESApi = new MESApi();
 
 
         }
@@ -79,8 +90,39 @@ namespace RespawnSystem
             respawndata.shipEntityId = shipEntityId;
             respawndata.playerId = playerId;
             respawndata.RespawnShipPrefabName = RespawnShipPrefabName;
-            respawndata.TLL = MyAPIGateway.Session.GameplayFrameCounter + 120;
+            respawndata.TLL = MyAPIGateway.Session.GameplayFrameCounter + 360;
             _RespawnData.Add(respawndata);
+
+            if (RespawnShipPrefabName == "RespawnShip-S27")
+            {
+                Vector3D position = new Vector3D(-1971126.63, -1015993.3, -2313164.75);
+                MESApi.ProcessStaticEncountersAtLocation(position);
+
+
+                MyVisualScriptLogicProvider.ScreenColorFadingStart(2, true, playerId);
+                MyVisualScriptLogicProvider.ScreenColorFadingMinimalizeHUD(true, playerId);
+            }
+
+
+            if (RespawnShipPrefabName == "RespawnShip-Starlight")
+            {
+                Vector3D position = new Vector3D(-712702.987357875, -1112964.03188904, -3487951.1276429);
+                MESApi.ProcessStaticEncountersAtLocation(position);
+
+
+                MyVisualScriptLogicProvider.ScreenColorFadingStart(2, true, playerId);
+                MyVisualScriptLogicProvider.ScreenColorFadingMinimalizeHUD(true, playerId);
+            }
+
+
+            if (RespawnShipPrefabName == "Thora4-EscapePod")
+            {
+                MyVisualScriptLogicProvider.ScreenColorFadingStart(2, true, playerId);
+                MyVisualScriptLogicProvider.ScreenColorFadingMinimalizeHUD(true, playerId);
+            }
+
+            
+
 
         }
 
@@ -160,7 +202,7 @@ namespace RespawnSystem
             }
 
 
-            if (RespawnShipPrefabName == "Ares-Campaign")
+            if (RespawnShipPrefabName == "RespawnShip-S27")
             {
 
                 block.RemovePilot();
@@ -172,8 +214,82 @@ namespace RespawnSystem
 
                 player.Character.Teleport(matrix);
 
+                var fadeoutdata = new FadeOutData();
+                fadeoutdata.playerId = playerId;
+                fadeoutdata.TLL = MyAPIGateway.Session.GameplayFrameCounter + 120;
+                _FadeOutData.Add(fadeoutdata);
+                
+
 
             }
+
+
+            if(RespawnShipPrefabName == "RespawnShip-Starlight")
+            {
+                //GPS:CaptainArthur #1::::#FF75C9F1:
+
+                Vector3 up = new Vector3D(0, 1, 0);
+                Vector3 forward = new Vector3D(-1, 0, 0);
+                Vector3D position = new Vector3D(-712702.987357875, -1112964.03188904, -3487951.1276429);
+                MatrixD matrix = MatrixD.CreateWorld(position, forward, up);
+
+                block.RemovePilot();
+                player.Character.Teleport(matrix);
+
+                var fadeoutdata = new FadeOutData();
+                fadeoutdata.playerId = playerId;
+                fadeoutdata.TLL = MyAPIGateway.Session.GameplayFrameCounter + 120;
+                _FadeOutData.Add(fadeoutdata);
+            }
+
+
+
+
+
+            if (RespawnShipPrefabName == "Thora4-EscapePod")
+            {
+
+                var planet = MyGamePruningStructure.GetClosestPlanet(Thora4Ice);
+
+                Vector3 up = -MyAPIGateway.GravityProviderSystem.CalculateNaturalGravityInPoint(Thora4Ice).Normalized();
+                Vector3 forward = MyUtils.GetRandomPerpendicularVector(up);
+                Vector3D position = Thora4Ice + forward * _rnd.Next(10, 100);
+
+
+                Vector3D newposition = planet.GetClosestSurfacePointGlobal(position);
+
+
+                MatrixD matrix = MatrixD.CreateWorld(newposition + 3 * up, forward, up);
+                var gridWorldMatrix = MatrixD.Invert(block.PositionComp.LocalMatrixRef) * matrix;
+                grid.Teleport(gridWorldMatrix);
+                grid.PositionComp.SetWorldMatrix(ref gridWorldMatrix, skipTeleportCheck: true);
+
+
+                var fadeoutdata = new FadeOutData();
+                fadeoutdata.playerId = playerId;
+                fadeoutdata.TLL = MyAPIGateway.Session.GameplayFrameCounter + 1140;
+                _FadeOutData.Add(fadeoutdata);
+
+
+
+                /*
+                Vector3 up = new Vector3D(-0.608709931373596, 0.718726575374603, -0.336012244224548);
+                Vector3 forward = new Vector3D(0.775614082813263, 0.449913620948792, -0.442719399929047);
+                Vector3D position = new Vector3D(-679555.319760225, -1057490.48809076, -3499426.287517);
+                MatrixD matrix = MatrixD.CreateWorld(position, forward, up);
+
+
+
+                var gridWorldMatrix = MatrixD.Invert(block.PositionComp.LocalMatrixRef) * matrix;
+                grid.Teleport(gridWorldMatrix);
+                grid.PositionComp.SetWorldMatrix(ref gridWorldMatrix, skipTeleportCheck: true);
+                */
+
+            }
+
+            
+
+
 
 
             if (RespawnShipPrefabName == "CarcosaRespawnRover")
@@ -222,10 +338,20 @@ namespace RespawnSystem
             for (int i = _RespawnData.Count - 1; i >= 0; i--)
             {
                 var data = _RespawnData[i];
-                if (data.TLL> MyAPIGateway.Session.GameplayFrameCounter)
+                if (data.TLL < MyAPIGateway.Session.GameplayFrameCounter)
                 {
                     ProssesRespawnShip(data.shipEntityId, data.playerId, data.RespawnShipPrefabName);
                     _RespawnData.RemoveAtFast(i);
+                }
+            }
+
+            for (int i = _FadeOutData.Count - 1; i >= 0; i--)
+            {
+                var data = _FadeOutData[i];
+                if (data.TLL < MyAPIGateway.Session.GameplayFrameCounter)
+                {
+                    MyVisualScriptLogicProvider.ScreenColorFadingStartSwitch(8, data.playerId);
+                    _FadeOutData.RemoveAtFast(i);
                 }
             }
 
@@ -261,6 +387,8 @@ namespace RespawnSystem
             {
                 MyVisualScriptLogicProvider.RespawnShipSpawned -= RespawnShipSpawned;
             }
+
+            MESApi = null;
         }
 
 

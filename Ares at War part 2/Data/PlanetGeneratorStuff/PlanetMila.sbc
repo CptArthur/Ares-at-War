@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	
+	
+	<!--
+		<Definition xsi:type="PlanetGeneratorDefinition">
+			<Id>
+				<TypeId>PlanetGeneratorDefinition</TypeId>
+				<SubtypeId>Mila</SubtypeId>
+			</Id>
+			<PlanetMaps Material="false" Ores="false" Biome="false" Occlusion="false"/>
+			<MesherPostprocessing xsi:type="MyObjectBuilder_VoxelMesherComponentDefinition">
+				<PostprocessingSteps>
+					<Step xsi:type="MyObjectBuilder_VoxelPostprocessingDecimate" ForPhysics="true">
+						<LodSettings>
+							<Settings FromLod="0">
+								<FeatureAngle>15</FeatureAngle>
+								<EdgeThreshold>.04</EdgeThreshold>
+								<PlaneThreshold>.02</PlaneThreshold>
+							</Settings>
+							<Settings FromLod="1">
+								<FeatureAngle>15</FeatureAngle>
+								<EdgeThreshold>.04</EdgeThreshold>
+								<PlaneThreshold>.04</PlaneThreshold>
+							</Settings>
+							<Settings FromLod="2">
+								<FeatureAngle>15</FeatureAngle>
+								<EdgeThreshold>.06</EdgeThreshold>
+								<PlaneThreshold>.06</PlaneThreshold>
+							</Settings>
+						</LodSettings>
+					</Step>
+				</PostprocessingSteps>
+			</MesherPostprocessing>
+			<SurfaceDetail>
+				<Texture>Data/PlanetDataFiles/Extra/material_detail_3</Texture>
+				<Size>384</Size>
+				<Scale>5</Scale>
+				<Slope Min="14" Max="90"/>
+				<Transition>7.5</Transition>
+			</SurfaceDetail>
+			<DistortionTable>
+				<Distortion Type="Billow" Value="200" Frequency="2" Height="2" LayerCount="6"/>
+			</DistortionTable>
+			<SoundRules>
+				<SoundRule>
+					<Height Min="0" Max="1"/>
+					<Latitude Min="0" Max="90"/>
+					<SunAngleFromZenith Min="0" Max="180"/>
+					<EnvironmentSound>AmbHigh</EnvironmentSound>
+				</SoundRule>
+			</SoundRules>
+			<MusicCategories>
+				<MusicCategory Category="Planet" Frequency="0.7"/>
+				<MusicCategory Category="Mystery" Frequency="0.05"/>
+				<MusicCategory Category="Danger" Frequency="0.6"/>
+			</MusicCategories>
+			<ComplexMaterials>
+				<MaterialGroup Name="Planet Features" Value="0">
+					<Rule>
+						<Layers>
+							<Layer Material="Bylen" Depth="4"/>
+						</Layers>
+						<Height Min="0" Max="1"/>
+						<Latitude Min="0" Max="90"/>
+						<Slope Min="0" Max="90"/>
+					</Rule>
+				</MaterialGroup>
+			</ComplexMaterials>
+			<EnvironmentItems>
+			</EnvironmentItems>
+			<DefaultSurfaceMaterial Material="Bylen" MaxDepth="4"/>
+			<DefaultSubSurfaceMaterial Material="Bylen"/>
+			<HasAtmosphere>true</HasAtmosphere>
+			<MaximumOxygen>0.5</MaximumOxygen>
+			<Atmosphere>
+				<Breathable>false</Breathable>
+				<OxygenDensity>0.001</OxygenDensity>
+				<Density>36</Density>
+				<LimitAltitude>2.0</LimitAltitude>
+				<MaxWindSpeed>200</MaxWindSpeed>
+			</Atmosphere>
+			<AtmosphereSettings>
+				<RayleighScattering>
+					<X>21.7</X>
+					<Y>12.5</Y>
+					<Z>12.2</Z>
+				</RayleighScattering>
+				<MieScattering>150</MieScattering>
+				<MieColorScattering>
+					<X>18.848</X>
+					<Y>44.543</Y>
+					<Z>76.941</Z>
+				</MieColorScattering>
+				<RayleighHeight>8.323</RayleighHeight>
+				<RayleighHeightSpace>8.192</RayleighHeightSpace>
+				<RayleighTransitionModifier>1.2</RayleighTransitionModifier>
+				<MieHeight>50</MieHeight>
+				<MieG>0.990</MieG>
+				<SeaLevelModifier>0.9</SeaLevelModifier>
+				<AtmosphereTopModifier>1.1</AtmosphereTopModifier>
+				<Intensity>4.7</Intensity>
+				<FogIntensity>1</FogIntensity>
+				<Scale>1</Scale>
+			</AtmosphereSettings>
+			<WeatherFrequencyMin>0</WeatherFrequencyMin>
+			<WeatherFrequencyMax>0</WeatherFrequencyMax>
+			<WeatherGenerators>
+				<WeatherGenerator>
+					<Voxel>Bylen</Voxel>
+					<Weathers>
+						<Weather>
+							<Name>BylenThunderstormHeavy</Name>
+							<Weight>1</Weight>
+							<MinLength>99999999</MinLength>
+							<MaxLength>99999999</MaxLength>
+							<SpawnOffset>0</SpawnOffset>
+						</Weather>
+					</Weathers>
+				</WeatherGenerator>
+			</WeatherGenerators>
+
+			<CloudLayers>
+				<CloudLayer>
+
+					<Model>Models/Environment/Sky/CloudSphere.mwm</Model>
+					<Textures>
+						<Texture>Textures/Models/Environment/Sky/BylenClouds.dds</Texture>
+					</Textures>
+					<RelativeAltitude>-1</RelativeAltitude>
+					<RotationAxis>
+						<X>-0.2</X>
+						<Y>0.2</Y>
+						<Z>1</Z>
+					</RotationAxis>
+					<AngularVelocity>0</AngularVelocity>
+					<InitialRotation>3.2</InitialRotation>
+					<ScalingEnabled>false</ScalingEnabled>
+					<FadeOutRelativeAltitudeStart>3.0</FadeOutRelativeAltitudeStart>
+					<FadeOutRelativeAltitudeEnd>1.4</FadeOutRelativeAltitudeEnd>
+					<ApplyFogRelativeDistance>0.1</ApplyFogRelativeDistance>
+				</CloudLayer>
+				<CloudLayer>
+
+					<Model>Models/Environment/Sky/CloudSphere.mwm</Model>
+					<Textures>
+						<Texture>Textures/Models/Environment/Sky/BylenClouds.dds</Texture>
+					</Textures>
+					<RelativeAltitude>-1</RelativeAltitude>
+					<RotationAxis>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</RotationAxis>
+					<AngularVelocity>0.001</AngularVelocity>
+					<InitialRotation>3.2</InitialRotation>
+					<ScalingEnabled>false</ScalingEnabled>
+					<FadeOutRelativeAltitudeStart>3.0</FadeOutRelativeAltitudeStart>
+					<FadeOutRelativeAltitudeEnd>1.4</FadeOutRelativeAltitudeEnd>
+					<ApplyFogRelativeDistance>0.1</ApplyFogRelativeDistance>
+				</CloudLayer>
+				<CloudLayer>
+
+					<Model>Models/Environment/Sky/CloudRing.mwm</Model>
+					<Textures>
+						<Texture>Textures/Models/Environment/Sky/BylenRing.dds</Texture>
+					</Textures>
+					<RelativeAltitude>-1</RelativeAltitude>
+					<RotationAxis>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</RotationAxis>
+					<AngularVelocity>0</AngularVelocity>
+					<InitialRotation>3.2</InitialRotation>
+					<ScalingEnabled>false</ScalingEnabled>
+					<FadeOutRelativeAltitudeStart>0</FadeOutRelativeAltitudeStart>
+					<FadeOutRelativeAltitudeEnd>0</FadeOutRelativeAltitudeEnd>
+					<ApplyFogRelativeDistance>0.1</ApplyFogRelativeDistance>
+				</CloudLayer>
+
+				<CloudLayer>
+					<Model>Models/Environment/Sky/CloudSphere.mwm</Model>
+					<Textures>
+						<Texture>Textures/Models/Environment/Sky/BylenClouds.dds</Texture>
+					</Textures>
+					<RelativeAltitude>1.0</RelativeAltitude>
+					<RotationAxis>
+						<X>0</X>
+						<Y>1</Y>
+						<Z>0</Z>
+					</RotationAxis>
+					<AngularVelocity>0.0002</AngularVelocity>
+					<InitialRotation>0.15</InitialRotation>
+					<ScalingEnabled>false</ScalingEnabled>
+					<FadeOutRelativeAltitudeStart>0.5</FadeOutRelativeAltitudeStart>
+					<FadeOutRelativeAltitudeEnd>1.6</FadeOutRelativeAltitudeEnd>
+				</CloudLayer>
+				<CloudLayer>
+					<Model>Models/Environment/Sky/CloudSphere.mwm</Model>
+					<Textures>
+						<Texture>Textures/Models/Environment/Sky/BylenClouds.dds</Texture>
+					</Textures>
+					<RelativeAltitude>2.0</RelativeAltitude>
+					<RotationAxis>
+						<X>1</X>
+						<Y>0.2</Y>
+						<Z>-0.2</Z>
+					</RotationAxis>
+					<AngularVelocity>0.0002</AngularVelocity>
+					<InitialRotation>2.5</InitialRotation>
+					<ScalingEnabled>false</ScalingEnabled>
+					<FadeOutRelativeAltitudeStart>0.7</FadeOutRelativeAltitudeStart>
+					<FadeOutRelativeAltitudeEnd>1.5</FadeOutRelativeAltitudeEnd>
+				</CloudLayer>
+				<CloudLayer>
+					<Model>Models/Environment/Sky/CloudSphere.mwm</Model>
+					<Textures>
+						<Texture>Textures/Models/Environment/Sky/BylenClouds.dds</Texture>
+					</Textures>
+					<RelativeAltitude>3.0</RelativeAltitude>
+					<RotationAxis>
+						<X>-0.2</X>
+						<Y>0.2</Y>
+						<Z>1</Z>
+					</RotationAxis>
+					<AngularVelocity>0.0002</AngularVelocity>
+					<InitialRotation>4.2</InitialRotation>
+					<ScalingEnabled>false</ScalingEnabled>
+					<FadeOutRelativeAltitudeStart>0.8</FadeOutRelativeAltitudeStart>
+					<FadeOutRelativeAltitudeEnd>1.4</FadeOutRelativeAltitudeEnd>
+				</CloudLayer>
+			</CloudLayers>
+			<SurfaceGravity>2</SurfaceGravity>
+			<MaterialsMaxDepth Min="4000" Max="4000"/>
+			<MaterialsMinDepth Min="20" Max="20"/>
+			<GravityFalloffPower>15</GravityFalloffPower>
+			<HillParams Min = "-0.03" Max ="0.03"/>
+		</Definition>
+	-->
+</Definitions>

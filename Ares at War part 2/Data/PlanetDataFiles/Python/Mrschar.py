@@ -153,9 +153,9 @@ filename = "thora4"
 #Planet = "Planet Crait"
 #filename = "crait" 
 
-height = True
-Vox = True
-Biome = False
+height = False
+Vox = False
+Biome = True
 Ore = False
 
 #Normal

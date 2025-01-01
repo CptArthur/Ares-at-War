@@ -170,9 +170,29 @@ namespace AresAtWar.SessionCore
 
         public static Dictionary<string, string> InternalMissionMapping(string profileSubtypeId, string spawnGroupName, List<string> Tags, Vector3D storeblockposition)
         {
+            //Scrapmissions
+            if (Tags.Contains("SCRAP"))
+            {
+                return ScrapMapping(storeblockposition);
+            }
+
+            //Scrapmissions
+            if (Tags.Contains("HeavySCRAP"))
+            {
+                return ScrapMapping(storeblockposition, true);
+            }
+
+
+
+
+
+
+
+
+
+
+
             var startingEncounter = GetStaticEncounter(spawnGroupName, storeblockposition);
-
-
             string Faction = FindOutFaction(Tags);
             string EncounterFaction = startingEncounter.FactionTag;
             string NodeFaction = startingEncounter.Node.Faction.Tag;
@@ -262,6 +282,10 @@ namespace AresAtWar.SessionCore
                 return TransportMissionMapping(spawnGroupName, "ITC", storeblockposition);
             }
 
+
+
+
+
             return null;
         }
 
@@ -283,6 +307,66 @@ namespace AresAtWar.SessionCore
 
             return "CIVILIAN";
         }
+
+
+        public static Dictionary<string, string> ScrapMapping(Vector3D storeblockposition, bool heavy=false)
+        {
+            var mapping = new Dictionary<string, string>();
+
+
+            var targetnodde = GetClosestNodeWithFeel(storeblockposition, Feel.Barren);
+
+            if (targetnodde == null)
+                return null;
+
+            float MinrotationDegrees = 1;
+
+            float MaxrotationDegrees = 6;
+
+            if (heavy)
+            {
+                MinrotationDegrees = 9;
+                MaxrotationDegrees = 16;
+            }
+
+
+
+            var targetlocation = targetnodde.GetRandomPoint(storeblockposition, MinrotationDegrees, MaxrotationDegrees);
+
+            if (targetlocation == null)
+                return null;
+
+            var distance = Vector3D.Distance(storeblockposition, targetlocation);
+
+            if (heavy)
+            {
+                mapping.Add("{EventSpawner}", $"AaW_Spawner_SpaceHeavyScrap");
+                mapping.Add("{Collateral}", $"1500000");
+                mapping.Add("{Description}", $"Pay 1,500,000 credits to receive the exact GPS coordinates of valuable scrap. Distance: {distance / 1000:F2} km.");
+
+            }
+            else
+            {
+                mapping.Add("{EventSpawner}", $"AaW_Spawner_SpaceScrap");
+                mapping.Add("{Collateral}", $"100000");
+                mapping.Add("{Description}", $"Pay 100,000 credits to receive the exact GPS coordinates of valuable scrap. Distance: {distance / 1000:F2} km.");
+            }
+
+
+            mapping.Add("{InstanceEventGroupId}", $"MissionGroup_SpaceScrap");
+            mapping.Add("{EventCoords}", $"{{X:{targetlocation.X} Y:{targetlocation.Y} Z:{targetlocation.Z}}}");
+            mapping.Add("{EventName}", "Buyable Scrap Location");
+
+            mapping.Add("{Reward}", $"0");
+            mapping.Add("{ReputationReward}", $"0");
+            mapping.Add("{FailReputationPrice}", $"0");
+
+            return mapping;
+
+        }
+
+
+
 
         public static Dictionary<string, string> BountyMissionMapping(string Faction, Vector3D storeblockposition)
         {
@@ -362,7 +446,7 @@ namespace AresAtWar.SessionCore
 
             mapping.Add("{DestinationLocation}", $"{{X:{destinationEncounter.Coords.X} Y:{destinationEncounter.Coords.Y} Z:{destinationEncounter.Coords.Z}}}");
             mapping.Add("{EventName}", $"{eventname}");
-            mapping.Add("{Description}", $"{description} Distance: {distance:F2} km.");
+            mapping.Add("{Description}", $"{description} Distance: {distance / 1000:F2} km.");
             mapping.Add("{Reward}", $"{reward}");
             mapping.Add("{Collateral}", $"{Collateral}");
             mapping.Add("{ReputationReward}", $"{_missionType.ReputationReward}");

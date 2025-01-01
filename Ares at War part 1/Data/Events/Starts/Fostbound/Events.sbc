@@ -1,0 +1,608 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<EntityComponents>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_PlayerCondition_Frostbound_FirstTime</SubtypeId>
+			</Id>
+			<Description>
+			[MES Player Condition]
+
+
+			[CheckLastRespawnShipName:true]
+			[LastRespawnShipName:Thora4-EscapePod]
+
+			[CheckPlayerTags:true]
+			[ExcludedPlayerTag:StartedFrostbound]
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventCondition_FrostboundOpening_FirstTime</SubtypeId>
+			</Id>
+			<Description>
+
+			[MES Event Condition]
+			[CheckPlayerCondition:true]
+			[PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+	
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_Event_FrostboundOpening_Start</SubtypeId>
+			</Id>
+			<Description>
+
+			[MES Event]
+			[UseEvent:true]
+			[UniqueEvent:false]		
+
+
+			[ActionExecution:Sequential]
+			[TimeUntilNextActionMs:3800]
+			[ConditionIds:AaW_EventCondition_FrostboundOpening_FirstTime]		
+			[ActionIds:AaW_EventAction_FrostboundOpening_Message1]
+
+			[ActionIds:AaW_EventAction_FrostboundOpening_Message2]
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]
+			[ActionIds:AaW_EventAction_FrostboundOpening_Message3]	
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]	
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]		
+			[ActionIds:AaW_EventAction_FrostboundOpening_Message4]
+			
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]	
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]	
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]	
+			[ActionIds:AaW_EventAction_FrostboundOpening_Message5]
+			[ActionIds:AaW_EventAction_FrostboundOpening_Message6]	
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]		
+			[ActionIds:AaW_EventAction_FrostboundOpening_Message7]	
+
+			[ActionIds:AaW_EventAction_FrostboundOpening_Message8]	
+			[ActionIds:AaW_EventAction_FrostboundOpening_Message9]	
+			[ActionIds:AaW_EventAction_FrostboundOpening_Message11]	
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]
+			[ActionIds:AaW_EventAction_FrostboundOpening_Message12]	
+			
+			[ActionIds:AaW_EventAction_FrostboundOpening_End]		
+
+			</Description>
+		</EntityComponent>
+		
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_PassTime</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+
+			</Description>
+		</EntityComponent>
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message1</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+
+			[ToggleEvents:true]
+			[ToggleEventIds:AaW_Event_FrostboundOpening_Start]
+			[ToggleEventIdModes:false]		
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_FrostboundOpening_Message1]
+			</Description>
+		</EntityComponent>
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message1</SubtypeId>
+			</Id>
+			<Description>
+			  [RivalAI Chat]
+			  
+			  [UseChat:true]
+			  [StartsReady:true]
+			  [Chance:100]
+			  [MaxChats:-1]
+			  [BroadcastRandomly:false]
+			  [IgnoreAntennaRequirement:True]
+			  [IgnoredAntennaRangeOverride:1]
+			  [SendToSpecificPlayers:true]
+			  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+			  [Color:Blue]
+			  [Author:LYRA]
+				
+			  [ChatMessages:Tiberius comms: Attention. Hull failure imminent.]
+			  [BroadcastChatType:Notify]
+			  [ChatAudio:Frostbound_flashback]   	  
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message2</SubtypeId>
+			</Id>
+			<Description>
+[MES Event Action]
+	
+[UseChatBroadcast:true]
+[ChatData:AaW_EventChat_FrostboundOpening_Message2]
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message2</SubtypeId>
+			</Id>
+			<Description>
+  [RivalAI Chat]
+  
+  [UseChat:true]
+  [StartsReady:true]
+  [Chance:100]
+  [MaxChats:-1]
+  [BroadcastRandomly:false]
+  [IgnoreAntennaRequirement:True]
+  [IgnoredAntennaRangeOverride:1]
+  [SendToSpecificPlayers:true]
+  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+  [Color:Blue]
+  [Author:LYRA]
+	
+  [ChatMessages:Tiberius comms: All personnel abandon ship.]
+  [BroadcastChatType:Notify]
+  [ChatAudio:]   	  
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message3</SubtypeId>
+			</Id>
+			<Description>
+[MES Event Action]
+	
+[UseChatBroadcast:true]
+[ChatData:AaW_EventChat_FrostboundOpening_Message3]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message3</SubtypeId>
+			</Id>
+			<Description>
+  [RivalAI Chat]
+  
+  [UseChat:true]
+  [StartsReady:true]
+  [Chance:100]
+  [MaxChats:-1]
+  [BroadcastRandomly:false]
+  [IgnoreAntennaRequirement:True]
+  [IgnoredAntennaRangeOverride:1]
+  [SendToSpecificPlayers:true]
+  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+  [Color:Blue]
+  [Author:LYRA]
+	
+  [ChatMessages:Launch in 3...2...1...]
+  [BroadcastChatType:Notify]
+  [ChatAudio:]   	  
+			</Description>
+		</EntityComponent>
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message4</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_FrostboundOpening_Message4]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message4</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+		  [Color:Red]
+		  [Author:LYRA]
+			
+		  [ChatMessages:aw##t3..... Critical error detected.  Several files corrupted. System rebooting... ]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:LYRA_FrostBound_Corrupted]   	  
+			</Description>
+		</EntityComponent>
+		
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message5</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_FrostboundOpening_Message5]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message5</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+		  [Color:Blue]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Reboot complete...]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:]   	  
+			</Description>
+		</EntityComponent>		
+		
+		
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message6</SubtypeId>
+			</Id>
+			<Description>
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW_EventChat_FrostboundOpening_Message6]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message6</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+		  [Color:Green]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Thank you for choosing Lyra, your trusted partner in advanced personal assistance.]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:LYRA_FrostBound_BootSound]   	  
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message7</SubtypeId>
+			</Id>
+			<Description>
+		[MES Event Action]
+			
+		[UseChatBroadcast:true]
+		[ChatData:AaW_EventChat_FrostboundOpening_Message7]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message7</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+		  [Color:Green]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Designed for efficiency, reliability, and a touch of brilliance]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:]   	  
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message8</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_FrostboundOpening_Message8]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message8</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+		  [Color:Green]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Lyra is here to elevate your experience]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:]   	  
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message9</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_FrostboundOpening_Message9]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message9</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+		  [Color:Green]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Lyra: Your world, redefined.]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:]   	  
+			</Description>
+		</EntityComponent>
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message10</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_FrostboundOpening_Message10]
+
+			</Description>
+		</EntityComponent>
+		
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message10</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+		  [Color:Blue]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Initializing. Please hold.]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:LYRA_FrostBound_initpleasehold]   	  
+			</Description>
+		</EntityComponent>		
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message11</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_FrostboundOpening_Message11]
+
+			</Description>
+		</EntityComponent>
+		
+
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message11</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+		  [Color:Blue]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Scan complete. Current location: Third moon of Bylen, within the Ares system.]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:LYRA_FrostBound_scancomplete]   	  
+			</Description>
+		</EntityComponent>				
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message12</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_FrostboundOpening_Message12]
+
+			</Description>
+		</EntityComponent>
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message12</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+		  [Color:Blue]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Receiving a weak distress signal, originating from the Tiberius.]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:LYRA_FrostBound_tiberioussignal]   	  
+			</Description>
+		</EntityComponent>				
+		
+		
+		
+		
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_End</SubtypeId>
+			</Id>
+			<Description>
+[MES Event Action]
+	
+
+[AddTagstoPlayers:true]
+[AddTagsPlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+[AddTags:StartedFrostbound]
+
+[ToggleEvents:true]
+[ToggleEventIds:AaW_Event_FrostboundOpening_Start]
+[ToggleEventIdModes:true]	
+			</Description>
+		</EntityComponent>
+	</EntityComponents>
+</Definitions>

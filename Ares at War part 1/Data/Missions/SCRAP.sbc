@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+ <!--
+Variables:
+{EventName}
+{StartingLocation}
+{DestinationLocation}
+{Description}
+ 
+
+ContractBlockLocation
+
+
+ ContractBlockFaction
+ -->
+  
+  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_ProcSCRAP</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	[Tags:SCRAP]
+	
+	[Title:{EventName}]
+	[Description:{Description}]
+	
+	[InstanceEventGroupId:{InstanceEventGroupId}]
+	
+	[Reward:{Reward}]
+	[Collateral:{Collateral}]
+	[ReputationReward:{ReputationReward}]
+	[FailReputationPrice:{FailReputationPrice}]
+	[Duration:{Duration}]
+
+	[CustomApiMapping:AaW-MissionMapping]
+      </Description>
+
+    </EntityComponent>
+	
+  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_ProcHeavySCRAP</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	[Tags:HeavySCRAP]
+	
+	[Title:{EventName}]
+	[Description:{Description}]
+	
+	[InstanceEventGroupId:{InstanceEventGroupId}]
+	
+	[Reward:{Reward}]
+	[Collateral:{Collateral}]
+	[ReputationReward:{ReputationReward}]
+	[FailReputationPrice:{FailReputationPrice}]
+	[Duration:{Duration}]
+
+	[CustomApiMapping:AaW-MissionMapping]
+      </Description>
+
+    </EntityComponent>
+
+
+
+
+
+
+
+
+	
+  </EntityComponents>
+</Definitions>
+

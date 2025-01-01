@@ -5,6 +5,7 @@
 <!--
 Spawn everywhere
 [SpawnConditionsProfiles:AaW_SpawnProfile_RivalAISpawn]
+[SpawnConditionsProfiles:AaW_SpawnProfile_RivalAISpawn_ForceStatic]
 -->
 
 	
@@ -34,6 +35,38 @@ Spawn everywhere
       </Description>
 
     </EntityComponent>		
+	
+	
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_RivalAISpawn_ForceStatic</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Spawn Conditions]
+
+		[SpaceCargoShip:false]
+		[LunarCargoShip:false]
+		[SpaceRandomEncounter:false]
+		[AtmosphericCargoShip:false]
+		[PlanetaryInstallation:false]
+		
+		[IgnoreCombatPhase:true]
+		[ZoneConditions:ZoneCondition_ZoneAaW]	
+		
+		[RivalAiAnySpawn:true]
+		[FactionOwner:SPRT]	
+
+	
+		[UseSpawnGroupPrefabSpawningMode:true]
+		
+		
+		[ForceStaticGrid:true]
+      </Description>
+
+    </EntityComponent>		
+	
 
 	
 	

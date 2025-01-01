@@ -25,10 +25,10 @@ namespace AresAtWar.Configuration {
 
 			if (phase == "BeforeStart" && string.IsNullOrWhiteSpace(UniqueModId)) {
 
-				if (!MyAPIGateway.Utilities.GetVariable<string>("MES-SavedDataId", out UniqueModId)) {
+				if (!MyAPIGateway.Utilities.GetVariable<string>("AaW-SavedDataId", out UniqueModId)) {
 
 					UniqueModId = DateTime.Now.Ticks.ToString();
-					MyAPIGateway.Utilities.SetVariable<string>("MES-SavedDataId", UniqueModId);
+					MyAPIGateway.Utilities.SetVariable<string>("AaW-SavedDataId", UniqueModId);
 
 				}
 			

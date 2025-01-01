@@ -393,6 +393,89 @@ AHE Carcosa MAp
 		</SpawnGroup>
 		
 		
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>StarlightCity</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:CIVILIAN]		
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+			
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:10000]
+
+			[ForceExactPositionAndOrientation:true]
+			[CutVoxelsAtAirtightCells:true]
+			[IgnoreCombatPhase:true]
+
+
+			[StaticEncounterCoords:{X:-712725.31332499 Y:-1112936.04750601 Z:-3487850.09379849}]
+			[StaticEncounterForward:{X:-0.065813922113215 Y:0.79454524195704 Z:-0.603627688347299}]
+			[StaticEncounterUp:{X:-0.313382151629021 Y:0.557871893357722 Z:0.768485899442427}]
+
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Thora 4]
+			[StaticEncounterPlanetDirection:{X:-0.946752091656885 Y:-0.240692866698882 Z:-0.213839708341524}]
+			[StaticEncounterPlanetAltitude:-0.469969102479808]
+
+
+
+			[ShipyardSetup:true]
+			[ShipyardConsoleBlockNames:{Any}]
+			[ShipyardProfileNames:AaW_Shipyard_MainProfile]
+			
+			
+			[IgnoreCleanupRules:true]
+
+
+			[GridsAreDestructable:false]
+
+
+			[ReplenishSystems:true]
+			
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-DoNotDelete)]		
+			[RandomGridNamePattern:Starlight City]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="CIVILIAN - Starlight City">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>CIVILIAN_SunsetCity_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>			
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		<SpawnGroup>
 			<Id>
@@ -534,22 +617,14 @@ Optional Tags For Dynamic Planet Spawning:
 				</Prefab>
 			</Prefabs>
 		</SpawnGroup>			
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 
-
+		
+		
+		
+		
+		
+		
+		
 	</SpawnGroups>
 	
 
