@@ -36,9 +36,12 @@ namespace RespawnSystem
     [MySessionComponentDescriptor(MyUpdateOrder.BeforeSimulation | MyUpdateOrder.AfterSimulation)]
     public class RespawnSystem : MySessionComponentBase
     {
+        public static ushort modId = 15108;
         private static Random _rnd = new Random();
 
         int count = 0;
+        public static int runCount = 0;
+        public static int loadWait = 120;
 
         public static List<RespawnData> _RespawnData = new List<RespawnData>();
         public static List<FadeOutData> _FadeOutData = new List<FadeOutData>();
@@ -65,12 +68,7 @@ namespace RespawnSystem
 
         public override void LoadData()
         {
-            MyVisualScriptLogicProvider.SetCustomLoadingScreenText("Ares at War");
-            MyVisualScriptLogicProvider.SetCustomLoadingScreenImage("Data/Screens/thumb.png");
-
             MESApi = new MESApi();
-
-
         }
 
         public override void BeforeStart()
@@ -93,14 +91,26 @@ namespace RespawnSystem
             respawndata.TLL = MyAPIGateway.Session.GameplayFrameCounter + 360;
             _RespawnData.Add(respawndata);
 
+            IMyPlayer player = GetPlayer(playerId);
+            //MyAPIGateway.Utilities.ShowMessage("AaW Debug",$"{player.DisplayName} with {player.IdentityId} == {playerId} spawned {RespawnShipPrefabName}");
+
+
             if (RespawnShipPrefabName == "RespawnShip-S27")
             {
                 Vector3D position = new Vector3D(-1971126.63, -1015993.3, -2313164.75);
                 MESApi.ProcessStaticEncountersAtLocation(position);
 
 
-                MyVisualScriptLogicProvider.ScreenColorFadingStart(2, true, playerId);
-                MyVisualScriptLogicProvider.ScreenColorFadingMinimalizeHUD(true, playerId);
+                if (player.IdentityId == MyVisualScriptLogicProvider.GetLocalPlayerId())
+                    Fade.fade(true);
+                else if (MyAPIGateway.Multiplayer.IsServer)
+                    MyAPIGateway.Multiplayer.SendMessageTo(modId, Encoding.ASCII.GetBytes("start"), MyVisualScriptLogicProvider.GetSteamId(player.IdentityId), true);
+
+
+                if (player.IdentityId == MyVisualScriptLogicProvider.GetLocalPlayerId())
+                    Fade.fade(true);
+                else if (MyAPIGateway.Multiplayer.IsServer)
+                    MyAPIGateway.Multiplayer.SendMessageTo(modId, Encoding.ASCII.GetBytes("start"), MyVisualScriptLogicProvider.GetSteamId(player.IdentityId), true);
             }
 
 
@@ -110,15 +120,19 @@ namespace RespawnSystem
                 MESApi.ProcessStaticEncountersAtLocation(position);
 
 
-                MyVisualScriptLogicProvider.ScreenColorFadingStart(2, true, playerId);
-                MyVisualScriptLogicProvider.ScreenColorFadingMinimalizeHUD(true, playerId);
+                if (player.IdentityId == MyVisualScriptLogicProvider.GetLocalPlayerId())
+                    Fade.fade(true);
+                else if (MyAPIGateway.Multiplayer.IsServer)
+                    MyAPIGateway.Multiplayer.SendMessageTo(modId, Encoding.ASCII.GetBytes("start"), MyVisualScriptLogicProvider.GetSteamId(player.IdentityId), true);
             }
 
 
             if (RespawnShipPrefabName == "Thora4-EscapePod")
             {
-                MyVisualScriptLogicProvider.ScreenColorFadingStart(2, true, playerId);
-                MyVisualScriptLogicProvider.ScreenColorFadingMinimalizeHUD(true, playerId);
+                if (player.IdentityId == MyVisualScriptLogicProvider.GetLocalPlayerId())
+                    Fade.fade(true);
+                else if (MyAPIGateway.Multiplayer.IsServer)
+                    MyAPIGateway.Multiplayer.SendMessageTo(modId, Encoding.ASCII.GetBytes("start"), MyVisualScriptLogicProvider.GetSteamId(player.IdentityId), true);
             }
 
             
@@ -131,6 +145,8 @@ namespace RespawnSystem
         {
             MyCubeGrid grid = MyEntities.GetEntityById(shipEntityId) as MyCubeGrid;
             IMyPlayer player = GetPlayer(playerId);
+
+            MyAPIGateway.Utilities.ShowMessage("AaW Debug", $"Second run: {player.DisplayName} with {player.IdentityId} == {playerId}");
 
 
             var block = grid.GetFirstBlockOfType<MyCockpit>();
@@ -358,7 +374,55 @@ namespace RespawnSystem
 
 
 
+            try
+            {
+                if (++runCount % 15 > 0) // Run every quarter of a second
+                    return;
+
+
+
+                // START BLINK STUFF
+                // Blinking during load screen causes crash, don't load messagehandler on clients for 30s
+                if (!MyAPIGateway.Multiplayer.IsServer && loadWait > 0)
+                {
+                    if (--loadWait == 0)
+                        MyAPIGateway.Multiplayer.RegisterMessageHandler(modId, Fade.getFade);
+                    return;
+                }
+
+
+                foreach (var data in _FadeOutData)
+                {
+                    if (data.TLL > MyAPIGateway.Session.GameplayFrameCounter)
+                    {
+                        continue;
+                    }
+
+                    if (data.playerId == MyVisualScriptLogicProvider.GetLocalPlayerId())
+                        Fade.fade(false);
+                    else
+                        MyAPIGateway.Multiplayer.SendMessageTo(modId, Encoding.ASCII.GetBytes("unblink"), MyVisualScriptLogicProvider.GetSteamId(data.playerId), true);
+                }
+
+
+
+                if (runCount > 299)
+                    runCount = 0;
+            }
+            catch (Exception ex)
+            {
+                //to bad
+                MyAPIGateway.Utilities.ShowMessage("AaW respawnsystem", "error it crashed");
+            }
+
+
+
+
+
         }
+
+
+
 
 
         public static IMyPlayer GetPlayer(long playerId)
@@ -388,7 +452,48 @@ namespace RespawnSystem
                 MyVisualScriptLogicProvider.RespawnShipSpawned -= RespawnShipSpawned;
             }
 
+
+            MyAPIGateway.Multiplayer.UnregisterMessageHandler(modId, Fade.getFade);
+
+
             MESApi = null;
+        }
+
+
+        public static class Fade
+        {
+            public static void getFade(byte[] poke)
+            {
+                try
+                {
+                    var msg = ASCIIEncoding.ASCII.GetString(poke);
+                    fade(msg == "start");
+                }
+                catch (Exception ex)
+                {
+                    Echo("Fatigue exception", ex.ToString());
+                }
+            }
+
+            public static void fade(bool start)
+            {
+                if (start)
+                {
+                    MyVisualScriptLogicProvider.ScreenColorFadingSetColor(Color.Black, 0L);
+                    MyVisualScriptLogicProvider.ScreenColorFadingStart(0.25f, start, 0L);
+                }
+                else
+                {
+                    MyVisualScriptLogicProvider.ScreenColorFadingSetColor(Color.Black, 0L);
+                    MyVisualScriptLogicProvider.ScreenColorFadingStart(8, start, 0L);
+                }
+
+            }
+
+            public static void Echo(string msg1, string msg2 = "")
+            {
+                MyLog.Default.WriteLineAndConsole(msg1 + ": " + msg2);
+            }
         }
 
 
