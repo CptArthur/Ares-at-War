@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+<!--
+Barren:
+[SpawnConditionsProfiles:AaW_SpawnProfile_Thora4Peace_Barren]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Thora4Peace_Barren_Outside]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Thora4Peace_Barren_FriendlyBase]
+
+
+
+Rural:
+[SpawnConditionsProfiles:AaW_SpawnProfile_Thora4Peace_Rural]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Thora4Peace_Rural_Outside]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Thora4Peace_Rural_FriendlyBase]
+
+
+Urban:
+[SpawnConditionsProfiles:AaW_SpawnProfile_Thora4Peace_Urban]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Thora4Peace_Urban_Outside]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Thora4Peace_Urban_FriendlyBase]
+
+
+
+
+
+
+		[CustomApiConditions:Thora4DeepOcean]
+		[CustomApiConditions:Thora4Land]
+		
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_Thora4Peace_Barren</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	
+	[IgnoreCombatPhase:true]
+	[ZoneConditions:ZoneCondition_ZoneBarren]	
+
+	[PlanetWhitelist:Planet Thora 4]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:100]	
+	
+	
+	[FactionOwner:SPRT]	
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_Thora4Peace_Barren_Outside</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[IgnoreCombatPhase:true]
+	[ZoneConditions:ZoneCondition_ZoneBarren]	
+	
+	[PlanetWhitelist:Planet Thora 4]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:100]	
+	
+		
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:true]	
+
+	[CustomApiConditions:Thora4Land]	
+	[FactionOwner:SPRT]		
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_Thora4Peace_Barren_FriendlyBase</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[IgnoreCombatPhase:false]
+	[ZoneConditions:ZoneCondition_ZoneBarren]	
+	
+	[PlanetWhitelist:Planet Thora 4]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:50]	
+
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMinimum:300]	
+	[ThreatIncludeOtherNpcOwners:true]
+	
+	[UsePlayerFactionReputation:true]
+	[PlayerReputationCheckRadius:4000]
+	[MinimumReputation:-500]
+	[MaximumReputation:1500]
+	
+	[CustomApiConditions:Thora4Land]
+			
+	[FactionOwner:SPRT]				
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>	
+	
+	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_Thora4Peace_Rural</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	
+	[IgnoreCombatPhase:true]
+	[ZoneConditions:ZoneCondition_ZoneRural]	
+
+	[PlanetWhitelist:Planet Thora 4]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:100]	
+	
+	
+	[FactionOwner:SPRT]	
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_Thora4Peace_Rural_Outside</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[IgnoreCombatPhase:true]
+	[ZoneConditions:ZoneCondition_ZoneRural]	
+	
+	[PlanetWhitelist:Planet Thora 4]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:100]	
+	
+		
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:true]	
+
+	[CustomApiConditions:Thora4Land]	
+	[FactionOwner:SPRT]		
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_Thora4Peace_Rural_FriendlyBase</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[IgnoreCombatPhase:false]
+	[ZoneConditions:ZoneCondition_ZoneRural]	
+	
+	[PlanetWhitelist:Planet Thora 4]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:50]	
+
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMinimum:300]	
+	[ThreatIncludeOtherNpcOwners:true]
+	
+	[UsePlayerFactionReputation:true]
+	[PlayerReputationCheckRadius:4000]
+	[MinimumReputation:-500]
+	[MaximumReputation:1500]
+	
+	[CustomApiConditions:Thora4Land]
+			
+	[FactionOwner:SPRT]				
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>	
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_Thora4Peace_Urban</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	
+	[IgnoreCombatPhase:true]
+	[ZoneConditions:ZoneCondition_ZoneUrban]	
+
+	[PlanetWhitelist:Planet Thora 4]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:100]	
+	
+	
+	[FactionOwner:SPRT]	
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_Thora4Peace_Urban_Outside</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[IgnoreCombatPhase:true]
+	[ZoneConditions:ZoneCondition_ZoneUrban]	
+	
+	[PlanetWhitelist:Planet Thora 4]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:100]	
+	
+		
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:true]	
+
+	[CustomApiConditions:Thora4Land]	
+	[FactionOwner:SPRT]		
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_Thora4Peace_Urban_FriendlyBase</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[IgnoreCombatPhase:false]
+	[ZoneConditions:ZoneCondition_ZoneUrban]	
+	
+	[PlanetWhitelist:Planet Thora 4]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:50]	
+
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMinimum:300]	
+	[ThreatIncludeOtherNpcOwners:true]
+	
+	[UsePlayerFactionReputation:true]
+	[PlayerReputationCheckRadius:4000]
+	[MinimumReputation:-500]
+	[MaximumReputation:1500]
+	
+	[CustomApiConditions:Thora4Land]
+			
+	[FactionOwner:SPRT]				
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>	
+	
+		
+
+	
+	
+	
+	
+
+    
+  </EntityComponents>
+</Definitions>

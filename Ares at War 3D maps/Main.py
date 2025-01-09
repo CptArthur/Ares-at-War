@@ -44,7 +44,7 @@ def run(Agaris, file):
         Cubeleftcoords = (6144,2048,8192,4096)
 
 
-    img = PIL.Image.open(f"D:/SE Modding/EndgameAres/Ares at War 3D maps/input/{file}")
+    img = PIL.Image.open(f"D:/SEMods-Github/Ares-at-War-part-1/Ares at War 3D maps/input/{file}")
     img.load()
 
     front = img.crop(Cubefrontcoords)
@@ -67,7 +67,7 @@ def run(Agaris, file):
     newimg.paste(left, leftcoords)
     newimg.paste(up, upcoords)
     newimg.paste(down, downcoords)
-    newimg.save(f"D:/SE Modding/EndgameAres/Ares at War 3D maps/output/{file}")
+    newimg.save(f"D:/SEMods-Github/Ares-at-War-part-1/Ares at War 3D maps/output/{file}")
 
 
 
@@ -82,7 +82,7 @@ def run(Agaris, file):
 
 
 
-currentDir = "D:/SE Modding/endgameAres/Ares at War 3D maps/input"
+currentDir = "D:/SEMods-Github/Ares-at-War-part-1/Ares at War 3D maps/input"
 files = os.listdir(currentDir)
 
 
@@ -94,5 +94,5 @@ for file in files:
     run(False,file)
 
 
-
+input()
 

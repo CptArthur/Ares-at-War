@@ -135,7 +135,7 @@
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>UNKN_AbandonedHomeShip</SubtypeId>
+				<SubtypeId>UNKN_Tiberius</SubtypeId>
 			</Id>
 			<Description>
 			[Modular Encounters SpawnGroup]
@@ -154,8 +154,8 @@
 
 			[UseRandomNameGenerator:true]
 			[RandomGridNamePrefix:(NPC-AAW)]
-			[RandomGridNamePattern:Abandoned Home Ship]
-			[ReplaceAntennaNameWithRandomizedName:Home Ship]
+			[RandomGridNamePattern:Tiberius]
+			[ReplaceAntennaNameWithRandomizedName:Tiberius]
 
 
 
@@ -180,7 +180,7 @@
 			
 			<Frequency>5.0</Frequency>
 			<Prefabs>
-				<Prefab SubtypeId="UNKN - Abandoned Home Ship">
+				<Prefab SubtypeId="UNKN - Tiberius">
 					<Position>
 						<X>0.0</X>
 						<Y>0.0</Y>
@@ -198,11 +198,69 @@
 
 
 
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>UNKN_Abandoned Explorer</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:UNKN]		
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:50000]
+
+			[ForceExactPositionAndOrientation:true]
+			[CutVoxelsAtAirtightCells:true]
+
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-AAW)]
+			[RandomGridNamePattern:Abandoned Explorer]
+			[ReplaceAntennaNameWithRandomizedName:Abandoned Explorer]
+
+
+			[StaticEncounterCoords:{X:-688659.44881477 Y:-1070419.46030401 Z:-3511220.63789757}]
+			[StaticEncounterForward:{X:-0.25453173725958 Y:-0.700913180149764 Z:-0.666283954947111}]
+			[StaticEncounterUp:{X:-0.633481316762969 Y:0.641421696535597 Z:-0.432758164019642}]
+
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Thora 4]
+			[StaticEncounterPlanetDirection:{X:-0.442712947445539 Y:0.601427995615896 Z:-0.665048578867385}]
+			[StaticEncounterPlanetAltitude:-1.15745042150229]
 
 
 
 
-
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+		
+			[SandboxVariables:AbandonedExplorerEnabled]			
+			[ZoneConditions:ZoneCondition_ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="UNKN - Abandoned Explorer">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour></Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>	
 
 
 

@@ -65,6 +65,24 @@ namespace AresAtWar.SessionCore
             GravityManager.Setup();
 
 
+            //Check for update
+            bool ActivePlaceHolder = false;
+            if (MyAPIGateway.Utilities.GetVariable<bool>("FrostboundDisabled", out ActivePlaceHolder))
+            {
+                if (ActivePlaceHolder)
+                {
+                    var spawnoption = MyDefinitionManager.Static.GetRespawnShipDefinition("Thora4-EscapePod");
+
+                    if(spawnoption != null)
+                    {
+                        spawnoption.Enabled = false;
+                        spawnoption.UseForSpace = false;
+
+                    }
+                        
+
+                }
+            }
 
 
             CustomMissionMapping.ActiveDestinations = new List<string>();
@@ -123,12 +141,17 @@ namespace AresAtWar.SessionCore
 
                 MESApi.RegisterCustomSpawnCondition(true, "AaW", CustomSpawnConditions.AaW);
                 MESApi.RegisterCustomSpawnCondition(true, "BylenRing", CustomSpawnConditions.BylenRing);
+                MESApi.RegisterCustomSpawnCondition(true, "MilaRing", CustomSpawnConditions.BylenRing);
                 MESApi.RegisterCustomSpawnCondition(true, "AgarisDeepOcean", CustomSpawnConditions.AgarisDeepOcean);
                 MESApi.RegisterCustomSpawnCondition(true, "AgarisLand", CustomSpawnConditions.AgarisLand);
+                MESApi.RegisterCustomSpawnCondition(true, "Thora4DeepOcean", CustomSpawnConditions.Thora4DeepOcean);
+                MESApi.RegisterCustomSpawnCondition(true, "Thora4Land", CustomSpawnConditions.Thora4Land);
+
 
                 MESApi.RegisterCustomAction(true, "FireSuperWeapon", CustomActions.FireSuperWeapon);
                 MESApi.RegisterCustomAction(true, "DestroyTheSystem", CustomActions.DestroyTheSystem);
                 MESApi.RegisterCustomAction(true, "PurgeArrivalEffect", CustomActions.PurgeArrivalEffect);
+                MESApi.RegisterCustomAction(true, "AaW-DisableSpawnOption", CustomActions.DisableSpawnOption);
                 MESApi.RegisterCustomAction(true, "PurgeGravityWeapon", CustomActions.PurgeGravityWeapon);
                 MESApi.RegisterCustomAction(true, "AaW-WarNextRound", WarSim.SimulateWarRound);
 
@@ -321,7 +344,7 @@ namespace AresAtWar.SessionCore
                 return;
             }
 
-            MyVisualScriptLogicProvider.ShowNotification($"Warning Reset {player.DisplayName} Progress", 4000, "Red", playerId);
+           // MyVisualScriptLogicProvider.ShowNotification($"Warning Reset {player.DisplayName} Progress", 4000, "Red", playerId);
 
 
             var FAF = MyAPIGateway.Session.Factions.TryGetFactionByTag("FAF");

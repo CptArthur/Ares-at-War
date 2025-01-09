@@ -21,8 +21,8 @@ namespace AresAtWar.SessionCore
 
 
         public static Vector3D BylenCenter = new Vector3D(-2070540.14510301, -1017587.98462825, -3367463.76531797);
-
-
+        public static Vector3D AgarisCenter = new Vector3D(-3663015.14510301, -1309985.98462825, -2583899.76531797);
+        public static Vector3D Thora4Center = new Vector3D(-666090.15, -1101079.98, -3477316.77);
 
 
 
@@ -40,12 +40,29 @@ namespace AresAtWar.SessionCore
         }
 
 
+        public static bool MilaRing(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
+        {
+
+            var distance = Math.Abs(Vector3D.Distance(MilaCenter, location));
+            var ydistance = Math.Abs((location.Y - MilaCenter.Y));
+
+
+            if (((610000 <= distance && distance <= 700000) || (800000 <= distance && distance <= 835000) || (850000 <= distance && distance <= 880000)) && ydistance <= 5500)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
 
         public static bool BylenRing(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
         {
 
-            var distance = Math.Abs(Vector3D.Distance(PlanetCenter, location));
-            var ydistance = Math.Abs((location.Y - PlanetCenter.Y));
+            var distance = Math.Abs(Vector3D.Distance(BylenCenter, location));
+            var ydistance = Math.Abs((location.Y - BylenCenter.Y));
 
             if (((650000 <= distance && distance <= 740000) || (780000 <= distance && distance <= 985000) || (1025000 <= distance && distance <= 1100000)) && ydistance <= 6000)
             {
@@ -57,9 +74,81 @@ namespace AresAtWar.SessionCore
             }
         }
 
+
+        public static bool Thora4DeepOcean(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
+        {
+            var distancefromlocation = (location - Thora4Center).Length();
+
+            if (distancefromlocation > 58000.0)
+            {
+                return false;
+            }
+
+            MyPlanet Thora4 = MyGamePruningStructure.GetClosestPlanet(location);
+
+            if (Thora4 == null)
+                return false;
+
+            if (!Thora4.Name.Contains("Planet Thora 4"))
+                return false;
+
+
+            //49.12km waterlevel
+
+            var SurfacePoint = Thora4.GetClosestSurfacePointGlobal(location);
+            var distancefromsurface = (SurfacePoint - Thora4Center).Length();
+
+            //300 meter
+            if (distancefromsurface > 48820)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static bool Thora4Land(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
+        {
+            var distancefromlocation = (location - Thora4Center).Length();
+
+            if (distancefromlocation > 58000.0)
+            {
+                return false;
+            }
+
+            MyPlanet Thora4 = MyGamePruningStructure.GetClosestPlanet(location);
+
+            if (Thora4 == null)
+                return false;
+
+            if (!Thora4.Name.Contains("Planet Thora 4"))
+                return false;
+
+
+            var SurfacePoint = Thora4.GetClosestSurfacePointGlobal(location);
+            var distancefromsurface = (SurfacePoint - Thora4Center).Length();
+            //49.12km waterlevel
+            //AboveWaterLevel
+            if (distancefromsurface < 49120)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
         public static bool AgarisDeepOcean(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
         {
-            Vector3D AgarisCenter = new Vector3D(-1129033.5, 126871.5, 1293873.5);
             var distancefromlocation = (location - AgarisCenter).Length();
 
             if (distancefromlocation > 65000.0)
@@ -91,7 +180,6 @@ namespace AresAtWar.SessionCore
 
         public static bool AgarisLand(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
         {
-            Vector3D AgarisCenter = new Vector3D(-1129033.5, 126871.5, 1293873.5);
             var distancefromlocation = (location - AgarisCenter).Length();
 
             if (distancefromlocation > 65000.0)

@@ -24,6 +24,7 @@ namespace RespawnSystem
         public long playerId;
         public string RespawnShipPrefabName;
         public long TLL;
+        public bool Enabled;
     }
 
     public struct FadeOutData
@@ -84,12 +85,13 @@ namespace RespawnSystem
 
         public static void RespawnShipSpawned(long shipEntityId, long playerId, string RespawnShipPrefabName)
         {
+
             var respawndata = new RespawnData();
             respawndata.shipEntityId = shipEntityId;
             respawndata.playerId = playerId;
             respawndata.RespawnShipPrefabName = RespawnShipPrefabName;
             respawndata.TLL = MyAPIGateway.Session.GameplayFrameCounter + 360;
-            _RespawnData.Add(respawndata);
+            respawndata.Enabled = true;
 
             IMyPlayer player = GetPlayer(playerId);
             //MyAPIGateway.Utilities.ShowMessage("AaW Debug",$"{player.DisplayName} with {player.IdentityId} == {playerId} spawned {RespawnShipPrefabName}");
@@ -107,10 +109,7 @@ namespace RespawnSystem
                     MyAPIGateway.Multiplayer.SendMessageTo(modId, Encoding.ASCII.GetBytes("start"), MyVisualScriptLogicProvider.GetSteamId(player.IdentityId), true);
 
 
-                if (player.IdentityId == MyVisualScriptLogicProvider.GetLocalPlayerId())
-                    Fade.fade(true);
-                else if (MyAPIGateway.Multiplayer.IsServer)
-                    MyAPIGateway.Multiplayer.SendMessageTo(modId, Encoding.ASCII.GetBytes("start"), MyVisualScriptLogicProvider.GetSteamId(player.IdentityId), true);
+
             }
 
 
@@ -129,10 +128,29 @@ namespace RespawnSystem
 
             if (RespawnShipPrefabName == "Thora4-EscapePod")
             {
-                if (player.IdentityId == MyVisualScriptLogicProvider.GetLocalPlayerId())
-                    Fade.fade(true);
-                else if (MyAPIGateway.Multiplayer.IsServer)
-                    MyAPIGateway.Multiplayer.SendMessageTo(modId, Encoding.ASCII.GetBytes("start"), MyVisualScriptLogicProvider.GetSteamId(player.IdentityId), true);
+
+                bool ActivePlaceHolder = false;
+                if (MyAPIGateway.Utilities.GetVariable<bool>("FrostboundDisabled", out ActivePlaceHolder) && ActivePlaceHolder)
+                {
+                    MyCubeGrid grid = MyEntities.GetEntityById(shipEntityId) as MyCubeGrid;
+                    var block = grid.GetFirstBlockOfType<MyCockpit>();
+                    
+
+                    MyVisualScriptLogicProvider.SendChatMessage("Frostbound spawn is disabled, because some players have progressed beyond a certain point.", "AaW", playerId, "Red");
+                    respawndata.Enabled = false;
+                }
+                else
+                {
+                    if (player.IdentityId == MyVisualScriptLogicProvider.GetLocalPlayerId())
+                        Fade.fade(true);
+                    else if (MyAPIGateway.Multiplayer.IsServer)
+                        MyAPIGateway.Multiplayer.SendMessageTo(modId, Encoding.ASCII.GetBytes("start"), MyVisualScriptLogicProvider.GetSteamId(player.IdentityId), true);
+                }
+
+
+
+                _RespawnData.Add(respawndata);
+
             }
 
             
@@ -141,15 +159,25 @@ namespace RespawnSystem
         }
 
 
-        public static void ProssesRespawnShip(long shipEntityId, long playerId, string RespawnShipPrefabName)
+        public static void ProssesRespawnShip(long shipEntityId, long playerId, string RespawnShipPrefabName, bool enabled = true)
         {
-            MyCubeGrid grid = MyEntities.GetEntityById(shipEntityId) as MyCubeGrid;
             IMyPlayer player = GetPlayer(playerId);
-
-            MyAPIGateway.Utilities.ShowMessage("AaW Debug", $"Second run: {player.DisplayName} with {player.IdentityId} == {playerId}");
-
-
+            MyCubeGrid grid = MyEntities.GetEntityById(shipEntityId) as MyCubeGrid;
             var block = grid.GetFirstBlockOfType<MyCockpit>();
+
+            if (!enabled)
+            {
+                block.RemovePilot();
+                MyVisualScriptLogicProvider.SendChatMessage("You can press Backspace to return to the spawn options. We apologize for the inconvenience", "AaW", playerId, "Red");
+                return;
+            }
+
+
+
+            //MyAPIGateway.Utilities.ShowMessage("AaW Debug", $"Second run: {player.DisplayName} with {player.IdentityId} == {playerId}");
+
+
+
 
             if (RespawnShipPrefabName == "ITC Mallard (Crashed)")
             {
@@ -231,8 +259,8 @@ namespace RespawnSystem
                 player.Character.Teleport(matrix);
 
                 var fadeoutdata = new FadeOutData();
-                fadeoutdata.playerId = playerId;
-                fadeoutdata.TLL = MyAPIGateway.Session.GameplayFrameCounter + 120;
+                fadeoutdata.playerId = player.IdentityId; 
+                fadeoutdata.TLL = MyAPIGateway.Session.GameplayFrameCounter + 540;
                 _FadeOutData.Add(fadeoutdata);
                 
 
@@ -356,7 +384,7 @@ namespace RespawnSystem
                 var data = _RespawnData[i];
                 if (data.TLL < MyAPIGateway.Session.GameplayFrameCounter)
                 {
-                    ProssesRespawnShip(data.shipEntityId, data.playerId, data.RespawnShipPrefabName);
+                    ProssesRespawnShip(data.shipEntityId, data.playerId, data.RespawnShipPrefabName, data.Enabled);
                     _RespawnData.RemoveAtFast(i);
                 }
             }

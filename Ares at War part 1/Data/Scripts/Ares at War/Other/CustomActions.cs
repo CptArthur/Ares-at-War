@@ -46,9 +46,29 @@ namespace AresAtWar.SessionCore
         {
             var position = new Vector3D(-1725718.78, 1493440.69, -698321.45);
             MyVisualScriptLogicProvider.CreateParticleEffectAtPosition("PurgeArrival", position);
+        }
 
+        public static void DisableSpawnOption(params object[] arguments)
+        {
+            var name = (string)arguments[0];
+
+            var spawnoption = MyDefinitionManager.Static.GetRespawnShipDefinition(name);
+
+
+
+
+
+            if (spawnoption != null)
+            {
+                MyAPIGateway.Utilities.ShowMessage("AaW", $"Disabled {name}");
+                spawnoption.Enabled = false;
+                spawnoption.UseForSpace = false;
+
+
+            }
 
         }
+
 
         public static void PurgeGravityWeapon(params object[] arguments)
         {

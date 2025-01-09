@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+	
+<!--
+Barren:
+[SpawnConditionsProfiles:AaW_SpawnProfile_EuropaPeace_Barren]
+[SpawnConditionsProfiles:AaW_SpawnProfile_EuropaPeace_Barren_Outside]
+[SpawnConditionsProfiles:AaW_SpawnProfile_EuropaPeace_Barren_FriendlyBase]
+
+
+
+Rural:
+[SpawnConditionsProfiles:AaW_SpawnProfile_EuropaPeace_Rural]
+[SpawnConditionsProfiles:AaW_SpawnProfile_EuropaPeace_Rural_Outside]
+[SpawnConditionsProfiles:AaW_SpawnProfile_EuropaPeace_Rural_FriendlyBase]
+
+
+Urban:
+[SpawnConditionsProfiles:AaW_SpawnProfile_EuropaPeace_Urban]
+[SpawnConditionsProfiles:AaW_SpawnProfile_EuropaPeace_Urban_Outside]
+[SpawnConditionsProfiles:AaW_SpawnProfile_EuropaPeace_Urban_FriendlyBase]
+
+
+
+
+
+
+		
+		
+		
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_EuropaPeace_Barren</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	
+	[IgnoreCombatPhase:true]
+	[ZoneConditions:ZoneCondition_ZoneBarren]	
+
+	[PlanetWhitelist:Europa]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:100]	
+	
+	
+	[FactionOwner:SPRT]	
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_EuropaPeace_Barren_Outside</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[IgnoreCombatPhase:true]
+	[ZoneConditions:ZoneCondition_ZoneBarren]	
+	
+	[PlanetWhitelist:Europa]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:100]	
+	
+		
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:true]	
+
+		
+	[FactionOwner:SPRT]		
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_EuropaPeace_Barren_FriendlyBase</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[IgnoreCombatPhase:false]
+	[ZoneConditions:ZoneCondition_ZoneBarren]	
+	
+	[PlanetWhitelist:Europa]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:50]	
+
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMinimum:300]	
+	[ThreatIncludeOtherNpcOwners:true]
+	
+	[UsePlayerFactionReputation:true]
+	[PlayerReputationCheckRadius:4000]
+	[MinimumReputation:-500]
+	[MaximumReputation:1500]
+	
+	
+			
+	[FactionOwner:SPRT]				
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>	
+	
+	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_EuropaPeace_Rural</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	
+	[IgnoreCombatPhase:true]
+	[ZoneConditions:ZoneCondition_ZoneRural]	
+
+	[PlanetWhitelist:Europa]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:100]	
+	
+	
+	[FactionOwner:SPRT]	
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_EuropaPeace_Rural_Outside</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[IgnoreCombatPhase:true]
+	[ZoneConditions:ZoneCondition_ZoneRural]	
+	
+	[PlanetWhitelist:Europa]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:100]	
+	
+		
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:true]	
+
+		
+	[FactionOwner:SPRT]		
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_EuropaPeace_Rural_FriendlyBase</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[IgnoreCombatPhase:false]
+	[ZoneConditions:ZoneCondition_ZoneRural]	
+	
+	[PlanetWhitelist:Europa]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:50]	
+
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMinimum:300]	
+	[ThreatIncludeOtherNpcOwners:true]
+	
+	[UsePlayerFactionReputation:true]
+	[PlayerReputationCheckRadius:4000]
+	[MinimumReputation:-500]
+	[MaximumReputation:1500]
+	
+	
+			
+	[FactionOwner:SPRT]				
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>	
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_EuropaPeace_Urban</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	
+	[IgnoreCombatPhase:true]
+	[ZoneConditions:ZoneCondition_ZoneUrban]	
+
+	[PlanetWhitelist:Europa]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:100]	
+	
+	
+	[FactionOwner:SPRT]	
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_EuropaPeace_Urban_Outside</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[IgnoreCombatPhase:true]
+	[ZoneConditions:ZoneCondition_ZoneUrban]	
+	
+	[PlanetWhitelist:Europa]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:100]	
+	
+		
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:true]	
+
+		
+	[FactionOwner:SPRT]		
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_EuropaPeace_Urban_FriendlyBase</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[IgnoreCombatPhase:false]
+	[ZoneConditions:ZoneCondition_ZoneUrban]	
+	
+	[PlanetWhitelist:Europa]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:50]	
+
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMinimum:300]	
+	[ThreatIncludeOtherNpcOwners:true]
+	
+	[UsePlayerFactionReputation:true]
+	[PlayerReputationCheckRadius:4000]
+	[MinimumReputation:-500]
+	[MaximumReputation:1500]
+	
+	
+			
+	[FactionOwner:SPRT]				
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>	
+	
+		
+
+	
+	
+	
+	
+
+    
+  </EntityComponents>
+</Definitions>

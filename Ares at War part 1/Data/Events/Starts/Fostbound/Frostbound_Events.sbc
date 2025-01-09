@@ -1,0 +1,1595 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<EntityComponents>
+	
+	
+	<!--
+	
+	GPS:CaptainArthur #1:-679595.437048037:-1057473.74750262:-3499408.62983943:#FF75C9F1:
+	
+
+	FrostboundDisabled:false
+	
+	-->
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_PlayerCondition_Frostbound_FirstTime</SubtypeId>
+			</Id>
+			<Description>
+			[MES Player Condition]
+
+
+			[CheckLastRespawnShipName:true]
+			[LastRespawnShipName:Thora4-EscapePod]
+
+			[CheckPlayerTags:true]
+			[ExcludedPlayerTag:StartedFrostbound]
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventCondition_FrostboundOpening_FirstTime</SubtypeId>
+			</Id>
+			<Description>
+
+			[MES Event Condition]
+			[CheckPlayerCondition:true]
+			[PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+	
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_Event_FrostboundOpening_Start</SubtypeId>
+			</Id>
+			<Description>
+
+			[MES Event]
+			[UseEvent:true]
+			[UniqueEvent:false]		
+
+
+			[ActionExecution:Sequential]
+			[TimeUntilNextActionMs:3800]
+			[ConditionIds:AaW_EventCondition_FrostboundOpening_FirstTime]		
+			
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]
+						
+			[ActionIds:AaW_EventAction_FrostboundOpening_Message1]
+
+			[ActionIds:AaW_EventAction_FrostboundOpening_Message2]
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]
+			[ActionIds:AaW_EventAction_FrostboundOpening_Message3]	
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]	
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]		
+	
+	
+	
+			[ActionIds:AaW_EventAction_FrostboundOpening_Message4]	
+			[ActionIds:AaW_EventAction_FrostboundOpening_Message5]	
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]
+			[ActionIds:AaW_EventAction_FrostboundOpening_Message6]	
+			
+			[ActionIds:AaW_EventAction_FrostboundOpening_End]		
+
+			</Description>
+		</EntityComponent>
+		
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_PassTime</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+
+			</Description>
+		</EntityComponent>
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message1</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+
+			[ToggleEvents:true]
+			[ToggleEventIds:AaW_Event_FrostboundOpening_Start]
+			[ToggleEventIdModes:false]		
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_FrostboundOpening_Message1]
+			</Description>
+		</EntityComponent>
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message1</SubtypeId>
+			</Id>
+			<Description>
+			  [RivalAI Chat]
+			  
+			  [UseChat:true]
+			  [StartsReady:true]
+			  [Chance:100]
+			  [MaxChats:-1]
+			  [BroadcastRandomly:false]
+			  [IgnoreAntennaRequirement:True]
+			  [IgnoredAntennaRangeOverride:1]
+			  [SendToSpecificPlayers:true]
+			  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+			  [Color:Blue]
+			  [Author:LYRA]
+				
+			  [ChatMessages:Tiberius comms: Attention. Hull failure imminent.]
+			  [BroadcastChatType:Notify]
+			  [ChatAudio:Frostbound_flashback]   	  
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message2</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_FrostboundOpening_Message2]
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message2</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+		  [Color:Blue]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Tiberius comms: All personnel abandon ship.]
+		  [BroadcastChatType:Notify]
+		  [ChatAudio:]   	  
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message3</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_FrostboundOpening_Message3]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message3</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+		  [Color:Blue]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Launch in 3...2...1...]
+		  [BroadcastChatType:Notify]
+		  [ChatAudio:]   	  
+			</Description>
+		</EntityComponent>
+		
+
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message4</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_FrostboundOpening_Message4]
+
+			</Description>
+		</EntityComponent>
+		
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message4</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+		  [Color:Blue]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Initializing. Please hold.]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:LYRA_FrostBound_initpleasehold]   	  
+			</Description>
+		</EntityComponent>		
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message5</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_FrostboundOpening_Message5]
+
+			</Description>
+		</EntityComponent>
+		
+
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message5</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+		  [Color:Blue]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Scan complete. Current location: Third moon of Bylen, within the Ares system.]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:LYRA_FrostBound_scancomplete]   	  
+			</Description>
+		</EntityComponent>				
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_Message6</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_FrostboundOpening_Message6]
+
+			</Description>
+		</EntityComponent>
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_FrostboundOpening_Message6</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+
+		  [Color:Blue]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Receiving a weak distress signal, originating from the Tiberius.]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:LYRA_FrostBound_tiberioussignal]   	  
+			</Description>
+		</EntityComponent>				
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_FrostboundOpening_End</SubtypeId>
+			</Id>
+			<Description>
+		[MES Event Action]
+			
+
+		[AddTagstoPlayers:true]
+		[AddTagsPlayerConditionIds:AaW_PlayerCondition_Frostbound_FirstTime]
+		[AddTags:StartedFrostbound]
+
+		[ToggleEvents:true]
+		[ToggleEventIds:AaW_Event_FrostboundOpening_Start]
+		[ToggleEventIdModes:true]	
+			</Description>
+		</EntityComponent>
+		
+<!--
+
+-->
+
+
+    <!-- Persistant-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition_Area_FrostBoundLeftStart</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+
+            [CheckPlayerNear:true]    
+            [PlayerNearCoords:{X:-677345.299711389 Y:-1056227.80785444 Z:-3498314.59335506}]
+			[PlayerNearMinDistanceFromCoords:450]
+            [PlayerNearDistanceFromCoords:9999999]
+
+            [CheckPlayerTags:true]
+            [ExcludedPlayerTag:Player_Triggered_Area_FrostBoundLeftStart]
+			[IncludedPlayerTag:StartedFrostbound]
+
+
+			[CheckLastRespawnShipName:true]
+			[LastRespawnShipName:Thora4-EscapePod]
+			
+			
+            [CheckPlayerReputation:false]
+            [CheckReputationwithFaction:SPRT]
+            [MinPlayerReputation:500]
+            [MaxPlayerReputation:1500]
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition_Area_FrostBoundLeftStart_ConsiderTriggered</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+            [CheckPlayerNear:true]    
+            [PlayerNearCoords:{X:-677345.299711389 Y:-1056227.80785444 Z:-3498314.59335506}]
+            [PlayerNearDistanceFromCoords:4500]
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventPersistantCondition_Area_FrostBoundLeftStart</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+            [CheckPlayerCondition:true]
+            [PlayerConditionIds:PlayerCondition_Area_FrostBoundLeftStart]     
+        </Description>   
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_Event_Area_FrostBoundLeftStart</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event]
+            [UseEvent:true]
+            [Tags:EventAreaFrostBoundLeftStart]
+            [UniqueEvent:false]    
+            [MinCooldownMs:600000]
+            [MaxCooldownMs:600001]
+            [PersistantConditionIds:AaW_EventPersistantCondition_Area_FrostBoundLeftStart]
+			[StartsReady:true]
+
+			[ActionExecution:Sequential]
+			[TimeUntilNextActionMs:3800]
+			
+			
+			[ActionIds:AaW_EventAction_Area_FrostBoundLeftStart_Message1]
+			
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]	
+			
+			[ActionIds:AaW_EventAction_Area_FrostBoundLeftStart_Message2]
+			[ActionIds:AaW_EventAction_Area_FrostBoundLeftStart_Message3]
+			[ActionIds:AaW_EventAction_Area_FrostBoundLeftStart_Message4]
+        </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_Area_FrostBoundLeftStart_Message1</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [AddTagstoPlayers:true]
+            [AddTagsPlayerConditionIds:PlayerCondition_Area_FrostBoundLeftStart_ConsiderTriggered]
+            [AddTags:Player_Triggered_Area_FrostBoundLeftStart]
+
+            [UseChatBroadcast:true]
+            [ChatData:AaW_EventChat_Area_FrostBoundLeftStart_Message1]
+
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventChat_Area_FrostBoundLeftStart_Message1</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition_Area_FrostBoundLeftStart_ConsiderTriggered]
+            [Color:Blue]
+            [Author:LYRA]
+            [ChatMessages:Several system malfunctions detected. Running diagnostics…]
+            [BroadcastChatType:Chat]
+            [ChatAudio:LYRA_FrostBound_malfunctionsdetected]  
+        </Description>
+    </EntityComponent>
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_Area_FrostBoundLeftStart_Message2</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [UseChatBroadcast:true]
+            [ChatData:AaW_EventChat_Area_FrostBoundLeftStart_Message2]
+
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventChat_Area_FrostBoundLeftStart_Message2</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition_Area_FrostBoundLeftStart_ConsiderTriggered]
+            [Color:Blue]
+            [Author:LYRA]
+            [ChatMessages:Environmental scanners… *Partially functional.*]
+            [BroadcastChatType:Chat]
+            [ChatAudio:LYRA_FrostBound_diagnosenviron]  
+        </Description>
+    </EntityComponent>	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_Area_FrostBoundLeftStart_Message3</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [UseChatBroadcast:true]
+            [ChatData:AaW_EventChat_Area_FrostBoundLeftStart_Message3]
+
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventChat_Area_FrostBoundLeftStart_Message3</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition_Area_FrostBoundLeftStart_ConsiderTriggered]
+            [Color:Blue]
+            [Author:LYRA]
+            [ChatMessages:Long range communications… *Offline.*]
+            [BroadcastChatType:Chat]
+            [ChatAudio:LYRA_FrostBound_diagnoscomms]  
+        </Description>
+    </EntityComponent>	
+	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_Area_FrostBoundLeftStart_Message4</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [UseChatBroadcast:true]
+            [ChatData:AaW_EventChat_Area_FrostBoundLeftStart_Message4]
+
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventChat_Area_FrostBoundLeftStart_Message4</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition_Area_FrostBoundLeftStart_ConsiderTriggered]
+            [Color:Blue]
+            [Author:LYRA]
+            [ChatMessages:Internal clock and temporal tracking… *severely compromised*]
+            [BroadcastChatType:Chat]
+            [ChatAudio:LYRA_FrostBound_diagnostime]  
+        </Description>
+    </EntityComponent>	
+	
+	
+	
+    <!--
+	FrostBoundTiberius900
+	
+	
+	
+	-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition_Area_FrostBoundTiberius900</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+
+            [CheckPlayerNear:true]    
+            [PlayerNearCoords:{X:-679594.498715482 Y:-1057474.92511577 Z:-3499407.96544273}]
+            [PlayerNearDistanceFromCoords:900]
+
+            [CheckPlayerTags:true]
+            [ExcludedPlayerTag:Player_Triggered_Area_FrostBoundTiberius900]
+
+            [CheckPlayerReputation:false]
+            [CheckReputationwithFaction:SPRT]
+            [MinPlayerReputation:500]
+            [MaxPlayerReputation:1500]
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition_Area_FrostBoundTiberius900_ConsiderTriggered</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+            [CheckPlayerNear:true]    
+            [PlayerNearCoords:{X:-679594.498715482 Y:-1057474.92511577 Z:-3499407.96544273}]
+            [PlayerNearDistanceFromCoords:4500]
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventPersistantCondition_Area_FrostBoundTiberius900</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+            [CheckPlayerCondition:true]
+            [PlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius900]     
+        </Description>   
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_Event_Area_FrostBoundTiberius900</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event]
+            [UseEvent:true]
+            [Tags:EventAreaFrostBoundTiberius900]
+            [UniqueEvent:false]    
+            [MinCooldownMs:600000]
+            [MaxCooldownMs:600001]
+			[StartsReady:true]
+            [PersistantConditionIds:AaW_EventPersistantCondition_Area_FrostBoundTiberius900]
+
+
+			[ActionExecution:Sequential]
+			[TimeUntilNextActionMs:3800]
+			
+			
+			[ActionIds:AaW_EventAction_Area_FrostBoundTiberius900_Message1]
+			
+
+        </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_Area_FrostBoundTiberius900_Message1</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [AddTagstoPlayers:true]
+            [AddTagsPlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius900_ConsiderTriggered]
+            [AddTags:Player_Triggered_Area_FrostBoundTiberius900]
+
+            [UseChatBroadcast:true]
+            [ChatData:AaW_EventChat_Area_FrostBoundTiberius900_Message1]
+
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventChat_Area_FrostBoundTiberius900_Message1</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius900_ConsiderTriggered]
+            [Color:Blue]
+            [Author:LYRA]
+            [ChatMessages:The Tiberius suffered orbital hull failure. Cause: unknown. No life signs detected. ]
+            [BroadcastChatType:Chat]
+            [ChatAudio:LYRA_FrostBound_tiberiouscauses]  
+        </Description>
+    </EntityComponent>
+		
+		
+		
+		
+   <!--
+	FrostBoundTiberius500
+	
+	
+	
+	-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition_Area_FrostBoundTiberius500</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+
+            [CheckPlayerNear:true]    
+            [PlayerNearCoords:{X:-679594.498715482 Y:-1057474.92511577 Z:-3499407.96544273}]
+            [PlayerNearDistanceFromCoords:500]
+
+            [CheckPlayerTags:true]
+            [ExcludedPlayerTag:Player_Triggered_Area_FrostBoundTiberius500]
+
+            [CheckPlayerReputation:false]
+            [CheckReputationwithFaction:SPRT]
+            [MinPlayerReputation:500]
+            [MaxPlayerReputation:1500]
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition_Area_FrostBoundTiberius500_ConsiderTriggered</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+            [CheckPlayerNear:true]    
+            [PlayerNearCoords:{X:-679594.498715482 Y:-1057474.92511577 Z:-3499407.96544273}]
+            [PlayerNearDistanceFromCoords:4500]
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventPersistantCondition_Area_FrostBoundTiberius500</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+            [CheckPlayerCondition:true]
+            [PlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius500]     
+        </Description>   
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_Event_Area_FrostBoundTiberius500</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event]
+            [UseEvent:true]
+            [Tags:EventAreaFrostBoundTiberius500]
+            [UniqueEvent:false]    
+            [MinCooldownMs:600000]
+            [MaxCooldownMs:600001]
+			[StartsReady:true]
+            [PersistantConditionIds:AaW_EventPersistantCondition_Area_FrostBoundTiberius500]
+
+
+			[ActionExecution:Sequential]
+			[TimeUntilNextActionMs:3800]
+			
+			
+			[ActionIds:AaW_EventAction_Area_FrostBoundTiberius500_Message1]
+			
+
+        </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_Area_FrostBoundTiberius500_Message1</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [AddTagstoPlayers:true]
+            [AddTagsPlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius500_ConsiderTriggered]
+            [AddTags:Player_Triggered_Area_FrostBoundTiberius500]
+
+            [UseChatBroadcast:true]
+            [ChatData:AaW_EventChat_Area_FrostBoundTiberius500_Message1]
+
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventChat_Area_FrostBoundTiberius500_Message1</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius500_ConsiderTriggered]
+            [Color:Blue]
+            [Author:LYRA]
+            [ChatMessages:My scans indicate the Tiberius has undergone great amounts of erosion.]
+            [BroadcastChatType:Chat]
+            [ChatAudio:LYRA_FrostBound_tiberiouserosion]  
+        </Description>
+    </EntityComponent>		
+		
+		
+		
+		
+   <!--
+	FrostBoundTiberius150
+	
+	
+	
+	-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition_Area_FrostBoundTiberius150</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+
+            [CheckPlayerNear:true]    
+            [PlayerNearCoords:{X:-679594.498715482 Y:-1057474.92511577 Z:-3499407.96544273}]
+            [PlayerNearDistanceFromCoords:150]
+
+            [CheckPlayerTags:true]
+            [ExcludedPlayerTag:Player_Triggered_Area_FrostBoundTiberius150]
+
+            [CheckPlayerReputation:false]
+            [CheckReputationwithFaction:SPRT]
+            [MinPlayerReputation:150]
+            [MaxPlayerReputation:1150]
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition_Area_FrostBoundTiberius150_ConsiderTriggered</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+            [CheckPlayerNear:true]    
+            [PlayerNearCoords:{X:-679594.498715482 Y:-1057474.92511577 Z:-3499407.96544273}]
+            [PlayerNearDistanceFromCoords:450]
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventPersistantCondition_Area_FrostBoundTiberius150</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+            [CheckPlayerCondition:true]
+            [PlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius150]     
+        </Description>   
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_Event_Area_FrostBoundTiberius150</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event]
+            [UseEvent:true]
+            [Tags:EventAreaFrostBoundTiberius150]
+            [UniqueEvent:false]    
+            [MinCooldownMs:600000]
+            [MaxCooldownMs:600001]
+			[StartsReady:true]			
+            [PersistantConditionIds:AaW_EventPersistantCondition_Area_FrostBoundTiberius150]
+
+
+			[ActionExecution:Sequential]
+			[TimeUntilNextActionMs:3800]
+			
+			
+			[ActionIds:AaW_EventAction_Area_FrostBoundTiberius150_Message1]
+			
+
+        </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_Area_FrostBoundTiberius150_Message1</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [AddTagstoPlayers:true]
+            [AddTagsPlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius150_ConsiderTriggered]
+            [AddTags:Player_Triggered_Area_FrostBoundTiberius150]
+
+			  [ChangeBooleans:true]
+			  [SetBooleansTrue:FrostboundDisabled]		
+
+			[ToggleEvents:true]
+			[ToggleEventIds:AaW_Event_EnableAbandonedExplorer]
+			[ToggleEventIdModes:true]
+
+			[ResetCooldownTimeOfEvents:true]
+			[ResetEventCooldownIds:AaW_Event_EnableAbandonedExplorer]
+
+
+			[ActivateCustomAction:true]
+			[CustomActionName:AaW-DisableSpawnOption]
+			[CustomActionArgumentsString:Thora4-EscapePod]
+
+            [UseChatBroadcast:true]
+            [ChatData:AaW_EventChat_Area_FrostBoundTiberius150_Message1]
+
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventChat_Area_FrostBoundTiberius150_Message1</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius150_ConsiderTriggered]
+            [Color:Blue]
+            [Author:LYRA]
+            [ChatMessages:Degradation levels exceed predicted models. Please investigate the Tiberius’ systems.]
+            [BroadcastChatType:Chat]
+            [ChatAudio:LYRA_FrostBound_tiberiousinvestigate]  
+        </Description>
+    </EntityComponent>
+
+	
+		
+		
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_Event_EnableAbandonedExplorer</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event]
+            [UseEvent:false]
+            [UniqueEvent:true]    
+            [MinCooldownMs:600000]
+            [MaxCooldownMs:600001]
+	
+
+			[ActionExecution:All]
+
+						
+			[ActionIds:AaW_EventAction_EnableAbandonedExplorer]
+			
+
+        </Description>
+    </EntityComponent>		
+		
+		
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_EnableAbandonedExplorer</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+
+		  [ChangeBooleans:true]
+		  [SetBooleansTrue:AbandonedExplorerEnabled]		
+
+        </Description>
+    </EntityComponent>		
+		
+		
+		
+		
+		
+		
+		
+   <!--
+	FrostBoundTiberius7
+	
+	
+	
+	-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition_Area_FrostBoundTiberius7</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+
+            [CheckPlayerNear:true]    
+            [PlayerNearCoords:{X:-679594.498715482 Y:-1057474.92511577 Z:-3499407.96544273}]
+            [PlayerNearDistanceFromCoords:7]
+
+            [CheckPlayerTags:true]
+            [ExcludedPlayerTag:Player_Triggered_Area_FrostBoundTiberius7]
+
+            [CheckPlayerReputation:false]
+            [CheckReputationwithFaction:SPRT]
+            [MinPlayerReputation:500]
+            [MaxPlayerReputation:70]
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition_Area_FrostBoundTiberius7_ConsiderTriggered</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+            [CheckPlayerNear:true]    
+            [PlayerNearCoords:{X:-679594.498715482 Y:-1057474.92511577 Z:-3499407.96544273}]
+            [PlayerNearDistanceFromCoords:4500]
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventPersistantCondition_Area_FrostBoundTiberius7</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+            [CheckPlayerCondition:true]
+            [PlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius7]     
+        </Description>   
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_Event_Area_FrostBoundTiberius7</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event]
+            [UseEvent:true]
+            [Tags:EventAreaFrostBoundTiberius7]
+            [UniqueEvent:false]    
+            [MinCooldownMs:600000]
+            [MaxCooldownMs:600001]
+			[StartsReady:true]	
+            [PersistantConditionIds:AaW_EventPersistantCondition_Area_FrostBoundTiberius7]
+
+
+			[ActionExecution:Sequential]
+			[TimeUntilNextActionMs:3800]
+			
+			
+			[ActionIds:AaW_EventAction_Area_FrostBoundTiberius7_Message1]
+			
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]	
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]	
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]	
+			[ActionIds:AaW_EventAction_Area_FrostBoundTiberius7_Message2]
+			[ActionIds:AaW_EventAction_Area_FrostBoundTiberius7_Message3]	
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]		
+			[ActionIds:AaW_EventAction_Area_FrostBoundTiberius7_Message4]	
+
+			[ActionIds:AaW_EventAction_Area_FrostBoundTiberius7_Message5]		
+			[ActionIds:AaW_EventAction_Area_FrostBoundTiberius7_Message6]	
+			[ActionIds:AaW_EventAction_Area_FrostBoundTiberius7_Message7]
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]		
+			[ActionIds:AaW_EventAction_Area_FrostBoundTiberius7_Message8]
+			[ActionIds:AaW_EventAction_FrostboundOpening_PassTime]		
+			[ActionIds:AaW_EventAction_Area_FrostBoundTiberius7_Message9]				
+			[ActionIds:AaW_EventAction_Area_FrostBoundTiberius7_Message10]		
+        </Description>
+    </EntityComponent>
+
+
+
+
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_Area_FrostBoundTiberius7_Message1</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_Area_FrostBoundTiberius7_Message1]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_Area_FrostBoundTiberius7_Message1</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius7_ConsiderTriggered]
+
+		  [Color:Red]
+		  [Author:LYRA]
+			
+		  [ChatMessages:aw##t3..... Critical error detected.  Several files corrupted. System rebooting... ]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:LYRA_FrostBound_Corrupted]   	  
+			</Description>
+		</EntityComponent>
+		
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_Area_FrostBoundTiberius7_Message2</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_Area_FrostBoundTiberius7_Message2]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_Area_FrostBoundTiberius7_Message2</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius7_ConsiderTriggered]
+
+		  [Color:Blue]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Reboot complete...]
+		  [BroadcastChatType:Both]
+		  [ChatAudio:]   	  
+			</Description>
+		</EntityComponent>		
+		
+		
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_Area_FrostBoundTiberius7_Message3</SubtypeId>
+			</Id>
+			<Description>
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW_EventChat_Area_FrostBoundTiberius7_Message3]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_Area_FrostBoundTiberius7_Message3</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius7_ConsiderTriggered]
+
+		  [Color:Green]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Thank you for choosing Lyra, your trusted partner in advanced personal assistance.]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:LYRA_FrostBound_BootSound]   	  
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_Area_FrostBoundTiberius7_Message4</SubtypeId>
+			</Id>
+			<Description>
+		[MES Event Action]
+			
+		[UseChatBroadcast:true]
+		[ChatData:AaW_EventChat_Area_FrostBoundTiberius7_Message4]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_Area_FrostBoundTiberius7_Message4</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius7_ConsiderTriggered]
+
+		  [Color:Green]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Designed for efficiency, reliability, and a touch of brilliance]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:]   	  
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_Area_FrostBoundTiberius7_Message5</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_Area_FrostBoundTiberius7_Message5]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_Area_FrostBoundTiberius7_Message5</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius7_ConsiderTriggered]
+
+		  [Color:Green]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Lyra is here to elevate your experience]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:]   	  
+			</Description>
+		</EntityComponent>
+		
+	
+		
+		
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_Area_FrostBoundTiberius7_Message6</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_Area_FrostBoundTiberius7_Message6]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_Area_FrostBoundTiberius7_Message6</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius7_ConsiderTriggered]
+
+		  [Color:Green]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Lyra: Your world, redefined.]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:]   	  
+			</Description>
+		</EntityComponent>
+
+		
+		
+
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_Area_FrostBoundTiberius7_Message7</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_Area_FrostBoundTiberius7_Message7]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_Area_FrostBoundTiberius7_Message7</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius7_ConsiderTriggered]
+
+		  [Color:Red]
+		  [Author:LYRA]
+			
+		  [ChatMessages:ITC is not responsible for any possible harm caused by our products nor can the ITC be accounted for statements violating interstellar law made by our products. Please refer to our consumer guidelines for more information.]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:LYRA_Reboot_Disclaimer]   	  
+			</Description>
+		</EntityComponent>
+
+
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_Area_FrostBoundTiberius7_Message8</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_Area_FrostBoundTiberius7_Message8]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_Area_FrostBoundTiberius7_Message8</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius7_ConsiderTriggered]
+
+		  [Color:Blue]
+		  [Author:LYRA]
+			
+		  [ChatMessages:Determining current date … jan 6th 2399 ETC (Earth Time Coordinated).]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:LYRA_FrostBound_date]   	  
+			</Description>
+		</EntityComponent>
+
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_Area_FrostBoundTiberius7_Message9</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_Area_FrostBoundTiberius7_Message9]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_Area_FrostBoundTiberius7_Message9</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius7_ConsiderTriggered]
+
+		  [Color:Blue]
+		  [Author:LYRA]
+			
+		  [ChatMessages:This ship crashed more than a century ago, {PlayerName}.]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:LYRA_FrostBound_tiberiousago]   	  
+			</Description>
+		</EntityComponent>		
+		
+		
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventAction_Area_FrostBoundTiberius7_Message10</SubtypeId>
+			</Id>
+			<Description>
+			[MES Event Action]
+				
+			[UseChatBroadcast:true]
+			[ChatData:AaW_EventChat_Area_FrostBoundTiberius7_Message10]
+
+			</Description>
+		</EntityComponent>
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+			<Id>
+				<TypeId>Inventory</TypeId>
+				<SubtypeId>AaW_EventChat_Area_FrostBoundTiberius7_Message10</SubtypeId>
+			</Id>
+			<Description>
+		  [RivalAI Chat]
+		  
+		  [UseChat:true]
+		  [StartsReady:true]
+		  [Chance:100]
+		  [MaxChats:-1]
+		  [BroadcastRandomly:false]
+		  [IgnoreAntennaRequirement:True]
+		  [IgnoredAntennaRangeOverride:1]
+		  [SendToSpecificPlayers:true]
+		  [PlayerConditionIds:PlayerCondition_Area_FrostBoundTiberius7_ConsiderTriggered]
+
+		  [Color:Blue]
+		  [Author:LYRA]
+			
+		  [ChatMessages:I’m sorry, it looks like you have been in cryosleep for decades.]
+		  [BroadcastChatType:Chat]
+		  [ChatAudio:LYRA_FrostBound_cryo]   	  
+			</Description>
+		</EntityComponent>				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</EntityComponents>
+</Definitions>

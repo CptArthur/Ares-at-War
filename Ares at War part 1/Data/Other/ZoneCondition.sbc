@@ -2,18 +2,10 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
+<!-- Non zones, are called Barren -->
 
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>ZoneCondition_Europa</SubtypeId>
-      </Id>
-      <Description>
-        [MES Zone Conditions]
-        [ZoneName:ZoneEuropa]
-      </Description>
 
-    </EntityComponent>	
+	<!-- The most important one -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -23,203 +15,64 @@
         [MES Zone Conditions]
         [ZoneName:ZoneAaW]
       </Description>
-
     </EntityComponent>	
 
+	<!-- Lava boime, Lezuno? -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>ZoneCondition_Agaris</SubtypeId>
+        <SubtypeId>ZoneCondition_ZoneInhospitable</SubtypeId>
       </Id>
       <Description>
         [MES Zone Conditions]
-        [ZoneName:ZoneAgaris]
-      </Description>
-
-    </EntityComponent>	
-		
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>ZoneCondition_GC</SubtypeId>
-      </Id>
-      <Description>
-        [MES Zone Conditions]
-        [ZoneName:ZoneGC]
-      </Description>
-
-    </EntityComponent>			
-		
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>ZoneCondition_AHE</SubtypeId>
-      </Id>
-      <Description>
-        [MES Zone Conditions]
-        [ZoneName:ZoneAHE]
-      </Description>
-
-    </EntityComponent>			
-		
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>ZoneCondition_REM</SubtypeId>
-      </Id>
-      <Description>
-        [MES Zone Conditions]
-        [ZoneName:ZoneREM]
+        [ZoneName:ZoneInhospitable]
       </Description>
     </EntityComponent>	
 	
+	<!-- ZoneRural
+watch out for pirates (Agaris Desert, Azuris , Islands)
+	-->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>ZoneCondition_UCA</SubtypeId>
+        <SubtypeId>ZoneCondition_ZoneRural</SubtypeId>
       </Id>
       <Description>
         [MES Zone Conditions]
-        [ZoneName:ZoneUCA]
-      </Description>
-    </EntityComponent>			
-		
-		
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>ZoneCondition_FAF</SubtypeId>
-      </Id>
-      <Description>
-        [MES Zone Conditions]
-        [ZoneName:ZoneFAF]
-      </Description>
-    </EntityComponent>
-
-
-			
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>ZoneCondition_DRA</SubtypeId>
-      </Id>
-      <Description>
-        [MES Zone Conditions]
-        [ZoneName:ZoneDRA]
+        [ZoneName:ZoneRural]
       </Description>
     </EntityComponent>	
-		
+	
+	<!-- ZoneUrban
+	-->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>ZoneCondition_SYN</SubtypeId>
+        <SubtypeId>ZoneCondition_ZoneUrban</SubtypeId>
       </Id>
       <Description>
         [MES Zone Conditions]
-        [ZoneName:ZoneSYN]
-      </Description>
-    </EntityComponent>			
-		
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>ZoneCondition_TIF</SubtypeId>
-      </Id>
-      <Description>
-        [MES Zone Conditions]
-        [ZoneName:ZoneTIF]
+        [ZoneName:ZoneUrban]
       </Description>
     </EntityComponent>		
 	
+	<!-- ZoneMilitary
+	
+(Agaris South Pole, Trench)	
+	
+	-->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>ZoneCondition_AgarisSYN</SubtypeId>
+        <SubtypeId>ZoneCondition_ZoneMilitary</SubtypeId>
       </Id>
       <Description>
-
         [MES Zone Conditions]
-
-        [ZoneName:ZoneAgarisSYN]
-
-
+        [ZoneName:ZoneMilitary]
       </Description>
-
-    </EntityComponent>			
-		
-		
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>ZoneCondition_COL</SubtypeId>
-      </Id>
-      <Description>
-
-        [MES Zone Conditions]
-
-        [ZoneName:ZoneCOL]
-
-
-      </Description>
-
-    </EntityComponent>				
-		
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>ZoneCondition_SDC</SubtypeId>
-      </Id>
-      <Description>
-
-        [MES Zone Conditions]
-
-        [ZoneName:ZoneSDC]
-
-
-      </Description>
-
-    </EntityComponent>				
-		
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>ZoneCondition_ITC</SubtypeId>
-      </Id>
-      <Description>
-
-        [MES Zone Conditions]
-
-        [ZoneName:ZoneITC]
-
-
-      </Description>
-
-    </EntityComponent>			
-		
-		
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>ZoneCondition_AgarisSouthPole</SubtypeId>
-      </Id>
-      <Description>
-
-        [MES Zone Conditions]
-
-        [ZoneName:ZoneAgarisSouthPole]
-
-
-      </Description>
-
-    </EntityComponent>			
-		
-		
-		
-		
-		
-		
-		
+    </EntityComponent>		
 	
 	
-	  </EntityComponents>
+	
+	</EntityComponents>
 </Definitions>

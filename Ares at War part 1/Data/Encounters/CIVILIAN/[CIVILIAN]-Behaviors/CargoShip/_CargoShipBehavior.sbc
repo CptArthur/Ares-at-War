@@ -9,21 +9,24 @@
       </Id>
       <Description>
     [RivalAI Behavior]
-    [BehaviorName:Passive]
-    [TargetData:MSB_CargoShip_Target]
+    [BehaviorName:CargoShip]
+    [TargetData:MSB_TargetProfile_Default]
+
+	[AutopilotData:MSB_Cargoship_Autopilot]
+	[SecondaryAutopilotData:MSB_Freighter_Autopilot]
 
     [DialogueBanks:CIVILIAN.xml] 
     [DialogueBanks:AaW.xml] 
     [DialogueBanks:MSB.xml] 
 
 
-    [TriggerGroups:CIVILIAN_StaticCommon_TriggerGroup]
-    [TriggerGroups:AaW_StaticCommon_TriggerGroup]    
-    [TriggerGroups:MSB_StaticCommon_TriggerGroup]    
+    [TriggerGroups:CIVILIAN_DynamicCommon_TriggerGroup]
+    [TriggerGroups:AaW_DynamicCommon_TriggerGroup]    
+    [TriggerGroups:MSB_DynamicCommon_TriggerGroup] 
 
-    [TriggerGroups:CIVILIAN_FixedStatic_TriggerGroup]        
-    [TriggerGroups:AaW_FixedStatic_TriggerGroup]
-    [TriggerGroups:MSB_FixedStatic_TriggerGroup]    
+     [TriggerGroups:CIVILIAN_Gunship_TriggerGroup]        
+    [TriggerGroups:AaW_Gunship_TriggerGroup]
+    [TriggerGroups:MSB_Gunship_TriggerGroup]   
 
     [TriggerGroups:CIVILIAN_CargoShip_TriggerGroup]    
     [TriggerGroups:AaW_CargoShip_TriggerGroup]     
