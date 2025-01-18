@@ -12,6 +12,10 @@
     [BehaviorName:Escort]
     [TargetData:MSB_TargetProfile_Default]
 
+	[AutopilotData:MSB_DefensiveEscort_AutoPilot]
+	[SecondaryAutopilotData:MSB_Fighter_Autopilot]
+	[TertiaryAutopilotData:MSB_Fighter_Autopilot_NoSafety]
+	
     [DialogueBanks:{FAC}.xml] 
     [DialogueBanks:AaW.xml] 
     [DialogueBanks:MSB.xml] 
@@ -21,19 +25,36 @@
     [TriggerGroups:{FAC}_DynamicCommon_TriggerGroup]
     [TriggerGroups:AaW_DynamicCommon_TriggerGroup]    
     [TriggerGroups:MSB_DynamicCommon_TriggerGroup]   
+    [TriggerGroups:MSB_DynamicCommon_TriggerGroup_Complete]   
 	
 	
     [TriggerGroups:{FAC}_Fighter_TriggerGroup]        
     [TriggerGroups:AaW_Fighter_TriggerGroup]
     [TriggerGroups:MSB_Fighter_TriggerGroup]    
+    [TriggerGroups:MSB_Fighter_TriggerGroup_Complete]    
 
     [TriggerGroups:{FAC}_DefensiveEscort_TriggerGroup]    
     [TriggerGroups:AaW_DefensiveEscort_TriggerGroup]     
     [TriggerGroups:MSB_DefensiveEscort_TriggerGroup]     
+    [TriggerGroups:MSB_DefensiveEscort_TriggerGroup_Complete]     
 
       </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>{FAC}_DefensiveEscort_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+
+    [RivalAI TriggerGroup]
+ 
+      </Description>
       
-    </EntityComponent>        
+    </EntityComponent>
+
+	
   </EntityComponents>
 </Definitions>
  

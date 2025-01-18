@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using AresAtWar.Command;
-using AresAtWar.Init;
 using AresAtWar.Logging;
 using AresAtWar.War;
 namespace AaWSyncManager

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AresAtWar.API;
 using Sandbox.Definitions;
 using Sandbox.Game;
@@ -9,6 +10,8 @@ using VRage.Game;
 using VRage.Game.Components;
 using VRage.Utils;
 using VRageMath;
+using static AresAtWar.War.WarSim;
+
 namespace AresAtWar.SessionCore
 {
     public class CustomSpawnConditions
@@ -27,22 +30,127 @@ namespace AresAtWar.SessionCore
 
 
 
-
-
-
-
-
-
-        public static bool AaW(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
+        public static Node GetClosestNode(Vector3D position, ref bool inside)
         {
-            return true; 
-    
+            Node closestNode = null;
+            double closestDistance = double.MaxValue;
+
+            foreach (var node in _nodes)
+            {
+
+                double distance = Vector3D.Distance(node.Location, position);
+
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestNode = node;
+                }
+            }
+
+
+            if ((closestNode.Location - position).Length() < closestNode.Radius)
+                inside = true;
+
+
+            return closestNode;
+        }
+
+
+        public static bool AaW_Home(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
+        {
+            //MyAPIGateway.Utilities.ShowMessage("AaW", "AaW_Home");
+            if (string.IsNullOrEmpty(SpawnGroupSubtypeID) || !SpawnGroupSubtypeID.Contains("_"))
+            {
+                return false;
+            }
+
+            // Retrieve the FactionTag from the SpawnGroupSubtypeID
+            string FactionTag = SpawnGroupSubtypeID.Split('_')[0];
+
+            if (FactionTag == "CIVILIAN")
+                return false;
+
+            if (FactionTag == "SPRT")
+                return false;
+
+
+
+            var factionobj = _allfactions.FirstOrDefault(n => n.Tag == FactionTag);
+            if (factionobj == null)
+            {
+                MyAPIGateway.Utilities.ShowMessage("AaW", $"Oh, oh. *{FactionTag}* is not defined. Please notify CptArthur");
+                return false;
+            }
+
+
+            bool inside = false;
+            var closestnode = GetClosestNode(location, ref inside);
+
+            //If not inside
+            if (!inside)
+                return false;
+
+            if (closestnode.Faction.Tag != FactionTag)
+                return false;
+
+
+            return true;
+
+        }
+
+
+        public static bool AaW_Outside(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
+        {
+            //MyAPIGateway.Utilities.ShowMessage("AaW", "AaW_Outside");
+            if (string.IsNullOrEmpty(SpawnGroupSubtypeID) || !SpawnGroupSubtypeID.Contains("_"))
+            {
+                return false;
+            }
+
+            // Retrieve the FactionTag from the SpawnGroupSubtypeID
+            string FactionTag = SpawnGroupSubtypeID.Split('_')[0];
+            if (FactionTag == "CIVILIAN")
+                return true;
+            if (FactionTag == "SPRT")
+                return true;
+
+
+            var factionobj = _allfactions.FirstOrDefault(n => n.Tag == FactionTag);
+            if (factionobj == null)
+            {
+                MyAPIGateway.Utilities.ShowMessage("AaW", $"Oh, oh. *{FactionTag}* is not defined. Please notify CptArthur");
+                return false;
+            }
+
+
+            bool inside = false;
+            var closestnode = GetClosestNode(location, ref inside);
+
+
+
+            //If inside
+            if (inside)
+                return false;
+
+            if (!factionobj.HasPresenceInMacro(closestnode.Macro))
+                return false;
+
+            if (!closestnode.SpaceNode)
+                if (factionobj.HasPresenceOnPlanet(closestnode.Planet))
+                    return true;
+                else
+                    return false;
+
+
+            return true;
+
+
         }
 
 
         public static bool MilaRing(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
         {
-
+            //MyAPIGateway.Utilities.ShowMessage("AaW", "MilaRing");
             var distance = Math.Abs(Vector3D.Distance(MilaCenter, location));
             var ydistance = Math.Abs((location.Y - MilaCenter.Y));
 
@@ -60,7 +168,7 @@ namespace AresAtWar.SessionCore
 
         public static bool BylenRing(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
         {
-
+            //MyAPIGateway.Utilities.ShowMessage("AaW", "BylenRing");
             var distance = Math.Abs(Vector3D.Distance(BylenCenter, location));
             var ydistance = Math.Abs((location.Y - BylenCenter.Y));
 
@@ -78,7 +186,7 @@ namespace AresAtWar.SessionCore
         public static bool Thora4DeepOcean(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
         {
             var distancefromlocation = (location - Thora4Center).Length();
-
+            //MyAPIGateway.Utilities.ShowMessage("AaW", "Thora4DeepOcean");
             if (distancefromlocation > 58000.0)
             {
                 return false;
@@ -109,7 +217,7 @@ namespace AresAtWar.SessionCore
         public static bool Thora4Land(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
         {
             var distancefromlocation = (location - Thora4Center).Length();
-
+            //MyAPIGateway.Utilities.ShowMessage("AaW", "Thora4Land");
             if (distancefromlocation > 58000.0)
             {
                 return false;
@@ -136,21 +244,10 @@ namespace AresAtWar.SessionCore
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
         public static bool AgarisDeepOcean(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
         {
             var distancefromlocation = (location - AgarisCenter).Length();
-
+            //MyAPIGateway.Utilities.ShowMessage("AaW", "AgarisDeepOcean");
             if (distancefromlocation > 65000.0)
             {
                 return false;
@@ -181,6 +278,7 @@ namespace AresAtWar.SessionCore
         public static bool AgarisLand(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
         {
             var distancefromlocation = (location - AgarisCenter).Length();
+            //MyAPIGateway.Utilities.ShowMessage("AaW", "AgarisLand");
 
             if (distancefromlocation > 65000.0)
             {
@@ -198,7 +296,6 @@ namespace AresAtWar.SessionCore
 
             var SurfacePoint = Agaris.GetClosestSurfacePointGlobal(location);
             var distancefromsurface = (SurfacePoint - AgarisCenter).Length();
-
             //AboveWaterLevel
             if (distancefromsurface < 58880)
             {

@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<SpawnGroups>
+	<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>CIVILIAN_SpawnGroup_AtmoCargo1</SubtypeId>
+			</Id>
+			<Description>
+
+		[Modular Encounters SpawnGroup]
+		
+		[FactionOverride:CIVILIAN]
+
+		[SpawnConditionGroups:AaW_SpawnGroup_EarthCivilian]
+
+
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		
+		[UseSpawnGroupPrefabSpawningMode:true]
+		[PrefabSpawningMode:RandomSelectedIndexes]
+
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:0]
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:1]	
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:2]					
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:3]	
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:4]	
+
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-AAW)]
+		[RandomGridNamePattern:ExplorerNoun-CRandomNumberRandomNumber]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]	
+		</Description>
+			
+			
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+						
+		<Prefabs>			
+
+			<Prefab SubtypeId="COL-B980 ">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>CIVILIAN_CargoShip_Behavior</Behaviour>
+			</Prefab>
+			
+			<Prefab SubtypeId="COL-BuddyMiner">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>CIVILIAN_CargoShip_Behavior</Behaviour>
+			</Prefab>			
+
+			<Prefab SubtypeId="COL-MiniHauler">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>CIVILIAN_CargoShip_Behavior</Behaviour>
+			</Prefab>	
+			
+			<Prefab SubtypeId="COL-TT15">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>CIVILIAN_CargoShip_Behavior</Behaviour>
+			</Prefab>			
+
+			<Prefab SubtypeId="COL-TT420">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>CIVILIAN_CargoShip_Behavior</Behaviour>
+			</Prefab>	
+			
+		</Prefabs>	
+	</SpawnGroup>		
+		
+		
+		
+
+
+
+		
+		
+	</SpawnGroups>
+</Definitions>

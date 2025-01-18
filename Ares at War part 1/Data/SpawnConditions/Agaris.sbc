@@ -3,23 +3,28 @@
   <EntityComponents>
 	
 <!--
-Barren:
-[SpawnConditionsProfiles:AaW_SpawnProfile_AgarisPeace_Barren]
-[SpawnConditionsProfiles:AaW_SpawnProfile_AgarisPeace_Barren_Outside]
-[SpawnConditionsProfiles:AaW_SpawnProfile_AgarisPeace_Barren_FriendlyBase]
 
+Home:
+[SpawnConditionsProfiles:AaW_SpawnProfile_Agaris_Home]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Agaris_Home_FriendlyPlayerBase]
+
+Barren/Outside:
+[SpawnConditionsProfiles:AaW_SpawnProfile_Agaris_Outside]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Agaris_Outside_Combat]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Agaris_Outside_FriendlyPlayerBase]
 
 
 Rural:
-[SpawnConditionsProfiles:AaW_SpawnProfile_AgarisPeace_Rural]
-[SpawnConditionsProfiles:AaW_SpawnProfile_AgarisPeace_Rural_Outside]
-[SpawnConditionsProfiles:AaW_SpawnProfile_AgarisPeace_Rural_FriendlyBase]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Agaris_Rural]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Agaris_Rural_Combat]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Agaris_Rural_FriendlyPlayerBase]
+
+
 
 
 Urban:
-[SpawnConditionsProfiles:AaW_SpawnProfile_AgarisPeace_Urban]
-[SpawnConditionsProfiles:AaW_SpawnProfile_AgarisPeace_Urban_Outside]
-[SpawnConditionsProfiles:AaW_SpawnProfile_AgarisPeace_Urban_FriendlyBase]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Agaris_Urban]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Agaris_Urban_FriendlyPlayerBase]
 
 
 
@@ -33,7 +38,7 @@ Urban:
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_AgarisPeace_Barren</SubtypeId>
+        <SubtypeId>AaW_SpawnProfile_Agaris_Home</SubtypeId>
       </Id>
       <Description>
 
@@ -41,11 +46,22 @@ Urban:
 	[AtmosphericCargoShip:true]
 	
 	[IgnoreCombatPhase:true]
-	[ZoneConditions:ZoneCondition_ZoneBarren]	
+	[ZoneConditions:ZoneCondition_ZoneAaW]	
 
 	[PlanetWhitelist:Planet Agaris]	
 	[SkipAirDensityCheck:false]
-	[AtmosphericCargoShipChance:10]	
+	[AtmosphericCargoShipChance:100]	
+	
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:false]	
+	
+	[CustomApiConditions:AgarisLand]	
+	[CustomApiConditions:AaW_Home]	
+	
 	
 	
 	[FactionOwner:SPRT]	
@@ -53,17 +69,97 @@ Urban:
       </Description>
     </EntityComponent>
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_AgarisPeace_Barren_Outside</SubtypeId>
+        <SubtypeId>AaW_SpawnProfile_Agaris_Home_FriendlyPlayerBase</SubtypeId>
       </Id>
       <Description>
 
 	[MES Spawn Conditions]
 	[AtmosphericCargoShip:true]
+	
 	[IgnoreCombatPhase:true]
-	[ZoneConditions:ZoneCondition_ZoneBarren]	
+	[ZoneConditions:ZoneCondition_ZoneAaW]	
+
+	[PlanetWhitelist:Planet Agaris]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:100]	
+	
+	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMinimum:300]	
+	[ThreatIncludeOtherNpcOwners:false]
+	
+	[UsePlayerFactionReputation:true]
+	[PlayerReputationCheckRadius:4000]
+	[MinimumReputation:-500]
+	[MaximumReputation:1500]
+
+	[CustomApiConditions:AgarisLand]	
+	[CustomApiConditions:AaW_Home]	
+	
+	
+	
+	[FactionOwner:SPRT]	
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+    </EntityComponent>
+
+
+
+
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_Agaris_Outside</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[IgnoreCombatPhase:false]
+	
+	
+	[PlanetWhitelist:Planet Agaris]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:10]	
+	
+		
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:true]	
+
+
+	
+	[CustomApiConditions:AgarisLand]	
+	[CustomApiConditions:AaW_Outside]	
+	
+	
+	[FactionOwner:SPRT]		
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_Agaris_Outside_Combat</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[UseCombatPhase:true]
+	
 	
 	[PlanetWhitelist:Planet Agaris]	
 	[SkipAirDensityCheck:false]
@@ -77,23 +173,28 @@ Urban:
 	[ThreatIncludeOtherNpcOwners:true]	
 
 	[CustomApiConditions:AgarisLand]	
+	[CustomApiConditions:AaW_Outside]	
+	
+	
 	[FactionOwner:SPRT]		
 	[UseSpawnGroupPrefabSpawningMode:true]	
       </Description>
     </EntityComponent>
-
+	
+	
+	
 	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_AgarisPeace_Barren_FriendlyBase</SubtypeId>
+        <SubtypeId>AaW_SpawnProfile_Agaris_Outside_FriendlyPlayerBase</SubtypeId>
       </Id>
       <Description>
 
 	[MES Spawn Conditions]
 	[AtmosphericCargoShip:true]
 	[IgnoreCombatPhase:false]
-	[ZoneConditions:ZoneCondition_ZoneBarren]	
+	
 	
 	[PlanetWhitelist:Planet Agaris]	
 	[SkipAirDensityCheck:false]
@@ -104,7 +205,7 @@ Urban:
 	[ThreatLevelCheckRange:2000]
 	[ThreatScoreGridConfiguration:Static]
 	[ThreatScoreMinimum:300]	
-	[ThreatIncludeOtherNpcOwners:true]
+	[ThreatIncludeOtherNpcOwners:false]
 	
 	[UsePlayerFactionReputation:true]
 	[PlayerReputationCheckRadius:4000]
@@ -112,7 +213,8 @@ Urban:
 	[MaximumReputation:1500]
 	
 	[CustomApiConditions:AgarisLand]
-			
+	[CustomApiConditions:AaW_Outside]
+	
 	[FactionOwner:SPRT]				
 	[UseSpawnGroupPrefabSpawningMode:true]	
       </Description>
@@ -124,30 +226,7 @@ Urban:
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_AgarisPeace_Rural</SubtypeId>
-      </Id>
-      <Description>
-
-	[MES Spawn Conditions]
-	[AtmosphericCargoShip:true]
-	
-	[IgnoreCombatPhase:true]
-	[ZoneConditions:ZoneCondition_ZoneRural]	
-
-	[PlanetWhitelist:Planet Agaris]	
-	[SkipAirDensityCheck:false]
-	[AtmosphericCargoShipChance:80]	
-	
-	
-	[FactionOwner:SPRT]	
-	[UseSpawnGroupPrefabSpawningMode:true]
-      </Description>
-    </EntityComponent>
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_AgarisPeace_Rural_Outside</SubtypeId>
+        <SubtypeId>AaW_SpawnProfile_Agaris_Rural</SubtypeId>
       </Id>
       <Description>
 
@@ -173,11 +252,40 @@ Urban:
       </Description>
     </EntityComponent>
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_Agaris_Rural_Combat</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[UseCombatPhase:true]
+	
+	[ZoneConditions:ZoneCondition_ZoneRural]	
+	
+	[PlanetWhitelist:Planet Agaris]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:80]	
+	
+		
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:false]	
+
+	[CustomApiConditions:AgarisLand]	
+	[FactionOwner:SPRT]		
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>
 	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_AgarisPeace_Rural_FriendlyBase</SubtypeId>
+        <SubtypeId>AaW_SpawnProfile_Agaris_Rural_FriendlyPlayerBase</SubtypeId>
       </Id>
       <Description>
 
@@ -195,7 +303,7 @@ Urban:
 	[ThreatLevelCheckRange:2000]
 	[ThreatScoreGridConfiguration:Static]
 	[ThreatScoreMinimum:300]	
-	[ThreatIncludeOtherNpcOwners:true]
+	[ThreatIncludeOtherNpcOwners:false]
 	
 	[UsePlayerFactionReputation:true]
 	[PlayerReputationCheckRadius:4000]
@@ -215,7 +323,7 @@ Urban:
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_AgarisPeace_Urban</SubtypeId>
+        <SubtypeId>AaW_SpawnProfile_Agaris_Urban</SubtypeId>
       </Id>
       <Description>
 
@@ -228,47 +336,25 @@ Urban:
 	[PlanetWhitelist:Planet Agaris]	
 	[SkipAirDensityCheck:false]
 	[AtmosphericCargoShipChance:100]	
+
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:false]	
 	
+
+	[CustomApiConditions:AgarisLand]	
 	
 	[FactionOwner:SPRT]	
 	[UseSpawnGroupPrefabSpawningMode:true]
       </Description>
     </EntityComponent>
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_AgarisPeace_Urban_Outside</SubtypeId>
-      </Id>
-      <Description>
-
-	[MES Spawn Conditions]
-	[AtmosphericCargoShip:true]
-	[IgnoreCombatPhase:true]
-	[ZoneConditions:ZoneCondition_ZoneUrban]	
-	
-	[PlanetWhitelist:Planet Agaris]	
-	[SkipAirDensityCheck:false]
-	[AtmosphericCargoShipChance:100]	
-	
-		
-	[UseThreatLevelCheck:true]
-	[ThreatLevelCheckRange:2000]
-	[ThreatScoreGridConfiguration:Static]
-	[ThreatScoreMaximum:300]	
-	[ThreatIncludeOtherNpcOwners:true]	
-
-	[CustomApiConditions:AgarisLand]	
-	[FactionOwner:SPRT]		
-	[UseSpawnGroupPrefabSpawningMode:true]	
-      </Description>
-    </EntityComponent>
-
 	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_AgarisPeace_Urban_FriendlyBase</SubtypeId>
+        <SubtypeId>AaW_SpawnProfile_Agaris_Urban_FriendlyPlayerBase</SubtypeId>
       </Id>
       <Description>
 
@@ -286,7 +372,7 @@ Urban:
 	[ThreatLevelCheckRange:2000]
 	[ThreatScoreGridConfiguration:Static]
 	[ThreatScoreMinimum:300]	
-	[ThreatIncludeOtherNpcOwners:true]
+	[ThreatIncludeOtherNpcOwners:false]
 	
 	[UsePlayerFactionReputation:true]
 	[PlayerReputationCheckRadius:4000]

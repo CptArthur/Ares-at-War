@@ -76,10 +76,19 @@ greenlist = {
 #Bolders: Niter/MAg
 (204, 255, 255) : (200),
 
-#Bolders: 
+#Bolders: idk
 (153, 153, 255) : (190),
+
+
+#Bolders: Sulfur
+(204, 204, 0) : (140),
+
+
 #Bolders: Platina
 (106, 138, 201) : (180),
+
+#Bolders: Gold
+(255, 0, 255) : (150),
 
 
 #Bolders: Cobalt

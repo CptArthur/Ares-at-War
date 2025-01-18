@@ -53,7 +53,9 @@
 	[MES Event]
 	[UseEvent:true]
 	[UniqueEvent:false]		
-
+	[StartsReady:true]
+	[MinCooldownMs:27400]
+	[MaxCooldownMs:27401]
 	
 	[ActionExecution:Sequential]
 	[TimeUntilNextActionMs:5500]
@@ -280,7 +282,11 @@
             [MES Player Condition]
             [CheckPlayerNear:true]    
             [PlayerNearCoords:{X:-1971089.41171662 Y:-1015992.52783906 Z:-2313184.94376413}]
-            [PlayerNearDistanceFromCoords:4500]
+            [PlayerNearDistanceFromCoords:30]
+	
+            [CheckPlayerTags:true]
+            [ExcludedPlayerTag:Player_Triggered_Area_SolEmbassy]			
+			
         </Description>
     </EntityComponent>
 
@@ -310,44 +316,29 @@
             [MinCooldownMs:6000]
             [MaxCooldownMs:6001]
             [PersistantConditionIds:AaW_EventPersistantCondition_Area_SolEmbassy]
-            [UseAnyPassingCondition:true]
-            [ActionExecution:Condition]
-
-            [ConditionIds:AaW_EventCondition_Area_SolEmbassy_A]
-            [ActionIds:AaW_EventAction_Area_SolEmbassy_A]
+			
+			
+			
+            
+            [ActionExecution:Sequential]
+			[TimeUntilNextActionMs:1000]
+            [ActionIds:AaW_EventAction_Area_SolEmbassy]
+            [ActionIds:AaW_EventAction_Area_SolEmbassy_End]
 
         </Description>
     </EntityComponent>
 
-    <!-- Option A -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
         <Id>
             <TypeId>Inventory</TypeId>
-            <SubtypeId>AaW_EventCondition_Area_SolEmbassy_A</SubtypeId>
-        </Id>
-        <Description>
-            [MES Event Condition]
-
-        </Description>   
-    </EntityComponent>
-
-    <!-- Option A -->
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-        <Id>
-            <TypeId>Inventory</TypeId>
-            <SubtypeId>AaW_EventAction_Area_SolEmbassy_A</SubtypeId>
+            <SubtypeId>AaW_EventAction_Area_SolEmbassy</SubtypeId>
         </Id>
         <Description>
             [MES Event Action]
 
-            [AddTagstoPlayers:true]
-            [AddTagsPlayerConditionIds:PlayerCondition_Area_SolEmbassy_ConsiderTriggered]
-            [AddTags:Player_Triggered_Area_SolEmbassy]
-
             [UseChatBroadcast:true]
             [ChatData:AaW_EventChat_Area_SolEmbassy_A]
-
         </Description>
     </EntityComponent>
 
@@ -373,6 +364,22 @@
             [ChatMessages:The Sol Cooperative Embassy here on Station 27 has recognized your Earther status and credited your account with 10,000 space credits as a goodwill gesture. I should warn you, though—they’re unlikely to offer any additional support.]
             [BroadcastChatType:Chat]
             [ChatAudio:Dialogue_Embassy]  
+        </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_Area_SolEmbassy_End</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [AddTagstoPlayers:true]
+            [AddTagsPlayerConditionIds:PlayerCondition_Area_SolEmbassy_ConsiderTriggered]
+            [AddTags:Player_Triggered_Area_SolEmbassy]
+
         </Description>
     </EntityComponent>
 
@@ -413,7 +420,13 @@
             [MES Player Condition]
             [CheckPlayerNear:true]    
             [PlayerNearCoords:{X:-1971079.47067346 Y:-1015992.20737627 Z:-2313171.35709035}]
-            [PlayerNearDistanceFromCoords:4500]
+            [PlayerNearDistanceFromCoords:30]
+			
+			
+			[CheckPlayerTags:true]
+            [ExcludedPlayerTag:Player_Triggered_Area_S27Bank]	
+			
+			
         </Description>
     </EntityComponent>
 
@@ -445,44 +458,26 @@
             [PersistantConditionIds:AaW_EventPersistantCondition_Area_S27Bank]
 
 
-            [UseAnyPassingCondition:true]
-            [ActionExecution:All]
+            
+            [ActionExecution:Sequential]
+			[TimeUntilNextActionMs:1000]
 
-            [ConditionIds:AaW_EventCondition_Area_S27Bank_A]
-            [ActionIds:AaW_EventAction_Area_S27Bank_A]
+            [ActionIds:AaW_EventAction_Area_S27Bank]
+            [ActionIds:AaW_EventAction_Area_S27Bank_End]
 
 
 
         </Description>
     </EntityComponent>
 
-    <!-- Option A -->
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
         <Id>
             <TypeId>Inventory</TypeId>
-            <SubtypeId>AaW_EventCondition_Area_S27Bank_A</SubtypeId>
-        </Id>
-        <Description>
-            [MES Event Condition]
- 
-        </Description>   
-    </EntityComponent>
-
-
-
-    <!-- Option A -->
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-        <Id>
-            <TypeId>Inventory</TypeId>
-            <SubtypeId>AaW_EventAction_Area_S27Bank_A</SubtypeId>
+            <SubtypeId>AaW_EventAction_Area_S27Bank</SubtypeId>
         </Id>
         <Description>
             [MES Event Action]
 
-            [AddTagstoPlayers:true]
-            [AddTagsPlayerConditionIds:PlayerCondition_Area_S27Bank_ConsiderTriggered]
-            [AddTags:Player_Triggered_Area_S27Bank]
 
             [UseChatBroadcast:true]
             [ChatData:AaW_EventChat_Area_S27Bank_A]
@@ -494,12 +489,9 @@
 			[GPSNames:Locate Alternative to S27 Bank]
 			[GPSDescriptions:Remove manually]
 			[GPSVector3Ds:{X:-1971091.82 Y:-1015999.76 Z:-2313128.84}]
-			
-
-
-
         </Description>
     </EntityComponent>
+	
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
         <Id>
@@ -526,6 +518,23 @@
         </Description>
     </EntityComponent>
 
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_Area_S27Bank_End</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [AddTagstoPlayers:true]
+            [AddTagsPlayerConditionIds:PlayerCondition_Area_S27Bank_ConsiderTriggered]
+            [AddTags:Player_Triggered_Area_S27Bank]
+
+        </Description>
+    </EntityComponent>
+	
+	
 <!-- ============================ 
 
 
@@ -563,7 +572,10 @@ Dockyard -->
             [MES Player Condition]
             [CheckPlayerNear:true]    
             [PlayerNearCoords:{X:-1971017.62854856 Y:-1015991.8577115 Z:-2313154.02147276}]
-            [PlayerNearDistanceFromCoords:4500]
+            [PlayerNearDistanceFromCoords:30]
+			
+            [CheckPlayerTags:true]
+            [ExcludedPlayerTag:Player_Triggered_Area_Dockyard]	
         </Description>
     </EntityComponent>
 
@@ -595,46 +607,26 @@ Dockyard -->
             [PersistantConditionIds:AaW_EventPersistantCondition_Area_Dockyard]
 
 
-            [UseAnyPassingCondition:true]
-            [ActionExecution:Condition]
+            [ActionExecution:Sequential]
+			[TimeUntilNextActionMs:1000]
 
-            [ConditionIds:AaW_EventCondition_Area_Dockyard_A]
-            [ActionIds:AaW_EventAction_Area_Dockyard_A]
+
+            [ActionIds:AaW_EventAction_Area_Dockyard]
+            [ActionIds:AaW_EventAction_Area_Dockyard_End]
 
 
         </Description>
     </EntityComponent>
 
-    <!-- Option A -->
+
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
         <Id>
             <TypeId>Inventory</TypeId>
-            <SubtypeId>AaW_EventCondition_Area_Dockyard_A</SubtypeId>
-        </Id>
-        <Description>
-            [MES Event Condition]
-
-        </Description>   
-    </EntityComponent>
-
-
-
-
-    <!-- Option A -->
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-        <Id>
-            <TypeId>Inventory</TypeId>
-            <SubtypeId>AaW_EventAction_Area_Dockyard_A</SubtypeId>
+            <SubtypeId>AaW_EventAction_Area_Dockyard</SubtypeId>
         </Id>
         <Description>
             [MES Event Action]
-
-            [AddTagstoPlayers:true]
-            [AddTagsPlayerConditionIds:PlayerCondition_Area_Dockyard_ConsiderTriggered]
-            [AddTags:Player_Triggered_Area_Dockyard]
-
-
 
 			[AddGPSToPlayers:true]
 			[AddGPSPlayerConditionIds:PlayerCondition_Area_Dockyard_ConsiderTriggered]
@@ -647,46 +639,27 @@ Dockyard -->
 
 			[GPSNames:Buy Ship Here]
 			[GPSDescriptions:Remove manually]
-			[GPSVector3Ds:{X:-1970986.19977779 Y:-1015995.26531147 Z:-2313146.86844701}]
-			
-			[GPSNames:Doohan Invitation]
-			[GPSDescriptions:Remove manually]
-			[GPSVector3Ds:{X:-2115308.14599197 Y:-1017128.41728537 Z:-2526724.09805359}]
-
-
-			
-			[UseChatBroadcast:true]
-            [ChatData:AaW_EventChat_Area_Dockyard_A]
-			
+			[GPSVector3Ds:{X:-1970986.19977779 Y:-1015995.26531147 Z:-2313146.86844701}]		
 			
         </Description>
     </EntityComponent>
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
         <Id>
             <TypeId>Inventory</TypeId>
-            <SubtypeId>AaW_EventChat_Area_Dockyard_A</SubtypeId>
-        </Id> 
+            <SubtypeId>AaW_EventAction_Area_Dockyard_End</SubtypeId>
+        </Id>
         <Description>
-            [RivalAI Chat]
-            [UseChat:true]
-            [StartsReady:true]
-            [Chance:100]
-            [MaxChats:-1]
-            [BroadcastRandomly:true]
-            [IgnoreAntennaRequirement:True]
-            [IgnoredAntennaRangeOverride:1]
-            [SendToAllOnlinePlayers:false]
-            [SendToSpecificPlayers:true]
-            [PlayerConditionIds:PlayerCondition_Area_Dockyard_ConsiderTriggered]
-            [Color:Blue]
-            [Author:LYRA]
-            [ChatMessages:We’ve received a message from Doohan, the salvager who found your wreck. He’s invited you to his asteroid base, saying he has something for you.]
-            [BroadcastChatType:Chat]
-            [ChatAudio:Dialogue_DoohanInvitation]  
+            [MES Event Action]
+
+            [AddTagstoPlayers:true]
+            [AddTagsPlayerConditionIds:PlayerCondition_Area_Dockyard_ConsiderTriggered]
+            [AddTags:Player_Triggered_Area_Dockyard]
+	
+			
         </Description>
     </EntityComponent>
+
 
 
 
@@ -732,7 +705,7 @@ Dockyard -->
             [MES Player Condition]
             [CheckPlayerNear:true]    
             [PlayerNearCoords:{X:-1970986.26315556 Y:-1015995.23278435 Z:-2313146.84034665}]
-            [PlayerNearDistanceFromCoords:4500]
+            [PlayerNearDistanceFromCoords:30]
         </Description>
     </EntityComponent>
 
@@ -758,13 +731,13 @@ Dockyard -->
             [MES Event]
             [UseEvent:true]
             [Tags:EventAreaBuyShipEmptyWarning]
-            [UniqueEvent:false]    
+            [UniqueEvent:true]    
             [MinCooldownMs:6000]
             [MaxCooldownMs:6001]
             [PersistantConditionIds:AaW_EventPersistantCondition_Area_BuyShipEmptyWarning]
 
 
-            [UseAnyPassingCondition:true]
+            
             [ActionExecution:Condition]
 
             [ConditionIds:AaW_EventCondition_Area_BuyShipEmptyWarning_A]

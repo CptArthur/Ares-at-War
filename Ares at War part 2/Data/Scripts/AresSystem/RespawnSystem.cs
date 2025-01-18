@@ -21,7 +21,7 @@ namespace RespawnSystem
     public struct RespawnData
     {
         public long shipEntityId;
-        public long playerId;
+        public ulong steamId;
         public string RespawnShipPrefabName;
         public long TLL;
         public bool Enabled;
@@ -29,7 +29,7 @@ namespace RespawnSystem
 
     public struct FadeOutData
     {
-        public long playerId;
+        public ulong steamId;
         public long TLL;
     }
 
@@ -85,10 +85,10 @@ namespace RespawnSystem
 
         public static void RespawnShipSpawned(long shipEntityId, long playerId, string RespawnShipPrefabName)
         {
-
+            ulong steamId = MyAPIGateway.Players.TryGetSteamId(playerId);
             var respawndata = new RespawnData();
             respawndata.shipEntityId = shipEntityId;
-            respawndata.playerId = playerId;
+            respawndata.steamId = steamId;
             respawndata.RespawnShipPrefabName = RespawnShipPrefabName;
             respawndata.TLL = MyAPIGateway.Session.GameplayFrameCounter + 360;
             respawndata.Enabled = true;
@@ -103,11 +103,11 @@ namespace RespawnSystem
                 MESApi.ProcessStaticEncountersAtLocation(position);
 
 
+
                 if (player.IdentityId == MyVisualScriptLogicProvider.GetLocalPlayerId())
                     Fade.fade(true);
                 else if (MyAPIGateway.Multiplayer.IsServer)
                     MyAPIGateway.Multiplayer.SendMessageTo(modId, Encoding.ASCII.GetBytes("start"), MyVisualScriptLogicProvider.GetSteamId(player.IdentityId), true);
-
 
 
             }
@@ -149,11 +149,11 @@ namespace RespawnSystem
 
 
 
-                _RespawnData.Add(respawndata);
+
 
             }
 
-            
+            _RespawnData.Add(respawndata);
 
 
         }
@@ -161,8 +161,10 @@ namespace RespawnSystem
 
         public static void ProssesRespawnShip(long shipEntityId, long playerId, string RespawnShipPrefabName, bool enabled = true)
         {
-            IMyPlayer player = GetPlayer(playerId);
             MyCubeGrid grid = MyEntities.GetEntityById(shipEntityId) as MyCubeGrid;
+            IMyPlayer player = GetPlayer(playerId);
+
+
             var block = grid.GetFirstBlockOfType<MyCockpit>();
 
             if (!enabled)
@@ -171,12 +173,6 @@ namespace RespawnSystem
                 MyVisualScriptLogicProvider.SendChatMessage("You can press Backspace to return to the spawn options. We apologize for the inconvenience", "AaW", playerId, "Red");
                 return;
             }
-
-
-
-            //MyAPIGateway.Utilities.ShowMessage("AaW Debug", $"Second run: {player.DisplayName} with {player.IdentityId} == {playerId}");
-
-
 
 
             if (RespawnShipPrefabName == "ITC Mallard (Crashed)")
@@ -251,6 +247,7 @@ namespace RespawnSystem
 
                 block.RemovePilot();
 
+                //MyAPIGateway.Utilities.ShowMessage("AaW Debug", $"remove pilot");
                 Vector3 up = new Vector3D(0, 1, 0);
                 Vector3 forward = new Vector3D(-1, 0, 0);
                 Vector3D position = new Vector3D(-1971126.63, -1015993.3, -2313164.75);
@@ -258,11 +255,12 @@ namespace RespawnSystem
 
                 player.Character.Teleport(matrix);
 
+
                 var fadeoutdata = new FadeOutData();
-                fadeoutdata.playerId = player.IdentityId; 
-                fadeoutdata.TLL = MyAPIGateway.Session.GameplayFrameCounter + 540;
+                fadeoutdata.steamId = player.SteamUserId; 
+                fadeoutdata.TLL = MyAPIGateway.Session.GameplayFrameCounter + 120;
                 _FadeOutData.Add(fadeoutdata);
-                
+
 
 
             }
@@ -281,7 +279,7 @@ namespace RespawnSystem
                 player.Character.Teleport(matrix);
 
                 var fadeoutdata = new FadeOutData();
-                fadeoutdata.playerId = playerId;
+                fadeoutdata.steamId = player.SteamUserId;
                 fadeoutdata.TLL = MyAPIGateway.Session.GameplayFrameCounter + 120;
                 _FadeOutData.Add(fadeoutdata);
             }
@@ -310,7 +308,7 @@ namespace RespawnSystem
 
 
                 var fadeoutdata = new FadeOutData();
-                fadeoutdata.playerId = playerId;
+                fadeoutdata.steamId = player.SteamUserId;
                 fadeoutdata.TLL = MyAPIGateway.Session.GameplayFrameCounter + 1140;
                 _FadeOutData.Add(fadeoutdata);
 
@@ -384,7 +382,8 @@ namespace RespawnSystem
                 var data = _RespawnData[i];
                 if (data.TLL < MyAPIGateway.Session.GameplayFrameCounter)
                 {
-                    ProssesRespawnShip(data.shipEntityId, data.playerId, data.RespawnShipPrefabName, data.Enabled);
+                    long playerid = MyAPIGateway.Players.TryGetIdentityId(data.steamId);
+                    ProssesRespawnShip(data.shipEntityId, playerid, data.RespawnShipPrefabName, data.Enabled);
                     _RespawnData.RemoveAtFast(i);
                 }
             }
@@ -392,9 +391,12 @@ namespace RespawnSystem
             for (int i = _FadeOutData.Count - 1; i >= 0; i--)
             {
                 var data = _FadeOutData[i];
+
                 if (data.TLL < MyAPIGateway.Session.GameplayFrameCounter)
                 {
-                    MyVisualScriptLogicProvider.ScreenColorFadingStartSwitch(8, data.playerId);
+                    long playerid = MyAPIGateway.Players.TryGetIdentityId(data.steamId);
+
+                    MyVisualScriptLogicProvider.ScreenColorFadingStartSwitch(8, playerid);
                     _FadeOutData.RemoveAtFast(i);
                 }
             }
@@ -426,10 +428,11 @@ namespace RespawnSystem
                         continue;
                     }
 
-                    if (data.playerId == MyVisualScriptLogicProvider.GetLocalPlayerId())
+                    long playerid = MyAPIGateway.Players.TryGetIdentityId(data.steamId);
+                    if (playerid == MyVisualScriptLogicProvider.GetLocalPlayerId())
                         Fade.fade(false);
                     else
-                        MyAPIGateway.Multiplayer.SendMessageTo(modId, Encoding.ASCII.GetBytes("unblink"), MyVisualScriptLogicProvider.GetSteamId(data.playerId), true);
+                        MyAPIGateway.Multiplayer.SendMessageTo(modId, Encoding.ASCII.GetBytes("unblink"), MyVisualScriptLogicProvider.GetSteamId(playerid), true);
                 }
 
 

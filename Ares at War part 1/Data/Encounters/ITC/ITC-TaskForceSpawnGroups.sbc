@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>ITC_SpawnGroup_Squadron</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+
+
+	        [FactionOverride:ITC]
+
+			[SpawnConditionGroups:AaW_SpawnGroup_EarthFaction]
+
+			[ManipulationProfiles:AaW_Manipulation_ThrustForceMultiply]
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="ITC-Scorpion">
+					<Position>
+						<X>-400.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>ITC_OffensiveEscort_Behavior</Behaviour>
+				</Prefab>
+				<Prefab SubtypeId="ITC-Scorpion">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>ITC_TaskForceLeader_Behavior_Fighter</Behaviour>
+				</Prefab>
+				<Prefab SubtypeId="ITC-Scorpion">
+					<Position>
+						<X>400.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>ITC_OffensiveEscort_Behavior</Behaviour>
+				</Prefab>
+				
+		
+			</Prefabs>
+			
+		</SpawnGroup>
+
+
+	</SpawnGroups>
+</Definitions>

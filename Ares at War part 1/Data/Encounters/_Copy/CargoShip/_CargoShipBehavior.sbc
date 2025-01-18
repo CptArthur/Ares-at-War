@@ -12,6 +12,9 @@
     [BehaviorName:CargoShip]
     [TargetData:MSB_TargetProfile_Default]
 
+	[AutopilotData:MSB_Cargoship_Autopilot]
+	[SecondaryAutopilotData:MSB_Freighter_Autopilot]
+	
     [DialogueBanks:{FAC}.xml] 
     [DialogueBanks:AaW.xml] 
     [DialogueBanks:MSB.xml] 
@@ -19,18 +22,38 @@
 
     [TriggerGroups:{FAC}_DynamicCommon_TriggerGroup]
     [TriggerGroups:AaW_DynamicCommon_TriggerGroup]    
-    [TriggerGroups:MSB_DynamicCommon_TriggerGroup]    
+    [TriggerGroups:MSB_DynamicCommon_TriggerGroup]   
+    [TriggerGroups:MSB_DynamicCommon_TriggerGroup_Complete] 
+	
 
-     [TriggerGroups:{FAC}_Gunship_TriggerGroup]        
-    [TriggerGroups:AaW_Gunship_TriggerGroup]
-    [TriggerGroups:MSB_Gunship_TriggerGroup]     
+    [TriggerGroups:{FAC}_Freighter_TriggerGroup]        
+    [TriggerGroups:AaW_Freighter_TriggerGroup]
+    [TriggerGroups:MSB_Freighter_TriggerGroup]  
+    [TriggerGroups:MSB_Freighter_TriggerGroup_Complete]  
+	
 
     [TriggerGroups:{FAC}_CargoShip_TriggerGroup]    
     [TriggerGroups:AaW_CargoShip_TriggerGroup]     
     [TriggerGroups:MSB_CargoShip_TriggerGroup]     
+    [TriggerGroups:MSB_CargoShip_TriggerGroup_Complete]     
 
       </Description>
+    </EntityComponent>   
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>{FAC}_CargoShip_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+
+    [RivalAI TriggerGroup]
+ 
+      </Description>
       
-    </EntityComponent>        
+    </EntityComponent>  
+
+
+	
   </EntityComponents>
 </Definitions>

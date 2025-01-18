@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+	
+	<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>SHIVAN_SpawnGroup_LargeCargoTransport</SubtypeId>
+			</Id>
+			<Description>
+
+		[Modular Encounters SpawnGroup]
+		
+		[FactionOverride:SHIVAN]
+		
+		
+		[SpawnConditionGroups:AaW_SpawnGroup_EarthCivilian]		
+		[SpawnConditionGroups:AaW_SpawnGroup_AlienFaction]
+		[SpawnConditionGroups:AaW_SpawnGroup_LezunoFaction]	
+		[SpawnConditionGroups:AaW_SpawnGroup_SpaceFaction]
+
+			
+		[ManipulationGroups:SHIVAN_Manipulation_Group]	
+				
+	
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		
+		[UseSpawnGroupPrefabSpawningMode:true]
+		[PrefabSpawningMode:RandomSelectedIndexes]
+
+        [PrefabIndexGroupNames:Escort 1]
+        [PrefabIndexGroupValues:0]
+
+        [PrefabIndexGroupNames:Escort 2]
+        [PrefabIndexGroupValues:1]
+	
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:2]
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:3]	
+        [PrefabIndexGroupNames:MainShip]
+        [PrefabIndexGroupValues:4]					
+		[PrefabIndexGroupNames:MainShip]
+		[PrefabIndexGroupValues:5]				
+
+				
+		</Description>
+			
+			
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+						
+		<Prefabs>			
+		<Prefab SubtypeId="(SYN) SD-3">
+			<Position>
+				<X>-100.0</X>
+				<Y>0.0</Y>
+				<Z>0.0</Z>
+			</Position>
+			<Speed>25</Speed>
+			<Behaviour>SHIVAN_OffensiveEscort_Behavior</Behaviour>
+		</Prefab>			
+	
+		<Prefab SubtypeId="(SYN) SD-3">
+			<Position>
+				<X>100.0</X>
+				<Y>0.0</Y>
+				<Z>0.0</Z>
+			</Position>
+			<Speed>25</Speed>
+			<Behaviour>SHIVAN_OffensiveEscort_Behavior</Behaviour>
+		</Prefab>	
+			<Prefab SubtypeId="SHIVAN_LargeCargoTransport-0">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>SHIVAN_CargoShip_Behavior</Behaviour>
+			</Prefab>
+
+			<Prefab SubtypeId="SHIVAN_LargeCargoTransport-1">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>SHIVAN_CargoShip_Behavior</Behaviour>
+			</Prefab>
+			
+			<Prefab SubtypeId="SHIVAN_LargeCargoTransport-2">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>SHIVAN_CargoShip_Behavior</Behaviour>
+			</Prefab>			
+			<Prefab SubtypeId="SHIVAN_LargeCargoTransport-3">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>25</Speed>
+				<Behaviour>SHIVAN_CargoShip_Behavior</Behaviour>
+			</Prefab>					
+		</Prefabs>	
+	</SpawnGroup>
+
+
+
+	</SpawnGroups>
+</Definitions>

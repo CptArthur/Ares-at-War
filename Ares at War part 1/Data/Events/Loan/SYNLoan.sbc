@@ -1,0 +1,1511 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+<!--
+
+SYNLoan20m
+SYNLoan100m
+-->
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_PayInterest_SYNLoanEither</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SYN]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:1501]
+	
+	[CheckPlayerTags:true]
+	[IncludedPlayerTags:SYNLoan20m]
+	[IncludedPlayerTags:SYNLoan100m]
+	[AllowAnyIncludedPlayerTags:true]
+      </Description>
+    </EntityComponent>	
+	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_PayInterest_SYNLoan20m</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SYN]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:1501]
+
+	[CheckPlayerCreditBalance:true]
+	[MinPlayerCreditBalance:100000]
+	
+	[CheckPlayerTags:true]
+	[IncludedPlayerTags:SYNLoan20m]
+	[ExcludedPlayerTags:SYNLoan100m]
+      </Description>
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_PayInterest_SYNLoan20m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SYN]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:1501]
+
+	[CheckPlayerCreditBalance:true]
+	[MaxPlayerCreditBalance:100000]
+	
+	[CheckPlayerTags:true]
+	[IncludedPlayerTags:SYNLoan20m]
+	[ExcludedPlayerTags:SYNLoan100m]
+      </Description>
+    </EntityComponent>	
+
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_PayInterest_SYNLoan100m</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SYN]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:1501]
+
+	[CheckPlayerCreditBalance:true]
+	[MinPlayerCreditBalance:500000]
+	
+	[CheckPlayerTags:true]
+	[ExcludedPlayerTags:SYNLoan20m]
+	[IncludedPlayerTags:SYNLoan100m]
+      </Description>
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_PayInterest_SYNLoan100m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SYN]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:1501]
+
+	[CheckPlayerCreditBalance:true]
+	[MaxPlayerCreditBalance:500000]
+	
+	[CheckPlayerTags:true]
+	[ExcludedPlayerTags:SYNLoan20m]
+	[IncludedPlayerTags:SYNLoan100m]
+      </Description>
+    </EntityComponent>	
+	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_PayInterest_SYNLoan120m</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SYN]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:1501]
+
+	[CheckPlayerCreditBalance:true]
+	[MinPlayerCreditBalance:500000]
+	
+	[CheckPlayerTags:true]
+	[IncludedPlayerTags:SYNLoan20m]
+	[IncludedPlayerTags:SYNLoan100m]
+      </Description>
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_PayInterest_SYNLoan120m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SYN]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:1501]
+
+	[CheckPlayerCreditBalance:true]
+	[MaxPlayerCreditBalance:500000]
+	
+	[CheckPlayerTags:true]
+	[IncludedPlayerTags:SYNLoan20m]
+	[IncludedPlayerTags:SYNLoan100m]
+      </Description>
+    </EntityComponent>	
+
+
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_Event_SYNLoan</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event]
+            [UseEvent:true]
+            [UniqueEvent:false]    
+            [MinCooldownMs:7200000]
+            [MaxCooldownMs:7200001]
+            [ActionExecution:All]
+
+            [ActionIds:AaW_EventAction_SYNLoan]
+        </Description>
+    </EntityComponent>
+		
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_SYNLoan</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+			
+			[UseChatBroadcast:true]
+            [ChatData:AaW_EventChat_SYNLoan]
+			
+			
+			[ToggleEvents:true]
+			[ToggleEventIds:AaW_Event_SYNLoan_PayInterest]
+			[ToggleEventIdModes:true]
+			
+			[ResetCooldownTimeOfEvents:true]
+			[ResetEventCooldownIds:AaW_Event_SYNLoan_PayInterest]
+        </Description>
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventChat_SYNLoan</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:true]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition_PayInterest_SYNLoanEither]
+            [Color:Blue]
+            [Author:Shivan Syndicate]
+            [ChatMessages:In 1 minute, the interest on your loan will be withdrawn automatically. Make sure you have enough to cover it...]
+            [BroadcastChatType:Chat]
+            [ChatAudio:]  
+        </Description>
+    </EntityComponent>
+	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_Event_SYNLoan_PayInterest</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event]
+            [UseEvent:false]
+            [UniqueEvent:false]    
+            [MinCooldownMs:59000]
+            [MaxCooldownMs:59001]
+            [ActionExecution:All]
+
+            [ActionIds:AaW_EventAction_PayInterest_20m_Fail]
+            [ActionIds:AaW_EventAction_PayInterest_20m]
+            [ActionIds:AaW_EventAction_PayInterest_100m_Fail]
+            [ActionIds:AaW_EventAction_PayInterest_100m]
+            [ActionIds:AaW_EventAction_PayInterest_120m_Fail]
+            [ActionIds:AaW_EventAction_PayInterest_120m]
+            [ActionIds:AaW_EventAction_PayInterest_End]				
+        </Description>
+    </EntityComponent>
+		
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_PayInterest_20m_Fail</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+			
+			[ChangeReputationWithPlayers:true]
+			[ReputationPlayerConditionIds:PlayerCondition_PayInterest_SYNLoan20m_Fail]
+			[ReputationChangeAmount:-100]
+			[ReputationChangeFactions:SYN]
+			[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+			
+			
+			[UseChatBroadcast:true]
+            [ChatData:AaW_EventChat_PayInterest_20m_Fail]
+        </Description>
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventChat_PayInterest_20m_Fail</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition_PayInterest_SYNLoan20m_Fail]
+            [Color:Red]
+            [Author:Shivan Syndicate]
+            [ChatMessages:What do you mean you don't have enough money? Don't test us {PlayerName}]
+            [BroadcastChatType:Chat]
+            [ChatAudio:]  
+        </Description>
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_PayInterest_20m</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]		
+			
+			[ChangePlayerCredits:true]
+			[ChangePlayerCreditsAmount:-100000]
+			[ChangePlayerCreditsPlayerConditionIds:PlayerCondition_PayInterest_SYNLoan20m]
+			
+			
+			[UseChatBroadcast:true]
+            [ChatData:AaW_EventChat_PayInterest_20m]
+        </Description>
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventChat_PayInterest_20m</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition_PayInterest_SYNLoan20m]
+            [Color:Blue]
+            [Author:LYRA]
+            [ChatMessages:Paid 100k SC as interest to the Shivan Syndicate]
+            [BroadcastChatType:Chat]
+            [ChatAudio:]  
+        </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_PayInterest_100m_Fail</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+			
+			[ChangeReputationWithPlayers:true]
+			[ReputationPlayerConditionIds:PlayerCondition_PayInterest_SYNLoan100m_Fail]
+			[ReputationChangeAmount:-100]
+			[ReputationChangeFactions:SYN]
+			[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+			
+			
+			[UseChatBroadcast:true]
+            [ChatData:AaW_EventChat_PayInterest_100m_Fail]
+        </Description>
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventChat_PayInterest_100m_Fail</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition_PayInterest_SYNLoan100m_Fail]
+            [Color:Red]
+            [Author:Shivan Syndicate]
+            [ChatMessages:What do you mean you don't have enough money? Don't test us {PlayerName}]
+            [BroadcastChatType:Chat]
+            [ChatAudio:]  
+        </Description>
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_PayInterest_100m</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]		
+			
+			[ChangePlayerCredits:true]
+			[ChangePlayerCreditsAmount:-500000]
+			[ChangePlayerCreditsPlayerConditionIds:PlayerCondition_PayInterest_SYNLoan100m]
+			
+			
+			[UseChatBroadcast:true]
+            [ChatData:AaW_EventChat_PayInterest_100m]
+        </Description>
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventChat_PayInterest_100m</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition_PayInterest_SYNLoan100m]
+            [Color:Blue]
+            [Author:LYRA]
+            [ChatMessages:Paid 500k SC as interest to the Shivan Syndicate]
+            [BroadcastChatType:Chat]
+            [ChatAudio:]  
+        </Description>
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_PayInterest_120m_Fail</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+			
+			[ChangeReputationWithPlayers:true]
+			[ReputationPlayerConditionIds:PlayerCondition_PayInterest_SYNLoan120m_Fail]
+			[ReputationChangeAmount:-100]
+			[ReputationChangeFactions:SYN]
+			[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+			
+			
+			[UseChatBroadcast:true]
+            [ChatData:AaW_EventChat_PayInterest_120m_Fail]
+        </Description>
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventChat_PayInterest_120m_Fail</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition_PayInterest_SYNLoan120m_Fail]
+            [Color:Red]
+            [Author:Shivan Syndicate]
+            [ChatMessages:What do you mean you don't have enough money? Don't test us {PlayerName}]
+            [BroadcastChatType:Chat]
+            [ChatAudio:]  
+        </Description>
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_PayInterest_120m</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]		
+			
+			[ChangePlayerCredits:true]
+			[ChangePlayerCreditsAmount:-100000]
+			[ChangePlayerCreditsPlayerConditionIds:PlayerCondition_PayInterest_SYNLoan120m]
+			
+			
+			[UseChatBroadcast:true]
+            [ChatData:AaW_EventChat_PayInterest_120m]
+        </Description>
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventChat_PayInterest_120m</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition_PayInterest_SYNLoan120m]
+            [Color:Blue]
+            [Author:LYRA]
+            [ChatMessages:Paid 600k SC as interest to the Shivan Syndicate]
+            [BroadcastChatType:Chat]
+            [ChatAudio:]  
+        </Description>
+    </EntityComponent>	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>AaW_EventAction_PayInterest_End</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]		
+			
+			[ToggleEvents:true]
+			[ToggleEventIds:AaW_Event_SYNLoan_PayInterest]
+			[ToggleEventIdModes:false]
+        </Description>
+    </EntityComponent>	
+
+<!-- 
+
+
+Start Triggers
+
+
+
+
+
+ -->
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_ReadyToPayback_SYNLoan20m</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SYN]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:1501]
+
+	[CheckPlayerCreditBalance:true]
+	[MinPlayerCreditBalance:20000000]
+	
+	[CheckPlayerTags:true]
+	[IncludedPlayerTags:SYNLoan20m]
+	
+      </Description>
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_ReadyToTake_SYNLoan20m</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SYN]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:1501]
+	
+	[CheckPlayerTags:true]
+	[ExcludedPlayerTags:SYNLoan20m]
+	
+      </Description>
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_ReadyToPayback_SYNLoan100m</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SYN]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:1501]
+
+	[CheckPlayerCreditBalance:true]
+	[MinPlayerCreditBalance:100000000]
+	
+	[CheckPlayerTags:true]
+	[IncludedPlayerTags:SYNLoan100m]
+	
+      </Description>
+    </EntityComponent>	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_ReadyToTake_SYNLoan100m</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SYN]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:1501]
+	
+	[CheckPlayerTags:true]
+	[ExcludedPlayerTags:SYNLoan100m]
+	
+      </Description>
+    </EntityComponent>	
+	
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_CommonTriggers</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI TriggerGroup]
+	  
+	  
+	  [Triggers:SYN_Bank_Trigger_Take100m_Fail]
+	  [Triggers:SYN_Bank_Trigger_Take100m_Success]	  
+	  
+	  [Triggers:SYN_Bank_Trigger_Payback100m_Fail]
+	  [Triggers:SYN_Bank_Trigger_Payback100m_Success]
+	  
+	  
+	  [Triggers:SYN_Bank_Trigger_Take20m_Fail]
+	  [Triggers:SYN_Bank_Trigger_Take20m_Success]	  
+	  
+	  [Triggers:SYN_Bank_Trigger_Payback20m_Fail]
+	  [Triggers:SYN_Bank_Trigger_Payback20m_Success]
+	  
+      </Description>
+    </EntityComponent>  
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Trigger_Take20m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:SYN Loaning]
+	[ButtonPanelIndex:0]
+	[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	
+	[Conditions:SYN_Bank_Condition_Take20m_Fail]
+	[Actions:SYN_Bank_Action_Take20m_Fail]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Condition_Take20m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+	[UseFailCondition:true]
+	
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_ReadyToTake_SYNLoan20m]
+
+	
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Action_Take20m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:SYN_Bank_Chat_Take20m_Fail]
+	
+	[ResetCooldownTimeOfTriggers:true]
+	[ResetTriggerCooldownNames:SYN_Bank_Trigger_Take20m_Success]
+	
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Chat_Take20m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:SYN-Bank]
+      [Color:Red]
+      
+      [ChatMessages:You do not meet the requirements to take 20m in loans]
+      [ChatAudio:]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]
+	  [SendToCommandPlayer:true]	
+      
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+<!-- Our requirements are not met -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Trigger_Take20m_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:SYN Loaning]
+	[ButtonPanelIndex:0]
+	[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	[Conditions:SYN_Bank_Condition_Take20m_Success]
+	[Actions:SYN_Bank_Action_Take20m_Success]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Condition_Take20m_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	
+		[CheckPlayerCondition:true]
+		[PlayerConditionIds:PlayerCondition_ReadyToTake_SYNLoan20m]
+	
+
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Action_Take20m_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	  [ChangePlayerCredits:true]
+	  [ChangePlayerCreditsAmount:20000000]
+	  [ChangePlayerCreditsIncludeSavedPlayerIdentity:true]
+	  
+	  [AddTagsToPlayers:true]
+	  [AddTagsIncludeSavedPlayerIdentity:true]
+	  [AddTags:SYNLoan20m]
+	  
+	[UseChatBroadcast:true]
+	[ChatData:SYN_Bank_Chat_Take20m_Success]
+	  
+	  
+	[ResetCooldownTimeOfTriggers:true]
+	[ResetTriggerCooldownNames:SYN_Bank_Trigger_Take20m_Fail]
+	 
+	 
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Chat_Take20m_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:SYN-Bank]
+      [Color:Green]
+      
+      [ChatMessages:You have taken a loan of 20m, please know that we take interest on this loan]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]
+	  [SendToCommandPlayer:true]	
+      
+      </Description>
+      
+    </EntityComponent>
+	
+	
+
+
+<!--
+
+Payback
+
+-->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Trigger_Payback20m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:SYN Loaning]
+	[ButtonPanelIndex:2]
+	[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	
+	
+	[Conditions:SYN_Bank_Condition_Payback20m_Fail]
+	[Actions:SYN_Bank_Action_Payback20m_Fail]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Condition_Payback20m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+	[UseFailCondition:true]
+	
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_ReadyToPayback_SYNLoan20m]
+
+	
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Action_Payback20m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:SYN_Bank_Chat_Payback20m_Fail]
+	
+	  	 [ResetCooldownTimeOfTriggers:true]
+	 [ResetTriggerCooldownNames:SYN_Bank_Trigger_Payback20m_Success]
+	 
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Chat_Payback20m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:SYN-Bank]
+      [Color:Red]
+      
+      [ChatMessages:You do not meet the requirements to payback 20m in loans]
+      [ChatAudio:]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]
+	  [SendToCommandPlayer:true]	
+      
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Trigger_Payback20m_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:SYN Loaning]
+	[ButtonPanelIndex:2]
+	
+	[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	
+	
+	[Conditions:SYN_Bank_Condition_Payback20m_Success]
+	[Actions:SYN_Bank_Action_Payback20m_Success]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Condition_Payback20m_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	
+		[CheckPlayerCondition:true]
+		[PlayerConditionIds:PlayerCondition_ReadyToPayback_SYNLoan20m]
+	
+
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Action_Payback20m_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	  [ChangePlayerCredits:true]
+	  [ChangePlayerCreditsAmount:-20000000]
+	  [ChangePlayerCreditsIncludeSavedPlayerIdentity:true]
+	  
+	  [RemoveTagsFromPlayers:true]
+	  [RemoveTagsIncludeSavedPlayerIdentity:true]
+	  [RemoveTags:SYNLoan20m]
+	  
+	[UseChatBroadcast:true]
+	[ChatData:SYN_Bank_Chat_Payback20m_Success]
+	
+	  	 [ResetCooldownTimeOfTriggers:true]
+	 [ResetTriggerCooldownNames:SYN_Bank_Trigger_Payback20m_Fail]
+
+	 
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Chat_Payback20m_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:SYN-Bank]
+      [Color:Green]
+      
+      [ChatMessages:Your 20m loan has been successfully repaid. ]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]
+	  [SendToCommandPlayer:true]	
+      
+      </Description>
+      
+    </EntityComponent>
+	
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Trigger_Take100m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:SYN Loaning]
+	[ButtonPanelIndex:1]
+	
+	[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	
+	
+	[Conditions:SYN_Bank_Condition_Take100m_Fail]
+	[Actions:SYN_Bank_Action_Take100m_Fail]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Condition_Take100m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+	[UseFailCondition:true]
+	
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_ReadyToTake_SYNLoan100m]
+
+	
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Action_Take100m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:SYN_Bank_Chat_Take100m_Fail]
+
+	  	 [ResetCooldownTimeOfTriggers:true]
+	 [ResetTriggerCooldownNames:SYN_Bank_Trigger_Take100m_Success]
+
+	 
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Chat_Take100m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:SYN-Bank]
+      [Color:Red]
+      
+      [ChatMessages:You do not meet the requirements to take 100m in loans]
+      [ChatAudio:]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]
+	  [SendToCommandPlayer:true]	
+      
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+<!-- Our requirements are not met -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Trigger_Take100m_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:SYN Loaning]
+	[ButtonPanelIndex:1]
+	
+		[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	
+	
+	[Conditions:SYN_Bank_Condition_Take100m_Success]
+	[Actions:SYN_Bank_Action_Take100m_Success]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Condition_Take100m_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	
+		[CheckPlayerCondition:true]
+		[PlayerConditionIds:PlayerCondition_ReadyToTake_SYNLoan100m]
+	
+
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Action_Take100m_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	  [ChangePlayerCredits:true]
+	  [ChangePlayerCreditsAmount:100000000]
+	  [ChangePlayerCreditsIncludeSavedPlayerIdentity:true]
+	  
+	  [AddTagsToPlayers:true]
+	  [AddTagsIncludeSavedPlayerIdentity:true]
+	  [AddTags:SYNLoan100m]
+	  
+	[UseChatBroadcast:true]
+	[ChatData:SYN_Bank_Chat_Take100m_Success]
+	  
+	  	 [ResetCooldownTimeOfTriggers:true]
+	 [ResetTriggerCooldownNames:SYN_Bank_Trigger_Take100m_Fail]
+	 
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Chat_Take100m_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:SYN-Bank]
+      [Color:Green]
+      
+      [ChatMessages:You have taken a loan of 100m, please know that we take interest on this loan]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]
+	  [SendToCommandPlayer:true]	
+      
+      </Description>
+      
+    </EntityComponent>
+	
+	
+
+
+<!--
+
+Payback
+
+-->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Trigger_Payback100m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:SYN Loaning]
+	[ButtonPanelIndex:3]
+	
+	
+		[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	
+	
+	[Conditions:SYN_Bank_Condition_Payback100m_Fail]
+	[Actions:SYN_Bank_Action_Payback100m_Fail]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Condition_Payback100m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+	[UseFailCondition:true]
+	
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_ReadyToPayback_SYNLoan100m]
+
+	
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Action_Payback100m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:SYN_Bank_Chat_Payback100m_Fail]
+	  
+	  
+	  	  
+	 [ResetCooldownTimeOfTriggers:true]
+	 [ResetTriggerCooldownNames:SYN_Bank_Trigger_Payback100m_Success]
+	 
+	 
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Chat_Payback100m_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:SYN-Bank]
+      [Color:Red]
+      
+      [ChatMessages:You do not meet the requirements to payback 100m in loans]
+      [ChatAudio:]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3] 
+	  [SendToCommandPlayer:true]	
+      
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Trigger_Payback100m_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:SYN Loaning]
+	[ButtonPanelIndex:3]
+	
+		[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	
+	
+	[Conditions:SYN_Bank_Condition_Payback100m_Success]
+	[Actions:SYN_Bank_Action_Payback100m_Success]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Condition_Payback100m_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	
+		[CheckPlayerCondition:true]
+		[PlayerConditionIds:PlayerCondition_ReadyToPayback_SYNLoan100m]
+	
+
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Action_Payback100m_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	  [ChangePlayerCredits:true]
+	  [ChangePlayerCreditsAmount:-100000000]
+	  [ChangePlayerCreditsIncludeSavedPlayerIdentity:true]
+	  
+	  [RemoveTagsFromPlayers:true]
+	  [RemoveTagsIncludeSavedPlayerIdentity:true]
+	  [RemoveTags:SYNLoan100m]
+	  
+	[UseChatBroadcast:true]
+	[ChatData:SYN_Bank_Chat_Payback100m_Success]
+	  
+	  
+	 [ResetCooldownTimeOfTriggers:true]
+	 [ResetTriggerCooldownNames:SYN_Bank_Trigger_Payback100m_Fail]
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SYN_Bank_Chat_Payback100m_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:SYN-Bank]
+      [Color:Green]
+      
+      [ChatMessages:Your 100m loan has been successfully repaid.]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]
+	  [SendToCommandPlayer:true]	
+      
+      </Description>
+      
+    </EntityComponent>	
+	
+
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

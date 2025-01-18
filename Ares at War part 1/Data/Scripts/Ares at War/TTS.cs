@@ -8,7 +8,6 @@ using VRage.ModAPI;
 using VRage.Utils;
 using VRageMath;
 using System.Text;
-using AresAtWar.Init;
 using AresAtWar.War;
 using System.Linq;
 

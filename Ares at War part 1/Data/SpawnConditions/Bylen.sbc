@@ -3,23 +3,27 @@
   <EntityComponents>
 	
 <!--
+
+[SpawnConditionsProfiles:AaW_SpawnProfile_Bylen_Home]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Bylen_Home_FriendlyPlayerBase]
+
+
 Barren:
-[SpawnConditionsProfiles:AaW_SpawnProfile_BylenPeace_Barren]
-[SpawnConditionsProfiles:AaW_SpawnProfile_BylenPeace_Barren_Outside]
-[SpawnConditionsProfiles:AaW_SpawnProfile_BylenPeace_Barren_FriendlyBase]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Bylen_Outside]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Bylen_Outside_Combat]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Bylen_Outside_FriendlyPlayerBase]
 
 
 
 Rural:
-[SpawnConditionsProfiles:AaW_SpawnProfile_BylenPeace_Rural]
-[SpawnConditionsProfiles:AaW_SpawnProfile_BylenPeace_Rural_Outside]
-[SpawnConditionsProfiles:AaW_SpawnProfile_BylenPeace_Rural_FriendlyBase]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Bylen_Rural]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Bylen_Rural_Combat]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Bylen_Rural_FriendlyPlayerBase]
 
 
 Urban:
-[SpawnConditionsProfiles:AaW_SpawnProfile_BylenPeace_Urban]
-[SpawnConditionsProfiles:AaW_SpawnProfile_BylenPeace_Urban_Outside]
-[SpawnConditionsProfiles:AaW_SpawnProfile_BylenPeace_Urban_FriendlyBase]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Bylen_Urban]
+[SpawnConditionsProfiles:AaW_SpawnProfile_Bylen_Urban_FriendlyPlayerBase]
 
 
 
@@ -33,19 +37,66 @@ Urban:
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_BylenPeace_Barren</SubtypeId>
+        <SubtypeId>AaW_SpawnProfile_Bylen_Home</SubtypeId>
       </Id>
       <Description>
 
 	[MES Spawn Conditions]
 	[SpaceCargoShip:true]
-	
+	[ZoneConditions:ZoneCondition_ZoneAaW]	
 	[IgnoreCombatPhase:true]
-	[ZoneConditions:ZoneCondition_ZoneBarren]	
+	
 
 	[CustomApiConditions:BylenRing]	
+	[CustomApiConditions:AaW_Home]
+	
 	[SkipAirDensityCheck:false]
 	[SpaceCargoShipChance:100]	
+	
+
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:8000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:false]	
+
+	
+	[FactionOwner:SPRT]	
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_Bylen_Home_FriendlyPlayerBase</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[SpaceCargoShip:true]
+	[ZoneConditions:ZoneCondition_ZoneAaW]	
+	[IgnoreCombatPhase:true]
+	
+
+	[CustomApiConditions:BylenRing]	
+	[CustomApiConditions:AaW_Home]
+	
+	[SkipAirDensityCheck:false]
+	[SpaceCargoShipChance:100]	
+	
+
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:8000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:true]	
+
+	[UsePlayerFactionReputation:true]
+	[PlayerReputationCheckRadius:4000]
+	[MinimumReputation:-500]
+	[MaximumReputation:1500]
 	
 	
 	[FactionOwner:SPRT]	
@@ -53,28 +104,31 @@ Urban:
       </Description>
     </EntityComponent>
 
+
+
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_BylenPeace_Barren_Outside</SubtypeId>
+        <SubtypeId>AaW_SpawnProfile_Bylen_Outside</SubtypeId>
       </Id>
       <Description>
 
 	[MES Spawn Conditions]
 	[SpaceCargoShip:true]
-	[IgnoreCombatPhase:true]
-	[ZoneConditions:ZoneCondition_ZoneBarren]	
+	[IgnoreCombatPhase:false]
 	
+	[CustomApiConditions:AaW_Outside]	
 	[CustomApiConditions:BylenRing]	
 	[SkipAirDensityCheck:false]
 	[SpaceCargoShipChance:100]	
 	
 		
 	[UseThreatLevelCheck:true]
-	[ThreatLevelCheckRange:2000]
+	[ThreatLevelCheckRange:8000]
 	[ThreatScoreGridConfiguration:Static]
 	[ThreatScoreMaximum:300]	
-	[ThreatIncludeOtherNpcOwners:true]	
+	[ThreatIncludeOtherNpcOwners:false]	
 
 		
 	[FactionOwner:SPRT]		
@@ -82,29 +136,60 @@ Urban:
       </Description>
     </EntityComponent>
 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_Bylen_Outside_Combat</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[SpaceCargoShip:true]
+	[UseCombatPhase:true]
+	
+	[CustomApiConditions:AaW_Outside]	
+	[CustomApiConditions:BylenRing]	
+	
+	[SkipAirDensityCheck:false]
+	[SpaceCargoShipChance:50]	
+	
+		
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:8000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:false]	
+
+		
+	[FactionOwner:SPRT]		
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>
+	
 	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_BylenPeace_Barren_FriendlyBase</SubtypeId>
+        <SubtypeId>AaW_SpawnProfile_Bylen_Outside_FriendlyPlayerBase</SubtypeId>
       </Id>
       <Description>
 
 	[MES Spawn Conditions]
 	[SpaceCargoShip:true]
 	[IgnoreCombatPhase:false]
-	[ZoneConditions:ZoneCondition_ZoneBarren]	
 	
+	[CustomApiConditions:AaW_Outside]	
 	[CustomApiConditions:BylenRing]	
+	
 	[SkipAirDensityCheck:false]
 	[SpaceCargoShipChance:50]	
 
 	
 	[UseThreatLevelCheck:true]
-	[ThreatLevelCheckRange:2000]
+	[ThreatLevelCheckRange:8000]
 	[ThreatScoreGridConfiguration:Static]
 	[ThreatScoreMinimum:300]	
-	[ThreatIncludeOtherNpcOwners:true]
+	[ThreatIncludeOtherNpcOwners:false]
 	
 	[UsePlayerFactionReputation:true]
 	[PlayerReputationCheckRadius:4000]
@@ -124,7 +209,7 @@ Urban:
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_BylenPeace_Rural</SubtypeId>
+        <SubtypeId>AaW_SpawnProfile_Bylen_Rural</SubtypeId>
       </Id>
       <Description>
 
@@ -137,6 +222,12 @@ Urban:
 	[CustomApiConditions:BylenRing]	
 	[SkipAirDensityCheck:false]
 	[SpaceCargoShipChance:100]	
+
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:8000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:false]	
 	
 	
 	[FactionOwner:SPRT]	
@@ -147,27 +238,25 @@ Urban:
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_BylenPeace_Rural_Outside</SubtypeId>
+        <SubtypeId>AaW_SpawnProfile_Bylen_Rural_Combat</SubtypeId>
       </Id>
       <Description>
 
 	[MES Spawn Conditions]
 	[SpaceCargoShip:true]
-	[IgnoreCombatPhase:true]
+	[UseCombatPhase:true]
 	[ZoneConditions:ZoneCondition_ZoneRural]	
 	
 	[CustomApiConditions:BylenRing]	
-	[SkipAirDensityCheck:false]
-	[SpaceCargoShipChance:100]	
+	[SpaceCargoShipChance:50]	
 	
-		
 	[UseThreatLevelCheck:true]
-	[ThreatLevelCheckRange:2000]
+	[ThreatLevelCheckRange:8000]
 	[ThreatScoreGridConfiguration:Static]
 	[ThreatScoreMaximum:300]	
-	[ThreatIncludeOtherNpcOwners:true]	
+	[ThreatIncludeOtherNpcOwners:false]			
 
-		
+
 	[FactionOwner:SPRT]		
 	[UseSpawnGroupPrefabSpawningMode:true]	
       </Description>
@@ -177,7 +266,7 @@ Urban:
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_BylenPeace_Rural_FriendlyBase</SubtypeId>
+        <SubtypeId>AaW_SpawnProfile_Bylen_Rural_FriendlyPlayerBase</SubtypeId>
       </Id>
       <Description>
 
@@ -192,10 +281,10 @@ Urban:
 
 	
 	[UseThreatLevelCheck:true]
-	[ThreatLevelCheckRange:2000]
+	[ThreatLevelCheckRange:8000]
 	[ThreatScoreGridConfiguration:Static]
 	[ThreatScoreMinimum:300]	
-	[ThreatIncludeOtherNpcOwners:true]
+	[ThreatIncludeOtherNpcOwners:false]
 	
 	[UsePlayerFactionReputation:true]
 	[PlayerReputationCheckRadius:4000]
@@ -215,7 +304,7 @@ Urban:
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_BylenPeace_Urban</SubtypeId>
+        <SubtypeId>AaW_SpawnProfile_Bylen_Urban</SubtypeId>
       </Id>
       <Description>
 
@@ -229,46 +318,22 @@ Urban:
 	[SkipAirDensityCheck:false]
 	[SpaceCargoShipChance:100]	
 	
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:8000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:false]	
+
 	
 	[FactionOwner:SPRT]	
 	[UseSpawnGroupPrefabSpawningMode:true]
       </Description>
     </EntityComponent>
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_BylenPeace_Urban_Outside</SubtypeId>
-      </Id>
-      <Description>
-
-	[MES Spawn Conditions]
-	[SpaceCargoShip:true]
-	[IgnoreCombatPhase:true]
-	[ZoneConditions:ZoneCondition_ZoneUrban]	
-	
-	[CustomApiConditions:BylenRing]	
-	[SkipAirDensityCheck:false]
-	[SpaceCargoShipChance:100]	
-	
-		
-	[UseThreatLevelCheck:true]
-	[ThreatLevelCheckRange:2000]
-	[ThreatScoreGridConfiguration:Static]
-	[ThreatScoreMaximum:300]	
-	[ThreatIncludeOtherNpcOwners:true]	
-
-		
-	[FactionOwner:SPRT]		
-	[UseSpawnGroupPrefabSpawningMode:true]	
-      </Description>
-    </EntityComponent>
-
 	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_SpawnProfile_BylenPeace_Urban_FriendlyBase</SubtypeId>
+        <SubtypeId>AaW_SpawnProfile_Bylen_Urban_FriendlyPlayerBase</SubtypeId>
       </Id>
       <Description>
 
@@ -283,10 +348,10 @@ Urban:
 
 	
 	[UseThreatLevelCheck:true]
-	[ThreatLevelCheckRange:2000]
+	[ThreatLevelCheckRange:8000]
 	[ThreatScoreGridConfiguration:Static]
 	[ThreatScoreMinimum:300]	
-	[ThreatIncludeOtherNpcOwners:true]
+	[ThreatIncludeOtherNpcOwners:false]
 	
 	[UsePlayerFactionReputation:true]
 	[PlayerReputationCheckRadius:4000]

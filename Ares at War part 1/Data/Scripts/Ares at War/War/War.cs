@@ -36,20 +36,20 @@ namespace AresAtWar.War
 
         private static Faction GC = new Faction("GC", new Color(255, 0, 0)); // red
         private static Faction UNION = new Faction("UNION", new Color(0, 255, 0)); // green
-        private static Faction SYN = new Faction("SYN", new Color(255, 165, 0)); // orange
+        private static Faction SHIVAN = new Faction("SHIVAN", new Color(255, 165, 0)); // orange
 
-        private static Faction PURGE = new Faction("Purge", new Color(139, 0, 0), EventFaction: true); // darkred
-        private static Faction SDC = new Faction("SDC", new Color(128, 0, 128), EventFaction: true); // purple
+        private static Faction PURGE = new Faction("PURGE", new Color(139, 0, 0), EventFaction: true); // darkred
+        private static Faction CRUSADERS = new Faction("CRUSADERS", new Color(128, 0, 128), EventFaction: true); // purple
 
-        private static Faction REM = new Faction("REM", new Color(165, 42, 42), MinorFaction: true); // brown
-        private static Faction TIF = new Faction("TIF", new Color(128, 128, 128), MinorFaction: true); // gray
+        private static Faction REMNANTS = new Faction("REMNANTS", new Color(165, 42, 42), MinorFaction: true); // brown
+        private static Faction IRONFIST = new Faction("IRONFIST", new Color(128, 128, 128), MinorFaction: true); // gray
         private static Faction ITC = new Faction("ITC", new Color(173, 216, 230), MinorFaction: true); // lightblue
         private static Faction CIVILIAN = new Faction("CIVILIAN", new Color(212, 216, 230), MinorFaction: true); //Whiteish I hope
 
 
         //public static List<Faction> _factions = new List<Faction>() { UNION, SYN, GC, PURGE, SDC };
 
-        public static List<Faction> _allfactions = new List<Faction>(){ UNION, SYN, GC, PURGE, SDC, REM, TIF, ITC, CIVILIAN };
+        public static List<Faction> _allfactions = new List<Faction>(){ UNION, SHIVAN, GC, PURGE, CRUSADERS, REMNANTS, IRONFIST, ITC, CIVILIAN };
 
         private const int Rounds = 67;
         private static readonly Random _random = new Random();
@@ -109,10 +109,10 @@ namespace AresAtWar.War
 
 
             // Nodes and StaticEncounters for Thorrix and related locations
-            var thorrixNode = new Node("Thorrix", "Sector Thorrix", SYN, new Vector3D(-3668737, -1323824, -2524678), 18000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Rural);
+            var thorrixNode = new Node("Thorrix", "Sector Thorrix", SHIVAN, new Vector3D(-3668737, -1323824, -2524678), 18000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Rural);
             var thorrix = new StaticEncounter(thorrixNode.Id, "Thorrix", "CIVILIAN", new Vector3D(-3666954.82093188, -1319040.62686428, -2525488.18626478), false);
 
-            var thorrixWestNode = new Node("ThorrixWest", "Sector Thorrix West", SYN, new Vector3D(-3639053, -1318183, -2528451), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Barren);
+            var thorrixWestNode = new Node("ThorrixWest", "Sector Thorrix West", SHIVAN, new Vector3D(-3639053, -1318183, -2528451), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Barren);
 
             // Nodes and StaticEncounters for Bratis and related locations
             var bratisNode = new Node("Bratis", "Sector Bratis", GC, new Vector3D(-3715949, -1286742, -2567999), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Rural);
@@ -129,50 +129,50 @@ namespace AresAtWar.War
             var station27Node = new Node("Station27Space", "Station27 Sector", GC, new Vector3D(-2070540.14510301, -1017587.98462825, -3367463.76531797), 1100000, macro: MarcoLocation.Bylen, planet: Planet.Space, feel: Feel.Barren);
             station27Node.SpaceNode = true;
             var station27 = new StaticEncounter(station27Node.Id, "Station27", "CIVILIAN", new Vector3D(-1970922.053788, -1016003.00749572, -2313711.812254), false);
-
+            var doohan = new StaticEncounter(station27Node.Id, "Doohan", "CIVILIAN", new Vector3D(1573459.05187182, 1167676.70389646, 3320013.77777762), false);
 
             // Nodes and StaticEncounters for space locations
-            var DoohanNode = new Node("DoohanSpace", "Mila Belt", GC, new Vector3D(2299140.85489699, 1166634.01537175, 2935888.23468203), 880000, macro: MarcoLocation.Mila, planet: Planet.Space, feel: Feel.Barren);
-            DoohanNode.SpaceNode = true;
-            var doohan = new StaticEncounter(DoohanNode.Id, "Doohan", "CIVILIAN", new Vector3D(1573459.05187182, 1167676.70389646, 3320013.77777762), false);
+            var MilaNode = new Node("MilaBelt", "Mila Belt", GC, new Vector3D(2299140.85489699, 1166634.01537175, 2935888.23468203), 880000, macro: MarcoLocation.Mila, planet: Planet.Space, feel: Feel.Barren);
+            MilaNode.SpaceNode = true;
+
 
 
             // Moon and related nodes
-            var moonSpaceNode = new Node("MoonSpace", "Moon Space", UNION, new Vector3D(-2578714, -1046592, -4663973), 200000);
+            var moonSpaceNode = new Node("MoonSpace", "Moon Space", PURGE, new Vector3D(-2578714, -1046592, -4663973), 200000,macro: MarcoLocation.Bylen, planet: Planet.Moon, feel: Feel.Barren);
             moonSpaceNode.SpaceNode = true;
-            var moonNode = new Node("Moon", "Moon", UNION, new Vector3D(-2613043, -1055747, -4763524), 32000);
+            var moonNode = new Node("Moon", "Moon", PURGE, new Vector3D(-2613043, -1055747, -4763524), 32000, macro: MarcoLocation.Bylen, planet: Planet.Moon, feel: Feel.Barren);
 
 
             // Nodes and StaticEncounters for Thora 4
-            var thora4SpaceNode = new Node("Thora4Space", "Thora 4 Space", ITC, new Vector3D(-759347, -1089606, -3471518), 200000);
+            var thora4SpaceNode = new Node("Thora4Space", "Thora 4 Space", ITC, new Vector3D(-759347, -1089606, -3471518), 200000, macro: MarcoLocation.Bylen, planet: Planet.Thora4, feel: Feel.Barren);
             thora4SpaceNode.SpaceNode = true;
 
 
-            var thora4Node = new Node("Thora4", "Thora 4", ITC, new Vector3D(-666090, -1101079, -3477316), 94894);
+            var thora4Node = new Node("Thora4", "Thora 4", ITC, new Vector3D(-666090, -1101079, -3477316), 94894, macro: MarcoLocation.Bylen, planet: Planet.Thora4, feel: Feel.Barren);
 
-            var nyx = new StaticEncounter(thora4Node.Id, "Nyx", "CIVILIAN", new Vector3D(-665793.281388648, -1100790.49719151, -3477104.76459571), false, new List<string>() { "Settlement" });
+            //var nyx = new StaticEncounter(thora4Node.Id, "Nyx", "CIVILIAN", new Vector3D(-665793.281388648, -1100790.49719151, -3477104.76459571), false, new List<string>() { "Settlement" });
 
 
 
-            var rakSpaceNode = new Node("RakSpace", "RakSpace", GC, new Vector3D(-37016, -4831, 52338), 300000, Tags: new List<string> { "Bylen", "Rural" });
+            var rakSpaceNode = new Node("RakSpace", "RakSpace", GC, new Vector3D(-37016, -4831, 52338), 300000, Tags: new List<string> { "Bylen", "Rural" }, macro: MarcoLocation.Rak, planet: Planet.Space, feel: Feel.Barren);
             rakSpaceNode.SpaceNode = true;
             var rak = new StaticEncounter(rakSpaceNode.Id, "Rak", "CIVILIAN", new Vector3D(-34995.4115883877, -3251.23684096853, 48703.7032755286),false);
 
 
 
-            var lezunoSpaceNode = new Node("LezunoSpace", "Lezuno Space", GC, new Vector3D(668643, 561533, 3606399), 250000);
+            var lezunoSpaceNode = new Node("LezunoSpace", "Lezuno Space", GC, new Vector3D(668643, 561533, 3606399), 250000, macro: MarcoLocation.Mila, planet: Planet.Lezuno, feel: Feel.Barren);
             lezunoSpaceNode.SpaceNode = true;
-            var lezunoNode = new Node("Lezuno", "Lezuno", REM, new Vector3D(595790, 474550, 3465430), 94894);
+            var lezunoNode = new Node("Lezuno", "Lezuno", REMNANTS, new Vector3D(595790, 474550, 3465430), 94894, macro: MarcoLocation.Mila, planet: Planet.Lezuno, feel: Feel.Barren);
 
 
-            var lorusSpaceNode = new Node("LorusSpace", "Lorus Space", SYN, new Vector3D(2730463, 1286599, 3912652), 200000);
+            var lorusSpaceNode = new Node("LorusSpace", "Lorus Space", SHIVAN, new Vector3D(2730463, 1286599, 3912652), 200000, macro: MarcoLocation.Mila, planet: Planet.Lorus, feel: Feel.Barren);
             lorusSpaceNode.SpaceNode = true;
-            var lorusNode = new Node("Lorus", "Lorus", SYN, new Vector3D(2732579, 1294490, 3968789), 40894);
+            var lorusNode = new Node("Lorus", "Lorus", SHIVAN, new Vector3D(2732579, 1294490, 3968789), 40894, macro: MarcoLocation.Mila, planet: Planet.Lorus, feel: Feel.Barren);
 
 
-            var craitSpaceNode = new Node("CraitSpace", "Crait Space", GC, new Vector3D(2896731, 1043674, 1886515), 200000);
+            var craitSpaceNode = new Node("CraitSpace", "Crait Space", GC, new Vector3D(2896731, 1043674, 1886515), 200000, macro: MarcoLocation.Mila, planet: Planet.Crait, feel: Feel.Barren);
             craitSpaceNode.SpaceNode = true;
-            var craitNode = new Node("Crait", "Crait", GC, new Vector3D(2934898, 1019809, 1826268), 49000);
+            var craitNode = new Node("Crait", "Crait", GC, new Vector3D(2934898, 1019809, 1826268), 49000, macro: MarcoLocation.Mila, planet: Planet.Crait, feel: Feel.Barren);
             var voss = new StaticEncounter(craitNode.Id, "Voss", "CIVILIAN", new Vector3D(2962729.53024317, 1031267.33046815, 1817036.9772462), false);
             var basin = new StaticEncounter(craitNode.Id, "Basin", "CIVILIAN", new Vector3D(2928114, 1033055, 1853819), false);
 
@@ -181,10 +181,10 @@ namespace AresAtWar.War
 
             //var fafFaction = new Node("FAFFaction", "...", AHE, new Vector3D(-1129033.50, 126871.50, 1293873.50), 0, true); // Agaris
             var gcFactionNode = new Node("GCFaction", "...", GC, new Vector3D(0, 0, 0), 0, true); //Bylen
-            var synFactionNode = new Node("SYNFaction", "...", SYN, new Vector3D(-1249083.5, -521370.5, -1803753.5), 0, true); //Lorus 
+            var synFactionNode = new Node("SHIVANFaction", "...", SHIVAN, new Vector3D(-1249083.5, -521370.5, -1803753.5), 0, true); //Lorus 
 
             var PURGEFactionNode = new Node("PURGEFaction", "...", PURGE, new Vector3D(0, 0, 0), 0, true); // Bylen
-            var SDCFactionNode = new Node("SDCFaction", "...", SDC, new Vector3D(0, 0, 0),0, true); //Some place
+            var SDCFactionNode = new Node("CRUSADERSFaction", "...", CRUSADERS, new Vector3D(0, 0, 0),0, true); //Some place
 
 
 
@@ -200,10 +200,10 @@ namespace AresAtWar.War
             _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { azuris, sunsetcity, ahehq, bratis, carcosa, thorrix, station27 }, 1));
 
             //Space run
-            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { rak, station27, doohan, nyx }, 3, new List<string>() { "CIVILIAN" }));
+            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { rak, station27, doohan }, 3, new List<string>() { "CIVILIAN" }));
 
             //ITC only
-            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { sunsetcity, station27, nyx , ITC_AgarisAtlas, ITC_AgarisVinyTradeOutpost }, 3, new List<string>() { "ITC" }));
+            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { sunsetcity, station27 , ITC_AgarisAtlas, ITC_AgarisVinyTradeOutpost }, 3, new List<string>() { "ITC" }));
 
 
             _frontlines.Add(new Frontline("Thorrix", "AgarisSpace"));
@@ -252,39 +252,6 @@ namespace AresAtWar.War
             //_frontlines.Add(new Frontline("DoohanSpace", "RakSpace"));
             _frontlines.Add(new Frontline("LezunoSpace", "RakSpace"));
             _frontlines.Add(new Frontline("CraitSpace", "RakSpace"));
-
-
-            /*            
-
-            _frontlines.Add(new Frontline("CraitOrbit", "PURGEFaction", new Vector3D(0, 0, 0)));
-
-            _frontlines.Add(new Frontline("ITCFaction", "Station27", new Vector3D(1262731.90938399, -57496.7583857419, -170986.107558704)));
-            _frontlines.Add(new Frontline("SDCFaction", "Station27", new Vector3D(0, 0, 0)));
-            _frontlines.Add(new Frontline("GCFaction", "Station27", new Vector3D(0, 0, 0)));
-
-            _frontlines.Add(new Frontline("SpiceLorus", "TIFFaction", new Vector3D(-1249083.5, -521370.5, -1803753.5))); // Lorus Center
-            _frontlines.Add(new Frontline("LezunoLorusOrbit", "REMFaction", new Vector3D(-1307059.5, -325291.5, -1466477.5))); // Lezuno Center
-
-            _frontlines.Add(new Frontline("AgarisOrbit", "SunsetCity", new Vector3D(-1127291, 223414.47, 1507151.44))); // Agaris Space
-            _frontlines.Add(new Frontline("AgarisOrbit", "Azuris", new Vector3D(-1127291, 223414.47, 1507151.44))); // Agaris Space
-            _frontlines.Add(new Frontline("AgarisOrbit", "Carcosa", new Vector3D(-1127291, 223414.47, 1507151.44))); // Agaris Space
-            _frontlines.Add(new Frontline("Azuris", "SunsetCity", new Vector3D(-1104197.96, 140871.70, 1239444.86)));
-            _frontlines.Add(new Frontline("Carcosa", "SunsetCity", new Vector3D(-1184090.20, 142684.06, 1269996.58)));
-
-            _frontlines.Add(new Frontline("Carcosa", "FAFFaction", new Vector3D(-1129033.50, 126871.50, 1293873.50))); // Agaris Center
-
-            _frontlines.Add(new Frontline("SpiceLorus", "SYNFaction", new Vector3D(-1249083.5, -521370.5, -1803753.5))); // Lorus Center
-
-            _frontlines.Add(new Frontline("AgarisOrbit", "Station27", new Vector3D(131020.88, -639.0, 822275.38)));
-            _frontlines.Add(new Frontline("CraitOrbit", "Station27", new Vector3D(1446326.18, -302990.8, -1794173.35)));
-
-            _frontlines.Add(new Frontline("LezunoLorusOrbit", "Station27", new Vector3D(-163848.09, -49.47, -1023686.9)));
-            _frontlines.Add(new Frontline("LezunoLorusOrbit", "SpiceLorus", new Vector3D(-1283460.48, -521102.40, -1847874.03)));
-
-            */
-
-
-
 
 
 

@@ -11,8 +11,9 @@
 			<Description>
 			[Modular Encounters SpawnGroup]
 
-        [PersistentConditions:AaW-SpawnConditions-Threat-Medium]
-        [SpawnConditionsProfiles:SPRT-SpawnProfile-BylenRing]
+	[PersistentConditions:AaW_SpawnConditions_Threat_Medium]
+		[FactionOverride:SPRT]
+		[SpawnConditionGroups:AaW_SpawnGroup_SpaceHostiles]
 	
 		[UseSpawnGroupPrefabSpawningMode:true]
 		[PrefabSpawningMode:RandomSelectedIndexes]
@@ -38,7 +39,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>SPRT_SpaceHunter_Behavior_Solo</Behaviour>
+					<Behaviour>SPRT_Hunter_Behavior_Fighter</Behaviour>
 				</Prefab>
 				<Prefab SubtypeId="SPRT-LightHunter-2">
 					<Position>
@@ -47,7 +48,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>SPRT_SpaceHunter_Behavior_Solo</Behaviour>
+					<Behaviour>SPRT_Hunter_Behavior_Fighter</Behaviour>
 				</Prefab>
 			</Prefabs>			
 		</SpawnGroup>	
@@ -65,8 +66,12 @@
 			<Description>
 			[Modular Encounters SpawnGroup]
 	
-        [PersistentConditions:AaW-SpawnConditions-Threat-Hard]
-        [SpawnConditionsProfiles:SPRT-SpawnProfile-BylenRing]	
+	[PersistentConditions:AaW_SpawnConditions_Threat_Hard]
+		
+
+
+		[FactionOverride:SPRT]
+		[SpawnConditionGroups:AaW_SpawnGroup_SpaceHostiles]
 	
 		[UseSpawnGroupPrefabSpawningMode:true]
 		[PrefabSpawningMode:RandomSelectedIndexes]
@@ -92,7 +97,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>SPRT_SpaceHunter_Behavior_Solo</Behaviour>
+					<Behaviour>SPRT_Hunter_Behavior</Behaviour>
 				</Prefab>
 				<Prefab SubtypeId="SPRT-Corvette-2">
 					<Position>
@@ -101,7 +106,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>SPRT_SpaceHunter_Behavior_Solo</Behaviour>
+					<Behaviour>SPRT_Hunter_Behavior</Behaviour>
 				</Prefab>
 			</Prefabs>			
 		</SpawnGroup>	
@@ -117,11 +122,11 @@
 			<Description>
 			[Modular Encounters SpawnGroup]
 			
+        [PersistentConditions:AaW_SpawnConditions_Threat_VeryHard]
 
+		[FactionOverride:SPRT]
+		[SpawnConditionGroups:AaW_SpawnGroup_SpaceHostiles]
 
-        [PersistentConditions:AaW-SpawnConditions-Threat-VeryHard]
-        [SpawnConditionsProfiles:SPRT-SpawnProfile-BylenRing]	
-        [SpawnConditionsProfiles:SPRT-SpawnProfile-DeepSpace]
 		
 		[UseSpawnGroupPrefabSpawningMode:true]
 		[PrefabSpawningMode:RandomSelectedIndexes]
@@ -155,7 +160,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>SPRT_OffensiveEscortDrone_Behavior</Behaviour>
+					<Behaviour>SPRT_OffensiveEscort_Behavior</Behaviour>
 				</Prefab>
 
 								
@@ -166,7 +171,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>SPRT_SpaceHunter_Behavior_Leader</Behaviour>
+					<Behaviour>SPRT_TaskForceLeader_Behavior</Behaviour>
 				</Prefab>
 				
 				<Prefab SubtypeId="SPRT-Cruiser-2">
@@ -176,7 +181,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>SPRT_SpaceHunter_Behavior_Leader</Behaviour>
+					<Behaviour>SPRT_TaskForceLeader_Behavior</Behaviour>
 				</Prefab>
 
 				<Prefab SubtypeId="SPRT-Destroyer-Grissom">
@@ -186,7 +191,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>SPRT_SpaceHunter_Behavior_Leader</Behaviour>
+					<Behaviour>SPRT_TaskForceLeader_Behavior</Behaviour>
 				</Prefab>
 			</Prefabs>			
 		</SpawnGroup>	

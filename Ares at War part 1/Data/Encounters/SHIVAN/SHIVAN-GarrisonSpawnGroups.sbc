@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>SHIVAN_SpawnGroup_Patrol</SubtypeId>
+			</Id>
+			<Description>
+
+			[Modular Encounters SpawnGroup]
+			
+			[SpaceCargoShip:false]
+			[LunarCargoShip:false]
+			[SpaceRandomEncounter:false]
+			[AtmosphericCargoShip:false]
+			[PlanetaryInstallation:false]
+			
+			[RivalAiSpawn:true]
+	        [FactionOwner:SHIVAN]	
+			
+			[ZoneConditions:ZoneCondition_ZoneAaW]	
+			[IgnoreCombatPhase:true]				
+			
+						[SkipVoxelSpawnChecks:true]
+			[SkipGridSpawnChecks:true]
+			
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="(SYN) SD-2">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SHIVAN_Garrison_Behavior_Fighter</Behaviour>
+				</Prefab>
+			</Prefabs>			
+		</SpawnGroup>
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>SHIVAN_SpawnGroup_Garrison_Default</SubtypeId>
+			</Id>
+			<Description>
+
+			[Modular Encounters SpawnGroup]
+			
+			[SpaceCargoShip:false]
+			[LunarCargoShip:false]
+			[SpaceRandomEncounter:false]
+			[AtmosphericCargoShip:false]
+			[PlanetaryInstallation:false]
+			
+			[RivalAiSpawn:true]
+	        [FactionOwner:SHIVAN]	
+			
+			[ZoneConditions:ZoneCondition_ZoneAaW]	
+			[IgnoreCombatPhase:true]	
+	
+				[SkipVoxelSpawnChecks:true]
+			[SkipGridSpawnChecks:true]
+			
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="(SYN) SD-2">
+					<Position>
+						<X>-100.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SHIVAN_Garrison_Behavior_Fighter</Behaviour>
+				</Prefab>
+
+				<Prefab SubtypeId="(SYN) SD-3">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SHIVAN_Garrison_Behavior_Fighter</Behaviour>
+				</Prefab>
+
+				<Prefab SubtypeId="(SYN) SD-2">
+					<Position>
+						<X>100.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>25</Speed>
+					<Behaviour>SHIVAN_Garrison_Behavior_Fighter</Behaviour>
+				</Prefab>
+			</Prefabs>			
+		</SpawnGroup>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</SpawnGroups>
+</Definitions>

@@ -12,7 +12,7 @@ using VRage.Utils;
 using VRageMath;
 
 using AresAtWar.Command;
-using AresAtWar.Init;
+
 using AresAtWar.War;
 using AaWSyncManager;
 using VRage.Game.ModAPI;
@@ -122,8 +122,7 @@ namespace AresAtWar.SessionCore
             else
             {
                 MyAPIGateway.Utilities.SetVariable<string>("AaW_Version", ModVersion);
-                AaWMain.SetStartingValues();
-                MyVisualScriptLogicProvider.ShowNotificationToAll("Ares at War setup complete", 5000, "Green");
+                MyAPIGateway.Utilities.ShowMessage("AaW", "Ares at War setup complete");
             }
 
         }
@@ -139,9 +138,11 @@ namespace AresAtWar.SessionCore
                 }
 
 
-                MESApi.RegisterCustomSpawnCondition(true, "AaW", CustomSpawnConditions.AaW);
+
+                MESApi.RegisterCustomSpawnCondition(true, "AaW_Home", CustomSpawnConditions.AaW_Home);
+                MESApi.RegisterCustomSpawnCondition(true, "AaW_Outside", CustomSpawnConditions.AaW_Outside);
                 MESApi.RegisterCustomSpawnCondition(true, "BylenRing", CustomSpawnConditions.BylenRing);
-                MESApi.RegisterCustomSpawnCondition(true, "MilaRing", CustomSpawnConditions.BylenRing);
+                MESApi.RegisterCustomSpawnCondition(true, "MilaRing", CustomSpawnConditions.MilaRing);
                 MESApi.RegisterCustomSpawnCondition(true, "AgarisDeepOcean", CustomSpawnConditions.AgarisDeepOcean);
                 MESApi.RegisterCustomSpawnCondition(true, "AgarisLand", CustomSpawnConditions.AgarisLand);
                 MESApi.RegisterCustomSpawnCondition(true, "Thora4DeepOcean", CustomSpawnConditions.Thora4DeepOcean);

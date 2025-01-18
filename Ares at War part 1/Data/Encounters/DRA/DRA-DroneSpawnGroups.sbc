@@ -4,21 +4,22 @@
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>DRA_SpawnGroup_Patrol</SubtypeId>
+				<SubtypeId>DRA_Hunter_Behavior_Fighter</SubtypeId>
 			</Id>
 			<Description>
 			[Modular Encounters SpawnGroup]
-			[AtmosphericCargoShip:true]
-
+			[FactionOverride:DRA]
 			[RivalAiSpawn:true]
-	        [FactionOwner:DRA]	
+			
+			
+			[SpawnConditionsProfiles:AaW_SpawnProfile_Agaris_Home]
+			[SpawnConditionsProfiles:AaW_SpawnProfile_Agaris_Rural_Combat]
+	
 			[ReplenishSystems:false]
 
-		[ZoneConditions:ZoneCondition_DRA]	
 
 			[UseRivalAi:true]
 			[RivalAiReplaceRemoteControl:true]
-
 			</Description>
 			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
 			<IsPirate>true</IsPirate>
@@ -45,15 +46,16 @@
 			</Id>
 			<Description>
 			[Modular Encounters SpawnGroup]
-			[AtmosphericCargoShip:true]
-
+			[FactionOverride:DRA]
 			[RivalAiSpawn:true]
-	        [FactionOwner:DRA]	
+			
+			[SpawnConditionsProfiles:AaW_SpawnProfile_Agaris_Home]
+			[SpawnConditionsProfiles:AaW_SpawnProfile_Agaris_Rural_Combat]
+	
 			[ReplenishSystems:false]
-		[ZoneConditions:ZoneCondition_DRA]	
+
 			[UseRivalAi:true]
 			[RivalAiReplaceRemoteControl:true]
-
 			</Description>
 			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
 			<IsPirate>true</IsPirate>
@@ -67,7 +69,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>DRA_Drone2_Behavior</Behaviour>
+					<Behaviour>DRA_OffensiveEscort_Behavior</Behaviour>
 				</Prefab>
 
 				<Prefab SubtypeId="DRA - R-41 Striker">
@@ -77,7 +79,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>DRA_Drone1_Behavior</Behaviour>
+					<Behaviour>DRA_TaskForceLeader_Behavior_Fighter</Behaviour>
 				</Prefab>
 
 				<Prefab SubtypeId="DRA - R-41 Striker">
@@ -87,7 +89,7 @@
 						<Z>100.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>DRA_Drone3_Behavior</Behaviour>
+					<Behaviour>DRA_OffensiveEscort_Behavior</Behaviour>
 				</Prefab>
 			</Prefabs>			
 		</SpawnGroup>

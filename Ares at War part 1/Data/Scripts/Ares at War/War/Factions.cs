@@ -91,6 +91,37 @@ namespace AresAtWar.War
 
             }
 
+            public bool HasPresenceInMacro(MarcoLocation marcoLocation)
+            {
+                foreach (var node in _nodes)
+                {
+                    if (this.Tag != node.Faction.Tag)
+                        continue;
+
+                    if (node.Macro == marcoLocation)
+                        return true;
+                }
+                return false;
+            }
+
+
+            public bool HasPresenceOnPlanet(Planet planteLocation)
+            {
+
+                if (planteLocation == Planet.Space)
+                    return false;
+
+                foreach (var node in _nodes)
+                {
+                    if (this.Tag != node.Faction.Tag)
+                        continue;
+
+                    if (node.Planet == planteLocation)
+                        return true;
+                }
+
+                return false;
+            }
 
 
 

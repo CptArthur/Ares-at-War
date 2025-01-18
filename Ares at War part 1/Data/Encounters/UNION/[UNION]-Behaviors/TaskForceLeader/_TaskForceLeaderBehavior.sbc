@@ -5,6 +5,49 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
+          <SubtypeId>UNION_TaskForceLeader_Behavior</SubtypeId>
+      </Id>
+      <Description>
+    [RivalAI Behavior]
+    [BehaviorName:CargoShip]
+    [TargetData:MSB_TargetProfile_Default]
+
+	[AutopilotData:MSB_Gunship_Autopilot]
+	[SecondaryAutopilotData:MSB_Gunship_Autopilot_Combat]
+	
+	
+
+    [DialogueBanks:UNION.xml] 
+    [DialogueBanks:AaW.xml] 
+    [DialogueBanks:MSB.xml] 
+
+
+    [TriggerGroups:UNION_DynamicCommon_TriggerGroup]
+    [TriggerGroups:AaW_DynamicCommon_TriggerGroup]    
+    [TriggerGroups:MSB_DynamicCommon_TriggerGroup]    
+    [TriggerGroups:MSB_DynamicCommon_TriggerGroup_Complete]    
+
+     [TriggerGroups:UNION_Gunship_TriggerGroup]        
+    [TriggerGroups:AaW_Gunship_TriggerGroup]
+    [TriggerGroups:MSB_Gunship_TriggerGroup]     
+    [TriggerGroups:MSB_Gunship_TriggerGroup_Complete]     
+
+    [TriggerGroups:UNION_TaskForceLeader_TriggerGroup]    
+    [TriggerGroups:AaW_TaskForceLeader_TriggerGroup]     
+    [TriggerGroups:MSB_TaskForceLeader_TriggerGroup]     
+    [TriggerGroups:MSB_TaskForceLeader_TriggerGroup_Complete]     
+
+	[EscortOffsets:{X:-100 Y:0 Z:0}]
+	[EscortOffsets:{X:100 Y:0 Z:0}]	  
+	
+	
+      </Description>
+    </EntityComponent>  
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
           <SubtypeId>UNION_TaskForceLeader_Behavior_Fighter</SubtypeId>
       </Id>
       <Description>
@@ -15,7 +58,7 @@
 	[AutopilotData:MSB_Gunship_Autopilot]
 	[SecondaryAutopilotData:MSB_Fighter_Autopilot]
 	[TertiaryAutopilotData:MSB_Fighter_Autopilot_NoSafety]
-
+	
 
     [DialogueBanks:UNION.xml] 
     [DialogueBanks:AaW.xml] 
@@ -25,23 +68,43 @@
     [TriggerGroups:UNION_DynamicCommon_TriggerGroup]
     [TriggerGroups:AaW_DynamicCommon_TriggerGroup]    
     [TriggerGroups:MSB_DynamicCommon_TriggerGroup]    
+    [TriggerGroups:MSB_DynamicCommon_TriggerGroup_Complete]    
 
     [TriggerGroups:UNION_Fighter_TriggerGroup]        
     [TriggerGroups:AaW_Fighter_TriggerGroup]
     [TriggerGroups:MSB_Fighter_TriggerGroup]    
-	
-	
-	
+    [TriggerGroups:MSB_Fighter_TriggerGroup_Complete]        
+
     [TriggerGroups:UNION_TaskForceLeader_TriggerGroup]    
     [TriggerGroups:AaW_TaskForceLeader_TriggerGroup]     
     [TriggerGroups:MSB_TaskForceLeader_TriggerGroup]     
+    [TriggerGroups:MSB_TaskForceLeader_TriggerGroup_Complete]     
 
 	[EscortOffsets:{X:-100 Y:0 Z:0}]
 	[EscortOffsets:{X:100 Y:0 Z:0}]	  
 	
 	
       </Description>
+    </EntityComponent> 
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>UNION_TaskForceLeader_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+
+    [RivalAI TriggerGroup]
+ 
+      </Description>
       
-    </EntityComponent>        
+    </EntityComponent>  
+
+
+
+	
   </EntityComponents>
 </Definitions>
