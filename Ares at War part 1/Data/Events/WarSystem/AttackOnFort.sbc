@@ -245,7 +245,7 @@ AzurisFortUnderSiege (bool)
 
 	[CheckPlayerNear:true]
 	[PlayerNearCoords:{Coords}]
-	[PlayerNearDistanceFromCoords:1000]
+	[PlayerNearDistanceFromCoords:4000]
 
 
       </Description>
@@ -418,6 +418,58 @@ LiveAttackOnFort
     </EntityComponent>			
 		
 
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_LiveAttackOnFort_PlayerClose</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:10000]
+		[MaxCooldownMs:10001]	
+		[OnFailResetCooldown:true]
+				
+		[ConditionIds:AaW_EventConditionTemplate_AttackOnFort]
+		[ConditionIds:AaW_EventConditionTemplate_AttackOnFort_PlayerNear]
+		[ConditionIds:AaW_EventConditionTemplate_LiveAttackOnFort_DefenderWins]		
+		[Tags:LiveAttackOnFort@{InstanceId}]
+
+	
+		
+		
+		[ActionIds:AaW_EventActionTemplate_AttackOnFort_ResetCooldown]
+
+      </Description>
+	</EntityComponent>			
+		
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_AttackOnFort_ResetCooldown</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:AaW_EventTemplate_LiveAttackOnFort_DefenderWins@{InstanceId}]		
+	
+      </Description>
+    </EntityComponent>		
+
+
+
+
+
+
+
+
+
+
 	
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -429,8 +481,8 @@ LiveAttackOnFort
 		[MES Event Template]
 		[UseEvent:false]
 		[UniqueEvent:true]
-		[MinCooldownMs:11000]
-		[MaxCooldownMs:11001]	
+		[MinCooldownMs:100000]
+		[MaxCooldownMs:100001]	
 		
 		[ConditionIds:AaW_EventConditionTemplate_AttackOnFort]
 		[ConditionIds:AaW_EventConditionTemplate_LiveAttackOnFort_DefenderWins]		

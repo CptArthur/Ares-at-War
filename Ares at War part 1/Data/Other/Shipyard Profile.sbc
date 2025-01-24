@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Shipyard_MainProfile</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Shipyard]
+
+        [AllowBlueprintBuilding:false] //This feature isn't even built yet, so don't get any ideas.
+        [AllowScrapPurchasing:true]
+        [AllowRepairAndConstruction:true]
+        [AllowGridTakeover:false]
+
+
+		[RepairAndConstructionExcludedComponentIds:AHEShipyard]
+		[RepairAndConstructionExcludedComponentIds:Station27Shipyard]
+		[RepairAndConstructionExcludedComponentIds:RakShipyard]
+		[RepairAndConstructionExcludedComponentIds:ITCShipyard]
+      </Description>
+    </EntityComponent>
+	
+	
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Shipyard_AHE</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Shipyard]
+
+        [AllowBlueprintBuilding:false] //This feature isn't even built yet, so don't get any ideas.
+        [AllowScrapPurchasing:true]
+        [AllowRepairAndConstruction:true]
+        [AllowGridTakeover:false]
+
+
+		[RepairAndConstructionExcludedComponentIds:Station27Shipyard]
+		[RepairAndConstructionExcludedComponentIds:RakShipyard]
+		[RepairAndConstructionExcludedComponentIds:ITCShipyard]
+      </Description>
+    </EntityComponent>	
+	
+	
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Shipyard_Station27</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Shipyard]
+
+        [AllowBlueprintBuilding:false] //This feature isn't even built yet, so don't get any ideas.
+        [AllowScrapPurchasing:true]
+        [AllowRepairAndConstruction:true]
+        [AllowGridTakeover:false]
+
+
+		[RepairAndConstructionExcludedComponentIds:AHEShipyard]
+
+		[RepairAndConstructionExcludedComponentIds:RakShipyard]
+		[RepairAndConstructionExcludedComponentIds:ITCShipyard]
+      </Description>
+    </EntityComponent>	
+	
+	
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Shipyard_Rak</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Shipyard]
+
+        [AllowBlueprintBuilding:false] //This feature isn't even built yet, so don't get any ideas.
+        [AllowScrapPurchasing:true]
+        [AllowRepairAndConstruction:true]
+        [AllowGridTakeover:false]
+
+
+		[RepairAndConstructionExcludedComponentIds:AHEShipyard]
+		[RepairAndConstructionExcludedComponentIds:Station27Shipyard]
+
+		[RepairAndConstructionExcludedComponentIds:ITCShipyard]
+      </Description>
+    </EntityComponent>
+	
+	
+	     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Shipyard_ITC</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Shipyard]
+
+        [AllowBlueprintBuilding:false] //This feature isn't even built yet, so don't get any ideas.
+        [AllowScrapPurchasing:true]
+        [AllowRepairAndConstruction:true]
+        [AllowGridTakeover:false]
+
+
+		[RepairAndConstructionExcludedComponentIds:AHEShipyard]
+		[RepairAndConstructionExcludedComponentIds:Station27Shipyard]
+		[RepairAndConstructionExcludedComponentIds:RakShipyard]
+
+      </Description>
+    </EntityComponent>
+	
+	
+	
+  </EntityComponents>
+</Definitions>

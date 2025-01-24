@@ -640,7 +640,7 @@ namespace AresAtWar.War
 
  
 
-                string[] validTags = { "FAF", "GC", "SYN" };
+                string[] validTags = { "UNION", "GC", "SHIVAN" };
 
                 if (!validTags.Contains(node.Faction.Tag))
                     continue;
@@ -689,7 +689,7 @@ namespace AresAtWar.War
                 return randNormal;
             }
 
-            public static void SendChatMessageToAll(string Message, string Author)
+            public static void SendChatMessageToAll(string Author, string Message)
             {
                 List<IMyPlayer> all_players = new List<IMyPlayer>();
                 MyAPIGateway.Multiplayer.Players.GetPlayers(all_players);
