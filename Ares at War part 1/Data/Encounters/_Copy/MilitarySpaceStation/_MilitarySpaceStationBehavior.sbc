@@ -5,40 +5,36 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>ITC_SpacePort_Behavior</SubtypeId>
+          <SubtypeId>{FAC}_MilitarySpaceStation_Behavior</SubtypeId>
       </Id>
       <Description>
     [RivalAI Behavior]
     [BehaviorName:Passive]
     [TargetData:MSB_TargetProfile_Default]
 
-    [DialogueBanks:ITC.xml] 
+    [DialogueBanks:{FAC}.xml] 
     [DialogueBanks:AaW.xml] 
     [DialogueBanks:MSB.xml] 
 
 
-    [TriggerGroups:ITC_StaticCommon_TriggerGroup]
+    [TriggerGroups:{FAC}_StaticCommon_TriggerGroup]
     [TriggerGroups:AaW_StaticCommon_TriggerGroup]    
     [TriggerGroups:MSB_StaticCommon_TriggerGroup]    
-    [TriggerGroups:MSB_StaticCommon_TriggerGroup_Complete]    
-
-    [TriggerGroups:ITC_FixedStaticSpaceStation_TriggerGroup]        
+    [TriggerGroups:MSB_StaticCommon_TriggerGroup_Complete]
+	
+    [TriggerGroups:{FAC}_FixedStaticSpaceStation_TriggerGroup]        
     [TriggerGroups:AaW_FixedStaticSpaceStation_TriggerGroup]
-        
-
-    [TriggerGroups:ITC_SpacePort_TriggerGroup]    
-    [TriggerGroups:AaW_SpacePort_TriggerGroup]     
-         
+  
+    [TriggerGroups:{FAC}_MilitarySpaceStation_TriggerGroup]    
+    [TriggerGroups:AaW_MilitarySpaceStation_TriggerGroup]     
 
       </Description>
-    </EntityComponent>
+    </EntityComponent>     
 
-
-	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>ITC_SpacePort_TriggerGroup</SubtypeId>
+          <SubtypeId>{FAC}_MilitarySpaceStation_TriggerGroup</SubtypeId>
       </Id>
       <Description>
 
@@ -47,8 +43,8 @@
       </Description>
       
     </EntityComponent> 
-	
-	
+
+
 
 
 	

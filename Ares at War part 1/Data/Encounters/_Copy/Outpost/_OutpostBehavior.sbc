@@ -10,7 +10,7 @@
       <Description>
     [RivalAI Behavior]
     [BehaviorName:Passive]
-    [TargetData:MSB_Outpost_Target]
+    [TargetData:MSB_TargetProfile_Default]
 
     [DialogueBanks:{FAC}.xml] 
     [DialogueBanks:AaW.xml] 
@@ -20,6 +20,7 @@
     [TriggerGroups:{FAC}_StaticCommon_TriggerGroup]
     [TriggerGroups:AaW_StaticCommon_TriggerGroup]    
     [TriggerGroups:MSB_StaticCommon_TriggerGroup]    
+    [TriggerGroups:MSB_StaticCommon_TriggerGroup_Complete]    
 
     [TriggerGroups:{FAC}_FixedStatic_TriggerGroup]        
     [TriggerGroups:AaW_FixedStatic_TriggerGroup]
@@ -27,10 +28,26 @@
 
     [TriggerGroups:{FAC}_Outpost_TriggerGroup]    
     [TriggerGroups:AaW_Outpost_TriggerGroup]     
-    [TriggerGroups:MSB_Outpost_TriggerGroup]     
+   
 
       </Description>
       
-    </EntityComponent>        
+    </EntityComponent>  
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>{FAC}_Outpost_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+
+    [RivalAI TriggerGroup]
+ 
+      </Description>
+      
+    </EntityComponent> 
+
+	
   </EntityComponents>
 </Definitions>
