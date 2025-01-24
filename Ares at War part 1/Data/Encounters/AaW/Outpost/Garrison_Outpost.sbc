@@ -8,20 +8,20 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_DefenseSystem_Trigger_Garrison_SpawnOutpost</SubtypeId>
+          <SubtypeId>AaW_DefenseSystem_Trigger_Guards_SpawnOutpost</SubtypeId>
       </Id>
       <Description>
 	[RivalAI Trigger]
 	[UseTrigger:false]
-	[Tags:SpawnGarrison]
+	[Tags:SpawnGuards]
 	[Type:Timer]	
 	[StartsReady:false]	
 
 	[MinCooldownMs:3000]
 	[MaxCooldownMs:3001]
-	[Conditions:AaW_DefenseSystem_Condition_Garrison_SpawnOutpost]
+	[Conditions:AaW_DefenseSystem_Condition_Guards_SpawnOutpost]
 	[MaxActions:-1]
-	[Actions:AaW_DefenseSystem_Action_Garrison_SpawnOutpost]
+	[Actions:AaW_DefenseSystem_Action_Guards_SpawnOutpost]
 	
       </Description>
     </EntityComponent>  
@@ -29,7 +29,7 @@
       <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_DefenseSystem_Condition_Garrison_SpawnOutpost</SubtypeId>
+          <SubtypeId>AaW_DefenseSystem_Condition_Guards_SpawnOutpost</SubtypeId>
       </Id>
       <Description>
 
@@ -39,28 +39,28 @@
  
 	
 	[CheckIfSpawnGroupExist:true]
-	[ExistingSpawnGroupName:{Faction}_SpawnGroup_Garrison_{Outpost}]
+	[ExistingSpawnGroupName:{Faction}_SpawnGroup_Guards_{Outpost}]
       </Description>
     </EntityComponent>	
 	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_DefenseSystem_Action_Garrison_SpawnOutpost</SubtypeId>
+          <SubtypeId>AaW_DefenseSystem_Action_Guards_SpawnOutpost</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI Action]
 	
 	[PlayDialogueCue:true]
-	[DialogueCueId:LaunchGarrison]
+	[DialogueCueId:LaunchGuards]
 
 	[SpawnEncounter:true]
-	[Spawner:AaW_DefenseSystem_Spawner_Garrison_SpawnOutpost]
+	[Spawner:AaW_DefenseSystem_Spawner_Guards_SpawnOutpost]
 	[ForceSameFactionOwnership:true]
 	
 	[DisableTriggers:true]
-	[DisableTriggerTags:SpawnGarrison]
+	[DisableTriggerTags:SpawnGuards]
 	
 	
       </Description>
@@ -69,7 +69,7 @@
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_DefenseSystem_Spawner_Garrison_SpawnOutpost</SubtypeId>
+          <SubtypeId>AaW_DefenseSystem_Spawner_Guards_SpawnOutpost</SubtypeId>
       </Id>
       <Description>
 
@@ -80,7 +80,7 @@
 	[SpawningType:CustomSpawn]
 
 	[MaxSpawns:-1]
-	[SpawnGroups:{Faction}_SpawnGroup_Garrison_Outpost]
+	[SpawnGroups:{Faction}_SpawnGroup_Guards_Outpost]
 	
 	[UseRelativeSpawnPosition:false]
 	[MinDistance:250]

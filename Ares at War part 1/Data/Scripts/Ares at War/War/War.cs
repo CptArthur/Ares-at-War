@@ -24,6 +24,7 @@ using AresAtWar.Logging;
 using AresAtWar.Configuration;
 using Sandbox.ModAPI;
 using AresAtWar.SessionCore;
+using VRage.Game.ModAPI;
 
 namespace AresAtWar.War
 {
@@ -455,19 +456,10 @@ namespace AresAtWar.War
 
                 if (frontLineHasSiege)
                 {
-                    //This frontline has a siege. So I should freeze the scores and wait for the outcome of the siege.
-                    if(FortA || FortAUnderSiege)
-                    {
-                        frontline.UpdateScore(100);
-                        activeBattles.Add(factionsInvolved);
-                    }
-                    else if(FortB || FortBUnderSiege)
-                    {
-                        frontline.UpdateScore(-100);
-                        activeBattles.Add(factionsInvolved);
-                    }
 
+                    activeBattles.Add(factionsInvolved);
                     continue;
+
                 }
 
 
@@ -697,6 +689,17 @@ namespace AresAtWar.War
                 return randNormal;
             }
 
+            public static void SendChatMessageToAll(string Message, string Author)
+            {
+                List<IMyPlayer> all_players = new List<IMyPlayer>();
+                MyAPIGateway.Multiplayer.Players.GetPlayers(all_players);
+
+                foreach (var p in all_players)
+                {
+                    MyVisualScriptLogicProvider.SendChatMessage(Message, Author, p.IdentityId);
+                }
+
+            }
 
         }
 

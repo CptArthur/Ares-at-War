@@ -42,6 +42,9 @@ namespace AresAtWar.War
             public Vector3D NodeBCoords;
             public Vector3D MiddleCoords;
 
+            public Vector3D CurrentCoords;
+
+
             private bool _refreshActive;
             private bool _active { get; set; }
 
@@ -93,10 +96,14 @@ namespace AresAtWar.War
                     if (!Active && value)
                     {
                         //Start a new frontline
-                        GPS gps = new GPS(GPSName, $"{_nodeA.FancyName} - {_nodeB.FancyName}", MiddleCoords, Color.LightGray);
-                        GPSManager.AllActiveGPS.Add(gps);
+                        //GPS gps = new GPS(GPSName, $"{_nodeA.FancyName} - {_nodeB.FancyName}", MiddleCoords, Color.LightGray);
+                        //GPSManager.AllActiveGPS.Add(gps);
 
-                        MyAPIGateway.Utilities.ShowMessage("FrontLine Updates", $"A new frontline between the {_nodeA.Faction.Tag} and the {_nodeB.Faction.Tag} has been formed");
+                        Utils.SendChatMessageToAll("FrontLine Updates", $"A new frontline between the {_nodeA.Faction.Tag} and the {_nodeB.Faction.Tag} has been formed");
+
+
+
+
                     }
 
 
@@ -219,16 +226,20 @@ namespace AresAtWar.War
                             if (_score > 33)
                             {
                                 Initiative = InitiativeState.Positive;
-                                GPS gps2 = new GPS(GPSName, $"{_nodeB.Faction.Tag} has the initiative and is advancing on {_nodeA.Faction.Tag} {_nodeA.FancyName} ", NodeACoords, _nodeB.Faction.Color);
-                                GPSManager.AllActiveGPS.Add(gps2);
-                                MyAPIGateway.Utilities.ShowMessage("FrontLine Updates", $"{_nodeB.Faction.Tag} has the initiative and is advancing on {_nodeA.Faction.Tag} {_nodeA.FancyName}");
+                                CurrentCoords = NodeACoords;
+
+
+                                //GPS gps2 = new GPS(GPSName, $"{_nodeB.Faction.Tag} has the initiative and is advancing on {_nodeA.Faction.Tag} {_nodeA.FancyName} ", NodeACoords, _nodeB.Faction.Color);
+                                //GPSManager.AllActiveGPS.Add(gps2);
+                                Utils.SendChatMessageToAll("FrontLine Updates", $"{_nodeB.Faction.Tag} has the initiative and is advancing on {_nodeA.Faction.Tag} {_nodeA.FancyName}");
                             }
                             // If initiative is Neutral and score is less than -30, set initiative to Negative
                             else if (_score < -33)
                             {
-                                GPS gps3 = new GPS(GPSName, $"{_nodeA.Faction.Tag} has the initiative and is advancing on {_nodeB.Faction.Tag} {_nodeB.FancyName} ", NodeBCoords, _nodeA.Faction.Color);
-                                GPSManager.AllActiveGPS.Add(gps3);
-                                MyAPIGateway.Utilities.ShowMessage("FrontLine Updates", $"{_nodeA.Faction.Tag} has the initiative and is advancing on {_nodeB.Faction.Tag} {_nodeB.FancyName}");
+                                CurrentCoords = NodeBCoords;
+                                //GPS gps3 = new GPS(GPSName, $"{_nodeA.Faction.Tag} has the initiative and is advancing on {_nodeB.Faction.Tag} {_nodeB.FancyName} ", NodeBCoords, _nodeA.Faction.Color);
+                                //GPSManager.AllActiveGPS.Add(gps3);
+                                Utils.SendChatMessageToAll("FrontLine Updates", $"{_nodeA.Faction.Tag} has the initiative and is advancing on {_nodeB.Faction.Tag} {_nodeB.FancyName}");
 
                                 Initiative = InitiativeState.Negative;
                             }
@@ -236,26 +247,28 @@ namespace AresAtWar.War
 
                         case InitiativeState.Positive:
                             // If initiative is Positive and score drops below 0, reset initiative to Neutral
-                            if (_score < 0)
+                            if (_score <= 0)
                             {
+                                CurrentCoords = MiddleCoords;
                                 Initiative = InitiativeState.Neutral;
 
-                                GPS gps = new GPS(GPSName, $"{_nodeA.FancyName} - {_nodeB.FancyName}", MiddleCoords, Color.LightGray);
-                                GPSManager.AllActiveGPS.Add(gps);
+                                //GPS gps = new GPS(GPSName, $"{_nodeA.FancyName} - {_nodeB.FancyName}", MiddleCoords, Color.LightGray);
+                                //GPSManager.AllActiveGPS.Add(gps);
 
-                                MyAPIGateway.Utilities.ShowMessage("FrontLine Updates", $"{_nodeB.Faction.Tag} has lost the initiative can the {_nodeA.Faction.Tag} continue with this momentum?");
+                                Utils.SendChatMessageToAll("FrontLine Updates", $"{_nodeB.Faction.Tag} has lost the initiative can the {_nodeA.Faction.Tag} continue with this momentum?");
                             }
                             break;
 
                         case InitiativeState.Negative:
                             // If initiative is Negative and score rises above 0, reset initiative to Neutral
-                            if (_score > 0)
+                            if (_score >= 0)
                             {
+                                CurrentCoords = MiddleCoords;
                                 Initiative = InitiativeState.Neutral;
 
-                                GPS gps = new GPS(GPSName, $"{_nodeA.FancyName} - {_nodeB.FancyName}", MiddleCoords, Color.LightGray);
-                                GPSManager.AllActiveGPS.Add(gps);
-                                MyAPIGateway.Utilities.ShowMessage("FrontLine Updates", $"{_nodeA.Faction.Tag} has lost the initiative can the {_nodeB.Faction.Tag} continue with this momentum?");
+                                //GPS gps = new GPS(GPSName, $"{_nodeA.FancyName} - {_nodeB.FancyName}", MiddleCoords, Color.LightGray);
+                                //GPSManager.AllActiveGPS.Add(gps);
+                                Utils.SendChatMessageToAll("FrontLine Updates", $"{_nodeA.Faction.Tag} has lost the initiative can the {_nodeB.Faction.Tag} continue with this momentum?");
                             }
                             break;
 
@@ -351,7 +364,7 @@ namespace AresAtWar.War
                 }
 
 
-
+                CurrentCoords = MiddleCoords;
                 Refresh();
 
             }

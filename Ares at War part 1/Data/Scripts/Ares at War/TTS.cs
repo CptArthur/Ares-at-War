@@ -92,7 +92,7 @@ namespace Digi.Examples
                 var nodeA = WarSim._nodes.FirstOrDefault(n => n.Id == frontline.NodeAId);
                 var nodeB = WarSim._nodes.FirstOrDefault(n => n.Id == frontline.NodeBId);
 
-                if (frontline.Score != 0)
+                if (frontline.Active)
                 {
 
                     // First line: "GC;  -10 ;FAF" (score is always 6 characters wide)

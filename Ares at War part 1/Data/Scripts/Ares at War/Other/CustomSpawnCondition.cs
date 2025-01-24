@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using AresAtWar.API;
+using AresAtWar.War;
 using Sandbox.Definitions;
 using Sandbox.Game;
 using Sandbox.Game.Entities;
@@ -97,6 +98,84 @@ namespace AresAtWar.SessionCore
             return true;
 
         }
+
+        public static bool AaW_FrontLine(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)
+        {
+            //MyAPIGateway.Utilities.ShowMessage("AaW", "AaW_Home");
+            if (string.IsNullOrEmpty(SpawnGroupSubtypeID) || !SpawnGroupSubtypeID.Contains("_"))
+            {
+                return false;
+            }
+
+            // Retrieve the FactionTag from the SpawnGroupSubtypeID
+            string FactionA = "";
+            string FactionB = "";
+
+            if (SpawnConditionsProfileSubtypeID.Contains("GCUNIONWar"))
+            {
+                FactionA = "GC";
+                FactionB = "UNION";
+            }
+
+
+            if (string.IsNullOrEmpty(FactionA))
+                return false;
+
+            if (string.IsNullOrEmpty(FactionB))
+                return false;
+
+
+
+            for (int i = 0; i < WarSim._frontlines.Count; i++)
+            {
+                var frontline = WarSim._frontlines[i];
+
+                if (frontline.Active)
+                {
+                    var nodeA = WarSim._nodes.FirstOrDefault(n => n.Id == frontline.NodeAId);
+                    var nodeB = WarSim._nodes.FirstOrDefault(n => n.Id == frontline.NodeBId);
+
+                    if (nodeA.Faction.Tag == nodeB.Faction.Tag)
+                        continue;
+
+                    if (nodeA.Faction.Tag != FactionA && nodeA.Faction.Tag != FactionB)
+                        continue;
+
+                    if (nodeB.Faction.Tag != FactionA && nodeB.Faction.Tag != FactionB)
+                        continue;
+
+                    var distance = Math.Abs(Vector3D.Distance(frontline.CurrentCoords, location));
+
+                    if(nodeA.SpaceNode == false && nodeB.SpaceNode == false)
+                    {
+                        //Planet to planet?
+                        if (distance < 20000)
+                            return true;
+                    }
+                    else if(nodeA.SpaceNode == true && nodeB.SpaceNode == true)
+                    {
+                        //Space to Space? 
+                        if (distance < 300000)
+                            return true;
+                    }
+                    else
+                    {
+                        //Planet to Space?
+                        if (distance < 30000)
+                            return true;
+                    }
+
+                }
+                continue;
+            }
+
+            return false;
+
+        }
+
+
+
+
 
 
         public static bool AaW_Outside(string SpawnGroupSubtypeID, string SpawnConditionsProfileSubtypeID, string typeofspawn, Vector3D location)

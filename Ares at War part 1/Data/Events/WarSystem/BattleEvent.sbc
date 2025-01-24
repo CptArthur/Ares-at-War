@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	
+<!--
+{InstanceId}
+
+{EventName}
+
+{FactionA} = FAF
+{FactionB} = GC
+{Coords}
+
+-->
+
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>EventGroup_BattleEvent</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event TemplateGroup]
+		
+		[TemplateEventIds:AaW_EventTemplate_BattleEvent_Init]
+
+		[TemplateEventIds:AaW_EventTemplate_BattleEvent_Timer]
+		[TemplateEventIds:AaW_EventTemplate_BattleEvent_PlayerFar]
+
+
+      </Description>
+	</EntityComponent>
+		
+		
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_BattleEvent_Init</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:true]
+		[UniqueEvent:true]	
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+		
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:300]
+		
+		[ActionIds:AaW_EventActionTemplate_BattleEvent_Start]
+		[ActionIds:AaW_EventActionTemplate_BattleEvent_FactionB]
+
+      </Description>
+	</EntityComponent>	 
+	  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_BattleEvent_Start</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action Template]
+	
+		[ToggleEvents:true]
+		
+		[ToggleEventTags:BattleEvent@{InstanceId}]
+		[ToggleEventTagModes:true]
+		
+		[ToggleEventTags:AaW_StoryEvent]
+		[ToggleEventTagModes:false]
+		
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownTags:BattleEvent@{InstanceId}]
+		
+
+		[ActivateCustomAction:true]
+		[CustomActionName:ScT-CreateGPS]
+		[CustomActionArgumentsString:{EventName}]
+		[CustomActionArgumentsString:The {AttackingFaction} attacks {FancyName}]
+		[CustomActionArgumentsInt:99999]		
+		[CustomActionArgumentsVector3D:{Coords}]	
+
+
+		[SpawnEncounter:true]
+		[SpawnData:GC_Spawner_MediumStrikeForce]
+		[SpawnFactionTags:GC]
+		[SpawnCoords:{Coords}]
+	
+	
+      </Description>      
+    </EntityComponent>
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_BattleEvent_FactionB</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action Template]
+		
+		[SpawnEncounter:true]
+		[SpawnData:GC_Spawner_MediumStrikeForce]
+		[SpawnFactionTags:GC]
+		[SpawnCoords:{Coords}]
+		
+      </Description>      
+    </EntityComponent>		
+
+	
+	
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_BattleEvent_Close</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event Action Template]
+	
+	[ToggleEvents:true]
+	[ToggleEventTags:BattleEvent@{InstanceId}]
+	[ToggleEventTagModes:false]	
+
+	[ActivateCustomAction:true]
+	[CustomActionName:ScT-RemoveGPS]
+	[CustomActionArgumentsString:{EventName}]
+	
+	[RemoveThisInstanceGroup:true]
+		
+		
+	[ToggleEventTags:AaW_StoryEvent]
+	[ToggleEventTagModes:true]
+
+
+
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownTags:AaW_StoryEvent]
+	
+      </Description>
+      
+    </EntityComponent>		
+	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_BattleEvent_Timer</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		[MinCooldownMs:300000]
+		[MaxCooldownMs:300001]		
+	
+		[Tags:BattleEvent@{InstanceId}]
+
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+
+		[ActionIds:AaW_EventActionTemplate_BattleEvent_Close]
+      </Description>
+	</EntityComponent>	
+	
+	
+	
+
+	
+	
+	
+
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_BattleEvent_PlayerFar</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Template]
+		[UseEvent:false]
+		[UniqueEvent:true]
+		
+		[MinCooldownMs:5000]
+		[MaxCooldownMs:5001]
+		
+		
+		[Tags:BattleEvent@{InstanceId}]
+		
+		[ConditionIds:AaW_EventConditionTemplate_BattleEvent_PlayerFar]
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:6000]
+		
+
+		[ActionIds:AaW_EventActionTemplate_BattleEvent_Close]
+      </Description>
+	</EntityComponent>	
+		
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventConditionTemplate_BattleEvent_PlayerFar</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Condition Template]
+
+	[UseFailCondition:true]
+	[CheckPlayerNear:true]
+	[PlayerNearCoords:{Coords}]
+	[PlayerNearDistanceFromCoords:8000]
+
+      </Description>
+    </EntityComponent>	
+	
+
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>
