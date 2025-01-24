@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Common_Trigger_PlayerDamage</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Tags:MSB_TriggerEvent_DamageByNeutral]
+	[Tags:MSB_TriggerEvent_DamageByHostile]
+	
+	[Conditions:MSB_Common_Condition_HasAntennaForBroadcast]
+
+	[Type:Manual]
+	[MinCooldownMs:1000]
+	[MaxCooldownMs:2001]
+	[UseTrigger:true]
+	[StartsReady:true]
+
+
+	[Actions:CIVILIAN_Common_Action_PlayerDamage]	
+      </Description>
+    </EntityComponent>	
+
+<!-- Actions --> 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Common_Action_PlayerDamage</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:2000]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+	[ReputationChangeFactions:ITC]
+	[ReputationChangeAmount:-5]
+
+	[ReputationChangeFactions:UNION]
+	[ReputationChangeAmount:-5]
+
+	[ReputationChangeFactions:GC]
+	[ReputationChangeAmount:-5]
+
+	[ReputationChangeFactions:MILITIA]
+	[ReputationChangeAmount:-5]
+
+      </Description> 
+    </EntityComponent>
+
+
+	
+  </EntityComponents>
+</Definitions>
