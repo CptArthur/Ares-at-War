@@ -1,0 +1,364 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+
+<!-- 
+[Triggers:CIVILIAN_Common_Trigger_CreateSafeZone]
+
+
+
+[Triggers:CIVILIAN_Common_Trigger_CreateSafeZone_SunsetCity]
+
+[Triggers:CIVILIAN_Common_Trigger_CreateSafeZone_Carcosa]
+[Triggers:CIVILIAN_Common_Trigger_CreateSafeZone_Azuris]
+[Triggers:CIVILIAN_Common_Trigger_CreateSafeZone_S27]
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_Common_Trigger_CreateSafeZone</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Trigger]
+
+        [UseTrigger:true]
+        [Type:Session]
+        [StartsReady:true]
+		[Conditions:CIVILIAN_Common_Condition_CreateSafeZone]
+        [MaxActions:1]
+        [Actions:CIVILIAN_Common_Action_CreateSafeZone]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Common_Condition_CreateSafeZone</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseFailCondition:true]
+
+      [UseConditions:true]
+      [CheckTrueSandboxBooleans:true]
+
+	  [TrueSandboxBooleans:SafeZone{SpawnGroupName}]
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_Common_Action_CreateSafeZone</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Action]
+
+        [CreateSafeZone:true]
+        [SafeZoneProfile:AaW_SafeZone_StoreSafeZone]
+        [LinkSafeZoneToRemoteControl:true]
+        [SafeZonePositionGridCenter:true]
+        [SafeZonePositionTerrainSurface:true]
+
+		[SetSandboxBooleansTrue:SafeZone{SpawnGroupName}]
+
+      </Description>
+
+    </EntityComponent>
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_Common_Trigger_CreateSafeZone_SunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Trigger]
+
+        [UseTrigger:true]
+        [Type:Session]
+        [StartsReady:true]
+		[Conditions:CIVILIAN_Common_Condition_CreateSafeZone_SunsetCity]
+        [MaxActions:1]
+        [Actions:CIVILIAN_Common_Action_CreateSafeZone_SunsetCity]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Common_Condition_CreateSafeZone_SunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseFailCondition:true]
+
+      [UseConditions:true]
+      [CheckTrueSandboxBooleans:true]
+
+	  [TrueSandboxBooleans:SafeZoneSunsetCity]
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_Common_Action_CreateSafeZone_SunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Action]
+
+        [CreateSafeZone:true]
+        [SafeZoneProfile:AaW_SafeZone_StoreSafeZone]
+        [LinkSafeZoneToRemoteControl:true]
+        [SafeZonePositionGridCenter:true]
+        [SafeZonePositionTerrainSurface:true]
+
+		[SetSandboxBooleansTrue:SafeZoneSunsetCity]
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+
+
+{SpawnGroupName}
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_Common_Trigger_CreateSafeZone_Carcosa</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Trigger]
+
+        [UseTrigger:true]
+        [Type:Session]
+        [StartsReady:true]
+		[Conditions:CIVILIAN_Common_Condition_CreateSafeZone_Carcosa]
+        [MaxActions:1]
+        [Actions:CIVILIAN_Common_Action_CreateSafeZone_Carcosa]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Common_Condition_CreateSafeZone_Carcosa</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseFailCondition:true]
+
+
+
+      [UseConditions:true]
+      [CheckTrueSandboxBooleans:true]
+
+	  [TrueSandboxBooleans:SafeZoneCarcosa]
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_Common_Action_CreateSafeZone_Carcosa</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Action]
+
+        [CreateSafeZone:true]
+        [SafeZoneProfile:AaW_SafeZone_StoreSafeZone]
+        [LinkSafeZoneToRemoteControl:true]
+        [SafeZonePositionGridCenter:true]
+        [SafeZonePositionTerrainSurface:true]
+
+		[SetSandboxBooleansTrue:SafeZoneCarcosa]
+
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_Common_Trigger_CreateSafeZone_Azuris</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Trigger]
+
+        [UseTrigger:true]
+        [Type:Session]
+        [StartsReady:true]
+		[Conditions:CIVILIAN_Common_Condition_CreateSafeZone_Azuris]
+        [MaxActions:1]
+        [Actions:CIVILIAN_Common_Action_CreateSafeZone_Azuris]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Common_Condition_CreateSafeZone_Azuris</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseFailCondition:true]
+
+
+
+      [UseConditions:true]
+      [CheckTrueSandboxBooleans:true]
+
+	  [TrueSandboxBooleans:SafeZoneAzuris]
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_Common_Action_CreateSafeZone_Azuris</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Action]
+
+        [CreateSafeZone:true]
+        [SafeZoneProfile:AaW_SafeZone_StoreSafeZone]
+        [LinkSafeZoneToRemoteControl:true]
+        [SafeZonePositionGridCenter:true]
+        [SafeZonePositionTerrainSurface:true]
+
+		[SetSandboxBooleansTrue:SafeZoneAzuris]
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_Common_Trigger_CreateSafeZone_S27</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Trigger]
+
+        [UseTrigger:true]
+        [Type:Session]
+        [StartsReady:true]
+		[Conditions:CIVILIAN_Common_Condition_CreateSafeZone_S27]
+        [MaxActions:1]
+        [Actions:CIVILIAN_Common_Action_CreateSafeZone_S27]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Common_Condition_CreateSafeZone_S27</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      [UseFailCondition:true]
+
+
+
+      [UseConditions:true]
+      [CheckTrueSandboxBooleans:true]
+
+	  [TrueSandboxBooleans:SafeZoneS27]
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_Common_Action_CreateSafeZone_S27</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Action]
+
+        [CreateSafeZone:true]
+        [SafeZoneProfile:AaW_SafeZone_StoreSafeZone]
+        [LinkSafeZoneToRemoteControl:true]
+        [SafeZonePositionGridCenter:true]
+        [SafeZonePositionTerrainSurface:true]
+
+		[SetSandboxBooleansTrue:SafeZoneS27]
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SafeZone_StoreSafeZone</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES SafeZone]
+
+        [Shape:Sphere]
+
+        [Radius:200]
+        [RadiusFromParentEntity:false]
+
+        [Enabled:true]
+        [IsVisible:false]
+        [Color:{X:0 Y:128 Z:255}]
+
+        [Texture:SafeZone_Texture_Aura]
+        [AllowedActions:Welding,Grinding,Building,LandingGearLock,BuildingProjections]
+
+      </Description>
+
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>

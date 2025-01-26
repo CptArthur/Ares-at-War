@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+  <!-- [Triggers:SHIVAN_Trigger_Static_PopulateStores_SHIVANForegoneIO] -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SHIVAN_Trigger_Static_PopulateStores_SHIVANForegoneIO</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+        [MinCooldownMs:1200000]
+        [MaxCooldownMs:1200001]
+        [Conditions:SHIVAN_Condition_Static_PopulateStores_SHIVANForegoneIO]
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:SHIVAN_Action_Static_PopulateStores_SHIVANForegoneIO]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SHIVAN_Condition_Static_PopulateStores_SHIVANForegoneIO</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+              
+        [UseConditions:true]
+        
+        [CheckAllLoadedModIDs:true]
+        [AllModIDsToCheck:2344068716]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SHIVAN_Action_Static_PopulateStores_SHIVANForegoneIO</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [ApplyStoreProfiles:true]
+        [ClearStoreContentsFirst:true]
+
+       [StoreBlocks:Store Settlement]
+      [StoreProfiles:SHIVAN_StoreProfile_SHIVANForegoneIO_Settlement]		
+
+
+
+      [StoreBlocks:Store {ITC}]
+      [StoreProfiles:SHIVAN_StoreProfile_SHIVANForegoneIO_ITC]		
+		
+	    [StoreBlocks:Store {SYN}]
+      [StoreProfiles:SHIVAN_StoreProfile_SHIVANForegoneIO_SYN]	
+
+
+      [StoreBlocks:Store Civ]
+      [StoreProfiles:SHIVAN_StoreProfile_SHIVANForegoneIO_Civ]
+  
+      [StoreBlocks:Store Salvage]
+      [StoreProfiles:SHIVAN_StoreProfile_SHIVANForegoneIO_Salvage]
+
+      [StoreBlocks:Store Ammo]
+      [StoreProfiles:SHIVAN_StoreProfile_SHIVANForegoneIO_Ammo]
+
+      [StoreBlocks:Store Ingot]
+      [StoreProfiles:SHIVAN_StoreProfile_SHIVANForegoneIO_Ingot]
+  
+      [StoreBlocks:Store Tool]
+      [StoreProfiles:SHIVAN_StoreProfile_SHIVANForegoneIO_Tool]      
+
+      [StoreBlocks:Store Prefab]
+      [StoreProfiles:SHIVAN_StoreProfile_SHIVANForegoneIO_Prefab]      
+
+      
+      [StoreBlocks:Store Fuel]
+      [StoreProfiles:SHIVAN_StoreProfile_SHIVANForegoneIO_Fuel]
+  
+      
+      [StoreBlocks:Store Outpost]
+      [StoreProfiles:SHIVAN_StoreProfile_SHIVANForegoneIO_Outpost]
+
+
+      [StoreBlocks:Vending Machine]
+      [StoreProfiles:SHIVAN_StoreProfile_SHIVANForegoneIO_VendingMachine]
+
+
+
+
+      [AddCustomDataToBlocks:true]
+      [CustomDataBlockNames:EconomySurvival Store Water Vehicles,EconomySurvival Store Land Vehicles,EconomySurvival Store Air Vehicles,EconomySurvival Store Space Vehicles]
+      [CustomDataFiles:SHIVAN_Water_Vehicles.xml]
+      [CustomDataFiles:SHIVAN_Land_Vehicles.xml]
+      [CustomDataFiles:SHIVAN_Air_Vehicles.xml]
+      [CustomDataFiles:SHIVAN_Space_Vehicles.xml]  
+        
+      [ChangeBlockOwnership:true]
+      [OwnershipBlockNames:Contracts {SYN}]
+      [OwnershipBlockFactions:SHIVAN]
+
+      [OwnershipBlockNames:Contracts {ITC}]
+      [OwnershipBlockFactions:ITC]
+    
+
+      [ApplyContractProfiles:true]
+      [ClearContractContentsFirst:true]
+      [ContractBlocks:Contracts]
+      [ContractBlockProfiles:SHIVAN_ContractBlockProfile_SHIVANForegoneIO]
+
+       [ContractBlocks:Contracts {SYN}]
+      [ContractBlockProfiles:SYN_ContractBlockProfile_Civilian]
+
+       [ContractBlocks:Contracts {ITC}]
+      [ContractBlockProfiles:ITC_ContractBlockProfile_Civilian]
+      
+
+
+      </Description>
+
+    </EntityComponent>
+  </EntityComponents>
+</Definitions>

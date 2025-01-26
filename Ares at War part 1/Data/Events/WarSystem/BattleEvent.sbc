@@ -14,7 +14,33 @@
 
 -->
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_BattleEvent_Spawner</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Spawn]
 
+        [UseSpawn:true]
+
+        [StartsReady:false]
+        [UseRelativeSpawnPosition:false]
+        [IgnoreSafetyChecks:true]
+        [SpawningType:CustomSpawn]
+
+        [MinDistance:250]
+        [MaxDistance:2500]
+        [MinAltitude:600]
+        [MaxAltitude:1400]
+
+        [MaxSpawns:-1]
+        [SpawnGroups:{Faction}_SpawnGroup_HeavyStrikeForce]
+      </Description>
+    </EntityComponent>
+	
+	
+	
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -76,17 +102,17 @@
 		[ResetEventCooldownTags:BattleEvent@{InstanceId}]
 		
 
-		[ActivateCustomAction:true]
-		[CustomActionName:ScT-CreateGPS]
-		[CustomActionArgumentsString:{EventName}]
-		[CustomActionArgumentsString:The {AttackingFaction} attacks {FancyName}]
-		[CustomActionArgumentsInt:99999]		
-		[CustomActionArgumentsVector3D:{Coords}]	
+		[//ActivateCustomAction:true]
+		[//CustomActionName:ScT-CreateGPS]
+		[//CustomActionArgumentsString:{EventName}]
+		[//CustomActionArgumentsString:The {AttackingFaction} attacks {FancyName}]
+		[//CustomActionArgumentsInt:99999]		
+		[//CustomActionArgumentsVector3D:{Coords}]	
 
 
 		[SpawnEncounter:true]
-		[SpawnData:GC_Spawner_MediumStrikeForce]
-		[SpawnFactionTags:GC]
+		[SpawnData:AaW_BattleEvent_Spawner]
+		[SpawnFactionTags:{FactionA}]
 		[SpawnCoords:{Coords}]
 	
 	
@@ -103,8 +129,8 @@
 		[MES Event Action Template]
 		
 		[SpawnEncounter:true]
-		[SpawnData:GC_Spawner_MediumStrikeForce]
-		[SpawnFactionTags:GC]
+		[SpawnData:AaW_BattleEvent_Spawner]
+		[SpawnFactionTags:{FactionB}]
 		[SpawnCoords:{Coords}]
 		
       </Description>      
@@ -124,10 +150,6 @@
 	[ToggleEvents:true]
 	[ToggleEventTags:BattleEvent@{InstanceId}]
 	[ToggleEventTagModes:false]	
-
-	[ActivateCustomAction:true]
-	[CustomActionName:ScT-RemoveGPS]
-	[CustomActionArgumentsString:{EventName}]
 	
 	[RemoveThisInstanceGroup:true]
 		
@@ -135,16 +157,17 @@
 	[ToggleEventTags:AaW_StoryEvent]
 	[ToggleEventTagModes:true]
 
-
-
 	[ResetCooldownTimeOfEvents:true]
 	[ResetEventCooldownTags:AaW_StoryEvent]
 	
+	
+	[//ActivateCustomAction:true]
+	[//CustomActionName:ScT-RemoveGPS]
+	[//CustomActionArgumentsString:{EventName}]
       </Description>
-      
     </EntityComponent>		
 	
-	
+
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -167,13 +190,6 @@
       </Description>
 	</EntityComponent>	
 	
-	
-	
-
-	
-	
-	
-
 	
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>

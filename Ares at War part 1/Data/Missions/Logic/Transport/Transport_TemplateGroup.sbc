@@ -72,9 +72,23 @@ ContractBlockLocation
 	[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
 	
 	[AddPlayerConditionPlayerTags:true]
-	[AddIncludedPlayerTags:@{InstanceId}]	
+	[AddIncludedPlayerTags:@{InstanceId}]
+
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:AaW_DummyCommandProfile]
+	[CommandProfileOriginCoords:{DestinationLocation}]
+	
+	[OverrideCommandCode:Abadonend@{InstanceId}]
+
+	
       </Description>
     </EntityComponent>		
+
+
+
+
+
+
 
 	
 	<!-- Fail -->
@@ -246,6 +260,10 @@ ContractBlockLocation
 	[SpawnFactionTags:{ContractBlockFaction}]
 	[SpawnCoords:{ContractBlockLocation}]
 	
+	
+	[SpawnReplaceKeys:{DestinationName}]
+	[SpawnReplaceValues:{destinationEncounter}]
+	
 	[UseChatBroadcast:true]
 	[ChatData:AaW_EventChat_Template]	
 	
@@ -333,7 +351,29 @@ ContractBlockLocation
       
     </EntityComponent>
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DummyCommandProfile</SubtypeId>
+      </Id>
+      <Description>
 
+      [RivalAI Command]
+      
+      [CommandCode:TestCode]
+      
+	  
+	  [SingleRecipient:true]
+	  [IgnoreAntennaRequirement:true]
+	  [IgnoreReceiverAntennaRequirement:true]
+	  
+	  [Radius:9999999999999999999999999999]
+	  
+	  
+      </Description>
+      
+    </EntityComponent>
+	
 
 
 

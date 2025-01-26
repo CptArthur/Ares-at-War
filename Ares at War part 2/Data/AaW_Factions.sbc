@@ -10,7 +10,7 @@
 		<AcceptHumans>false</AcceptHumans>   When true players can join this faction from the faction menu.
 		<AutoAcceptMember>false</AutoAcceptMember>   When true members will be automatically accepted to the faction.
 		<IsDefault>true</IsDefault>   When true, the faction will be created in the world by default.
-		<DiscoveredByDefault>true</DiscoveredByDefault>    When true, this field conceals the faction's identity from the player until encountered in the world.
+		<DiscoveredByDefault>false</DiscoveredByDefault>    When true, this field conceals the faction's identity from the player until encountered in the world.
 		<StartingBalance>100000000</StartingBalance>   Starting bank account balance for the faction.
 		<Type>None</Type>   This is the faction type associated with the faction. Types can be defined in FactionTypes.sbc
 		<FactionIcon>Textures\FactionLogo\Spiders.dds</FactionIcon>   This is the texture file used as the factions emblem, as viewed in the faction menu or from LCDs displaying the emblem.
@@ -51,14 +51,14 @@
 		<AcceptHumans>false</AcceptHumans>   
 		<AutoAcceptMember>false</AutoAcceptMember>   
 		<IsDefault>true</IsDefault>   
-		<DiscoveredByDefault>true</DiscoveredByDefault>    
+		<DiscoveredByDefault>false</DiscoveredByDefault>    
 		<StartingBalance>1000000000</StartingBalance>  
 		<Type>None</Type> 
-		<FactionIcon>Textures\FactionLogo\Others\OtherIcon_10.dds</FactionIcon>   
+		<FactionIcon>Textures\FactionLogo\Others\OtherIcon_3.dds</FactionIcon>   
 		<StaticReputation>false</StaticReputation>   
 
-		<Description>Insert_Description</Description>   
-		<BackgroundColor R="255" G="255" B="255" />   
+		<Description>These ruthless raiders, native to Agaris, thrive in the desert regions of the planet.</Description>   
+		<BackgroundColor R="213" G="147" B="91" />   
 		<IconColor R="0" G="0" B="0" />  
 
 		<EnableFriendlyFire>false</EnableFriendlyFire>   
@@ -98,18 +98,18 @@
 		<DiscoveredByDefault>true</DiscoveredByDefault>    
 		<StartingBalance>1000000000</StartingBalance>  
 		<Type>None</Type> 
-		<FactionIcon>Textures\FactionLogo\Others\OtherIcon_10.dds</FactionIcon>   
+		<FactionIcon>Textures\FactionLogo\Traders\TraderIcon_2.dds</FactionIcon>   
 		<StaticReputation>false</StaticReputation>   
 	<StartingReputation>0</StartingReputation> 
-		<Description>Insert_Description</Description>   
-		<BackgroundColor R="255" G="255" B="255" />   
-		<IconColor R="0" G="0" B="0" />  
+		<Description>The Civilians of the Ares System are hardy and adaptable, shaped by the frontier worlds they live on. (Reputation will be forced to 0 always)</Description>   
+		<BackgroundColor R="55" G="55" B="55" />   
+		<IconColor R="255" G="255" B="255" />  
 
 		<EnableFriendlyFire>false</EnableFriendlyFire>   
 		<DefaultRelation>Neutral</DefaultRelation>
 	</Faction>
   
-
+<!--
   	<Faction Tag="INDEP" Founder="Independent">  
 		 <Id>
 		   <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
@@ -119,7 +119,7 @@
 		<AcceptHumans>false</AcceptHumans>   
 		<AutoAcceptMember>false</AutoAcceptMember>   
 		<IsDefault>true</IsDefault>   
-		<DiscoveredByDefault>true</DiscoveredByDefault>    
+		<DiscoveredByDefault>false</DiscoveredByDefault>    
 		<StartingBalance>1000000000</StartingBalance>  
 		<Type>None</Type> 
 		<FactionIcon>Textures\FactionLogo\Others\OtherIcon_10.dds</FactionIcon>   
@@ -132,6 +132,7 @@
 		<EnableFriendlyFire>false</EnableFriendlyFire>   
 		<DefaultRelation>Neutral</DefaultRelation>
 	</Faction>
+  -->
   
    	<Faction Tag="UNION" Founder="UNION Founder">  
 		 <Id>
@@ -142,19 +143,45 @@
 		<AcceptHumans>false</AcceptHumans>   
 		<AutoAcceptMember>false</AutoAcceptMember>   
 		<IsDefault>true</IsDefault>   
-		<DiscoveredByDefault>true</DiscoveredByDefault>    
+		<DiscoveredByDefault>false</DiscoveredByDefault>    
 		<StartingBalance>1000000000</StartingBalance>  
 		<Type>None</Type> 
 		<FactionIcon>Textures\FactionLogo\Others\OtherIcon_10.dds</FactionIcon>   
 		<StaticReputation>false</StaticReputation>   
  
-		<Description>Insert_Description</Description>   
+		<Description>Founded in 2395 by John Fagel and Cornelia Voss after the Great Crisis, the UNION of Carcosa emerged as a coalition to unite Agaris colonies and protect their independence.</Description>   
+		<BackgroundColor R="255" G="255" B="255" />   
+		<IconColor R="0" G="0" B="0" />  
+
+		<EnableFriendlyFire>false</EnableFriendlyFire>   
+		<DefaultRelation>Neutral</DefaultRelation>
+		
+		
+	</Faction> 
+	
+	   	<Faction Tag="MILITIA" Founder="MILITIA Founder">  
+		 <Id>
+		   <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+		   <SubtypeId>MILITIA</SubtypeId>
+		 </Id>
+		<DisplayName>Freedom Militia</DisplayName>  
+		<AcceptHumans>false</AcceptHumans>   
+		<AutoAcceptMember>false</AutoAcceptMember>   
+		<IsDefault>true</IsDefault>   
+		<DiscoveredByDefault>false</DiscoveredByDefault>    
+		<StartingBalance>1000000000</StartingBalance>  
+		<Type>None</Type> 
+		<FactionIcon>Textures\FactionLogo\Others\OtherIcon_4.dds</FactionIcon>   
+		<StaticReputation>false</StaticReputation>   
+ 
+		<Description>The Freedom Militia was formed by survivors of the Great Crisis, united by the determination to preserve the hard-won way of life they fought for. Originally members of the UNION, they became disillusioned with the growing influence of outsiders. Now, they stand as fierce protectors of Agaris independence, opposing any external interference and working to safeguard their culture, values, and survival in the aftermath of the Crisis</Description>   
 		<BackgroundColor R="255" G="255" B="255" />   
 		<IconColor R="0" G="0" B="0" />  
 
 		<EnableFriendlyFire>false</EnableFriendlyFire>   
 		<DefaultRelation>Neutral</DefaultRelation>
 	</Faction> 
+	
 
   <!--
     <Faction Tag="FAF" Founder="FAF Founder">
@@ -166,7 +193,7 @@
 		<AcceptHumans>false</AcceptHumans>   
 		<AutoAcceptMember>false</AutoAcceptMember>   
 		<IsDefault>true</IsDefault>   
-		<DiscoveredByDefault>true</DiscoveredByDefault>    
+		<DiscoveredByDefault>false</DiscoveredByDefault>    
 		<StartingBalance>10000000000</StartingBalance>  
 		<Type>None</Type> 
 		<FactionIcon>Textures\FactionLogo\Others\OtherIcon_21.dds</FactionIcon>   
@@ -193,7 +220,7 @@
 	<AcceptHumans>false</AcceptHumans>   
 	<AutoAcceptMember>false</AutoAcceptMember>   
 	<IsDefault>true</IsDefault>   
-	<DiscoveredByDefault>true</DiscoveredByDefault>    
+	<DiscoveredByDefault>false</DiscoveredByDefault>    
 	<StartingBalance>10000000000</StartingBalance>  
 	<Type>None</Type> 
 	<FactionIcon>Textures\FactionLogo\Others\OtherIcon_15.dds</FactionIcon>   
@@ -204,7 +231,7 @@
 
 	<EnableFriendlyFire>false</EnableFriendlyFire>   
 	<DefaultRelation>Neutral</DefaultRelation>
-	<Description>The Goldo Corporation, once a rising power, now stands as the dominant force in the Ares System. Their fleets, equipped with cutting-edge technology from Result Oriented Sciences, have conquered rival factions and established supremacy. They rule with an iron grip, using their immense resources to enforce order and maintain control over key strategic assets.</Description>
+	<Description>The Goldo Corporation is a powerful mining operation within the Ares System, known for its vast resources and wealth. With cutting-edge technology from its close collaboration with Zenova Manufacturers, they maintain control over key mining assets. To protect their interests, they deploy a formidable military presence, ensuring security and dominance. The Goldo Corporation also holds significant influence on Agaris, where they enforce their control and continue to expand their operations.</Description>
     </Faction> 
 	
 	
@@ -220,7 +247,7 @@
 	<AcceptHumans>false</AcceptHumans>   
 	<AutoAcceptMember>false</AutoAcceptMember>   
 	<IsDefault>true</IsDefault>   
-	<DiscoveredByDefault>true</DiscoveredByDefault>    
+	<DiscoveredByDefault>false</DiscoveredByDefault>    
 	<StartingBalance>10000000000</StartingBalance>  
 	<Type>None</Type> 
 	<FactionIcon>Textures\FactionLogo\Builders\BuilderIcon_13.dds</FactionIcon>   
@@ -232,8 +259,36 @@
 	<EnableFriendlyFire>false</EnableFriendlyFire>   
 	<DefaultRelation>Neutral</DefaultRelation>
 	    
-	  	   <Description>The Result Oriented Sciences is a secretive and enigmatic organisation that provides advanced technology and weaponry to the Goldo Corporation. Their scientific breakthroughs have propelled the GC's fleets to victory, enabling them to overpower their adversaries with devastating force. The true nature of their research and the depths of their capabilities remain shrouded in mystery.</Description>
+	  	   <Description>Founded 200 years ago, the Result Oriented Sciences (ROS) was a powerful scientific organization and a fierce rival to the Sol Cooperative. Their groundbreaking technologies fueled devastating conflicts, but the Great Crisis marked their downfall. Defeated by the Sol Cooperative, the ROS was disbanded, leaving behind ruins and relics scattered across the known galaxy. To this day, in the Ares System, their artifacts and abandoned facilities await rediscovery, standing as haunting reminders of their once-formidable presence.</Description>
     </Faction> 
+
+  <!-- faction 3B -->
+    <Faction Tag="SOLCOOP" Founder="Sol Cooperative Founder">
+      <Id>
+        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+        <SubtypeId>Sol Cooperative</SubtypeId>
+      </Id>
+      <DisplayName>Sol Cooperative</DisplayName>
+	  
+	 
+	<AcceptHumans>false</AcceptHumans>   
+	<AutoAcceptMember>false</AutoAcceptMember>   
+	<IsDefault>true</IsDefault>   
+	<DiscoveredByDefault>true</DiscoveredByDefault>    
+	<StartingBalance>10000000000</StartingBalance>  
+	<Type>None</Type> 
+	<FactionIcon>Textures\FactionLogo\Others\OtherIcon_32.dds</FactionIcon>   
+	<StaticReputation>false</StaticReputation>   
+ 
+	<BackgroundColor R="3" G="1" B="187" />   
+	<IconColor R="255" G="213" B="109" />  
+
+	<EnableFriendlyFire>false</EnableFriendlyFire>   
+	<DefaultRelation>Neutral</DefaultRelation>
+	    
+	  	   <Description>Founded centuries ago, the Sol Cooperative is a powerful faction originating from the Solar System, known for its advanced technology and commitment to order. While their influence spans much of colonised star systems, their presence in the Ares System is limited to a single embassy Station 27. Internally, the Cooperative faces growing political turmoil, weakening their ability to project power in distant systems. Despite this, they remain vigilant in ensuring that relics and technology from the defunct Result Oriented Sciences (ROS) do not fall into the wrong hands.</Description>
+    </Faction> 
+
 	
  <!-- faction 4 -->
     <Faction Tag="ITC" Founder="ITC Founder">
@@ -259,7 +314,9 @@
 	<EnableFriendlyFire>false</EnableFriendlyFire>   
 	<DefaultRelation>Neutral</DefaultRelation>
 	  
-	 <Description>The Interstellar Trade Corporation, headquartered on the prosperous planet Thora-4, has risen to prominence in the post-war era. Benefiting from the system's newfound peace and growth, they wield significant economic influence and engage in interstellar commerce on a massive scale. Their trade routes span vast distances, fueling the system's prosperity, while simultaneously making them a target for pirates seeking to exploit their wealth.</Description>
+	 <Description>Founded centuries ago, the Interstellar Trade Corporation (ITC) was one of the first major corporations to establish a foothold in the Ares System. Long before the Great Crisis, they spearheaded the ambitious terraforming of Thora 4, transforming it into a hub of prosperity. However, the Crisis disrupted their plans, leaving Thora 4 far colder than anticipated, with massive ice caps reshaping the planet.
+
+Now, in the post-crisis era, the ITC has returned, reclaiming its influence by founding Starlight City on Thora 4. With trade routes reestablished and their operations thriving once again, they remain a driving force in interstellar commerce, though their wealth continues to attract the attention of opportunistic pirates</Description>
     </Faction> 
 
  <!-- faction 5 -->
@@ -273,7 +330,7 @@
 	<AcceptHumans>false</AcceptHumans>   
 	<AutoAcceptMember>false</AutoAcceptMember>   
 	<IsDefault>true</IsDefault>   
-	<DiscoveredByDefault>true</DiscoveredByDefault>    
+	<DiscoveredByDefault>false</DiscoveredByDefault>    
 	<StartingBalance>10000000000</StartingBalance>  
 	<Type>None</Type> 
 	<FactionIcon>Textures\FactionLogo\Builders\BuilderIcon_12.dds</FactionIcon>   
@@ -285,9 +342,8 @@
 	<EnableFriendlyFire>false</EnableFriendlyFire>   
 	<DefaultRelation>Neutral</DefaultRelation>
 	  
-	  
-	  
-	  	   <Description>The Remnants are the remnants of a once-strong faction that fell during the rise of the Goldo Corporation. Forced into hiding on the scorching planet Lezuno, they regrouped to preserve their ideals and resist the oppressive rule. Despite their diminished resources, they remain a resilient force, determined to rebuild their strength and seek retribution against the Goldo Corporation. Their survival amidst the harshest conditions speaks to their unwavering spirit and undying hope.</Description>
+		  
+	  	   <Description>Once a powerful faction on Lezuno, the Remnants survived the Great Crisis on the harsh planet’s surface. Though weakened, they remain determined to rebuild and reclaim their strength</Description>
     </Faction> 
 	
 
@@ -307,7 +363,7 @@
 	<DiscoveredByDefault>true</DiscoveredByDefault>    
 	<StartingBalance>10000000000</StartingBalance>  
 	<Type>None</Type> 
-	<FactionIcon>Textures\FactionLogo\Builders\BuilderIcon_12.dds</FactionIcon>   
+	<FactionIcon>Textures\FactionLogo\Others\OtherIcon_24.dds</FactionIcon>   
 	<StaticReputation>false</StaticReputation>   
 
 	<BackgroundColor R="111" G="85" B="46" />   
@@ -316,7 +372,7 @@
 	<EnableFriendlyFire>false</EnableFriendlyFire>   
 	<DefaultRelation>Neutral</DefaultRelation>
 	
-	  	   <Description>Operating from the planet Lorus, the Shivan Syndicate is a notorious criminal organisation primarily involved in the production and distribution of illicit substances, particularly the highly addictive Spice drugs. Exploiting the system's newfound prosperity, they thrive in the shadows, providing a steady supply of narcotics to those willing to pay their exorbitant prices. Their illegal activities bring them immense wealth but also make them a target for law enforcement and rival factions.</Description>
+	  	   <Description>Arriving in the Ares System after the Great Crisis, the Shivan Syndicate quickly became a notorious criminal group. Based on Lorus, they control the production and trade of illicit substances, thriving in the shadows while drawing the attention of law enforcement and rivals alike.</Description>
     </Faction> 
 	
 	
@@ -333,7 +389,7 @@
 	<AcceptHumans>false</AcceptHumans>   
 	<AutoAcceptMember>false</AutoAcceptMember>   
 	<IsDefault>true</IsDefault>   
-	<DiscoveredByDefault>true</DiscoveredByDefault>    
+	<DiscoveredByDefault>false</DiscoveredByDefault>    
 	<StartingBalance>10000000000</StartingBalance>  
 	<Type>None</Type> 
 	<FactionIcon>Textures\FactionLogo\Others\OtherIcon_31.dds</FactionIcon>   
@@ -362,7 +418,7 @@
 	<AcceptHumans>false</AcceptHumans>   
 	<AutoAcceptMember>false</AutoAcceptMember>   
 	<IsDefault>true</IsDefault>   
-	<DiscoveredByDefault>true</DiscoveredByDefault>    
+	<DiscoveredByDefault>false</DiscoveredByDefault>    
 	<StartingBalance>10000000000</StartingBalance>  
 	<Type>None</Type> 
 	<FactionIcon>Textures\FactionLogo\Others\OtherIcon_13.dds</FactionIcon>   
@@ -393,7 +449,7 @@
 	<DiscoveredByDefault>false</DiscoveredByDefault>    
 	<StartingBalance>10000000000</StartingBalance>  
 	<Type>None</Type> 
-	<FactionIcon>Textures\FactionLogo\Others\Spiders.dds</FactionIcon>   
+	<FactionIcon>Textures\FactionLogo\Spiders.dds</FactionIcon>   
 	<StaticReputation>true</StaticReputation>   
 	<StartingReputation>-1500</StartingReputation> 
 	<BackgroundColor R="0" G="0" B="0" />   

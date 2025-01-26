@@ -23,14 +23,14 @@ GC-SpawnGroup-MediumStrikeForce
 
 	[MaxSpawns:-1]
 
-	[SpawnGroups:AaW_SpawnGroup_Transport]
+	[SpawnGroups:AaW_SpawnGroup_Transport_{DestinationName}]
 	[MustBeOnDryLand:true]
 	
 	[UseRelativeSpawnPosition:false]
 	[MinDistance:250]
 	[MaxDistance:500]
-	[MinAltitude:5]
-	[MaxAltitude:100]
+	[MinAltitude:20]
+	[MaxAltitude:200]
 	[IgnoreSafetyChecks:true]
       
       </Description>
@@ -82,6 +82,7 @@ GC-SpawnGroup-MediumStrikeForce
 	[Triggers:AaW_TransportTrigger_Despawn]
 	[Triggers:AaW_TransportTrigger_DespawnMES]
 	[Triggers:AaW_TransportTrigger_Compromised]	  
+	[Triggers:AaW_TransportTrigger_ReceivedCommand_Abadonend]	  
       </Description>
       
     </EntityComponent>
@@ -157,10 +158,49 @@ GC-SpawnGroup-MediumStrikeForce
       </Description>
     </EntityComponent>
 	
-	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_TransportTrigger_ReceivedCommand_Abadonend</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:CommandReceived]
+	  [CommandReceiveCode:Abadonend@{EventInstance}]
+	  
+	  [UseTrigger:true]
+	  [StartsReady:true]
+
+	  [MaxActions:1]
+	  	
+	[Actions:AaW_TransportAction_ReceivedCommand_Abadonend]
+      </Description>
+    </EntityComponent>	
 
 
-	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_TransportAction_ReceivedCommand_Abadonend</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+
+[GenerateExplosion:true]
+[ExplosionRange:14]
+[ExplosionDamage:0]
+[ExplosionIgnoresVoxels:true]
+
+	[ForceDespawn:true]
+	[TryToDespawnThisGridOnly:true]
+
+
+      </Description>
+      
+    </EntityComponent>	
 	
 	
 	
@@ -236,7 +276,7 @@ GC-SpawnGroup-MediumStrikeForce
       <Description>
 
       [RivalAI Action]
-      [UseChatBroadcast:true]
+      [UseChatBroadcast:false]
       [ChatData:AaW_TransportChat_Compromised]
 
 [GenerateExplosion:true]

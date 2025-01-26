@@ -452,6 +452,7 @@ namespace AresAtWar.SessionCore
             mapping.Add("{ReputationReward}", $"{_missionType.ReputationReward}");
             mapping.Add("{FailReputationPrice}", $"{_missionType.FailReputationPrice}");
             mapping.Add("{Duration}", $"0");
+            mapping.Add("{destinationEncounter}", $"{destinationEncounter.Spawngroupname}");
 
             return mapping;
         }

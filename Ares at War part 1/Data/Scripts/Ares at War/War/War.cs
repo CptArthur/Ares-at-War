@@ -46,11 +46,12 @@ namespace AresAtWar.War
         private static Faction IRONFIST = new Faction("IRONFIST", new Color(128, 128, 128), MinorFaction: true); // gray
         private static Faction ITC = new Faction("ITC", new Color(173, 216, 230), MinorFaction: true); // lightblue
         private static Faction CIVILIAN = new Faction("CIVILIAN", new Color(212, 216, 230), MinorFaction: true); //Whiteish I hope
+        private static Faction DRA = new Faction("DRA", new Color(212, 111, 230), MinorFaction: true); //Whiteish I hope
 
 
         //public static List<Faction> _factions = new List<Faction>() { UNION, SYN, GC, PURGE, SDC };
 
-        public static List<Faction> _allfactions = new List<Faction>(){ UNION, SHIVAN, GC, PURGE, CRUSADERS, REMNANTS, IRONFIST, ITC, CIVILIAN };
+        public static List<Faction> _allfactions = new List<Faction>(){ UNION, SHIVAN, GC, PURGE, CRUSADERS, REMNANTS, IRONFIST, ITC, CIVILIAN, DRA };
 
         private const int Rounds = 67;
         private static readonly Random _random = new Random();
@@ -110,10 +111,10 @@ namespace AresAtWar.War
 
 
             // Nodes and StaticEncounters for Thorrix and related locations
-            var thorrixNode = new Node("Thorrix", "Sector Thorrix", SHIVAN, new Vector3D(-3668737, -1323824, -2524678), 18000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Rural);
+            var thorrixNode = new Node("Thorrix", "Sector Thorrix", UNION, new Vector3D(-3668737, -1323824, -2524678), 18000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Rural);
             var thorrix = new StaticEncounter(thorrixNode.Id, "Thorrix", "CIVILIAN", new Vector3D(-3666954.82093188, -1319040.62686428, -2525488.18626478), false);
 
-            var thorrixWestNode = new Node("ThorrixWest", "Sector Thorrix West", SHIVAN, new Vector3D(-3639053, -1318183, -2528451), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Barren);
+            var thorrixWestNode = new Node("ThorrixWest", "Sector Thorrix West", DRA, new Vector3D(-3639053, -1318183, -2528451), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Barren);
 
             // Nodes and StaticEncounters for Bratis and related locations
             var bratisNode = new Node("Bratis", "Sector Bratis", GC, new Vector3D(-3715949, -1286742, -2567999), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Rural);
@@ -150,6 +151,7 @@ namespace AresAtWar.War
 
 
             var thora4Node = new Node("Thora4", "Thora 4", ITC, new Vector3D(-666090, -1101079, -3477316), 94894, macro: MarcoLocation.Bylen, planet: Planet.Thora4, feel: Feel.Barren);
+            var starlight = new StaticEncounter(thora4Node.Id, "StarlightCity", "CIVILIAN", new Vector3D(-712725.31332499, -1112936.04750601, -3487850.09379849), false);
 
             //var nyx = new StaticEncounter(thora4Node.Id, "Nyx", "CIVILIAN", new Vector3D(-665793.281388648, -1100790.49719151, -3477104.76459571), false, new List<string>() { "Settlement" });
 
