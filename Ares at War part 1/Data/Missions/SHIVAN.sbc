@@ -2,12 +2,10 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
   
-  
-  <!-- Profiles -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>ITC_ContractBlockProfile_Civilian</SubtypeId>
+        <SubtypeId>SYN_ContractBlockProfile_Civilian</SubtypeId>
       </Id>
       <Description>
         [MES Contract Block]
@@ -16,24 +14,21 @@
         
         [MinContracts:5]
         [MaxContracts:15]
-		[MissionIds:AaW_Mission_ProcITC]
-		[MissionIds:AaW_Mission_ProcITC]   
-		[MissionIds:AaW_Mission_ProcITC]  		
+
+								
       </Description>
     </EntityComponent>	 
 
-
-
-
+	<!-- SYN -->
   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_Mission_ProcITC</SubtypeId>
+        <SubtypeId>AaW_Mission_ProcSYN</SubtypeId>
       </Id>
       <Description>
 
     [MES Mission]
-	[Tags:ITC]
+	[Tags:SYN]
 	
 	[Title:{EventName}]
 	[Description:{Description}]
@@ -51,7 +46,8 @@
 
     </EntityComponent>
 
-	
+
+
 	
   </EntityComponents>
 </Definitions>

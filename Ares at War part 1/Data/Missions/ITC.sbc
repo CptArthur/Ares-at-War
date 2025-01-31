@@ -18,7 +18,7 @@
         [MaxContracts:15]
 		[MissionIds:AaW_Mission_ProcITC]
 		[MissionIds:AaW_Mission_ProcITC]   
-		[MissionIds:AaW_Mission_ProcITC]  		
+		[MissionIds:AaW_Mission_ITCMilaStation]  		
       </Description>
     </EntityComponent>	 
 
@@ -51,7 +51,43 @@
 
     </EntityComponent>
 
+	  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_ITCMilaStation</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	[Tags:ITC]
 	
+	[Title:Deliver Construction Supplies]
+	[Description:The ITC has been hard at work building a space station in the Mila Belt, but construction is at a critical stage, and essential supplies are needed to complete the project. Your mission is to safely deliver these supplies to the specified coordinates in the Mila Belt.
+
+Expect potential interference from pirate factions in the area.]
+	
+	[InstanceEventGroupId:MissionGroup_Transport]
+	
+	[Reward:30000000]
+	[Collateral:5000000]
+	[ReputationReward:125]
+	[FailReputationPrice:25]
+	[Duration:0]
+
+
+	[ReplaceKeys:{EventName}]
+	[ReplaceValues:Deliver Construction Supplies]	
+
+	[ReplaceKeys:{DestinationLocation}]
+	[ReplaceValues:{X:1999675.77889953 Y:1167867.71613474 Z:2124757.02763414}]	
+
+  [Exclusive:true]
+
+  [ActivateBooleanNameOnSucces:ITCMilaStationSupplies]
+
+      </Description>
+
+    </EntityComponent>
 	
   </EntityComponents>
 </Definitions>

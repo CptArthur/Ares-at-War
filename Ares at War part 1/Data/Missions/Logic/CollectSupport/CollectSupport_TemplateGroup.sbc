@@ -8,45 +8,42 @@ Variables:
 {StartingLocation}
 {DestinationLocation}
 {Description}
+ 
+
+ContractBlockLocation
 
 
-
-
- s
-On start Send GPS to Players; 
-PlayerNear Watcher 
-If playerclose spawnship
-If player leaves the area (50km) -> Fail the mission.
-If ships despawns (trigger) -> Fail the mission.
-
-
+ ContractBlockFaction
  -->
-  
+
+	
 	
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MissionGroup_BountyHunting</SubtypeId>
+          <SubtypeId>MissionGroup_CollectSupport</SubtypeId>
       </Id>
       <Description>
 		[MES Event TemplateGroup]
+		
+		[TemplateEventIds:AaW_EventTemplate_CollectSupport_Init]	
 
-		[TemplateEventIds:AaW_EventTemplate_BountyHunting_Abandoned]	
-		[TemplateEventIds:AaW_EventTemplate_BountyHunting_Failed]	
-		[TemplateEventIds:AaW_EventTemplate_BountyHunting_Success]	
+		[TemplateEventIds:AaW_EventTemplate_CollectSupport_Success]
+		[TemplateEventIds:AaW_EventTemplate_CollectSupport_Failed]
+		[TemplateEventIds:AaW_EventTemplate_CollectSupport_Abandoned]
+		
 
-		[TemplateEventIds:AaW_EventTemplate_BountyHunting_Init]	
-		[TemplateEventIds:AaW_EventTemplate_BountyHunting_PlayerNear]
+		[TemplateEventIds:AaW_EventTemplate_CollectSupport_SendCommand]
 
       </Description>
 	</EntityComponent>	
 	
-
+	
 	<!-- Start Required -->
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_EventTemplate_BountyHunting_Abandoned</SubtypeId>
+          <SubtypeId>AaW_EventTemplate_CollectSupport_Abandoned</SubtypeId>
       </Id>
       <Description>
 
@@ -55,7 +52,7 @@ If ships despawns (trigger) -> Fail the mission.
 		[UseEvent:false]
 		[UniqueEvent:true]		
 		[ActionExecution:All]
-		[ActionIds:AaW_EventActionTemplate_BountyHunting_CloseInstance]
+		[ActionIds:AaW_EventActionTemplate_CollectSupport_CloseInstance]
 
       </Description>
 	</EntityComponent>		
@@ -63,7 +60,7 @@ If ships despawns (trigger) -> Fail the mission.
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_EventActionTemplate_BountyHunting_CloseInstance</SubtypeId>
+          <SubtypeId>AaW_EventActionTemplate_CollectSupport_CloseInstance</SubtypeId>
       </Id>
       <Description>
 	[MES Event Action Template]
@@ -75,14 +72,22 @@ If ships despawns (trigger) -> Fail the mission.
 	[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
 	
 	[AddPlayerConditionPlayerTags:true]
-	[AddIncludedPlayerTags:@{InstanceId}]	
+	[AddIncludedPlayerTags:@{InstanceId}]
+
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:AaW_DummyCommandProfile]
+	[CommandProfileOriginCoords:{DestinationLocation}]
+	
+	[OverrideCommandCode:Abadonend@{InstanceId}]
+
+	
       </Description>
     </EntityComponent>		
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_EventTemplate_BountyHunting_Failed</SubtypeId>
+          <SubtypeId>AaW_EventTemplate_CollectSupport_Failed</SubtypeId>
       </Id>
       <Description>
 
@@ -92,7 +97,7 @@ If ships despawns (trigger) -> Fail the mission.
 		
 		[UniqueEvent:true]		
 		[ActionExecution:All]
-		[ActionIds:AaW_EventActionTemplate_BountyHunting_Failed]
+		[ActionIds:AaW_EventActionTemplate_CollectSupport_Failed]
 
       </Description>
 	</EntityComponent>	
@@ -100,7 +105,7 @@ If ships despawns (trigger) -> Fail the mission.
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_EventActionTemplate_BountyHunting_Failed</SubtypeId>
+          <SubtypeId>AaW_EventActionTemplate_CollectSupport_Failed</SubtypeId>
       </Id>
       <Description>
 	[MES Event Action Template]
@@ -115,14 +120,23 @@ If ships despawns (trigger) -> Fail the mission.
 	[AddIncludedPlayerTags:@{InstanceId}]	
 	
       </Description>
-		</EntityComponent>	
+    </EntityComponent>		
+	<!-- End Required -->
 	
+
+
+
+
+
+
+	<!-- Success -->	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_EventTemplate_BountyHunting_Success</SubtypeId>
+          <SubtypeId>AaW_EventTemplate_CollectSupport_Success</SubtypeId>
       </Id>
       <Description>
+
 		[MES Event Template]
 		[UseEvent:false]
 		[MinCooldownMs:5000]
@@ -132,10 +146,15 @@ If ships despawns (trigger) -> Fail the mission.
 		
 		[ActionExecution:Sequential]
 		[TimeUntilNextActionMs:5000] 
+
+		
 		
 		[ActionIds:AaW-EventAction-Common-IncomingMessage]
-		[ActionIds:AaW_EventActionTemplate_BountyHunting_Success]
 		
+		[ActionIds:AaW_EventActionTemplate_CollectSupport_Success]
+	
+		
+
       </Description>
 	</EntityComponent>	
 
@@ -143,13 +162,94 @@ If ships despawns (trigger) -> Fail the mission.
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_EventActionTemplate_BountyHunting_Success</SubtypeId>
+          <SubtypeId>AaW_EventActionTemplate_CollectSupport_Success</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+	[RemoveGPSFromPlayers:true]
+	[RemoveGPSNames:{EventName}]
+	[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	[TryContractSuccess:true]
+
+	
+	[UseChatBroadcast:true]
+	[ChatData:AaW_EventChat_Template]	
+	
+	[UseChatOverrideColor:true]
+	[ChatOverrideColor:Green]
+	[UseChatOverrideAuthor:true]
+	[ChatOverrideAuthor:{EventName}]
+	
+	[UseChatOverrideMessage:true]
+	[ChatOverrideMessage:Well done {PlayerName}! Here is your reward as promised]
+	[UseChatOverrideAudio:true]
+	[ChatOverrideAudio:MES-ShipyardSell]
+      </Description>
+    </EntityComponent>	
+	<!-- End Required -->
+	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_CollectSupport_Init</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:true]
+		[UniqueEvent:true]	
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+		[ActionExecution:All]
+		[ActionIds:AaW_EventActionTemplate_CollectSupport_CreateGPS]
+		
+		[ActionIds:AaW_EventActionTemplate_CollectSupport_SpawnCollectSupport]
+
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_CollectSupport_CreateGPS</SubtypeId>
       </Id>
       <Description>
 	[MES Event Action Template]
 	
-	[TryContractSuccess:true]
+	[AddGPSToPlayers:true]
+	[AddGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	[UseGPSObjective:false]
+	
+	[GPSNames:{EventName}]
+	[GPSVector3Ds:{DestinationLocation}]
+	
+	
+	[AddPlayerConditionPlayerTags:true]
+	[AddIncludedPlayerTags:@{InstanceId}]	
+      </Description>
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_CollectSupport_SpawnCollectSupport</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
 
+	[SpawnEncounter:true]
+	[SpawnData:AaW_Spawner_CollectSupport]
+	[SpawnFactionTags:{ContractBlockFaction}]
+	[SpawnCoords:{ContractBlockLocation}]
+	
+	
+	[SpawnReplaceKeys:{DestinationName}]
+	[SpawnReplaceValues:{destinationEncounter}]
+	
 	[UseChatBroadcast:true]
 	[ChatData:AaW_EventChat_Template]	
 	
@@ -159,153 +259,109 @@ If ships despawns (trigger) -> Fail the mission.
 	[ChatOverrideAuthor:]
 	
 	[UseChatOverrideMessage:true]
-	[ChatOverrideMessage:Well done {PlayerName}! Here is your reward as promised]
+	[ChatOverrideMessage:Trying to spawn shit]
 	[UseChatOverrideAudio:true]
-	[ChatOverrideAudio:MES-ShipyardSell]
+	[ChatOverrideAudio:]
 
       </Description>
+      
     </EntityComponent>	
-	<!-- End Required -->	
-
+			
 	
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_EventTemplate_BountyHunting_Init</SubtypeId>
-      </Id>
-      <Description>
 
-		[MES Event Template]
-		[UseEvent:true]
-		[UniqueEvent:true]	
-		[MinCooldownMs:2000]
-		[MaxCooldownMs:2001]	
-		[ActionExecution:All]
-		[ActionIds:AaW_EventActionTemplate_BountyHunting_CreateGPS]
-
-      </Description>
-	</EntityComponent>	
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_EventActionTemplate_BountyHunting_CreateGPS</SubtypeId>
-      </Id>
-      <Description>
-	[MES Event Action Template]
-
-	[AddGPSToPlayers:true]
-	[AddGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
-	[UseGPSObjective:false]
-	
-	[GPSNames:Last known location]
-	[GPSVector3Ds:{EventCoords}]
-	
-	
-	[AddPlayerConditionPlayerTags:true]
-	[AddIncludedPlayerTags:@{InstanceId}]
-      </Description>
-    </EntityComponent>	
 	
 	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_EventTemplate_BountyHunting_PlayerNear</SubtypeId>
+          <SubtypeId>AaW_EventTemplate_CollectSupport_SendCommand</SubtypeId>
       </Id>
       <Description>
 
 		[MES Event Template]
 		[UseEvent:true]
 		
-		[UniqueEvent:true]	
+		[UniqueEvent:false]	
 		[MinCooldownMs:2000]
 		[MaxCooldownMs:2001]	
 
-		[ConditionIds:AaW_EventConditionTemplate_BountyHunting_PlayerNear]	
+
 		
 		[ActionExecution:All]
 
-		[ActionIds:AaW_EventActionTemplate_BountyHunting_Spawnbounty]
+		[ActionIds:AaW_EventActionTemplate_CollectSupport_SendCommand]
 
       </Description>
 	</EntityComponent>	
       
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_EventConditionTemplate_BountyHunting_PlayerNear</SubtypeId>
-      </Id>
-      <Description>
-	[MES Event Condition Template]
-
-
-	[CheckPlayerNear:true]
-	[PlayerNearCoords:{EventCoords}]
-	[PlayerNearDistanceFromCoords:2000]
-
-      </Description>
-      
-    </EntityComponent>		  
 	  
 	  
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_EventActionTemplate_BountyHunting_Spawnbounty</SubtypeId>
+          <SubtypeId>AaW_EventActionTemplate_CollectSupport_SendCommand</SubtypeId>
       </Id>
       <Description>
 	[MES Event Action Template]
-
-	[SpawnEncounter:true]
-	[SpawnData:SPRT_Spawner_Bounty]
-	[SpawnFactionTags:SPRT]
-	[SpawnCoords:{EventCoords}]
 	
-	[RemoveGPSFromPlayers:true]
-	[RemoveGPSNames:{EventName}]
-	[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
 	
-	[UseChatBroadcast:true]
-	[ChatData:AaW_EventChat_BountyHunting_Start]
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:AaW_DummyCommandProfile_800m]
+	[CommandProfileOriginCoords:{DestinationLocation}]
 	
-
-
-
+	[OverrideCommandCode:{InstanceId}]
       </Description>
-      
-    </EntityComponent>	
-	
-	
-	
-	
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    </EntityComponent>	  
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_EventChat_BountyHunting_Start</SubtypeId>
-      </Id> 
+          <SubtypeId>AaW_DummyCommandProfile_800m</SubtypeId>
+      </Id>
       <Description>
-      [RivalAI Chat]
+
+      [RivalAI Command]
       
-      [UseChat:true]
-      [StartsReady:true]
-      [Chance:100]
-      [MaxChats:-1]
-      [BroadcastRandomly:true]
-      [IgnoreAntennaRequirement:True]
-      [IgnoredAntennaRangeOverride:1]
-      [SendToAllOnlinePlayers:true]
-
-	
-      [Color:Green]
-      [Author:MES DEBUG]
-        
-      [ChatMessages:Spawning grid]
-      [BroadcastChatType:Chat]
-      [ChatAudio:]  
-
+      [CommandCode:TestCode]
+      
+	  
+	  [SingleRecipient:true]
+	  [IgnoreAntennaRequirement:true]
+	  [IgnoreReceiverAntennaRequirement:true]
+	  
+	  [Radius:800]
+	  
+	  
       </Description>
+      
     </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DummyCommandProfile</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Command]
+      
+      [CommandCode:TestCode]
+      
+	  
+	  [SingleRecipient:true]
+	  [IgnoreAntennaRequirement:true]
+	  [IgnoreReceiverAntennaRequirement:true]
+	  
+	  [Radius:9999999999999999999999999999]
+	  
+	  
+      </Description>
+      
+    </EntityComponent>
+	
+
+
 
 	
   </EntityComponents>
