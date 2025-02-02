@@ -19,12 +19,14 @@
       <Components>
         <Component Subtype="SteelPlate" Count="120" />
         <Component Subtype="MetalGrid" Count="150" />
+		<Component Subtype="GoldWire" Count="150" />		
         <Component Subtype="GravityGenerator" Count="90" />
         <Component Subtype="Detector" Count="60" />
         <Component Subtype="JumpCore" Count="10" />		
         <Component Subtype="PowerCell" Count="360" />
         <Component Subtype="Superconductor" Count="4200" />
-        <Component Subtype="Computer" Count="900" />
+        <Component Subtype="Computer" Count="100" />
+		<Component Subtype="QuantumComputer" Count="400" />
         <Component Subtype="Construction" Count="540" />
         <Component Subtype="SteelPlate" Count="60" />
       </Components>
@@ -95,12 +97,14 @@
       <Components>
         <Component Subtype="SteelPlate" Count="12" />
         <Component Subtype="MetalGrid" Count="15" />
+		<Component Subtype="GoldWire" Count="50" />		
         <Component Subtype="GravityGenerator" Count="9" />
         <Component Subtype="Detector" Count="6" />
 		<Component Subtype="JumpCore" Count="2" />
         <Component Subtype="PowerCell" Count="36" />
         <Component Subtype="Superconductor" Count="420" />
-        <Component Subtype="Computer" Count="90" />
+        <Component Subtype="Computer" Count="50" />
+		<Component Subtype="QuantumComputer" Count="100" />		
         <Component Subtype="Construction" Count="54" />
         <Component Subtype="SteelPlate" Count="6" />
       </Components>
@@ -166,10 +170,14 @@
       <SilenceableByShipSoundSystem>true</SilenceableByShipSoundSystem>
       <Components>
         <Component Subtype="SteelPlate" Count="400" />
-        <Component Subtype="MetalGrid" Count="1000" />
         <Component Subtype="Construction" Count="1300" />
+		<Component Subtype="Computer" Count="50" />
+		<Component Subtype="AdvancedComputer" Count="100" />
         <Component Subtype="LargeTube" Count="640" />
+        <Component Subtype="MetalGrid" Count="500" />		
         <Component Subtype="Thrust" Count="3840" />
+		<Component Subtype="GravityGenerator" Count="20" />
+		<Component Subtype="Ceramic" Count="50" />
         <Component Subtype="SteelPlate" Count="200" />
       </Components>
       <CriticalComponent Subtype="Thrust" Index="0" />
@@ -275,10 +283,14 @@
       <SilenceableByShipSoundSystem>true</SilenceableByShipSoundSystem>
       <Components>
         <Component Subtype="SteelPlate" Count="4" />
-        <Component Subtype="MetalGrid" Count="20" />
         <Component Subtype="Construction" Count="48" />
+		<Component Subtype="Computer" Count="5" />
+		<Component Subtype="AdvancedComputer" Count="15" />		
         <Component Subtype="LargeTube" Count="20" />
+        <Component Subtype="MetalGrid" Count="20" />		
         <Component Subtype="Thrust" Count="48" />
+		<Component Subtype="GravityGenerator" Count="5" />
+		<Component Subtype="Ceramic" Count="10" />		
         <Component Subtype="SteelPlate" Count="16" />
       </Components>
       <CriticalComponent Subtype="Thrust" Index="0" />
@@ -379,12 +391,13 @@
         <Component Subtype="SteelPlate" Count="1000" />
         <Component Subtype="Construction" Count="960" />		
         <Component Subtype="MetalGrid" Count="60" />
-
+		<Component Subtype="CopperWire" Count="20" />
         <Component Subtype="LargeTube" Count="60" />
-        <Component Subtype="SmallTube" Count="300" />
-        <Component Subtype="Superconductor" Count="240" />
-		<Component Subtype="LaserEmitter" Count="30" />>
-        <Component Subtype="Motor" Count="120" />
+		<Component Subtype="Motor" Count="25" />
+		<Component Subtype="LaserEmitter" Count="30" />
+		<Component Subtype="Electromagnet" Count="50" />
+		<Component Subtype="Ceramic" Count="25" />
+		<Component Subtype="HeatingElement" Count="50" />
         <Component Subtype="Computer" Count="60" />
         <Component Subtype="SteelPlate" Count="660" />
       </Components>
@@ -471,14 +484,15 @@
       <ModelOffset x="0" y="0" z="0" />
       <Model>Models\Cubes\Small\Prototech_Refinery_Small.mwm</Model>
       <Components>
-        <Component Subtype="SteelPlate" Count="1580" />
+        <Component Subtype="SteelPlate" Count="250" />
         <Component Subtype="MetalGrid" Count="20" />
         <Component Subtype="Construction" Count="320" />
         <Component Subtype="LargeTube" Count="20" />
-        <Component Subtype="SmallTube" Count="100" />
-        <Component Subtype="Superconductor" Count="80" />
-        <Component Subtype="LaserEmitter" Count="10" />
-        <Component Subtype="Motor" Count="40" />
+		<Component Subtype="Motor" Count="25" />
+		<Component Subtype="LaserEmitter" Count="5" />
+		<Component Subtype="Electromagnet" Count="10" />
+		<Component Subtype="Ceramic" Count="5" />
+		<Component Subtype="HeatingElement" Count="10" />
         <Component Subtype="Computer" Count="20" />
         <Component Subtype="SteelPlate" Count="220" />
       </Components>
@@ -546,7 +560,7 @@
         <TypeId>Assembler</TypeId>
         <SubtypeId>LargePrototechAssembler</SubtypeId>
       </Id>
-      <DisplayName>Nano Assembler</DisplayName>
+      <DisplayName>Nano-Assembler B</DisplayName>
       <Icon>Textures\GUI\Icons\Cubes\Prototech_Assembler.dds</Icon>
       <Description>Nano Assemblers are capable of manufacturing most High-Tech components, including Relic-Tech components.</Description>
       <CubeSize>Large</CubeSize>
@@ -556,14 +570,17 @@
       <ModelOffset x="0" y="0" z="0" />
       <Model>Models\Cubes\Large\Prototech_Assembler.mwm</Model>
       <Components>
-        <Component Subtype="SteelPlate" Count="360" />
-        <Component Subtype="MetalGrid" Count="270" />
-        <Component Subtype="Construction" Count="390" />
-        <Component Subtype="Motor" Count="60" />
-        <Component Subtype="Display" Count="30" />
-        <Component Subtype="LaserEmitter" Count="20" />
-        <Component Subtype="Computer" Count="600" />
-        <Component Subtype="SteelPlate" Count="60" />
+        <Component Subtype="SteelPlate" Count="50" />
+        <Component Subtype="Construction" Count="80" />
+        <Component Subtype="GoldWire" Count="50" />
+        <Component Subtype="Motor" Count="20" />
+        <Component Subtype="TitaniumPlate" Count="25" />
+        <Component Subtype="LaserEmitter" Count="10" />
+        <Component Subtype="Ceramic" Count="50" />
+        <Component Subtype="SuperMagnet" Count="10" />
+        <Component Subtype="Computer" Count="10" />
+        <Component Subtype="AdvancedComputer" Count="100" />
+        <Component Subtype="SteelPlate" Count="20" />
       </Components>
       <CriticalComponent Subtype="Computer" Index="0" />
       <MountPoints>
@@ -782,12 +799,10 @@
             <SubtypeId>Scrap</SubtypeId>
           </DeconstructId>
         </Component>
-		<Component Subtype="Superconductor" Count="40" />
-        <Component Subtype="Computer" Count="100" />
-	
+        <Component Subtype="Computer" Count="75" />
         <Component Subtype="SteelPlate" Count="180" />
       </Components>
-      <CriticalComponent Subtype="Computer" Index="0" />
+      <CriticalComponent Subtype="PowerCell" Index="0" />
       <MountPoints>
         <MountPoint Side="Front" StartX="0" StartY="0.1" EndX="2" EndY="0.9" />
         <MountPoint Side="Top" StartX="0" StartY="0.1" EndX="2" EndY="0.9" />
@@ -850,12 +865,11 @@
             <SubtypeId>Scrap</SubtypeId>
           </DeconstructId>
         </Component>
-		<Component Subtype="Superconductor" Count="15" />
-        <Component Subtype="Computer" Count="20" />		
+        <Component Subtype="Computer" Count="6" />
         <Component Subtype="Construction" Count="9" />
         <Component Subtype="SteelPlate" Count="60" />
       </Components>
-      <CriticalComponent Subtype="Computer" Index="0" />
+      <CriticalComponent Subtype="PowerCell" Index="0" />
       <MountPoints>
         <MountPoint Side="Front" StartX="0.1" StartY="0.1" EndX="2.9" EndY="0.9" />
         <MountPoint Side="Top" StartX="0.1" StartY="0.1" EndX="2.9" EndY="1.9" />
@@ -917,12 +931,15 @@
       <UsesDeformation>false</UsesDeformation>
       <Components>
         <Component Subtype="SteelPlate" Count="540" />
-        <Component Subtype="MetalGrid" Count="240" />
         <Component Subtype="Construction" Count="600" />
+		<Component Subtype="CopperWire" Count="25" />
         <Component Subtype="LargeTube" Count="360" />
+		<Component Subtype="MetalGrid" Count="240" />
         <Component Subtype="Motor" Count="15" />
         <Component Subtype="Computer" Count="60" />
-        <Component Subtype="SteelPlate" Count="360" />
+		<Component Subtype="AdvancedComputer" Count="40" />
+        <Component Subtype="Ceramic" Count="25" />
+        <Component Subtype="TitaniumPlate" Count="100" />
       </Components>
       <CriticalComponent Subtype="Computer" Index="0" />
       <MountPoints>

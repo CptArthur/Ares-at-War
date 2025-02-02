@@ -1,0 +1,967 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <CubeBlocks>
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallReinforcedArmorCube</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Block</DisplayName>
+      <Icon>Icons\ReinforcedArmorCube.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallReinforcedArmorCube.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+      </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\Small\Armor\HeavySquarePlateConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Small\Armor\HeavySquarePlateConstruction_2.mwm" RandomOrientation="true" />
+      </BuildProgressModels>
+	  
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>ReinforcedArmorCube</BlockPairName>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallReinforcedArmorSlope</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Slope</DisplayName>
+      <Icon>Icons\ReinforcedArmorSlope.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallReinforcedArmorSlope.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Left" ExclusionMask="1" PropertiesMask="2" StartX="0" StartY="0" EndX="0.5" EndY="1" />
+        <MountPoint Side="Left" ExclusionMask="1" PropertiesMask="2" StartX="0.5" StartY="0" EndX="1" EndY="0.5" />
+        <MountPoint Side="Right" ExclusionMask="1" PropertiesMask="2" StartX="0" StartY="0" EndX="0.5" EndY="0.5" />
+        <MountPoint Side="Right" ExclusionMask="1" PropertiesMask="2" StartX="0.5" StartY="0" EndX="1" EndY="1" />
+      </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\Small\Armor\HeavySlopePlateConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Small\Armor\HeavySlopePlateConstruction_2.mwm" />
+      </BuildProgressModels>
+	  
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>ReinforcedArmorSlope</BlockPairName>
+	<MirroringX>None</MirroringX>
+	<MirroringY>Z</MirroringY>
+	<MirroringZ>Y</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallReinforcedArmorCorner</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Corner</DisplayName>
+      <Icon>Icons\ReinforcedArmorCorner.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallReinforcedArmorCorner.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Front" ExclusionMask="1" PropertiesMask="2" StartX="0" StartY="0" EndX="0.2" EndY="1" />
+        <MountPoint Side="Front" ExclusionMask="1" PropertiesMask="2" StartX="0.2" StartY="0" EndX="0.8" EndY="0.8" />
+        <MountPoint Side="Front" ExclusionMask="1" PropertiesMask="2" StartX="0.8" StartY="0" EndX="1" EndY="0.2" />
+        <MountPoint Side="Right" ExclusionMask="1" PropertiesMask="2" StartX="0" StartY="0" EndX="0.2" EndY="0.2" />
+        <MountPoint Side="Right" ExclusionMask="1" PropertiesMask="2" StartX="0.2" StartY="0" EndX="0.8" EndY="0.8" />
+        <MountPoint Side="Right" ExclusionMask="1" PropertiesMask="2" StartX="0.8" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Bottom" ExclusionMask="1" PropertiesMask="2" StartX="0" StartY="0" EndX="0.2" EndY="0.2" />
+        <MountPoint Side="Bottom" ExclusionMask="1" PropertiesMask="2" StartX="0.2" StartY="0" EndX="0.8" EndY="0.8" />
+        <MountPoint Side="Bottom" ExclusionMask="1" PropertiesMask="2" StartX="0.8" StartY="0" EndX="1" EndY="1" />
+      </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\Small\Armor\HeavyFacePlateConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Small\Armor\HeavyFacePlateConstruction_2.mwm" />
+      </BuildProgressModels>
+	  
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>ReinforcedArmorCorner</BlockPairName>
+	<MirroringX>MinusHalfY</MirroringX>
+	<MirroringY>MinusHalfZ</MirroringY>
+	<MirroringZ>HalfY</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallReinforcedArmorInvCorner</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Inv. Corner</DisplayName>
+      <Icon>Icons\ReinforcedArmorInvCorner.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallReinforcedArmorInvCorner.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Right" StartX="0" StartY="0" EndX="0.2" EndY="1" />
+        <MountPoint Side="Right" StartX="0.2" StartY="0.2" EndX="0.8" EndY="1" />
+        <MountPoint Side="Right" StartX="0.8" StartY="0.8" EndX="1" EndY="1" />
+        <MountPoint Side="Front" StartX="0" StartY="0.8" EndX="0.2" EndY="1" />
+        <MountPoint Side="Front" StartX="0.2" StartY="0.2" EndX="0.8" EndY="1" />
+        <MountPoint Side="Front" StartX="0.8" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="0.2" EndY="1" />
+        <MountPoint Side="Bottom" StartX="0.2" StartY="0.2" EndX="0.8" EndY="1" />
+        <MountPoint Side="Bottom" StartX="0.8" StartY="0.8" EndX="1" EndY="1" />
+      </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\Small\Armor\HeavyInvFacePlateConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Small\Armor\HeavyInvFacePlateConstruction_2.mwm" />
+      </BuildProgressModels>
+	  
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>ReinforcedArmorInvCorner</BlockPairName>
+	<MirroringX>MinusHalfY</MirroringX>
+	<MirroringY>MinusHalfZ</MirroringY>
+	<MirroringZ>HalfY</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallReinforcedArmorCornerSquare</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Corner Square</DisplayName>
+      <Icon>Icons\ReinforcedArmorCornerSquare.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallReinforcedArmorCornerSquare.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+            <MountPoints>
+                <MountPoint EndX="1.0" EndY="0.5" Side="Left" StartX="0.5" StartY="0.0"/>
+                <MountPoint EndX="0.5" EndY="1.0" Side="Left" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="0.5" EndY="0.5" Side="Front" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Front" StartX="0.5" StartY="0.0"/>
+                <MountPoint EndX="0.0" EndY="0.0" Side="Bottom" StartX="1.0" StartY="1.0"/>
+            </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\CornerSquareConstruction_1.mwm"/>
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\CornerSquareConstruction_2.mwm"/>
+                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\Small\Armor\CornerSquareConstruction_3.mwm"/>
+            </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>ReinforcedArmorCornerSquare</BlockPairName>
+	<MirroringX>HalfY</MirroringX>
+	<MirroringY>XHalfY</MirroringY>
+	<MirroringZ>MinusHalfY</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallReinforcedArmorCornerSquareInv</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Corner Square Inv.</DisplayName>
+      <Icon>Icons\ReinforcedArmorCornerSquareInv.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallReinforcedArmorCornerSquareInv.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+            <MountPoints>
+                <MountPoint EndX="0.5" EndY="1.0" Side="Back" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.5" Side="Back" StartX="0.5" StartY="0.0"/>
+                <MountPoint EndX="0.5" EndY="0.5" Side="Right" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Right" StartX="0.5" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Left" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Front" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="0.0" EndY="0.0" Side="Bottom" StartX="1.0" StartY="1.0"/>
+            </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\CornerSquareInvertedConstruction_1.mwm"/>
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\CornerSquareInvertedConstruction_2.mwm"/>
+                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\Small\Armor\CornerSquareInvertedConstruction_3.mwm"/>
+            </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>ReinforcedArmorCornerSquareInv</BlockPairName>
+	<MirroringX>HalfY</MirroringX>
+	<MirroringY>XHalfY</MirroringY>
+	<MirroringZ>MinusHalfY</MirroringZ>
+    </Definition>
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallReinforcedArmorSlope2x1x1Base</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Slope 2x1x1 Base</DisplayName>
+      <Icon>Icons\ReinforcedArmorSlope2x1x1Base.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallReinforcedArmorSlope2x1x1Base.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="0.5" />
+        <MountPoint Side="Left" StartX="0" StartY="0" EndX="0.5" EndY="1" />
+        <MountPoint Side="Left" StartX="0.5" StartY="0" EndX="1" EndY="0.5" />
+        <MountPoint Side="Right" StartX="0" StartY="0" EndX="0.5" EndY="0.5" />
+        <MountPoint Side="Right" StartX="0.5" StartY="0" EndX="1" EndY="1" />
+      </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\HeavySlope2BaseConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\HeavySlope2BaseConstruction_2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Small\Armor\HeavySlope2BaseConstruction_3.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>ReinforcedArmorSlope2x1x1Base</BlockPairName>
+	<MirroringX>None</MirroringX>
+	<MirroringY>Z</MirroringY>
+	<MirroringZ>Y</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallReinforcedArmorSlope2x1x1Tip</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Slope 2x1x1 Tip</DisplayName>
+      <Icon>Icons\ReinforcedArmorSlope2x1x1Tip.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallReinforcedArmorSlope2x1x1Tip.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="0.5" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Left" ExclusionMask="1" PropertiesMask="2" StartX="0" StartY="0" EndX="0.2" EndY="0.5" />
+        <MountPoint Side="Left" ExclusionMask="1" PropertiesMask="2" StartX="0.2" StartY="0" EndX="0.8" EndY="0.4" />
+        <MountPoint Side="Left" ExclusionMask="1" PropertiesMask="2" StartX="0.8" StartY="0" EndX="1" EndY="0.1" />
+        <MountPoint Side="Right" ExclusionMask="1" PropertiesMask="2" StartX="0" StartY="0" EndX="0.2" EndY="0.1" />
+        <MountPoint Side="Right" ExclusionMask="1" PropertiesMask="2" StartX="0.2" StartY="0" EndX="0.8" EndY="0.4" />
+        <MountPoint Side="Right" ExclusionMask="1" PropertiesMask="2" StartX="0.8" StartY="0" EndX="1" EndY="0.5" />
+      </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\HeavySlope2TipConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\HeavySlope2TipConstruction_2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Small\Armor\HeavySlope2TipConstruction_3.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>ReinforcedArmorSlope2x1x1Tip</BlockPairName>
+	<MirroringX>None</MirroringX>
+	<MirroringY>Z</MirroringY>
+	<MirroringZ>Y</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallHalfReinforcedArmor</SubtypeId>
+      </Id>
+      <DisplayName>Half Reinforced Armor Block</DisplayName>
+      <Icon>Icons\HalfReinforcedArmor.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallHalfReinforcedArmor.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="0.5" />
+        <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Left" StartX="0" StartY="0" EndX="0.5" EndY="1" />
+        <MountPoint Side="Right" StartX="0.5" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Top" StartX="0" StartY="0.5" EndX="1" EndY="1" />
+      </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\HeavySquarePlateSlabConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\HeavySquarePlateSlabConstruction_2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Small\Armor\HeavySquarePlateSlabConstruction_3.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>HalfReinforcedArmor</BlockPairName>
+	<MirroringX>None</MirroringX>
+	<MirroringY>Z</MirroringY>
+	<MirroringZ>Y</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallHalfSlopeReinforcedArmor</SubtypeId>
+      </Id>
+      <DisplayName>Half Slope Reinforced Armor</DisplayName>
+      <Icon>Icons\HalfSlopeReinforcedArmor.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallHalfSlopeReinforcedArmor.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Front" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.5" />
+        <MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="1.00" EndY="0.5" />
+        <MountPoint Side="Left" ExclusionMask="1" PropertiesMask="2" StartX="0" StartY="0" EndX="0.16" EndY="0.5" />
+        <MountPoint Side="Left" ExclusionMask="1" PropertiesMask="2" StartX="0.16" StartY="0" EndX="0.33" EndY="0.33" />
+        <MountPoint Side="Left" ExclusionMask="1" PropertiesMask="2" StartX="0.33" StartY="0" EndX="0.5" EndY="0.16" />
+        <MountPoint Side="Right" ExclusionMask="1" PropertiesMask="2" StartX="0.5" StartY="0" EndX="0.66" EndY="0.16" />
+        <MountPoint Side="Right" ExclusionMask="1" PropertiesMask="2" StartX="0.66" StartY="0" EndX="0.84" EndY="0.33" />
+        <MountPoint Side="Right" ExclusionMask="1" PropertiesMask="2" StartX="0.84" StartY="0" EndX="1.0" EndY="0.5" />
+      </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\HeavySquarePlateSlopeConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\HeavySquarePlateSlopeConstruction_2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Small\Armor\HeavySquarePlateSlopeConstruction_3.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>HalfSlopeReinforcedArmor</BlockPairName>
+	<MirroringX>None</MirroringX>
+	<MirroringY>Z</MirroringY>
+	<MirroringZ>Y</MirroringZ>
+    </Definition>
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallHalfSlopeCornerReinforcedArmor</SubtypeId>
+      </Id>
+      <DisplayName>Half Slope Corner Reinforced Armor</DisplayName>
+      <Icon>Icons\HalfSlopeCornerReinforcedArmor.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallHalfSlopeCornerReinforcedArmor.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+            <MountPoints>
+                <MountPoint EndX="0.45" EndY="0.45" Side="Right" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.45" Side="Back" StartX="0.55" StartY="0.0"/>
+                <MountPoint EndX="0.55" EndY="0.55" Side="Bottom" StartX="1.0" StartY="1.0"/>
+            </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\HalfSlopeCornerConstruction_1.mwm"/>
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\HalfSlopeCornerConstruction_2.mwm"/>
+                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\Small\Armor\HalfSlopeCornerConstruction_3.mwm"/>
+            </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>HalfSlopeCornerReinforcedArmor</BlockPairName>
+	<MirroringX>HalfY</MirroringX>
+	<MirroringY>XHalfY</MirroringY>
+	<MirroringZ>MinusHalfY</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallReinforcedArmorHalfCorner</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Half Corner</DisplayName>
+      <Icon>Icons\ReinforcedArmorHalfCorner.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallReinforcedArmorHalfCorner.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+            <MountPoints>
+                <MountPoint EndX="0.5" EndY="1.0" Side="Bottom" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.5" Side="Bottom" StartX="0.5" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.5" Side="Left" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.5" Side="Front" StartX="0.0" StartY="0.0"/>
+            </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\HalfCornerConstruction_1.mwm"/>
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\HalfCornerConstruction_2.mwm"/>
+                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\Small\Armor\HalfCornerConstruction_3.mwm"/>
+            </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>ReinforcedArmorHalfCorner</BlockPairName>
+	<MirroringX>HalfY</MirroringX>
+	<MirroringY>XHalfY</MirroringY>
+	<MirroringZ>MinusHalfY</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallReinforcedArmorHalfSlopedCorner</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Half Sloped Corner</DisplayName>
+      <Icon>Icons\ReinforcedArmorHalfSlopedCorner.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallReinforcedArmorHalfSlopedCorner.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+            <MountPoints>
+                <MountPoint EndX="0.5" EndY="1.0" Side="Left" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.5" Side="Left" StartX="0.5" StartY="0.0"/>
+                <MountPoint EndX="0.5" EndY="0.5" Side="Front" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Front" StartX="0.5" StartY="0.0"/>
+                <MountPoint EndX="0.5" EndY="1.0" Side="Bottom" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.5" Side="Bottom" StartX="0.5" StartY="0.0"/>
+            </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\HalfSlopedCornerConstruction_1.mwm"/>
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\HalfSlopedCornerConstruction_2.mwm"/>
+                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\Small\Armor\HalfSlopedCornerConstruction_3.mwm"/>
+            </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>ReinforcedArmorHalfSlopedCorner</BlockPairName>
+	<MirroringX>HalfY</MirroringX>
+	<MirroringY>XHalfY</MirroringY>
+	<MirroringZ>MinusHalfY</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallReinforcedArmorCorner2x1x1Base</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Corner 2x1x1 Base</DisplayName>
+      <Icon>Icons\ReinforcedArmorCorner2x1x1Base.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallReinforcedArmorCorner2x1x1Base.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Right" ExclusionMask="1" PropertiesMask="2" StartX="0.8" StartY="0" EndX="1" EndY="0.2" />
+        <MountPoint Side="Front" ExclusionMask="1" PropertiesMask="2" StartX="0" StartY="0" EndX="0.2" EndY="0.2" />
+        <MountPoint Side="Front" ExclusionMask="1" PropertiesMask="2" StartX="0.2" StartY="0" EndX="0.8" EndY="0.8" />
+        <MountPoint Side="Front" ExclusionMask="1" PropertiesMask="2" StartX="0.8" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Left" ExclusionMask="1" PropertiesMask="2" StartX="0" StartY="0" EndX="0.2" EndY="1" />
+        <MountPoint Side="Left" ExclusionMask="1" PropertiesMask="2" StartX="0.2" StartY="0" EndX="0.8" EndY="0.8" />
+        <MountPoint Side="Left" ExclusionMask="1" PropertiesMask="2" StartX="0.8" StartY="0" EndX="1" EndY="0.2" />
+        <MountPoint Side="Bottom" ExclusionMask="1" PropertiesMask="2" StartX="0" StartY="0" EndX="0.2" EndY="1" />
+        <MountPoint Side="Bottom" ExclusionMask="1" PropertiesMask="2" StartX="0.2" StartY="0" EndX="0.8" EndY="0.8" />
+        <MountPoint Side="Bottom" ExclusionMask="1" PropertiesMask="2" StartX="0.8" StartY="0" EndX="1" EndY="0.2" />
+      </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\HeavyCorner2BaseConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\HeavyCorner2BaseConstruction_2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Small\Armor\HeavyCorner2BaseConstruction_3.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>ReinforcedArmorCorner2x1x1Base</BlockPairName>
+	<MirroringX>YHalfX</MirroringX>
+	<MirroringY>MinusHalfX</MirroringY>
+	<MirroringZ>HalfX</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallReinforcedArmorCorner2x1x1Tip</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Corner 2x1x1 Tip</DisplayName>
+      <Icon>Icons\ReinforcedArmorCorner2x1x1Tip.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallReinforcedArmorCorner2x1x1Tip.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Bottom" ExclusionMask="1" PropertiesMask="2" StartX="0.9" StartY="0.8" EndX="1" EndY="1" />
+        <MountPoint Side="Bottom" ExclusionMask="1" PropertiesMask="2" StartX="0.6" StartY="0.2" EndX="1" EndY="0.8" />
+        <MountPoint Side="Bottom" ExclusionMask="1" PropertiesMask="2" StartX="0.5" StartY="0" EndX="1" EndY="0.2" />
+        <MountPoint Side="Right" ExclusionMask="1" PropertiesMask="2" StartX="0" StartY="0" EndX="0.2" EndY="0.1" />
+        <MountPoint Side="Right" ExclusionMask="1" PropertiesMask="2" StartX="0.2" StartY="0" EndX="0.8" EndY="0.4" />
+        <MountPoint Side="Right" ExclusionMask="1" PropertiesMask="2" StartX="0.8" StartY="0" EndX="1" EndY="0.5" />
+        <MountPoint Side="Front" ExclusionMask="1" PropertiesMask="2" StartX="0" StartY="0" EndX="0.5" EndY="0.5" />
+      </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\HeavyCorner2TipConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\HeavyCorner2TipConstruction_2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Small\Armor\HeavyCorner2TipConstruction_3.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>ReinforcedArmorCorner2x1x1Tip</BlockPairName>
+	<MirroringX>HalfZ</MirroringX>
+	<MirroringY>MinusHalfZ</MirroringY>
+	<MirroringZ>YHalfZ</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallReinforcedArmorInvCorner2x1x1Base</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Inv. Corner 2x1x1 Base</DisplayName>
+      <Icon>Icons\ReinforcedArmorInvCorner2x1x1Base.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallReinforcedArmorInvCorner2x1x1Base.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Right" StartX="0" StartY="0" EndX="0.5" EndY="1" />
+        <MountPoint Side="Right" StartX="0.5" StartY="0.5" EndX="0.8" EndY="1" />
+        <MountPoint Side="Right" StartX="0.8" StartY="0.8" EndX="1" EndY="1" />
+        <MountPoint Side="Front" StartX="0" StartY="0.8" EndX="0.2" EndY="1" />
+        <MountPoint Side="Front" StartX="0.2" StartY="0.5" EndX="0.8" EndY="1" />
+        <MountPoint Side="Front" StartX="0.8" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="0.5" EndY="1" />
+        <MountPoint Side="Bottom" StartX="0.5" StartY="0.5" EndX="0.8" EndY="1" />
+        <MountPoint Side="Bottom" StartX="0.8" StartY="0.8" EndX="1" EndY="1" />
+      </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\HeavyInvCorner2BaseConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\HeavyInvCorner2BaseConstruction_2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Small\Armor\HeavyInvCorner2BaseConstruction_3.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>ReinforcedArmorInvCorner2x1x1Base</BlockPairName>
+	<MirroringX>HalfZ</MirroringX>
+	<MirroringY>MinusHalfZ</MirroringY>
+	<MirroringZ>YHalfZ</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallReinforcedArmorInvCorner2x1x1Tip</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Inv. Corner 2x1x1 Tip</DisplayName>
+      <Icon>Icons\ReinforcedArmorInvCorner2x1x1Tip.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallReinforcedArmorInvCorner2x1x1Tip.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Back" StartX="0" StartY="0" EndX="0.2" EndY="1" />
+        <MountPoint Side="Back" StartX="0.2" StartY="0.2" EndX="0.8" EndY="1" />
+        <MountPoint Side="Back" StartX="0.8" StartY="0.5" EndX="1" EndY="1" />
+        <MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Right" StartX="0" StartY="0.5" EndX="0.8" EndY="1" />
+        <MountPoint Side="Right" StartX="0.8" StartY="0.8" EndX="1" EndY="1" />
+        <MountPoint Side="Front" StartX="0" StartY="0.8" EndX="0.2" EndY="1" />
+        <MountPoint Side="Front" StartX="0.2" StartY="0.2" EndX="0.8" EndY="1" />
+        <MountPoint Side="Front" StartX="0.8" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="0.2" EndY="1" />
+        <MountPoint Side="Bottom" StartX="0.2" StartY="0.5" EndX="0.5" EndY="1" />
+      </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\HeavyInvCorner2TipConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\HeavyInvCorner2TipConstruction_2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Small\Armor\HeavyInvCorner2TipConstruction_3.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>ReinforcedArmorInvCorner2x1x1Tip</BlockPairName>
+	<MirroringX>HalfZ</MirroringX>
+	<MirroringY>MinusHalfZ</MirroringY>
+	<MirroringZ>YHalfZ</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallHalfSlopeCornerInvReinforcedArmor</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Half Slope Corner Inv.</DisplayName>
+      <Icon>Icons\HalfSlopeCornerInvReinforcedArmor.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallHalfSlopeCornerInvReinforcedArmor.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+            <MountPoints>
+                <MountPoint EndX="0.5" EndY="1.0" Side="Front" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.5" Side="Front" StartX="0.5" StartY="0.0"/>
+                <MountPoint EndX="0.6" EndY="0.6" Side="Front" StartX="0.5" StartY="0.5"/>
+                <MountPoint EndX="0.5" EndY="0.5" Side="Top" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Top" StartX="0.5" StartY="0.0"/>
+                <MountPoint EndX="0.5" EndY="0.6" Side="Top" StartX="0.4" StartY="0.5"/>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Right" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Back" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="0.0" EndY="0.0" Side="Bottom" StartX="1.0" StartY="1.0"/>
+                <MountPoint EndX="0.5" EndY="0.5" Side="Left" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Left" StartX="0.5" StartY="0.0"/>
+                <MountPoint EndX="0.5" EndY="0.6" Side="Left" StartX="0.4" StartY="0.5"/>
+            </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\HalfSlopeCornerInvertedConstruction_1.mwm"/>
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\HalfSlopeCornerInvertedConstruction_2.mwm"/>
+                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\Small\Armor\HalfSlopeCornerInvertedConstruction_3.mwm"/>
+            </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>HalfSlopeCornerInvReinforcedArmor</BlockPairName>
+	<MirroringX>HalfY</MirroringX>
+	<MirroringY>XHalfY</MirroringY>
+	<MirroringZ>MinusHalfY</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallHalfSlopeInvReinforcedArmor</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Half Slope Inv.</DisplayName>
+      <Icon>Icons\HalfSlopeInvReinforcedArmor.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallHalfSlopeInvReinforcedArmor.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+            <MountPoints>
+                <MountPoint EndX="1.0" EndY="0.5" Side="Right" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="0.5" EndY="1.0" Side="Top" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Left" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="0.5" EndY="0.5" Side="Front" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Front" StartX="0.5" StartY="0.0"/>
+                <MountPoint EndX="0.5" EndY="0.6" Side="Front" StartX="0.4" StartY="0.5"/>
+                <MountPoint EndX="0.5" EndY="1.0" Side="Back" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.5" Side="Back" StartX="0.5" StartY="0.0"/>
+                <MountPoint EndX="0.6" EndY="0.5" Side="Back" StartX="0.5" StartY="0.6"/>
+                <MountPoint EndX="0.0" EndY="0.0" Side="Bottom" StartX="1.0" StartY="1.0"/>
+            </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\HalfSlopeInvertedConstruction_1.mwm"/>
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\HalfSlopeInvertedConstruction_2.mwm"/>
+                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\Small\Armor\HalfSlopeInvertedConstruction_3.mwm"/>
+            </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>HalfSlopeInvReinforcedArmor</BlockPairName>
+	<MirroringX>Y</MirroringX>
+	<MirroringY>HalfZ</MirroringY>
+	<MirroringZ>None</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallSlopedCornerReinforcedArmorTip</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Sloped Corner Tip</DisplayName>
+      <Icon>Icons\SlopedCornerReinforcedArmorTip.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallSlopedCornerReinforcedArmorTip.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+            <MountPoints>
+                <MountPoint EndX="0.5" EndY="0.5" Side="Bottom" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Bottom" StartX="0.0" StartY="0.5"/>
+                <MountPoint EndX="0.2" EndY="0.5" Side="Back" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="0.2" EndY="0.4" Side="Back" StartX="0.8" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.1" Side="Back" StartX="0.8" StartY="0.0"/>
+                <MountPoint EndX="0.2" EndY="0.1" Side="Left" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="0.8" EndY="0.4" Side="Left" StartX="0.2" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.5" Side="Left" StartX="0.8" StartY="0.0"/>
+            </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\SlopedCornerTipConstruction_1.mwm"/>
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\SlopedCornerTipConstruction_2.mwm"/>
+                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\Small\Armor\SlopedCornerTipConstruction_3.mwm"/>
+            </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>SlopedCornerReinforcedArmorTip</BlockPairName>
+	<MirroringX>MinusHalfY</MirroringX>
+	<MirroringY>ZHalfY</MirroringY>
+	<MirroringZ>HalfY</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallReinforcedArmorSlopedCornerBase</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Sloped Corner Base</DisplayName>
+      <Icon>Icons\ReinforcedArmorSlopedCornerBase.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallReinforcedArmorSlopedCornerBase.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+            <MountPoints>
+                <MountPoint EndX="0.0" EndY="0.0" Side="Bottom" StartX="1.0" StartY="1.0"/>
+                <MountPoint EndX="0.5" EndY="0.5" Side="Back" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Back" StartX="0.5" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Right" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Front" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="0.5" EndY="1.0" Side="Left" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.5" Side="Left" StartX="0.5" StartY="0.0"/>
+                <MountPoint EndX="0.5" EndY="0.5" Side="Top" StartX="0.0" StartY="1.0"/>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Top" StartX="0.5" StartY="0.0"/>
+            </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\SlopedCornerBaseConstruction_1.mwm"/>
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\SlopedCornerBaseConstruction_2.mwm"/>
+                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\Small\Armor\SlopedCornerBaseConstruction_3.mwm"/>
+            </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>ReinforcedArmorSlopedCornerBase</BlockPairName>
+	<MirroringX>MinusHalfY</MirroringX>
+	<MirroringY>ZHalfY</MirroringY>
+	<MirroringZ>HalfY</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallReinforcedArmorSlopedCorner</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Sloped Corner</DisplayName>
+      <Icon>Icons\ReinforcedArmorSlopedCorner.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallReinforcedArmorSlopedCorner.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+            <MountPoints>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Bottom" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="0.2" EndY="0.5" Side="Back" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="0.8" EndY="0.4" Side="Back" StartX="0.2" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.1" Side="Back" StartX="0.8" StartY="0.0"/>
+                <MountPoint EndX="0.2" EndY="0.1" Side="Right" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="0.8" EndY="0.4" Side="Right" StartX="0.2" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.5" Side="Right" StartX="0.8" StartY="0.0"/>
+                <MountPoint EndX="0.5" EndY="0.5" Side="Front" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="1.0" Side="Front" StartX="0.5" StartY="0.0"/>
+                <MountPoint EndX="0.5" EndY="1.0" Side="Left" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.5" Side="Left" StartX="0.5" StartY="0.0"/>
+            </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\SlopedCornerConstruction_1.mwm"/>
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\SlopedCornerConstruction_2.mwm"/>
+                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\Small\Armor\SlopedCornerConstruction_3.mwm"/>
+            </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>ReinforcedArmorSlopedCorner</BlockPairName>
+	<MirroringX>HalfY</MirroringX>
+	<MirroringY>XHalfY</MirroringY>
+	<MirroringZ>MinusHalfY</MirroringZ>
+    </Definition>
+	
+    <Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>SmallReinforcedArmorHalfSlopedCornerBase</SubtypeId>
+      </Id>
+      <DisplayName>Reinforced Armor Half Sloped Corner Base</DisplayName>
+      <Icon>Icons\ReinforcedArmorHalfSlopedCornerBase.dds</Icon>
+      <Description>Armor constructed from Dorium-alloy plating provides unparalleled durability.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ReinforcedArmor\SmallReinforcedArmorHalfSlopedCornerBase.mwm</Model>
+      <Components>
+        <Component Subtype="ReinforcedPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="ReinforcedPlate" Index="0" />
+            <MountPoints>
+                <MountPoint EndX="0.0" EndY="0.0" Side="Bottom" StartX="1.0" StartY="1.0"/>
+                <MountPoint EndX="0.2" EndY="0.5" Side="Back" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="0.8" EndY="0.4" Side="Back" StartX="0.2" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.1" Side="Back" StartX="0.8" StartY="0.0"/>
+                <MountPoint EndX="0.2" EndY="0.1" Side="Right" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="0.8" EndY="0.4" Side="Right" StartX="0.2" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.5" Side="Right" StartX="0.8" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.5" Side="Front" StartX="0.0" StartY="0.0"/>
+                <MountPoint EndX="1.0" EndY="0.5" Side="Left" StartX="0.0" StartY="0.0"/>
+            </MountPoints>
+      <EdgeType>Heavy</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Armor\HalfSlopedCornerBaseConstruction_1.mwm"/>
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Small\Armor\HalfSlopedCornerBaseConstruction_2.mwm"/>
+                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\Small\Armor\HalfSlopedCornerBaseConstruction_3.mwm"/>
+            </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>ReinforcedArmorHalfSlopedCornerBase</BlockPairName>
+	<MirroringX>HalfY</MirroringX>
+	<MirroringY>XHalfY</MirroringY>
+	<MirroringZ>MinusHalfY</MirroringZ>
+    </Definition>
+   </CubeBlocks>
+</Definitions>
