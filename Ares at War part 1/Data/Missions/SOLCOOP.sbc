@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SOLCOOP_ContractBlockProfile_Civilian</SubtypeId>
+      </Id>
+      <Description>
+        [MES Contract Block]
+
+		[MissionIds:SOLCOOP_Mission_RelicData]
+        
+        [MinContracts:5]
+        [MaxContracts:15]
+
+								
+      </Description>
+    </EntityComponent>	 
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SOLCOOP_Mission_RelicData</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	[Tags:SOLCOOP]
+	[OverrideFaction:SOLCOOP]
+	
+	[Title:Sell Relic Data]
+	[Description:]
+	
+	[StoreProfileId:AaW_StoreProfile_RelicData]
+	[MissionType:Acquisition]
+	
+	[Reward:50000000]
+	[Collateral:0]
+	[ReputationReward:75]
+	[FailReputationPrice:0]
+	[Duration:5]
+
+
+  [Exclusive:true]
+
+      </Description>
+    </EntityComponent>
+
+	
+  </EntityComponents>
+</Definitions>
+

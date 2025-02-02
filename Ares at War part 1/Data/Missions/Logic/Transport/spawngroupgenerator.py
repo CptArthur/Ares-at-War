@@ -1,4 +1,4 @@
-destinations = ["Station27", "Rak", "Basin", "Voss","Doohan", "ITC_AgarisAtlas","GC_BratisBase", "Thorrix", "AHE_HQ", "AHE_Outpost1","AHE_Outpost2", "AHE_Outpost3","Carcosa", "ITC_AgarisVinyTradeOutpost",
+destinations = ["Aether","Station27", "Rak", "Basin", "Voss","Doohan", "ITC_AgarisAtlas","GC_BratisBase", "Thorrix", "AHE_HQ", "AHE_Outpost1","AHE_Outpost2", "AHE_Outpost3","Carcosa", "ITC_AgarisVinyTradeOutpost",
 "GC_Azuris", "Azuris","SunsetCity"]
 
 spawn_group_template = '''<SpawnGroup>

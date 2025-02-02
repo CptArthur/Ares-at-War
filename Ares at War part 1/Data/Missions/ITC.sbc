@@ -16,9 +16,9 @@
         
         [MinContracts:5]
         [MaxContracts:15]
-		[MissionIds:AaW_Mission_ProcITC]
-		[MissionIds:AaW_Mission_ProcITC]   
-		[MissionIds:AaW_Mission_ITCMilaStation]  		
+		[MissionIds:ITC_Mission_Proc]
+		[MissionIds:ITC_Mission_RelicData]   
+		[MissionIds:ITC_Mission_MilaStation]  		
       </Description>
     </EntityComponent>	 
 
@@ -28,7 +28,7 @@
   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_Mission_ProcITC</SubtypeId>
+        <SubtypeId>ITC_Mission_Proc</SubtypeId>
       </Id>
       <Description>
 
@@ -54,12 +54,12 @@
 	  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_Mission_ITCMilaStation</SubtypeId>
+        <SubtypeId>ITC_Mission_MilaStation</SubtypeId>
       </Id>
       <Description>
-
     [MES Mission]
 	[Tags:ITC]
+	[OverrideFaction:ITC]
 	
 	[Title:Deliver Construction Supplies]
 	[Description:The ITC has been hard at work building a space station in the Mila Belt, but construction is at a critical stage, and essential supplies are needed to complete the project. Your mission is to safely deliver these supplies to the specified coordinates in the Mila Belt.
@@ -77,6 +77,11 @@ Expect potential interference from pirate factions in the area.]
 
 	[ReplaceKeys:{EventName}]
 	[ReplaceValues:Deliver Construction Supplies]	
+	
+	
+	[ReplaceKeys:{destinationEncounter}]
+	[ReplaceValues:Aether]	
+
 
 	[ReplaceKeys:{DestinationLocation}]
 	[ReplaceValues:{X:1999675.77889953 Y:1167867.71613474 Z:2124757.02763414}]	
@@ -86,8 +91,45 @@ Expect potential interference from pirate factions in the area.]
   [ActivateBooleanNameOnSucces:ITCMilaStationSupplies]
 
       </Description>
+    </EntityComponent>
+	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>ITC_Mission_RelicData</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	[Tags:ITC]
+	[OverrideFaction:ITC]
+	
+	[Title:Sell Relic Data]
+	[Description:]
+	
+	[StoreProfileId:AaW_StoreProfile_RelicData]
+	[MissionType:Acquisition]
+	
+	[Reward:50000000]
+	[Collateral:0]
+	[ReputationReward:50]
+	[FailReputationPrice:0]
+	[Duration:5]
+
+
+  [Exclusive:true]
+[SoloMission:true]
+
+      </Description>
 
     </EntityComponent>
+		
+
+
+	
 	
   </EntityComponents>
 </Definitions>
