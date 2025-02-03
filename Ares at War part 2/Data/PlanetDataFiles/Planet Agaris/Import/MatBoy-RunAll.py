@@ -194,14 +194,14 @@ location = f"D:/SEMods-Github/Ares-at-War-part-1/Ares at War part 2/Data/PlanetD
 Importlocation = f"D:/SEMods-Github/Ares-at-War-part-1/Ares at War part 2/Data/PlanetDataFiles/{PlanetName}/Import/"
 locationIO = f"D:/SEMods-Github/Ares-at-War-part-1/Ares at War part 2/Data/PlanetDataFiles/{PlanetName} - IO/"
 
-for side in sides:
-    Mloc = location + side + "_mat.png"
-    rloc = Importlocation + side + "vox.png"
-    gloc = Importlocation + side + "biom.png"
-    bloc = Importlocation + side + "ore.png"
-    Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side)
+#for side in sides:
+#    Mloc = location + side + "_mat.png"
+#    rloc = Importlocation + side + "vox.png"
+#    gloc = Importlocation + side + "biom.png"
+#    bloc = Importlocation + side + "ore.png"
+#    Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side)
 
-IO
+
 print("Starting IO")
 for side in sides:
     Mloc = locationIO + side + "_mat.png"
@@ -213,3 +213,4 @@ for side in sides:
 
 
 print("Klaar")
+input()

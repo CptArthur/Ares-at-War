@@ -214,12 +214,12 @@ for side in sides:
     bloc = Importlocation + side + "ore.png"
     Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side)
 
-#for side in sides:
-#    Mloc = locationIO + side + "_mat.png"
-#    rloc = Importlocation + side + "vox.png"
-#    gloc = Importlocation + side + "biom.png"
-#    bloc = Importlocation + side + "oreIO.png"
-#    Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side)
+for side in sides:
+    Mloc = locationIO + side + "_mat.png"
+    rloc = Importlocation + side + "vox.png"
+    gloc = Importlocation + side + "biom.png"
+    bloc = Importlocation + side + "oreIO.png"
+    Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side)
 
 
 

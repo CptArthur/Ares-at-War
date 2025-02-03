@@ -154,7 +154,7 @@ filename = "lezuno"
 #filename = "crait" 
 
 height = True
-Vox = False
+Vox = True
 Biome = False
 Ore = True
 

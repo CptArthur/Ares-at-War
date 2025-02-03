@@ -185,14 +185,14 @@ def Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side):
 
 
 
-MrhoekR = False
+MrhoekR = True
 MrhoekG = False
 MrhoekB = False
 
 
 
 
-Red = False
+Red = True
 Green = False
 Blue = True
 
@@ -200,7 +200,7 @@ Blue = True
 
 
 sides = ["back","down","front","left","right","up"]
-PlanetName = "Planet Lezuno" #Als Agaris of Thora4 dan moet (208,208,208) aan
+PlanetName = "Planet Lezuno" #Als Agaris of Thora4 of Lezuno dan moet (208,208,208) aan
 usebasicoremap = False
 
 location = f"D:/SEMods-Github/Ares-at-War-part-1/Ares at War part 2/Data/PlanetDataFiles/{PlanetName}/"

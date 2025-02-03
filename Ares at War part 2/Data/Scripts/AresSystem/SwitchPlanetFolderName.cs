@@ -226,7 +226,13 @@ namespace IndustrialOreRemap
 					break;
 
 				}
+				if (mod.PublishedFileId == 3419903353)
+				{
+					ioDetected = true;
+					break;
 
+				}
+				
 			}
 
 
@@ -260,7 +266,7 @@ namespace IndustrialOreRemap
 				return;
 			}
 
-			//Vanilla
+			/*
 			foreach (var voxelmat in allVoxelMaterials)
 			{
 				var voxel = voxelmat as MyVoxelMaterialDefinition;
@@ -270,7 +276,7 @@ namespace IndustrialOreRemap
 					return;
 				}
 			}
-
+			*/
 		}
 
 

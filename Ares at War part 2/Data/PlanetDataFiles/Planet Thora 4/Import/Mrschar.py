@@ -156,7 +156,7 @@ filename = "thora4"
 height = True
 Vox = True
 Biome = True
-Ore = False
+Ore = True
 
 #Normal
 upcoords = (0,0,2048,2048)
@@ -181,5 +181,5 @@ if(Planet == "Planet Agaris"):
 run()
 print("Done")
 
-
+input()
 
