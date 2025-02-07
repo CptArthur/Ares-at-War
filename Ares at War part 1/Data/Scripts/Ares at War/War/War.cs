@@ -203,7 +203,7 @@ namespace AresAtWar.War
             _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { azuris, sunsetcity, ahehq, bratis, carcosa, thorrix, station27 }, 1));
 
             //Space run
-            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { rak, station27, doohan }, 3, new List<string>() { "CIVILIAN" }));
+            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { rak, station27 }, 3, new List<string>() { "CIVILIAN" }));
 
             //ITC only
             _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { sunsetcity, station27 , ITC_AgarisAtlas, ITC_AgarisVinyTradeOutpost }, 3, new List<string>() { "ITC" }));

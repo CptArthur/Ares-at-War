@@ -7,31 +7,31 @@ import os
 
 # Create a tkinter root window (it won't be shown)
 root = tk.Tk()
-root.withdraw()  # Hide the root window
+root.withdraw()
 
 # Open a file dialog to select the image
 file_path = filedialog.askopenfilename(filetypes=[("PNG Files", "*.png")])
 
-# Check if a file was selected
 if file_path:
-    # Load the selected PNG image
-    cube_dice = np.array(Image.open(file_path))
-
-    # Convert the cube map image to equirectangular format
-    cube_h = py360convert.c2e(cube_dice, 4096, 8192, cube_format='dice')
-
-    # Save the resulting equirectangular image as PNG
-    equirec_image = np.uint8(np.clip(cube_h, 0, 255))  # Convert to uint8 type for image saving
-    img = Image.fromarray(equirec_image)  # Convert NumPy array to PIL Image
-
-    # Get the folder and filename of the selected image
-    folder = os.path.dirname(file_path)
-    filename = os.path.basename(file_path)
-    output_path = os.path.join(folder, f"{filename}")  # Save the output image with a modified name
-
-    # Save the image
-    img.save(output_path)
-
-    print(f"Image saved as: {output_path}")
+    # Load image with forced RGB conversion
+    img = Image.open(file_path).convert('RGB')  # <- Critical fix here
+    cube_dice = np.array(img)
+    
+    # Debug check
+    print("Image shape:", cube_dice.shape)  # Should show (H, W, 3)
+    
+    try:
+        cube_h = py360convert.c2e(cube_dice, 4096, 8192, cube_format='dice')
+        
+        # Save result
+        equirec_image = np.uint8(np.clip(cube_h, 0, 255))
+        output_path = os.path.join(os.path.dirname(file_path), 
+                                 f"EQUI_{os.path.basename(file_path)}")
+        Image.fromarray(equirec_image).save(output_path)
+        print(f"Saved: {output_path}")
+        
+    except Exception as e:
+        print(f"Conversion failed: {str(e)}")
+        print("Possible causes: Invalid cube map layout, wrong dimensions, or unsupported color mode")
 else:
     print("No file selected.")
