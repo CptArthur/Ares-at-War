@@ -3,14 +3,10 @@
   <EntityComponents>
 
     
-  
-    
-    
-    
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>ITC_StoreProfile_ITCCapitalIO_Ingot</SubtypeId>
+        <SubtypeId>ITC_StoreProfile_ITCCapitalIO_Settlement</SubtypeId>
       </Id>
       <Description>
 
@@ -18,32 +14,29 @@
 
         [FileSource:AaW_StoreItems_Thora4IO.xml]
         
-        [MinOfferItems:20]
-        [MaxOfferItems:20]
-        [MinOrderItems:20]
-        [MaxOrderItems:20]
+        [MinOfferItems:99]
+        [MaxOfferItems:99]
+        [MinOrderItems:99]
+        [MaxOrderItems:99]
 
         [ItemsRequireInventory:false]
 
         
-        [Orders:Ingot/Iron] 
-        [Orders:Ingot/Nickel] 
-        [Orders:Ingot/Silicon] 
-        [Orders:Ingot/Copper] 
-        [Orders:Ingot/Cobalt] 
-        [Orders:Ingot/Silver] 
-        [Orders:Ingot/Gold] 
-        [Orders:Ingot/Aluminum] 
-        [Orders:Ingot/Titanium] 
-        [Orders:Ingot/Sulfur] 
-        [Orders:Ingot/Carbon] 
-        [Orders:Ingot/Polymer] 
-        [Orders:Ingot/FuelOil] 
-        [Orders:Ingot/Niter] 
-        [Orders:Ingot/Platinum] 
-        [Orders:Ingot/Uranium] 
-        [Orders:Ingot/Lithium] 
-        [Orders:Ingot/Tantalum] 
+        [Orders:Ore/Iron] 
+        [Orders:Ore/Nickel] 
+        [Orders:Ore/Silicon] 
+        [Orders:Ore/Copper] 
+        [Orders:Ore/Cobalt] 
+        [Orders:Ore/Silver] 
+        [Orders:Ore/Gold] 
+        [Orders:Ore/Aluminum] 
+        [Orders:Ore/Titanium] 
+        [Orders:Ore/Sulfur] 
+        [Orders:Ore/Carbon] 
+        [Orders:Ore/Polymer] 
+        [Orders:Ore/FuelOil] 
+        [Orders:Ore/Platinum] 
+        [Orders:Ore/Lithium] 
 
         [Offers:Ingot/Iron] 
         [Offers:Ingot/Nickel] 
@@ -62,14 +55,45 @@
         [Offers:Ingot/Lithium] 
 
 
+        
+        
+        [Orders:Component/CivilianProductI] 
+        [Orders:Component/CivilianProductII] 
+        [Orders:Component/CivilianProductIII] 
+
+        [Offers:Component/SteelPlate] 
+        [Offers:Component/Construction] 
+        [Offers:Component/Girder] 
+        [Offers:Component/InteriorPlate] 
+        [Offers:Component/Construction] 
+        [Offers:Component/SmallTube] 
+        [Offers:Component/LargeTube] 
+        [Offers:Component/BulletproofGlass] 
+        [Offers:Component/Motor] 
+        [Offers:Component/Display] 
+        [Offers:Component/Computer] 
+        [Offers:Component/RadioCommunicationComponent] 
+        [Offers:Component/Detector] 
+        [Offers:Component/Canvas] 
+        [Offers:Component/SolarCell] 
+        [Offers:Component/PowerCell] 
+        [Offers:Component/Explosives] 
+        [Offers:Component/MedicalComponent] 
+        [Offers:Component/ReactorComponent] 
+        [Offers:Component/MetalGrid] 
+
+  
       </Description>
 
     </EntityComponent>
+     
+     
+    
     
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>ITC_StoreProfile_ITCCapitalIO_Civ</SubtypeId>
+        <SubtypeId>ITC_StoreProfile_ITCCapitalIO_Tool</SubtypeId>
       </Id>
       <Description>
 
@@ -84,29 +108,12 @@
 
         [ItemsRequireInventory:false]
 
-
-        [Orders:Component/CivilianProductI] 
-        [Orders:Component/CivilianProductII] 
-        [Orders:Component/CivilianProductIII] 
-
-
         [Offers:Tool/HandDrill2Item] 
+        [Offers:Tool/HandDrill3Item] 
         [Offers:Tool/AngleGrinder2Item] 
+        [Offers:Tool/AngleGrinder3Item] 
         [Offers:Tool/Welder2Item] 
-        [Offers:Consumable/Medkit] 
-        [Offers:Consumable/Powerkit] 
-
-        [Offers:Component/SteelPlate] 
-        [Offers:Component/Motor]         
-        [Offers:Component/Girder] 
-        [Offers:Component/InteriorPlate] 
-        [Offers:Component/Construction]        
-        [Offers:Component/Display] 
-        [Offers:Component/MedicalComponent] 
-        [Offers:Component/MetalGrid] 
-        [Offers:Component/Cupper] 
-        [Offers:Component/Lightbulb] 
-        [Offers:Component/AcidPowerCell] 
+        [Offers:Tool/Welder3Item] 
       </Description>
 
     </EntityComponent>
@@ -114,34 +121,8 @@
     
     
     
-  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>ITC_StoreProfile_ITCCapitalIO_ITC</SubtypeId>
-      </Id>
-      <Description>
-
-        [MES Store]
-
-        [FileSource:AaW_StoreItems_Thora4IO.xml]
-        
-        [MinOfferItems:20]
-        [MaxOfferItems:20]
-        [MinOrderItems:20]
-        [MaxOrderItems:20]
-
-        [ItemsRequireInventory:false]
-
-        [Orders:Ingot/CrystalPrism] 
-        [Orders:Ingot/StabilizedCronyx] 
-        [Orders:Ingot/PurifiedSpice] 
-
-        [Offers:Ingot/DoriumIngot]
-        [Offers:Component/ReinforcedDrillbit]
-        [Offers:Component/ReinforcedPlate]
-      </Description>
-
-    </EntityComponent>
+    
+    
     
     
 

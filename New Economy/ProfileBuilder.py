@@ -15,7 +15,8 @@ def CreateStoreItems(Faction, Name:str,XML_Name: str,StoresProfiles:str,TradeIng
   <EntityComponents>
 
     {Temp.GetStoreSettlement(XML_Name,Faction,Name,Ingots,TradeIngots) if "Settlement" in StoresProfiles else ""}
-  
+     {Temp.GetStoreTradestation(XML_Name,Faction,Name,Ingots,TradeIngots) if "Tradestation" in StoresProfiles else ""}
+     
     {Temp.GetStoreVendingMachine(XML_Name,Faction,Name) if "VendingMachine" in StoresProfiles else ""}
     {Temp.GetStoreVendingMachine(XML_Name,Faction,Name) if "Vending Machine" in StoresProfiles else ""}
     {Temp.GetStoreIngot(XML_Name,Faction,Name,Ingots,TradeIngots) if "Ingot" in StoresProfiles else ""}
@@ -146,6 +147,10 @@ def CreateTriggers(Faction, Name:str, IO):
 
        [StoreBlocks:Store Settlement]
       [StoreProfiles:{Faction}_StoreProfile_{Name}_Settlement]		
+
+       [StoreBlocks:Store Tradestation]
+      [StoreProfiles:{Faction}_StoreProfile_{Name}_Tradestation]		
+
 
 
 

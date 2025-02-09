@@ -99,6 +99,67 @@ def GetStoreSettlement(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngo
     </EntityComponent>"""
 
     return string
+    
+    
+    
+#Special
+def GetStoreTradestation(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngots:str)->str:  
+    string = f"""
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>{Faction}_StoreProfile_{Name}_Tradestation</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_{XML_Name}.xml]
+        
+        [MinOfferItems:99]
+        [MaxOfferItems:99]
+        [MinOrderItems:99]
+        [MaxOrderItems:99]
+
+        [ItemsRequireInventory:false]
+
+        {GenerateProfileIngotOre(Ingots,TradeIngots)}
+
+        
+        
+        [Orders:Component/CivilianProductI] 
+        [Orders:Component/CivilianProductII] 
+        [Orders:Component/CivilianProductIII] 
+
+        [Offers:Component/SteelPlate] 
+        [Offers:Component/Construction] 
+        [Offers:Component/Girder] 
+        [Offers:Component/InteriorPlate] 
+        [Offers:Component/Construction] 
+        [Offers:Component/SmallTube] 
+        [Offers:Component/LargeTube] 
+        [Offers:Component/BulletproofGlass] 
+        [Offers:Component/Motor] 
+        [Offers:Component/Display] 
+        [Offers:Component/Computer] 
+        [Offers:Component/RadioCommunicationComponent] 
+        [Offers:Component/Detector] 
+        [Offers:Component/Canvas] 
+        [Offers:Component/SolarCell] 
+        [Offers:Component/PowerCell] 
+        [Offers:Component/Explosives] 
+        [Offers:Component/MedicalComponent] 
+        [Offers:Component/ReactorComponent] 
+        [Offers:Component/MetalGrid] 
+
+  
+      </Description>
+
+    </EntityComponent>"""
+
+    return string
+
+    
 
 # [Offers:Component/ReinforcedDrillbit] 
 # [Offers:Component/ReinforcedPlate] 
