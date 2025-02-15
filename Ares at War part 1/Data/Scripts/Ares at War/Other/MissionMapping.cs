@@ -319,14 +319,14 @@ namespace AresAtWar.SessionCore
             if (targetnodde == null)
                 return null;
 
-            float MinrotationDegrees = 1;
+            int MinrotationDegrees = 35000;
 
-            float MaxrotationDegrees = 6;
+            int MaxrotationDegrees = 60000;
 
             if (heavy)
             {
-                MinrotationDegrees = 9;
-                MaxrotationDegrees = 16;
+                MinrotationDegrees = 100000;
+                MaxrotationDegrees = 300000;
             }
 
 

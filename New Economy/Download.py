@@ -22,3 +22,4 @@ def GetCSV(name,gid):
 
 GetCSV("XML","0")
 GetCSV("Encounters","327410979")
+input()

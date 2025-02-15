@@ -49,6 +49,8 @@ def CreateStoreItems(Faction, Name:str,XML_Name: str,StoresProfiles:str,TradeIng
         [ItemsRequireInventory:false]
 
         [Offers:HydrogenOffer] 
+        [Offers:OxygenOffer] 
+        [Offers:Ore/Ice] 
       </Description>
     </EntityComponent>	
 	

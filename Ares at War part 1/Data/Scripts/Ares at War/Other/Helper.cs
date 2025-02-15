@@ -64,8 +64,60 @@ namespace AresAtWar.SessionCore
             return false;
         }
 
+        public static Vector3D? GeneratePointInBylenBelt(Vector3D currentPosition, double MinDistance, double MaxDistance)
+        {
+            int iterationCount = 0;
+
+            // Step 1: Start a loop to try generating a valid point
+            do
+            {
+                // Step 2: Calculate a random distance between MinDistance and MaxDistance
+                double randomDistance = random.NextDouble() * (MaxDistance - MinDistance) + MinDistance;
+
+                // Step 3: Calculate the direction vector from currentPosition (new circle center) to MilaCenter
+                Vector3D direction = BylenCenter - currentPosition;
+
+                // Step 4: Project the direction onto the XZ-plane (keeping Y the same)
+                direction.Y = 0;  // Set Y to 0 for 2D projection on the XZ-plane
+
+                // Step 5: Normalize the direction vector to use for rotation
+                Vector3D normalizedDirection = direction.Normalized();
+
+                // Step 6: Randomly pick an angle on the circle (in radians)
+                double angle = random.NextDouble() * 2 * Math.PI;  // Random angle between 0 and 2*PI
+
+                // Step 7: Calculate a random point on the edge of the circle with the chosen radius
+                double x = currentPosition.X + randomDistance * Math.Cos(angle);
+                double z = currentPosition.Z + randomDistance * Math.Sin(angle);
+
+                // Step 8: Create a new point on the circle, keeping the Y coordinate equal to MilaCenter.Y
+                Vector3D newPoint = new Vector3D(x, BylenCenter.Y, z);
+
+                // Step 9: Calculate the distance from MilaCenter to the new point
+                double distance = (newPoint - BylenCenter).Length();
+
+                // Step 10: Check if the new distance is within valid BylenBelt ranges based on MilaCenter
+                if (((650000 <= distance && distance <= 740000) ||
+                     (780000 <= distance && distance <= 985000) ||
+                     (1025000 <= distance && distance <= 1100000)))
+                {
+                    return newPoint;  // Return the valid point if found
+                }
+
+                iterationCount++;
+
+            } while (iterationCount < 20);  // Retry up to 20 times
+
+            // If no valid point is found after 20 attempts, return null
+            return null;
+        }
 
 
+
+
+
+
+        /*
         public static Vector3D? GeneratePointInBylenBelt(Vector3D currentPosition, float MinrotationDegrees, float MaxrotationDegrees)
         {
 
@@ -120,6 +172,7 @@ namespace AresAtWar.SessionCore
 
             return null;
         }
+        */
 
         public static Vector3D? GeneratePointInMilaBelt(Vector3D currentPosition, float MinrotationDegrees, float MaxrotationDegrees)
         {

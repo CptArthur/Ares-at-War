@@ -497,7 +497,7 @@ def CreateXml(Name:str,Ingot1, Ingot2,Ingot3,Ingot4,Ingot5,Component1,Component2
 
     
     <StoreItem>
-      <StoreItemId>Oxygen</StoreItemId>
+      <StoreItemId>OxygenOffer</StoreItemId>
       <ItemType>Oxygen</ItemType>
       <ItemSubtypeId>Oxygen</ItemSubtypeId>
       <Offer>
@@ -507,6 +507,23 @@ def CreateXml(Name:str,Ingot1, Ingot2,Ingot3,Ingot4,Ingot5,Component1,Component2
         <MaxAmount>20000</MaxAmount>
       </Offer>
     </StoreItem>
+
+    <StoreItem>
+      <StoreItemId>IceOffer</StoreItemId>
+      <ItemType>Ore</ItemType>
+      <ItemSubtypeIds> 
+        <ItemSubtypeId>Ice</ItemSubtypeId>  
+      </ItemSubtypeIds> 
+
+      <Offer>
+        <MinPriceMultiplier>110</MinPriceMultiplier>
+        <MaxPriceMultiplier>130</MaxPriceMultiplier>
+        <MinAmount>100000</MinAmount>
+        <MaxAmount>200000</MaxAmount>
+      </Offer>
+
+    </StoreItem>
+
 
   </StoreItems>
 </StoreItemsContainer>

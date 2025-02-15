@@ -6,13 +6,13 @@
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>CIVILIAN_StoreProfile_CarcosaIO_Settlement</SubtypeId>
+        <SubtypeId>CIVILIAN_StoreProfile_DoohanIO_Settlement</SubtypeId>
       </Id>
       <Description>
 
         [MES Store]
 
-        [FileSource:AaW_StoreItems_CarcosaIO.xml]
+        [FileSource:AaW_StoreItems_BylenBeltIO.xml]
         
         [MinOfferItems:99]
         [MaxOfferItems:99]
@@ -26,17 +26,33 @@
         [Orders:Ore/Nickel] 
         [Orders:Ore/Silicon] 
         [Orders:Ore/Copper] 
+        [Orders:Ore/Cobalt] 
+        [Orders:Ore/Silver] 
+        [Orders:Ore/Gold] 
         [Orders:Ore/Aluminum] 
         [Orders:Ore/Titanium] 
+        [Orders:Ore/Sulfur] 
         [Orders:Ore/Niter] 
+        [Orders:Ore/Platinum] 
+        [Orders:Ore/Uranium] 
+        [Orders:Ore/Lithium] 
+        [Orders:Ore/Tantalum] 
 
         [Offers:Ingot/Iron] 
         [Offers:Ingot/Nickel] 
         [Offers:Ingot/Silicon] 
         [Offers:Ingot/Copper] 
+        [Offers:Ingot/Cobalt] 
+        [Offers:Ingot/Silver] 
+        [Offers:Ingot/Gold] 
         [Offers:Ingot/Aluminum] 
         [Offers:Ingot/Titanium] 
+        [Offers:Ingot/Sulfur] 
         [Offers:Ingot/Niter] 
+        [Offers:Ingot/Platinum] 
+        [Offers:Ingot/Uranium] 
+        [Offers:Ingot/Lithium] 
+        [Offers:Ingot/Tantalum] 
 
 
         
@@ -77,13 +93,13 @@
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>CIVILIAN_StoreProfile_CarcosaIO_Tool</SubtypeId>
+        <SubtypeId>CIVILIAN_StoreProfile_DoohanIO_Tool</SubtypeId>
       </Id>
       <Description>
 
         [MES Store]
 
-        [FileSource:AaW_StoreItems_CarcosaIO.xml]
+        [FileSource:AaW_StoreItems_BylenBeltIO.xml]
         
         [MinOfferItems:5]
         [MaxOfferItems:20]
@@ -116,12 +132,12 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>CIVILIAN_StoreProfile_CarcosaIO_Fuel</SubtypeId>
+        <SubtypeId>CIVILIAN_StoreProfile_DoohanIO_Fuel</SubtypeId>
       </Id>
       <Description>
         [MES Store]
 
-        [FileSource:AaW_StoreItems_CarcosaIO.xml]
+        [FileSource:AaW_StoreItems_BylenBeltIO.xml]
         
         [MinOfferItems:5]
         [MaxOfferItems:20]
@@ -139,19 +155,20 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>CIVILIAN_ContractBlockProfile_CarcosaIO</SubtypeId>
+        <SubtypeId>CIVILIAN_ContractBlockProfile_DoohanIO</SubtypeId>
       </Id>
       <Description>
         [MES Contract Block]
 
-        [StoreProfileId:CIVILIAN_StoreProfile_CarcosaIO_Ingot]
+        [StoreProfileId:CIVILIAN_StoreProfile_DoohanIO_Ingot]
         
         [MinContracts:5]
         [MaxContracts:15]
         
-        [MissionIds:AaW_Mission_ProcCIVILIAN] 
-        [MissionIds:AaW_Mission_ProcCIVILIAN] 
-        [MissionIds:AaW_Mission_ProcCIVILIAN] 
+        [MissionIds:AaW_Mission_ProcSCRAP] 
+        [MissionIds:AaW_Mission_ProcSCRAP] 
+        [MissionIds:AaW_Mission_ProcHeavySCRAP] 
+        [MissionIds:AaW_Mission_ProcHeavySCRAP ] 
 
         
       </Description>
