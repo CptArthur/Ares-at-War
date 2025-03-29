@@ -66,12 +66,19 @@
 			<Description>
 			[Modular Encounters SpawnGroup]
 	
-	[PersistentConditions:AaW_SpawnConditions_Threat_Hard]
+
 		
-
-
+		[FactionOwner:SPRT]	
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+		[IgnoreCombatPhase:true]
 		[FactionOverride:SPRT]
-		[SpawnConditionGroups:AaW_SpawnGroup_SpaceHostiles]
+
+        [BossEncounterAny:true]
+        [BossCustomAnnounceEnable:true]
+        [BossCustomAnnounceAuthor:Ares Cowboys]
+        [BossCustomAnnounceMessage:Howdy cowboys, we have got some massive bounties today!!!  ]
+        [BossCustomGPSLabel:Wanted Encounter (19m)]
+
 	
 		[UseSpawnGroupPrefabSpawningMode:true]
 		[PrefabSpawningMode:RandomSelectedIndexes]

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <CubeBlocks>
+      <Definition xsi:type="MyObjectBuilder_ProgrammableBlockDefinition">
+        <Id>
+            <TypeId>MyProgrammableBlock</TypeId>
+            <SubtypeId>SmallProgrammableBlock</SubtypeId>
+        </Id>
+         <ModExtensions>
+          <Group Name="OverridePublic">
+            <Boolean Name="Public" Value="false" />
+          </Group>
+        </ModExtensions>
+      </Definition>
+      <Definition xsi:type="MyObjectBuilder_ProgrammableBlockDefinition">
+        <Id>
+            <TypeId>MyProgrammableBlock</TypeId>
+            <SubtypeId>LargeProgrammableBlock</SubtypeId>
+        </Id>
+         <ModExtensions>
+          <Group Name="OverridePublic">
+            <Boolean Name="Public" Value="false" />
+          </Group>
+        </ModExtensions>
+      </Definition>
+      <Definition xsi:type="MyObjectBuilder_ProjectorDefinition">
+          <Id>
+            <TypeId>MyObjectBuilder_Projector</TypeId>
+            <SubtypeId>LargeProjector</SubtypeId>
+          </Id>
+			    <ModExtensions>
+              <Group Name="OverridePublic">
+                <Boolean Name="Public" Value="false" />
+              </Group>
+          </ModExtensions>
+      </Definition>
+      <Definition xsi:type="MyObjectBuilder_ProjectorDefinition">
+            <Id>
+                <TypeId>MyObjectBuilder_Projector</TypeId>
+                <SubtypeId>SmallProjector</SubtypeId>
+            </Id>
+ 			      <ModExtensions>
+              <Group Name="OverridePublic">
+                <Boolean Name="Public" Value="false" />
+              </Group>
+            </ModExtensions>
+      </Definition>
+
+
+        <Definition xsi:type="MyObjectBuilder_TurretControlBlockDefinition">
+            <Id>
+                <TypeId>TurretControlBlock</TypeId>
+                <SubtypeId>LargeTurretControlBlock</SubtypeId>
+            </Id>
+ 			<ModExtensions>
+              <Group Name="OverridePublic">
+                <Boolean Name="Public" Value="false" />
+              </Group>
+            </ModExtensions>
+        </Definition>
+        
+        <Definition xsi:type="MyObjectBuilder_TurretControlBlockDefinition">
+            <Id>
+                <TypeId>TurretControlBlock</TypeId>
+                <SubtypeId>SmallTurretControlBlock</SubtypeId>
+            </Id>
+ 			<ModExtensions>
+              <Group Name="OverridePublic">
+                <Boolean Name="Public" Value="false" />
+              </Group>
+            </ModExtensions>
+        </Definition>
+
+
+        <Definition xsi:type="MyObjectBuilder_EventControllerBlockDefinition">
+            <Id>
+                <TypeId>EventControllerBlock</TypeId>
+                <SubtypeId>EventControllerLarge</SubtypeId>
+            </Id>
+ 			<ModExtensions>
+              <Group Name="OverridePublic">
+                <Boolean Name="Public" Value="false" />
+              </Group>
+            </ModExtensions>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_EventControllerBlockDefinition">
+            <Id>
+                <TypeId>EventControllerBlock</TypeId>
+                <SubtypeId>EventControllerSmall</SubtypeId>
+            </Id>
+ 			<ModExtensions>
+              <Group Name="OverridePublic">
+                <Boolean Name="Public" Value="false" />
+              </Group>
+            </ModExtensions>
+        </Definition>
+
+    </CubeBlocks>
+</Definitions>

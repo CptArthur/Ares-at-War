@@ -41,7 +41,10 @@ Rak
 
 
         [ShipyardSetup:true]
-        [ShipyardConsoleBlockNames:{Any}]
+        [ShipyardConsoleBlockNames:Shipyard Terminal A]
+        [ShipyardProfileNames:AaW_Shipyard_Station27]
+
+        [ShipyardConsoleBlockNames:SOLCOOP Shipyard Terminal]
         [ShipyardProfileNames:AaW_Shipyard_Station27]
 		
 		[GridsAreDestructable:false]
@@ -74,7 +77,21 @@ Rak
 			
 		</SpawnGroup>	
 
+<!--
+Old
+<Position x="-35220" y="-3678" z="48027" />
+[TriggerCoords:{X:-34995.4115883877255 Y:-3251.2368409685314 Z:48703.7032755285524}]
 
+
+X: += 224.5884116
+Y: += 426.763159
+Z: += 676.7032755
+
+
+<Position x="-3017399" y="-1017363" z="-2872729" />
+[TriggerCoords:{X:-3017174.412 Y:-1016936.237 Z:-2872052.297}]
+
+-->
 		
 		<SpawnGroup>
 			<Id>
@@ -89,18 +106,21 @@ Rak
 			[RotateFirstCockpitToForward:false]
 	        [FactionOwner:CIVILIAN]		
 
-			[TriggerCoords:{X:-34995.4115883877255 Y:-3251.2368409685314 Z:48703.7032755285524}]
+			[TriggerCoords:{X:-3017174.412 Y:-1016936.237 Z:-2872052.297}]
 			[TriggerRadius:200000]
 
 			[ForceExactPositionAndOrientation:true]
 			[CutVoxelsAtAirtightCells:true]
 		[ZoneConditions:ZoneCondition_ZoneAaW]
 
-			[StaticEncounterCoords:{X:-34995.4115883877255 Y:-3251.2368409685314 Z:48703.7032755285524}]
-			
 
-			[StaticEncounterForward:{X:-0.0167920144200677 Y:-0.517917102131092 Z:0.855265984107779}]
-			[StaticEncounterUp:{X:0.328171520225952 Y:0.805145076122327 Z:0.494008967234969}]
+
+
+
+			[StaticEncounterCoords:{X:-3017447.75402297 Y:-1016619.01303137 Z:-2873014.95967272}]
+			[StaticEncounterForward:{X:-1.95504821931162E-06 Y:0 Z:-0.999999999998089}]
+			[StaticEncounterUp:{X:0 Y:1 Z:0}]
+
 
 			[IgnoreCleanupRules:true]
 
@@ -147,6 +167,82 @@ Rak
 			
 		</SpawnGroup>		
 
+		
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>Vercors</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:CIVILIAN]		
+
+			[TriggerCoords:{X:-2323181.0106 Y:-1017932.37 Z:-2570132.055}]
+			[TriggerRadius:30000]
+			[ZoneConditions:ZoneCondition_ZoneAaW]
+			[ForceExactPositionAndOrientation:true]
+			[CutVoxelsAtAirtightCells:false]
+
+
+			[StaticEncounterCoords:{X:-2323275.29071786 Y:-1018031.44307829 Z:-2570301.42006843}]
+			[StaticEncounterForward:{X:-0.101823769509792 Y:-5.63707110017086E-17 Z:-0.994802474975586}]
+			[StaticEncounterUp:{X:2.00906024223573E-17 Y:1 Z:-5.87216244770333E-17}]
+
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Bylen]
+			[StaticEncounterPlanetDirection:{X:-0.302218124651159 Y:-0.000530283118344776 Z:0.953238650041085}]
+			[StaticEncounterPlanetAltitude:351267.367533102]
+
+
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-AAW)]
+			[RandomGridNamePattern:Vercors Station]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+
+
+			[ShipyardSetup:true]
+			[ShipyardConsoleBlockNames:{Any}]
+			[ShipyardProfileNames:AaW_Shipyard_MainProfile]
+
+			[GridsAreDestructable:false]
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:Doohan]			
+
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="MILITIA- Vercors Station">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour></Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>		
+		
+		
+		
+		
 		
 		
 	</SpawnGroups>

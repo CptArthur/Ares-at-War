@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!-- 
+
+
+
+COL-Static-Triggers-UCAControl
+
+COL-Static-Triggers-GGCControl
+
+
+
+
+CIVILIAN_Station27SOLCOOP_Trigger_ButtonA
+CIVILIAN_Station27SOLCOOP_Trigger_ButtonB
+CIVILIAN_Station27SOLCOOP_Trigger_ButtonC
+
+-->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Station27SOLCOOP_Trigger_ButtonA</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Trigger]
+	[Type:Timer]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	
+    [Type:ButtonPress]
+	[ButtonPanelName:Button SOLCOOP A]
+	[ButtonPanelIndex:0]
+	[MinCooldownMs:6000]
+	[MinCooldownMs:6001]	
+
+	[Actions:CIVILIAN_Station27SOLCOOP_Action_Button]
+      </Description>
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Station27SOLCOOP_Trigger_ButtonB</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Trigger]
+	[Type:Timer]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	
+     [Type:ButtonPress]
+	[ButtonPanelName:Button SOLCOOP B]
+	[ButtonPanelIndex:0]
+	[MinCooldownMs:6000]
+	[MinCooldownMs:6001]
+
+
+	[Actions:CIVILIAN_Station27SOLCOOP_Action_Button]
+      </Description>
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Station27SOLCOOP_Trigger_ButtonC</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Trigger]
+	[Type:Timer]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	
+     [Type:ButtonPress]
+	[ButtonPanelName:Button SOLCOOP C]
+	[ButtonPanelIndex:0]
+	[MinCooldownMs:6000]
+	[MinCooldownMs:6001]	
+
+	[Actions:CIVILIAN_Station27SOLCOOP_Action_Button]
+      </Description>
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Station27SOLCOOP_Action_Button</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+
+	[TriggerTimerBlocks:true]
+	[TimerBlockNames:Timer Block SOLCOOP]
+
+      </Description>
+    </EntityComponent>	
+
+
+
+  </EntityComponents>
+</Definitions>

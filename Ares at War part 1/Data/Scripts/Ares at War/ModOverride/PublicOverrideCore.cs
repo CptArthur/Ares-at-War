@@ -25,7 +25,6 @@ namespace PublicOverride
 
 		private void onEnabled()
 		{
-			MyAPIGateway.Utilities.ShowMessage("AaW block replacer", $"enabled");
 			var defs = MyDefinitionManager.Static.GetAllDefinitions();
 
 
