@@ -1,0 +1,296 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+ <!--
+Arguments
+-{EncounterSpawnData}
+The spawner ID. So which has a reference to the spawngroup
+
+-{EncounterSpawnCoords}
+Where the encounter should spawn.
+
+
+-{PlayerNearCoords}
+
+-{PlayerNearRadius}
+the distance between player  and {PlayerNearCoords} 2000
+
+-{StartingGPSName}
+On mission accept spawn in a gps with the name ...
+
+- {StartingGPSCoords}
+The coords of the StartingGPS
+
+- {SuccessChatMessage}
+Well done {PlayerName}! Here is your reward as promised
+
+
+- {SuccessChatAuthor}
+SOLCOOP
+
+On start Send GPS to Players; 
+PlayerNear Watcher 
+If playerclose spawnship
+If player leaves the area (50km) -> Fail the mission.
+If ships despawns (trigger) -> Fail the mission.
+
+
+ -->
+  
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MissionGroup_Download</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event TemplateGroup]
+
+		[TemplateEventIds:AaW_EventTemplate_Download_Abandoned]	
+		[TemplateEventIds:AaW_EventTemplate_Download_Failed]	
+		[TemplateEventIds:AaW_EventTemplate_Download_Success]	
+
+		[TemplateEventIds:AaW_EventTemplate_Download_Init]	
+		[TemplateEventIds:AaW_EventTemplate_Download_PlayerNear]
+
+      </Description>
+	</EntityComponent>	
+	
+
+	<!-- Start Required -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_Download_Abandoned</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[Tags:Abandoned@{InstanceId}]
+		[UseEvent:false]
+		[UniqueEvent:true]		
+		[ActionExecution:All]
+		[ActionIds:AaW_EventActionTemplate_Download_CloseInstance]
+
+      </Description>
+	</EntityComponent>		
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_Download_CloseInstance</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	[RemoveThisInstanceGroup:true]
+	
+	[RemoveGPSFromPlayers:true]
+	[RemoveGPSNames:{StartingGPSName}]
+	[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	
+	[AddPlayerConditionPlayerTags:true]
+	[AddIncludedPlayerTags:@{InstanceId}]	
+      </Description>
+    </EntityComponent>		
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_Download_Failed</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[Tags:Failed@{InstanceId}]
+		[UseEvent:false]
+		
+		[UniqueEvent:true]		
+		[ActionExecution:All]
+		[ActionIds:AaW_EventActionTemplate_Download_Failed]
+
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_Download_Failed</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	[TryContractFail:true]
+	
+	[RemoveGPSFromPlayers:true]
+	[RemoveGPSNames:{StartingGPSName}]
+	[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	
+	[AddPlayerConditionPlayerTags:true]
+	[AddIncludedPlayerTags:@{InstanceId}]	
+	
+      </Description>
+		</EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_Download_Success</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Template]
+		[UseEvent:false]
+		[MinCooldownMs:5000]
+		[MaxCooldownMs:15001]			
+		
+		[UniqueEvent:true]		
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000] 
+		
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		[ActionIds:AaW_EventActionTemplate_Download_Success]
+		
+      </Description>
+	</EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_Download_Success</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	[TryContractSuccess:true]
+
+	[UseChatBroadcast:true]
+	[ChatData:AaW_EventChat_Template]	
+	
+	[UseChatOverrideColor:true]
+	[ChatOverrideColor:Green]
+	[UseChatOverrideAuthor:true]
+	[ChatOverrideAuthor:{SuccessChatAuthor}]
+	
+	[UseChatOverrideMessage:true]
+	[ChatOverrideMessage:{SuccessChatMessage}]
+	[UseChatOverrideAudio:true]
+	[ChatOverrideAudio:MES-ShipyardSell]
+
+      </Description>
+    </EntityComponent>	
+	<!-- End Required -->	
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_Download_Init</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:true]
+		[UniqueEvent:true]	
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+		[ActionExecution:All]
+		[ActionIds:AaW_EventActionTemplate_Download_CreateGPS]
+
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_Download_CreateGPS</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+	[AddGPSToPlayers:true]
+	[AddGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	[UseGPSObjective:false]
+	
+	[GPSNames:{StartingGPSName}]
+	[GPSVector3Ds:{StartingGPSCoords}]
+	
+	
+	[AddPlayerConditionPlayerTags:true]
+	[AddIncludedPlayerTags:@{InstanceId}]
+      </Description>
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_Download_PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:true]
+		
+		[UniqueEvent:true]	
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+
+		[ConditionIds:AaW_EventConditionTemplate_Download_PlayerNear]	
+		
+		[ActionExecution:All]
+
+		[ActionIds:AaW_EventActionTemplate_Download_SpawnEncounter]
+
+      </Description>
+	</EntityComponent>	
+      
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventConditionTemplate_Download_PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Condition Template]
+
+
+	[CheckPlayerNear:true]
+	[PlayerNearCoords:{PlayerNearCoords}]
+	[PlayerNearDistanceFromCoords:{PlayerNearRadius}]
+
+      </Description>
+      
+    </EntityComponent>		  
+	  
+	  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_Download_SpawnEncounter</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+	[SpawnEncounter:true]
+	[SpawnData:{EncounterSpawnData}]
+	[SpawnFactionTags:SPRT]
+	[SpawnCoords:{EncounterSpawnCoords}]
+	
+	[RemoveGPSFromPlayers:true]
+	[RemoveGPSNames:{StartingGPSName}]
+	[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	
+	
+
+
+
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+  </EntityComponents>
+</Definitions>
+

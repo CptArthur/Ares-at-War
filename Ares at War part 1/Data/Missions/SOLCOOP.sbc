@@ -11,7 +11,8 @@
         [MES Contract Block]
 
 		[MissionIds:SOLCOOP_Mission_RelicData]
-        
+		[MissionIds:SOLCOOP_Mission_RaidXolAsteroidBase]      
+
         [MinContracts:5]
         [MaxContracts:15]
 
@@ -49,6 +50,55 @@
 
       </Description>
     </EntityComponent>
+
+
+	  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SOLCOOP_Mission_RaidXolAsteroidBase</SubtypeId>
+      </Id>
+      <Description>
+    [MES Mission]
+	[Tags:SOLCOOP]    
+	[OverrideFaction:SOLCOOP]
+	
+	[Title:Download data from Xol's hideout]
+	[Description:We've captured and interrogated one of Xol's men, and he has given us the coordinates of an asteroid base. Unfortunately, we can not spare any ships for a raid. Your mission: infiltrate the base, neutralize any threats, and download all critical data from its computer. Good luck. \n {GPSText}]
+	
+	[InstanceEventGroupId:MissionGroup_Download]
+	
+	[Reward:9000000]
+	[Collateral:5000]
+	[ReputationReward:125]
+	[FailReputationPrice:25]
+	[Duration:0]
+
+	[ReplaceKeys:{EncounterSpawnData}]
+	[ReplaceValues:SPRT_XolSafehouse_Spawner]	
+
+
+	[ReplaceKeys:{StartingGPSName}]
+	[ReplaceValues:Download data from Xol's hideout]	
+	
+
+	[ReplaceKeys:{PlayerNearRadius}]
+	[ReplaceValues:2000]	
+
+	[ReplaceKeys:{SuccessChatMessage}]
+	[ReplaceValues:Receiving data now... Excellent work, {PlayerName}. As promised, here's your reward. You've earned it.]	
+
+	[ReplaceKeys:{SuccessChatAuthor}]
+	[ReplaceValues:SOLCOOP]	
+
+  [Exclusive:true]
+
+  [ActivateBooleanNameOnSucces:RaidXolAsteroidBase]
+
+
+  [CustomApiMapping:AaW-MissionMapping]
+      </Description>
+    </EntityComponent>
+
 
 	
   </EntityComponents>

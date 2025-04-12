@@ -15,7 +15,7 @@ using static AresAtWar.War.WarSim;
 
 namespace AresAtWar.SessionCore
 {
-    public class CustomMissionMapping
+    public partial class CustomMissionMapping
     {
         public static List<string> ActiveDestinations = new List<string>();
         public static List<string> ActiveContracts = new List<string>();
@@ -170,6 +170,12 @@ namespace AresAtWar.SessionCore
 
         public static Dictionary<string, string> InternalMissionMapping(string profileSubtypeId, string spawnGroupName, List<string> Tags, Vector3D storeblockposition)
         {
+
+
+
+
+
+
             //Scrapmissions
             if (Tags.Contains("SCRAP"))
             {
@@ -182,16 +188,14 @@ namespace AresAtWar.SessionCore
                 return ScrapMapping(storeblockposition, true);
             }
 
+            if (profileSubtypeId == "SOLCOOP_Mission_RaidXolAsteroidBase")
+            {
+                return SOLCOOP_Mission_RaidXolAsteroidBase();
+            }
 
 
 
-
-
-
-
-
-
-
+            //other
             var startingEncounter = GetStaticEncounter(spawnGroupName, storeblockposition);
             string Faction = FindOutFaction(Tags);
             string EncounterFaction = startingEncounter.FactionTag;
@@ -319,19 +323,19 @@ namespace AresAtWar.SessionCore
             if (targetnodde == null)
                 return null;
 
-            int MinrotationDegrees = 35000;
+            int minDistance = 35000;
 
-            int MaxrotationDegrees = 60000;
+            int maxDistance = 60000;
 
             if (heavy)
             {
-                MinrotationDegrees = 100000;
-                MaxrotationDegrees = 300000;
+                minDistance = 100000;
+                maxDistance = 300000;
             }
 
 
 
-            var targetlocation = targetnodde.GetRandomPoint(storeblockposition, MinrotationDegrees, MaxrotationDegrees);
+            var targetlocation = targetnodde.GetRandomPoint(storeblockposition, minDistance, maxDistance);
 
             if (targetlocation == null)
                 return null;
@@ -414,6 +418,7 @@ namespace AresAtWar.SessionCore
         public static Dictionary<string, string> TransportMissionMapping(string spawnGroupName, string Faction, Vector3D storeblockposition)
         {
             var mapping = new Dictionary<string, string>();
+
             mapping.Add("{InstanceEventGroupId}", $"MissionGroup_Transport");
 
             var destinationEncounter = TransportGetDestination(spawnGroupName, Faction);

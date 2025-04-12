@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <EntityComponents>
+	
+<!--
+[SpawnConditionsProfiles:GC-SpawnProfile-RivalAISpawn]
+
+GC-SpawnGroup-MediumStrikeForce
+
+-->
+
+
+	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SPRT_XolSafehouse_Spawner</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Spawn]
+
+	[UseSpawn:true]
+
+	[StartsReady:true]
+	[SpawningType:CustomSpawn]
+
+	[MaxSpawns:-1]
+
+	[SpawnGroups:SPRT_XolSafehouse]
+	
+	
+	[UseRelativeSpawnPosition:true]
+	[MinDistance:10]
+	[MaxDistance:500]
+	[MinAltitude:600]
+	[MaxAltitude:1000]
+	[IgnoreSafetyChecks:true]
+      
+
+	  
+	  
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SPRT_XolSafehouse_Behavior</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Behavior]
+	[BehaviorName:Passive]
+	[TargetData:MSB_TargetProfile_Default]	  
+
+	[TriggerGroups:AaW_Mission_Download]  
+	
+	[Triggers:SPRT_XolSafehouse_Trigger_DownloadButton]
+	  
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SPRT_XolSafehouse_Trigger_DownloadButton</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Trigger]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	
+    [Type:ButtonPress]
+	[ButtonPanelName:DownloadData]
+	[ButtonPanelIndex:0]
+	[MinCooldownMs:6000]
+	[MinCooldownMs:6001]	
+
+	[MaxActions:1]
+	[Actions:AaW_DownloadEncounter_Action_SuccessMission]
+	[Actions:AaW_DownloadEncounter_Action_Downloading]
+	
+	
+      </Description>
+    </EntityComponent>
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DownloadEncounter_Action_Downloading</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      [UseChatBroadcast:true]
+      [ChatData:AaW_DownloadEncounter_Chat_Downloading]
+
+      </Description>
+      
+    </EntityComponent>
+
+	
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DownloadEncounter_Chat_Downloading</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:false]
+      
+      [Author:LYRA]
+      [Color:Blue]
+      
+      [ChatMessages:Starting download of the data...]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+      [IgnoreAntennaRequirement:true]
+      [IgnoredAntennaRangeOverride:4500]
+
+
+      </Description>
+    </EntityComponent>
+
+
+  </EntityComponents>
+
+
+<SpawnGroups>
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>SPRT_XolSafehouse</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+
+		[SpawnConditionsProfiles:AaW_SpawnProfile_RivalAISpawn]
+
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+
+			<Prefab SubtypeId="SPRT-XolSafehouse">
+				<Position>
+					<X>-8.94031</X>
+					<Y>5.500803</Y>
+					<Z>-1.87893009</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>SPRT_XolSafehouse_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>  
+
+	  <Voxels>
+		<Voxel StorageName="Small_Pirate_Base_3_2">
+		  <Offset>
+			<X>0</X>
+			<Y>0</Y>
+			<Z>0</Z>
+		  </Offset>
+		  <CenterOffset>true</CenterOffset>
+		  <Orientation xsi:nil="true" />
+		</Voxel>
+	  </Voxels>
+  
+	</SpawnGroup>
+	</SpawnGroups>
+	
+	
+	
+	
+	
+</Definitions>

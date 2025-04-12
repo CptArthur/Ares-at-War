@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!--
+AaW_DownloadEncounter_Trigger_PlayerNear
+AaW_DownloadEncounter_Trigger_Despawn
+AaW_DownloadEncounter_Trigger_DespawnMES
+AaW_DownloadEncounter_Trigger_Compromised_BeforeDownload
+
+Add to your target behavior.
+	[TriggerGroups:AaW_Mission_Download]  
+
+!!!
+Add a manual button press trigger that has 	  
+[Actions:AaW_DownloadEncounter_Action_SuccessMission]	  
+and an new action that does:
+[DisableTriggers:true]
+[DisableTriggerNames:AaW_DownloadEncounter_Trigger_Compromised_BeforeDownload]
+
+
+
+-->
+
+ <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Mission_Download</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI TriggerGroup]
+
+	[Triggers:AaW_DownloadEncounter_Trigger_PlayerNear]
+	[Triggers:AaW_DownloadEncounter_Trigger_Despawn]
+	[Triggers:AaW_DownloadEncounter_Trigger_DespawnMES]
+	[Triggers:AaW_DownloadEncounter_Trigger_Compromised_BeforeDownload]
+
+      </Description>
+ </EntityComponent>
+ 
+ 
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DownloadEncounter_Action_FailMission</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Action]
+
+	[ActivateEvent:true]
+	[ActivateEventIds:AaW_EventTemplate_Download_Failed@{EventInstance}]
+
+      </Description>
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DownloadEncounter_Action_SuccessMission</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+
+	[ResetCooldownTimeOfEvents:true]
+	[ResetEventCooldownIds:AaW_EventTemplate_Download_Success@{EventInstance}]
+
+	[ToggleEvents:true]
+	[ToggleEventIds:AaW_EventTemplate_Download_Success@{EventInstance}]
+	[ToggleEventIdModes:true]
+
+[DisableTriggers:true]
+[DisableTriggerNames:AaW_DownloadEncounter_Trigger_Compromised_BeforeDownload]
+
+      </Description>
+      
+    </EntityComponent>
+	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DownloadEncounter_Trigger_PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:PlayerNear]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	  [TargetDistance:1200]
+	  [MaxActions:1]
+	  [Actions:AaW_DownloadEncounter_Action_PlayerNear]
+	  
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DownloadEncounter_Action_PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      [UseChatBroadcast:true]
+      [ChatData:AaW_DownloadEncounter_Chat_PlayerNear]
+
+      </Description>
+      
+    </EntityComponent>
+
+	
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DownloadEncounter_Chat_PlayerNear</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:false]
+      
+      [Author:LYRA]
+      [Color:Blue]
+      
+      [ChatMessages:Remember, {PlayerName}, we're here to download the data — do not compromise the central command unit.]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+      [IgnoreAntennaRequirement:true]
+      [IgnoredAntennaRangeOverride:4500]
+
+
+      </Description>
+    </EntityComponent>
+	
+	
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DownloadEncounter_Trigger_Despawn</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Despawn]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	  [MaxActions:1]
+	  [Actions:AaW_DownloadEncounter_Action_FailMission]
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DownloadEncounter_Trigger_DespawnMES</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:DespawnMES]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	  [MaxActions:1]
+	  [Actions:AaW_DownloadEncounter_Action_FailMission]
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DownloadEncounter_Trigger_Compromised_BeforeDownload</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Compromised]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+	  [MaxActions:1]
+
+	  [Actions:AaW_DownloadEncounter_Action_Compromised]    
+	  [Actions:AaW_DownloadEncounter_Action_FailMission]
+      </Description>
+      
+    </EntityComponent>		
+		
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DownloadEncounter_Action_Compromised</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      [UseChatBroadcast:true]
+      [ChatData:AaW_DownloadEncounter_Chat_Compromised]
+
+      </Description>
+    </EntityComponent>
+
+	
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DownloadEncounter_Chat_Compromised</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:LYRA]
+      [Color:Red]
+      
+      [ChatMessages:Central command unit compromised. Data retrieval is no longer possible. That was... unfortunate, {PlayerName}]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+      
+	  
+	  [IgnoreAntennaRequirement:true]
+	  [IgnoredAntennaRangeOverride:4500]
+      </Description>
+    </EntityComponent>
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

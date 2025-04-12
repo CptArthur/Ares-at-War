@@ -91,7 +91,7 @@ namespace AresAtWar.SessionCore
                 double z = currentPosition.Z + randomDistance * Math.Sin(angle);
 
                 // Step 8: Create a new point on the circle, keeping the Y coordinate equal to MilaCenter.Y
-                Vector3D newPoint = new Vector3D(x, BylenCenter.Y, z);
+                Vector3D newPoint = new Vector3D(x, BylenCenter.Y + random.Next(-400,400), z);
 
                 // Step 9: Calculate the distance from MilaCenter to the new point
                 double distance = (newPoint - BylenCenter).Length();
