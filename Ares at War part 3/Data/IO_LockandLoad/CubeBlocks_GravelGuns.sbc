@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+  <!--
+    <Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
+      <Id>
+        <TypeId>Assembler</TypeId>
+        <SubtypeId>GravelCompressor</SubtypeId>
+      </Id>
+      <DisplayName>Gravel Compressor</DisplayName>
+      <Icon>Icons\GravelPress.dds</Icon>
+      <Description>Sifts and packs Gravel into Gravel Ammunition</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="2" y="3" z="3" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Center x="0" y="0" z="1" />
+      <Model>Models\GravelCompressor.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="150" />
+        <Component Subtype="Construction" Count="80" />
+        <Component Subtype="CopperWire" Count="20" />
+        <Component Subtype="Electromagnet" Count="20" />
+        <Component Subtype="LargeTube" Count="15" />
+        <Component Subtype="Computer" Count="20" />
+        <Component Subtype="SteelPlate" Count="40" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="2" EndY="3" />
+        <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Front" StartX="1" StartY="0" EndX="2" EndY="1" />
+        <MountPoint Side="Right" StartX="1" StartY="0" EndX="2" EndY="1" />
+        <MountPoint Side="Top" StartX="0" StartY="0.5" EndX="1" EndY="2.5" />
+      </MountPoints>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Construct\PressConstruct1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Construct\PressConstruct2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Construct\PressConstruct3.mwm" />
+      </BuildProgressModels>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>80</BuildTimeSeconds>
+      <ResourceSinkGroup>Factory</ResourceSinkGroup>
+      <InventoryMaxVolume>5</InventoryMaxVolume>
+      <InventorySize>
+        <X>1</X>
+        <Y>1</Y>
+        <Z>1</Z>
+      </InventorySize>
+      <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+      <OperationalPowerConsumption>0.5</OperationalPowerConsumption>
+      <BlueprintClasses>
+        <Class>CompressedGravel</Class>
+      </BlueprintClasses>
+      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+      <DamagedSound>ParticleHeavyMech</DamagedSound>
+      <PrimarySound>BlockAssembler</PrimarySound>
+      <ActionSound>BlockAssemblerProcess</ActionSound>
+      <DestroyEffect>Explosion_Missile</DestroyEffect>
+      <DestroySound>WepSmallMissileExpl</DestroySound>
+      <PCU>40</PCU>
+      <EmissiveColorPreset>Extended</EmissiveColorPreset>  
+    </Definition>
+
+
+ -->
+    <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+      <Id>
+        <TypeId>LargeGatlingTurret</TypeId>
+        <SubtypeId>LightGravelTurret</SubtypeId>
+      </Id>
+      <DisplayName>Light Gravel Turret</DisplayName>
+      <Icon>Icons\LightGravelTurret.dds</Icon>
+      <Description>Uses an electrically-powered piston to fire chunks of gravel with compressed air. Low damage, high fire rate. Good for short-range defense.</Description>
+      <CubeSize>Large</CubeSize>
+      <PlaceDecals>false</PlaceDecals>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\LightGravelTurretBase.mwm</Model>
+      <UseModelIntersection>true</UseModelIntersection>
+      <Components>
+        <Component Subtype="SteelPlate" Count="25" />
+        <Component Subtype="Construction" Count="20" />
+        <Component Subtype="SmallTube" Count="15" />
+        <Component Subtype="LargeTube" Count="10" />
+        <Component Subtype="Motor" Count="2" />
+        <Component Subtype="Computer" Count="10" />
+        <Component Subtype="SteelPlate" Count="30" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+      </MountPoints>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Construct\LightGravelTurretConstruct1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Construct\LightGravelTurretConstruct2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Construct\LightGravelTurretConstruct3.mwm" />
+      </BuildProgressModels>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+	  <BlockPairName>LightGravelTurret</BlockPairName>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>20</BuildTimeSeconds>
+      <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
+      <WeaponDefinitionId Subtype="LightGravelTurret" />
+      <InventoryMaxVolume>0.1</InventoryMaxVolume>
+      <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+      <DamagedSound>ParticleWeapExpl</DamagedSound>
+      <ResourceSinkGroup>Defense</ResourceSinkGroup>
+      <MinElevationDegrees>-58</MinElevationDegrees>
+      <MaxElevationDegrees>90</MaxElevationDegrees>
+      <MinAzimuthDegrees>-180</MinAzimuthDegrees>
+      <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
+      <IdleRotation>true</IdleRotation>
+      <MaxRangeMeters>700</MaxRangeMeters>
+      <RotationSpeed>0.002</RotationSpeed>
+      <ElevationSpeed>0.002 </ElevationSpeed>
+      <EmissiveColorPreset>Default</EmissiveColorPreset>
+      <MinFov>0.1</MinFov>
+      <MaxFov>1.04719755</MaxFov>
+      <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>
+      <PCU>275</PCU>
+      <IsAirTight>false</IsAirTight>
+      <UpCameraOffset>0.25</UpCameraOffset>
+    </Definition>
+
+    <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+      <Id>
+        <TypeId>LargeGatlingTurret</TypeId>
+        <SubtypeId>SmallLightGravelTurret</SubtypeId>
+      </Id>
+      <DisplayName>Light Gravel Turret</DisplayName>
+      <Icon>Icons\LightGravelTurret.dds</Icon>
+      <Description>Uses an electrically-powered piston to fire chunks of gravel with compressed air. Low damage, high fire rate. Good for short-range defense.</Description>
+      <CubeSize>Small</CubeSize>
+      <PlaceDecals>true</PlaceDecals>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="5" y="4" z="5" />
+      <ModelOffset x="0" y="0.25" z="0" />
+      <Model>Models\LightGravelTurretBase.mwm</Model>
+      <UseModelIntersection>true</UseModelIntersection>
+      <Components>
+        <Component Subtype="SteelPlate" Count="25" />
+        <Component Subtype="Construction" Count="20" />
+        <Component Subtype="SmallTube" Count="15" />
+        <Component Subtype="LargeTube" Count="10" />
+        <Component Subtype="Motor" Count="2" />
+        <Component Subtype="Computer" Count="10" />
+        <Component Subtype="SteelPlate" Count="30" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" />
+      </MountPoints>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Construct\LightGravelTurretConstruct1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Construct\LightGravelTurretConstruct2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Construct\LightGravelTurretConstruct3.mwm" />
+      </BuildProgressModels>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+	  <BlockPairName>LightGravelTurret</BlockPairName>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>20</BuildTimeSeconds>
+      <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
+      <WeaponDefinitionId Subtype="LightGravelTurret" />
+      <InventoryMaxVolume>0.1</InventoryMaxVolume>
+      <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+      <DamagedSound>ParticleWeapExpl</DamagedSound>
+      <ResourceSinkGroup>Defense</ResourceSinkGroup>
+      <MinElevationDegrees>-58</MinElevationDegrees>
+      <MaxElevationDegrees>90</MaxElevationDegrees>
+      <MinAzimuthDegrees>-180</MinAzimuthDegrees>
+      <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
+      <IdleRotation>true</IdleRotation>
+      <MaxRangeMeters>700</MaxRangeMeters>
+      <RotationSpeed>0.002</RotationSpeed>
+      <ElevationSpeed>0.002 </ElevationSpeed>
+      <EmissiveColorPreset>Default</EmissiveColorPreset>
+      <MinFov>0.1</MinFov>
+      <MaxFov>1.04719755</MaxFov>
+      <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>
+      <PCU>275</PCU>
+      <IsAirTight>false</IsAirTight>
+      <UpCameraOffset>0.25</UpCameraOffset>
+    </Definition>
+
+<!--
+    <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+      <Id>
+        <TypeId>LargeMissileTurret</TypeId>
+        <SubtypeId>HeavyGravelTurret</SubtypeId>
+      </Id>
+      <DisplayName>Heavy Gravel Turret</DisplayName>
+      <Icon>Icons\HeavyGravelTurret.dds</Icon>
+      <Description>Uses compressed air to fire a large stone. Long-range, decent damage, low fire rate.</Description>
+      <CubeSize>Large</CubeSize>
+      <PlaceDecals>false</PlaceDecals>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="3" y="2" z="3" />
+      <Center x="1" y="0" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\HeavyGravelTurretBase.mwm</Model>
+      <UseModelIntersection>true</UseModelIntersection>
+      <Components>
+        <Component Subtype="SteelPlate" Count="35" />
+        <Component Subtype="Construction" Count="40" />
+        <Component Subtype="SmallTube" Count="15" />
+        <Component Subtype="LargeTube" Count="30" />
+        <Component Subtype="CopperWire" Count="30" />
+        <Component Subtype="Motor" Count="5" />
+        <Component Subtype="Computer" Count="10" />
+        <Component Subtype="SteelPlate" Count="40" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="3" EndY="3" />
+      </MountPoints>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Construct\HeavyGravelTurretConstruct1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Construct\HeavyGravelTurretConstruct2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Construct\HeavyGravelTurretConstruct3.mwm" />
+      </BuildProgressModels>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>20</BuildTimeSeconds>
+      <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
+      <WeaponDefinitionId Subtype="HeavyGravelTurret" />
+      <InventoryMaxVolume>0.1</InventoryMaxVolume>
+      <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+      <DamagedSound>ParticleWeapExpl</DamagedSound>
+      <ResourceSinkGroup>Defense</ResourceSinkGroup>
+      <MinElevationDegrees>-20</MinElevationDegrees>
+      <MaxElevationDegrees>35</MaxElevationDegrees>
+      <MinAzimuthDegrees>-180</MinAzimuthDegrees>
+      <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
+      <IdleRotation>true</IdleRotation>
+      <MaxRangeMeters>1000</MaxRangeMeters>
+      <RotationSpeed>0.0005</RotationSpeed>
+      <ElevationSpeed>0.0005 </ElevationSpeed>
+      <EmissiveColorPreset>Default</EmissiveColorPreset>
+      <MinFov>0.1</MinFov>
+      <MaxFov>1.04719755</MaxFov>
+      <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>
+      <PCU>275</PCU>
+      <IsAirTight>false</IsAirTight>  
+      <UpCameraOffset>1</UpCameraOffset>    
+    </Definition>
+-->
+  </CubeBlocks>
+</Definitions>

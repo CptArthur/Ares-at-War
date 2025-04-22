@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Blueprints>
+
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>AdvancedHandHeldLauncher</SubtypeId>
+            </Id>
+            <DisplayName>DisplayName_Item_AdvancedHandHeldLauncher</DisplayName>
+            <Icon>Textures\GUI\Icons\WeaponRocketLauncher_Precise.dds</Icon>
+            <Prerequisites>
+                <Item Amount="30" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="10" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="5" TypeId="Ingot" SubtypeId="Cobalt" />
+                <Item Amount="15" TypeId="Ingot" SubtypeId="Uranium" />
+            </Prerequisites>
+            <Result Amount="1" TypeId="PhysicalGunObject" SubtypeId="AdvancedHandHeldLauncherItem" />
+            <BaseProductionTimeInSeconds>20</BaseProductionTimeInSeconds>
+        </Blueprint>
+
+		<Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>EliteAutoPistol</SubtypeId>
+            </Id>
+            <DisplayName>DisplayName_Item_ElitePistol</DisplayName>
+            <Icon>Textures\GUI\Icons\WeaponPistol_Elite_Warfare.dds</Icon>
+            <Prerequisites>
+                <Item Amount="1" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="0.4" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="2.5" TypeId="Ingot" SubtypeId="Cobalt" />
+                <Item Amount="2" TypeId="Ingot" SubtypeId="Silver" />
+            </Prerequisites>
+            <Result Amount="1" TypeId="PhysicalGunObject" SubtypeId="ElitePistolItem" />
+            <BaseProductionTimeInSeconds>12</BaseProductionTimeInSeconds>
+        </Blueprint>
+
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>UltimateAutomaticRifleGun_Mag_30rd</SubtypeId>
+            </Id>
+            <DisplayName>DisplayName_Item_UltimateAutomaticRifleGun_Mag_30rd</DisplayName>
+            <Icon>Textures\GUI\Icons\ammo\Rifle_Ammo_Elite.dds</Icon>
+            <Prerequisites>
+                <Item Amount="25" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="3" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="2" TypeId="Ingot" SubtypeId="Magnesium" />
+            </Prerequisites>
+            <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="UltimateAutomaticRifleGun_Mag_30rd" />
+            <BaseProductionTimeInSeconds>10</BaseProductionTimeInSeconds>
+        </Blueprint>
+
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>HandheldAssaultAmmo</SubtypeId>
+            </Id>
+            <DisplayName>Handheld Assault shell</DisplayName>
+            <Icon>Textures\GUI\Icons\ammo\MediumCalibreShell.dds</Icon>
+            <Prerequisites>
+                <Item Amount="15" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="2" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="1.2" TypeId="Ingot" SubtypeId="Magnesium" />
+            </Prerequisites>
+            <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="HandheldAssaultAmmo" />
+            <BaseProductionTimeInSeconds>4</BaseProductionTimeInSeconds>
+        </Blueprint>
+
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>HandheldRailgunAmmo</SubtypeId>
+            </Id>
+            <DisplayName>Handheld Railgun Ammo</DisplayName>
+            <Icon>Textures\GUI\Icons\ammo\RailgunAmmo.dds</Icon>
+            <Prerequisites>
+                <Item Amount="4" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="0.5" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="5" TypeId="Ingot" SubtypeId="Silicon" />
+                <Item Amount="0.2" TypeId="Ingot" SubtypeId="Uranium" />
+            </Prerequisites>
+            <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="HandheldRailgunAmmo" />
+            <BaseProductionTimeInSeconds>8</BaseProductionTimeInSeconds>
+        </Blueprint>
+
+	</Blueprints>
+</Definitions>

@@ -1,0 +1,414 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <EntityComponents>
+<!--
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>(NPC-SY)SpawnCluster-Trigger</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Timer]
+      [UseTrigger:true]
+      [StartsReady:false]
+      [MaxActions:1]
+      [MinCooldownMs:1000]
+      [MaxCooldownMs:3000]
+      [ActionExecution:Random]
+
+      [Actions:(NPC-SY)SpawnBillboard-Action]
+      [Actions:(NPC-SY)SpawnHangar-Action]
+      [Actions:(NPC-SY)SpawnHighway-Action]
+      [Actions:(NPC-SY)SpawnIndustrial-Action]
+      [Actions:(NPC-SY)SpawnOffice-Action]
+      [Actions:(NPC-SY)SpawnPipeline-Action]
+      [Actions:(NPC-SY)SpawnPlanes-Action]
+      [Actions:(NPC-SY)SpawnPowerline-Action]
+      [Actions:(NPC-SY)SpawnServiceStation-Action]
+      [Actions:(NPC-SY)SpawnSilo-Action]
+      [Actions:(NPC-SY)SpawnVehicleCiv-Action]
+      [Actions:(NPC-SY)SpawnVehicleMil-Action]
+      [Actions:(NPC-SY)SpawnWarehouse-Action]
+      [Actions:(NPC-SY)SpawnWatchTower-Action]
+      [Actions:(NPC-SY)SpawnWaterTower-Action]
+      [Actions:(NPC-SY)SpawnWindTower-Action]
+      [Actions:(NPC-SY)SpawnTrains-Action]     
+
+      [Actions:(NPC-SY)SpawnVehicleCiv2-Action]
+      [Actions:(NPC-SY)SpawnVehicleCiv3-Action]
+      
+      </Description>
+      
+    </EntityComponent> 	
+	
+	
+	AaW_ClusterCoreBehavior_Planes
+	AaW_ClusterCoreBehavior_Vehicle
+	AaW_ClusterCoreBehavior_Infrastructure
+	AaW_ClusterCoreBehavior_Warehouse
+	AaW_ClusterCoreBehavior_Buildings
+	
+	
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_SCRAP_Trigger_RemoveBlocks</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:PlayerNear]
+      [UseTrigger:false]
+      [StartsReady:true]
+      [TargetDistance:2800]
+      [Actions:AaW_SCRAP_Action_RemoveBlocks]
+      [MaxActions:1]
+      </Description>
+      
+    </EntityComponent> <!-- AaW_SCRAP_Trigger_RemoveBlocks -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_SCRAP_Action_RemoveBlocks</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+      [RazeBlocksWithNames:true]
+      [RazeBlocksNames:DeleteThisBlock]
+      [RazeBlocksOfType:true]
+      [RazeBlocksTypes:MyObjectBuilder_RemoteControl/RivalAIRemoteControlLarge]
+      [RazeBlocksTypes:MyObjectBuilder_RemoteControl/RivalAIRemoteControlSmall]
+
+
+	[TerminateBehavior:true]
+
+      </Description>
+      
+    </EntityComponent> 
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_SCRAP_Trigger_Delay</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Timer]
+      [UseTrigger:true]
+      [StartsReady:false]
+      [MinCooldownMs:7500]
+      [MaxCooldownMs:10000]
+      [Actions:AaW_SCRAP_Action_Delay]
+      [MaxActions:1]
+      </Description>
+      
+    </EntityComponent> 
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_SCRAP_Action_Delay</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+      [EnableTriggers:true]
+      [EnableTriggerNames:AaW_SCRAP_Trigger_RemoveBlocks]
+      
+	  	[SetSandboxBooleansTrue:{SpawnGroupName}Spawned]
+      </Description>
+      
+    </EntityComponent> 
+	
+	
+	
+
+
+
+
+
+
+
+
+
+<!-- Modified from Splitise scrapyard -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_ClusterCoreBehavior_Planes</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Behavior]
+      [BehaviorName:Passive]
+	  
+      [Triggers:AaW_SCRAP_Trigger_RemoveBlocks]
+      [Triggers:AaW_SCRAP_Trigger_Delay]
+      [Triggers:AaW_SpawnCluster_Trigger_Plane]
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_SCRAP_Trigger_RemoveBlocks</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:PlayerNear]
+      [UseTrigger:false]
+      [StartsReady:true]
+      [TargetDistance:2800]
+      [Actions:AaW_SCRAP_Action]
+      [MaxActions:1]
+      </Description>
+      
+    </EntityComponent> <!-- AaW_SCRAP_Trigger_RemoveBlocks -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_SCRAP_Action</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+      [RazeBlocksWithNames:true]
+      [RazeBlocksNames:DeleteThisBlock]
+      [RazeBlocksOfType:true]
+      [RazeBlocksTypes:MyObjectBuilder_RemoteControl/RivalAIRemoteControlLarge]
+      [RazeBlocksTypes:MyObjectBuilder_RemoteControl/RivalAIRemoteControlSmall]
+
+      </Description>
+      
+    </EntityComponent> 
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_SCRAP_Trigger_Delay</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Timer]
+      [UseTrigger:true]
+      [StartsReady:false]
+      [MinCooldownMs:7500]
+      [MaxCooldownMs:10000]
+      [Actions:(NPC-SY)EnableRemoveBlocks-Action]
+      [MaxActions:1]
+      </Description>
+      
+    </EntityComponent> 
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>(NPC-SY)EnableRemoveBlocks-Action</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+      [EnableTriggers:true]
+      [EnableTriggerNames:AaW_SCRAP_Trigger_RemoveBlocks]
+      
+      </Description>
+      
+    </EntityComponent> 	
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_SpawnCluster_Trigger_Plane</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Trigger]
+      [Type:Timer]
+      [UseTrigger:true]
+      [StartsReady:false]
+      [MaxActions:1]
+      [MinCooldownMs:1000]
+      [MaxCooldownMs:3000]
+      [ActionExecution:Random]
+
+      [Actions:(NPC-SY)SpawnPlanes-Action]
+      
+      </Description>
+    </EntityComponent> 	
+	
+	
+
+	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_ClusterCoreBehavior_Vehicle</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Behavior]
+      [BehaviorName:Passive]
+	  
+      [Triggers:AaW_SCRAP_Trigger_RemoveBlocks]
+      [Triggers:AaW_SCRAP_Trigger_Delay]
+      [Triggers:AaW_SpawnCluster_Trigger_Vehicle]
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_SpawnCluster_Trigger_Vehicle</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Trigger]
+      [Type:Timer]
+      [UseTrigger:true]
+      [StartsReady:false]
+      [MaxActions:1]
+      [MinCooldownMs:1000]
+      [MaxCooldownMs:3000]
+      [ActionExecution:Random]
+
+      [Actions:(NPC-SY)SpawnVehicleCiv-Action]
+      [Actions:(NPC-SY)SpawnVehicleMil-Action]
+      [Actions:(NPC-SY)SpawnVehicleCiv2-Action]
+      [Actions:(NPC-SY)SpawnVehicleCiv3-Action]
+      </Description>
+    </EntityComponent> 	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_ClusterCoreBehavior_Infrastructure</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Behavior]
+      [BehaviorName:Passive]
+	  
+      [Triggers:AaW_SCRAP_Trigger_RemoveBlocks]
+      [Triggers:AaW_SCRAP_Trigger_Delay]
+      [Triggers:AaW_SpawnCluster_Trigger_Infrastructure]
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_SpawnCluster_Trigger_Infrastructure</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Trigger]
+      [Type:Timer]
+      [UseTrigger:true]
+      [StartsReady:false]
+      [MaxActions:1]
+      [MinCooldownMs:1000]
+      [MaxCooldownMs:3000]
+      [ActionExecution:Random]
+
+
+	[Actions:(NPC-SY)SpawnWaterTower-Action]
+	[Actions:(NPC-SY)SpawnWindTower-Action]
+	[Actions:(NPC-SY)SpawnPowerline-Action]	  
+	[Actions:(NPC-SY)SpawnHighway-Action]	  
+	[Actions:(NPC-SY)SpawnPipeline-Action]
+	[Actions:(NPC-SY)SpawnWatchTower-Action]
+	[Actions:(NPC-SY)SpawnSilo-Action]
+      [Actions:(NPC-SY)SpawnBillboard-Action]	
+	
+      </Description>
+    </EntityComponent> 	
+	
+	
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_ClusterCoreBehavior_Warehouse</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Behavior]
+      [BehaviorName:Passive]
+	  
+      [Triggers:AaW_SCRAP_Trigger_RemoveBlocks]
+      [Triggers:AaW_SCRAP_Trigger_Delay]
+      [Triggers:AaW_SpawnCluster_Trigger_Warehouse]
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_SpawnCluster_Trigger_Warehouse</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Trigger]
+      [Type:Timer]
+      [UseTrigger:true]
+      [StartsReady:false]
+      [MaxActions:1]
+      [MinCooldownMs:1000]
+      [MaxCooldownMs:3000]
+      [ActionExecution:Random]
+
+      [Actions:(NPC-SY)SpawnWarehouse-Action]
+
+      </Description>
+    </EntityComponent> 	
+	
+	
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_ClusterCoreBehavior_Buildings</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Behavior]
+      [BehaviorName:Passive]
+	  
+      [Triggers:AaW_SCRAP_Trigger_RemoveBlocks]
+      [Triggers:AaW_SCRAP_Trigger_Delay]
+      [Triggers:AaW_SpawnCluster_Trigger_Buildings]
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_SpawnCluster_Trigger_Buildings</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Trigger]
+      [Type:Timer]
+      [UseTrigger:true]
+      [StartsReady:false]
+      [MaxActions:1]
+      [MinCooldownMs:1000]
+      [MaxCooldownMs:3000]
+      [ActionExecution:Random]
+
+	  [Actions:(NPC-SY)SpawnIndustrial-Action]
+      [Actions:(NPC-SY)SpawnOffice-Action]
+
+      </Description>
+    </EntityComponent>
+	
+
+	
+	
+	
+  </EntityComponents>
+</Definitions>

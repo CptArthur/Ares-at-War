@@ -158,6 +158,12 @@ namespace AresAtWar.SessionCore
 
                 MESApi.RegisterCustomMissionMapping(true, "AaW-MissionMapping", CustomMissionMapping.InternalMissionMapping);
 
+
+                MESApi.ToggleSpawnGroupEnabled("(NPC-SY) Cluster Core", false);
+                MESApi.ToggleSpawnGroupEnabled("NPC-SY-LG-SpaceCargoShips", false);
+                MESApi.ToggleSpawnGroupEnabled("NPC-SY-LG-SpaceRandomEncounters", false);
+                MESApi.ToggleSpawnGroupEnabled("NPC-SY-SG-SpaceRandomEncounters", false);
+
                 WarSim.Init();
 
 

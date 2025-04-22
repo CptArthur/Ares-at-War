@@ -55,7 +55,9 @@ namespace RespawnSystem
 
 
         public static Vector3D PlanetCenter = new Vector3D(0, 0, 0);
-        public static Vector3D AgarisCenter = new Vector3D(-1129033.5, 126871.5, 1293873.5);
+        public static Vector3D AgarisCenter = new Vector3D(-3663015, -1309985, -2583899);
+
+
         public static Vector3D Carcosa = new Vector3D(-1174736.16, 106319.66, 1325749.58);
         public static Vector3D Thora4Ice = new Vector3D(-677376.160958611, -1056251.32781255, -3498327.91690333);
         public static Vector3D Azuris = new Vector3D(-1080910.05, 135510.47, 1258013.98);
@@ -146,12 +148,14 @@ namespace RespawnSystem
                     else if (MyAPIGateway.Multiplayer.IsServer)
                         MyAPIGateway.Multiplayer.SendMessageTo(modId, Encoding.ASCII.GetBytes("start"), MyVisualScriptLogicProvider.GetSteamId(player.IdentityId), true);
                 }
-
-
-
-
-
             }
+
+            if (RespawnShipPrefabName == "ITC Sollieman (Crashed)")
+            {
+                respawndata.TLL = MyAPIGateway.Session.GameplayFrameCounter;
+            }
+
+
 
             _RespawnData.Add(respawndata);
 
@@ -173,7 +177,6 @@ namespace RespawnSystem
                 MyVisualScriptLogicProvider.SendChatMessage("You can press Backspace to return to the spawn options. We apologize for the inconvenience", "AaW", playerId, "Red");
                 return;
             }
-
 
             if (RespawnShipPrefabName == "ITC Mallard (Crashed)")
             {
@@ -221,6 +224,25 @@ namespace RespawnSystem
                 grid.ConvertToStatic();
                 return;
             }
+
+
+            if (RespawnShipPrefabName == "ITC Sollieman (Crashed)")
+            {
+
+                Vector3 up = new Vector3D(0.624786874144575, -0.11728583489358, 0.771936133906146);
+                Vector3 forward = new Vector3D(0.528042385064626, 0.791749788939157, -0.307088767769291);
+                Vector3D position = new Vector3D(-3636316.10199224, -1307380.4688901, -2531247.5201753);
+                MatrixD matrix = MatrixD.CreateWorld(position, forward, up);
+
+
+
+                grid.Teleport(matrix);
+                grid.PositionComp.SetWorldMatrix(ref matrix, skipTeleportCheck: true);
+                grid.ConvertToStatic();
+                return;
+            }
+
+
 
             if (RespawnShipPrefabName == "Pod-A26")
             {

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<SpawnGroups>
-	<!--Do Not Edit Above Here-->
+	<!--
 
 		<SpawnGroup>
 			<Id>
@@ -63,10 +63,11 @@
 			
 		</SpawnGroup>
 
+-->
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>DRA_MiningOutpost</SubtypeId>
+				<SubtypeId>DRA_MiningOutpostCobalt</SubtypeId>
 			</Id>
 			<Description>
 			[Modular Encounters SpawnGroup]
@@ -105,7 +106,7 @@
 			[RivalAiReplaceRemoteControl:true]
 			[IgnoreCombatPhase:true]
 			[IgnoreCleanupRules:true]
-			[FalseSandboxVariables:DRA_MiningOutpost]			
+			[FalseSandboxVariables:DRA_MiningOutpostCobaltDestroyed]			
 			[ZoneConditions:ZoneCondition_ZoneAaW]
 			</Description>
 			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
@@ -124,8 +125,71 @@
 				<PlaceToGridOrigin>true</PlaceToGridOrigin>
 				</Prefab>
 			</Prefabs>
-			
 		</SpawnGroup>
+
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>DRA_MiningOutpostMagnesium</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:DRA]		
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:10000]
+
+			[ForceExactPositionAndOrientation:true]
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-AAW)]
+			[RandomGridNamePattern:Mining outpost]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]
+			
+			[StaticEncounterCoords:{X:-3678919.75817321 Y:-1328045.60224412 Z:-2529986.12841394}]
+			[StaticEncounterForward:{X:0.235492029433096 Y:-0.94024786812564 Z:-0.245921634995117}]
+			[StaticEncounterUp:{X:0.269307796025425 Y:0.306260661073606 Z:-0.913059537203728}]
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Agaris]
+			[StaticEncounterPlanetDirection:{X:-0.269384560305155 Y:-0.305884973702759 Z:0.913162823121956}]
+			[StaticEncounterPlanetAltitude:0.0303043918684125]
+
+			[ReplenishSystems:true]
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:DRA_MiningOutpostCobaltDestroyed]			
+			[ZoneConditions:ZoneCondition_ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="DRA-MiningOutpost">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>DRA_RestrictedOutpost_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+		</SpawnGroup>
+
+
+
+
 
 
 

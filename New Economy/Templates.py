@@ -93,6 +93,40 @@ def GetStoreSettlement(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngo
         [Offers:Component/ReactorComponent] 
         [Offers:Component/MetalGrid] 
 
+        [Offers:Ammo/NATO_25x184mm] 
+        [Offers:Ammo/missile] 
+        [Offers:Ammo/MediumCalibreAmmo] 
+        [Offers:Ammo/LargeCalibreAmmo] 
+        [Offers:Ammo/LargeRailgunAmmo] 
+        [Offers:Ammo/SmallRailgunAmmo] 
+        [Offers:Ammo/AutocannonClip] 
+
+        [Offers:Ammo/PreciseAutomaticRifleGun_Mag_5rd] 
+        [Offers:Ammo/RapidFireAutomaticRifleGun_Mag_50rd] 
+        [Offers:Ammo/AutomaticRifleGun_Mag_20rd] 
+        [Offers:Ammo/NATO_5p56x45mm] 
+
+        [Offers:Ammo/UltimateAutomaticRifleGun_Mag_30rd] 
+        [Offers:Ammo/SemiAutoPistolMagazine] 
+        [Offers:Ammo/FullAutoPistolMagazine] 
+        [Offers:Ammo/ElitePistolMagazine] 
+
+
+
+
+        [Offers:Tool/SemiAutoPistolItem] 
+        [Offers:Tool/FullAutoPistolItem] 
+        [Offers:Tool/MediumCalibreAmmo] 
+        [Offers:Tool/AutomaticRifleItem] 
+        [Offers:Tool/PreciseAutomaticRifleItem] 
+        [Offers:Tool/RapidFireAutomaticRifleItem] 
+
+
+        
+        
+
+
+
   
       </Description>
 
@@ -461,7 +495,7 @@ def GetStoreAmmo(XML_Name:str,Faction:str, Name:str)->str:
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>{Faction}_StoreProfile_{Name}-Ammo</SubtypeId>
+        <SubtypeId>{Faction}_StoreProfile_{Name}_Ammo</SubtypeId>
       </Id>
       <Description>
 

@@ -1,8 +1,82 @@
 <?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<SpawnGroups>
-	
+	<!--
+Grid Name:          SHIVAN - Thorrix
 
+Tags For SpawnGroup:
+[StaticEncounterCoords:{X:-3666686.59716887 Y:-1319669.64422984 Z:-2525747.25255478}]
+[StaticEncounterForward:{X:-0.0889732546069877 Y:0.983329839644917 Z:0.158575491260603}]
+[StaticEncounterUp:{X:-0.0621107763902282 Y:-0.164374497393874 Z:0.984440590418088}]
+
+Optional Tags For Dynamic Planet Spawning:
+[StaticEncounterUsePlanetDirectionAndAltitude:true]
+[StaticEncounterPlanet:Planet Agaris]
+[StaticEncounterPlanetDirection:{X:-0.0621569071649948 Y:-0.163942309493966 Z:0.98450974502514}]
+[StaticEncounterPlanetAltitude:0.544622084315051]
+	
+	
+	-->
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>SHIVAN_Thorrix</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:SHIVAN]		
+
+		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+		[TriggerRadius:4500]
+
+		[ForceExactPositionAndOrientation:true]
+
+
+
+		[StaticEncounterCoords:{X:-3666686.59716887 Y:-1319669.64422984 Z:-2525747.25255478}]
+		[StaticEncounterForward:{X:-0.0889732546069877 Y:0.983329839644917 Z:0.158575491260603}]
+		[StaticEncounterUp:{X:-0.0621107763902282 Y:-0.164374497393874 Z:0.984440590418088}]
+
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Agaris]
+		[StaticEncounterPlanetDirection:{X:-0.0621569071649948 Y:-0.163942309493966 Z:0.98450974502514}]
+		[StaticEncounterPlanetAltitude:0.544622084315051]
+
+			[CutVoxelsAtAirtightCells:true]
+			
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:SHIVAN_HQDestroyed]			
+		[ZoneConditions:ZoneCondition-ZoneAaW]	
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="SHIVAN - Thorrix">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>SHIVAN_HQ_Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+	</SpawnGroup>
+	
+	
 <!-- Horseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee shoeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
 <!-- Horseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee shoeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
 	<SpawnGroup>

@@ -438,6 +438,22 @@ for index, row in df.iterrows():
                                 Requirement(Nickel, 3),   
                                 Requirement(Niter, 2),       
                                 Requirement(Silicon, 5)])
+        
+
+
+        Item(ItemTypeEnum.Ammo, "PreciseAutomaticRifleGun_Mag_5rd", 0)
+        Item(ItemTypeEnum.Ammo, "RapidFireAutomaticRifleGun_Mag_50rd", 0)
+        Item(ItemTypeEnum.Ammo, "AutomaticRifleGun_Mag_20rd", 0)
+        Item(ItemTypeEnum.Ammo, "NATO_5p56x45mm", 0)
+
+
+        Item(ItemTypeEnum.Ammo, "UltimateAutomaticRifleGun_Mag_30rd", 0)
+
+
+        Item(ItemTypeEnum.Ammo, "SemiAutoPistolMagazine", 0)
+        Item(ItemTypeEnum.Ammo, "FullAutoPistolMagazine", 0)
+        Item(ItemTypeEnum.Ammo, "ElitePistolMagazine", 0)
+
 
         Item(ItemTypeEnum.Tool, "HandDrill2Item", 0)
         Item(ItemTypeEnum.Tool, "HandDrill3Item", 0)
@@ -552,10 +568,31 @@ for index, row in df.iterrows():
                                 Requirement(Magnesium, 2),       
                                 Requirement(Silicon, 5)])
 
+
+        Item(ItemTypeEnum.Ammo, "PreciseAutomaticRifleGun_Mag_5rd", 0)
+        Item(ItemTypeEnum.Ammo, "RapidFireAutomaticRifleGun_Mag_50rd", 0)
+        Item(ItemTypeEnum.Ammo, "AutomaticRifleGun_Mag_20rd", 0)
+        Item(ItemTypeEnum.Ammo, "NATO_5p56x45mm", 0)
+
+
+        Item(ItemTypeEnum.Ammo, "UltimateAutomaticRifleGun_Mag_30rd", 0)
+
+
+        Item(ItemTypeEnum.Ammo, "SemiAutoPistolMagazine", 0)
+        Item(ItemTypeEnum.Ammo, "FullAutoPistolMagazine", 0)
+        Item(ItemTypeEnum.Ammo, "ElitePistolMagazine", 0)
+
+
+
+
         Item(ItemTypeEnum.Tool, "HandDrill2Item", 0)
         Item(ItemTypeEnum.Tool, "HandDrill3Item", 0)
         Item(ItemTypeEnum.Tool, "AngleGrinder2Item", 0)
         Item(ItemTypeEnum.Tool, "AngleGrinder3Item", 0)
+
+
+
+
         Item(ItemTypeEnum.Tool, "Welder2Item", 0)
         Item(ItemTypeEnum.Tool, "Welder3Item", 0)
         Item(ItemTypeEnum.Tool, "SemiAutoPistolItem", 0)
@@ -607,8 +644,12 @@ for index, row in df.iterrows():
         if IO:
             Encounter_Id = Encounter_Id + "IO"
 
+        mission_ids = []
+        if isinstance(row['MissionIds'], str):
+            mission_ids = row['MissionIds'].split(',')
 
-        mission_ids = row['MissionIds'].split(',')
+
+
         PB.CreateStoreItems(Faction,Encounter_Id,XML_Name,row['StoreProfiles'],row['TradeIngots'],Ingots,mission_ids)
 
 

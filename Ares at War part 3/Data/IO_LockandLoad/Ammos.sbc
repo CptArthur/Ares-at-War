@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Ammos>
+  
+ 
+    <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
+      <Id>
+        <TypeId>AmmoDefinition</TypeId>
+        <SubtypeId>GravelMag</SubtypeId>
+      </Id>
+      <BasicProperties>
+        <DesiredSpeed>100</DesiredSpeed>
+        <SpeedVariance>0</SpeedVariance>
+        <MaxTrajectory>700</MaxTrajectory>
+        <BackkickForce>1</BackkickForce>
+        <PhysicalMaterial>RifleBullet</PhysicalMaterial>
+      </BasicProperties>
+      <ProjectileProperties>
+        <ProjectileTrailScale>0.1</ProjectileTrailScale>
+        <ProjectileHitImpulse>0.5</ProjectileHitImpulse>
+        <ProjectileMassDamage>10</ProjectileMassDamage>
+        <ProjectileHealthDamage>25</ProjectileHealthDamage>
+        <HeadShot>true</HeadShot>
+        <ProjectileHeadShotDamage>20</ProjectileHeadShotDamage>
+        <ProjectileTrailProbability>1</ProjectileTrailProbability>
+      </ProjectileProperties>
+    </Ammo>
+  
+    <Ammo xsi:type="MyObjectBuilder_MissileAmmoDefinition">
+      <Id>
+        <TypeId>AmmoDefinition</TypeId>
+        <SubtypeId>GravelMagBig</SubtypeId>
+      </Id>
+      <BasicProperties>
+        <DesiredSpeed>150</DesiredSpeed>
+        <SpeedVariance>0</SpeedVariance>
+        <MaxTrajectory>1000</MaxTrajectory>
+        <IsExplosive>false</IsExplosive>
+        <BackkickForce>900</BackkickForce>
+        <PhysicalMaterial>Missile</PhysicalMaterial>
+      </BasicProperties>
+      <MissileProperties>
+        <MissileMass>25</MissileMass>
+        <MissileExplosionRadius>0.5</MissileExplosionRadius>
+        <MissileModelName>Models\Rock.mwm</MissileModelName>
+        <MissileAcceleration>0</MissileAcceleration>
+        <MissileInitialSpeed>150</MissileInitialSpeed>
+        <MissileSkipAcceleration>true</MissileSkipAcceleration>
+        <MissileExplosionDamage>1500</MissileExplosionDamage>
+        <TrailScale>0.001</TrailScale>
+      </MissileProperties>
+    </Ammo>
+
+	
+  </Ammos>
+</Definitions>
