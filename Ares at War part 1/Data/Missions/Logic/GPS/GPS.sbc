@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+ <!--
+Variables:
+
+{GPSName}
+{GPSCoords}
+On start Send GPS to Players; 
+PlayerNear Watcher 
+	
+ -->
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MissionGroup_GPS</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event TemplateGroup]
+		
+		[TemplateEventIds:AaW_EventTemplate_GPS_Init]
+      </Description>
+	</EntityComponent>	
+	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_GPS_Init</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:true]
+		[UniqueEvent:true]	
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:1100]
+		
+		[ActionIds:AaW_EventActionTemplate_GPS_CreateGPS]
+		[ActionIds:AaW_EventActionTemplate_GPS_CloseInstance]
+
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_GPS_CreateGPS</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+	[AddGPSToPlayers:true]
+	[AddGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	[UseGPSObjective:false]
+	
+	[GPSNames:{GPSName}]
+	[GPSVector3Ds:{GPSCoords}]
+	
+      </Description>
+    </EntityComponent>	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_GPS_CloseInstance</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	[RemoveThisInstanceGroup:true]
+	[TryContractSuccess:true]
+		</Description>
+    </EntityComponent>		
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>
+

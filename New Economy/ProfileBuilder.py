@@ -18,7 +18,7 @@ def CreateStoreItems(Faction, Name:str,XML_Name: str,StoresProfiles:str,TradeIng
      {Temp.GetStoreTradestation(XML_Name,Faction,Name,Ingots,TradeIngots) if "Tradestation" in StoresProfiles else ""}
 
 
-     {Temp.GetStoreSettlement(XML_Name,Faction,Name,Ingots,TradeIngots) if "HQ" in StoresProfiles else ""}
+     {Temp.GetStoreMilitary(XML_Name,Faction,Name,Ingots,TradeIngots) if "Military" in StoresProfiles else ""}
 
 
     {Temp.GetStoreVendingMachine(XML_Name,Faction,Name) if "VendingMachine" in StoresProfiles else ""}
@@ -158,6 +158,8 @@ def CreateTriggers(Faction, Name:str, IO):
       [StoreProfiles:{Faction}_StoreProfile_{Name}_Tradestation]		
 
 
+       [StoreBlocks:Store Military]
+      [StoreProfiles:{Faction}_StoreProfile_{Name}_Military]		
 
 
       [StoreBlocks:Store {ITC}]

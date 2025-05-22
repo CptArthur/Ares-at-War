@@ -2,10 +2,13 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<SpawnGroups>
 
+<!--
+-->
+
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>SCRAP_CrashSite</SubtypeId>
+				<SubtypeId>SCRAP_AgarisLureThePlayer1</SubtypeId>
 			</Id>
 			<Description>
 			[Modular Encounters SpawnGroup]
@@ -21,15 +24,18 @@
 			[CutVoxelsAtAirtightCells:true]
 
 
-			[StaticEncounterCoords:{X:-3636195.20897848 Y:-1307957.41976781 Z:-2531276.94212354}]
-			[StaticEncounterForward:{X:0.887829440649912 Y:0.0679314448070704 Z:-0.455130973590777}]
-			[StaticEncounterUp:{X:0.453804533594542 Y:0.0347224482248737 Z:0.890424503749931}]
+			[StaticEncounterCoords:{X:-3636761.09232897 Y:-1308250.71799159 Z:-2530995.23912636}]
+			[StaticEncounterForward:{X:0.903609562416419 Y:0.0181812082912558 Z:-0.427971029831082}]
+			[StaticEncounterUp:{X:0.427884425910057 Y:0.00860932275491503 Z:0.903792452737531}]
 
 
 			[StaticEncounterUsePlanetDirectionAndAltitude:true]
 			[StaticEncounterPlanet:Planet Agaris]
-			[StaticEncounterPlanetDirection:{X:0.453820606114055 Y:0.0343253813220833 Z:0.890431707467431}]
-			[StaticEncounterPlanetAltitude:0.451216120542085]
+			[StaticEncounterPlanetDirection:{X:0.444335000253291 Y:0.0293684067780193 Z:0.895379195778654}]
+			[StaticEncounterPlanetAltitude:0.0426806570030749]
+
+
+
 
 		    [UseLootProfiles:true]
 		    [LootGroups:(NPC-SY)BasicLoot]
@@ -37,7 +43,7 @@
 			
 			[IgnoreCombatPhase:true]
 			[IgnoreCleanupRules:true]
-			[FalseSandboxVariables:SCRAP_CrashSiteSpawned]			
+			[FalseSandboxVariables:SCRAP_AgarisLureThePlayerSpawned]			
 			[ZoneConditions:ZoneCondition_ZoneAaW]
 			[UseRivalAi:true]
 			[RivalAiReplaceRemoteControl:true]				
@@ -53,14 +59,14 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>0</Speed>
-					<Behaviour>AaW_ClusterCoreBehavior_Vehicle</Behaviour>
+					<Behaviour>AaW_ClusterCoreBehavior_Infrastructure</Behaviour>
 				<PlaceToGridOrigin>true</PlaceToGridOrigin>
 				</Prefab>
 			</Prefabs>
 		</SpawnGroup>
-
-
-
+		
+		
+		
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 

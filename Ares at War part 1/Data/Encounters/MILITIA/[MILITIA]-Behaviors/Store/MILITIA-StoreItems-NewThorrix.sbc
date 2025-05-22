@@ -87,13 +87,6 @@
         [Offers:Tool/AutomaticRifleItem] 
         [Offers:Tool/PreciseAutomaticRifleItem] 
         [Offers:Tool/RapidFireAutomaticRifleItem] 
-
-
-        
-        
-
-
-
   
       </Description>
 
@@ -102,6 +95,64 @@
 
 
      
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MILITIA_StoreProfile_NewThorrix_Military</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_Thorrix.xml]
+        
+        [MinOfferItems:99]
+        [MaxOfferItems:99]
+        [MinOrderItems:99]
+        [MaxOrderItems:99]
+
+        [ItemsRequireInventory:false]
+
+        
+        [Orders:Ore/Iron] 
+        [Orders:Ore/Nickel] 
+        [Orders:Ore/Silicon] 
+        [Orders:Ore/Magnesium] 
+
+        [Offers:Ingot/Iron] 
+        [Offers:Ingot/Nickel] 
+        [Offers:Ingot/Silicon] 
+        [Offers:Ingot/Magnesium] 
+
+
+        [Offers:Ammo/NATO_25x184mm] 
+        [Offers:Ammo/missile] 
+        [Offers:Ammo/MediumCalibreAmmo] 
+        [Offers:Ammo/LargeCalibreAmmo] 
+        [Offers:Ammo/LargeRailgunAmmo] 
+        [Offers:Ammo/SmallRailgunAmmo] 
+        [Offers:Ammo/AutocannonClip] 
+
+        [Offers:Ammo/PreciseAutomaticRifleGun_Mag_5rd] 
+        [Offers:Ammo/RapidFireAutomaticRifleGun_Mag_50rd] 
+        [Offers:Ammo/AutomaticRifleGun_Mag_20rd] 
+        [Offers:Ammo/NATO_5p56x45mm] 
+
+        [Offers:Ammo/UltimateAutomaticRifleGun_Mag_30rd] 
+        [Offers:Ammo/SemiAutoPistolMagazine] 
+        [Offers:Ammo/FullAutoPistolMagazine] 
+        [Offers:Ammo/ElitePistolMagazine] 
+
+        [Offers:Tool/SemiAutoPistolItem] 
+        [Offers:Tool/FullAutoPistolItem] 
+        [Offers:Tool/MediumCalibreAmmo] 
+        [Offers:Tool/AutomaticRifleItem] 
+        [Offers:Tool/PreciseAutomaticRifleItem] 
+        [Offers:Tool/RapidFireAutomaticRifleItem] 
+  
+      </Description>
+
+    </EntityComponent>
 
 
     
@@ -186,6 +237,11 @@
         [MinContracts:5]
         [MaxContracts:15]
         
+        [MissionIds:AaW_Mission_MILITIA_DestroyDRACobalt] 
+        [MissionIds:AaW_Mission_MILITIA_DestroyDRAMagnesium] 
+        [MissionIds:AaW_Mission_MILITIA_RetakeThorrix] 
+        [MissionIds:AaW_Mission_MILITIA_BuyEndOftheRiver] 
+
         
       </Description>
     </EntityComponent>	    

@@ -309,14 +309,14 @@ def CreateXml(Name:str,Ingot1, Ingot2,Ingot3,Ingot4,Ingot5,Component1,Component2
       <StoreItemId>Ammo1</StoreItemId>
       <ItemType>Ammo</ItemType>{Ammo1}
       <Offer>
-        <MinPriceMultiplier>60</MinPriceMultiplier>
-        <MaxPriceMultiplier>70</MaxPriceMultiplier>
+        <MinPriceMultiplier>6</MinPriceMultiplier>
+        <MaxPriceMultiplier>7</MaxPriceMultiplier>
         <MinAmount>500</MinAmount>
         <MaxAmount>5000</MaxAmount>
       </Offer>
       <Order>
-        <MinPriceMultiplier>20</MinPriceMultiplier>
-        <MaxPriceMultiplier>40</MaxPriceMultiplier>
+        <MinPriceMultiplier>2</MinPriceMultiplier>
+        <MaxPriceMultiplier>4</MaxPriceMultiplier>
         <MinAmount>500</MinAmount>
         <MaxAmount>5000</MaxAmount>
       </Order>
@@ -326,14 +326,14 @@ def CreateXml(Name:str,Ingot1, Ingot2,Ingot3,Ingot4,Ingot5,Component1,Component2
       <StoreItemId>Ammo2</StoreItemId>
       <ItemType>Ammo</ItemType>{Ammo2}
       <Offer>
-        <MinPriceMultiplier>120</MinPriceMultiplier>
-        <MaxPriceMultiplier>130</MaxPriceMultiplier>
+        <MinPriceMultiplier>12</MinPriceMultiplier>
+        <MaxPriceMultiplier>13</MaxPriceMultiplier>
         <MinAmount>200</MinAmount>
         <MaxAmount>1000</MaxAmount>
       </Offer>
       <Order>
-        <MinPriceMultiplier>90</MinPriceMultiplier>
-        <MaxPriceMultiplier>100</MaxPriceMultiplier>
+        <MinPriceMultiplier>9</MinPriceMultiplier>
+        <MaxPriceMultiplier>10</MaxPriceMultiplier>
         <MinAmount>200</MinAmount>
         <MaxAmount>1000</MaxAmount>
       </Order>
@@ -343,14 +343,14 @@ def CreateXml(Name:str,Ingot1, Ingot2,Ingot3,Ingot4,Ingot5,Component1,Component2
       <StoreItemId>Ammo3</StoreItemId>
       <ItemType>Ammo</ItemType>{Ammo3}
       <Offer>
-        <MinPriceMultiplier>190</MinPriceMultiplier>
-        <MaxPriceMultiplier>210</MaxPriceMultiplier>
+        <MinPriceMultiplier>19</MinPriceMultiplier>
+        <MaxPriceMultiplier>21</MaxPriceMultiplier>
         <MinAmount>50</MinAmount>
         <MaxAmount>200</MaxAmount>
       </Offer>
       <Order>
-        <MinPriceMultiplier>150</MinPriceMultiplier>
-        <MaxPriceMultiplier>160</MaxPriceMultiplier>
+        <MinPriceMultiplier>15</MinPriceMultiplier>
+        <MaxPriceMultiplier>16</MaxPriceMultiplier>
         <MinAmount>50</MinAmount>
         <MaxAmount>200</MaxAmount>
       </Order>

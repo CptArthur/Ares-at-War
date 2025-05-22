@@ -2,6 +2,11 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
   <EntityComponents>
+  
+
+  
+  
+  
 <!--
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
       <Id>
@@ -52,6 +57,7 @@
 	AaW_ClusterCoreBehavior_Buildings
 	
 	
+
 -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
       <Id>
@@ -206,7 +212,7 @@
       [StartsReady:false]
       [MinCooldownMs:7500]
       [MaxCooldownMs:10000]
-      [Actions:(NPC-SY)EnableRemoveBlocks-Action]
+      [Actions:AaW_SCRAP_Action_EnableRemoveBlocks]
       [MaxActions:1]
       </Description>
       
@@ -215,7 +221,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>(NPC-SY)EnableRemoveBlocks-Action</SubtypeId>
+          <SubtypeId>AaW_SCRAP_Action_EnableRemoveBlocks</SubtypeId>
       </Id>
       <Description>
 
@@ -328,7 +334,7 @@
 	[Actions:(NPC-SY)SpawnPipeline-Action]
 	[Actions:(NPC-SY)SpawnWatchTower-Action]
 	[Actions:(NPC-SY)SpawnSilo-Action]
-      [Actions:(NPC-SY)SpawnBillboard-Action]	
+	
 	
       </Description>
     </EntityComponent> 	

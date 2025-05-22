@@ -2,6 +2,79 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <CubeBlocks>
   
+  
+		<Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
+			<Id>
+				<TypeId>Assembler</TypeId>
+				<SubtypeId>Assembling Bench</SubtypeId>
+			</Id>
+			<DisplayName>Assembling Bench</DisplayName>
+			<Icon>Icons\AssemblingBench.dds</Icon>
+			<Description>Starter equipment for assembling basic components by hand. Manually loaded and operated.
+
+				Power Usage: 100kW</Description>
+			<CubeSize>Large</CubeSize>
+			<GuiVisible>false</GuiVisible>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\AssemblingBench.mwm</Model>
+			<Components>
+				<Component Subtype="SteelPlate" Count="40" />
+				<Component Subtype="Construction" Count="40" />		
+				<Component Subtype="Computer" Count="5" />
+			</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="1" />
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Construct\AssemblingBenchConstruct1.mwm" />
+				<Model BuildPercentUpperBound="0.66" File="Models\Construct\AssemblingBenchConstruct2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\Construct\AssemblingBenchConstruct3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>BasicAssembler</BlockPairName>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>40</BuildTimeSeconds>
+			<ResourceSinkGroup>Factory</ResourceSinkGroup>
+			<InventoryMaxVolume>2</InventoryMaxVolume>
+			<InventorySize>
+				<X>1</X>
+				<Y>1</Y>
+				<Z>1</Z>
+			</InventorySize>
+			<StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+			<OperationalPowerConsumption>0.1</OperationalPowerConsumption>
+			<BlueprintClasses>
+				<Class>AssemblingBenchComponents</Class>
+				<Class>T1Tools</Class>
+			</BlueprintClasses>
+			<AssemblySpeed>0.3</AssemblySpeed>
+			<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+			<DamagedSound>ParticleHeavyMech</DamagedSound>
+			<PrimarySound>BlockAssembler</PrimarySound>
+			<ActionSound>BlockAssemblerProcess</ActionSound>
+			<DestroyEffect>Explosion_Missile</DestroyEffect>
+			<DestroySound>WepSmallMissileExpl</DestroySound>
+			<PCU>40</PCU>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<IsAirTight>true</IsAirTight>
+			<TieredUpdateTimes>
+				<unsignedInt>60</unsignedInt>
+				<unsignedInt>120</unsignedInt>
+				<unsignedInt>240</unsignedInt>
+			</TieredUpdateTimes>
+		</Definition>  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <!--
     <Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
       <Id>
@@ -70,6 +143,7 @@
     </Definition>
   -->
 
+<!--
     <Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
       <Id>
         <TypeId>Assembler</TypeId>
@@ -139,16 +213,17 @@
       <IsAirTight>true</IsAirTight>
             <EmissiveColorPreset>Extended</EmissiveColorPreset>
     </Definition>
+-->
 
-  <!--
+
     <Definition xsi:type="MyObjectBuilder_RefineryDefinition">
       <Id>
         <TypeId>Refinery</TypeId>
         <SubtypeId>RockCrusher</SubtypeId>
       </Id>
-      <DisplayName>Rock Crusher</DisplayName>
+      <DisplayName>Ore Processor</DisplayName>
       <Icon>Icons\OreCrusher.dds</Icon>
-      <Description>Crushes Stone and Ores. Crushed Ore can be refined more efficiently.
+      <Description>The Ore Processor can refine Iron, Nickel, Silicon, Cobalt, Silver, Gold.
 	  
 	  Power Usage: 2.5MW</Description>
       <CubeSize>Large</CubeSize>
@@ -159,10 +234,8 @@
       <Components>
         <Component Subtype="SteelPlate" Count="100" />
         <Component Subtype="Construction" Count="50" />
-        <Component Subtype="CopperWire" Count="30" />
         <Component Subtype="LargeTube" Count="20" />
         <Component Subtype="Motor" Count="15" />
-        <Component Subtype="Ceramic" Count="50" />
         <Component Subtype="Computer" Count="10" />
         <Component Subtype="SteelPlate" Count="30" />
       </Components>
@@ -206,8 +279,71 @@
       <DestroySound>WepSmallWarheadExpl</DestroySound>
       <PCU>90</PCU>      
     </Definition>
-  
-  
+
+
+    <Definition xsi:type="MyObjectBuilder_RefineryDefinition">
+      <Id>
+        <TypeId>Refinery</TypeId>
+        <SubtypeId>ChemicalPlant</SubtypeId>
+      </Id>
+      <DisplayName>Chemical Refinery</DisplayName>
+      <Icon>Icons\ChemicalPlant.dds</Icon>
+      <Description>Refines Lithium, Magnesium and Sulfur.
+	  
+	  Power Usage: 3.5MW</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="3" y="3" z="5" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ChemicalPlant.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="100" />
+        <Component Subtype="Construction" Count="50" />
+        <Component Subtype="LargeTube" Count="40" />
+        <Component Subtype="Motor" Count="25" />
+        <Component Subtype="Computer" Count="20" />
+        <Component Subtype="SteelPlate" Count="30" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+      <Center x="1" y="0" z="2" />
+      <MountPoints>
+        <MountPoint Side="Back" StartX="2" StartY="0" EndX="3" EndY="1" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="3" EndY="5" Default="true" />
+        <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+      </MountPoints>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Construct\ChemicalPlantConstruct1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Construct\ChemicalPlantConstruct2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Construct\ChemicalPlantConstruct3.mwm" />
+      </BuildProgressModels>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>90</BuildTimeSeconds>
+      <ResourceSinkGroup>Factory</ResourceSinkGroup>
+      <InventoryMaxVolume>7.5</InventoryMaxVolume>
+      <InventorySize>
+        <X>2.5</X>
+        <Y>2.5</Y>
+        <Z>2.5</Z>
+      </InventorySize>
+      <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+      <OperationalPowerConsumption>3.5</OperationalPowerConsumption>
+      <BlueprintClasses>
+        <Class>ChemicalPlantOre</Class>
+      </BlueprintClasses>
+      <RefineSpeed>1</RefineSpeed>
+      <MaterialEfficiency>1.0</MaterialEfficiency>
+      <OreAmountPerPullRequest>1000</OreAmountPerPullRequest>
+      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+      <DamagedSound>ParticleHeavyMech</DamagedSound>
+      <PrimarySound>BlockRafinery</PrimarySound>
+      <ActionSound>BlockRafineryProcess</ActionSound>
+            <EmissiveColorPreset>Extended</EmissiveColorPreset>
+      <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>  
+    </Definition>
+
+	
+    <!--
     <Definition xsi:type="MyObjectBuilder_RefineryDefinition">
       <Id>
         <TypeId>Refinery</TypeId>
@@ -1156,37 +1292,32 @@
             <EmissiveColorPreset>Extended</EmissiveColorPreset>
     </Definition>
   
-  
- <!-- 
+
+
+			
     <Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
       <Id>
         <TypeId>Assembler</TypeId>
-        <SubtypeId>AdvancedAssembler</SubtypeId>
+        <SubtypeId>Fabricator</SubtypeId>
       </Id>
-      <DisplayName>Advanced Assembler</DisplayName>
+      <DisplayName>Fabricator</DisplayName>
       <Icon>Icons\AdvancedAssembler.dds</Icon>
-      <Description>Advanced assembling machinery, capable of producing more intricate and compact components.
-	  Produces Laser Emitters, Lithium Power Cells, Reactor Components, Superconducting Magnets, and Tokamak Blanket Plates.
-	  
-	  Power Usage: 4MW</Description>
+      <Description>Automated production of basic components.
+		  Power Usage: 1MW</Description>
       <CubeSize>Large</CubeSize>
       <BlockTopology>TriangleMesh</BlockTopology>
       <Size x="3" y="2" z="3" />
       <ModelOffset x="0" y="0" z="0" />
       <Model>Models\AdvancedAssembler.mwm</Model>
-      <Components>
-        <Component Subtype="SteelPlate" Count="60" />
-        <Component Subtype="Construction" Count="75" />
-        <Component Subtype="CopperWire" Count="40" />
-        <Component Subtype="InteriorPlate" Count="60" />
-        <Component Subtype="Motor" Count="20" />
-        <Component Subtype="MetalGrid" Count="10" />
-        <Component Subtype="GoldWire" Count="15" />
-        <Component Subtype="Computer" Count="10" />
-        <Component Subtype="AdvancedComputer" Count="80" />
-        <Component Subtype="SteelPlate" Count="20" />
-      </Components>
-      <CriticalComponent Subtype="AdvancedComputer" Index="0" />
+		<Components>
+			<Component Subtype="SteelPlate" Count="250" />
+			<Component Subtype="Construction" Count="80" />
+			<Component Subtype="Motor" Count="20" />
+			<Component Subtype="Display" Count="4" />
+			<Component Subtype="Computer" Count="120" />
+			<Component Subtype="SteelPlate" Count="50" />
+		</Components>
+		<CriticalComponent Subtype="Computer" Index="0" />
       <MountPoints>
         <MountPoint Side="Front" StartX="0" StartY="0" EndX="0.25" EndY="2" />
         <MountPoint Side="Front" StartX="1" StartY="0" EndX="2" EndY="1" />
@@ -1222,10 +1353,7 @@
       <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
       <OperationalPowerConsumption>4</OperationalPowerConsumption>
       <BlueprintClasses>
-        <Class>AdvancedAssemblerComponents</Class>
-        <Class>T3Tools</Class>
-        <Class>T4Tools</Class>
-        <Class>EliteConsumables</Class>
+        <Class>FabricatorComponents</Class>
       </BlueprintClasses>
       <AssemblySpeed>0.8</AssemblySpeed>
       <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
@@ -1238,73 +1366,13 @@
       <IsAirTight>true</IsAirTight>      
             <EmissiveColorPreset>Extended</EmissiveColorPreset>
     </Definition>
-	-->
+
 	
 	<!-- Refining -->
-  <!--
-    <Definition xsi:type="MyObjectBuilder_RefineryDefinition">
-      <Id>
-        <TypeId>Refinery</TypeId>
-        <SubtypeId>ChemicalPlant</SubtypeId>
-      </Id>
-      <DisplayName>Chemical Refinery</DisplayName>
-      <Icon>Icons\ChemicalPlant.dds</Icon>
-      <Description>Refines Lithium, Niter, and Sulfur, and extracts pure Carbon from Coal.
-	  
-	  Power Usage: 3.5MW</Description>
-      <CubeSize>Large</CubeSize>
-      <BlockTopology>TriangleMesh</BlockTopology>
-      <Size x="3" y="3" z="5" />
-      <ModelOffset x="0" y="0" z="0" />
-      <Model>Models\ChemicalPlant.mwm</Model>
-      <Components>
-        <Component Subtype="SteelPlate" Count="100" />
-        <Component Subtype="Construction" Count="50" />
-        <Component Subtype="LargeTube" Count="40" />
-        <Component Subtype="Motor" Count="25" />
-        <Component Subtype="CopperWire" Count="40" />
-        <Component Subtype="Ceramic" Count="50" />
-        <Component Subtype="Computer" Count="20" />
-        <Component Subtype="SteelPlate" Count="30" />
-      </Components>
-      <CriticalComponent Subtype="Computer" Index="0" />
-      <Center x="1" y="0" z="2" />
-      <MountPoints>
-        <MountPoint Side="Back" StartX="2" StartY="0" EndX="3" EndY="1" />
-        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="3" EndY="5" Default="true" />
-        <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
-      </MountPoints>
-      <BuildProgressModels>
-        <Model BuildPercentUpperBound="0.33" File="Models\Construct\ChemicalPlantConstruct1.mwm" />
-        <Model BuildPercentUpperBound="0.66" File="Models\Construct\ChemicalPlantConstruct2.mwm" />
-        <Model BuildPercentUpperBound="1.00" File="Models\Construct\ChemicalPlantConstruct3.mwm" />
-      </BuildProgressModels>
-      <EdgeType>Light</EdgeType>
-      <BuildTimeSeconds>90</BuildTimeSeconds>
-      <ResourceSinkGroup>Factory</ResourceSinkGroup>
-      <InventoryMaxVolume>7.5</InventoryMaxVolume>
-      <InventorySize>
-        <X>2.5</X>
-        <Y>2.5</Y>
-        <Z>2.5</Z>
-      </InventorySize>
-      <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
-      <OperationalPowerConsumption>3.5</OperationalPowerConsumption>
-      <BlueprintClasses>
-        <Class>ChemicalPlantOre</Class>
-      </BlueprintClasses>
-      <RefineSpeed>1</RefineSpeed>
-      <MaterialEfficiency>1.0</MaterialEfficiency>
-      <OreAmountPerPullRequest>1000</OreAmountPerPullRequest>
-      <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
-      <DamagedSound>ParticleHeavyMech</DamagedSound>
-      <PrimarySound>BlockRafinery</PrimarySound>
-      <ActionSound>BlockRafineryProcess</ActionSound>
-            <EmissiveColorPreset>Extended</EmissiveColorPreset>
-      <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
-      <DestroySound>WepSmallWarheadExpl</DestroySound>  
-    </Definition>
+
+
   
+  <!--
     <Definition xsi:type="MyObjectBuilder_RefineryDefinition">
       <Id>
         <TypeId>Refinery</TypeId>

@@ -2,7 +2,8 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <CubeBlocks>
 
-
+		
+	<!--	
         <Definition xsi:type="MyObjectBuilder_ReactorDefinition">
             <Id>
                 <TypeId>Reactor</TypeId>
@@ -48,9 +49,32 @@
             </ModExtensions>
         </Definition>
 		
+			
+        <Definition xsi:type="MyObjectBuilder_HydrogenEngineDefinition">
+            <Id>
+                <TypeId>HydrogenEngine</TypeId>
+                <SubtypeId>LargeHydrogenEngine</SubtypeId>
+            </Id>
+			<ModExtensions>
+              <Group Name="AaWShipyard">
+                <Text Name="ShipyardId" Value="BasicSystemFrame" />
+              </Group>
+            </ModExtensions>
+        </Definition>
+        <Definition xsi:type="MyObjectBuilder_HydrogenEngineDefinition">
+            <Id>
+                <TypeId>HydrogenEngine</TypeId>
+                <SubtypeId>SmallHydrogenEngine</SubtypeId>
+            </Id>
+			<ModExtensions>
+              <Group Name="AaWShipyard">
+                <Text Name="ShipyardId" Value="BasicSystemFrame" />
+              </Group>
+            </ModExtensions>
+        </Definition>
+
 		
-		
-	<!--	
+
 	
 
         <Definition xsi:type="MyObjectBuilder_BatteryBlockDefinition">

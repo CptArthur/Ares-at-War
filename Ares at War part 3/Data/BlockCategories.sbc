@@ -15,9 +15,6 @@
         </Category>
   
   
-  
-  
-  
   <!-- Character Weapons -->
          <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">  
             <Id>
@@ -47,6 +44,8 @@
             </ItemIds>
         </Category> 
   
+  
+<!--  
           <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition"> 
             <Id>
                 <TypeId>GuiBlockCategoryDefinition</TypeId>
@@ -60,23 +59,10 @@
         <string>SmallMissileLauncher/SmallFixedAmplifiedLaser</string>
             </ItemIds>
         </Category>
-
+-->
 
 		
-        <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
-            <Id>
-                <TypeId>GuiBlockCategoryDefinition</TypeId>
-                <SubtypeId/>
-            </Id>
-            <DisplayName>DisplayName_Category_ShipThrusters</DisplayName>
-            <Name>ShipThrusters</Name>
-            <IsShipCategory>true</IsShipCategory>
-            <IsBlockCategory>false</IsBlockCategory>
-            <ItemIds>
-                <string>Thrust/SmallImpulseThrusterSmall</string>
-                <string>Thrust/SmallImpulseThrusterLarge</string>
-            </ItemIds>
-        </Category>
+
 		
 		
 		        <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition"> <!-- Production -->
@@ -88,14 +74,11 @@
             <Name>Section1_Position3_Production</Name>
 			<StrictSearch>true</StrictSearch>
             <ItemIds>
-                <string>Refinery/ExoticMaterialRefinery</string>
-                <string>Assembler/CronyxMunitionsFactory</string>
-                <string>Assembler/OreCatalyzer</string>
-                <string>OxygenGenerator/SpiceEnergizer</string>
 				<string>Refinery/LargePrototechRefinery</string>
 				<string>Refinery/SmallPrototechRefinery</string>
 				<string>Assembler/LargePrototechAssembler</string>
 				
+				<string>Assembler/Assembling Bench</string>			
 				<string>Assembler/AssemblerNew</string>			
 				<string>Assembler/AutoLoom</string>
 				<string>Assembler/Extruder</string>
@@ -122,8 +105,15 @@
             <Name>Section1_Position3_Power</Name>
 			<StrictSearch>true</StrictSearch>
             <ItemIds>
-                <string>Reactor/LargeCronyxReactor</string>
-                <string>Reactor/SmallCronyxReactor</string>
+                <string>BatteryBlock/LargeElectronMatrix</string>
+                <string>BatteryBlock/SmallElectronMatrix</string>
+                <string>BatteryBlock/LargeBlockAlkalineBatteryBlock</string>
+                <string>BatteryBlock/SmallBlockSmallAlkalineBatteryBlock</string>
+                <string>BatteryBlock/LargeBlockAcidBatteryBlock</string>
+                <string>BatteryBlock/SmallBlockAcidBatteryBlock</string>
+                <string>BatteryBlock/SmallBlockSmallAcidBatteryBlock</string>
+                <string>BatteryBlock/LargeCapacitor</string>
+                <string>BatteryBlock/SmallCapacitor</string>
             </ItemIds>
         </Category>
 
@@ -193,7 +183,7 @@
 		<SubtypeId>RelicTech</SubtypeId>
 	</Id>
 	<DisplayName>Relic Tech</DisplayName>
-	<Name>Section1_Position0_AaW_RelicTech</Name>
+	<Name>Section9_Position0_AaW_RelicTech</Name>
 	<StrictSearch>true</StrictSearch>
 	<ItemIds>
 	    <string>Thrust/SmallImpulseThrusterSmall</string>
@@ -227,7 +217,7 @@
 		<SubtypeId>ZenovaTech</SubtypeId>
 	</Id>
 	<DisplayName>Zenova</DisplayName>
-	<Name>Section1_Position0_AaW_ZenovaTech</Name>
+	<Name>Section9_Position0_AaW_ZenovaTech</Name>
 	<StrictSearch>true</StrictSearch>
 	<ItemIds>
 		<string>Thrust/LargeBlockLargeModularThruster</string>
@@ -279,7 +269,7 @@
         <SubtypeId/>
       </Id>
       <DisplayName>Roxford</DisplayName>
-      <Name>Section1_Position0_AaW_ITCTech</Name>
+      <Name>Section9_Position0_AaW_ITCTech</Name>
 	   <StrictSearch>true</StrictSearch>
       <ItemIds>
         <string>Drill/ReinforcedDrill</string>
@@ -306,7 +296,7 @@
         <SubtypeId/>
       </Id>
       <DisplayName>Agaris Heavy Engineering</DisplayName>
-      <Name>Section1_Position0_AaW-AHETech</Name>
+      <Name>Section9_Position0_AaW-AHETech</Name>
 	  	<StrictSearch>true</StrictSearch>
       <ItemIds>
 			<string>Drill/SmallBlockHeavyDrill</string>		
@@ -325,7 +315,7 @@
         <SubtypeId/>
       </Id>
       <DisplayName>Sol Cooperative</DisplayName>
-      <Name>Section1_Position0_AaW_SOLTech</Name>
+      <Name>Section9_Position0_AaW_SOLTech</Name>
 	  	<StrictSearch>true</StrictSearch>
       <ItemIds>
 	<string>JumpDrive/LargeJumpDrive</string>		

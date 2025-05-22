@@ -120,13 +120,6 @@ def GetStoreSettlement(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngo
         [Offers:Tool/AutomaticRifleItem] 
         [Offers:Tool/PreciseAutomaticRifleItem] 
         [Offers:Tool/RapidFireAutomaticRifleItem] 
-
-
-        
-        
-
-
-
   
       </Description>
 
@@ -134,7 +127,59 @@ def GetStoreSettlement(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngo
 
     return string
     
-    
+#Special
+def GetStoreMilitary(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngots:str)->str:  
+    string = f"""
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>{Faction}_StoreProfile_{Name}_Military</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_{XML_Name}.xml]
+        
+        [MinOfferItems:99]
+        [MaxOfferItems:99]
+        [MinOrderItems:99]
+        [MaxOrderItems:99]
+
+        [ItemsRequireInventory:false]
+
+        {GenerateProfileIngotOre(Ingots,TradeIngots)}
+
+        [Offers:Ammo/NATO_25x184mm] 
+        [Offers:Ammo/missile] 
+        [Offers:Ammo/MediumCalibreAmmo] 
+        [Offers:Ammo/LargeCalibreAmmo] 
+        [Offers:Ammo/LargeRailgunAmmo] 
+        [Offers:Ammo/SmallRailgunAmmo] 
+        [Offers:Ammo/AutocannonClip] 
+
+        [Offers:Ammo/PreciseAutomaticRifleGun_Mag_5rd] 
+        [Offers:Ammo/RapidFireAutomaticRifleGun_Mag_50rd] 
+        [Offers:Ammo/AutomaticRifleGun_Mag_20rd] 
+        [Offers:Ammo/NATO_5p56x45mm] 
+
+        [Offers:Ammo/UltimateAutomaticRifleGun_Mag_30rd] 
+        [Offers:Ammo/SemiAutoPistolMagazine] 
+        [Offers:Ammo/FullAutoPistolMagazine] 
+        [Offers:Ammo/ElitePistolMagazine] 
+
+        [Offers:Tool/SemiAutoPistolItem] 
+        [Offers:Tool/FullAutoPistolItem] 
+        [Offers:Tool/MediumCalibreAmmo] 
+        [Offers:Tool/AutomaticRifleItem] 
+        [Offers:Tool/PreciseAutomaticRifleItem] 
+        [Offers:Tool/RapidFireAutomaticRifleItem] 
+  
+      </Description>
+
+    </EntityComponent>"""
+
+    return string    
     
 #Special
 def GetStoreTradestation(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngots:str)->str:  

@@ -8,8 +8,7 @@
 			</Id>
 			<DisplayName>DisplayName_Block_Refinery</DisplayName>
 			<Icon>Textures\GUI\Icons\Cubes\refinery.dds</Icon>
-			<Description>Refineries can refine Bauxite, Titanium, Coal, Silver, Gold, Platinum, and Tantalum.
-	  Stone can also be refined for higher yields than in a Smelter.
+			<Description>Refineries can refine scrap metal, Silicon, Iron, Nickel, Cobalt, Sulfur, Magnesium, Silver, Gold, Lithium, Platinum, and Uranium.
 	  
 	  Power Usage: 3MW</Description>
 			<CubeSize>Large</CubeSize>
@@ -79,6 +78,8 @@
 				<unsignedInt>240</unsignedInt>
 			</TieredUpdateTimes>
 		</Definition>
+		
+		
 		<Definition xsi:type="MyObjectBuilder_RefineryDefinition">
 			<Id>
 				<TypeId>Refinery</TypeId>
@@ -86,8 +87,7 @@
 			</Id>
 			<DisplayName>Smelter</DisplayName>
 			<Icon>Textures\GUI\Icons\Cubes\Blastfurnace.dds</Icon>
-			<Description>Smelters can refine scrap metal, Silicon, Iron, Copper, Nickel, and Cobalt.
-				Stone can also be refined for higher yields than in a Survival Kit.
+			<Description>Basic Refinery can refine scrap metal,Iron, Nickel, Silicon, Cobalt, Magnesium, and Stone
 
 				Power Usage: 2MW</Description>
 			<CubeSize>Large</CubeSize>
@@ -364,9 +364,9 @@
 				<TypeId>Assembler</TypeId>
 				<SubtypeId>LargeAssembler</SubtypeId>
 			</Id>
-			<DisplayName>Mod Compatibility Assembler</DisplayName>
+			<DisplayName>Assembler</DisplayName>
 			<Icon>Textures\GUI\Icons\Cubes\assembler.dds</Icon>
-			<Description>Assembles components and items from other mods.
+			<Description>Automated production of Advanced components.
 
 				Power Usage: 1.5MW</Description>
 			<CubeSize>Large</CubeSize>
@@ -414,7 +414,6 @@
 			<BlueprintClasses>
 				<Class>Components</Class>
 				<Class>EliteTools</Class>
-				<Class>BasicTools</Class>
 				<Class>Tools</Class>
 				<Class>Consumables</Class>
 				<Class>EliteConsumables</Class>
@@ -440,10 +439,9 @@
 			<TypeId>Assembler</TypeId>
 			<SubtypeId>BasicAssembler</SubtypeId>
 		  </Id>
-		  <DisplayName>Fabricator</DisplayName>
+		  <DisplayName>Basic Assembler</DisplayName>
 		  <Icon>Textures\GUI\Icons\Cubes\basicAssembler.dds</Icon>
 		  <Description>Automated production of basic components.
-		  Produces Construction Components, Metal Grids, and Alkaline Power Cells.
 		  
 		  Power Usage: 1MW</Description>
 		  <CubeSize>Large</CubeSize>
@@ -451,15 +449,17 @@
 		  <Size x="1" y="1" z="1" />
 		  <ModelOffset x="0" y="0" z="0" />
 		  <Model>Models\Cubes\Large\BasicAssembler.mwm</Model>
-            <Components>
-                <Component Subtype="SteelPlate" Count="60" />
-                <Component Subtype="Construction" Count="40" />
-                <Component Subtype="Motor" Count="10" />
-                <Component Subtype="Display" Count="4" />
-                <Component Subtype="Computer" Count="80" />
-                <Component Subtype="SteelPlate" Count="20" />
-            </Components>
-            <CriticalComponent Subtype="Computer" Index="0" />
+		  <Components>
+			<Component Subtype="SteelPlate" Count="60" />
+			<Component Subtype="Construction" Count="75" />
+			<Component Subtype="InteriorPlate" Count="60" />
+			<Component Subtype="Motor" Count="20" />
+			<Component Subtype="MetalGrid" Count="10" />
+			<Component Subtype="Superconductor" Count="15" />
+			<Component Subtype="Computer" Count="80" />
+			<Component Subtype="SteelPlate" Count="20" />
+		  </Components>
+		  <CriticalComponent Subtype="Computer" Index="0" />
 		  <BuildProgressModels>
 			<Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\BasicAssembler_Construction1.mwm" />
 			<Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\BasicAssembler_Construction2.mwm" />
@@ -477,7 +477,8 @@
 		  <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
 		  <OperationalPowerConsumption>1</OperationalPowerConsumption>
 		  <BlueprintClasses>
-			<Class>FabricatorComponents</Class>
+			<Class>SimpleComponents</Class>
+			<Class>BasicTools</Class>			
 		  </BlueprintClasses>
 		  <AssemblySpeed>1</AssemblySpeed>
 		  <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>

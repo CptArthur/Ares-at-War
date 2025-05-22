@@ -2,6 +2,135 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<SpawnGroups>
 
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>UNKN_Farmhouse1</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:UNKN]		
+
+			[TriggerCoords:{X:-3636093.04296116 Y:-1307792.31326393 Z:-2531334.5612504}]
+			[TriggerRadius:4500]
+
+			[ForceExactPositionAndOrientation:true]
+			[CutVoxelsAtAirtightCells:true]
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-AAW)]
+			[RandomGridNamePattern:Warehouse]
+			[ReplaceAntennaNameWithRandomizedName:Warehouse]
+
+			[StaticEncounterCoords:{X:-3636095.47144044 Y:-1307790.28196905 Z:-2531337.11761444}]
+			[StaticEncounterForward:{X:0.453545322008265 Y:0.0354488595996452 Z:0.890527944108159}]
+			[StaticEncounterUp:{X:-0.473098740041765 Y:-0.837227705019017 Z:0.274276050940445}]
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Agaris]
+			[StaticEncounterPlanetDirection:{X:0.455525463533033 Y:0.0371549255815995 Z:0.889447054960576}]
+			[StaticEncounterPlanetAltitude:-4.04521621650929]
+
+
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:UNKN_Farmhouse]			
+			[ZoneConditions:ZoneCondition_ZoneAaW]
+			
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]		
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="UNKN - Farmhouse">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>UNKN_Outpost_SpawnVehicle</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>	
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>UNKN_Farmhouse_Vehicle</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:UNKN]		
+
+			[TriggerCoords:{X:-3636093.04296116 Y:-1307792.31326393 Z:-2531334.5612504}]
+			[TriggerRadius:4500]
+
+			[ForceExactPositionAndOrientation:true]
+
+
+			[StaticEncounterCoords:{X:-3636192.28339614 Y:-1307889.42243069 Z:-2531283.93362518}]
+			[StaticEncounterForward:{X:-0.604260325431824 Y:0.742793321609497 Z:0.288317501544952}]
+			[StaticEncounterUp:{X:0.646995484828949 Y:0.668607771396637 Z:-0.366552025079727}]
+
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Agaris]
+			[StaticEncounterPlanetDirection:{X:0.453889496335046 Y:0.035477480750804 Z:0.890351432568227}]
+			[StaticEncounterPlanetAltitude:-1.70277360964246]
+
+
+
+			[ForceStaticGrid:false]		
+			[DoNotForceStaticGrid:true]
+			
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:UNKN_Farmhouse]			
+			[ZoneConditions:ZoneCondition_ZoneAaW]
+			
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]		
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="UNKN - Flatliner #04">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour></Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>	
+
+
+
+
+
+
+
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 

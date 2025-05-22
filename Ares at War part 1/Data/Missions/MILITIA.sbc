@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+ <!--
+ 
+ -->
+ 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MILITIA_ContractBlockProfile_Civilian</SubtypeId>
+      </Id>
+      <Description>
+        [MES Contract Block]
+
+		[MissionIds:MILITIA_Mission_RelicData]
+        
+        [MinContracts:5]
+        [MaxContracts:15]
+
+								
+      </Description>
+    </EntityComponent>	
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MILITIA_Mission_RelicData</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	[Tags:SHIVAN]
+	[OverrideFaction:SHIVAN]
+	
+	[Title:Sell Relic Data]
+	[Description:]
+	
+	[StoreProfileId:AaW_StoreProfile_RelicData]
+	[MissionType:Acquisition]
+	
+	[Reward:50000000]
+	[Collateral:0]
+	[ReputationReward:75]
+	[FailReputationPrice:0]
+	[Duration:5]
+
+
+  [Exclusive:true]
+
+      </Description>
+    </EntityComponent>
+	
+	
+ 
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MILITIA_EventCondition_MissionDestroyDRACobalt</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:DRA_MiningOutpostCobaltDestroyed]  
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_MILITIA_DestroyDRACobalt</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:Shut Down Raider Mine]
+	[Description:The Desert Raiders are running a cobalt mine within the Agaris Desert. It’s lightly fortified and supports their gear production. MILITIA command wants it taken out before they expand operations.]
+	
+	[OverrideFaction:MILITIA]
+	
+	[Reward:5000000]
+	[Collateral:50000]
+	[ReputationReward:200]
+	[FailReputationPrice:20]
+	[Duration:0]
+
+	[PersistantEventConditionIds:MILITIA_EventCondition_MissionDestroyDRACobalt]
+
+	[ReplaceKeys:{StaticEncounterSandboxBoolName}]
+	[ReplaceValues:DRA_MiningOutpostCobaltDestroyed]
+	
+	[ReplaceKeys:{EventName}]
+	[ReplaceValues:Destroy DRA Cobalt Outpost]	
+
+	[ReplaceKeys:{EventCoords}]
+	[ReplaceValues:{X:-3658137.18096731 Y:-1305465.62918192 Z:-2524865.2501867}]	
+	
+	
+	[InstanceEventGroupId:MissionGroup_EliminateStaticEncounter]
+
+      </Description>
+    </EntityComponent>
+
+
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MILITIA_EventCondition_MissionDestroyDRAMagnesium</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:DRA_MiningOutpostMagnesiumDestroyed]  
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_MILITIA_DestroyDRAMagnesium</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:Shut Down Raider Mine]
+	[Description:The Desert Raiders are running a magnesium mine. They’re using the raw material to produce ammunition. MILITIA command wants the site neutralized before their stockpiles grow any further.]
+	
+	[OverrideFaction:MILITIA]
+	
+	[Reward:5000000]
+	[Collateral:50000]
+	[ReputationReward:200]
+	[FailReputationPrice:20]
+	[Duration:0]
+
+	[PersistantEventConditionIds:MILITIA_EventCondition_MissionDestroyDRAMagnesium]
+
+	[ReplaceKeys:{StaticEncounterSandboxBoolName}]
+	[ReplaceValues:DRA_MiningOutpostMagnesiumDestroyed]
+	
+	[ReplaceKeys:{EventName}]
+	[ReplaceValues:Destroy DRA Magnesium Outpost]	
+
+	[ReplaceKeys:{EventCoords}]
+	[ReplaceValues:{X:-3678919.75817321 Y:-1328045.60224412 Z:-2529986.12841394}]	
+	
+	
+	[InstanceEventGroupId:MissionGroup_EliminateStaticEncounter]
+
+      </Description>
+    </EntityComponent> 
+
+	
+	
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MILITIA_EventCondition_MissionDestroySHIVANThorrix</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:SHIVAN_ThorrixDestroyed]  
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_MILITIA_RetakeThorrix</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:Retake Thorrix]
+	[Description:It’s been nearly two years since the Shivan Syndicate took control of Thorrix Outpost. Since then, they’ve turned it into a major hub. MILITIA command wants the site neutralized to break Syndicate control of the Agaris Desert.]
+	
+	[OverrideFaction:MILITIA]
+	
+	[Reward:50000000]
+	[Collateral:50000]
+	[ReputationReward:475]
+	[FailReputationPrice:20]
+	[Duration:0]
+
+	[PersistantEventConditionIds:MILITIA_EventCondition_MissionDestroySHIVANThorrix]
+
+	[ReplaceKeys:{StaticEncounterSandboxBoolName}]
+	[ReplaceValues:SHIVAN_ThorrixDestroyed]
+	
+	[ReplaceKeys:{EventName}]
+	[ReplaceValues:Liberate Thorrix of Syndicate Control]	
+
+	[ReplaceKeys:{EventCoords}]
+	[ReplaceValues:{X:-3666686.59716887 Y:-1319669.64422984 Z:-2525747.25255478}]	
+	
+	
+	[InstanceEventGroupId:MissionGroup_EliminateStaticEncounter]
+
+      </Description>
+    </EntityComponent> 	
+	
+	
+	
+	
+	
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MILITIA_EventCondition_MissionBuyEndOftheRiver</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:SCRAP_AgarisEndOftheRiverSpawned]  
+	[FalseBooleans:MILITIA_BoughtEndOftheRiver]  
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_MILITIA_BuyEndOftheRiver</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:(Buy GPS) Old Scrap Factory]
+	[Description:]
+	
+	[OverrideFaction:MILITIA]
+	
+	[Reward:0]
+	[Collateral:15000]
+	[ReputationReward:0]
+	[FailReputationPrice:0]
+	[Duration:0]
+
+	[PersistantEventConditionIds:MILITIA_EventCondition_MissionBuyEndOftheRiver]
+
+	
+	[ReplaceKeys:{GPSName}]
+	[ReplaceValues:Old Scrap Factory]	
+
+	[ReplaceKeys:{GPSCoords}]
+	[ReplaceValues:{X:-3640443.73980027 Y:-1322181.63443483 Z:-2530779.93418471}]	
+	
+	
+	[InstanceEventGroupId:MissionGroup_GPS]
+
+	[SoloMission:true]
+	[Exclusive:true]
+	[ActivateBooleanNameOnSucces:MILITIA_BoughtEndOftheRiver]
+      </Description>
+    </EntityComponent> 		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>
+
