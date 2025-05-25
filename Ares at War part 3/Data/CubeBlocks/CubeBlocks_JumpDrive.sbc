@@ -68,5 +68,142 @@
             <IsAirTight>true</IsAirTight>
         </Definition>
 		
+	
+        <Definition xsi:type="MyObjectBuilder_JumpDriveDefinition">
+            <Id>
+                <TypeId>JumpDrive</TypeId>
+                <SubtypeId>LargeCompactJumpDrive</SubtypeId>
+            </Id>
+            <DisplayName>Compact Jump Drive</DisplayName>
+            <Icon>Textures\GUI\Icons\Cubes\PrototechBattery.dds</Icon>
+            <Description>Jump drives allow ships to teleport over large distances. Originally designed by the Sol Cooperative, this older model is still in use today, relying on proven technology despite its age.
+			
+			They require a full charge to jump and can only be activated from the toolbar of a cockpit. </Description>
+            <CubeSize>Large</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+		  <Size x="2" y="1" z="1" />
+		  <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\Cubes\Large\PrototechBattery.mwm</Model>
+            <Components>
+                <Component Subtype="SteelPlate" Count="40" />
+                <Component Subtype="MetalGrid" Count="50" />
+                <Component Subtype="GravityGenerator" Count="4" />
+                <Component Subtype="Detector" Count="4" />
+                <Component Subtype="JumpCore" Count="3" />
+                <Component Subtype="PowerCell" Count="24" />
+                <Component Subtype="Superconductor" Count="200" />
+                <Component Subtype="Computer" Count="60" />
+                <Component Subtype="Construction" Count="8" />
+                <Component Subtype="SteelPlate" Count="5" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+			  <MountPoints>
+				<MountPoint Side="Front" StartX="0" StartY="0.1" EndX="2" EndY="0.9" />
+				<MountPoint Side="Top" StartX="0" StartY="0.1" EndX="2" EndY="0.9" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="2" EndY="1" />
+				<MountPoint Side="Back" StartX="0" StartY="0.1" EndX="2" EndY="0.9" />
+				<MountPoint Side="Right" StartX="0.1" StartY="0" EndX="0.9" EndY="1" />
+				<MountPoint Side="Left" StartX="0.1" StartY="0" EndX="0.9" EndY="1" />
+			  </MountPoints>
+			  <BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\PrototechBattery_Construction_1.mwm" />
+				<Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\PrototechBattery_Construction_2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\PrototechBattery_Construction_3.mwm" />
+			  </BuildProgressModels>
+            <BlockPairName>CompactJumpDrive</BlockPairName>
+		  <MirroringX>Y</MirroringX>
+		  <MirroringY>X</MirroringY>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>120</BuildTimeSeconds>
+            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+            <DamagedSound>ParticleWeapExpl</DamagedSound>
+
+            <ResourceSinkGroup>Charging</ResourceSinkGroup>
+            <RequiredPowerInput>32</RequiredPowerInput>
+            <PowerNeededForJump>2.5</PowerNeededForJump>
+            <PowerEfficiency>0.8</PowerEfficiency>
+
+            <MaxJumpDistance>600000</MaxJumpDistance>
+            <MaxJumpMass>800000</MaxJumpMass>
+            <EmissiveColorPreset>Extended</EmissiveColorPreset>
+            <DestroyEffect>Explosion_Warhead_30</DestroyEffect>
+            <DestroySound>WepLrgWarheadExpl</DestroySound>
+            <TargetingGroups>
+                <string>Propulsion</string>
+            </TargetingGroups>
+            <PCU>100</PCU>
+            <IsAirTight>true</IsAirTight>
+        </Definition>		
+		
+
+
+
+        <Definition xsi:type="MyObjectBuilder_JumpDriveDefinition">
+            <Id>
+                <TypeId>JumpDrive</TypeId>
+                <SubtypeId>SmallCompactJumpDrive</SubtypeId>
+            </Id>
+            <DisplayName>Compact Jump Drive</DisplayName>
+            <Icon>Textures\GUI\Icons\Cubes\PrototechBatterySmall.dds</Icon>
+            <Description>Jump drives allow ships to teleport over large distances. Originally designed by the Sol Cooperative, this older model is still in use today, relying on proven technology despite its age.
+			
+			They require a full charge to jump and can only be activated from the toolbar of a cockpit. </Description>
+			<CubeSize>Small</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+		  <Size x="3" y="1" z="2" />
+		  <ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Cubes\Small\PrototechBatterySmall.mwm</Model>
+            <Components>
+                <Component Subtype="SteelPlate" Count="40" />
+                <Component Subtype="MetalGrid" Count="25" />
+                <Component Subtype="GravityGenerator" Count="4" />
+                <Component Subtype="Detector" Count="4" />
+                <Component Subtype="JumpCore" Count="1" />
+                <Component Subtype="PowerCell" Count="12" />
+                <Component Subtype="Superconductor" Count="25" />
+                <Component Subtype="Computer" Count="40" />
+                <Component Subtype="Construction" Count="8" />
+                <Component Subtype="SteelPlate" Count="5" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+		  <MountPoints>
+			<MountPoint Side="Front" StartX="0.1" StartY="0.1" EndX="2.9" EndY="0.9" />
+			<MountPoint Side="Top" StartX="0.1" StartY="0.1" EndX="2.9" EndY="1.9" />
+			<MountPoint Side="Bottom" StartX="0.1" StartY="0.1" EndX="2.9" EndY="1.9" />
+			<MountPoint Side="Back" StartX="0.1" StartY="0.1" EndX="2.9" EndY="0.9" />
+			<MountPoint Side="Right" StartX="0.1" StartY="0.1" EndX="1.9" EndY="0.9" />
+			<MountPoint Side="Left" StartX="0.1" StartY="0.1" EndX="1.9" EndY="0.9" />
+		  </MountPoints>
+		  <BuildProgressModels>
+			<Model BuildPercentUpperBound="0.50" File="Models\Cubes\Small\PrototechBatterySmall_Construction_1.mwm" />
+			<Model BuildPercentUpperBound="1.00" File="Models\Cubes\Small\PrototechBatterySmall_Construction_2.mwm" />
+		  </BuildProgressModels>
+            <BlockPairName>CompactJumpDrive</BlockPairName>
+		  <MirroringX>Y</MirroringX>
+		  <MirroringY>X</MirroringY>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>120</BuildTimeSeconds>
+            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+            <DamagedSound>ParticleWeapExpl</DamagedSound>
+
+            <ResourceSinkGroup>Charging</ResourceSinkGroup>
+            <RequiredPowerInput>16</RequiredPowerInput>
+            <PowerNeededForJump>1</PowerNeededForJump>
+            <PowerEfficiency>0.8</PowerEfficiency>
+
+            <MaxJumpDistance>250000</MaxJumpDistance>
+            <MaxJumpMass>25000</MaxJumpMass>
+            <EmissiveColorPreset>Extended</EmissiveColorPreset>
+            <DestroyEffect>Explosion_Warhead_30</DestroyEffect>
+            <DestroySound>WepLrgWarheadExpl</DestroySound>
+            <TargetingGroups>
+                <string>Propulsion</string>
+            </TargetingGroups>
+            <PCU>100</PCU>
+            <IsAirTight>true</IsAirTight>
+        </Definition>
+
+		
+		
     </CubeBlocks>
 </Definitions>

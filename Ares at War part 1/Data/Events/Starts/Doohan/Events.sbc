@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+
+<!-- 	[CheckPlayerTags:true]
+	[IncludedPlayerTag:StartedWuWei]-->
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_PlayerCondition_WuWei_FirstTime</SubtypeId>
+      </Id>
+      <Description>
+	[MES Player Condition]
+
+	
+	[CheckLastRespawnShipName:true]
+	[LastRespawnShipName:Wu Wei]
+	
+	[CheckPlayerTags:true]
+	[ExcludedPlayerTag:StartedWuWei]
+      </Description>
+    </EntityComponent>	
+	
+
+
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+		<Id>
+		  <TypeId>Inventory</TypeId>
+		  <SubtypeId>AaW_EventCondition_WuWeiOpening_FirstTime</SubtypeId>
+		</Id>
+		<Description>
+
+		[MES Event Condition]
+		[CheckPlayerCondition:true]
+		[PlayerConditionIds:AaW_PlayerCondition_WuWei_FirstTime]
+		
+		</Description>
+	</EntityComponent>	
+
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Event_WuWeiOpening_Start</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Event]
+	[UseEvent:true]
+	[UniqueEvent:false]		
+	[StartsReady:true]
+	[MinCooldownMs:27400]
+	[MaxCooldownMs:27401]
+	
+	[ActionExecution:Sequential]
+	[TimeUntilNextActionMs:5500]
+	[ConditionIds:AaW_EventCondition_WuWeiOpening_FirstTime]		
+	
+
+	[ActionIds:AaW_EventAction_WuWeiOpening_PassTime]			
+	[ActionIds:AaW_EventAction_WuWeiOpening_Message1]			
+	[ActionIds:AaW_EventAction_WuWeiOpening_Message2]
+
+	[ActionIds:AaW_EventAction_WuWeiOpening_Message3]			
+	[ActionIds:AaW_EventAction_WuWeiOpening_End]		
+	
+      </Description>
+	</EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_WuWeiOpening_PassTime</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+
+      </Description>
+      
+    </EntityComponent>
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_WuWeiOpening_Message1</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+	
+	[ToggleEvents:true]
+	[ToggleEventIds:AaW_Event_WuWeiOpening_Start]
+	[ToggleEventIdModes:false]		
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW_EventChat_WuWeiOpening_Message1]
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventChat_WuWeiOpening_Message1</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:false]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToSpecificPlayers:true]
+	  [PlayerConditionIds:AaW_PlayerCondition_WuWei_FirstTime]
+
+      [Color:Green]
+      [Author:Doohan]
+        
+  	  [ChatMessages:Are you there? Hello? You went silent for a moment. Ah anyway what was I saying?]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]   	  
+      </Description>
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_WuWeiOpening_Message2</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW_EventChat_WuWeiOpening_Message2]
+      </Description>
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventChat_WuWeiOpening_Message2</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:false]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToSpecificPlayers:true]
+	  [PlayerConditionIds:AaW_PlayerCondition_WuWei_FirstTime]
+
+      [Color:Green]
+      [Author:Doohan]
+        
+  	  [ChatMessages:The old man always talked about restoring her someday. This ship really meant something to him.]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]   	  
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_WuWeiOpening_Message3</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+		
+	[UseChatBroadcast:true]
+	[ChatData:AaW_EventChat_WuWeiOpening_Message3]
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventChat_WuWeiOpening_Message3</SubtypeId>
+      </Id>
+      <Description>
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:false]
+      [IgnoreAntennaRequirement:True]
+      [IgnoredAntennaRangeOverride:1]
+      [SendToSpecificPlayers:true]
+	  [PlayerConditionIds:AaW_PlayerCondition_WuWei_FirstTime]
+
+      [Color:Green]
+      [Author:Doohan]
+        
+  	  [ChatMessages:Now, the ship is yours. Just like he wanted. Doohan out...]
+      [BroadcastChatType:Chat]
+      [ChatAudio:]   	  
+      </Description>
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventAction_WuWeiOpening_End</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action]
+		
+	
+	[AddTagstoPlayers:true]
+	[AddTagsPlayerConditionIds:AaW_PlayerCondition_WuWei_FirstTime]
+	[AddTags:StartedWuWei]
+
+	
+      </Description>
+    </EntityComponent>
+
+
+
+<!-- 
+
+========================
+
+-->
+
+
+
+
+
+
+	</EntityComponents>
+</Definitions>

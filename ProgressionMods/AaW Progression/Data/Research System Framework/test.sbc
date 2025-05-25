@@ -111,6 +111,14 @@
             [/BlockDefinitons]
           [/ResearchGroup]
           [ResearchGroup]
+            [Item Type="MyObjectBuilder_Component" SubtypeId="AaW_Schematic_IndustrialProduction" /]
+            [BlockDefinitons]
+              [OverwriteOthers]false[/OverwriteOthers]
+			  [Id Type="MyObjectBuilder_JumpDrive" SubtypeId="AQD_SG_Jumpdrive" UseBlockVariantsGroup="false" /] [!-- Jump Drive (Small Grid) --]
+			  [Id Type="MyObjectBuilder_JumpDrive" SubtypeId="LargeJumpDrive" UseBlockVariantsGroup="false" /] [!-- Jump Drive (Large Grid) --]
+            [/BlockDefinitons]
+          [/ResearchGroup]		  
+          [ResearchGroup]
             [Item Type="MyObjectBuilder_Component" SubtypeId="AaW_Schematic_DummyITC" /]
             [BlockDefinitons]
               [OverwriteOthers]false[/OverwriteOthers]
@@ -167,17 +175,6 @@
             [Item Type="MyObjectBuilder_Component" SubtypeId="AaW_Schematic_DummySOLCOOP" /]
             [BlockDefinitons]
               [OverwriteOthers]false[/OverwriteOthers]
-				[Id Type="MyObjectBuilder_Refinery" SubtypeId="LargeRefinery" UseBlockVariantsGroup="false" /] [!-- Refinery (Large Grid) --]
-				[Id Type="MyObjectBuilder_Refinery" SubtypeId="Blast Furnace" UseBlockVariantsGroup="false" /] [!-- Smelter (Large Grid) --]			    
-				[Id Type="MyObjectBuilder_Assembler" SubtypeId="AQD_SG_BasicAssembler" UseBlockVariantsGroup="false" /] [!-- Advanced Fabricator (Small Grid) --]
-				[Id Type="MyObjectBuilder_Refinery" SubtypeId="AQD_SG_BasicRefinery" UseBlockVariantsGroup="false" /] [!-- Basic Refinery (Small Grid) --]				
-				[Id Type="MyObjectBuilder_Assembler" SubtypeId="LargeAssemblerIndustrial" UseBlockVariantsGroup="false" /] [!-- Industrial Assembler (Large Grid) --]
-				[Id Type="MyObjectBuilder_Refinery" SubtypeId="LargeRefineryIndustrial" UseBlockVariantsGroup="false" /] [!-- Industrial Refinery (Large Grid) --]				
-				[Id Type="MyObjectBuilder_Assembler" SubtypeId="LargeAssembler" UseBlockVariantsGroup="false" /] [!-- Assembler (Large Grid) --]
-				[Id Type="MyObjectBuilder_Assembler" SubtypeId="BasicAssembler" UseBlockVariantsGroup="false" /] [!-- Basic Assembler (Large Grid) --]				
-				[Id Type="MyObjectBuilder_UpgradeModule" SubtypeId="LargeProductivityModule" UseBlockVariantsGroup="false" /] [!-- Speed Module (Large Grid) --]
-				[Id Type="MyObjectBuilder_UpgradeModule" SubtypeId="LargeEffectivenessModule" UseBlockVariantsGroup="false" /] [!-- Yield Module (Large Grid) --]
-				[Id Type="MyObjectBuilder_UpgradeModule" SubtypeId="LargeEnergyModule" UseBlockVariantsGroup="false" /] [!-- Power Efficiency Module (Large Grid) --]	
 				[Id Type="MyObjectBuilder_JumpDrive" SubtypeId="LargePrototechJumpDrive" UseBlockVariantsGroup="false" /] [!-- Advanced Jump Drive (Large Grid) --]
 				[Id Type="MyObjectBuilder_JumpDrive" SubtypeId="SmallPrototechJumpDrive" UseBlockVariantsGroup="false" /] [!-- Advanced JumpDrive (Small Grid) --]
 				[Id Type="MyObjectBuilder_Thrust" SubtypeId="LargeBlockPrototechThruster" UseBlockVariantsGroup="false" /] [!-- Advanced Large Thruster (Large Grid) --]
@@ -239,11 +236,11 @@
 				[Id Type="MyObjectBuilder_Refinery" SubtypeId="ExoticMaterialRefinery" UseBlockVariantsGroup="false" /] [!-- Exotic Material Refinery (Large Grid) --]				
             [/BlockDefinitons]
           [/ResearchGroup]	
-
-
-		  
         [/ResearchGroups]
       </Description>
     </EntityComponent>
+	
+	
+
   </EntityComponents>
 </Definitions>
