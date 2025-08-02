@@ -57,15 +57,24 @@
         [MES Shipyard]
 
         [AllowBlueprintBuilding:false] //This feature isn't even built yet, so don't get any ideas.
-        [AllowScrapPurchasing:true]
-        [AllowRepairAndConstruction:true]
+        [AllowScrapPurchasing:false]
+        [AllowRepairAndConstruction:false]
         [AllowGridTakeover:false]
-
 
 		[RepairAndConstructionExcludedComponentIds:AHEShipyard]
 
 		[RepairAndConstructionExcludedComponentIds:RakShipyard]
 		[RepairAndConstructionExcludedComponentIds:ITCShipyard]
+		
+		
+		[AllowCustomReplacement:true]
+        [OldBlock:MyObjectBuilder_CubeBlock/LargeBlockArmorBlock]
+        [NewBlock:RemoteControl/RivalAIRemoteControlLarge]
+		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargeAssembler]
+		[NewBlock:Assembler/LargeAssembler]
+
+		
       </Description>
     </EntityComponent>	
 	

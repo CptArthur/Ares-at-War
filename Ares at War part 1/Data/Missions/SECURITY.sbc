@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SECURITY_Mission_RelicData</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	[Tags:SECURITY]
+	[OverrideFaction:SECURITY]
+	
+	[Title:Sell Relic Data]
+	[Description:]
+	
+	[StoreProfileId:AaW_StoreProfile_RelicData]
+	[MissionType:Acquisition]
+	
+	[Reward:50000000]
+	[Collateral:0]
+	[ReputationReward:75]
+	[FailReputationPrice:0]
+	[Duration:5]
+
+
+  [Exclusive:true]
+
+      </Description>
+    </EntityComponent>
+
+
+	  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_SECURITY_RaidXolAsteroidBase</SubtypeId>
+      </Id>
+      <Description>
+    [MES Mission]
+	[Tags:SECURITY]    
+	[OverrideFaction:SECURITY]
+	
+	[Title:Download data from Xol's hideout]
+	[Description:We've captured and interrogated one of Xol's men, and he has given us the coordinates of an asteroid base. Unfortunately, we can not spare any ships for a raid. Your mission: infiltrate the base, neutralize any threats, and download all critical data from its computer. Good luck. \n {GPSText}]
+	
+	[InstanceEventGroupId:MissionGroup_Download]
+	
+	[Reward:9000000]
+	[Collateral:5000]
+	[ReputationReward:125]
+	[FailReputationPrice:25]
+	[Duration:0]
+
+	[ReplaceKeys:{EncounterSpawnData}]
+	[ReplaceValues:SPRT_XolSafehouse_Spawner]	
+
+
+	[ReplaceKeys:{StartingGPSName}]
+	[ReplaceValues:Download data from Xol's hideout]	
+	
+
+	[ReplaceKeys:{PlayerNearRadius}]
+	[ReplaceValues:2000]	
+
+	[ReplaceKeys:{SuccessChatMessage}]
+	[ReplaceValues:Receiving data now... Excellent work, {PlayerName}. As promised, here's your reward. You've earned it.]	
+
+	[ReplaceKeys:{SuccessChatAuthor}]
+	[ReplaceValues:SECURITY]	
+
+  [Exclusive:true]
+
+  [ActivateBooleanNameOnSucces:RaidXolAsteroidBase]
+
+
+  [CustomApiMapping:AaW-MissionMapping]
+      </Description>
+    </EntityComponent>
+
+
+	
+  </EntityComponents>
+</Definitions>
+

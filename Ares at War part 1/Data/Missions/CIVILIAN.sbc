@@ -45,6 +45,122 @@ ContractBlockLocation
 
 
 
+ 
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>Thorrix_EventCondition_MissionDestroyDRACobalt</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:DRA_MiningOutpostCobaltDestroyed]  
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_Thorrix_DestroyDRACobalt</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:Shut Down Raider Mine]
+	[Description:The Desert Raiders are running a cobalt mine within the Agaris Desert. It’s lightly fortified and supports their gear production. Thorrix command wants it taken out before they expand operations.]
+	
+	[OverrideFaction:THORRIX]
+	
+	[Reward:5000000]
+	[Collateral:50000]
+	[ReputationReward:200]
+	[FailReputationPrice:20]
+	[Duration:0]
+
+	[PersistantEventConditionIds:Thorrix_EventCondition_MissionDestroyDRACobalt]
+
+	[ReplaceKeys:{StaticEncounterSandboxBoolName}]
+	[ReplaceValues:DRA_MiningOutpostCobaltDestroyed]
+	
+	[ReplaceKeys:{EventName}]
+	[ReplaceValues:Destroy DRA Cobalt Outpost]	
+
+	[ReplaceKeys:{EventCoords}]
+	[ReplaceValues:{X:-3658137.18096731 Y:-1305465.62918192 Z:-2524865.2501867}]	
+	
+	
+	[InstanceEventGroupId:MissionGroup_EliminateStaticEncounter]
+
+      </Description>
+    </EntityComponent>
+
+
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>Thorrix_EventCondition_MissionDestroyDRAMagnesium</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:DRA_MiningOutpostMagnesiumDestroyed]  
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_Thorrix_DestroyDRAMagnesium</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:Shut Down Raider Mine]
+	[Description:The Desert Raiders are running a magnesium mine. They’re using the raw material to produce ammunition. Thorrix command wants the site neutralized before their stockpiles grow any further.]
+	
+	[OverrideFaction:THORRIX]
+	
+	[Reward:5000000]
+	[Collateral:50000]
+	[ReputationReward:200]
+	[FailReputationPrice:20]
+	[Duration:0]
+
+	[PersistantEventConditionIds:Thorrix_EventCondition_MissionDestroyDRAMagnesium]
+
+	[ReplaceKeys:{StaticEncounterSandboxBoolName}]
+	[ReplaceValues:DRA_MiningOutpostMagnesiumDestroyed]
+	
+	[ReplaceKeys:{EventName}]
+	[ReplaceValues:Destroy DRA Magnesium Outpost]	
+
+	[ReplaceKeys:{EventCoords}]
+	[ReplaceValues:{X:-3678919.75817321 Y:-1328045.60224412 Z:-2529986.12841394}]	
+	
+	
+	[InstanceEventGroupId:MissionGroup_EliminateStaticEncounter]
+
+      </Description>
+    </EntityComponent> 
+
 
 
 

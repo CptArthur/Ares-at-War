@@ -1,15 +1,9 @@
 import Templates as Temp
+import TemplateTriggers as Trigger
 
-def GenerateMissionIds(MissionIds:list):
-    if len(MissionIds) == 0:
-        return ""
-    string = "\n"
-    for id in MissionIds:
-        string += f"        [MissionIds:AaW_Mission_{id}] \n"
 
-    return string
-
-def CreateStoreItems(Faction, Name:str,XML_Name: str,StoresProfiles:str,TradeIngots:str,Ingots:list, MissionIds:list):
+def CreateStoreItems(Faction, Name:str,XML_Name: str,StoresProfiles:str,TradeIngots:str,Ingots:list, 
+                     MissionIds:list, SECURITY_mission_ids,ITC_mission_ids,SHIVAN_mission_ids,AGURO_mission_ids,ZENOVA_mission_ids,SOLCOOP_mission_ids):
     string = f"""<?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
@@ -20,14 +14,22 @@ def CreateStoreItems(Faction, Name:str,XML_Name: str,StoresProfiles:str,TradeIng
 
      {Temp.GetStoreMilitary(XML_Name,Faction,Name,Ingots,TradeIngots) if "Military" in StoresProfiles else ""}
 
+     {Temp.GetStoreUniversity(XML_Name,Faction,Name,Ingots,TradeIngots) if "University" in StoresProfiles else ""}
 
     {Temp.GetStoreVendingMachine(XML_Name,Faction,Name) if "VendingMachine" in StoresProfiles else ""}
-    {Temp.GetStoreVendingMachine(XML_Name,Faction,Name) if "Vending Machine" in StoresProfiles else ""}
     {Temp.GetStoreIngot(XML_Name,Faction,Name,Ingots,TradeIngots) if "Ingot" in StoresProfiles else ""}
     {Temp.GetStoreCiv(XML_Name,Faction,Name) if "Civ" in StoresProfiles else ""}
     {Temp.GetStoreScrap(XML_Name,Faction,Name) if "Scrap" in StoresProfiles else ""}
     {Temp.GetStoreAmmo(XML_Name,Faction,Name) if "Ammo" in StoresProfiles else ""}
-    {Temp.GetStoreSYN(XML_Name,Faction,Name) if "SYN" in StoresProfiles else ""}
+
+
+    {Temp.GetStoreSHIVAN(XML_Name,Faction,Name) if "SHIVAN" in StoresProfiles else ""}
+
+
+    {Temp.GetStoreSECURITY(XML_Name,Faction,Name) if "SECURITY" in StoresProfiles else ""}
+    {Temp.GetStoreAGURO(XML_Name,Faction,Name) if "AGURO" in StoresProfiles else ""}
+    {Temp.GetStoreZENOVA(XML_Name,Faction,Name) if "ZENOVA" in StoresProfiles else ""}
+
     {Temp.GetStoreITC(XML_Name,Faction,Name) if "ITC" in StoresProfiles else ""}
     {Temp.GetStoreUNION(XML_Name,Faction,Name) if "UNION" in StoresProfiles else ""}
     {Temp.GetStoreSOLCOOP(XML_Name,Faction,Name) if "SOLCOOP" in StoresProfiles else ""}
@@ -70,12 +72,20 @@ def CreateStoreItems(Faction, Name:str,XML_Name: str,StoresProfiles:str,TradeIng
         
         [MinContracts:5]
         [MaxContracts:15]
-        {GenerateMissionIds(MissionIds)}
+        {Temp.GenerateMissionIds(MissionIds)}
         
       </Description>
     </EntityComponent>	    
 
- 
+    {Temp.GetContractFaction(Faction,Name,"SHIVAN",SHIVAN_mission_ids) if "SHIVAN" in StoresProfiles else ""}
+    {Temp.GetContractFaction(Faction,Name,"SECURITY",SECURITY_mission_ids) if "SECURITY" in StoresProfiles else ""}
+    {Temp.GetContractFaction(Faction,Name,"AGURO",AGURO_mission_ids) if "AGURO" in StoresProfiles else ""}
+    {Temp.GetContractFaction(Faction,Name,"ZENOVA",ZENOVA_mission_ids) if "ZENOVA" in StoresProfiles else ""}
+    {Temp.GetContractFaction(Faction,Name,"ITC",ITC_mission_ids) if "ITC" in StoresProfiles else ""}
+    {Temp.GetContractFaction(Faction,Name,"SOLCOOP",SOLCOOP_mission_ids) if "SOLCOOP" in StoresProfiles else ""} 
+    
+
+
   </EntityComponents>
 </Definitions>
 """
@@ -85,15 +95,20 @@ def CreateStoreItems(Faction, Name:str,XML_Name: str,StoresProfiles:str,TradeIng
 
 
 
-def CreateTriggers(Faction, Name:str, IO):
+def CreateTriggers(Faction, Name:str, IO, StoresProfiles):
     print(f"[Triggers:{Faction}_Trigger_Static_PopulateStores_{Name}]")
     FailCondition = ""
     if IO == False:
       FailCondition = "[UseFailCondition:true]"
     ITC = "{ITC}"
-    SYN = "{SYN}"
+    SHIVAN = "{SHIVAN}"
+    SECURITY = "{SECURITY}"
+    AGURO = "{AGURO}"  	
     UNION = "{UNION}"  
     SOLCOOP = "{SOLCOOP}"  
+
+
+
     string = f"""<?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
@@ -145,68 +160,38 @@ def CreateTriggers(Faction, Name:str, IO):
         <SubtypeId>{Faction}_Action_Static_PopulateStores_{Name}</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Action]
 
         [ApplyStoreProfiles:true]
         [ClearStoreContentsFirst:true]
 
-       [StoreBlocks:Store Settlement]
-      [StoreProfiles:{Faction}_StoreProfile_{Name}_Settlement]		
+    {Trigger.GetStoreSettlement(Faction,Name) if "Settlement" in StoresProfiles else ""}
+    {Trigger.GetStoreTradestation(Faction,Name) if "Tradestation" in StoresProfiles else ""}
 
-       [StoreBlocks:Store Tradestation]
-      [StoreProfiles:{Faction}_StoreProfile_{Name}_Tradestation]		
-
-
-       [StoreBlocks:Store Military]
-      [StoreProfiles:{Faction}_StoreProfile_{Name}_Military]		
+    {Trigger.GetStoreUniversity(Faction,Name) if "University" in StoresProfiles else ""}
 
 
-      [StoreBlocks:Store {ITC}]
-      [StoreProfiles:{Faction}_StoreProfile_{Name}_ITC]		
-		
-	    [StoreBlocks:Store {SYN}]
-      [StoreProfiles:{Faction}_StoreProfile_{Name}_SYN]	
-
-	    [StoreBlocks:Store {UNION}]
-      [StoreProfiles:{Faction}_StoreProfile_{Name}_UNION]	
-
-      [StoreBlocks:Store {SOLCOOP}]
-      [StoreProfiles:{Faction}_StoreProfile_{Name}_SOLCOOP]	
+    {Trigger.GetStoreMilitary(Faction,Name) if "Military" in StoresProfiles else ""}
+    {Trigger.GetStoreVendingMachine(Faction,Name) if "VendingMachine" in StoresProfiles else ""}
+    {Trigger.GetStoreIngot(Faction,Name) if "Ingot" in StoresProfiles else ""}
+    {Trigger.GetStoreCiv(Faction,Name) if "Civ" in StoresProfiles else ""}
+    {Trigger.GetStoreScrap(Faction,Name) if "Scrap" in StoresProfiles else ""}
+    {Trigger.GetStoreAmmo(Faction,Name) if "Ammo" in StoresProfiles else ""}
 
 
-      [StoreBlocks:Store Civ]
-      [StoreProfiles:{Faction}_StoreProfile_{Name}_Civ]
-  
-      [StoreBlocks:Store Salvage]
-      [StoreProfiles:{Faction}_StoreProfile_{Name}_Salvage]
+    {Trigger.GetStoreSHIVAN(Faction,Name) if "SHIVAN" in StoresProfiles else ""}
+    {Trigger.GetStoreSECURITY(Faction,Name) if "SECURITY" in StoresProfiles else ""}
+    {Trigger.GetStoreAGURO(Faction,Name) if "AGURO" in StoresProfiles else ""}
+    {Trigger.GetStoreITC(Faction,Name) if "ITC" in StoresProfiles else ""}
+    {Trigger.GetStoreUNION(Faction,Name) if "UNION" in StoresProfiles else ""}
+    {Trigger.GetStoreSOLCOOP(Faction,Name) if "SOLCOOP" in StoresProfiles else ""}
+    {Trigger.GetStoreZENOVA(Faction,Name) if "ZENOVA" in StoresProfiles else ""}
 
-      [StoreBlocks:Store Ammo]
-      [StoreProfiles:{Faction}_StoreProfile_{Name}_Ammo]
+    {Trigger.GetStoreOutpost(Faction,Name) if "Outpost" in StoresProfiles else ""}        
 
-      [StoreBlocks:Store Ingot]
-      [StoreProfiles:{Faction}_StoreProfile_{Name}_Ingot]
-  
-      [StoreBlocks:Store Tool]
-      [StoreProfiles:{Faction}_StoreProfile_{Name}_Tool]      
-
-      [StoreBlocks:Store Prefab]
-      [StoreProfiles:{Faction}_StoreProfile_{Name}_Prefab]      
-
-      
       [StoreBlocks:Store Fuel]
       [StoreProfiles:{Faction}_StoreProfile_{Name}_Fuel]
   
-      
-      [StoreBlocks:Store Outpost]
-      [StoreProfiles:{Faction}_StoreProfile_{Name}_Outpost]
-
-
-      [StoreBlocks:Vending Machine]
-      [StoreProfiles:{Faction}_StoreProfile_{Name}_VendingMachine]
-
-
-
 
       [AddCustomDataToBlocks:true]
       [CustomDataBlockNames:EconomySurvival Store Water Vehicles,EconomySurvival Store Land Vehicles,EconomySurvival Store Air Vehicles,EconomySurvival Store Space Vehicles]
@@ -214,27 +199,22 @@ def CreateTriggers(Faction, Name:str, IO):
       [CustomDataFiles:{Faction}_Land_Vehicles.xml]
       [CustomDataFiles:{Faction}_Air_Vehicles.xml]
       [CustomDataFiles:{Faction}_Space_Vehicles.xml]  
+  
 
       [ApplyContractProfiles:true]
       [ClearContractContentsFirst:true]
       [ContractBlocks:Contracts]
       [ContractBlockProfiles:{Faction}_ContractBlockProfile_{Name}]
-
-       [ContractBlocks:Contracts {SYN}]
-      [ContractBlockProfiles:SHIVAN_ContractBlockProfile_Civilian]
-
-       [ContractBlocks:Contracts {ITC}]
-      [ContractBlockProfiles:ITC_ContractBlockProfile_Civilian]
-      
-       [ContractBlocks:Contracts {UNION}]
-      [ContractBlockProfiles:UNION_ContractBlockProfile_Civilian]
-
-
-       [ContractBlocks:Contracts {SOLCOOP}]
-      [ContractBlockProfiles:SOLCOOP_ContractBlockProfile_Civilian]
+   
+    {Trigger.GetContractSHIVAN(Faction,Name) if "SHIVAN" in StoresProfiles else ""}
+    {Trigger.GetContractSECURITY(Faction,Name) if "SECURITY" in StoresProfiles else ""}
+    {Trigger.GetContractAGURO(Faction,Name) if "AGURO" in StoresProfiles else ""}
+    {Trigger.GetContractITC(Faction,Name) if "ITC" in StoresProfiles else ""}
+    {Trigger.GetContractUNION(Faction,Name) if "UNION" in StoresProfiles else ""}
+    {Trigger.GetContractSOLCOOP(Faction,Name) if "SOLCOOP" in StoresProfiles else ""}
+    {Trigger.GetContractSOLCOOP(Faction,Name) if "ZENOVA" in StoresProfiles else ""}
 
       </Description>
-
     </EntityComponent>
   </EntityComponents>
 </Definitions>
@@ -242,3 +222,24 @@ def CreateTriggers(Faction, Name:str, IO):
     
     with open(f'D:/SEMods-Github/Ares-at-War-part-1/Ares at War part 1/Data/Encounters/{Faction}/[{Faction}]-Behaviors/Store/Triggers/{Faction}-{Name}-Triggers-Store.sbc', 'w') as f:
         f.write(string)
+
+
+# [StoreBlocks:Store Civ]
+# [StoreProfiles:{Faction}_StoreProfile_{Name}_Civ]
+
+# [StoreBlocks:Store Salvage]
+# [StoreProfiles:{Faction}_StoreProfile_{Name}_Salvage]
+
+# [StoreBlocks:Store Ammo]
+# [StoreProfiles:{Faction}_StoreProfile_{Name}_Ammo]
+
+# [StoreBlocks:Store Ingot]
+# [StoreProfiles:{Faction}_StoreProfile_{Name}_Ingot]
+
+# [StoreBlocks:Store Tool]
+# [StoreProfiles:{Faction}_StoreProfile_{Name}_Tool]      
+
+# [StoreBlocks:Store Prefab]
+# [StoreProfiles:{Faction}_StoreProfile_{Name}_Prefab]      
+
+      

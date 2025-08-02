@@ -1,0 +1,1178 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!--
+Rank:
+Ares Travel Services
+1. Starlight City (50k)
+2. Sunset City (50k)
+3. Station27 (50k)
+4. Rak Station (5m)
+
+
+-->
+
+
+<!-- 
+
+Start Triggers
+
+
+ -->
+
+
+	  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_CommonTriggers_StarlightCity</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI TriggerGroup]
+	  
+	  [Triggers:AaW_Teleport_Trigger_SunsetCity_Fail]
+	  [Triggers:AaW_Teleport_Trigger_SunsetCity_Success]
+	  
+	  [Triggers:AaW_Teleport_Trigger_Station27_Fail]
+	  [Triggers:AaW_Teleport_Trigger_Station27_Success]	  
+	  
+
+	   
+      </Description>
+    </EntityComponent>  
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_CommonTriggers_SunsetCity</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI TriggerGroup]
+	  [Triggers:AaW_Teleport_Trigger_StarlightCity_Fail]
+	  [Triggers:AaW_Teleport_Trigger_StarlightCity_Success]	  
+	  
+
+	  
+	  [Triggers:AaW_Teleport_Trigger_Station27_Fail]
+	  [Triggers:AaW_Teleport_Trigger_Station27_Success]	  
+	  
+	   
+      </Description>
+    </EntityComponent>  
+	
+	
+	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_CommonTriggers_Station27</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI TriggerGroup]
+	  [Triggers:AaW_Teleport_Trigger_StarlightCity_Fail]
+	  [Triggers:AaW_Teleport_Trigger_StarlightCity_Success]	  
+	  
+	  [Triggers:AaW_Teleport_Trigger_SunsetCity_Fail]
+	  [Triggers:AaW_Teleport_Trigger_SunsetCity_Success]
+	    
+	  
+	  [Triggers:AaW_Teleport_Trigger_RakStation_Fail]
+	  [Triggers:AaW_Teleport_Trigger_RakStation_Success]
+	   
+      </Description>
+    </EntityComponent>  
+	
+	
+	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_CommonTriggers_RakStation</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI TriggerGroup]
+
+		[Triggers:AaW_Teleport_Trigger_ExpensiveStation27_Fail]
+		[Triggers:AaW_Teleport_Trigger_ExpensiveStation27_Success]
+
+
+
+	   
+      </Description>
+    </EntityComponent>  
+	
+
+
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_ReadyToTake_ExpensiveTransport</SubtypeId>
+      </Id>
+      <Description>
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:UNION]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:1501]	
+	
+	
+	[CheckPlayerCreditBalance:true]
+	[MinPlayerCreditBalance:5000000]
+      </Description>
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_ReadyToTake_Transport</SubtypeId>
+      </Id>
+      <Description>
+	[MES Player Condition]
+	
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:UNION]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:1501]	
+	
+	
+	[CheckPlayerCreditBalance:true]
+	[MinPlayerCreditBalance:50000]
+      </Description>
+    </EntityComponent>	
+	
+
+	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Trigger_StarlightCity_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:Ares Transport]
+	[ButtonPanelIndex:0]
+	[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	
+	[Conditions:AaW_Teleport_Condition_StarlightCity_Fail]
+	[Actions:AaW_Teleport_Action_StarlightCity_Fail]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Condition_StarlightCity_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+	[UseFailCondition:true]
+	
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_ReadyToTake_Transport]
+
+	
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Action_StarlightCity_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:AaW_Teleport_Chat_StarlightCity_Fail]
+	
+	[ResetCooldownTimeOfTriggers:true]
+	[ResetTriggerCooldownNames:AaW_Teleport_Trigger_StarlightCity_Success]
+	
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Chat_StarlightCity_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:Ares Transport]
+      [Color:Red]
+      
+      [ChatMessages:Failed processing]
+      [ChatAudio:]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]
+	  [SendToCommandPlayer:true]	
+      
+      </Description>
+      
+    </EntityComponent>
+
+
+
+<!-- Our requirements are not met -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Trigger_StarlightCity_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:Ares Transport]
+	[ButtonPanelIndex:0]
+	[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	[Conditions:AaW_Teleport_Condition_StarlightCity_Success]
+	[Actions:AaW_Teleport_Action_StarlightCity_Success]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Condition_StarlightCity_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	
+		[CheckPlayerCondition:true]
+		[PlayerConditionIds:PlayerCondition_ReadyToTake_Transport]
+	
+
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Action_StarlightCity_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	  [ChangePlayerCredits:true]
+	  [ChangePlayerCreditsAmount:-50000]
+	  [ChangePlayerCreditsIncludeSavedPlayerIdentity:true]
+	  
+	[ProcessStaticEncountersAtLocation:true]
+	[ProcessStaticEncountersLocation:{X:-712725.31332499 Y:-1112936.04750601 Z:-3487850.09379849}]
+	
+	
+	[TeleportPlayers:true]
+	[TeleportPlayersIncludeSavedPlayerIdentity:true]
+	[TeleportPlayerCoords:{X:-712708.31332499 Y:-1113005.04750601 Z:-3487858.09379849}]
+
+	
+	[UseChatBroadcast:true]
+	[ChatData:AaW_Teleport_Chat_StarlightCity_Success]
+	  
+	  
+	[ResetCooldownTimeOfTriggers:true]
+	[ResetTriggerCooldownNames:AaW_Teleport_Trigger_StarlightCity_Fail]
+	 
+	 
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Chat_StarlightCity_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:Ares Transport]
+      [Color:Green]
+      
+      [ChatMessages:Thank you for traveling with Ares Starline]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]
+	  [SendToCommandPlayer:true]	
+      
+      </Description>
+      
+    </EntityComponent>
+	
+	
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Trigger_SunsetCity_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:Ares Transport]
+	[ButtonPanelIndex:1]
+	[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	
+	
+	[Conditions:AaW_Teleport_Condition_SunsetCity_Fail]
+	[Actions:AaW_Teleport_Action_SunsetCity_Fail]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Condition_SunsetCity_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+	[UseFailCondition:true]
+	
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_ReadyToTake_Transport]
+
+	
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Action_SunsetCity_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:AaW_Teleport_Chat_SunsetCity_Fail]
+	
+	  	 [ResetCooldownTimeOfTriggers:true]
+	 [ResetTriggerCooldownNames:AaW_Teleport_Trigger_SunsetCity_Success]
+	 
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Chat_SunsetCity_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:Ares Transport]
+      [Color:Red]
+      
+      [ChatMessages:Failed processing]
+      [ChatAudio:]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]
+	  [SendToCommandPlayer:true]	
+      
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Trigger_SunsetCity_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:Ares Transport]
+	[ButtonPanelIndex:1]
+	
+	[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	
+	
+	[Conditions:AaW_Teleport_Condition_SunsetCity_Success]
+	[Actions:AaW_Teleport_Action_SunsetCity_Success]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Condition_SunsetCity_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	
+		[CheckPlayerCondition:true]
+		[PlayerConditionIds:PlayerCondition_ReadyToTake_Transport]
+	
+
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Action_SunsetCity_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	  [ChangePlayerCredits:true]
+	  [ChangePlayerCreditsAmount:-50000]
+	  [ChangePlayerCreditsIncludeSavedPlayerIdentity:true]
+	  
+	[ProcessStaticEncountersAtLocation:true]
+	[ProcessStaticEncountersLocation:{X:-3703710.56552889 Y:-1300687.78803807 Z:-2542134.43874369}]
+	
+	
+	[TeleportPlayers:true]
+	[TeleportPlayersIncludeSavedPlayerIdentity:true]
+	[TeleportPlayerCoords:{X:-3703739.56552889 Y:-1300699.78803807 Z:-2542155.43874369}]
+	  
+
+	  
+	[UseChatBroadcast:true]
+	[ChatData:AaW_Teleport_Chat_SunsetCity_Success]
+	
+	  	 [ResetCooldownTimeOfTriggers:true]
+	 [ResetTriggerCooldownNames:AaW_Teleport_Trigger_SunsetCity_Fail]
+
+	 
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Chat_SunsetCity_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:Ares Transport]
+      [Color:Green]
+      
+      [ChatMessages:Thank you for traveling with Ares Starline]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]
+	  [SendToCommandPlayer:true]	
+      
+      </Description>
+      
+    </EntityComponent>
+	
+
+
+
+<!--Cheap-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Trigger_Station27_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:Ares Transport]
+	[ButtonPanelIndex:2]
+	
+	[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	
+	
+	[Conditions:AaW_Teleport_Condition_Station27_Fail]
+	[Actions:AaW_Teleport_Action_Station27_Fail]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Condition_Station27_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+	[UseFailCondition:true]
+	
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_ReadyToTake_Transport]
+
+	
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Action_Station27_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:AaW_Teleport_Chat_Station27_Fail]
+
+	  	 [ResetCooldownTimeOfTriggers:true]
+	 [ResetTriggerCooldownNames:AaW_Teleport_Trigger_Station27_Success]
+
+	 
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Chat_Station27_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:Ares Transport]
+      [Color:Red]
+      
+      [ChatMessages:Failed processing]
+      [ChatAudio:]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]
+	  [SendToCommandPlayer:true]	
+      
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+<!-- Our requirements are not met -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Trigger_Station27_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:Ares Transport]
+	[ButtonPanelIndex:2]
+	
+		[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	
+	
+	[Conditions:AaW_Teleport_Condition_Station27_Success]
+	[Actions:AaW_Teleport_Action_Station27_Success]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Condition_Station27_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	
+		[CheckPlayerCondition:true]
+		[PlayerConditionIds:PlayerCondition_ReadyToTake_Transport]
+	
+
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Action_Station27_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	  [ChangePlayerCredits:true]
+	  [ChangePlayerCreditsAmount:-50000]
+	  [ChangePlayerCreditsIncludeSavedPlayerIdentity:true]
+	  
+	
+	[ProcessStaticEncountersAtLocation:true]
+	[ProcessStaticEncountersLocation:{X:-1970922.05378800002 Y:-1016003.00749572 Z:-2313711.812254}]
+	
+	
+	[TeleportPlayers:true]
+	[TeleportPlayersIncludeSavedPlayerIdentity:true]
+	[TeleportPlayerCoords:{X:-1971004.20910497 Y:-1015995.00749572 Z:-2313117.812254}]
+	  
+	  
+
+
+	  
+
+	  
+	[UseChatBroadcast:true]
+	[ChatData:AaW_Teleport_Chat_Station27_Success]
+	  
+	[ResetCooldownTimeOfTriggers:true]
+	[ResetTriggerCooldownNames:AaW_Teleport_Trigger_Station27_Fail]
+	 
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Chat_Station27_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:Ares Transport]
+      [Color:Green]
+      
+      [ChatMessages:Thank you for traveling with Ares Starline]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]
+	  [SendToCommandPlayer:true]	
+      
+      </Description>
+      
+    </EntityComponent>
+	
+	
+<!--
+
+
+Expensive
+
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Trigger_ExpensiveStation27_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:Ares Transport]
+	[ButtonPanelIndex:2]
+	
+	[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	
+	
+	[Conditions:AaW_Teleport_Condition_ExpensiveStation27_Fail]
+	[Actions:AaW_Teleport_Action_ExpensiveStation27_Fail]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Condition_ExpensiveStation27_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+	[UseFailCondition:true]
+	
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_ReadyToTake_ExpensiveTransport]
+
+	
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Action_ExpensiveStation27_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:AaW_Teleport_Chat_ExpensiveStation27_Fail]
+
+	  	 [ResetCooldownTimeOfTriggers:true]
+	 [ResetTriggerCooldownNames:AaW_Teleport_Trigger_ExpensiveStation27_Success]
+
+	 
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Chat_ExpensiveStation27_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:Ares Transport]
+      [Color:Red]
+      
+      [ChatMessages:Failed processing]
+      [ChatAudio:]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]
+	  [SendToCommandPlayer:true]	
+      
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+<!-- Our requirements are not met -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Trigger_ExpensiveStation27_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:Ares Transport]
+	[ButtonPanelIndex:2]
+	
+		[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	
+	
+	[Conditions:AaW_Teleport_Condition_ExpensiveStation27_Success]
+	[Actions:AaW_Teleport_Action_ExpensiveStation27_Success]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Condition_ExpensiveStation27_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	
+		[CheckPlayerCondition:true]
+		[PlayerConditionIds:PlayerCondition_ReadyToTake_ExpensiveTransport]
+	
+
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Action_ExpensiveStation27_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	  [ChangePlayerCredits:true]
+	  [ChangePlayerCreditsAmount:-5000000]
+	  [ChangePlayerCreditsIncludeSavedPlayerIdentity:true]
+	  
+	[ProcessStaticEncountersAtLocation:true]
+	[ProcessStaticEncountersLocation:{X:-1970922.05378800002 Y:-1016003.00749572 Z:-2313711.812254}]
+	
+	[TeleportPlayers:true]
+	[TeleportPlayersIncludeSavedPlayerIdentity:true]
+	[TeleportPlayerCoords:{X:-1971004.20910497 Y:-1015995.00749572 Z:-2313117.812254}]
+	  
+	[UseChatBroadcast:true]
+	[ChatData:AaW_Teleport_Chat_Station27_Success]
+	  
+	[ResetCooldownTimeOfTriggers:true]
+	[ResetTriggerCooldownNames:AaW_Teleport_Trigger_ExpensiveStation27_Fail]
+	 
+      </Description>
+      
+    </EntityComponent>
+	
+<!--
+
+Payback
+
+-->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Trigger_RakStation_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:Ares Transport]
+	[ButtonPanelIndex:3]
+	
+	
+		[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	
+	
+	[Conditions:AaW_Teleport_Condition_RakStation_Fail]
+	[Actions:AaW_Teleport_Action_RakStation_Fail]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Condition_RakStation_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+	[UseFailCondition:true]
+	
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_ReadyToTake_ExpensiveTransport]
+
+	
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Action_RakStation_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	[UseChatBroadcast:true]
+	[ChatData:AaW_Teleport_Chat_RakStation_Fail]
+	  
+	  
+	  	  
+	 [ResetCooldownTimeOfTriggers:true]
+	 [ResetTriggerCooldownNames:AaW_Teleport_Trigger_RakStation_Success]
+	 
+	 
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Chat_RakStation_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:Ares Transport]
+      [Color:Red]
+      
+      [ChatMessages:Failed Processing]
+      [ChatAudio:]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3] 
+	  [SendToCommandPlayer:true]	
+      
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Trigger_RakStation_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [UseTrigger:true]
+      [Type:ButtonPress]
+	[ButtonPanelName:Ares Transport]
+	[ButtonPanelIndex:3]
+	
+		[MinCooldownMs:500]
+	[MinCooldownMs:501]	
+	
+	
+	[Conditions:AaW_Teleport_Condition_RakStation_Success]
+	[Actions:AaW_Teleport_Action_RakStation_Success]
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Condition_RakStation_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Condition]
+      
+      [UseConditions:true]
+
+	
+		[CheckPlayerCondition:true]
+		[PlayerConditionIds:PlayerCondition_ReadyToTake_ExpensiveTransport]
+	
+
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Action_RakStation_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+	  [ChangePlayerCredits:true]
+	  [ChangePlayerCreditsAmount:-5000000]
+	  [ChangePlayerCreditsIncludeSavedPlayerIdentity:true]
+	  
+
+	[ProcessStaticEncountersAtLocation:true]
+	[ProcessStaticEncountersLocation:{X:2085128.79556375 Y:1167350.27387061 Z:2104394.84805448}]
+	[TeleportPlayers:true]
+	[TeleportPlayersIncludeSavedPlayerIdentity:true]
+	[TeleportPlayerCoords:{X:2084805.79556375 Y:1167352.27387061 Z:2104517.84805448}]
+	
+	
+
+	[UseChatBroadcast:true]
+	[ChatData:AaW_Teleport_Chat_RakStation_Success]
+	  
+	  
+	 [ResetCooldownTimeOfTriggers:true]
+	 [ResetTriggerCooldownNames:AaW_Teleport_Trigger_RakStation_Fail]
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Teleport_Chat_RakStation_Success</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Chat]
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [BroadcastRandomly:true]
+      
+      [Author:Ares Transport]
+      [Color:Green]
+      
+      [ChatMessages:Thank you for traveling with Ares Starline]
+      [ChatAudio:GreetingSoundId-A]
+      [BroadcastChatType:Chat]
+      
+	  [MinTime:2]
+	  [MaxTime:3]
+	  [SendToCommandPlayer:true]	
+      
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>

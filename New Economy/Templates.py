@@ -43,6 +43,44 @@ def GenerateProfileIngotOre(Ingots:list,TradeIngots:str):
     return string
 
 
+def GenerateMissionIds(MissionIds:list):
+    if len(MissionIds) == 0:
+        return ""
+    string = "\n"
+    for id in MissionIds:
+        string += f"        [MissionIds:AaW_Mission_{id}] \n"
+
+    return string
+
+
+#Special
+def GetContractFaction(Faction:str, Name:str,contractFaction ,MissionIds)->str:  
+    string = f"""
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>{Faction}_ContractBlockProfile_{Name}_{contractFaction}</SubtypeId>
+      </Id>
+      <Description>
+        [MES Contract Block]
+
+        [StoreProfileId:{Faction}_StoreProfile_{Name}_Ingot]
+        
+        [MinContracts:5]
+        [MaxContracts:15]
+        {GenerateMissionIds(MissionIds)}
+        
+      </Description>
+    </EntityComponent>	"""
+
+    return string
+
+
+
+
+
+
+
 #Special
 def GetStoreSettlement(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngots:str)->str:  
     string = f"""
@@ -66,12 +104,6 @@ def GetStoreSettlement(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngo
 
         {GenerateProfileIngotOre(Ingots,TradeIngots)}
 
-        
-        
-        [Orders:Component/CivilianProductI] 
-        [Orders:Component/CivilianProductII] 
-        [Orders:Component/CivilianProductIII] 
-
         [Offers:Component/SteelPlate] 
         [Offers:Component/Construction] 
         [Offers:Component/Girder] 
@@ -93,34 +125,8 @@ def GetStoreSettlement(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngo
         [Offers:Component/ReactorComponent] 
         [Offers:Component/MetalGrid] 
 
-        [Offers:Ammo/NATO_25x184mm] 
-        [Offers:Ammo/missile] 
-        [Offers:Ammo/MediumCalibreAmmo] 
-        [Offers:Ammo/LargeCalibreAmmo] 
-        [Offers:Ammo/LargeRailgunAmmo] 
-        [Offers:Ammo/SmallRailgunAmmo] 
-        [Offers:Ammo/AutocannonClip] 
-
-        [Offers:Ammo/PreciseAutomaticRifleGun_Mag_5rd] 
-        [Offers:Ammo/RapidFireAutomaticRifleGun_Mag_50rd] 
-        [Offers:Ammo/AutomaticRifleGun_Mag_20rd] 
-        [Offers:Ammo/NATO_5p56x45mm] 
-
-        [Offers:Ammo/UltimateAutomaticRifleGun_Mag_30rd] 
-        [Offers:Ammo/SemiAutoPistolMagazine] 
-        [Offers:Ammo/FullAutoPistolMagazine] 
-        [Offers:Ammo/ElitePistolMagazine] 
 
 
-
-
-        [Offers:Tool/SemiAutoPistolItem] 
-        [Offers:Tool/FullAutoPistolItem] 
-        [Offers:Tool/MediumCalibreAmmo] 
-        [Offers:Tool/AutomaticRifleItem] 
-        [Offers:Tool/PreciseAutomaticRifleItem] 
-        [Offers:Tool/RapidFireAutomaticRifleItem] 
-  
       </Description>
 
     </EntityComponent>"""
@@ -174,13 +180,55 @@ def GetStoreMilitary(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngots
         [Offers:Tool/AutomaticRifleItem] 
         [Offers:Tool/PreciseAutomaticRifleItem] 
         [Offers:Tool/RapidFireAutomaticRifleItem] 
-  
+
+          
       </Description>
 
     </EntityComponent>"""
 
     return string    
-    
+
+
+
+#Special
+def GetStoreUniversity(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngots:str)->str:  
+    string = f"""
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>{Faction}_StoreProfile_{Name}_University</SubtypeId>
+      </Id>
+      <Description>
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_{XML_Name}.xml]
+        
+        [MinOfferItems:99]
+        [MaxOfferItems:99]
+        [MinOrderItems:99]
+        [MaxOrderItems:99]
+
+        [ItemsRequireInventory:false]
+
+      [Offers:Component/AaW_Schematic_CeramicsFurnace] 
+      [Offers:Component/AaW_Schematic_MicroelectronicsFactory] 
+      [Offers:Component/AaW_Schematic_WireDrawer] 
+      [Offers:Component/AaW_Schematic_AutoLoom] 
+      [Offers:Component/AaW_Schematic_PlateStamp] 
+      [Offers:Component/AaW_Schematic_Extruder]  
+      [Offers:Component/AaW_Schematic_MunitionsFactory] 
+      [Offers:Component/AaW_Schematic_Fabricator]
+      [Offers:Component/AaW_Schematic_Reactor] 
+      [Offers:Component/AaW_Schematic_JumpDrive]
+  
+      </Description>
+
+    </EntityComponent>"""
+
+    return string
+
+
+
 #Special
 def GetStoreTradestation(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngots:str)->str:  
     string = f"""
@@ -204,11 +252,7 @@ def GetStoreTradestation(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIn
 
         {GenerateProfileIngotOre(Ingots,TradeIngots)}
 
-        
-        
-        [Orders:Component/CivilianProductI] 
-        [Orders:Component/CivilianProductII] 
-        [Orders:Component/CivilianProductIII] 
+  
 
         [Offers:Component/SteelPlate] 
         [Offers:Component/Construction] 
@@ -240,11 +284,21 @@ def GetStoreTradestation(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIn
 
     
 
+
+
+
+
+
+
+
+
+
+
 # [Offers:Component/ReinforcedDrillbit] 
 # [Offers:Component/ReinforcedPlate] 
 # [Offers:Component/LaserAmplifier]      
-# [Offers:Component/ThrustComponent] 
-# [Offers:Component/GravityGeneratorComponent] 
+# [Offers:Component/Thrust] 
+# [Offers:Component/GravityGenerator] 
 # [Offers:Component/Superconductor] 
 #Special
 def GetStoreIngot(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngots:str)->str:  
@@ -410,8 +464,8 @@ def GetStoreScrap(XML_Name:str,Faction:str, Name:str)->str:
         [Offers:Component/MedicalComponent] 
         [Offers:Component/ReactorComponent] 
         [Offers:Component/MetalGrid] 
-        [Offers:Component/ThrustComponent] 
-        [Offers:Component/GravityGeneratorComponent] 
+        [Offers:Component/Thrust] 
+        [Offers:Component/GravityGenerator] 
         [Offers:Component/Superconductor] 
         [Offers:Component/ReinforcedDrillbit] 
         [Offers:Component/ReinforcedPlate] 
@@ -462,8 +516,8 @@ def GetStoreScrap(XML_Name:str,Faction:str, Name:str)->str:
         [Offers:Component/MedicalComponent] 
         [Offers:Component/ReactorComponent] 
         [Offers:Component/MetalGrid] 
-        [Offers:Component/ThrustComponent] 
-        [Offers:Component/GravityGeneratorComponent] 
+        [Offers:Component/Thrust] 
+        [Offers:Component/GravityGenerator] 
         [Offers:Component/Superconductor] 
         [Offers:Component/FSSolarCell] 
         [Offers:Component/ElectronMatrix] 
@@ -498,8 +552,6 @@ def GetStoreScrap(XML_Name:str,Faction:str, Name:str)->str:
     </EntityComponent>"""       
 
     return string
-
-
 
 #Static from here
 def GetStoreAmmo(XML_Name:str,Faction:str, Name:str)->str:  
@@ -639,6 +691,228 @@ def GetStoreVendingMachine(XML_Name:str,Faction:str, Name:str)->str:
 
 
 
+
+def GetStoreZENOVA(XML_Name:str,Faction:str, Name:str)->str:  
+    string = f"""
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>{Faction}_StoreProfile_{Name}_ZENOVA</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_{XML_Name}.xml]
+        
+        [MinOfferItems:5]
+        [MaxOfferItems:20]
+        [MinOrderItems:5]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+
+        [Offers:Component/Thrust] 
+        [Offers:Component/GravityGenerator] 
+        [Offers:Component/Superconductor] 
+        [Offers:Component/JumpCore] 
+
+
+      </Description>
+
+    </EntityComponent>"""
+
+
+    if "IO" in Name:
+     string = f"""
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>{Faction}_StoreProfile_{Name}_ZENOVA</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_{XML_Name}.xml]
+        
+        [MinOfferItems:5]
+        [MaxOfferItems:20]
+        [MinOrderItems:5]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+
+        [Offers:Component/Thrust] 
+        [Offers:Component/GravityGenerator] 
+        [Offers:Component/Superconductor] 
+        [Offers:Component/JumpCore] 
+
+
+
+      </Description>
+
+    </EntityComponent>"""       
+
+    return string
+
+
+
+
+
+#Static from here
+def GetStoreSECURITY(XML_Name:str,Faction:str, Name:str)->str:  
+    string = f"""
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>{Faction}_StoreProfile_{Name}_SECURITY</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_{XML_Name}.xml]
+        
+        [MinOfferItems:5]
+        [MaxOfferItems:20]
+        [MinOrderItems:5]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+
+
+        [Offers:Ammo/NATO_25x184mm] 
+        [Offers:Ammo/missile] 
+        [Offers:Ammo/MediumCalibreAmmo] 
+        [Offers:Ammo/LargeCalibreAmmo] 
+        [Offers:Ammo/LargeRailgunAmmo] 
+        [Offers:Ammo/SmallRailgunAmmo] 
+        [Offers:Ammo/AutocannonClip] 
+
+        [Offers:Tool/SemiAutoPistolItem] 
+        [Offers:Tool/FullAutoPistolItem] 
+        [Offers:Tool/MediumCalibreAmmo] 
+        [Offers:Tool/AutomaticRifleItem] 
+        [Offers:Tool/PreciseAutomaticRifleItem] 
+        [Offers:Tool/RapidFireAutomaticRifleItem] 
+
+      </Description>
+
+    </EntityComponent>"""
+
+
+    if "IO" in Name:
+     string = f"""
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>{Faction}_StoreProfile_{Name}_SECURITY</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_{XML_Name}.xml]
+        
+        [MinOfferItems:5]
+        [MaxOfferItems:20]
+        [MinOrderItems:5]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+
+
+        [Offers:Ammo/NATO_25x184mm] 
+        [Offers:Ammo/missile] 
+        [Offers:Ammo/MediumCalibreAmmo] 
+        [Offers:Ammo/LargeCalibreAmmo] 
+        [Offers:Ammo/LargeRailgunAmmo] 
+        [Offers:Ammo/SmallRailgunAmmo] 
+        [Offers:Ammo/AutocannonClip] 
+
+        [Offers:Tool/SemiAutoPistolItem] 
+        [Offers:Tool/FullAutoPistolItem] 
+        [Offers:Tool/MediumCalibreAmmo] 
+        [Offers:Tool/AutomaticRifleItem] 
+        [Offers:Tool/PreciseAutomaticRifleItem] 
+        [Offers:Tool/RapidFireAutomaticRifleItem] 
+
+      </Description>
+
+    </EntityComponent>"""       
+
+    return string
+
+
+def GetStoreAGURO(XML_Name:str,Faction:str, Name:str)->str:  
+    string = f"""
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>{Faction}_StoreProfile_{Name}_AGURO</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_{XML_Name}.xml]
+        
+        [MinOfferItems:20]
+        [MaxOfferItems:20]
+        [MinOrderItems:20]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+
+        [Orders:Ingot/CrystalPrism] 
+        [Orders:Ingot/StabilizedCronyx] 
+        [Orders:Ingot/PurifiedSpice] 
+
+        [Offers:Ingot/DoriumIngot]
+        [Offers:Component/ReinforcedDrillbit]
+        [Offers:Component/ReinforcedPlate]
+
+
+      </Description>
+
+    </EntityComponent>"""
+
+
+    if "IO" in Name:
+     string = f"""
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>{Faction}_StoreProfile_{Name}_AGURO</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_{XML_Name}.xml]
+        
+        [MinOfferItems:20]
+        [MaxOfferItems:20]
+        [MinOrderItems:20]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+
+        [Orders:Ingot/CrystalPrism] 
+        [Orders:Ingot/StabilizedCronyx] 
+        [Orders:Ingot/PurifiedSpice] 
+
+        [Offers:Ingot/DoriumIngot]
+        [Offers:Component/ReinforcedDrillbit]
+        [Offers:Component/ReinforcedPlate]
+      </Description>
+
+    </EntityComponent>"""       
+
+    return string
+
+
 def GetStoreITC(XML_Name:str,Faction:str, Name:str)->str:  
     string = f"""
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -735,10 +1009,6 @@ def GetStoreUNION(XML_Name:str,Faction:str, Name:str)->str:
         [Orders:Ammo/SmallRailgunAmmo] 
         [Orders:Ammo/AutocannonClip] 
 
-
-
-
-
       </Description>
 
     </EntityComponent>"""
@@ -783,7 +1053,7 @@ def GetStoreSOLCOOP(XML_Name:str,Faction:str, Name:str)->str:
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>{Faction}_StoreProfile_{Name}_UNION</SubtypeId>
+        <SubtypeId>{Faction}_StoreProfile_{Name}_SOLCOOP</SubtypeId>
       </Id>
       <Description>
 
@@ -798,17 +1068,10 @@ def GetStoreSOLCOOP(XML_Name:str,Faction:str, Name:str)->str:
 
         [ItemsRequireInventory:false]
 
-        [Orders:Ammo/NATO_25x184mm] 
-        [Orders:Ammo/missile] 
-        [Orders:Ammo/MediumCalibreAmmo] 
-        [Orders:Ammo/LargeCalibreAmmo] 
-        [Orders:Ammo/LargeRailgunAmmo] 
-        [Orders:Ammo/SmallRailgunAmmo] 
-        [Orders:Ammo/AutocannonClip] 
-
-
-
-
+        [Offers:Component/Thrust] 
+        [Offers:Component/GravityGenerator] 
+        [Offers:Component/Superconductor] 
+        [Offers:Component/JumpCore] 
 
       </Description>
 
@@ -820,7 +1083,7 @@ def GetStoreSOLCOOP(XML_Name:str,Faction:str, Name:str)->str:
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>{Faction}_StoreProfile_{Name}_UNION</SubtypeId>
+        <SubtypeId>{Faction}_StoreProfile_{Name}_SOLCOOP</SubtypeId>
       </Id>
       <Description>
 
@@ -835,13 +1098,11 @@ def GetStoreSOLCOOP(XML_Name:str,Faction:str, Name:str)->str:
 
         [ItemsRequireInventory:false]
 
-        [Orders:Ammo/NATO_25x184mm] 
-        [Orders:Ammo/missile] 
-        [Orders:Ammo/MediumCalibreAmmo] 
-        [Orders:Ammo/LargeCalibreAmmo] 
-        [Orders:Ammo/LargeRailgunAmmo] 
-        [Orders:Ammo/SmallRailgunAmmo] 
-        [Orders:Ammo/AutocannonClip] 
+        [Offers:Component/Thrust] 
+        [Offers:Component/GravityGenerator] 
+        [Offers:Component/Superconductor] 
+        [Offers:Component/JumpCore] 
+
 
       </Description>
 
@@ -849,13 +1110,13 @@ def GetStoreSOLCOOP(XML_Name:str,Faction:str, Name:str)->str:
 
     return string
 
-def GetStoreSYN(XML_Name:str,Faction:str, Name:str)->str:  
+def GetStoreSHIVAN(XML_Name:str,Faction:str, Name:str)->str:  
 
     string = f"""
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>{Faction}_StoreProfile_{Name}_SYN</SubtypeId>
+        <SubtypeId>{Faction}_StoreProfile_{Name}_SHIVAN</SubtypeId>
       </Id>
       <Description>
 
@@ -881,7 +1142,7 @@ def GetStoreSYN(XML_Name:str,Faction:str, Name:str)->str:
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>{Faction}_StoreProfile_{Name}_SYN</SubtypeId>
+        <SubtypeId>{Faction}_StoreProfile_{Name}_SHIVAN</SubtypeId>
       </Id>
       <Description>
 

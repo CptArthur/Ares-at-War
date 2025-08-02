@@ -75,6 +75,53 @@
       </Description>
     </EntityComponent>
 
+
+	  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_Rulun_SmuggleSunsetCity</SubtypeId>
+      </Id>
+      <Description>
+    [MES Mission]
+	[Tags:SHIVAN]
+	[OverrideFaction:SHIVAN]
+	
+	[Title:Smuggle Supplies to Sunset City]
+  [Description:Deliver illegal narcotics to Sunset City. Avoid detection.]
+
+	
+	[InstanceEventGroupId:MissionGroup_Transport]
+	
+	[Reward:30000000]
+	[Collateral:5000000]
+	[ReputationReward:125]
+	[FailReputationPrice:25]
+	[Duration:0]
+
+
+	[ReplaceKeys:{EventName}]
+	[ReplaceValues:Smuggle Supplies to Sunset City]	
+
+	[ReplaceKeys:ContractBlockFaction]
+	[ReplaceValues:UNKN]	
+
+	
+
+
+	[ReplaceKeys:{destinationEncounter}]
+	[ReplaceValues:SunsetCity]	
+
+
+	[ReplaceKeys:{DestinationLocation}]
+	[ReplaceValues:{X:-3703710.56552889 Y:-1300687.78803807 Z:-2542134.43874369}]	
+
+  [Exclusive:false]
+
+
+      </Description>
+    </EntityComponent>
+
+
 	
   </EntityComponents>
 </Definitions>

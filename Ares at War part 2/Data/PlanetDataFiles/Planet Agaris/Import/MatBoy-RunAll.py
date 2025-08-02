@@ -8,9 +8,13 @@ import Setup
 
 
 def Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side):
+
+
+    print(Mloc)
     MAT = PIL.Image.open(Mloc)
     rgb_MAT = MAT.convert('RGB')
-#red channel
+    
+    #red channel
     if (MrhoekR):
        print('fixing the corners on the red map')
        im = PIL.Image.open(rloc)
@@ -114,21 +118,24 @@ def Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side):
     try:
         VOX = PIL.Image.open(rloc)
         rgb_im = VOX.convert('RGB')
+        print(rloc)
     except:
         print('Voxel file not included')
-        Red = 1
+        Red = False
     try:
         BIOM = PIL.Image.open(gloc)
         rgb_BIOM = BIOM.convert('RGB')
     except:
         print("Biome File not inlcuded")
-        green = 1
+        green = False
     try:
         ore = PIL.Image.open(bloc)
         rgb_ore = ore.convert('RGB')
     except:
         print("ore File not inlcuded")
-        Blue = 1
+        Blue = False
+
+
     MAT.load()
     r, g, b = rgb_MAT.split()
     x = 0
@@ -141,7 +148,14 @@ def Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side):
             Vkeys = Setup.redlist.keys()
             if Colode in Vkeys:
                 c = Setup.redlist[Colode]
-                r.putpixel((x, y), (c))
+                r.putpixel((x, y), c)
+            else:
+                if Colode != (0, 0, 0):
+                    print(f"{Colode} not found in setup at {x} {y}")
+                    raise f"{Colode} not found in setup"
+                pass
+
+
 
     # Green Channel
         if Green:
@@ -162,9 +176,13 @@ def Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side):
         if x == 2048:
             y = y + 1
             x = 0
-
+    
     MAT_nieuw = PIL.Image.merge( 'RGB', (r, g, b))
-    MAT_nieuw.save(Mloc)
+    try:
+        MAT_nieuw.save(Mloc)
+    except Exception as e:
+        print(f"Failed to save {Mloc}: {e}")
+
     print('Klaar met' + side)
 
 
@@ -172,16 +190,16 @@ def Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side):
 
 
 
-MrhoekR = False
+MrhoekR = True
 MrhoekG = False
 MrhoekB = False
 
 
 
 
-Red = True #off
-Green = True #off
-Blue = True #on
+Red = True #on
+Green = False #off
+Blue = False #on
 
 
 
@@ -194,21 +212,23 @@ location = f"D:/SEMods-Github/Ares-at-War-part-1/Ares at War part 2/Data/PlanetD
 Importlocation = f"D:/SEMods-Github/Ares-at-War-part-1/Ares at War part 2/Data/PlanetDataFiles/{PlanetName}/Import/"
 locationIO = f"D:/SEMods-Github/Ares-at-War-part-1/Ares at War part 2/Data/PlanetDataFiles/{PlanetName} - IO/"
 
-#for side in sides:
-#    Mloc = location + side + "_mat.png"
-#    rloc = Importlocation + side + "vox.png"
-#    gloc = Importlocation + side + "biom.png"
-#    bloc = Importlocation + side + "ore.png"
-#    Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side)
 
 
-print("Starting IO")
 for side in sides:
-    Mloc = locationIO + side + "_mat.png"
+    Mloc = location + side + "_mat.png"
     rloc = Importlocation + side + "vox.png"
-    gloc = Importlocation + side + "biomIO.png"
-    bloc = Importlocation + side + "oreIO.png"
+    gloc = Importlocation + side + "biom.png"
+    bloc = Importlocation + side + "ore.png"
     Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side)
+
+
+#print("Starting IO")
+#for side in sides:
+#    Mloc = locationIO + side + "_mat.png"
+#    rloc = Importlocation + side + "vox.png"
+#    gloc = Importlocation + side + "biomIO.png"
+#    bloc = Importlocation + side + "oreIO.png"
+#    Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side)
 
 
 

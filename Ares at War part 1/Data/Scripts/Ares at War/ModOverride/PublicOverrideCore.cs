@@ -28,7 +28,8 @@ namespace PublicOverride
 			var defs = MyDefinitionManager.Static.GetAllDefinitions();
 
 
-			foreach(var def in defs)
+
+            foreach (var def in defs)
 			{
 				string overridepublic = "";
 				if(defext.TryGetString(def.Id, PublicOverrideGroup, PublicID, out overridepublic))

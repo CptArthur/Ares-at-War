@@ -279,11 +279,11 @@ for index, row in df.iterrows():
         Item(ItemTypeEnum.Component, "MetalGrid", [Requirement(Iron, 12),
                                 Requirement(Nickel, 5),
                                 Requirement(Cobalt, 3)])
-        Item(ItemTypeEnum.Component, "ThrustComponent", [Requirement(Iron, 12),
+        Item(ItemTypeEnum.Component, "Thrust", [Requirement(Iron, 12),
                                 Requirement(Platinum, 0.4),
                                 Requirement(Gold, 1),                       
                                 Requirement(Cobalt, 10)])
-        Item(ItemTypeEnum.Component, "GravityGeneratorComponent", [Requirement(Tantalum, 5),
+        Item(ItemTypeEnum.Component, "GravityGenerator", [Requirement(Tantalum, 5),
                                 Requirement(Silver, 20),
                                 Requirement(Polymer, 60),                       
                                 Requirement(Cobalt, 25),
@@ -367,6 +367,14 @@ for index, row in df.iterrows():
                                                         Requirement(Platinum, 0.2),
                                                         Requirement(Tantalum, 0.1),
                                                         Requirement(Silicon, 2)])
+        
+        Item(ItemTypeEnum.Component, "JumpCore", [Requirement(Polymer, 1.5),
+                                                        Requirement(Gold, 1),
+                                                        Requirement(Aluminum, 3),
+                                                        Requirement(Platinum, 0.2),
+                                                        Requirement(Tantalum, 0.1),
+                                                        Requirement(Silicon, 2)])
+
     #Concrete
         Item(ItemTypeEnum.Component, "Concrete", 0)
 
@@ -520,11 +528,17 @@ for index, row in df.iterrows():
         Item(ItemTypeEnum.Component, "MetalGrid", [Requirement(Iron, 12),
                                 Requirement(Nickel, 5),
                                 Requirement(Cobalt, 3)])
-        Item(ItemTypeEnum.Component, "ThrustComponent", [Requirement(Iron, 12),
+        Item(ItemTypeEnum.Component, "Thrust", [Requirement(Iron, 12),
                                 Requirement(Platinum, 0.4),
                                 Requirement(Gold, 1),                       
                                 Requirement(Cobalt, 10)])
-        Item(ItemTypeEnum.Component, "GravityGeneratorComponent", [Requirement(Iron, 600),
+        Item(ItemTypeEnum.Component, "JumpCore", [Requirement(Iron, 12),
+                            Requirement(Platinum, 0.4),
+                            Requirement(Gold, 1),                       
+                            Requirement(Cobalt, 10)])    
+
+
+        Item(ItemTypeEnum.Component, "GravityGenerator", [Requirement(Iron, 600),
                                 Requirement(Silver, 5),
                                 Requirement(Gold, 10),                       
                                 Requirement(Cobalt, 220)])
@@ -647,13 +661,39 @@ for index, row in df.iterrows():
         mission_ids = []
         if isinstance(row['MissionIds'], str):
             mission_ids = row['MissionIds'].split(',')
+            
+
+        SECURITY_mission_ids = []
+        if isinstance(row['SECURITY'], str):
+            SECURITY_mission_ids = row['SECURITY'].split(',')
+
+        ITC_mission_ids = []
+        if isinstance(row['ITC'], str):
+            ITC_mission_ids = row['ITC'].split(',')
+
+        SHIVAN_mission_ids = []
+        if isinstance(row['SHIVAN'], str):
+            SHIVAN_mission_ids = row['SHIVAN'].split(',')
+
+        AGURO_mission_ids = []
+        if isinstance(row['AGURO'], str):
+            AGURO_mission_ids = row['AGURO'].split(',')
+
+        ZENOVA_mission_ids = []
+        if isinstance(row['ZENOVA'], str):
+            ZENOVA_mission_ids = row['ZENOVA'].split(',')
+
+        SOLCOOP_mission_ids = []
+        if isinstance(row['SOLCOOP'], str):
+            SOLCOOP_mission_ids = row['SOLCOOP'].split(',')            
 
 
 
-        PB.CreateStoreItems(Faction,Encounter_Id,XML_Name,row['StoreProfiles'],row['TradeIngots'],Ingots,mission_ids)
+        PB.CreateStoreItems(Faction,Encounter_Id,XML_Name,row['StoreProfiles'],row['TradeIngots'],Ingots,
+                            mission_ids, SECURITY_mission_ids,ITC_mission_ids,SHIVAN_mission_ids,AGURO_mission_ids,ZENOVA_mission_ids,SOLCOOP_mission_ids)
 
 
         
-        PB.CreateTriggers(Faction,Encounter_Id, IO)
+        PB.CreateTriggers(Faction,Encounter_Id, IO,row['StoreProfiles'])
 
 input("Done")

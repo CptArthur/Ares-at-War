@@ -35,12 +35,264 @@
 	
 	These ruthless raiders, native to Agaris, thrive in the desert regions of the planet. Adapting to the harsh environment, they have honed their combat skills and resourcefulness to survive and conquer. Preferring hit-and-run tactics, they strike with lightning speed, plundering settlements and seizing valuable resources. Their presence poses a constant threat to the stability of Agaris and its surrounding territories.
 
+Formable:
+UNION of Agaria (Sunset City)
+[Azuris, Bratis, Thorrix, ITC, SOLCOOP, ZENOVA]
+
+
+
+
+
+
+
+
+Major
+GC
+MILITIA
+
+SHIVAN
+PURGE
+ITC
+
+
+Minor (No active encounters)
+SOLCOOP
+SPRT
+DRA
+CRUSADERS
+SHIPPERS
+
+
+DOOHAN
+AZURIS
+BRATIS
+Thorrix
+
+ARES 
+
+
+Backdrop
+AGURO
+R.O.S
+
+
+
+Removed
+IRONFIST
+REMNANTS
+SUNSETCITY
+
+
+
+
 		-->
 
-
-
-
   <Factions>
+
+    <Faction Tag="ZENOVA" Founder="ZENOVA Founder">
+      <Id>
+        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+        <SubtypeId>ZENOVA</SubtypeId>
+      </Id>
+      <DisplayName>ZENOVA</DisplayName>
+	  
+	<AcceptHumans>false</AcceptHumans>   
+	<AutoAcceptMember>false</AutoAcceptMember>   
+	<IsDefault>true</IsDefault>   
+	<DiscoveredByDefault>false</DiscoveredByDefault>    
+	<StartingBalance>10000000000</StartingBalance>  
+	<Type>None</Type> 
+	<FactionIcon>Textures\FactionLogo\Others\OtherIcon_15.dds</FactionIcon>   
+	<StaticReputation>false</StaticReputation>   
+
+	<BackgroundColor R="117" G="1" B="3" />   
+	<IconColor R="255" G="255" B="255" />  
+
+	<EnableFriendlyFire>false</EnableFriendlyFire>   
+	<DefaultRelation>Neutral</DefaultRelation>
+	<Description></Description>
+    </Faction>
+
+
+   	<Faction Tag="ARES" Founder="Ares Station Holdings">  
+		 <Id>
+		   <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+		   <SubtypeId>AresStationHoldings</SubtypeId>
+		 </Id>
+		<DisplayName>Ares Station Holdings</DisplayName>  
+		<AcceptHumans>false</AcceptHumans>   
+		<AutoAcceptMember>false</AutoAcceptMember>   
+		<IsDefault>true</IsDefault>   
+		<DiscoveredByDefault>false</DiscoveredByDefault>    
+		<StartingBalance>1000000000</StartingBalance>  
+		<Type>None</Type> 
+		<FactionIcon>Textures\FactionLogo\Others\OtherIcon_10.dds</FactionIcon>   
+		<StaticReputation>false</StaticReputation>   
+		<Description>Ares Station Holdings is a joint venture company managing space stations in the Ares system. It holds the two major stations, Station27 and Rak Station, balancing the interests of its diverse shareholders such as SOLCOOP, ZENOVA</Description>   
+		<BackgroundColor R="255" G="255" B="255" />   
+		<IconColor R="0" G="0" B="0" />  
+		<StartingReputation>0</StartingReputation> 
+		<EnableFriendlyFire>false</EnableFriendlyFire>   
+		<DefaultRelation>Neutral</DefaultRelation>
+	</Faction> 
+
+
+
+
+
+<!-- UNION-->
+   	<Faction Tag="UNION" Founder="UNION Founder">  
+		 <Id>
+		   <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+		   <SubtypeId>UNION</SubtypeId>
+		 </Id>
+		<DisplayName>UNION of Agaria</DisplayName>  
+		<AcceptHumans>false</AcceptHumans>   
+		<AutoAcceptMember>false</AutoAcceptMember>   
+		<IsDefault>true</IsDefault>   
+		<DiscoveredByDefault>false</DiscoveredByDefault>    
+		<StartingBalance>1000000000</StartingBalance>  
+		<Type>None</Type> 
+		<FactionIcon>Textures\FactionLogo\Others\OtherIcon_10.dds</FactionIcon>   
+		<StaticReputation>false</StaticReputation>   
+		<Description></Description>   
+		<BackgroundColor R="255" G="255" B="255" />   
+		<IconColor R="0" G="0" B="0" />  
+
+		<EnableFriendlyFire>false</EnableFriendlyFire>   
+		<DefaultRelation>Neutral</DefaultRelation>
+	</Faction> 
+
+	   	<Faction Tag="AGURO" Founder="AGURO Founder">  
+		 <Id>
+		   <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+		   <SubtypeId>AGUROTECH</SubtypeId>
+		 </Id>
+		<DisplayName>AguroTech</DisplayName>  
+		<AcceptHumans>false</AcceptHumans>   
+		<AutoAcceptMember>false</AutoAcceptMember>   
+		<IsDefault>true</IsDefault>   
+		<DiscoveredByDefault>false</DiscoveredByDefault>    
+		<StartingBalance>1000000000</StartingBalance>  
+		<Type>None</Type> 
+		<FactionIcon>Textures\FactionLogo\Others\OtherIcon_4.dds</FactionIcon>   
+		<StaticReputation>false</StaticReputation>   
+ 
+		<Description></Description>   
+		<BackgroundColor R="255" G="255" B="255" />   
+		<IconColor R="0" G="0" B="0" />  
+
+		<EnableFriendlyFire>false</EnableFriendlyFire>   
+		<DefaultRelation>Neutral</DefaultRelation>
+	</Faction> 
+
+    <Faction Tag="ITC" Founder="ITC Founder">
+      <Id>
+        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+        <SubtypeId>Interstellar Trade Corporation</SubtypeId>
+      </Id>
+      <DisplayName>Interstellar Trade Corporation</DisplayName>
+	  	  
+	<AcceptHumans>false</AcceptHumans>   
+	<AutoAcceptMember>false</AutoAcceptMember>   
+	<IsDefault>true</IsDefault>   
+	<DiscoveredByDefault>false</DiscoveredByDefault>    
+	<StartingBalance>10000000000</StartingBalance>  
+	<Type>None</Type> 
+	<FactionIcon>Textures\FactionLogo\Others\OtherIcon_27.dds</FactionIcon>   
+	<StaticReputation>false</StaticReputation>   
+
+	<BackgroundColor R="0" G="0" B="0" />   
+	<IconColor R="84" G="211" B="252" />  
+
+	<EnableFriendlyFire>false</EnableFriendlyFire>   
+	<DefaultRelation>Neutral</DefaultRelation>
+	  
+	 <Description>Founded centuries ago, the Interstellar Trade Corporation (ITC) was one of the first major corporations to establish a foothold in the Ares System. Long before the Great Crisis, they spearheaded the ambitious terraforming of Thora 4, transforming it into a hub of prosperity. However, the Crisis disrupted their plans, leaving Thora 4 far colder than anticipated, with massive ice caps reshaping the planet.
+
+Now, in the post-crisis era, the ITC has returned, reclaiming its influence by founding Starlight City on Thora 4. With trade routes reestablished and their operations thriving once again, they remain a driving force in interstellar commerce, though their wealth continues to attract the attention of opportunistic pirates</Description>
+    </Faction> 
+
+    <Faction Tag="SOLCOOP" Founder="Sol Cooperative Founder">
+      <Id>
+        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+        <SubtypeId>Sol Cooperative</SubtypeId>
+      </Id>
+      <DisplayName>Sol Cooperative</DisplayName>
+	  
+	 
+	<AcceptHumans>false</AcceptHumans>   
+	<AutoAcceptMember>false</AutoAcceptMember>   
+	<IsDefault>true</IsDefault>   
+	<DiscoveredByDefault>false</DiscoveredByDefault>    
+	<StartingBalance>10000000000</StartingBalance>  
+	<Type>None</Type> 
+	<FactionIcon>Textures\FactionLogo\Others\OtherIcon_32.dds</FactionIcon>   
+	<StaticReputation>false</StaticReputation>   
+ 
+	<BackgroundColor R="3" G="1" B="187" />   
+	<IconColor R="255" G="213" B="109" />  
+
+	<EnableFriendlyFire>false</EnableFriendlyFire>   
+	<DefaultRelation>Neutral</DefaultRelation>
+	    
+	  	   <Description>Founded centuries ago, the Sol Cooperative is a powerful faction originating from the Solar System, known for its advanced technology and commitment to order. While their influence spans much of colonised star systems, their presence in the Ares System is limited to a single embassy Station 27. Internally, the Cooperative faces growing political turmoil, weakening their ability to project power in distant systems. Despite this, they remain vigilant in ensuring that relics and technology from the defunct Result Oriented Sciences (ROS) do not fall into the wrong hands.</Description>
+    </Faction> 
+
+<!-- 
+
+Agaris Faction
+
+-->
+    <Faction Tag="GC" Founder="GC Founder">
+      <Id>
+        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+        <SubtypeId>Goldo Corporation</SubtypeId>
+      </Id>
+      <DisplayName>Goldo Corporation</DisplayName>
+	  
+	<AcceptHumans>false</AcceptHumans>   
+	<AutoAcceptMember>false</AutoAcceptMember>   
+	<IsDefault>true</IsDefault>   
+	<DiscoveredByDefault>false</DiscoveredByDefault>    
+	<StartingBalance>10000000000</StartingBalance>  
+	<Type>None</Type> 
+	<FactionIcon>Textures\FactionLogo\Others\OtherIcon_15.dds</FactionIcon>   
+	<StaticReputation>false</StaticReputation>   
+
+	<BackgroundColor R="117" G="1" B="3" />   
+	<IconColor R="255" G="255" B="255" />  
+
+	<EnableFriendlyFire>false</EnableFriendlyFire>   
+	<DefaultRelation>Neutral</DefaultRelation>
+	<Description>The Goldo Corporation is a powerful mining operation within the Ares System, known for its vast resources and wealth. With cutting-edge technology from its close collaboration with Zenova Manufacturers, they maintain control over key mining assets. To protect their interests, they deploy a formidable military presence, ensuring security and dominance. The Goldo Corporation also holds significant influence on Agaris, where they enforce their control and continue to expand their operations.</Description>
+    </Faction> 
+
+
+	   	<Faction Tag="MILITIA" Founder="MILITIA Founder">  
+		 <Id>
+		   <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+		   <SubtypeId>MILITIA</SubtypeId>
+		 </Id>
+		<DisplayName>Freeborn Militia</DisplayName>  
+		<AcceptHumans>false</AcceptHumans>   
+		<AutoAcceptMember>false</AutoAcceptMember>   
+		<IsDefault>true</IsDefault>   
+		<DiscoveredByDefault>false</DiscoveredByDefault>    
+		<StartingBalance>1000000000</StartingBalance>  
+		<Type>None</Type> 
+		<FactionIcon>Textures\FactionLogo\Others\OtherIcon_4.dds</FactionIcon>   
+		<StaticReputation>false</StaticReputation>   
+ 
+		<Description></Description>   
+		<BackgroundColor R="255" G="255" B="255" />   
+		<IconColor R="0" G="0" B="0" />  
+
+		<EnableFriendlyFire>false</EnableFriendlyFire>   
+		<DefaultRelation>Neutral</DefaultRelation>
+	</Faction> 
+
+
   
     	<Faction Tag="DRA" Founder="DesertRaiders">  
 		 <Id>
@@ -57,7 +309,7 @@
 		<FactionIcon>Textures\FactionLogo\Others\OtherIcon_3.dds</FactionIcon>   
 		<StaticReputation>false</StaticReputation>   
 
-		<Description>These ruthless raiders, native to Agaris, thrive in the desert regions of the planet.</Description>   
+		<Description>These ruthless raiders, native to Lezuno, thrive in the desert regions of the planet.</Description>   
 		<BackgroundColor R="213" G="147" B="91" />   
 		<IconColor R="0" G="0" B="0" />  
 
@@ -95,7 +347,7 @@
 		<AcceptHumans>false</AcceptHumans>   
 		<AutoAcceptMember>false</AutoAcceptMember>   
 		<IsDefault>true</IsDefault>   
-		<DiscoveredByDefault>true</DiscoveredByDefault>    
+		<DiscoveredByDefault>false</DiscoveredByDefault>    
 		<StartingBalance>1000000000</StartingBalance>  
 		<Type>None</Type> 
 		<FactionIcon>Textures\FactionLogo\Traders\TraderIcon_2.dds</FactionIcon>   
@@ -109,130 +361,6 @@
 		<DefaultRelation>Neutral</DefaultRelation>
 	</Faction>
   
-<!--
-  	<Faction Tag="INDEP" Founder="Independent">  
-		 <Id>
-		   <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
-		   <SubtypeId>INDEPENDENTS</SubtypeId>
-		 </Id>
-		<DisplayName>Independents</DisplayName>  
-		<AcceptHumans>false</AcceptHumans>   
-		<AutoAcceptMember>false</AutoAcceptMember>   
-		<IsDefault>true</IsDefault>   
-		<DiscoveredByDefault>false</DiscoveredByDefault>    
-		<StartingBalance>1000000000</StartingBalance>  
-		<Type>None</Type> 
-		<FactionIcon>Textures\FactionLogo\Others\OtherIcon_10.dds</FactionIcon>   
-		<StaticReputation>false</StaticReputation>   
-
-		<Description>Not subject to another's authority. Reputation is reset after an encounter.</Description>   
-		<BackgroundColor R="255" G="255" B="255" />   
-		<IconColor R="0" G="0" B="0" />  
-
-		<EnableFriendlyFire>false</EnableFriendlyFire>   
-		<DefaultRelation>Neutral</DefaultRelation>
-	</Faction>
-  -->
-  
-   	<Faction Tag="UNION" Founder="UNION Founder">  
-		 <Id>
-		   <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
-		   <SubtypeId>UNION</SubtypeId>
-		 </Id>
-		<DisplayName>Union of Carcosa</DisplayName>  
-		<AcceptHumans>false</AcceptHumans>   
-		<AutoAcceptMember>false</AutoAcceptMember>   
-		<IsDefault>true</IsDefault>   
-		<DiscoveredByDefault>false</DiscoveredByDefault>    
-		<StartingBalance>1000000000</StartingBalance>  
-		<Type>None</Type> 
-		<FactionIcon>Textures\FactionLogo\Others\OtherIcon_10.dds</FactionIcon>   
-		<StaticReputation>false</StaticReputation>   
- 
-		<Description>Founded in 2395 by John Fagel and Cornelia Voss after the Great Crisis, the UNION of Carcosa emerged as a coalition to unite Agaris colonies and protect their independence.</Description>   
-		<BackgroundColor R="255" G="255" B="255" />   
-		<IconColor R="0" G="0" B="0" />  
-
-		<EnableFriendlyFire>false</EnableFriendlyFire>   
-		<DefaultRelation>Neutral</DefaultRelation>
-		
-		
-	</Faction> 
-	
-	   	<Faction Tag="MILITIA" Founder="MILITIA Founder">  
-		 <Id>
-		   <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
-		   <SubtypeId>MILITIA</SubtypeId>
-		 </Id>
-		<DisplayName>Freedom Militia</DisplayName>  
-		<AcceptHumans>false</AcceptHumans>   
-		<AutoAcceptMember>false</AutoAcceptMember>   
-		<IsDefault>true</IsDefault>   
-		<DiscoveredByDefault>false</DiscoveredByDefault>    
-		<StartingBalance>1000000000</StartingBalance>  
-		<Type>None</Type> 
-		<FactionIcon>Textures\FactionLogo\Others\OtherIcon_4.dds</FactionIcon>   
-		<StaticReputation>false</StaticReputation>   
- 
-		<Description>The Freedom Militia was formed by survivors of the Great Crisis, united by the determination to preserve the hard-won way of life they fought for. Originally members of the UNION, they became disillusioned with the growing influence of outsiders. Now, they stand as fierce protectors of Agaris independence, opposing any external interference and working to safeguard their culture, values, and survival in the aftermath of the Crisis</Description>   
-		<BackgroundColor R="255" G="255" B="255" />   
-		<IconColor R="0" G="0" B="0" />  
-
-		<EnableFriendlyFire>false</EnableFriendlyFire>   
-		<DefaultRelation>Neutral</DefaultRelation>
-	</Faction> 
-	
-
-  <!--
-    <Faction Tag="FAF" Founder="FAF Founder">
-		 <Id>
-		   <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
-		   <SubtypeId>Free Agaris Forces</SubtypeId>
-		 </Id>
-		<DisplayName>Free Agaris Forces</DisplayName>  
-		<AcceptHumans>false</AcceptHumans>   
-		<AutoAcceptMember>false</AutoAcceptMember>   
-		<IsDefault>true</IsDefault>   
-		<DiscoveredByDefault>false</DiscoveredByDefault>    
-		<StartingBalance>10000000000</StartingBalance>  
-		<Type>None</Type> 
-		<FactionIcon>Textures\FactionLogo\Others\OtherIcon_21.dds</FactionIcon>   
-		<StaticReputation>false</StaticReputation>   
-		<StartingReputation>0</StartingReputation> 
-		<BackgroundColor R="1" G="102" B="9" />   
-		<IconColor R="255" G="255" B="255" />  
-
-		<EnableFriendlyFire>false</EnableFriendlyFire>   
-		<DefaultRelation>Neutral</DefaultRelation>
-
-	  	   <Description>The Free Agaris Forces, driven by a longing for democratic ideals, are rebels who seek to restore liberty to the Ares System. United against the oppressive rule of the Goldo Corporation, they fight for the freedom and autonomy of Agaris. Their ranks comprise individuals from diverse backgrounds, all bound together by a shared determination to reclaim what has been lost.</Description>
-    </Faction> 
-	
-	 faction 2b -->
-  <!-- faction 3A -->
-    <Faction Tag="GC" Founder="GC Founder">
-      <Id>
-        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
-        <SubtypeId>Goldo Corporation</SubtypeId>
-      </Id>
-      <DisplayName>Goldo Corporation</DisplayName>
-	  
-	<AcceptHumans>false</AcceptHumans>   
-	<AutoAcceptMember>false</AutoAcceptMember>   
-	<IsDefault>true</IsDefault>   
-	<DiscoveredByDefault>false</DiscoveredByDefault>    
-	<StartingBalance>10000000000</StartingBalance>  
-	<Type>None</Type> 
-	<FactionIcon>Textures\FactionLogo\Others\OtherIcon_15.dds</FactionIcon>   
-	<StaticReputation>false</StaticReputation>   
-
-	<BackgroundColor R="117" G="1" B="3" />   
-	<IconColor R="255" G="255" B="255" />  
-
-	<EnableFriendlyFire>false</EnableFriendlyFire>   
-	<DefaultRelation>Neutral</DefaultRelation>
-	<Description>The Goldo Corporation is a powerful mining operation within the Ares System, known for its vast resources and wealth. With cutting-edge technology from its close collaboration with Zenova Manufacturers, they maintain control over key mining assets. To protect their interests, they deploy a formidable military presence, ensuring security and dominance. The Goldo Corporation also holds significant influence on Agaris, where they enforce their control and continue to expand their operations.</Description>
-    </Faction> 
 	
 	
   <!-- faction 3B -->
@@ -262,64 +390,6 @@
 	  	   <Description>Founded 200 years ago, the Result Oriented Sciences (ROS) was a powerful scientific organization and a fierce rival to the Sol Cooperative. Their groundbreaking technologies fueled devastating conflicts, but the Great Crisis marked their downfall. Defeated by the Sol Cooperative, the ROS was disbanded, leaving behind ruins and relics scattered across the known galaxy. To this day, in the Ares System, their artifacts and abandoned facilities await rediscovery, standing as haunting reminders of their once-formidable presence.</Description>
     </Faction> 
 
-  <!-- faction 3B -->
-    <Faction Tag="SOLCOOP" Founder="Sol Cooperative Founder">
-      <Id>
-        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
-        <SubtypeId>Sol Cooperative</SubtypeId>
-      </Id>
-      <DisplayName>Sol Cooperative</DisplayName>
-	  
-	 
-	<AcceptHumans>false</AcceptHumans>   
-	<AutoAcceptMember>false</AutoAcceptMember>   
-	<IsDefault>true</IsDefault>   
-	<DiscoveredByDefault>true</DiscoveredByDefault>    
-	<StartingBalance>10000000000</StartingBalance>  
-	<Type>None</Type> 
-	<FactionIcon>Textures\FactionLogo\Others\OtherIcon_32.dds</FactionIcon>   
-	<StaticReputation>false</StaticReputation>   
- 
-	<BackgroundColor R="3" G="1" B="187" />   
-	<IconColor R="255" G="213" B="109" />  
-
-	<EnableFriendlyFire>false</EnableFriendlyFire>   
-	<DefaultRelation>Neutral</DefaultRelation>
-	    
-	  	   <Description>Founded centuries ago, the Sol Cooperative is a powerful faction originating from the Solar System, known for its advanced technology and commitment to order. While their influence spans much of colonised star systems, their presence in the Ares System is limited to a single embassy Station 27. Internally, the Cooperative faces growing political turmoil, weakening their ability to project power in distant systems. Despite this, they remain vigilant in ensuring that relics and technology from the defunct Result Oriented Sciences (ROS) do not fall into the wrong hands.</Description>
-    </Faction> 
-
-	
- <!-- faction 4 -->
-    <Faction Tag="ITC" Founder="ITC Founder">
-      <Id>
-        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
-        <SubtypeId>Interstellar Trade Corporation</SubtypeId>
-      </Id>
-      <DisplayName>Interstellar Trade Corporation</DisplayName>
-	  
-	  
-	<AcceptHumans>false</AcceptHumans>   
-	<AutoAcceptMember>false</AutoAcceptMember>   
-	<IsDefault>true</IsDefault>   
-	<DiscoveredByDefault>true</DiscoveredByDefault>    
-	<StartingBalance>10000000000</StartingBalance>  
-	<Type>None</Type> 
-	<FactionIcon>Textures\FactionLogo\Others\OtherIcon_27.dds</FactionIcon>   
-	<StaticReputation>false</StaticReputation>   
-
-	<BackgroundColor R="0" G="0" B="0" />   
-	<IconColor R="84" G="211" B="252" />  
-
-	<EnableFriendlyFire>false</EnableFriendlyFire>   
-	<DefaultRelation>Neutral</DefaultRelation>
-	  
-	 <Description>Founded centuries ago, the Interstellar Trade Corporation (ITC) was one of the first major corporations to establish a foothold in the Ares System. Long before the Great Crisis, they spearheaded the ambitious terraforming of Thora 4, transforming it into a hub of prosperity. However, the Crisis disrupted their plans, leaving Thora 4 far colder than anticipated, with massive ice caps reshaping the planet.
-
-Now, in the post-crisis era, the ITC has returned, reclaiming its influence by founding Starlight City on Thora 4. With trade routes reestablished and their operations thriving once again, they remain a driving force in interstellar commerce, though their wealth continues to attract the attention of opportunistic pirates</Description>
-    </Faction> 
-
- <!-- faction 5 -->
     <Faction Tag="REMNANTS" Founder="REM Founder">
       <Id>
         <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
@@ -346,9 +416,6 @@ Now, in the post-crisis era, the ITC has returned, reclaiming its influence by f
 	  	   <Description>Once a powerful faction on Lezuno, the Remnants survived the Great Crisis on the harsh planet’s surface. Though weakened, they remain determined to rebuild and reclaim their strength</Description>
     </Faction> 
 	
-
-  
- <!-- faction 6 -->
     <Faction Tag="SHIVAN" Founder="SHIVAN Founder">
       <Id>
         <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
@@ -360,7 +427,7 @@ Now, in the post-crisis era, the ITC has returned, reclaiming its influence by f
 	<AcceptHumans>false</AcceptHumans>   
 	<AutoAcceptMember>false</AutoAcceptMember>   
 	<IsDefault>true</IsDefault>   
-	<DiscoveredByDefault>true</DiscoveredByDefault>    
+	<DiscoveredByDefault>false</DiscoveredByDefault>    
 	<StartingBalance>10000000000</StartingBalance>  
 	<Type>None</Type> 
 	<FactionIcon>Textures\FactionLogo\Others\OtherIcon_24.dds</FactionIcon>   
@@ -377,7 +444,7 @@ Now, in the post-crisis era, the ITC has returned, reclaiming its influence by f
 	
 	
 	
-	 <!-- faction 7 -->
+	 <!-- faction 7
     <Faction Tag="IRONFIST" Founder="IRON FIST Founder">
       <Id>
         <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
@@ -403,18 +470,16 @@ Now, in the post-crisis era, the ITC has returned, reclaiming its influence by f
 	  
 	  	   <Description>The Iron Fist is a formidable group of raiders known for their brutal tactics and insatiable thirst for plunder. They roam the system, preying on vulnerable targets and striking with ruthless efficiency. Their ranks consist of hardened fighters and cunning strategists who pillage and extort for personal gain, spreading fear and chaos wherever they go. Their allegiance lies solely with their own survival and enrichment.</Description>
     </Faction> 
-		
+		 -->
 
 	 <!-- faction 7 -->
     <Faction Tag="CRUSADERS" Founder="CRUSADERS Founder">
       <Id>
         <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
-        <SubtypeId>StarDustCrusaders</SubtypeId>
+        <SubtypeId>RedCrusaders</SubtypeId>
       </Id>
-      <DisplayName>Star Dust Crusaders</DisplayName>
-	  
-	  
-	  
+      <DisplayName>The Red Crusade</DisplayName>
+	  	  
 	<AcceptHumans>false</AcceptHumans>   
 	<AutoAcceptMember>false</AutoAcceptMember>   
 	<IsDefault>true</IsDefault>   
@@ -430,7 +495,7 @@ Now, in the post-crisis era, the ITC has returned, reclaiming its influence by f
 	<EnableFriendlyFire>false</EnableFriendlyFire>   
 	<DefaultRelation>Neutral</DefaultRelation>
 	  
-	  <Description>The Stardust Crusaders are a faction driven by a spiritual quest to discover and reach the fabled "holy land" of the Ares System. They believe this mythical place holds immense power and enlightenment, drawing them on a journey across the star system. The Stardust Crusaders consist of explorers, mystics, and individuals seeking answers to existential questions, their unity forged by a shared belief in the transformative potential of the holy land.</Description>
+	  <Description></Description>
     </Faction> 
 	
 	
@@ -450,7 +515,7 @@ Now, in the post-crisis era, the ITC has returned, reclaiming its influence by f
 	<StartingBalance>10000000000</StartingBalance>  
 	<Type>None</Type> 
 	<FactionIcon>Textures\FactionLogo\Spiders.dds</FactionIcon>   
-	<StaticReputation>true</StaticReputation>   
+  
 	<StartingReputation>-1500</StartingReputation> 
 	<BackgroundColor R="0" G="0" B="0" />   
 	<IconColor R="155" G="0" B="0" />  
@@ -465,7 +530,117 @@ Now, in the post-crisis era, the ITC has returned, reclaiming its influence by f
 		
 	
 
-	
-  </Factions>   
+	 <!-- faction 9 -->
+    <Faction Tag="SHIPPERS" Founder="SHIPPERS Founder">
+      <Id>
+        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+        <SubtypeId>Shippers</SubtypeId>
+      </Id>
+      <DisplayName>Shippers</DisplayName>
+	<AcceptHumans>false</AcceptHumans>   
+	<AutoAcceptMember>false</AutoAcceptMember>   
+	<IsDefault>true</IsDefault>   
+	<DiscoveredByDefault>false</DiscoveredByDefault>    
+	<StartingBalance>10000000000</StartingBalance>  
+	<Type>None</Type> 
+	<FactionIcon>Textures\FactionLogo\Spiders.dds</FactionIcon>   
+	<BackgroundColor R="0" G="0" B="0" />   
+	<IconColor R="155" G="0" B="0" />  
+
+	<EnableFriendlyFire>false</EnableFriendlyFire>   
+	<DefaultRelation>Neutral</DefaultRelation> 
+	 <Description></Description>
+    </Faction> 
+
+	 <!-- faction 10 -->
+    <Faction Tag="DOOHAN" Founder="Doohan">
+      <Id>
+        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+        <SubtypeId>Doohan</SubtypeId>
+      </Id>
+      <DisplayName>Doohan</DisplayName>
+	<AcceptHumans>false</AcceptHumans>   
+	<AutoAcceptMember>false</AutoAcceptMember>   
+	<IsDefault>true</IsDefault>   
+	<DiscoveredByDefault>false</DiscoveredByDefault>    
+	<StartingBalance>10000000000</StartingBalance>  
+	<Type>None</Type> 
+	<FactionIcon>Textures\FactionLogo\Spiders.dds</FactionIcon>   
+	<BackgroundColor R="0" G="0" B="0" />   
+	<IconColor R="155" G="0" B="0" />  
+	<EnableFriendlyFire>false</EnableFriendlyFire>   
+	<DefaultRelation>Neutral</DefaultRelation> 
+	 <Description></Description>
+    </Faction> 
+
   
+  
+	 <!-- faction 12 -->
+    <Faction Tag="AZURIS" Founder="Azuris Founder">
+      <Id>
+        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+        <SubtypeId>Azuris</SubtypeId>
+      </Id>
+      <DisplayName>Azuris</DisplayName>
+	<AcceptHumans>false</AcceptHumans>   
+	<AutoAcceptMember>false</AutoAcceptMember>   
+	<IsDefault>true</IsDefault>   
+	<DiscoveredByDefault>false</DiscoveredByDefault>    
+	<StartingBalance>10000000000</StartingBalance>  
+	<Type>None</Type> 
+	<FactionIcon>Textures\FactionLogo\Spiders.dds</FactionIcon>    
+	<BackgroundColor R="0" G="0" B="0" />   
+	<IconColor R="155" G="0" B="0" />  
+	<EnableFriendlyFire>false</EnableFriendlyFire>   
+	<DefaultRelation>Neutral</DefaultRelation> 
+	 <Description></Description>
+    </Faction>	
+ 
+  
+	 <!-- faction 13 -->
+    <Faction Tag="BRATIS" Founder="Bratis Founder">
+      <Id>
+        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+        <SubtypeId>Bratis</SubtypeId>
+      </Id>
+      <DisplayName>Bratis</DisplayName>
+	<AcceptHumans>false</AcceptHumans>   
+	<AutoAcceptMember>false</AutoAcceptMember>   
+	<IsDefault>true</IsDefault>   
+	<DiscoveredByDefault>false</DiscoveredByDefault>    
+	<StartingBalance>10000000000</StartingBalance>  
+	<Type>None</Type> 
+	<FactionIcon>Textures\FactionLogo\Spiders.dds</FactionIcon>    
+	<BackgroundColor R="0" G="0" B="0" />   
+	<IconColor R="155" G="0" B="0" />  
+	<EnableFriendlyFire>false</EnableFriendlyFire>   
+	<DefaultRelation>Neutral</DefaultRelation> 
+	 <Description></Description>
+    </Faction>	
+
+  
+	 <!-- faction 14 -->
+    <Faction Tag="THORRIX" Founder="Thorrix Founder">
+      <Id>
+        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+        <SubtypeId>Thorrix</SubtypeId>
+      </Id>
+      <DisplayName>Thorrix</DisplayName>
+	<AcceptHumans>false</AcceptHumans>   
+	<AutoAcceptMember>false</AutoAcceptMember>   
+	<IsDefault>true</IsDefault>   
+	<DiscoveredByDefault>false</DiscoveredByDefault>    
+	<StartingBalance>10000000000</StartingBalance>  
+	<Type>None</Type> 
+	<FactionIcon>Textures\FactionLogo\Spiders.dds</FactionIcon>   
+	<BackgroundColor R="0" G="0" B="0" />   
+	<IconColor R="155" G="0" B="0" />  
+	<EnableFriendlyFire>false</EnableFriendlyFire>   
+	<DefaultRelation>Neutral</DefaultRelation> 
+	 <Description></Description>
+    </Faction>	
+	
+ 	
+	
+  </Factions>    
 </Definitions>

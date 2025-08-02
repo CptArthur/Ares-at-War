@@ -229,10 +229,13 @@ namespace RespawnSystem
             if (RespawnShipPrefabName == "ITC Sollieman (Crashed)")
             {
 
-                Vector3 up = new Vector3D(0.624786874144575, -0.11728583489358, 0.771936133906146);
-                Vector3 forward = new Vector3D(0.528042385064626, 0.791749788939157, -0.307088767769291);
-                Vector3D position = new Vector3D(-3636316.10199224, -1307380.4688901, -2531247.5201753);
+                Vector3 up = new Vector3D(0.204515562201575, -0.0124464293371765, 0.978784180100051);
+                Vector3 forward = new Vector3D(0.943817818521104, 0.267670131631889, -0.193805639944332);
+                Vector3D position = new Vector3D(-3650498.19291248, -1319153.32048678, -2526930.25871133);
                 MatrixD matrix = MatrixD.CreateWorld(position, forward, up);
+
+
+
 
 
 

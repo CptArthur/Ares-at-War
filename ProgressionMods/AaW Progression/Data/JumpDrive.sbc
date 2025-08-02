@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<!--
+This File handles these blocks:
+
+Placeholder_LargeJumpDrive
+
+
+Placeholder_CompactJumpDrive
+Placeholder_SmallCompactJumpDrive
+Placeholder_LargePrototechJumpDrive
+Placeholder_LargePrototechJumpDrive
+
+
+
+
+-->
+
+<CubeBlocks>
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeJumpDrive</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) JumpDrive</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\JumpDrive.dds</Icon>
+		<Icon>Icons\white.dds</Icon>
+            <Description>Jump drives allow ships to teleport over large distances. Originally designed by the Sol Cooperative, this older model is still in use today, relying on proven technology despite its age.
+			
+			They require a full charge to jump and can only be activated from the toolbar of a cockpit. </Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="3" y="3" z="2" />
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\JumpDriveConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="3" EndY="2" />
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="3" EndY="3" />
+			<MountPoint Side="Left" StartX="0" StartY="0" EndX="2" EndY="3" />
+			<MountPoint Side="Front" StartX="0" StartY="0" EndX="3" EndY="3" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="2" EndY="3" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="3" EndY="2" Default="true" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\JumpDriveConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_JumpDrive</BlockPairName>
+    </Definition>
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_CompactJumpDrive</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Compact Jump Drive</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\PrototechBattery.dds</Icon>
+		<Icon>Icons\gold.dds</Icon>
+            <Description>Jump drives allow ships to teleport over large distances. 
+			
+			They require a full charge to jump and can only be activated from the toolbar of a cockpit. </Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		  <Size x="2" y="1" z="1" />
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\PrototechBattery_Construction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+	  <MountPoints>
+		<MountPoint Side="Front" StartX="0" StartY="0.1" EndX="2" EndY="0.9" />
+		<MountPoint Side="Top" StartX="0" StartY="0.1" EndX="2" EndY="0.9" />
+		<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="2" EndY="1" />
+		<MountPoint Side="Back" StartX="0" StartY="0.1" EndX="2" EndY="0.9" />
+		<MountPoint Side="Right" StartX="0.1" StartY="0" EndX="0.9" EndY="1" />
+		<MountPoint Side="Left" StartX="0.1" StartY="0" EndX="0.9" EndY="1" />
+	  </MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\PrototechBattery_Construction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_CompactJumpDrive</BlockPairName>
+    </Definition>
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_SmallCompactJumpDrive</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Compact Jump Drive</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\PrototechBattery.dds</Icon>
+		<Icon>Textures\GUI\Blood.dds</Icon>
+            <Description>Jump drives allow ships to teleport over large distances. 
+			
+			They require a full charge to jump and can only be activated from the toolbar of a cockpit. </Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		  <Size x="3" y="1" z="2" />
+		  <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Small\PrototechBatterySmall_Construction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+	  <MountPoints>
+		<MountPoint Side="Front" StartX="0.1" StartY="0.1" EndX="2.9" EndY="0.9" />
+		<MountPoint Side="Top" StartX="0.1" StartY="0.1" EndX="2.9" EndY="1.9" />
+		<MountPoint Side="Bottom" StartX="0.1" StartY="0.1" EndX="2.9" EndY="1.9" />
+		<MountPoint Side="Back" StartX="0.1" StartY="0.1" EndX="2.9" EndY="0.9" />
+		<MountPoint Side="Right" StartX="0.1" StartY="0.1" EndX="1.9" EndY="0.9" />
+		<MountPoint Side="Left" StartX="0.1" StartY="0.1" EndX="1.9" EndY="0.9" />
+	  </MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\PrototechBattery_Construction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_CompactJumpDrive</BlockPairName>
+    </Definition>	
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargePrototechJumpDrive</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Advanced Jump Drive</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\Prototech_JumpDrive.dds</Icon>
+		<Icon>Icons\gold.dds</Icon>
+      <Description>Advanced Jump Drives allow grids to teleport over incredibly large distances. They have a higher range and better efficiency than standard Jump Drives.</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		  <Size x="3" y="3" z="3" />
+		  <Center x="1" y="0" z="1" />
+		  <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\Prototech_JumpDrive_Construction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Back" StartX="0" StartY="0" EndX="0.5" EndY="1" />
+        <MountPoint Side="Back" StartX="0.5" StartY="0" EndX="2.5" EndY="0.5" />
+        <MountPoint Side="Back" StartX="2.5" StartY="0" EndX="3" EndY="1" />
+        <MountPoint Side="Back" StartX="1.2" StartY="1.2" EndX="1.8" EndY="1.8" />
+        <MountPoint Side="Left" StartX="0" StartY="0" EndX="3" EndY="1" />
+        <MountPoint Side="Front" StartX="0" StartY="0" EndX="0.5" EndY="1" />
+        <MountPoint Side="Front" StartX="0.5" StartY="0" EndX="2.5" EndY="0.5" />
+        <MountPoint Side="Front" StartX="2.5" StartY="0" EndX="3" EndY="1" />
+        <MountPoint Side="Front" StartX="1.2" StartY="1.2" EndX="1.8" EndY="1.8" />
+        <MountPoint Side="Right" StartX="0" StartY="0" EndX="3" EndY="1" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="3" EndY="3" Default="true" />
+      </MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\Prototech_JumpDrive_Construction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_PrototechJumpDrive</BlockPairName>
+    </Definition>	
+	
+	
+	<!--Small-->
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_SmallPrototechJumpDrive</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Advanced Jump Drive</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\Prototech_JumpDrive.dds</Icon>
+		<Icon>Icons\gold.dds</Icon>
+      <Description>Advanced Jump Drives allow grids to teleport over incredibly large distances. They have a higher range and better efficiency than standard Jump Drives.</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		  <Size x="3" y="3" z="4" />
+		  <Center x="1" y="0" z="1" />
+		  <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Small\Prototech_JumpDrive_Construction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Top" StartX="1.1" StartY="1.4" EndX="1.9" EndY="2.6" />
+        <MountPoint Side="Back" StartX="0" StartY="0" EndX="3" EndY="2" />
+        <MountPoint Side="Left" StartX="0" StartY="0" EndX="4" EndY="2" />
+        <MountPoint Side="Front" StartX="0" StartY="0" EndX="3" EndY="2" />
+        <MountPoint Side="Right" StartX="0" StartY="0" EndX="4" EndY="2" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="3" EndY="4" Default="true" />
+      </MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Prototech_JumpDrive_Construction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_PrototechJumpDrive</BlockPairName>
+    </Definition>	
+
+
+
+
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_AQD_SG_Jumpdrive</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Jump Drive</DisplayName>
+		<Icon>..\2678657382\Textures\GUI\Icons\Cubes\AQD_SG_Jumpdrive.dds</Icon>
+		<Icon>..\2678657382\Textures\GUI\Icons\Cubes\AQD_Logo.dds</Icon>
+		<Icon>Icons\white.dds</Icon>
+            <Description>Jump drives allow ships to teleport over large distances. 
+			
+			They require a full charge to jump and can only be activated from the toolbar of a cockpit. </Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="3" y="3" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>..\2678657382\Models\Cubes\Small\AQD_SG_Jumpdrive_BS2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Front" StartX="0.00" StartY="0.00" EndX="3.00" EndY="3.00"/>
+			<MountPoint Side="Back" StartX="0.00" StartY="0.00" EndX="3.00" EndY="3.00"/>
+			<MountPoint Side="Left" StartX="0.00" StartY="0.00" EndX="5.00" EndY="3.00"/>
+			<MountPoint Side="Right" StartX="0.00" StartY="0.00" EndX="5.00" EndY="3.00"/>
+			<MountPoint Side="Top" StartX="0.00" StartY="0.00" EndX="3.00" EndY="5.00"/>
+			<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="3.00" EndY="5.00"/>
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="..\2678657382\Models\Cubes\Small\AQD_SG_Jumpdrive_BS1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_JumpDrive</BlockPairName>
+    </Definition>	
+	
+	
+	
+	
+	
+	
+</CubeBlocks>
+   
+   
+ <Components>
+	 <Component>
+		<Id>
+			<TypeId>Component</TypeId>
+			<SubtypeId>AaW_Schematic_JumpDrive</SubtypeId>
+		</Id>
+		<DisplayName>Schematic Jump Drive</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechFrame.dds</Icon>
+		<Size>
+			<X>1.0</X>
+			<Y>1.0</Y>
+			<Z>0.03</Z>
+		</Size>
+		<Mass>100</Mass>
+		<Volume>50</Volume>
+		<Model>Models\Components\PrototechFrame.mwm</Model>
+		<PhysicalMaterial>Metal</PhysicalMaterial>
+		<MaxIntegrity>40</MaxIntegrity>
+		<DropProbability>0.3</DropProbability>
+		<Health>12</Health>
+		<MinimalPricePerUnit>100000</MinimalPricePerUnit>
+		<MinimumOfferAmount>250</MinimumOfferAmount>
+		<MaximumOfferAmount>2500</MaximumOfferAmount>
+		<MinimumOrderAmount>0</MinimumOrderAmount>
+		<MaximumOrderAmount>0</MaximumOrderAmount>
+		<CanPlayerOrder>true</CanPlayerOrder>
+		<MinimumAcquisitionAmount>1</MinimumAcquisitionAmount>
+		<MaximumAcquisitionAmount>1000</MaximumAcquisitionAmount>
+	</Component>  
+</Components>  
+
+<Blueprints>
+	 <Blueprint> <!-- This blueprint exists to prevent missing blueprint errors -->
+		<Id>
+			<TypeId>BlueprintDefinition</TypeId>
+			<SubtypeId>AaW_Schematic_JumpDrive</SubtypeId>
+		</Id>
+		<DisplayName>DisplayName_Item_PrototechPanel</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechPanel_Component.dds</Icon>
+		<Prerequisites>
+			<Item Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_JumpDrive" />
+		</Prerequisites>
+		<Result Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_JumpDrive" />
+		<BaseProductionTimeInSeconds>1</BaseProductionTimeInSeconds>
+		<IsPrimary>true</IsPrimary>
+	</Blueprint>
+</Blueprints>   
+   
+   
+
+
+</Definitions>

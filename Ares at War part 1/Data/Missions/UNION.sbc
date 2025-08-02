@@ -4,25 +4,58 @@
   
  <!--
  
+ 
+ 
+DemocraticMovementScore
+ProsperityCoalitionScore
+SecurityFrontScore
+ 
  -->
  
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+ 
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>UNION_ContractBlockProfile_Civilian</SubtypeId>
+        <SubtypeId>AaW_Mission_SecurityFrontDonation</SubtypeId>
       </Id>
       <Description>
-        [MES Contract Block]
 
-		[MissionIds:UNION_Mission_RelicData]
-        
-        [MinContracts:5]
-        [MaxContracts:15]
+    [MES Mission]
+	
+	[Title:Make Political Donation to the Security Front]
+	[Description:In a system threatened by piracy, unrest, and lawlessness, the Ares Security Front stands as the shield of all citizens. We are committed to enforcing strong security measures, protecting trade routes, and maintaining order across every colony. With your donation we can finance our campaigning
+	
+	]
+	
+	[OverrideFaction:AHE]
+	
+	[Reward:5000000]
+	[Collateral:80000]
+	[ReputationReward:200]
+	[FailReputationPrice:20]
+	[Duration:300]
 
-								
+	[PersistantEventConditionIds:AHE_EventCondition_MissionDestroyDRAHQ]
+
+	[ReplaceKeys:{StaticEncounterSandboxBoolName}]
+	[ReplaceValues:DRA_HQDestroyed]
+	
+	[ReplaceKeys:{EventName}]
+	[ReplaceValues:Destroy DRA HQ]	
+
+	[ReplaceKeys:{EventCoords}]
+	[ReplaceValues:{X:-3631334.68361371 Y:-1326304.76052412 Z:-2536825.59381119}]	
+	
+	
+	
+	[InstanceEventGroupId:MissionGroup_EliminateStaticEncounter]
+
       </Description>
-    </EntityComponent>	
 
+    </EntityComponent>
+
+ <!--
+ 
 		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -52,8 +85,7 @@
       </Description>
     </EntityComponent>
 	
-	
- 
+
  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -113,7 +145,7 @@
 
     </EntityComponent>
 
-
+-->
  
 
 	

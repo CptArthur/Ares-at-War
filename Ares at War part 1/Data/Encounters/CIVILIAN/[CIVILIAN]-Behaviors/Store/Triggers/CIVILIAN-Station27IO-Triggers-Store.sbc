@@ -49,68 +49,45 @@
         <SubtypeId>CIVILIAN_Action_Static_PopulateStores_Station27IO</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Action]
 
         [ApplyStoreProfiles:true]
         [ClearStoreContentsFirst:true]
 
-       [StoreBlocks:Store Settlement]
-      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_Settlement]		
+    [StoreBlocks:Store Settlement]
+[StoreProfiles:CIVILIAN_StoreProfile_Station27IO_Settlement]
+    
 
-       [StoreBlocks:Store Tradestation]
-      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_Tradestation]		
-
-
-       [StoreBlocks:Store Military]
-      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_Military]		
+    
 
 
-      [StoreBlocks:Store {ITC}]
-      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_ITC]		
-		
-	    [StoreBlocks:Store {SYN}]
-      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_SYN]	
+    
+    
+    
+    
+    
+    
 
-	    [StoreBlocks:Store {UNION}]
-      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_UNION]	
 
-      [StoreBlocks:Store {SOLCOOP}]
+    [StoreBlocks:Store {SHIVAN}]
+      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_SHIVAN]	
+    [StoreBlocks:Store {SECURITY}]
+      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_SECURITY]
+    [StoreBlocks:Store {AGURO}]
+      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_AGURO]
+    [StoreBlocks:Store {ITC}]
+      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_ITC]	
+
+    
+    [StoreBlocks:Store {SOLCOOP}]
       [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_SOLCOOP]	
+    
 
+            
 
-      [StoreBlocks:Store Civ]
-      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_Civ]
-  
-      [StoreBlocks:Store Salvage]
-      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_Salvage]
-
-      [StoreBlocks:Store Ammo]
-      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_Ammo]
-
-      [StoreBlocks:Store Ingot]
-      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_Ingot]
-  
-      [StoreBlocks:Store Tool]
-      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_Tool]      
-
-      [StoreBlocks:Store Prefab]
-      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_Prefab]      
-
-      
       [StoreBlocks:Store Fuel]
       [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_Fuel]
   
-      
-      [StoreBlocks:Store Outpost]
-      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_Outpost]
-
-
-      [StoreBlocks:Vending Machine]
-      [StoreProfiles:CIVILIAN_StoreProfile_Station27IO_VendingMachine]
-
-
-
 
       [AddCustomDataToBlocks:true]
       [CustomDataBlockNames:EconomySurvival Store Water Vehicles,EconomySurvival Store Land Vehicles,EconomySurvival Store Air Vehicles,EconomySurvival Store Space Vehicles]
@@ -118,27 +95,28 @@
       [CustomDataFiles:CIVILIAN_Land_Vehicles.xml]
       [CustomDataFiles:CIVILIAN_Air_Vehicles.xml]
       [CustomDataFiles:CIVILIAN_Space_Vehicles.xml]  
+  
 
       [ApplyContractProfiles:true]
       [ClearContractContentsFirst:true]
       [ContractBlocks:Contracts]
       [ContractBlockProfiles:CIVILIAN_ContractBlockProfile_Station27IO]
+   
+    [ContractBlocks:Contracts {SHIVAN}]
+      [ContractBlockProfiles:CIVILIAN_ContractBlockProfile_Station27IO_SHIVAN]	
+    [ContractBlocks:Contracts {SECURITY}]
+      [ContractBlockProfiles:CIVILIAN_ContractBlockProfile_Station27IO_SECURITY]
+    [ContractBlocks:Contracts {AGURO}]
+      [ContractBlockProfiles:CIVILIAN_ContractBlockProfile_Station27IO_AGURO]
+    [ContractBlocks:Contracts {ITC}]
+      [ContractBlockProfiles:CIVILIAN_ContractBlockProfile_Station27IO_ITC]	
 
-       [ContractBlocks:Contracts {SYN}]
-      [ContractBlockProfiles:SHIVAN_ContractBlockProfile_Civilian]
-
-       [ContractBlocks:Contracts {ITC}]
-      [ContractBlockProfiles:ITC_ContractBlockProfile_Civilian]
-      
-       [ContractBlocks:Contracts {UNION}]
-      [ContractBlockProfiles:UNION_ContractBlockProfile_Civilian]
-
-
-       [ContractBlocks:Contracts {SOLCOOP}]
-      [ContractBlockProfiles:SOLCOOP_ContractBlockProfile_Civilian]
+    
+    [ContractBlocks:Contracts {SOLCOOP}]
+      [ContractBlockProfiles:CIVILIAN_ContractBlockProfile_Station27IO_SOLCOOP]	
+    
 
       </Description>
-
     </EntityComponent>
   </EntityComponents>
 </Definitions>

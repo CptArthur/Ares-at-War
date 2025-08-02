@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--
+This File handles these blocks:
+
+Placeholder_SmallBlockSmallThrust
+Placeholder_SmallBlockLargeThrust
+
+Placeholder_LargeBlockSmallThrust
+Placeholder_LargeBlockLargeThrust
+
+
+Placeholder_SmallBlockSmallThrustSciFi
+Placeholder_SmallBlockLargeThrustSciFi
+
+Placeholder_LargeBlockSmallThrustSciFi
+Placeholder_LargeBlockLargeThrustSciFi
+
+
+Placeholder_SmallBlockSmallModularThruster
+Placeholder_SmallBlockLargeModularThruster
+
+Placeholder_LargeBlockSmallModularThruster
+Placeholder_LargeBlockLargeModularThruster
+
+
+
+
+-->
+
+<CubeBlocks>
+
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_SmallBlockSmallThrust</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\thrust.dds</Icon>
+		<Icon>Icons\white.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Originally designed by the Sol Cooperative, the design is now considered outdated, but it remains in use due to its reliability and efficiency.
+		Thrust Output: 14.4kN
+		Power Consumption: 200kW</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="2" />
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Small\ThrustSmallConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\ThrustSmallConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_SmallThrust</BlockPairName>
+    </Definition>
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_SmallBlockLargeThrust</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Large Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\thrust_large.dds</Icon>
+		<Icon>Icons\white.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Originally designed by the Sol Cooperative, the design is now considered outdated, but it remains in use due to its reliability and efficiency.
+		Thrust Output: 172.8kN
+		Power Consumption: 2.4MW</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+         <Size x="3" y="2" z="4" />
+		  <Center x="1" y="0" z="2" />					 
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Small\ThrustLargeConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="3" EndY="2" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="3" EndY="2" />
+			<MountPoint Side="Bottom" StartX="0" StartY="2" EndX="3" EndY="4" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="2" EndY="2" />
+			<MountPoint Side="Left" StartX="2" StartY="0" EndX="4" EndY="2" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\ThrustLargeConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_LargeThrust</BlockPairName>
+    </Definition>
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeBlockSmallThrust</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\thrust.dds</Icon>
+		<Icon>Icons\white.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Originally designed by the Sol Cooperative, the design is now considered outdated, but it remains in use due to its reliability and efficiency.
+		Thrust Output: 345.6kN
+		Power Consumption: 3.36MW</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="2" />
+		 <Center x="0" y="0" z="1" />		
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\ThrustSmallConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\ThrustSmallConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_SmallThrust</BlockPairName>
+    </Definition>
+
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeBlockLargeThrust</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Large Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\thrust_large.dds</Icon>
+		<Icon>Icons\white.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Originally designed by the Sol Cooperative, the design is now considered outdated, but it remains in use due to its reliability and efficiency.
+		Thrust Output: 4.32MN
+		Power Consumption: 33.6MW</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="3" y="2" z="4" />
+		            <Center x="1" y="0" z="2" />
+					
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\ThrustLargeConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\ThrustLargeConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_LargeThrust</BlockPairName>
+    </Definition>
+	
+	
+<!-- Start DLC -->
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_SmallBlockSmallThrustSciFi</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Roxford Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\Small_IonThrusterSmall_SciFi.dds</Icon>
+		<Icon>Icons\blue.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Designed by Roxford, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.
+		Thrust Output: 28.8kN
+		Power Consumption: 300kW</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="2" />
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Small\IonThrusterSmall_SciFi_Construction2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\IonThrusterSmall_SciFi_Construction1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_SmallThrustSciFi</BlockPairName>
+	    <DLC>SparksOfTheFuture</DLC>
+    </Definition>
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_SmallBlockLargeThrustSciFi</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Roxford Large Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\Small_IonThrusterLarge_SciFi.dds</Icon>
+		<Icon>Icons\blue.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Designed by Roxford, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.
+		Thrust Output: 345.6kN
+		Power Consumption: 3.6MW</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+         <Size x="3" y="2" z="4" />
+		  <Center x="1" y="0" z="2" />					 
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Small\IonThrusterLarge_SciFi_Construction2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="3" EndY="2" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="3" EndY="2" />
+			<MountPoint Side="Bottom" StartX="0" StartY="2" EndX="3" EndY="4" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="2" EndY="2" />
+			<MountPoint Side="Left" StartX="2" StartY="0" EndX="4" EndY="2" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\IonThrusterLarge_SciFi_Construction1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_LargeThrustSciFi</BlockPairName>
+	     <DLC>SparksOfTheFuture</DLC>
+    </Definition>
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeBlockSmallThrustSciFi</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Roxford Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\large_IonThrusterSmall_SciFi.dds</Icon>
+		<Icon>Icons\blue.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Designed by Roxford, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.
+		Thrust Output: 691.2kN
+		Power Consumption: 5.04MW</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="2" />
+		 <Center x="0" y="0" z="1" />		
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\IonThrusterSmall_SciFi_Construction2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\IonThrusterSmall_SciFi_Construction1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_SmallThrustSciFi</BlockPairName>
+	    <DLC>SparksOfTheFuture</DLC>
+    </Definition>
+
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeBlockLargeThrustSciFi</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Roxford Large Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\large_IonThrusterLarge_SciFi.dds</Icon>
+		<Icon>Icons\blue.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Designed by Roxford, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.
+		Thrust Output: 8.64MN
+			Power Consumption: 50.4MW</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="3" y="2" z="4" />
+		            <Center x="1" y="0" z="2" />
+					
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\IonThrusterLarge_SciFi_Construction2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\IonThrusterLarge_SciFi_Construction1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_LargeThrustSciFi</BlockPairName>
+         <DLC>SparksOfTheFuture</DLC>	  
+    </Definition>	
+	
+	<!-- Start Second DLC-->
+	
+		<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_SmallBlockSmallModularThruster</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Zenova Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\SmallGridModularIonThrusterSmall.dds</Icon>
+		<Icon>Icons\red.dds</Icon>
+            <Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Designed by Zenova, this thruster offers more power while maintaining low energy consumption, making it a more efficient option than older models.
+			
+			Thrust Output: 25.9kN
+			Power Consumption: 220kW</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="2" />
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Small\ModularIonThrusterSmallConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\ModularIonThrusterSmallConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_SmallModularThruster</BlockPairName>
+	    <DLC>Warfare2</DLC>
+    </Definition>
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_SmallBlockLargeModularThruster</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Zenova Large Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\SmallGridModularIonThrusterLarge.dds</Icon>
+		<Icon>Icons\red.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Designed by Zenova, this thruster offers more power while maintaining low energy consumption, making it a more efficient option than older models.
+		Thrust Output: 311.0kN
+		Power Consumption: 2.64MW</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+         <Size x="3" y="2" z="4" />
+		  <Center x="1" y="0" z="2" />					 
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Small\ModularIonThrusterLargeConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="3" EndY="2" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="3" EndY="2" />
+			<MountPoint Side="Bottom" StartX="0" StartY="2" EndX="3" EndY="4" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="2" EndY="2" />
+			<MountPoint Side="Left" StartX="2" StartY="0" EndX="4" EndY="2" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\ModularIonThrusterLargeConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_LargeModularThruster</BlockPairName>
+	     <DLC>Warfare2</DLC>
+    </Definition>
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeBlockSmallModularThruster</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Zenova Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\LargeGridModularIonThrusterSmall.dds</Icon>
+		<Icon>Icons\red.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Designed by Zenova, this thruster offers more power while maintaining low energy consumption, making it a more efficient option than older models.
+		Thrust Output: 622.0kN
+		Power Consumption: 3.69MW</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="2" />
+		 <Center x="0" y="0" z="1" />		
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\ModularIonThrusterSmallConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\ModularIonThrusterSmallConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_SmallModularThruster</BlockPairName>
+	    <DLC>Warfare2</DLC>
+    </Definition>
+
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeBlockLargeModularThruster</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Zenova Large Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\LargeGridModularIonThrusterLarge.dds</Icon>
+		<Icon>Icons\red.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Designed by Zenova, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.
+		Thrust Output: 8.64MN
+			Power Consumption: 50.4MW</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="3" y="2" z="4" />
+		            <Center x="1" y="0" z="2" />
+					
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\ModularIonThrusterLargeConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\ModularIonThrusterLargeConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_LargeModularThruster</BlockPairName>
+         <DLC>Warfare2</DLC>	  
+    </Definition>
+	
+	
+	
+	
+	
+</CubeBlocks>
+   
+   
+ <Components>
+	 <Component>
+		<Id>
+			<TypeId>Component</TypeId>
+			<SubtypeId>AaW_Schematic_IonThruster</SubtypeId>
+		</Id>
+		<DisplayName>Schematic Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechFrame.dds</Icon>
+		<Size>
+			<X>1.0</X>
+			<Y>1.0</Y>
+			<Z>0.03</Z>
+		</Size>
+		<Mass>100</Mass>
+		<Volume>50</Volume>
+		<Model>Models\Components\PrototechFrame.mwm</Model>
+		<PhysicalMaterial>Metal</PhysicalMaterial>
+		<MaxIntegrity>40</MaxIntegrity>
+		<DropProbability>0.3</DropProbability>
+		<Health>12</Health>
+		<MinimalPricePerUnit>100000</MinimalPricePerUnit>
+		<MinimumOfferAmount>250</MinimumOfferAmount>
+		<MaximumOfferAmount>2500</MaximumOfferAmount>
+		<MinimumOrderAmount>0</MinimumOrderAmount>
+		<MaximumOrderAmount>0</MaximumOrderAmount>
+		<CanPlayerOrder>true</CanPlayerOrder>
+		<MinimumAcquisitionAmount>1</MinimumAcquisitionAmount>
+		<MaximumAcquisitionAmount>1000</MaximumAcquisitionAmount>
+	</Component>  
+</Components>  
+
+<Blueprints>
+	 <Blueprint> <!-- This blueprint exists to prevent missing blueprint errors -->
+		<Id>
+			<TypeId>BlueprintDefinition</TypeId>
+			<SubtypeId>AaW_Schematic_IonThruster</SubtypeId>
+		</Id>
+		<DisplayName>DisplayName_Item_PrototechPanel</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechPanel_Component.dds</Icon>
+		<Prerequisites>
+			<Item Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_IonThruster" />
+		</Prerequisites>
+		<Result Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_IonThruster" />
+		<BaseProductionTimeInSeconds>1</BaseProductionTimeInSeconds>
+		<IsPrimary>true</IsPrimary>
+	</Blueprint>
+</Blueprints>   
+   
+
+
+</Definitions>
