@@ -1,0 +1,25 @@
+Dynamic_Civillian_TriggerGroup:
+
+
+-going to civillian station.  DialogueCue: DynamicCivillian_PathDeviation
+-PlayerClosing -> DialogueCue: DynamicCivillian_PlayerClosing
+MSB_DynamicCivilian_Trigger_Falling -> DynamicCivillian_Falling
+
+Cargoship:
+MSB_CargoShip_Trigger_CargoCompromised: Retreat and Cargoship_CargoCompromised
+
+BountyHunter:
+When player (neutral and above) get close get angry. DialogueCue: BountyHunter_PlayerTooClose
+Will attack player if it has a bounty on its head.
+
+Merchant:
+Will actively go to the player (neutral and above), and Land. DialogueCue: MerchantMovingToPlayer
+Stop when player is close. DialogueCue: MerchantPlayerClose
+
+Nomad:
+Will land randomly. DialogueCue: NomadMovingToSurface
+Stop when player (neutral and above) is close. DialogueCue: NomadPlayerClose
+
+Salvager:
+Goes to salvage. Get angry if player gets close if in salvage mode. DialogueCue: SalvagerHasScrapPlayerClose
+Stop when player (neutral and above) is close. SalvagerPlayerClose

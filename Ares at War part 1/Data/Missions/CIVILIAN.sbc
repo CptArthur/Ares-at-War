@@ -76,7 +76,7 @@ ContractBlockLocation
     [MES Mission]
 	
 	[Title:Shut Down Raider Mine]
-	[Description:The Desert Raiders are running a cobalt mine within the Agaris Desert. It’s lightly fortified and supports their gear production. Thorrix command wants it taken out before they expand operations.]
+	[Description:The Desert Raiders are running a cobalt mine within the Agaris Desert. It’s lightly fortified and supports their gear production. Please help us]
 	
 	[OverrideFaction:THORRIX]
 	
@@ -97,6 +97,7 @@ ContractBlockLocation
 	[ReplaceKeys:{EventCoords}]
 	[ReplaceValues:{X:-3658137.18096731 Y:-1305465.62918192 Z:-2524865.2501867}]	
 	
+	[Exclusive:true]
 	
 	[InstanceEventGroupId:MissionGroup_EliminateStaticEncounter]
 
@@ -134,7 +135,7 @@ ContractBlockLocation
     [MES Mission]
 	
 	[Title:Shut Down Raider Mine]
-	[Description:The Desert Raiders are running a magnesium mine. They’re using the raw material to produce ammunition. Thorrix command wants the site neutralized before their stockpiles grow any further.]
+	[Description:The Desert Raiders are running a magnesium mine. They’re using the raw material to produce ammunition. Please help us.]
 	
 	[OverrideFaction:THORRIX]
 	
@@ -155,12 +156,74 @@ ContractBlockLocation
 	[ReplaceKeys:{EventCoords}]
 	[ReplaceValues:{X:-3678919.75817321 Y:-1328045.60224412 Z:-2529986.12841394}]	
 	
-	
+	[Exclusive:true]
+
 	[InstanceEventGroupId:MissionGroup_EliminateStaticEncounter]
 
       </Description>
     </EntityComponent> 
 
+
+
+
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>Azuris_EventCondition_MissionDestroyDRACobaltOther</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:DRA_MiningOutpostCobaltOtherDestroyed]  
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_Azuris_DestroyDRACobaltOther</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:Shut Down Raider Mine]
+	[Description:The Desert Raiders are running a cobalt mine within the Agaris Desert. It’s lightly fortified and supports their gear production. Please help us]
+	
+	[OverrideFaction:AZURIS]
+	
+	[Reward:5000000]
+	[Collateral:50000]
+	[ReputationReward:200]
+	[FailReputationPrice:20]
+	[Duration:0]
+
+	[PersistantEventConditionIds:Azuris_EventCondition_MissionDestroyDRACobaltOther]
+
+	[ReplaceKeys:{StaticEncounterSandboxBoolName}]
+	[ReplaceValues:DRA_MiningOutpostCobaltOtherDestroyed]
+	
+	[ReplaceKeys:{EventName}]
+	[ReplaceValues:Destroy DRA Cobalt Outpost]	
+
+	[ReplaceKeys:{EventCoords}]
+	[ReplaceValues:{X:-3668886.24352241 Y:-1339151.88782994 Z:-2634872.46677752}]	
+	
+		[Exclusive:true]
+
+		
+	[InstanceEventGroupId:MissionGroup_EliminateStaticEncounter]
+
+      </Description>
+    </EntityComponent>
 
 
 

@@ -3,6 +3,81 @@
 	<SpawnGroups>
 	
 
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>CRUSADERS_LezunoHQ</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:CRUSADERS]		
+
+		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+		[TriggerRadius:10000]
+
+		[ForceExactPositionAndOrientation:true]
+
+
+
+		[StaticEncounterCoords:{X:638654.108541786 Y:480874.683518707 Z:3424420.31508279}]
+		[StaticEncounterForward:{X:-0.253068571017606 Y:0.959527152697805 Z:-0.123547325340336}]
+		[StaticEncounterUp:{X:0.718885674808341 Y:0.101048063818677 Z:-0.687744629462021}]
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Lezuno]
+		[StaticEncounterPlanetDirection:{X:0.718483268476182 Y:0.106015476097775 Z:-0.68741727629406}]
+		[StaticEncounterPlanetAltitude:12.9096882110898]
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-DoNotDelete)]		
+			[RandomGridNamePattern:Jahor]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]
+
+
+
+
+        [ShipyardSetup:true]
+        [ShipyardConsoleBlockNames:{Any}]
+        [ShipyardProfileNames:FAC-Shipyard-ScrapYard]
+		
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:CRUSADERS_LezunoHQDestroyed]			
+		[ZoneConditions:ZoneCondition_ZoneAaW]	
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="CRUSADERS - LezunoHQ">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>CRUSADERS_LezunoHQ_Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+		
+	</SpawnGroup>
+
+
+
+
+
+
+
 <!--
 	<SpawnGroup>
 		<Id>

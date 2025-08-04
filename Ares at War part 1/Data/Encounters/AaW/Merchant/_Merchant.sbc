@@ -1,0 +1,331 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Merchant_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:AaW_Merchant_Trigger_Setup]
+
+        [Triggers:AaW_Merchant_Trigger_InitRole]
+        [Triggers:AaW_Merchant_Trigger_CloseRole]
+
+        [Triggers:AaW_Merchant_Trigger_OnStart]
+
+        [Triggers:AaW_Merchant_Trigger_MerchantAreaTimeout]
+        [Triggers:AaW_Merchant_Trigger_ResumeCourse]
+        [Triggers:AaW_Merchant_Trigger_StopForPlayer]
+		
+		
+		
+        [Triggers:AaW_Merchant_Trigger_VisitPlayerBase]
+        [Triggers:AaW_Merchant_Trigger_ArriveAtStation]
+        [Triggers:AaW_Merchant_Trigger_StartLanding]
+        [Triggers:AaW_Merchant_Trigger_ArrivedAtLandingSite]
+		
+		
+		
+		
+
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Merchant_TriggerGroup_Complete</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+
+
+      </Description>
+    </EntityComponent>
+
+    <!-- Setup -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Merchant_Trigger_Setup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MaxActions:1]
+        [Actions:AaW_Merchant_Action_Setup]
+
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Merchant_Action_Setup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [SetBooleansTrue:AaW_Role_Merchant]
+
+                [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:AaW_Role_InitRole]
+        
+      </Description>
+    </EntityComponent>
+
+<!--
+
+        [Triggers:AaW_Merchant_Trigger_InitRole]
+        [Triggers:AaW_Merchant_Trigger_CloseRole]
+
+
+-->
+
+<!-- Start Required stuff -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Merchant_Trigger_InitRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_Role_InitRole]
+
+        [UseTrigger:true]
+        [Type:Manual]
+
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:AaW_Merchant_Action_InitRole]
+      </Description>
+
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Merchant_Action_InitRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:AaW_TriggerEvent_Merchant_InitRole]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:CargoShip]
+
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Primary]
+      </Description>
+    </EntityComponent>
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Merchant_Trigger_CloseRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_Role_CloseRole]
+
+        [UseTrigger:true]
+        [Type:Manual]
+
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:AaW_Merchant_Action_CloseRole]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Merchant_Action_CloseRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+      </Description>
+    </EntityComponent>
+<!-- End Required stuff -->
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Merchant_Trigger_OnStart</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+        [StartsReady:false]
+        [MaxActions:1]
+        [Actions:AaW_Merchant_Action_Init]
+
+      </Description>
+    </EntityComponent>
+
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Merchant_Action_Init</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [AppendAntennaHudText:true]
+        [AntennaHudTextSuffix: (Merchant)]
+
+      </Description>
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Merchant_Trigger_MerchantAreaTimeout</SubtypeId>
+      </Id>
+      <Description>
+        [MES AI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+
+        [MinCooldownMs:1500000]
+        [MaxCooldownMs:1500001]
+        [StartsReady:false]
+
+        [MaxActions:1]
+        [Actions:AaW_Merchant_Action_MerchantAreaTimeout]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Merchant_Action_MerchantAreaTimeout</SubtypeId>
+      </Id>
+      <Description>
+        [MES AI Action]
+
+        [EnableAutopilot:true]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:AaW_Merchant_Trigger_ResumeCourse]
+        [DisableTriggerNames:AaW_Merchant_Trigger_StopForPlayer]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Merchant_Trigger_ResumeCourse</SubtypeId>
+      </Id>
+      <Description>
+        [MES AI Trigger]
+
+        [UseTrigger:false]
+        [Type:PlayerFar]
+        [TargetDistance:500]
+
+        [ToggleWithTriggerProfile:AaW_Merchant_Trigger_StopForPlayer]
+        [ToggledProfileResetsCooldown:true]
+
+        [MinCooldownMs:2000]
+        [MaxCooldownMs:2001]
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:AaW_Merchant_Action_ResumeCourse]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Merchant_Action_ResumeCourse</SubtypeId>
+      </Id>
+      <Description>
+        [MES AI Action]
+
+        [EnableAutopilot:true]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Merchant_Trigger_StopForPlayer</SubtypeId>
+      </Id>
+      <Description>
+        [MES AI Trigger]
+
+        [UseTrigger:true]
+        [Type:PlayerNear]
+        [TargetDistance:399]
+        [MinPlayerReputation:-500]
+
+        [ToggleWithTriggerProfile:AaW_Merchant_Trigger_ResumeCourse]
+        [ToggledProfileResetsCooldown:true]
+
+        [MinCooldownMs:2000]
+        [MaxCooldownMs:2001]
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:AaW_Merchant_Action_StopForPlayer]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Merchant_Action_StopForPlayer</SubtypeId>
+      </Id>
+      <Description>
+        [MES AI Action]
+
+        [DisableAutopilot:true]
+        [StopAllRotation:true]
+        [StopAllThrust:true]
+
+        [ClearAllWaypoints:true]
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
+
+
+
+  </EntityComponents>
+</Definitions>
