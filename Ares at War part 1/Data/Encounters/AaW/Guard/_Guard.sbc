@@ -66,6 +66,9 @@
         [RivalAI Action]
 
         [SetBooleansTrue:AaW_Role_Guard]
+
+
+
       </Description>
     </EntityComponent>
 
@@ -99,7 +102,7 @@
         [RivalAI Action]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:AaW_TriggerEvent_Guard_InitRole]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Guard_InitRole]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Patrol]
@@ -157,12 +160,29 @@
         [MinCooldownMs:1000]
         [MaxCooldownMs:1001]
 
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:AaW_TriggerEvent_InitCombat]
+        [MaxActions:1]
+        [Actions:AaW_Guard_Action_OnStart]
       </Description>
     </EntityComponent>
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Guard_Action_OnStart</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
 
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Utility_State_Trigger_Start]
+        
+
+
+
+      </Description>
+    </EntityComponent>
 
   </EntityComponents>
 </Definitions>

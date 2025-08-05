@@ -15,25 +15,16 @@
         [Triggers:AaW_ConvoyLeader_Trigger_InitRole]
         [Triggers:AaW_ConvoyLeader_Trigger_CloseRole]
 
-        [Triggers:AaW_ConvoyLeader_Trigger_ProcessEscortRequest]
         [Triggers:AaW_ConvoyLeader_Trigger_OnStart]
 
-        [Triggers:AaW_ConvoyLeader_Trigger_Compromised]
+        [Triggers:MSB_System_CommandChain_Trigger_OnStart]
+        [Triggers:MSB_System_CommandChain_Trigger_ProcessEscortRequest]
+        [Triggers:MSB_System_CommandChain_Trigger_Compromised]
 
       </Description>
     </EntityComponent>
 
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_ConvoyLeader_TriggerGroup_Complete</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI TriggerGroup]
 
-
-      </Description>
-    </EntityComponent>
 
     <!-- Setup -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -186,120 +177,9 @@
     </EntityComponent>
 
 
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_ConvoyLeader_Trigger_ProcessEscortRequest</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [UseTrigger:true]
-        [Type:CommandReceived]
-        [CommandReceiveCode:DefensiveEscortRequest]
-
-        [StartsReady:true]
-        [MinCooldownMs:0]
-        [MaxCooldownMs:0]
-        [MaxActions:-1]
-        [Actions:AaW_ConvoyLeader_Action_ProcessEscortRequest]
-
-      </Description>
-    </EntityComponent>
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_ConvoyLeader_Action_ProcessEscortRequest</SubtypeId>
-      </Id>
-      <Description>
-
-        [RivalAI Action]
-
-        [AssignEscortFromCommand:true]
-        [UseChatBroadcast:true]
-        [ChatData:AaW_ConvoyLeader_Chat_Escort]
-
-      </Description>
-
-    </EntityComponent>
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_ConvoyLeader_Chat_Escort</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Chat]
-
-        [UseChat:true]
-        [StartsReady:true]
-        [Chance:100]
-        [MaxChats:1]
-        [BroadcastRandomly:true]
-
-        [Author:{AntennaName}]
-        [Color:Red]
-
-        [ChatMessages:This is {AntennaName}. Accepted escort request]
-        [ChatAudio:ArcHudGPSNotification2]
-        [BroadcastChatType:Chat]
-
-      </Description>
-    </EntityComponent>
 
 
 
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_ConvoyLeader_Trigger_Compromised</SubtypeId>
-      </Id>
-      <Description>
-
-        [RivalAI Trigger]
-        [Tags:MSB_TriggerEvent_Compromised]
-        [Type:Compromised]
-        [UseTrigger:true]
-        [StartsReady:true]
-
-        [MaxActions:1]
-        [Actions:AaW_ConvoyLeader_Action_Compromised]
-
-      </Description>
-    </EntityComponent>
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_ConvoyLeader_Action_Compromised</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [BroadcastCommandProfiles:true]
-        [CommandProfileIds:AaW_ConvoyLeader_Command_Compromised]
-
-      </Description>
-    </EntityComponent>
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_ConvoyLeader_Command_Compromised</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Command]
-
-        [CommandCode:LeaderDead]
-        [MatchSenderReceiverOwners:true]
-        [IgnoreAntennaRequirement:true]
-        [IgnoreReceiverAntennaRequirement:true]
-        [Radius:7500]
-
-      </Description>
-    </EntityComponent>
 
 
 

@@ -21,6 +21,10 @@
         [Triggers:AaW_OffensiveEscort_Trigger_LinkUpWithLeader]
         [Triggers:AaW_OffensiveEscort_Trigger_NoTargetSwitchToEscort]
         [Triggers:AaW_OffensiveEscort_Trigger_NoTarget_LeaderInactive]
+
+        [Triggers:MSB_System_CommandChain_Trigger_RequestEscortSlot]
+        [Triggers:MSB_System_CommandChain_Trigger_LeaderDead]
+
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -109,7 +113,7 @@
         [RivalAI Action]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:AaW_TriggerEvent_OffensiveEscort_InitRole]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_OffensiveEscort_InitRole]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Escort]
@@ -262,7 +266,7 @@
         [TargetDistance:800]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:AaW_TriggerEvent_InitCombat]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
       </Description>
     </EntityComponent>
 
@@ -288,7 +292,7 @@
         [TargetDistance:1200]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:AaW_TriggerEvent_InitCombat]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
       </Description>
     </EntityComponent>
 
@@ -345,7 +349,7 @@
         [SetBooleansTrue:LeaderInactive]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:AaW_TriggerEvent_LeaderDead]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_LeaderDead]
       </Description>
     </EntityComponent>
 
@@ -437,7 +441,7 @@
         [RivalAI Action]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:AaW_TriggerEvent_InitRole]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
       </Description>
     </EntityComponent>
 
@@ -477,7 +481,7 @@
         [//DebugMessage:OffensiveEscort - No Target, Switch to Escort, grouping up with leader]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:AaW_TriggerEvent_InitRole]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
       </Description>
     </EntityComponent>
 
@@ -517,7 +521,7 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:AaW_CombatType_CloseCombatType]
-        [ManuallyActivatedTriggerTags:AaW_TriggerEvent_Despawn]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn]
       </Description>
     </EntityComponent>
 

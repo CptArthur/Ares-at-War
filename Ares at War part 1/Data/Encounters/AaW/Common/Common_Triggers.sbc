@@ -1,0 +1,450 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--
+
+	These triggers apply to both Dynamic and Static
+
+
+
+        [Triggers:AaW_Common_Triggers_MaxRange]
+        [Triggers:AaW_Common_Trigger_AaWAliveCheck]
+        [Triggers:AaW_Common_Triggers_Compromised]
+
+
+
+        [Triggers:AaW_Common_Trigger_UnderFireHealthLow]
+        [Triggers:AaW_Common_Trigger_DamageByNeutral]
+        [Triggers:AaW_Common_Trigger_DamageByNeutral_Cue]
+        [Triggers:AaW_Common_Trigger_DamageByFriendly]
+        [Triggers:AaW_Common_Trigger_DamageByFriendly_Cue]
+
+
+        [Triggers:AaW_Common_Trigger_EnemyDestroyedPlayerHelped]
+        [Triggers:AaW_Common_Trigger_EnemyDestroyedPlayerMadeFinalShot]
+        [Triggers:AaW_Common_Trigger_FriendlyDestroyedPlayerMadeFinalShot]
+
+
+
+    -->
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Triggers_Compromised</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_TriggerEvent_Compromised]
+        [Type:Compromised]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+        [Actions:AaW_Common_Action_Compromised]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Action_Compromised</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DisableAutopilot:false]
+        [StopAllThrust:true]
+        [ChangeInertiaDampeners:true]
+        [InertiaDampenersEnable:false]
+        [StopAllRotation:true]
+
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Triggers_MaxRange</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Session]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MinCooldownMs:450000]
+        [MaxCooldownMs:600000]
+
+        [Actions:AaW_Common_Action_MaxRange]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Action_MaxRange</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [SetWeaponsToMaxRange:true]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Trigger_AaWAliveCheck</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Type:CommandReceived]
+        [CommandReceiveCode:{Faction}AliveCheck]
+
+        [MaxActions:-1]
+        [Actions:AaW_Common_Action_AaWAliveCheck]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Action_AaWAliveCheck</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ResetCooldownTimeOfEvents:true]
+        [ResetEventCooldownTags:{Faction}AliveCheck]
+      </Description>
+    </EntityComponent>
+
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Trigger_UnderFireHealthLow</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_TriggerEvent_UnderFireHealthLow]
+
+        [Type:Manual]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:AaW_Common_Action_UnderFireHealthLow]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Action_UnderFireHealthLow</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Common_UnderFireHealthLow]
+
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Trigger_DamageByNeutral</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_TriggerEvent_DamageByNeutral]
+
+        [Type:Manual]
+        [MinCooldownMs:200]
+        [MaxCooldownMs:201]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:AaW_Common_Action_DamageByNeutral]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Action_DamageByNeutral</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ChangeReputationWithPlayers:true]
+        [ReputationChangeRadius:2000]
+        [ReputationChangeFactions:{Self}]
+        [ReputationChangeAmount:-50]
+        [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Trigger_DamageByNeutral_Cue</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_TriggerEvent_DamageByNeutral]
+
+        [Type:Manual]
+        [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:AaW_Common_Action_DamageByNeutral_Cue]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Action_DamageByNeutral_Cue</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Common_DamageByNeutral]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Trigger_DamageByFriendly</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_TriggerEvent_DamageByFriendly]
+
+        [Type:Manual]
+        [MinCooldownMs:200]
+        [MaxCooldownMs:201]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:AaW_Common_Action_DamageByFriendly]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Action_DamageByFriendly</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ChangeReputationWithPlayers:true]
+        [ReputationChangeRadius:2000]
+        [ReputationChangeFactions:{Self}]
+        [ReputationChangeAmount:-10]
+        [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Trigger_DamageByFriendly_Cue</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_TriggerEvent_DamageByFriendly]
+
+        [Type:Manual]
+        [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:AaW_Common_Action_DamageByFriendly_Cue]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Action_DamageByFriendly_Cue</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Common_DamageByFriendly]
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Trigger_EnemyDestroyedPlayerHelped</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:AaW_EnemyDestroyedPlayerHelped]
+        [Conditions:MSB_System_Health_Condition_HasAntennaForBroadcast]
+
+        [StartsReady:true]
+        [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+
+        [MaxActions:-1]
+        [Actions:AaW_Common_Action_EnemyDestroyedPlayerHelped]
+      </Description>
+
+    </EntityComponent>
+
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Action_EnemyDestroyedPlayerHelped</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:AaW_Common_EnemyDestroyedPlayerHelped]
+
+        [ChangeReputationWithPlayers:true]
+        [ReputationChangeRadius:2000]
+        [ReputationChangeFactions:{Self}]
+        [ReputationChangeAmount:25]
+        [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+      </Description>
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Trigger_EnemyDestroyedPlayerMadeFinalShot</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:AaW_EnemyDestroyedPlayerMadeFinalShot]
+        [Conditions:MSB_System_Health_Condition_HasAntennaForBroadcast]
+        [StartsReady:true]
+        [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+
+        [MaxActions:-1]
+        [Actions:AaW_Common_Action_EnemyDestroyedPlayerMadeFinalShot]
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Action_EnemyDestroyedPlayerMadeFinalShot</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:AaW_Common_EnemyDestroyedPlayerMadeFinalShot]
+
+        [ChangeReputationWithPlayers:true]
+        [ReputationChangeRadius:2000]
+        [ReputationChangeFactions:{Self}]
+        [ReputationChangeAmount:50]
+        [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Trigger_FriendlyDestroyedPlayerMadeFinalShot</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:AaW_{FactionTag}DestroyedPlayerMadeFinalShot]
+        [Conditions:MSB_System_Health_Condition_HasAntennaForBroadcast]
+        [StartsReady:true]
+        [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+
+        [MaxActions:-1]
+        [Actions:AaW_Common_Action_FriendlyDestroyedPlayerMadeFinalShot]
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Action_FriendlyDestroyedPlayerMadeFinalShot</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:AaW_Common_FriendlyDestroyedPlayerMadeFinalShot]
+
+        [ChangeReputationWithPlayers:true]
+        [ReputationChangeRadius:2000]
+        [ReputationChangeFactions:{Self}]
+        [ReputationChangeAmount:-50]
+        [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+
+  </EntityComponents>
+</Definitions>

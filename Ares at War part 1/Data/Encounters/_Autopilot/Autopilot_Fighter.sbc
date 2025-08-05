@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Fighter_Autopilot</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Autopilot]
+
+        [DisableInertiaDampeners:true]
+        [FlyLevelWithGravity:false]
+        [LevelWithGravityWhenIdle:false]
+        [UseVelocityCollisionEvasion:true]
+
+        [SlowDownOnWaypointApproach:true]
+        [ExtraSlowDownDistance:100]
+        [WaypointTolerance:150]
+
+        [IdealMinSpeed:55]
+        [IdealMaxSpeed:100]
+        [MaxSpeedTolerance:5]
+
+        [MinimumPlanetAltitude:50]
+        [AltitudeTolerance:20]
+        [RotationMultiplier:8]
+        [LimitRotationSpeed:true]
+        [MaxRotationMagnitude:1]
+        [AngleAllowedForForwardThrust:180]
+
+        [AllowStrafing:true]
+        [StrafeMinDurationMs:3000]
+        [StrafeMaxDurationMs:6000]
+
+        [UseProjectileLeadPrediction:true]
+        [StrikeBeginPlanetAttackRunDistance:600]
+        [StrikeBreakawayDistance:100]
+        [StrikeEngageUseSafePlanetPathing:true]
+        [StrikeEngageUseCollisionEvasion:true]
+
+        [CollisionEvasionWaypointCalculatedAwayFromEntity:true]
+
+        [OffsetSpaceMinDistFromTarget:500]
+        [OffsetSpaceMaxDistFromTarget:800]
+
+        [OffsetPlanetMinDistFromTarget:800]
+        [OffsetPlanetMaxDistFromTarget:1200]
+        [OffsetPlanetMinTargetAltitude:50]
+        [OffsetPlanetMaxTargetAltitude:450]
+
+        [BarrelRollMinDurationMs:2000]
+        [BarrelRollMaxDurationMs:3000]
+        [RamMinDurationMs:6000]
+        [RamMaxDurationMs:7000]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Fighter_Autopilot_NoSafety</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Autopilot]
+
+        [DisableInertiaDampeners:false]
+        [FlyLevelWithGravity:false]
+        [LevelWithGravityWhenIdle:false]
+        [UseVelocityCollisionEvasion:false]
+
+        [SlowDownOnWaypointApproach:true]
+        [ExtraSlowDownDistance:100]
+        [WaypointTolerance:150]
+
+        [IdealMinSpeed:55]
+        [IdealMaxSpeed:80]
+        [MaxSpeedTolerance:5]
+
+        [MinimumPlanetAltitude:25]
+        [AltitudeTolerance:20]
+
+        [LimitRotationSpeed:false]
+        [MaxRotationMagnitude:1]
+        [AngleAllowedForForwardThrust:180]
+
+        [AllowStrafing:true]
+        [StrafeMinDurationMs:3000]
+        [StrafeMaxDurationMs:6000]
+
+        [UseProjectileLeadPrediction:true]
+        [StrikeBeginPlanetAttackRunDistance:600]
+        [StrikeBreakawayDistance:50]
+        [StrikeEngageUseSafePlanetPathing:true]
+        [StrikeEngageUseCollisionEvasion:true]
+
+        [CollisionEvasionWaypointCalculatedAwayFromEntity:true]
+
+        [OffsetPlanetMinDistFromTarget:800]
+        [OffsetPlanetMaxDistFromTarget:1200]
+        [OffsetPlanetMinTargetAltitude:450]
+        [OffsetPlanetMaxTargetAltitude:700]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_NoRiskFighter_Autopilot</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Autopilot]
+
+        [DisableInertiaDampeners:false]
+        [FlyLevelWithGravity:false]
+        [LevelWithGravityWhenIdle:false]
+        [UseVelocityCollisionEvasion:true]
+
+        [SlowDownOnWaypointApproach:true]
+        [ExtraSlowDownDistance:100]
+        [WaypointTolerance:150]
+
+        [IdealMinSpeed:10]
+        [IdealMaxSpeed:55]
+        [MaxSpeedTolerance:5]
+
+        [MinimumPlanetAltitude:60]
+        [AltitudeTolerance:5]
+
+        [LimitRotationSpeed:true]
+        [MaxRotationMagnitude:1]
+        [AngleAllowedForForwardThrust:35]a
+
+        [AllowStrafing:true]
+        [StrafeMinDurationMs:3000]
+        [StrafeMaxDurationMs:6000]
+
+        [UseProjectileLeadPrediction:true]
+        [StrikeBeginPlanetAttackRunDistance:600]
+        [StrikeBreakawayDistance:100]
+        [StrikeEngageUseSafePlanetPathing:true]
+        [StrikeEngageUseCollisionEvasion:true]
+
+        [CollisionEvasionWaypointCalculatedAwayFromEntity:true]
+
+        [OffsetSpaceMinDistFromTarget:500]
+        [OffsetSpaceMaxDistFromTarget:800]
+
+        [OffsetPlanetMinDistFromTarget:800]
+        [OffsetPlanetMaxDistFromTarget:1200]
+        [OffsetPlanetMinTargetAltitude:450]
+        [OffsetPlanetMaxTargetAltitude:700]
+
+        [BarrelRollMinDurationMs:2000]
+        [BarrelRollMaxDurationMs:3000]
+        [RamMinDurationMs:6000]
+        [RamMaxDurationMs:7000]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_NoRiskFighter_Autopilot_NoSafety</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Autopilot]
+
+        [DisableInertiaDampeners:true]
+        [FlyLevelWithGravity:false]
+        [LevelWithGravityWhenIdle:false]
+        [UseVelocityCollisionEvasion:false]
+
+        [SlowDownOnWaypointApproach:true]
+        [ExtraSlowDownDistance:100]
+        [WaypointTolerance:150]
+
+        [IdealMinSpeed:55]
+        [IdealMaxSpeed:80]
+        [MaxSpeedTolerance:5]
+
+        [MinimumPlanetAltitude:25]
+        [AltitudeTolerance:5]
+
+        [LimitRotationSpeed:false]
+        [MaxRotationMagnitude:1]
+        [AngleAllowedForForwardThrust:180]
+
+        [AllowStrafing:true]
+        [StrafeMinDurationMs:3000]
+        [StrafeMaxDurationMs:6000]
+
+        [UseProjectileLeadPrediction:true]
+        [StrikeBeginPlanetAttackRunDistance:600]
+        [StrikeBreakawayDistance:50]
+        [StrikeEngageUseSafePlanetPathing:true]
+        [StrikeEngageUseCollisionEvasion:true]
+
+        [CollisionEvasionWaypointCalculatedAwayFromEntity:true]
+
+        [OffsetPlanetMinDistFromTarget:800]
+        [OffsetPlanetMaxDistFromTarget:1200]
+        [OffsetPlanetMinTargetAltitude:450]
+        [OffsetPlanetMaxTargetAltitude:700]
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>

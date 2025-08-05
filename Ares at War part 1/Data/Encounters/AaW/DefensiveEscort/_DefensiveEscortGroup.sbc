@@ -19,6 +19,11 @@
 
         [Triggers:AaW_DefensiveEscort_Trigger_AggressionSwitchEscort]
         [Triggers:AaW_DefensiveEscort_Trigger_TargetfarSwitchEscort]
+
+
+        [Triggers:MSB_System_CommandChain_Trigger_RequestEscortSlot]
+        [Triggers:MSB_System_CommandChain_Trigger_LeaderDead]
+
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -101,7 +106,7 @@
         [NewBehaviorSubclass:Escort]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:AaW_TriggerEvent_DefensiveEscort_InitRole]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_DefensiveEscort_InitRole]
 
         [DisableTriggers:true]
         [DisableTriggerNames:AaW_DefensiveEscort_Trigger_TargetfarSwitchEscort]
@@ -215,7 +220,7 @@
         [TargetDistance:1500]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:AaW_TriggerEvent_InitCombat]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
       </Description>
     </EntityComponent>
 
@@ -248,7 +253,7 @@
         [RivalAI Action]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:AaW_TriggerEvent_InitRole]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
       </Description>
     </EntityComponent>
 

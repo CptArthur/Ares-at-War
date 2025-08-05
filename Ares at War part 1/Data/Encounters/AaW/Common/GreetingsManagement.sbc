@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!-- 
+
+
+	[Triggers:AaW_Static_Trigger_GreetingNeutral]
+	[Triggers:AaW_Static_Trigger_GreetingFriendly]
+--> 
+  
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_GreetingsManagement_Trigger_StartManagement</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:PlayerNear]
+        [TargetDistance:3000]
+
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [MinCooldownMs:45000]
+        [MaxCooldownMs:60000]
+
+
+        [Actions:AaW_GreetingsManagement_Action_ResetGreetings]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_GreetingsManagement_Action_ResetGreetings</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ResetCooldownTimeOfEvents:true]
+        [ResetEventCooldownTags:GreetingsManagement_Trigger]
+
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Static_Trigger_GreetingNeutral</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+		[Tags:GreetingsManagement_Trigger]
+        [Type:PlayerNear]
+        [TargetDistance:1000]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+		[MinCooldownMs:450000]
+		[MaxCooldownMs:600000]
+
+        [MinPlayerReputation:-500]
+        [MaxPlayerReputation:500]
+
+        [Conditions:MSB_Context_Condition_NormalNeutral]
+
+        [Actions:AaW_Static_Action_GreetingNeutral]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Static_Action_GreetingNeutral</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Static_GreetingNeutral]
+
+		[PlayDialogueToSpecificPlayers:true]
+		[PlayDialogueOverridePositionInPlayerCondition:true]
+		[PlayDialoguePlayerConditionIds:PlayerCondition_Position_500to1500]
+
+		[EnableTriggers:true]
+		[EnableTriggerNames:AaW_GreetingsManagement_Trigger_StartManagement]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Static_Trigger_GreetingFriendly</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+		[Tags:GreetingsManagement_Trigger]
+
+        [Type:PlayerNear]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+		[MinCooldownMs:450000]
+		[MaxCooldownMs:600000]
+
+        [TargetDistance:1000]
+
+        [Conditions:AaW_Utility_State_Condition_Check_State_Role]
+
+
+        [MinPlayerReputation:501]
+        [MaxPlayerReputation:1500]
+
+        [Actions:AaW_Static_Action_GreetingFriendly]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Static_Action_GreetingFriendly</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Static_GreetingFriendly]
+
+		[PlayDialogueToSpecificPlayers:true]
+		[PlayDialogueOverridePositionInPlayerCondition:true]
+		[PlayDialoguePlayerConditionIds:PlayerCondition_Position_500to1500]
+
+		[EnableTriggers:true]
+		[EnableTriggerNames:AaW_GreetingsManagement_Trigger_StartManagement]
+
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+  </EntityComponents>
+</Definitions>

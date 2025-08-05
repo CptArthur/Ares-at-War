@@ -20,7 +20,7 @@
 	[Type:PlayerNear]
 	[UseTrigger:true]
 	[StartsReady:true]
-	[TargetDistance:20000]
+	[TargetDistance:15000]
 	[MinCooldownMs:3000]
 	[MaxCooldownMs:3100]
 
@@ -60,7 +60,8 @@
 	[Type:PlayerFar]
 	[UseTrigger:true]
 	[StartsReady:false]
-	[TargetDistance:20000]
+	[TargetDistance:15000]
+  [Conditions:AaW_Static_Condition_Unload]  
 	[MinCooldownMs:9000]
 	[MaxCooldownMs:9001]
 [MaxActions:1]
@@ -71,6 +72,24 @@
       
     </EntityComponent>	
 	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Static_Condition_Unload</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [UseFailCondition:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:AaW_PreventDespawnAndReset]
+      </Description>
+    </EntityComponent>
+
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -88,9 +107,46 @@
       
     </EntityComponent>	
 	
+	<!-- optional below -->
 	
-	
-	
+    <!-- Health Low -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Static_Trigger_PreventDespawnAndReset</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+
+        [Tags:MSB_TriggerEvent_UnderFireHealthLow]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MaxActions:1]
+        [Actions:AaW_Static_Action_PreventDespawnAndReset]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Static_Action_PreventDespawnAndReset</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+
+        [DebugMessage:PreventDespawnAndReset]
+
+        [SetBooleansTrue:AaW_PreventDespawnAndReset]
+
+      </Description>
+    </EntityComponent>
+
+
 	
   </EntityComponents>
 </Definitions>
