@@ -116,6 +116,7 @@ namespace AresAtWar.SessionCore
                     MyAPIGateway.Utilities.SendMessage("Ares at War version is outdated!");
                     MyAPIGateway.Utilities.SendMessage("Save and reload the game!");
 
+
                     MESApi.ChatCommand("/MES.Debug.ClearStaticEncounters", MatrixD.Identity, 0, 0);
                     MyAPIGateway.Utilities.SetVariable<string>("AaW_Version", ModVersion);
                 }
