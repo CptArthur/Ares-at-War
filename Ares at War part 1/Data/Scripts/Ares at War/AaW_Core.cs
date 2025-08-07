@@ -29,7 +29,7 @@ namespace AresAtWar.SessionCore
     {
         public static AaWSessionCore Instance;
 
-        public static string ModVersion = "0.6";
+        public static string ModVersion = "0.6.1";
 
         public static MESApi MESApi;
         public static int counter = 0;
@@ -112,6 +112,10 @@ namespace AresAtWar.SessionCore
                 {
                     MyVisualScriptLogicProvider.ShowNotificationToAll("Ares at War version is outdated", 1000000, "Red");
                     MyVisualScriptLogicProvider.ShowNotificationToAll("Save and reload the game", 1000000, "Red");
+
+                    MyAPIGateway.Utilities.SendMessage("Ares at War version is outdated!");
+                    MyAPIGateway.Utilities.SendMessage("Save and reload the game!");
+
                     MESApi.ChatCommand("/MES.Debug.ClearStaticEncounters", MatrixD.Identity, 0, 0);
                     MyAPIGateway.Utilities.SetVariable<string>("AaW_Version", ModVersion);
                 }
