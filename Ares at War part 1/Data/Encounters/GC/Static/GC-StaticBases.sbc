@@ -131,6 +131,78 @@
 		</Prefabs>
 		
 	</SpawnGroup>	
+
+
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>GC_SunsetBase</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:GC]		
+
+		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+		[TriggerRadius:10000]
+
+		[ForceExactPositionAndOrientation:true]
+
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-DoNotDelete)]
+		[RandomGridNamePattern:Sunset Base]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+		[ReplaceAntennaHudTextInsteadOfName:true]	
+
+
+		[StaticEncounterCoords:{X:-3703108.61234455 Y:-1295290.94481516 Z:-2543112.38206459}]
+		[StaticEncounterForward:{X:0.731860510918275 Y:0.160905985367181 Z:0.662185364102423}]
+		[StaticEncounterUp:{X:-0.679408745545628 Y:0.247527038964787 Z:0.690748956899279}]
+
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Agaris]
+		[StaticEncounterPlanetDirection:{X:-0.678961411246573 Y:0.248852635011833 Z:0.690712507549798}]
+		[StaticEncounterPlanetAltitude:-0.559901980712311]
+
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:GC_SunsetBaseDestroyed]			
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="GC-HeavyBase">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>GC_MilitaryBase_Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+	</SpawnGroup>
+
+
+
+
+
+
+
+
 	<!--
 	<SpawnGroup>
 		<Id>

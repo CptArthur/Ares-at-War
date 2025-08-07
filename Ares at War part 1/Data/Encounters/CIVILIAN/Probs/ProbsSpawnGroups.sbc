@@ -2,7 +2,7 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<SpawnGroups>
 
-<!--
+
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
@@ -24,20 +24,21 @@
 
 
 			[UseRandomNameGenerator:true]
-			[RandomGridNamePrefix:(NPC-DoNotDelete)]
+			[RandomGridNamePrefix:(NPC-DoNotDelete)]		
 			[RandomGridNamePattern:Bridge]
-			[ReplaceAntennaNameWithRandomizedName:Southern Bridge]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]
 
 
-			[StaticEncounterCoords:{X:6804193.52833379 Y:-1256705.82392972 Z:-383401.155370268}]
-			[StaticEncounterForward:{X:-0.43455395609363 Y:-0.241838562329119 Z:-0.867569575892309}]
-			[StaticEncounterUp:{X:-0.735262473341032 Y:-0.461057585225524 Z:0.49680478902929}]
-
+			[StaticEncounterCoords:{X:-3702875.66140663 Y:-1301288.29739133 Z:-2541203.29439721}]
+			[StaticEncounterForward:{X:-0.514305283287233 Y:0.607333290366916 Z:-0.605505037134238}]
+			[StaticEncounterUp:{X:-0.674806118636572 Y:0.149147900345692 Z:0.722766633204049}]
 
 			[StaticEncounterUsePlanetDirectionAndAltitude:true]
 			[StaticEncounterPlanet:Planet Agaris]
-			[StaticEncounterPlanetDirection:{X:-0.727497322823263 Y:-0.456822463814432 Z:0.511918823486202}]
-			[StaticEncounterPlanetAltitude:29.6266411888137]
+			[StaticEncounterPlanetDirection:{X:-0.674972166407622 Y:0.14728100239145 Z:0.722994385116213}]
+			[StaticEncounterPlanetAltitude:1.26227895215561]
+
 
 			[IgnoreCombatPhase:true]
 			[IgnoreCleanupRules:true]
@@ -49,21 +50,22 @@
 			
 			<Frequency>5.0</Frequency>
 			<Prefabs>
-				<Prefab SubtypeId="AHE-Bridge">
+				<Prefab SubtypeId="CIVILIAN-Bridge">
 					<Position>
 						<X>0.0</X>
 						<Y>0.0</Y>
 						<Z>0.0</Z>
 					</Position>
 					<Speed>0</Speed>
-					<Behaviour></Behaviour>
+					<Behaviour>CIVILIAN_Settlement_Behavior</Behaviour>
 				<PlaceToGridOrigin>true</PlaceToGridOrigin>
 				</Prefab>
 			</Prefabs>
 			
 		</SpawnGroup>	
--->
 
+
+<!--
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
@@ -123,7 +125,7 @@
 			</Prefabs>
 			
 		</SpawnGroup>	
-
+-->
 
 
 

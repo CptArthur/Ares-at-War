@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>AgarisOutpost1</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:SUNSETCITY]		
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:4500]
+
+			[ForceExactPositionAndOrientation:true]
+
+			[StaticEncounterCoords:{X:-3709575.87961995 Y:-1315462.22647801 Z:-2547983.71588849}]
+			[StaticEncounterForward:{X:-0.566180160063072 Y:0.496500513550512 Z:-0.65797208633424}]
+			[StaticEncounterUp:{X:0.787834569713795 Y:0.0912165352155235 Z:-0.609094602231177}]
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Agaris]
+			[StaticEncounterPlanetDirection:{X:-0.788389233586746 Y:-0.0927264176491521 Z:0.608148195618845}]
+			[StaticEncounterPlanetAltitude:-0.585297753328632]
+
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-DoNotDelete)]
+			[RandomGridNamePattern:Refuel Station]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]	
+			
+			[FalseSandboxVariables:UNION_AgarisOutpost1_Safe]	
+			[FalseSandboxVariables:AgarisOutpost1Destroyed]	
+			[FalseSandboxVariables:UNION_AgarisOutpost1Destroyed]	
+
+			[ZoneConditions:ZoneCondition_ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="UNION-outpost-1">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>CIVILIAN_Outpost_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>AgarisOutpost2</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:SUNSETCITY]		
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:4500]
+
+			[ForceExactPositionAndOrientation:true]
+
+
+
+		[StaticEncounterCoords:{X:-3678981.34186636 Y:-1289122.56639113 Z:-2531014.70725714}]
+		[StaticEncounterForward:{X:-0.962042842175215 Y:-0.115931276828718 Z:-0.247049608120104}]
+		[StaticEncounterUp:{X:0.016550888516757 Y:-0.928400315165294 Z:0.37121277306996}]
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Agaris]
+		[StaticEncounterPlanetDirection:{X:-0.270379382183331 Y:0.353311324969628 Z:0.895581429764132}]
+		[StaticEncounterPlanetAltitude:0.688913140977093]
+
+
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-DoNotDelete)]
+		[RandomGridNamePattern:Silver Mining outpost]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]		
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+
+			[FalseSandboxVariables:UNION_AgarisOutpost2_Safe]	
+			[FalseSandboxVariables:AgarisOutpost2Destroyed]	
+			[FalseSandboxVariables:UNION_AgarisOutpost2Destroyed]
+
+			[ZoneConditions:ZoneCondition_ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="UNION-outpost-2">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>CIVILIAN_RestrictedOutpost_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>
+
+
+		<!-- 3 Rover Stop
+
+/MES.Spawn.Prefab.UNION-outpost-3
+
+		-->
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>AgarisOutpost3</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:SUNSETCITY]		
+
+			[TriggerCoords:{X:-143805.286617886 Y:-202753.315234932 Z:83560.2246360953}]
+			[TriggerRadius:4500]
+
+			[ForceExactPositionAndOrientation:true]
+
+			[StaticEncounterCoords:{X:-3700860.7251421 Y:-1313782.12151266 Z:-2537792.95234008}]
+			[StaticEncounterForward:{X:0.767096363602963 Y:-0.175036375990226 Z:0.617191571578322}]
+			[StaticEncounterUp:{X:-0.63425121437569 Y:-0.0623903333666562 Z:0.770605504370012}]
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Agaris]
+			[StaticEncounterPlanetDirection:{X:-0.633179449733043 Y:-0.0635116666490379 Z:0.771394874649308}]
+			[StaticEncounterPlanetAltitude:0.702745853239321]
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-DoNotDelete)]
+				[RandomGridNamePattern:Refuel station]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+
+			[FalseSandboxVariables:UNION_AgarisOutpost3_Safe]	
+			[FalseSandboxVariables:AgarisOutpost3Destroyed]	
+			[FalseSandboxVariables:UNION_AgarisOutpost3Destroyed]	
+
+			[ZoneConditions:ZoneCondition_ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="UNION-outpost-3">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>CIVILIAN_Outpost_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+		</SpawnGroup>
+
+
+
+		
+	</SpawnGroups>
+</Definitions>

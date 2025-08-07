@@ -47,6 +47,7 @@ namespace AaW.Factions
             var AZURIS = MyAPIGateway.Session.Factions.TryGetFactionByTag("AZURIS");
             var BRATIS = MyAPIGateway.Session.Factions.TryGetFactionByTag("BRATIS");
             var THORRIX = MyAPIGateway.Session.Factions.TryGetFactionByTag("THORRIX");
+            var SUNSETCITY = MyAPIGateway.Session.Factions.TryGetFactionByTag("SUNSETCITY");
             var ARES = MyAPIGateway.Session.Factions.TryGetFactionByTag("ARES");
             var CIVILIAN = MyAPIGateway.Session.Factions.TryGetFactionByTag("CIVILIAN");
             var UNKN = MyAPIGateway.Session.Factions.TryGetFactionByTag("UNKN");
@@ -55,7 +56,7 @@ namespace AaW.Factions
             // Return early if any required faction is missing
             if (UNION == null || THORRIX == null || ITC == null || GC == null || ROS == null || 
                 DOOHAN == null || AZURIS == null || BRATIS == null || SHIVAN == null || ARES ==null 
-                || CIVILIAN == null || CRUSADERS ==null || SHIPPERS ==null || DRA == null)
+                || CIVILIAN == null || CRUSADERS ==null || SHIPPERS ==null || DRA == null || SUNSETCITY == null)
             {
                 MyVisualScriptLogicProvider.ShowNotificationToAll($"Error: Factions not found. Please save and reload the game", 50000, "Red");
                 return;
@@ -71,6 +72,7 @@ namespace AaW.Factions
             neutralFactions.Add(CIVILIAN);
             neutralFactions.Add(UNKN);
             neutralFactions.Add(SHIPPERS);
+            neutralFactions.Add(SUNSETCITY);
 
             MakeNeutralWithAll(neutralFactions, new List<IMyFaction> { UNION, ITC, GC, ROS, SHIVAN, CRUSADERS, SHIPPERS });
 

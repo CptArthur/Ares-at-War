@@ -1,31 +1,14 @@
-﻿using Sandbox.Game.EntityComponents;
-using Sandbox.ModAPI.Ingame;
-using Sandbox.ModAPI.Interfaces;
-using SpaceEngineers.Game.ModAPI.Ingame;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
-using System.Text;
-using VRage;
-using VRage.Collections;
-using VRage.Game;
-using VRage.Game.Components;
-using VRage.Game.GUI.TextPanel;
-using VRage.Game.ModAPI.Ingame;
-using VRage.Game.ModAPI.Ingame.Utilities;
-using VRage.Game.ObjectBuilders.Definitions;
 using VRageMath;
 using Sandbox.Game;
-using System.Drawing;
-using AresAtWar.Managers;
 using AresAtWar.Logging;
 using AresAtWar.Configuration;
 using Sandbox.ModAPI;
 using AresAtWar.SessionCore;
 using VRage.Game.ModAPI;
-using static VRage.MyMiniDump;
 
 namespace AresAtWar.War
 {
@@ -50,13 +33,13 @@ namespace AresAtWar.War
         private static Faction AZURIS = new Faction("AZURIS", new Color(212, 216, 230), MinorFaction: true); //Whiteish I hope
         private static Faction BRATIS = new Faction("BRATIS", new Color(212, 216, 230), MinorFaction: true); //Whiteish I hope
         private static Faction THORRIX = new Faction("THORRIX", new Color(212, 216, 230), MinorFaction: true); //Whiteish I hope
+        private static Faction SUNSETCITY = new Faction("SUNSETCITY", new Color(212, 216, 230), MinorFaction: true); //Whiteish I hope
         private static Faction DRA = new Faction("DRA", new Color(212, 111, 230), MinorFaction: true); //Whiteish I hope
 
 
         //public static List<Faction> _factions = new List<Faction>() { UNION, SYN, GC, PURGE, SDC };
 
-        public static List<Faction> _allfactions = new List<Faction>(){ UNION, SHIVAN, GC, PURGE, CRUSADERS, SHIPPERS, ITC, CIVILIAN,
-            ,AZURIS,DRA,BRATIS,THORRIX };
+        public static List<Faction> _allfactions = new List<Faction>(){ UNION, SHIVAN, GC, PURGE, CRUSADERS, SHIPPERS, ITC, CIVILIAN, SUNSETCITY, AZURIS, DRA,BRATIS,THORRIX };
 
         private const int Rounds = 67;
         private static readonly Random _random = new Random();
@@ -87,7 +70,7 @@ namespace AresAtWar.War
             agarisSpaceNode.SpaceNode = true;
 
             //Where old Sunset City used to be
-            var AgarisGC = new Node("ZoneGCHome", "Sector Agaris GC", GC, new Vector3D(-3656958.78203563, -1294191.06964652, -2641742.52983799), 25000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Military);
+            var AgarisGC = new Node("Jungle", "Sector Agaris GC", GC, new Vector3D(-3656958.78203563, -1294191.06964652, -2641742.52983799), 25000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Military);
 
 
 
@@ -105,16 +88,14 @@ namespace AresAtWar.War
 
 
             // UNION Farm land
-            var agaria = new Node("Agaria", "Sector Agaria", UNION, new Vector3D(-3702782, -1299410, -2541753), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Urban);
-            var sunsetcity = new StaticEncounter(agaria.Id, "SunsetCity", "CIVILIAN", new Vector3D(-3703710.56552889, -1300687.78803807, -2542134.43874369), true, new List<string>() { "Settlement" });
-            var aheEncounter2 = new StaticEncounter(agaria.Id, "AHE_Outpost3", "UNION", new Vector3D(-3703442.66211895, -1300817.03738934, -2541847.28840769), false);
-            var aheEncounter3 = new StaticEncounter(agaria.Id, "AHE_Outpost2", "UNION", new Vector3D(-3710629.45681993, -1308011.02317491, -2548826.88948266), false);
-            var aheEncounter4 = new StaticEncounter(agaria.Id, "AHE_Outpost1", "UNION", new Vector3D(-3700830.81050136, -1312992.16548631, -2537729.80624713), false);
+            var agaria = new Node("Agaria", "Sector Agaria", GC, new Vector3D(-3702782, -1299410, -2541753), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Urban);
+            var sunsetcity = new StaticEncounter(agaria.Id, "SunsetCity", "SUNSETCITY", new Vector3D(-3703710.56552889, -1300687.78803807, -2542134.43874369), true, new List<string>() { "Settlement" });
+            var aheEncounter2 = new StaticEncounter(agaria.Id, "AgarisOutpost1", "SUNSETCITY", new Vector3D(-3703442.66211895, -1300817.03738934, -2541847.28840769), false);
+            var aheEncounter3 = new StaticEncounter(agaria.Id, "AgarisOutpost2", "SUNSETCITY", new Vector3D(-3710629.45681993, -1308011.02317491, -2548826.88948266), false);
+            var aheEncounter4 = new StaticEncounter(agaria.Id, "AgarisOutpost3", "SUNSETCITY", new Vector3D(-3700830.81050136, -1312992.16548631, -2537729.80624713), false);
 
             //Update coords
             var ITC_AgarisVinyTradeOutpost = new StaticEncounter(agaria.Id, "ITC_AgarisVinyTradeOutpost", "ITC", new Vector3D(-3715028.32314452, -1284294.30765805, -2572561.20657818), true, new List<string>() { "TradeStation" });
-
-
 
 
 
@@ -132,12 +113,6 @@ namespace AresAtWar.War
             var MilaNode = new Node("MilaBelt", "Mila Belt", GC, new Vector3D(2299140.85489699, 1166634.01537175, 2935888.23468203), 880000, macro: MarcoLocation.Mila, planet: Planet.Space, feel: Feel.Barren);
             MilaNode.SpaceNode = true;
 
-
-
-            // Moon and related nodes
-            var moonSpaceNode = new Node("MoonSpace", "Moon Space", PURGE, new Vector3D(-2578714, -1046592, -4663973), 200000,macro: MarcoLocation.Bylen, planet: Planet.Moon, feel: Feel.Barren);
-            moonSpaceNode.SpaceNode = true;
-            var moonNode = new Node("Moon", "Moon", PURGE, new Vector3D(-2613043, -1055747, -4763524), 32000, macro: MarcoLocation.Bylen, planet: Planet.Moon, feel: Feel.Barren);
 
 
             // Nodes and StaticEncounters for Thora 4

@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<!--
+This File handles these blocks:
+
+Placeholder_LargeBlockPrototechThruster
+
+Placeholder_SmallBlockPrototechThruster
+
+Placeholder_LargePrototechRefinery
+
+Placeholder_SmallPrototechRefinery
+
+Placeholder_LargePrototechAssembler
+
+Placeholder_LargeBlockPrototechGyro
+Placeholder_SmallBlockPrototechGyro
+
+
+Placeholder_LargeBlockPrototechDrill
+
+
+
+-->
+
+<CubeBlocks>
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeBlockPrototechThruster</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Advanced Large Thruster</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\Prototech_Thruster_Large.dds</Icon>
+	  <Icon>Icons\gold.dds</Icon>
+      <Description>Advanced Large Thrusters provide a significant amount of force. They function best in zero gravity environments.</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		  <Size x="3" y="3" z="8" />
+		  <ModelOffset x="0" y="0" z="0" />
+		  <Center x="1" y="1" z="7" />
+      <Model>Models\Cubes\Large\Prototech_Thruster_Large_Construction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		  <MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="3" EndY="3" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="3" EndY="3" />
+			<MountPoint Side="Top" StartX="1" StartY="3" EndX="2" EndY="5" />
+			<MountPoint Side="Top" StartX="0.5" StartY="5" EndX="2.5" EndY="5.5" />
+			<MountPoint Side="Bottom" StartX="0.5" StartY="2.5" EndX="2.5" EndY="3" />
+			<MountPoint Side="Bottom" StartX="1" StartY="3" EndX="2" EndY="5" />
+			<MountPoint Side="Bottom" StartX="0" StartY="5" EndX="3" EndY="8" />
+			<MountPoint Side="Left" StartX="2.5" StartY="0.5" EndX="3" EndY="2.5" />
+			<MountPoint Side="Left" StartX="5" StartY="0" EndX="8" EndY="3" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="3" EndY="3" />
+			<MountPoint Side="Right" StartX="5" StartY="0.5" EndX="5.5" EndY="2.5" />
+		  </MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\Prototech_Thruster_Large_Construction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_PrototechThruster</BlockPairName>
+    </Definition>
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_SmallBlockPrototechThruster</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Advanced Large Thruster</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\Prototech_Thruster_Large.dds</Icon>
+	  <Icon>Icons\gold.dds</Icon>
+      <Description>Advanced Large Thrusters provide a significant amount of force. They function best in zero gravity environments.</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		  <Size x="3" y="3" z="8" />
+		  <ModelOffset x="0" y="0" z="0" />
+		  <Center x="1" y="1" z="7" />
+      <Model>Models\Cubes\Small\Prototech_Thruster_Small_Construction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Back" StartX="0" StartY="0" EndX="3" EndY="3" Default="true" />
+        <MountPoint Side="Top" StartX="0" StartY="0" EndX="3" EndY="2.2" />
+        <MountPoint Side="Bottom" StartX="0" StartY="5.8" EndX="3" EndY="8" />
+        <MountPoint Side="Left" StartX="2.3" StartY="1.3" EndX="3.8" EndY="1.7" />
+        <MountPoint Side="Left" StartX="5.8" StartY="0" EndX="8" EndY="3" />
+        <MountPoint Side="Right" StartX="0" StartY="0" EndX="2.2" EndY="3" />
+        <MountPoint Side="Right" StartX="4.2" StartY="1.3" EndX="5.7" EndY="1.7" />
+      </MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Prototech_Thruster_Small_Construction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_PrototechThruster</BlockPairName>
+    </Definition>
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargePrototechRefinery</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Advanced Refinery</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\Prototech_Refinery.dds</Icon>
+	  	  <Icon>Icons\gold.dds</Icon>
+      <Description>Advanced Refineries refine ores into ingots at higher yield and speed rates than other refineries.</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="2" y="2" z="4" />
+	  <Center x="1" y="0" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\Prototech_Refinery_Construction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Back" StartX="0" StartY="0.1" EndX="0.1" EndY="1" />
+        <MountPoint Side="Back" StartX="0.1" StartY="0" EndX="1" EndY="0.1" />
+        <MountPoint Side="Back" StartX="1" StartY="0" EndX="2" EndY="1" />
+        <MountPoint Side="Back" StartX="1.9" StartY="1" EndX="2" EndY="1.9" />
+        <MountPoint Side="Back" StartX="1" StartY="1.9" EndX="1.9" EndY="2" />
+        <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="2" />
+        <MountPoint Side="Front" StartX="1" StartY="0" EndX="2" EndY="1.5" />
+        <MountPoint Side="Front" StartX="1" StartY="1.5" EndX="1.5" EndY="2" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1.8" EndY="2" />
+        <MountPoint Side="Bottom" StartX="0.5" StartY="2" EndX="1.8" EndY="4" />
+        <MountPoint Side="Top" StartX="1" StartY="0" EndX="1.6" EndY="2" />
+        <MountPoint Side="Top" StartX="1.9" StartY="2" EndX="2" EndY="3.85" />
+        <MountPoint Side="Top" StartX="0.5" StartY="3.85" EndX="2" EndY="4" />
+        <MountPoint Side="Left" StartX="0" StartY="0" EndX="0.15" EndY="1.5" />
+        <MountPoint Side="Left" StartX="0.15" StartY="0" EndX="2" EndY="0.1" />
+        <MountPoint Side="Left" StartX="2" StartY="0.4" EndX="4" EndY="1" />
+        <MountPoint Side="Right" StartX="0" StartY="0.2" EndX="2" EndY="1.5" />
+        <MountPoint Side="Right" StartX="2" StartY="0.2" EndX="4" EndY="2" />
+      </MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\Prototech_Refinery_Construction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_PrototechRefinery</BlockPairName>
+    </Definition>	
+	
+
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_SmallPrototechRefinery</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Advanced Refinery</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\Prototech_Refinery.dds</Icon>
+	  	  <Icon>Icons\gold.dds</Icon>
+		  
+      <Description>Advanced Refineries refine ores into ingots at higher yield and speed rates than other refineries.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="5" y="5" z="10" />
+      <Center x="2" y="2" z="5" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Small\Prototech_Refinery_Small_Construction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Front" StartX="0.5" StartY="0.4" EndX="4.5" EndY="4.6" />
+        <MountPoint Side="Bottom" StartX="0" StartY="3" EndX="5" EndY="9.5" />
+        <MountPoint Side="Bottom" StartX="1" StartY="2" EndX="4" EndY="3" />
+        <MountPoint Side="Top" StartX="0.6" StartY="9.2" EndX="1.4" EndY="10" />
+        <MountPoint Side="Top" StartX="3.6" StartY="9.2" EndX="4.4" EndY="10" />
+        <MountPoint Side="Left" StartX="0" StartY="0.6" EndX="0.6" EndY="1.6" />
+        <MountPoint Side="Left" StartX="0" StartY="3.6" EndX="0.6" EndY="4.4" />
+        <MountPoint Side="Left" StartX="3.2" StartY="0" EndX="9" EndY="1.5" />
+        <MountPoint Side="Right" StartX="1" StartY="0" EndX="6.8" EndY="1.5" />
+        <MountPoint Side="Right" StartX="9.4" StartY="0.6" EndX="10" EndY="1.4" />
+        <MountPoint Side="Right" StartX="9.4" StartY="3.6" EndX="10" EndY="4.4" />
+      </MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Prototech_Refinery_Small_Construction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_PrototechRefinery</BlockPairName>
+    </Definition>	
+
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargePrototechAssembler</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Nano Assembler</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\Prototech_Assembler.dds</Icon>
+	  	  <Icon>Icons\gold.dds</Icon>
+      <Description>Nano Assemblers are capable of manufacturing most High-Tech components, including Relic-Tech components.</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="3" y="2" z="2" />
+
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\Prototech_Assembler_Construction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Back" StartX="0" StartY="0.1" EndX="0.1" EndY="1" />
+        <MountPoint Side="Back" StartX="0.1" StartY="0" EndX="1" EndY="0.1" />
+        <MountPoint Side="Back" StartX="1" StartY="0" EndX="2" EndY="1" />
+        <MountPoint Side="Back" StartX="1.9" StartY="1" EndX="2" EndY="1.9" />
+        <MountPoint Side="Back" StartX="1" StartY="1.9" EndX="1.9" EndY="2" />
+        <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="2" />
+        <MountPoint Side="Front" StartX="1" StartY="0" EndX="2" EndY="1.5" />
+        <MountPoint Side="Front" StartX="1" StartY="1.5" EndX="1.5" EndY="2" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1.8" EndY="2" />
+        <MountPoint Side="Bottom" StartX="0.5" StartY="2" EndX="1.8" EndY="4" />
+        <MountPoint Side="Top" StartX="1" StartY="0" EndX="1.6" EndY="2" />
+        <MountPoint Side="Top" StartX="1.9" StartY="2" EndX="2" EndY="3.85" />
+        <MountPoint Side="Top" StartX="0.5" StartY="3.85" EndX="2" EndY="4" />
+        <MountPoint Side="Left" StartX="0" StartY="0" EndX="0.15" EndY="1.5" />
+        <MountPoint Side="Left" StartX="0.15" StartY="0" EndX="2" EndY="0.1" />
+        <MountPoint Side="Left" StartX="2" StartY="0.4" EndX="4" EndY="1" />
+        <MountPoint Side="Right" StartX="0" StartY="0.2" EndX="2" EndY="1.5" />
+        <MountPoint Side="Right" StartX="2" StartY="0.2" EndX="4" EndY="2" />
+      </MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\Prototech_Assembler_Construction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_LargePrototechAssembler</BlockPairName>
+    </Definition>
+
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeBlockPrototechGyro</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Advanced Gyroscope</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\Prototech_Gyroscope_large.dds</Icon>
+	   <Icon>Icons\gold.dds</Icon>
+		  
+      <Description>Advanced Gyroscopes are more powerful, reinforced versions of standard Gyroscopes. They allow grids to stabilize and rotate.</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+	  
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\Prototech_Gyroscope_Construction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Back" StartX="0" StartY="0.1" EndX="0.1" EndY="1" />
+        <MountPoint Side="Back" StartX="0.1" StartY="0" EndX="1" EndY="0.1" />
+        <MountPoint Side="Back" StartX="1" StartY="0" EndX="2" EndY="1" />
+        <MountPoint Side="Back" StartX="1.9" StartY="1" EndX="2" EndY="1.9" />
+        <MountPoint Side="Back" StartX="1" StartY="1.9" EndX="1.9" EndY="2" />
+        <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="2" />
+        <MountPoint Side="Front" StartX="1" StartY="0" EndX="2" EndY="1.5" />
+        <MountPoint Side="Front" StartX="1" StartY="1.5" EndX="1.5" EndY="2" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1.8" EndY="2" />
+        <MountPoint Side="Bottom" StartX="0.5" StartY="2" EndX="1.8" EndY="4" />
+        <MountPoint Side="Top" StartX="1" StartY="0" EndX="1.6" EndY="2" />
+        <MountPoint Side="Top" StartX="1.9" StartY="2" EndX="2" EndY="3.85" />
+        <MountPoint Side="Top" StartX="0.5" StartY="3.85" EndX="2" EndY="4" />
+        <MountPoint Side="Left" StartX="0" StartY="0" EndX="0.15" EndY="1.5" />
+        <MountPoint Side="Left" StartX="0.15" StartY="0" EndX="2" EndY="0.1" />
+        <MountPoint Side="Left" StartX="2" StartY="0.4" EndX="4" EndY="1" />
+        <MountPoint Side="Right" StartX="0" StartY="0.2" EndX="2" EndY="1.5" />
+        <MountPoint Side="Right" StartX="2" StartY="0.2" EndX="4" EndY="2" />
+      </MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\Prototech_Gyroscope_Construction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_PrototechGyroscope</BlockPairName>
+    </Definition>	
+
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_SmallBlockPrototechGyro</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Advanced Gyroscope</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\Prototech_Gyroscope_large.dds</Icon>
+	   <Icon>Icons\gold.dds</Icon>
+		   
+      <Description>Advanced Gyroscopes are more powerful, reinforced versions of standard Gyroscopes. They allow grids to stabilize and rotate.</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="2" y="2" z="2" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Small\Prototech_Gyroscope_Construction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Back" StartX="0" StartY="0.1" EndX="0.1" EndY="1" />
+        <MountPoint Side="Back" StartX="0.1" StartY="0" EndX="1" EndY="0.1" />
+        <MountPoint Side="Back" StartX="1" StartY="0" EndX="2" EndY="1" />
+        <MountPoint Side="Back" StartX="1.9" StartY="1" EndX="2" EndY="1.9" />
+        <MountPoint Side="Back" StartX="1" StartY="1.9" EndX="1.9" EndY="2" />
+        <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="2" />
+        <MountPoint Side="Front" StartX="1" StartY="0" EndX="2" EndY="1.5" />
+        <MountPoint Side="Front" StartX="1" StartY="1.5" EndX="1.5" EndY="2" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1.8" EndY="2" />
+        <MountPoint Side="Bottom" StartX="0.5" StartY="2" EndX="1.8" EndY="4" />
+        <MountPoint Side="Top" StartX="1" StartY="0" EndX="1.6" EndY="2" />
+        <MountPoint Side="Top" StartX="1.9" StartY="2" EndX="2" EndY="3.85" />
+        <MountPoint Side="Top" StartX="0.5" StartY="3.85" EndX="2" EndY="4" />
+        <MountPoint Side="Left" StartX="0" StartY="0" EndX="0.15" EndY="1.5" />
+        <MountPoint Side="Left" StartX="0.15" StartY="0" EndX="2" EndY="0.1" />
+        <MountPoint Side="Left" StartX="2" StartY="0.4" EndX="4" EndY="1" />
+        <MountPoint Side="Right" StartX="0" StartY="0.2" EndX="2" EndY="1.5" />
+        <MountPoint Side="Right" StartX="2" StartY="0.2" EndX="4" EndY="2" />
+      </MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\Prototech_Gyroscope_Construction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_PrototechGyroscope</BlockPairName>
+    </Definition>	
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeBlockPrototechDrill</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Advanced Large Drill</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\PrototechDrill.dds</Icon>
+	   <Icon>Icons\gold.dds</Icon>	  	  	  
+      <Description>Advanced Large Drills are a powerful tools capable of collecting raw ores at higher efficiency than standard drill types.</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="3" y="3" z="4" />
+	  <Center x="1" y="1" z="3" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\PrototechDrill_Construction2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+      <MountPoints>
+        <MountPoint Side="Back" StartX="0" StartY="0.1" EndX="0.1" EndY="1" />
+        <MountPoint Side="Back" StartX="0.1" StartY="0" EndX="1" EndY="0.1" />
+        <MountPoint Side="Back" StartX="1" StartY="0" EndX="2" EndY="1" />
+        <MountPoint Side="Back" StartX="1.9" StartY="1" EndX="2" EndY="1.9" />
+        <MountPoint Side="Back" StartX="1" StartY="1.9" EndX="1.9" EndY="2" />
+        <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="2" />
+        <MountPoint Side="Front" StartX="1" StartY="0" EndX="2" EndY="1.5" />
+        <MountPoint Side="Front" StartX="1" StartY="1.5" EndX="1.5" EndY="2" />
+        <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1.8" EndY="2" />
+        <MountPoint Side="Bottom" StartX="0.5" StartY="2" EndX="1.8" EndY="4" />
+        <MountPoint Side="Top" StartX="1" StartY="0" EndX="1.6" EndY="2" />
+        <MountPoint Side="Top" StartX="1.9" StartY="2" EndX="2" EndY="3.85" />
+        <MountPoint Side="Top" StartX="0.5" StartY="3.85" EndX="2" EndY="4" />
+        <MountPoint Side="Left" StartX="0" StartY="0" EndX="0.15" EndY="1.5" />
+        <MountPoint Side="Left" StartX="0.15" StartY="0" EndX="2" EndY="0.1" />
+        <MountPoint Side="Left" StartX="2" StartY="0.4" EndX="4" EndY="1" />
+        <MountPoint Side="Right" StartX="0" StartY="0.2" EndX="2" EndY="1.5" />
+        <MountPoint Side="Right" StartX="2" StartY="0.2" EndX="4" EndY="2" />
+      </MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\PrototechDrill_Construction1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_PrototechDrill</BlockPairName>
+    </Definition>
+
+	
+	
+</CubeBlocks>
+
+
+   
+   
+ <Components>
+
+</Components>  
+
+<Blueprints>
+
+</Blueprints>   
+   
+   
+<EntityComponents>
+
+</EntityComponents>   
+   
+
+</Definitions>

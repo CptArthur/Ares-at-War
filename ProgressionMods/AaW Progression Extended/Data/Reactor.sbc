@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--
+
+Assembler
+LargeAssemblerIndustrial
+
+s
+
+This File handles these blocks:
+
+
+<CubeBlocks>
+
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeAssembler</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Assembler</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\assembler.dds</Icon>
+		<Icon>Textures\GUI\Blood.dds</Icon>
+      <Description>Automated production of Advanced components.
+
+				Power Usage: 1.5MW</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="2" />
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\AssemblerConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+	<MountPoints>
+		<MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+		<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+		<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="2" Default="true" />
+		<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="2" />
+		<MountPoint Side="Left" StartX="0" StartY="0" EndX="2" EndY="1" />
+		<MountPoint Side="Right" StartX="0" StartY="0" EndX="2" EndY="1" />
+	</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\AssemblerConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_Assembler</BlockPairName>
+    </Definition>
+	
+	
+	
+	
+	
+</CubeBlocks>
+   
+   
+ <Components>
+	<Component>
+		<Id>
+			<TypeId>Component</TypeId>
+			<SubtypeId>AaW_Schematic_Reactor</SubtypeId>
+		</Id>
+		<DisplayName>Schematic Reactor</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechFrame.dds</Icon>
+		<Size>
+			<X>1.0</X>
+			<Y>1.0</Y>
+			<Z>0.03</Z>
+		</Size>
+		<Mass>100</Mass>
+		<Volume>50</Volume>
+		<Model>Models\Components\PrototechFrame.mwm</Model>
+		<PhysicalMaterial>Metal</PhysicalMaterial>
+		<MaxIntegrity>40</MaxIntegrity>
+		<DropProbability>0.3</DropProbability>
+		<Health>12</Health>
+		<MinimalPricePerUnit>100000</MinimalPricePerUnit>
+		<MinimumOfferAmount>250</MinimumOfferAmount>
+		<MaximumOfferAmount>2500</MaximumOfferAmount>
+		<MinimumOrderAmount>0</MinimumOrderAmount>
+		<MaximumOrderAmount>0</MaximumOrderAmount>
+		<CanPlayerOrder>true</CanPlayerOrder>
+		<MinimumAcquisitionAmount>1</MinimumAcquisitionAmount>
+		<MaximumAcquisitionAmount>1000</MaximumAcquisitionAmount>
+	</Component> 
+</Components>  
+
+<Blueprints>
+	 <Blueprint> 
+		<Id>
+			<TypeId>BlueprintDefinition</TypeId>
+			<SubtypeId>AaW_Schematic_Reactor</SubtypeId>
+		</Id>
+		<DisplayName>DisplayName_Item_PrototechPanel</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechPanel_Component.dds</Icon>
+		<Prerequisites>
+			<Item Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_Reactor" />
+		</Prerequisites>
+		<Result Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_Reactor" />
+		<BaseProductionTimeInSeconds>1</BaseProductionTimeInSeconds>
+		<IsPrimary>true</IsPrimary>
+	</Blueprint>
+</Blueprints>   
+   
+   
+  <EntityComponents>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>ProgressionFramework_AaW_Reactor</SubtypeId>
+      </Id>
+      <Description>
+        [?xml version="1.0" encoding="utf-16"?]
+        [ResearchGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"]
+          [AutoAdjustAssemblerEffiency]true[/AutoAdjustAssemblerEffiency]			  
+           [ResearchGroup]
+            [Item Type="MyObjectBuilder_Component" SubtypeId="AaW_Schematic_Reactor" /]
+            [BlockDefinitons]
+              [OverwriteOthers]false[/OverwriteOthers]
+				[Id Type="MyObjectBuilder_Reactor" SubtypeId="LargeBlockSmallGeneratorWarfare2" UseBlockVariantsGroup="false" /] [@## Small Zenova Reactor (Large Grid) @##]
+				[Id Type="MyObjectBuilder_Reactor" SubtypeId="LargeBlockLargeGeneratorWarfare2" UseBlockVariantsGroup="false" /] [@## Large Zenova Reactor (Large Grid) @##]
+				[Id Type="MyObjectBuilder_Reactor" SubtypeId="SmallBlockSmallGeneratorWarfare2" UseBlockVariantsGroup="false" /] [@## Small Zenova Reactor (Small Grid) @##]
+				[Id Type="MyObjectBuilder_Reactor" SubtypeId="SmallBlockLargeGeneratorWarfare2" UseBlockVariantsGroup="false" /] [@## Large Zenova Reactor (Small Grid) @##]
+				[Id Type="MyObjectBuilder_Reactor" SubtypeId="SmallBlockSmallGenerator" UseBlockVariantsGroup="false" /] [@## Small Reactor (Small Grid) @##]
+				[Id Type="MyObjectBuilder_Reactor" SubtypeId="SmallBlockLargeGenerator" UseBlockVariantsGroup="false" /] [@## Large Reactor (Small Grid) @##]
+				[Id Type="MyObjectBuilder_Reactor" SubtypeId="LargeBlockSmallGenerator" UseBlockVariantsGroup="false" /] [@## Small Reactor (Large Grid) @##]
+				[Id Type="MyObjectBuilder_Reactor" SubtypeId="LargeBlockLargeGenerator" UseBlockVariantsGroup="false" /] [@## Large Reactor (Large Grid) @##]					
+            [/BlockDefinitons]
+          [/ResearchGroup]
+        [/ResearchGroups]
+      </Description>
+    </EntityComponent>
+  </EntityComponents>   
+   
+   
+ -->
+</Definitions>

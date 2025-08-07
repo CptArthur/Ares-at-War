@@ -64,7 +64,7 @@ def prettify(elem):
 
 # Generate and save the final XML
 xml_str = prettify(root)
-with open("MSB.xml", "w", encoding="utf-16") as f:
+with open("AaW.xml", "w", encoding="utf-16") as f:
     f.write(xml_str)
 
 print("XML created and saved as dialogue_bank.xml")

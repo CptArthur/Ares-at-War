@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!-- 
+
+Placeholder_LargeAssembler
+Placeholder_LargeAssemblerIndustrial
+
+
+
+This File handles these blocks:
+AaW_Schematic_CeramicsFurnace
+AaW_Schematic_MicroelectronicsFactory
+AaW_Schematic_WireDrawer
+AaW_Schematic_AutoLoom
+AaW_Schematic_PlateStamp
+AaW_Schematic_Extruder
+AaW_Schematic_MunitionsFactory
+AaW_Schematic_Fabricator
+ -->
+
+<CubeBlocks>
+
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeAssembler</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Assembler</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\assembler.dds</Icon>
+		<Icon>Icons\green.dds</Icon>
+      <Description>Automated production of Advanced components.
+
+				Power Usage: 1.5MW</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="2" />
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\AssemblerConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+	<MountPoints>
+		<MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+		<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+		<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="2" Default="true" />
+		<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="2" />
+		<MountPoint Side="Left" StartX="0" StartY="0" EndX="2" EndY="1" />
+		<MountPoint Side="Right" StartX="0" StartY="0" EndX="2" EndY="1" />
+	</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\AssemblerConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_Assembler</BlockPairName>
+    </Definition>
+	
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeAssemblerIndustrial</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Industrial Assembler</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\AdvancedAssemblerIndustrial.dds</Icon>
+		<Icon>Icons\green.dds</Icon>
+      <Description>Automated production of Advanced components.
+
+				Power Usage: 1.5MW</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="2" z="2" />
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\AdvancedAssemblerIndustrialConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+	<MountPoints>
+		<MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1.1" />
+		<MountPoint Side="Front" StartX="0" StartY="1.1" EndX="1" EndY="2" />
+		<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1.1" />
+		<MountPoint Side="Back" StartX="0" StartY="1.1" EndX="0.1" EndY="2" />
+		<MountPoint Side="Back" StartX="0.9" StartY="1.1" EndX="1" EndY="2" />
+		<MountPoint Side="Back" StartX="0.1" StartY="1.9" EndX="0.9" EndY="2" />
+		<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="2" Default="true" />
+		<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="2" />
+		<MountPoint Side="Left" StartX="0" StartY="0" EndX="2" EndY="1" />
+		<MountPoint Side="Left" StartX="0" StartY="1" EndX="0.1" EndY="2" />
+		<MountPoint Side="Left" StartX="1.9" StartY="1" EndX="2" EndY="2" />
+		<MountPoint Side="Left" StartX="0.1" StartY="1.9" EndX="1.9" EndY="2" />
+		<MountPoint Side="Right" StartX="0" StartY="0" EndX="2" EndY="2" />
+	</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\AdvancedAssemblerIndustrialConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_AssemblerIndustrial</BlockPairName>
+	   <DLC>HeavyIndustry</DLC>
+    </Definition>	
+</CubeBlocks>
+   
+   
+   
+ <Components>
+	<Component>
+		<Id>
+			<TypeId>Component</TypeId>
+			<SubtypeId>AaW_Schematic_CeramicsFurnace</SubtypeId>
+		</Id>
+		<DisplayName>Schematic Ceramics Furnace</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechFrame.dds</Icon>
+		<Size>
+			<X>1.0</X>
+			<Y>1.0</Y>
+			<Z>0.03</Z>
+		</Size>
+		<Mass>100</Mass>
+		<Volume>50</Volume>
+		<Model>Models\Components\PrototechFrame.mwm</Model>
+		<PhysicalMaterial>Metal</PhysicalMaterial>
+		<MaxIntegrity>40</MaxIntegrity>
+		<DropProbability>0.3</DropProbability>
+		<Health>12</Health>
+		<MinimalPricePerUnit>100000</MinimalPricePerUnit>
+		<MinimumOfferAmount>250</MinimumOfferAmount>
+		<MaximumOfferAmount>2500</MaximumOfferAmount>
+		<MinimumOrderAmount>0</MinimumOrderAmount>
+		<MaximumOrderAmount>0</MaximumOrderAmount>
+		<CanPlayerOrder>true</CanPlayerOrder>
+		<MinimumAcquisitionAmount>1</MinimumAcquisitionAmount>
+		<MaximumAcquisitionAmount>1000</MaximumAcquisitionAmount>
+	</Component>
+	
+	<Component>
+		<Id>
+			<TypeId>Component</TypeId>
+			<SubtypeId>AaW_Schematic_MicroelectronicsFactory</SubtypeId>
+		</Id>
+		<DisplayName>Schematic Microelectronics Factory</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechFrame.dds</Icon>
+		<Size>
+			<X>1.0</X>
+			<Y>1.0</Y>
+			<Z>0.03</Z>
+		</Size>
+		<Mass>100</Mass>
+		<Volume>50</Volume>
+		<Model>Models\Components\PrototechFrame.mwm</Model>
+		<PhysicalMaterial>Metal</PhysicalMaterial>
+		<MaxIntegrity>40</MaxIntegrity>
+		<DropProbability>0.3</DropProbability>
+		<Health>12</Health>
+		<MinimalPricePerUnit>100000</MinimalPricePerUnit>
+		<MinimumOfferAmount>250</MinimumOfferAmount>
+		<MaximumOfferAmount>2500</MaximumOfferAmount>
+		<MinimumOrderAmount>0</MinimumOrderAmount>
+		<MaximumOrderAmount>0</MaximumOrderAmount>
+		<CanPlayerOrder>true</CanPlayerOrder>
+		<MinimumAcquisitionAmount>1</MinimumAcquisitionAmount>
+		<MaximumAcquisitionAmount>1000</MaximumAcquisitionAmount>
+	</Component>
+
+	<Component>
+		<Id>
+			<TypeId>Component</TypeId>
+			<SubtypeId>AaW_Schematic_WireDrawer</SubtypeId>
+		</Id>
+		<DisplayName>Schematic Wire Drawer</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechFrame.dds</Icon>
+		<Size>
+			<X>1.0</X>
+			<Y>1.0</Y>
+			<Z>0.03</Z>
+		</Size>
+		<Mass>100</Mass>
+		<Volume>50</Volume>
+		<Model>Models\Components\PrototechFrame.mwm</Model>
+		<PhysicalMaterial>Metal</PhysicalMaterial>
+		<MaxIntegrity>40</MaxIntegrity>
+		<DropProbability>0.3</DropProbability>
+		<Health>12</Health>
+		<MinimalPricePerUnit>100000</MinimalPricePerUnit>
+		<MinimumOfferAmount>250</MinimumOfferAmount>
+		<MaximumOfferAmount>2500</MaximumOfferAmount>
+		<MinimumOrderAmount>0</MinimumOrderAmount>
+		<MaximumOrderAmount>0</MaximumOrderAmount>
+		<CanPlayerOrder>true</CanPlayerOrder>
+		<MinimumAcquisitionAmount>1</MinimumAcquisitionAmount>
+		<MaximumAcquisitionAmount>1000</MaximumAcquisitionAmount>
+	</Component>
+
+	<Component>
+		<Id>
+			<TypeId>Component</TypeId>
+			<SubtypeId>AaW_Schematic_AutoLoom</SubtypeId>
+		</Id>
+		<DisplayName>Schematic Auto Loom</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechFrame.dds</Icon>
+		<Size>
+			<X>1.0</X>
+			<Y>1.0</Y>
+			<Z>0.03</Z>
+		</Size>
+		<Mass>100</Mass>
+		<Volume>50</Volume>
+		<Model>Models\Components\PrototechFrame.mwm</Model>
+		<PhysicalMaterial>Metal</PhysicalMaterial>
+		<MaxIntegrity>40</MaxIntegrity>
+		<DropProbability>0.3</DropProbability>
+		<Health>12</Health>
+		<MinimalPricePerUnit>100000</MinimalPricePerUnit>
+		<MinimumOfferAmount>250</MinimumOfferAmount>
+		<MaximumOfferAmount>2500</MaximumOfferAmount>
+		<MinimumOrderAmount>0</MinimumOrderAmount>
+		<MaximumOrderAmount>0</MaximumOrderAmount>
+		<CanPlayerOrder>true</CanPlayerOrder>
+		<MinimumAcquisitionAmount>1</MinimumAcquisitionAmount>
+		<MaximumAcquisitionAmount>1000</MaximumAcquisitionAmount>
+	</Component> 
+
+
+
+	<Component>
+		<Id>
+			<TypeId>Component</TypeId>
+			<SubtypeId>AaW_Schematic_PlateStamp</SubtypeId>
+		</Id>
+		<DisplayName>Schematic Plate Stamp</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechFrame.dds</Icon>
+		<Size>
+			<X>1.0</X>
+			<Y>1.0</Y>
+			<Z>0.03</Z>
+		</Size>
+		<Mass>100</Mass>
+		<Volume>50</Volume>
+		<Model>Models\Components\PrototechFrame.mwm</Model>
+		<PhysicalMaterial>Metal</PhysicalMaterial>
+		<MaxIntegrity>40</MaxIntegrity>
+		<DropProbability>0.3</DropProbability>
+		<Health>12</Health>
+		<MinimalPricePerUnit>100000</MinimalPricePerUnit>
+		<MinimumOfferAmount>250</MinimumOfferAmount>
+		<MaximumOfferAmount>2500</MaximumOfferAmount>
+		<MinimumOrderAmount>0</MinimumOrderAmount>
+		<MaximumOrderAmount>0</MaximumOrderAmount>
+		<CanPlayerOrder>true</CanPlayerOrder>
+		<MinimumAcquisitionAmount>1</MinimumAcquisitionAmount>
+		<MaximumAcquisitionAmount>1000</MaximumAcquisitionAmount>
+	</Component>  
+
+	 <Component>
+		<Id>
+			<TypeId>Component</TypeId>
+			<SubtypeId>AaW_Schematic_Extruder</SubtypeId>
+		</Id>
+		<DisplayName>Schematic Extruder</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechFrame.dds</Icon>
+		<Size>
+			<X>1.0</X>
+			<Y>1.0</Y>
+			<Z>0.03</Z>
+		</Size>
+		<Mass>100</Mass>
+		<Volume>50</Volume>
+		<Model>Models\Components\PrototechFrame.mwm</Model>
+		<PhysicalMaterial>Metal</PhysicalMaterial>
+		<MaxIntegrity>40</MaxIntegrity>
+		<DropProbability>0.3</DropProbability>
+		<Health>12</Health>
+		<MinimalPricePerUnit>100000</MinimalPricePerUnit>
+		<MinimumOfferAmount>250</MinimumOfferAmount>
+		<MaximumOfferAmount>2500</MaximumOfferAmount>
+		<MinimumOrderAmount>0</MinimumOrderAmount>
+		<MaximumOrderAmount>0</MaximumOrderAmount>
+		<CanPlayerOrder>true</CanPlayerOrder>
+		<MinimumAcquisitionAmount>1</MinimumAcquisitionAmount>
+		<MaximumAcquisitionAmount>1000</MaximumAcquisitionAmount>
+	</Component>  
+
+	 <Component>
+		<Id>
+			<TypeId>Component</TypeId>
+			<SubtypeId>AaW_Schematic_MunitionsFactory</SubtypeId>
+		</Id>
+		<DisplayName>Schematic Munitions Factory</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechFrame.dds</Icon>
+		<Size>
+			<X>1.0</X>
+			<Y>1.0</Y>
+			<Z>0.03</Z>
+		</Size>
+		<Mass>100</Mass>
+		<Volume>50</Volume>
+		<Model>Models\Components\PrototechFrame.mwm</Model>
+		<PhysicalMaterial>Metal</PhysicalMaterial>
+		<MaxIntegrity>40</MaxIntegrity>
+		<DropProbability>0.3</DropProbability>
+		<Health>12</Health>
+		<MinimalPricePerUnit>100000</MinimalPricePerUnit>
+		<MinimumOfferAmount>250</MinimumOfferAmount>
+		<MaximumOfferAmount>2500</MaximumOfferAmount>
+		<MinimumOrderAmount>0</MinimumOrderAmount>
+		<MaximumOrderAmount>0</MaximumOrderAmount>
+		<CanPlayerOrder>true</CanPlayerOrder>
+		<MinimumAcquisitionAmount>1</MinimumAcquisitionAmount>
+		<MaximumAcquisitionAmount>1000</MaximumAcquisitionAmount>
+	</Component> 
+
+	 <Component>
+		<Id>
+			<TypeId>Component</TypeId>
+			<SubtypeId>AaW_Schematic_Fabricator</SubtypeId>
+		</Id>
+		<DisplayName>Schematic Fabricator</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechFrame.dds</Icon>
+		<Size>
+			<X>1.0</X>
+			<Y>1.0</Y>
+			<Z>0.03</Z>
+		</Size>
+		<Mass>100</Mass>
+		<Volume>50</Volume>
+		<Model>Models\Components\PrototechFrame.mwm</Model>
+		<PhysicalMaterial>Metal</PhysicalMaterial>
+		<MaxIntegrity>40</MaxIntegrity>
+		<DropProbability>0.3</DropProbability>
+		<Health>12</Health>
+		<MinimalPricePerUnit>100000</MinimalPricePerUnit>
+		<MinimumOfferAmount>250</MinimumOfferAmount>
+		<MaximumOfferAmount>2500</MaximumOfferAmount>
+		<MinimumOrderAmount>0</MinimumOrderAmount>
+		<MaximumOrderAmount>0</MaximumOrderAmount>
+		<CanPlayerOrder>true</CanPlayerOrder>
+		<MinimumAcquisitionAmount>1</MinimumAcquisitionAmount>
+		<MaximumAcquisitionAmount>1000</MaximumAcquisitionAmount>
+	</Component>  
+
+</Components>  
+<Blueprints>
+	<Blueprint> <!-- This blueprint exists to prevent missing blueprint errors -->
+		<Id>
+			<TypeId>BlueprintDefinition</TypeId>
+			<SubtypeId>AaW_Schematic_CeramicsFurnace</SubtypeId>
+		</Id>
+		<DisplayName>DisplayName_Item_PrototechPanel</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechPanel_Component.dds</Icon>
+		<Prerequisites>
+			<Item Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_CeramicsFurnace" />
+		</Prerequisites>
+		<Result Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_CeramicsFurnace" />
+		<BaseProductionTimeInSeconds>1</BaseProductionTimeInSeconds>
+		<IsPrimary>true</IsPrimary>
+	</Blueprint>
+	
+	<Blueprint> <!-- This blueprint exists to prevent missing blueprint errors -->
+		<Id>
+			<TypeId>BlueprintDefinition</TypeId>
+			<SubtypeId>AaW_Schematic_MicroelectronicsFactory</SubtypeId>
+		</Id>
+		<DisplayName>DisplayName_Item_PrototechPanel</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechPanel_Component.dds</Icon>
+		<Prerequisites>
+			<Item Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_MicroelectronicsFactory" />
+		</Prerequisites>
+		<Result Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_MicroelectronicsFactory" />
+		<BaseProductionTimeInSeconds>1</BaseProductionTimeInSeconds>
+		<IsPrimary>true</IsPrimary>
+	</Blueprint>
+
+	<Blueprint> <!-- This blueprint exists to prevent missing blueprint errors -->
+		<Id>
+			<TypeId>BlueprintDefinition</TypeId>
+			<SubtypeId>AaW_Schematic_WireDrawer</SubtypeId>
+		</Id>
+		<DisplayName>DisplayName_Item_PrototechPanel</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechPanel_Component.dds</Icon>
+		<Prerequisites>
+			<Item Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_WireDrawer" />
+		</Prerequisites>
+		<Result Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_WireDrawer" />
+		<BaseProductionTimeInSeconds>1</BaseProductionTimeInSeconds>
+		<IsPrimary>true</IsPrimary>
+	</Blueprint> 
+	
+	
+	 <Blueprint> <!-- This blueprint exists to prevent missing blueprint errors -->
+		<Id>
+			<TypeId>BlueprintDefinition</TypeId>
+			<SubtypeId>AaW_Schematic_AutoLoom</SubtypeId>
+		</Id>
+		<DisplayName>DisplayName_Item_PrototechPanel</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechPanel_Component.dds</Icon>
+		<Prerequisites>
+			<Item Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_AutoLoom" />
+		</Prerequisites>
+		<Result Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_AutoLoom" />
+		<BaseProductionTimeInSeconds>1</BaseProductionTimeInSeconds>
+		<IsPrimary>true</IsPrimary>
+	</Blueprint>
+	
+	
+	
+	 <Blueprint> <!-- This blueprint exists to prevent missing blueprint errors -->
+		<Id>
+			<TypeId>BlueprintDefinition</TypeId>
+			<SubtypeId>AaW_Schematic_PlateStamp</SubtypeId>
+		</Id>
+		<DisplayName>DisplayName_Item_PrototechPanel</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechPanel_Component.dds</Icon>
+		<Prerequisites>
+			<Item Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_PlateStamp" />
+		</Prerequisites>
+		<Result Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_PlateStamp" />
+		<BaseProductionTimeInSeconds>1</BaseProductionTimeInSeconds>
+		<IsPrimary>true</IsPrimary>
+	</Blueprint>	
+	
+	 <Blueprint> <!-- This blueprint exists to prevent missing blueprint errors -->
+		<Id>
+			<TypeId>BlueprintDefinition</TypeId>
+			<SubtypeId>AaW_Schematic_MunitionsFactory</SubtypeId>
+		</Id>
+		<DisplayName>DisplayName_Item_PrototechPanel</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechPanel_Component.dds</Icon>
+		<Prerequisites>
+			<Item Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_MunitionsFactory" />
+		</Prerequisites>
+		<Result Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_MunitionsFactory" />
+		<BaseProductionTimeInSeconds>1</BaseProductionTimeInSeconds>
+		<IsPrimary>true</IsPrimary>
+	</Blueprint>
+
+	 <Blueprint> <!-- This blueprint exists to prevent missing blueprint errors -->
+		<Id>
+			<TypeId>BlueprintDefinition</TypeId>
+			<SubtypeId>AaW_Schematic_Extruder</SubtypeId>
+		</Id>
+		<DisplayName>DisplayName_Item_PrototechPanel</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechPanel_Component.dds</Icon>
+		<Prerequisites>
+			<Item Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_Extruder" />
+		</Prerequisites>
+		<Result Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_Extruder" />
+		<BaseProductionTimeInSeconds>1</BaseProductionTimeInSeconds>
+		<IsPrimary>true</IsPrimary>
+	</Blueprint>
+
+	 <Blueprint> <!-- This blueprint exists to prevent missing blueprint errors -->
+		<Id>
+			<TypeId>BlueprintDefinition</TypeId>
+			<SubtypeId>AaW_Schematic_Fabricator</SubtypeId>
+		</Id>
+		<DisplayName>DisplayName_Item_PrototechPanel</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechPanel_Component.dds</Icon>
+		<Prerequisites>
+			<Item Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_Fabricator" />
+		</Prerequisites>
+		<Result Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_Fabricator" />
+		<BaseProductionTimeInSeconds>1</BaseProductionTimeInSeconds>
+		<IsPrimary>true</IsPrimary>
+	</Blueprint>		
+</Blueprints>   
+   
+   
+
+   
+   
+</Definitions>

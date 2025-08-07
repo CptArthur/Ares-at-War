@@ -32,8 +32,6 @@
 
 		[GridsAreDestructable:false]
 
-
-
 			[StaticEncounterCoords:{X:-3684664.31188625 Y:-1332121.39038834 Z:-2634179.09956632}]
 			[StaticEncounterForward:{X:0.329449559313051 Y:-0.908439265076034 Z:0.257295723898691}]
 			[StaticEncounterUp:{X:-0.367756061137887 Y:-0.374452247991997 Z:-0.851199737705602}]
@@ -44,11 +42,9 @@
 			[StaticEncounterPlanetDirection:{X:-0.36663634153347 Y:-0.374870971594205 Z:-0.851498413223988}]
 			[StaticEncounterPlanetAltitude:-2.61018007847451]
 
-
-
-        [ShipyardSetup:true]
-        [ShipyardConsoleBlockNames:{Any}]
-        [ShipyardProfileNames:AaW_Shipyard_MainProfile]
+			[ShipyardSetup:true]
+			[ShipyardConsoleBlockNames:{Any}]
+			[ShipyardProfileNames:AaW_Shipyard_Salvage]
 
 			[UseRandomNameGenerator:true]
 			[RandomGridNamePrefix:(NPC-DoNotDelete)]		
@@ -56,8 +52,12 @@
 			[ReplaceAntennaNameWithRandomizedName:Antenna]
 			[ReplaceAntennaHudTextInsteadOfName:true]
 			
-				[IgnoreCombatPhase:true]
+			[IgnoreCombatPhase:true]
 			[ReplenishSystems:true]
+
+			[FalseSandboxVariables:UNION_Azuris_Safe]	
+			[FalseSandboxVariables:AzurisDestroyed]	
+			[FalseSandboxVariables:UNION_AzurisDestroyed]	
 
 			[UseRivalAi:true]
 			[RivalAiReplaceRemoteControl:true]
@@ -81,97 +81,7 @@
 			</Prefabs>
 		</SpawnGroup>
 		
-		<!--
-		<SpawnGroup>
-			<Id>
-				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>Carcosa</SubtypeId>
-			</Id>
-			<Description>
-			[Modular Encounters SpawnGroup]
-			
-			[StaticEncounter:True]
-			[ForceStaticGrid:true]
-			[RotateFirstCockpitToForward:false]
-	        [FactionOwner:UNION]	
 
-			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
-			[TriggerRadius:10000]
-			[IgnoreCombatPhase:true]
-			[ForceExactPositionAndOrientation:true]
-		[ZoneConditions:ZoneCondition_ZoneAaW]
-			[IgnoreCleanupRules:true]
-
-			[GridsAreDestructable:false]
-
-
-			[StaticEncounterCoords:{X:-1171670.64110459 Y:99277.2631215567 Z:1323685.9906198}]
-			[StaticEncounterForward:{X:0.362564319033944 Y:-0.884331568613576 Z:-0.294116968767366}]
-			[StaticEncounterUp:{X:-0.724241666476941 Y:-0.465974531232732 Z:0.50827329733239}]
-
-			[StaticEncounterUsePlanetDirectionAndAltitude:true]
-			[StaticEncounterPlanet:Planet Agaris]
-			[StaticEncounterPlanetDirection:{X:-0.724000716398449 Y:-0.46856441944493 Z:0.506231515696887}]
-			[StaticEncounterPlanetAltitude:-11.8470674070268]
-
-
-			[ShipyardSetup:true]
-			[ShipyardConsoleBlockNames:{Any}]
-			[ShipyardProfileNames:AaW_Shipyard_MainProfile]
-			
-			
-			[ReplenishSystems:true]
-			
-			[UseRandomNameGenerator:true]
-			[RandomGridNamePrefix:(NPC-DoNotDelete)]		
-			[RandomGridNamePattern:Carcosa]
-			[ReplaceAntennaNameWithRandomizedName:Antenna]
-			[ReplaceAntennaHudTextInsteadOfName:true]
-
-			[UseRivalAi:true]
-			[RivalAiReplaceRemoteControl:true]
-
-			</Description>
-			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
-			<IsPirate>true</IsPirate>
-			
-			<Frequency>5.0</Frequency>
-			<Prefabs>
-				<Prefab SubtypeId="CIVILIAN - Carcosa">
-					<Position>
-						<X>0.0</X>
-						<Y>0.0</Y>
-						<Z>0.0</Z>
-					</Position>
-					<Speed>0</Speed>
-					<Behaviour>CIVILIAN_Carcosa_Behavior</Behaviour>
-				<PlaceToGridOrigin>true</PlaceToGridOrigin>
-				</Prefab>
-			</Prefabs>
-		
-		</SpawnGroup>		
-		-->
-		
-		
-		<!--
-		
-
-
-		
-		
-AHE Carcosa MAp	
-
-[StaticEncounterCoords:{X:-3703643.17400515 Y:-1302445.35613995 Z:-2541927.77696902}]
-[StaticEncounterForward:{X:-0.0770659370627964 Y:-0.991611001839473 Z:0.103771202053124}]
-[StaticEncounterUp:{X:-0.689952917476528 Y:0.128175358649711 Z:0.712415643497983}]
-
-[StaticEncounterUsePlanetDirectionAndAltitude:true]
-[StaticEncounterPlanet:Planet Agaris]
-[StaticEncounterPlanetDirection:{X:-0.689786178376405 Y:0.128025440762243 Z:0.712604037764668}]
-[StaticEncounterPlanetAltitude:-5.54182080941246]
-		
-		
-		-->
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
@@ -183,8 +93,8 @@ AHE Carcosa MAp
 			[StaticEncounter:True]
 			[ForceStaticGrid:true]
 			[RotateFirstCockpitToForward:false]
-	        [FactionOwner:UNION]	
-		[ZoneConditions:ZoneCondition_ZoneAaW]
+	        [FactionOwner:SUNSETCITY]	
+			[ZoneConditions:ZoneCondition_ZoneAaW]
 			
 			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
 			[TriggerRadius:10000]
@@ -206,13 +116,10 @@ AHE Carcosa MAp
 			[ShipyardSetup:true]
 			[ShipyardConsoleBlockNames:{Any}]
 			[ShipyardProfileNames:AaW_Shipyard_MainProfile]
-			
-			
+						
 			[IgnoreCleanupRules:true]
 
-
 			[GridsAreDestructable:false]
-
 
 			[ReplenishSystems:true]
 			
@@ -221,6 +128,11 @@ AHE Carcosa MAp
 			[RandomGridNamePattern:Sunset City]
 			[ReplaceAntennaNameWithRandomizedName:Antenna]
 			[ReplaceAntennaHudTextInsteadOfName:true]
+
+			[FalseSandboxVariables:UNION_SunsetCity_Safe]	
+			[FalseSandboxVariables:SunsetCityDestroyed]	
+			[FalseSandboxVariables:UNION_SunsetCityDestroyed]	
+
 
 			[UseRivalAi:true]
 			[RivalAiReplaceRemoteControl:true]
@@ -279,7 +191,7 @@ AHE Carcosa MAp
 
 			[ShipyardSetup:true]
 			[ShipyardConsoleBlockNames:{Any}]
-			[ShipyardProfileNames:AaW_Shipyard_MainProfile]
+			[ShipyardProfileNames:AaW_Shipyard_Salvage]
 			
 			
 			[IgnoreCleanupRules:true]
@@ -292,6 +204,12 @@ AHE Carcosa MAp
 			[RandomGridNamePattern:Thorrix]
 			[ReplaceAntennaNameWithRandomizedName:Antenna]
 			[ReplaceAntennaHudTextInsteadOfName:true]
+
+
+			[FalseSandboxVariables:UNION_Thorrix_Safe]	
+			[FalseSandboxVariables:ThorrixDestroyed]	
+			[FalseSandboxVariables:UNION_ThorrixDestroyed]	
+
 
 			[UseRivalAi:true]
 			[RivalAiReplaceRemoteControl:true]
@@ -353,7 +271,7 @@ AHE Carcosa MAp
 
 			[ShipyardSetup:true]
 			[ShipyardConsoleBlockNames:{Any}]
-			[ShipyardProfileNames:AaW_Shipyard_MainProfile]
+			[ShipyardProfileNames:AaW_Shipyard_Salvage]
 			
 
 
@@ -370,6 +288,10 @@ AHE Carcosa MAp
 			[RandomGridNamePattern:Bratis]
 			[ReplaceAntennaNameWithRandomizedName:Antenna]
 			[ReplaceAntennaHudTextInsteadOfName:true]		
+
+			[FalseSandboxVariables:UNION_Bratis_Safe]	
+			[FalseSandboxVariables:BratisDestroyed]	
+			[FalseSandboxVariables:UNION_BratisDestroyed]	
 
 			[UseRivalAi:true]
 			[RivalAiReplaceRemoteControl:true]
@@ -491,7 +413,7 @@ AHE Carcosa MAp
 			[StaticEncounter:True]
 			[ForceStaticGrid:true]
 			[RotateFirstCockpitToForward:false]
-	        [FactionOwner:UNION]	
+	        [FactionOwner:SUNSETCITY]	
 
 			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
 			[TriggerRadius:10000]
@@ -560,7 +482,7 @@ AHE Carcosa MAp
 			[StaticEncounter:True]
 			[ForceStaticGrid:true]
 			[RotateFirstCockpitToForward:false]
-	        [FactionOwner:UNION]	
+	        [FactionOwner:SUNSETCITY]	
 
 			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
 			[TriggerRadius:10000]
@@ -623,6 +545,100 @@ Optional Tags For Dynamic Planet Spawning:
 
 		
 	-->	
+
+
+		<!--
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>Carcosa</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:SUNSETCITY]	
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:10000]
+			[IgnoreCombatPhase:true]
+			[ForceExactPositionAndOrientation:true]
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+			[IgnoreCleanupRules:true]
+
+			[GridsAreDestructable:false]
+
+
+			[StaticEncounterCoords:{X:-1171670.64110459 Y:99277.2631215567 Z:1323685.9906198}]
+			[StaticEncounterForward:{X:0.362564319033944 Y:-0.884331568613576 Z:-0.294116968767366}]
+			[StaticEncounterUp:{X:-0.724241666476941 Y:-0.465974531232732 Z:0.50827329733239}]
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Agaris]
+			[StaticEncounterPlanetDirection:{X:-0.724000716398449 Y:-0.46856441944493 Z:0.506231515696887}]
+			[StaticEncounterPlanetAltitude:-11.8470674070268]
+
+
+			[ShipyardSetup:true]
+			[ShipyardConsoleBlockNames:{Any}]
+			[ShipyardProfileNames:AaW_Shipyard_MainProfile]
+			
+			
+			[ReplenishSystems:true]
+			
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-DoNotDelete)]		
+			[RandomGridNamePattern:Carcosa]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="CIVILIAN - Carcosa">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>CIVILIAN_Carcosa_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+		
+		</SpawnGroup>		
+		-->
+		
+		
+		<!--
+		
+
+
+		
+		
+AHE Carcosa MAp	
+
+[StaticEncounterCoords:{X:-3703643.17400515 Y:-1302445.35613995 Z:-2541927.77696902}]
+[StaticEncounterForward:{X:-0.0770659370627964 Y:-0.991611001839473 Z:0.103771202053124}]
+[StaticEncounterUp:{X:-0.689952917476528 Y:0.128175358649711 Z:0.712415643497983}]
+
+[StaticEncounterUsePlanetDirectionAndAltitude:true]
+[StaticEncounterPlanet:Planet Agaris]
+[StaticEncounterPlanetDirection:{X:-0.689786178376405 Y:0.128025440762243 Z:0.712604037764668}]
+[StaticEncounterPlanetAltitude:-5.54182080941246]
+		
+		
+		-->
+
 
 	</SpawnGroups>
 

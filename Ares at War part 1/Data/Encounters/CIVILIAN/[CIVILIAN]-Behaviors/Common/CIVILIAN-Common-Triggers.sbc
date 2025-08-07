@@ -2,6 +2,78 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
+
+ <!-- Not common only for CIVILIAN HQ -->  
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_Common_Trigger_MakeUNION</SubtypeId>
+    </Id>
+    <Description>
+
+    [RivalAI Trigger]
+    [UseTrigger:true]
+    [Type:Timer]	
+    [StartsReady:true]	
+
+    [MinCooldownMs:5000]
+    [MaxCooldownMs:5001]
+	[ConditionCheckResetsTimer:true]
+    [Conditions:CIVILIAN_Common_Condition_MakeUNION]
+    [MaxActions:-1]
+    [Actions:CIVILIAN_Common_Action_MakeUNION]
+
+    </Description>
+  </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_Common_Condition_MakeUNION</SubtypeId>
+    </Id>
+    <Description>
+    [RivalAI Condition]
+
+    [UseConditions:true]
+	[MatchAnyCondition:false]
+    [CheckTrueSandboxBooleans:true]
+
+    [TrueSandboxBooleans:UNION_{SpawnGroupName}]
+w
+    [CheckTrueBooleans:true]
+	[TrueBooleans:MSB_State_Role]
+    [TrueBooleans:PlayerFar5000]
+
+
+    </Description>
+  </EntityComponent> 
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_Common_Action_MakeUNION</SubtypeId>
+      </Id>
+      <Description>
+
+    [RivalAI Action]
+
+    [ForceDespawn:true]
+    [SetSandboxBooleansTrue:UNION_{SpawnGroupName}_Safe]
+      </Description>
+    </EntityComponent>  
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -36,7 +108,7 @@
 
 	[RivalAI Action]
 
-	[ChangeReputationWithPlayers:true]
+	[ChangeReputationWithPlayers:false]
 	[ReputationChangeRadius:2000]
 	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
 

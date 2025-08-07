@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <EntityComponents>
+  
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>UNKN_Common_Behavior</SubtypeId>
+      </Id>
+      <Description>
+    [RivalAI Behavior]
+    [BehaviorName:Passive]
+    [TargetData:MSB_TargetProfile_Default]
+
+
+
+
+    [Triggers:UNKN_Common_Trigger_RemoveBlocks]
+  
+
+      </Description>
+    </EntityComponent> 
+	
+	
+  
+  
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>UNKN_Common_Trigger_RemoveBlocks</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:PlayerNear]
+      [UseTrigger:true]
+      [StartsReady:true]
+      [TargetDistance:2800]
+      [Actions:UNKN_Common_Action_RemoveBlocks]
+      [MaxActions:1]
+      </Description>
+      
+    </EntityComponent> <!-- UNKN_Common_Trigger_RemoveBlocks -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>UNKN_Common_Action_RemoveBlocks</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+      [RazeBlocksWithNames:true]
+      [RazeBlocksNames:DeleteThisBlock]
+      [RazeBlocksOfType:true]
+      [RazeBlocksTypes:MyObjectBuilder_RemoteControl/RivalAIRemoteControlLarge]
+      [RazeBlocksTypes:MyObjectBuilder_RemoteControl/RivalAIRemoteControlSmall]
+
+
+	[TerminateBehavior:true]
+
+      </Description>
+      
+    </EntityComponent> 
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>UNKN_Common_Trigger_Delay</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:Timer]
+      [UseTrigger:true]
+      [StartsReady:false]
+      [MinCooldownMs:7500]
+      [MaxCooldownMs:10000]
+      [Actions:UNKN_Common_Action_Delay]
+      [MaxActions:1]
+      </Description>
+      
+    </EntityComponent> 
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>UNKN_Common_Action_Delay</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+      [EnableTriggers:true]
+      [EnableTriggerNames:UNKN_Common_Trigger_RemoveBlocks]
+      
+	  	[SetSandboxBooleansTrue:{SpawnGroupName}Spawned]
+      </Description>
+      
+    </EntityComponent> 
+	
+	
+	
+
+
+
+	
+
+	
+	
+	
+  </EntityComponents>
+</Definitions>

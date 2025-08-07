@@ -2,6 +2,34 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
+
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Shipyard_Salvage</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Shipyard]
+
+        [AllowBlueprintBuilding:false] //This feature isn't even built yet, so don't get any ideas.
+        [AllowScrapPurchasing:true]
+        [AllowRepairAndConstruction:false]
+        [AllowGridTakeover:false]
+
+
+		[RepairAndConstructionExcludedComponentIds:AHEShipyard]
+		[RepairAndConstructionExcludedComponentIds:Station27Shipyard]
+		[RepairAndConstructionExcludedComponentIds:RakShipyard]
+		[RepairAndConstructionExcludedComponentIds:ITCShipyard]
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+
      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>

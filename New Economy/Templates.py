@@ -350,10 +350,6 @@ def GetStoreCiv(XML_Name:str,Faction:str, Name:str)->str:
 
         [ItemsRequireInventory:false]
 
-        [Orders:Component/CivilianProductI] 
-        [Orders:Component/CivilianProductII] 
-        [Orders:Component/CivilianProductIII] 
-
 
         [Offers:Tool/HandDrill2Item] 
         [Offers:Tool/AngleGrinder2Item] 
@@ -396,9 +392,6 @@ def GetStoreCiv(XML_Name:str,Faction:str, Name:str)->str:
         [ItemsRequireInventory:false]
 
 
-        [Orders:Component/CivilianProductI] 
-        [Orders:Component/CivilianProductII] 
-        [Orders:Component/CivilianProductIII] 
 
 
         [Offers:Tool/HandDrill2Item] 
