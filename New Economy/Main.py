@@ -517,6 +517,11 @@ for index, row in df.iterrows():
         Item(ItemTypeEnum.Component, "Canvas", 0)
         Item(ItemTypeEnum.Component, "SolarCell", 0)
         Item(ItemTypeEnum.Component, "PowerCell", 0)
+        Item(ItemTypeEnum.Component, "AcidPowerCell", 0)
+        Item(ItemTypeEnum.Component, "AlkalinePowerCell", 0)
+
+
+
 
         Item(ItemTypeEnum.Component, "Explosives", [Requirement(Magnesium, 2),
                                 Requirement(Silicon, 0.5)])
