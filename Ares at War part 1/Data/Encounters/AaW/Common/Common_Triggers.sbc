@@ -33,6 +33,56 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Triggers_OnSession</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Session]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MinCooldownMs:450000]
+        [MaxCooldownMs:600000]
+
+        [Actions:AaW_Common_Action_OnSession]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Action_OnSession</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+		[DebugMessage:Onsession]
+		
+        [ManuallyActivateTrigger:true]
+		[ManuallyActivatedTriggerTags:StoreRefresh]
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
         <SubtypeId>AaW_Common_Triggers_Compromised</SubtypeId>
       </Id>
       <Description>
@@ -98,6 +148,10 @@
         [SetWeaponsToMaxRange:true]
       </Description>
     </EntityComponent>
+	
+	
+	
+	
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>

@@ -122,7 +122,7 @@ def CreateTriggers(Faction, Name:str, IO, StoresProfiles):
       <Description>
 
         [RivalAI Trigger]
-
+        [Tags:StoreRefresh]
         [UseTrigger:true]
         [Type:Timer]
         [MinCooldownMs:1200000]

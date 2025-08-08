@@ -125,7 +125,8 @@ def GetStoreSettlement(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngo
         [Offers:Component/ReactorComponent] 
         [Offers:Component/MetalGrid] 
 
-
+        [Offers:Component/AcidPowerCell] 
+        [Offers:Component/AlkalinePowerCell] 
 
       </Description>
 

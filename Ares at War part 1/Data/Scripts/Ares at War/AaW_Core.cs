@@ -113,8 +113,10 @@ namespace AresAtWar.SessionCore
                     MyVisualScriptLogicProvider.ShowNotificationToAll("Ares at War version is outdated", 1000000, "Red");
                     MyVisualScriptLogicProvider.ShowNotificationToAll("Save and reload the game", 1000000, "Red");
 
-                    MyAPIGateway.Utilities.SendMessage("Ares at War version is outdated!");
-                    MyAPIGateway.Utilities.SendMessage("Save and reload the game!");
+                    MyAPIGateway.Utilities.ShowMessage("AaW","Ares at War version is outdated!");
+                    MyAPIGateway.Utilities.ShowMessage("AaW", "Save and reload the game!");
+
+
 
 
                     MESApi.ChatCommand("/MES.Debug.ClearStaticEncounters", MatrixD.Identity, 0, 0);

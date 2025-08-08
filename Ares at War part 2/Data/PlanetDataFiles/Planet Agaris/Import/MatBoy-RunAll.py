@@ -198,8 +198,8 @@ MrhoekB = False
 
 
 Red = True #on
-Green = True #off
-Blue = True #on
+Green = False #off
+Blue = False #on
 
 
 
