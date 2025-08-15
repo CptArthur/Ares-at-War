@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!--
+-->
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DialogueBank_Chat</SubtypeId>
+      </Id>
+
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [Chance:100]
+        [MaxChats:-1]
+        [BroadcastRandomly:false]
+
+        [Author:{AntennaName}]
+        [Color:{PlayerRelation}]
+
+        [BroadcastChatType:Chat]
+
+        [ChatMessages:FromXML FILE]
+
+        [ChatAudio:FromXML FILE]
+
+      </Description>
+
+    </EntityComponent>
+
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>LYRA_LaunchGuards</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:-1]
+      [BroadcastRandomly:false]
+      
+      [Author:LYRA]
+      [Color:Blue]
+      
+      [ChatMessages:{Faction} Reinforcements Detected]
+      [ChatAudio:LYRA_LaunchGuards]
+      [BroadcastChatType:Chat]
+      
+      [IgnoreAntennaRequirement:true]
+      [IgnoredAntennaRangeOverride:4500]
+
+
+      </Description>
+    </EntityComponent>
+
+
+
+  </EntityComponents>
+</Definitions>

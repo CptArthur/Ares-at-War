@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+
+
+    <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+      <Id>
+        <TypeId>Thrust</TypeId>
+        <SubtypeId>LargeBlockPrototechThruster</SubtypeId>
+      </Id>
+      <DisplayName>Advanced Large Thruster</DisplayName>
+      <Description>Advanced Large Thrusters provide a significant amount of force. They function best in zero gravity environments.</Description>
+      <Components>
+        <Component Subtype="SteelPlate" Count="400" />
+        <Component Subtype="MetalGrid" Count="1000" />
+        <Component Subtype="Construction" Count="1300" />
+        <Component Subtype="LargeTube" Count="640" />
+        <Component Subtype="Thrust" Count="3840" />
+        <Component Subtype="SteelPlate" Count="200" />
+      </Components>
+      <CriticalComponent Subtype="Thrust" Index="0" />
+ 
+      <ResourceSinkGroup>Thrust</ResourceSinkGroup>
+      <ForceMagnitude>14040000</ForceMagnitude>
+      <MaxPowerConsumption>67.2</MaxPowerConsumption>
+      <MinPowerConsumption>0.000002</MinPowerConsumption>
+      <SlowdownFactor>1</SlowdownFactor>
+
+      <MinPlanetaryInfluence>0</MinPlanetaryInfluence>
+      <MaxPlanetaryInfluence>1</MaxPlanetaryInfluence>
+      <EffectivenessAtMinInfluence>1</EffectivenessAtMinInfluence>
+      <EffectivenessAtMaxInfluence>0.3</EffectivenessAtMaxInfluence>
+
+    </Definition>
+
+    <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+      <Id>
+        <TypeId>Thrust</TypeId>
+        <SubtypeId>SmallBlockPrototechThruster</SubtypeId>
+      </Id>
+      <DisplayName>Advanced Large Thruster</DisplayName>
+      <Description>Advanced Large Thrusters provide a significant amount of force. They function best in zero gravity environments.</Description>
+      <Components>
+        <Component Subtype="SteelPlate" Count="4" />
+        <Component Subtype="MetalGrid" Count="20" />
+        <Component Subtype="Construction" Count="48" />
+        <Component Subtype="LargeTube" Count="20" />
+        <Component Subtype="Thrust" Count="48" />
+        <Component Subtype="SteelPlate" Count="16" />
+      </Components>
+      <CriticalComponent Subtype="Thrust" Index="0" />
+
+      <ResourceSinkGroup>Thrust</ResourceSinkGroup>
+      <ForceMagnitude>561600</ForceMagnitude>
+      <MaxPowerConsumption>4.8</MaxPowerConsumption>
+      <MinPowerConsumption>0.000002</MinPowerConsumption>
+      <SlowdownFactor>1</SlowdownFactor>
+
+      <MinPlanetaryInfluence>0</MinPlanetaryInfluence>
+      <MaxPlanetaryInfluence>1</MaxPlanetaryInfluence>
+      <EffectivenessAtMinInfluence>1</EffectivenessAtMinInfluence>
+      <EffectivenessAtMaxInfluence>0.3</EffectivenessAtMaxInfluence>
+
+    </Definition>
+
+    <Definition xsi:type="MyObjectBuilder_RefineryDefinition">
+      <Id>
+        <TypeId>Refinery</TypeId>
+        <SubtypeId>LargePrototechRefinery</SubtypeId>
+      </Id>
+      <DisplayName>Advanced Refinery</DisplayName>
+      <Description>Advanced Refineries refine ores into ingots at higher yield and speed rates than other refineries.</Description>
+      <Model>Models\Cubes\Large\Prototech_Refinery.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="1000" />
+        <Component Subtype="Construction" Count="960" />		
+        <Component Subtype="MetalGrid" Count="60" />
+        <Component Subtype="LargeTube" Count="60" />
+        <Component Subtype="SmallTube" Count="300" />
+        <Component Subtype="Superconductor" Count="240" />
+		<Component Subtype="LaserEmitter" Count="30" />>
+        <Component Subtype="Motor" Count="120" />
+        <Component Subtype="Computer" Count="60" />
+        <Component Subtype="SteelPlate" Count="660" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+
+      <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+      <OperationalPowerConsumption>1.12</OperationalPowerConsumption>
+      <BlueprintClasses>
+        <Class>Ingots</Class>
+      </BlueprintClasses>
+    </Definition>
+
+    <Definition xsi:type="MyObjectBuilder_RefineryDefinition">
+      <Id>
+        <TypeId>Refinery</TypeId>
+        <SubtypeId>SmallPrototechRefinery</SubtypeId>
+      </Id>
+      <DisplayName>Advanced Refinery</DisplayName>
+      <Description>Advanced Refineries refine ores into ingots at higher yield and speed rates than other refineries.</Description>
+      <Components>
+        <Component Subtype="SteelPlate" Count="1580" />
+        <Component Subtype="MetalGrid" Count="20" />
+        <Component Subtype="Construction" Count="320" />
+        <Component Subtype="LargeTube" Count="20" />
+        <Component Subtype="SmallTube" Count="100" />
+        <Component Subtype="Superconductor" Count="80" />
+        <Component Subtype="LaserEmitter" Count="10" />
+        <Component Subtype="Motor" Count="40" />
+        <Component Subtype="Computer" Count="20" />
+        <Component Subtype="SteelPlate" Count="220" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+        <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+      <OperationalPowerConsumption>0.425</OperationalPowerConsumption>
+      <BlueprintClasses>
+        <Class>Ingots</Class>
+      </BlueprintClasses>
+    </Definition>
+
+    <Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
+      <Id>
+        <TypeId>Assembler</TypeId>
+        <SubtypeId>LargePrototechAssembler</SubtypeId>
+      </Id>
+      <DisplayName>Nano Assembler</DisplayName>
+      <Description>Nano Assemblers are capable of manufacturing most High-Tech components, including Relic-Tech components.</Description>
+      <Components>
+        <Component Subtype="SteelPlate" Count="360" />
+        <Component Subtype="MetalGrid" Count="270" />
+        <Component Subtype="Construction" Count="390" />
+        <Component Subtype="Motor" Count="60" />
+        <Component Subtype="Display" Count="30" />
+        <Component Subtype="LaserEmitter" Count="20" />
+        <Component Subtype="Computer" Count="600" />
+        <Component Subtype="SteelPlate" Count="60" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+ 
+      <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+      <OperationalPowerConsumption>4</OperationalPowerConsumption>
+      <BlueprintClasses>
+		<Class>LargeBlocks</Class>
+		<Class>SmallBlocks</Class>			
+		<Class>BuildPlanner</Class>
+        <Class>NanoAssemblerComponents</Class>
+        <Class>PrototechComponents</Class>
+        <Class>Components</Class>		
+      </BlueprintClasses>
+    </Definition>
+
+    <Definition xsi:type="MyObjectBuilder_GyroDefinition">
+      <Id>
+        <TypeId>Gyro</TypeId>
+        <SubtypeId>LargeBlockPrototechGyro</SubtypeId>
+      </Id>
+      <DisplayName>Advanced Gyroscope</DisplayName>
+      <Description>Advanced Gyroscopes are more powerful, reinforced versions of standard Gyroscopes. They allow grids to stabilize and rotate.</Description>
+      <Components>
+        <Component Subtype="SteelPlate" Count="1500" />
+        <Component Subtype="MetalGrid" Count="150" />
+        <Component Subtype="Construction" Count="120" />
+        <Component Subtype="LargeTube" Count="48" />
+        <Component Subtype="Motor" Count="12" />
+        <Component Subtype="Computer" Count="15" />
+        <Component Subtype="SteelPlate" Count="300" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+    </Definition>
+
+    <Definition xsi:type="MyObjectBuilder_GyroDefinition">
+      <Id>
+        <TypeId>Gyro</TypeId>
+        <SubtypeId>SmallBlockPrototechGyro</SubtypeId>
+      </Id>
+      <DisplayName>Advanced Gyroscope</DisplayName>
+      <Description>Advanced Gyroscopes are more powerful, reinforced versions of standard Gyroscopes. They allow grids to stabilize and rotate.</Description>
+      <Components>
+        <Component Subtype="SteelPlate" Count="45" />
+        <Component Subtype="MetalGrid" Count="15" />
+        <Component Subtype="Construction" Count="60" />
+        <Component Subtype="LargeTube" Count="12" />
+        <Component Subtype="Motor" Count="6" />
+        <Component Subtype="Computer" Count="12" />
+        <Component Subtype="SteelPlate" Count="30" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+    </Definition>
+
+    <Definition xsi:type="MyObjectBuilder_BatteryBlockDefinition">
+      <Id>
+        <TypeId>BatteryBlock</TypeId>
+        <SubtypeId>LargeBlockPrototechBattery</SubtypeId>
+      </Id>
+	  <Public>false</Public>
+      <DisplayName>Advanced Lithium Battery</DisplayName>
+      <Description>Advanced Batteries are powerful energy storage devices. They are able to output high volumes of power with increased efficiency.</Description>
+      <Components>
+        <Component Subtype="SteelPlate" Count="60" />
+        <Component Subtype="MetalGrid" Count="48" />
+        <Component Subtype="Construction" Count="90" />
+        <Component Subtype="PowerCell" Count="240">
+          <DeconstructId>
+            <TypeId>Ore</TypeId>
+            <SubtypeId>Scrap</SubtypeId>
+          </DeconstructId>
+        </Component>
+		<Component Subtype="Superconductor" Count="40" />
+        <Component Subtype="Computer" Count="100" />
+        <Component Subtype="SteelPlate" Count="180" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+
+      <MaxPowerOutput>48</MaxPowerOutput>
+      <RequiredPowerInput>24</RequiredPowerInput>
+      <AdaptibleInput>true</AdaptibleInput>
+      <MaxStoredPower>18</MaxStoredPower>
+      <InitialStoreddPowerRatio>0.3</InitialStoreddPowerRatio>
+      <RechargeMultiplier>0.9</RechargeMultiplier>
+    </Definition>
+
+    <Definition xsi:type="MyObjectBuilder_BatteryBlockDefinition">
+      <Id>
+        <TypeId>BatteryBlock</TypeId>
+        <SubtypeId>SmallBlockPrototechBattery</SubtypeId>
+      </Id>
+	  <Public>false</Public>
+      <DisplayName>Advanced Lithium Battery</DisplayName>
+      <Description>Advanced Batteries are powerful energy storage devices. They are able to output high volumes of power with increased efficiency.</Description>
+      <Components>
+        <Component Subtype="SteelPlate" Count="15" />
+        <Component Subtype="MetalGrid" Count="12" />
+        <Component Subtype="Construction" Count="6" />
+        <Component Subtype="PowerCell" Count="60">
+          <DeconstructId>
+            <TypeId>Ore</TypeId>
+            <SubtypeId>Scrap</SubtypeId>
+          </DeconstructId>
+        </Component>
+		<Component Subtype="Superconductor" Count="15" />
+        <Component Subtype="Computer" Count="20" />		
+        <Component Subtype="Construction" Count="9" />
+        <Component Subtype="SteelPlate" Count="60" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+ 
+      <MaxStoredPower>2</MaxStoredPower>
+      <MaxPowerOutput>2.8</MaxPowerOutput>
+      <RequiredPowerInput>8</RequiredPowerInput>
+      <InitialStoreddPowerRatio>0.3</InitialStoreddPowerRatio>
+      <RechargeMultiplier>0.9</RechargeMultiplier>
+    </Definition>
+
+    <Definition xsi:type="MyObjectBuilder_ShipDrillDefinition">
+      <Id>
+        <TypeId>Drill</TypeId>
+        <SubtypeId>LargeBlockPrototechDrill</SubtypeId>
+      </Id>
+      <DisplayName>Advanced Large Drill</DisplayName>
+      <Description>Advanced Large Drills are a powerful tools capable of collecting raw ores at higher efficiency than standard drill types.</Description>
+      <Components>
+        <Component Subtype="SteelPlate" Count="540" />
+        <Component Subtype="MetalGrid" Count="240" />
+        <Component Subtype="Construction" Count="600" />
+        <Component Subtype="LargeTube" Count="360" />
+        <Component Subtype="Motor" Count="15" />
+        <Component Subtype="Computer" Count="60" />
+        <Component Subtype="SteelPlate" Count="360" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+    </Definition>
+
+  </CubeBlocks>
+</Definitions>

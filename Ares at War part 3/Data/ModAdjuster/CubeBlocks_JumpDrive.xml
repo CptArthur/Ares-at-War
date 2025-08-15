@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <CubeBlocks>
+
+        <Definition xsi:type="MyObjectBuilder_JumpDriveDefinition">
+            <Id>
+                <TypeId>JumpDrive</TypeId>
+                <SubtypeId>LargeJumpDrive</SubtypeId>
+            </Id>
+            <Description>Jump drives allow ships to teleport over large distances. Originally designed by the Sol Cooperative, this older model is still in use today, relying on proven technology despite its age.
+			
+			They require a full charge to jump and can only be activated from the toolbar of a cockpit. </Description>
+            <Components>
+                <Component Subtype="SteelPlate" Count="40" />
+                <Component Subtype="MetalGrid" Count="50" />
+                <Component Subtype="GravityGenerator" Count="20" />
+                <Component Subtype="Detector" Count="20" />
+                <Component Subtype="JumpCore" Count="10" />
+                <Component Subtype="PowerCell" Count="120" />
+                <Component Subtype="Superconductor" Count="1000" />
+                <Component Subtype="Computer" Count="300" />
+                <Component Subtype="Construction" Count="40" />
+                <Component Subtype="SteelPlate" Count="20" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+ 
+            <ResourceSinkGroup>Charging</ResourceSinkGroup>
+            <RequiredPowerInput>32</RequiredPowerInput>
+            <PowerNeededForJump>3</PowerNeededForJump>
+            <PowerEfficiency>0.8</PowerEfficiency>
+
+            <MaxJumpDistance>2000000</MaxJumpDistance>
+            <MaxJumpMass>1250000</MaxJumpMass>
+
+        </Definition>
+		
+
+
+    <!-- Prototech Blocks-->
+    <Definition xsi:type="MyObjectBuilder_JumpDriveDefinition">
+      <Id>
+        <TypeId>JumpDrive</TypeId>
+        <SubtypeId>LargePrototechJumpDrive</SubtypeId>
+      </Id>
+      <DisplayName>Advanced Jump Drive</DisplayName>
+      <Description>Advanced Jump Drives allow grids to teleport over incredibly large distances. They have a higher range and better efficiency than standard Jump Drives.</Description>
+      <Components>
+        <Component Subtype="SteelPlate" Count="120" />
+        <Component Subtype="MetalGrid" Count="150" />
+        <Component Subtype="GravityGenerator" Count="90" />
+        <Component Subtype="Detector" Count="60" />
+        <Component Subtype="JumpCore" Count="15" />		
+        <Component Subtype="PowerCell" Count="360" />
+        <Component Subtype="Superconductor" Count="4200" />
+        <Component Subtype="Computer" Count="900" />
+        <Component Subtype="Construction" Count="540" />
+        <Component Subtype="SteelPlate" Count="60" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+
+
+      <ResourceSinkGroup>Charging</ResourceSinkGroup>
+      <RequiredPowerInput>64</RequiredPowerInput>
+      <PowerNeededForJump>5</PowerNeededForJump>
+      <PowerEfficiency>0.9</PowerEfficiency>
+
+      <MaxJumpDistance>6000000</MaxJumpDistance>
+      <MaxJumpMass>2500000</MaxJumpMass>
+
+    </Definition>
+
+    <Definition xsi:type="MyObjectBuilder_JumpDriveDefinition">
+      <Id>
+        <TypeId>JumpDrive</TypeId>
+        <SubtypeId>SmallPrototechJumpDrive</SubtypeId>
+      </Id>
+      <DisplayName>Advanced Jump Drive</DisplayName>
+      <Description>Advanced Jump Drives allow grids to teleport over incredibly large distances. They have a higher range and better efficiency than standard Jump Drives.</Description>
+      <Components>
+        <Component Subtype="SteelPlate" Count="12" />
+        <Component Subtype="MetalGrid" Count="15" />
+        <Component Subtype="GravityGenerator" Count="9" />
+        <Component Subtype="Detector" Count="6" />
+		<Component Subtype="JumpCore" Count="3" />
+        <Component Subtype="PowerCell" Count="36" />
+        <Component Subtype="Superconductor" Count="420" />
+        <Component Subtype="Computer" Count="90" />
+        <Component Subtype="Construction" Count="54" />
+        <Component Subtype="SteelPlate" Count="6" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+ 
+
+      <ResourceSinkGroup>Charging</ResourceSinkGroup>
+      <RequiredPowerInput>24</RequiredPowerInput>
+      <PowerNeededForJump>1.5</PowerNeededForJump>
+      <PowerEfficiency>0.9</PowerEfficiency>
+
+      <MaxJumpDistance>500000</MaxJumpDistance>
+      <MaxJumpMass>50000</MaxJumpMass>
+    </Definition>
+	
+	
+		
+		
+    </CubeBlocks>
+</Definitions>

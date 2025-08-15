@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--
+
+	These triggers apply to both Dynamic and Static
+
+
+    -->
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_LYRA_Trigger_LaunchGuards</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_TriggerEvent_Defense_LaunchGuards]
+
+        [Type:Manual]
+        [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:AaW_LYRA_Action_LaunchGuards]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_LYRA_Action_LaunchGuards</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+      [UseChatBroadcast:true]
+      [ChatData:LYRA_LaunchGuards]	
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+
+  </EntityComponents>
+</Definitions>

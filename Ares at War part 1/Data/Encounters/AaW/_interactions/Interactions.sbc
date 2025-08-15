@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--
+        [Triggers:AaW_Interactions_Trigger_TargetIsApproaching]
+        [Triggers:AaW_Interactions_Trigger_Surrender]
+    -->
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Interactions_Trigger_RadioCheck</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:RadioCheck]
+
+        [//Conditions:AaW_Interactions_Condition_RadioCheck]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+        [ActionExecution:Random]
+        [Actions:AaW_Interactions_Action_RadioCheck]
+
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Interactions_Condition_RadioCheck</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckIfTargetIsPlayerOwned:false]
+        [CheckIfTargetIsNpcOwned:false]
+
+      </Description>
+    </EntityComponent>
+
+	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_Interactions_Action_RadioCheck</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Interactions_RadioCheck]
+
+
+        [//DisableTriggers:true]
+        [//DisableTriggerNames:AaW_Interactions_Trigger_RadioCheck]
+
+      </Description>
+    </EntityComponent>
+
+
+
+  </EntityComponents>
+</Definitions>

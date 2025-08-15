@@ -1,0 +1,114 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<CubeBlocks>
+
+			<Definition xsi:type="MyObjectBuilder_RefineryDefinition">
+				<Id>
+					<TypeId>Refinery</TypeId>
+					<SubtypeId>AQD_SG_BasicRefinery</SubtypeId>
+				</Id>
+				<DisplayName>DisplayName_Block_Arc_Furnace</DisplayName>
+				<Description>Basic Refinery can refine scrap metal,Iron, Nickel, Silicon, Cobalt, Magnesium, Sulfur, and Stone
+
+				Power Usage: 500kw</Description>
+				<Components>
+					<Component Subtype="SteelPlate" Count="25" />
+					<Component Subtype="Construction" Count="5" />
+					<Component Subtype="Motor" Count="2" />
+					<Component Subtype="Computer" Count="2" />
+					<Component Subtype="SteelPlate" Count="5" />
+				</Components>
+				<CriticalComponent Subtype="Computer" Index="0" />
+
+				<StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+				<OperationalPowerConsumption>0.5</OperationalPowerConsumption>
+				<BlueprintClasses>
+					<Class>CommonMetals</Class>
+				</BlueprintClasses>
+			</Definition>
+			
+			
+			<Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
+				<Id>
+					<TypeId>Assembler</TypeId>
+					<SubtypeId>AQD_SG_BasicAssembler</SubtypeId>
+				</Id>
+				<DisplayName>Gear Forge</DisplayName>
+		  <Description>Automated production of Gear.
+		  
+		  Power Usage: 250kw</Description>
+				<Components>
+					<Component Subtype="SteelPlate" Count="30" />
+					<Component Subtype="Construction" Count="20" />
+					<Component Subtype="Motor" Count="5" />
+					<Component Subtype="Display" Count="2" />
+					<Component Subtype="Computer" Count="40" />
+					<Component Subtype="SteelPlate" Count="10" />
+				</Components>
+				<CriticalComponent Subtype="Computer" Index="0" />
+				<StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+				<OperationalPowerConsumption>0.25</OperationalPowerConsumption>
+			  <BlueprintClasses>
+				<Class>EliteEquipment</Class>
+				<Class>EliteTools</Class>
+				<Class>EliteWeapons</Class>
+				<Class>EliteConsumables</Class>		
+			  </BlueprintClasses>
+			</Definition>
+
+
+			<Definition xsi:type="MyObjectBuilder_JumpDriveDefinition">
+				<Id>
+					<TypeId>JumpDrive</TypeId>
+					<SubtypeId>AQD_SG_Jumpdrive</SubtypeId>
+				</Id>
+				<DisplayName>DisplayName_Block_JumpDrive</DisplayName>
+				<Description>Description_JumpDrive</Description>
+				<Components>
+					<Component Subtype="SteelPlate" Count="10" />
+					<Component Subtype="MetalGrid" Count="10" />
+					<Component Subtype="GravityGenerator" Count="10" />
+					<Component Subtype="Detector" Count="10" />
+					<Component Subtype="PowerCell" Count="60" />
+					<Component Subtype="JumpCore" Count="2" />
+					<Component Subtype="Superconductor" Count="200" />
+					<Component Subtype="Computer" Count="100" />
+					<Component Subtype="Construction" Count="10" />
+					<Component Subtype="SteelPlate" Count="20" />
+				</Components>
+				<CriticalComponent Subtype="Computer" Index="0" />
+				<ResourceSinkGroup>Charging</ResourceSinkGroup>
+				<RequiredPowerInput>16</RequiredPowerInput>
+				<PowerNeededForJump>2</PowerNeededForJump>
+				<MaxJumpDistance>350000</MaxJumpDistance>
+				<MaxJumpMass>125000</MaxJumpMass>
+
+			</Definition>
+
+			<Definition xsi:type="MyObjectBuilder_GravityGeneratorDefinition">
+				<Id>
+					<TypeId>GravityGenerator</TypeId>
+					<SubtypeId>AQD_SG_GravityGenerator</SubtypeId>
+				</Id>
+				<DisplayName>DisplayName_Block_GravityGenerator</DisplayName>
+				<Description>Description_GravityGenerator</Description>
+				<Components>
+					<Component Subtype="SteelPlate" Count="20" />
+					<Component Subtype="GravityGenerator" Count="2" />
+					<Component Subtype="Construction" Count="20" />
+					<Component Subtype="SteelPlate" Count="18" />
+					<Component Subtype="LargeTube" Count="2" />
+					<Component Subtype="Motor" Count="2" />
+					<Component Subtype="Computer" Count="15" />
+					<Component Subtype="SteelPlate" Count="15" />
+				</Components>
+				<CriticalComponent Subtype="Computer" Index="0" />
+			</Definition>
+
+
+
+
+
+
+		</CubeBlocks>
+	</Definitions>

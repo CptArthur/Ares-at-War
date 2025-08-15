@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<CubeBlocks>
+		<Definition xsi:type="MyObjectBuilder_RefineryDefinition">
+			<Id>
+				<TypeId>Refinery</TypeId>
+				<SubtypeId>LargeRefinery</SubtypeId>
+			</Id>
+			<Description>Refineries can refine scrap metal, Silicon, Iron, Nickel, Cobalt, Sulfur, Magnesium, Silver, Gold, Lithium, Platinum, and Uranium.
+	  
+	  Power Usage: 3MW</Description>
+			<StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+			<OperationalPowerConsumption>3</OperationalPowerConsumption>
+			<BlueprintClasses>
+				<Class>Ingots</Class>
+			</BlueprintClasses>
+		</Definition>
+		
+		
+		<Definition xsi:type="MyObjectBuilder_RefineryDefinition">
+			<Id>
+				<TypeId>Refinery</TypeId>
+				<SubtypeId>Blast Furnace</SubtypeId>
+			</Id>
+			<Description>Basic Refinery can refine scrap metal,Iron, Nickel, Silicon, Cobalt, Magnesium, Sulfur, and Stone
+
+				Power Usage: 2MW</Description>
+			<StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+			<OperationalPowerConsumption>2</OperationalPowerConsumption>
+			<BlueprintClasses>
+				<Class>CommonMetals</Class>
+			</BlueprintClasses>
+		</Definition>
+
+
+
+		<Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
+			<Id>
+				<TypeId>Assembler</TypeId>
+				<SubtypeId>LargeAssembler</SubtypeId>
+			</Id>
+			<Description>Automated production of Advanced components.
+
+				Power Usage: 1.5MW</Description>
+			<StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+			<OperationalPowerConsumption>1.5</OperationalPowerConsumption>
+			<BlueprintClasses>
+				<Class>Components</Class>
+				<Class>EliteEquipment</Class>
+				<Class>EliteTools</Class>
+				<Class>EliteWeapons</Class>
+				<Class>EliteConsumables</Class>				
+				<Class>BuildPlanner</Class>
+			</BlueprintClasses>
+		</Definition>
+
+        <Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
+            <Id>
+                <TypeId>Assembler</TypeId>
+                <SubtypeId>LargeAssemblerIndustrial</SubtypeId>
+            </Id>
+            <Description>Automated production of Advanced components.
+
+				Power Usage: 1.5MW</Description>
+  
+            <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+            <OperationalPowerConsumption>0.56</OperationalPowerConsumption>
+            <BlueprintClasses>
+                <Class>Components</Class>
+				<Class>EliteEquipment</Class>
+				<Class>EliteTools</Class>
+				<Class>EliteWeapons</Class>
+				<Class>EliteConsumables</Class>				
+				<Class>BuildPlanner</Class>				
+            </BlueprintClasses>
+        </Definition>
+		
+		
+		<Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
+		  <Id>
+			<TypeId>Assembler</TypeId>
+			<SubtypeId>BasicAssembler</SubtypeId>
+		  </Id>
+		  <DisplayName>Gear Forge</DisplayName>
+
+		  <Description>Automated production of Gear.
+		  
+		  Power Usage: 1MW</Description>
+
+		  <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+		  <OperationalPowerConsumption>1</OperationalPowerConsumption>
+		  <BlueprintClasses>
+			<Class>EliteEquipment</Class>
+			<Class>EliteTools</Class>
+			<Class>EliteWeapons</Class>
+			<Class>EliteConsumables</Class>		
+		  </BlueprintClasses>
+		</Definition>		
+
+		
+		
+		<!--
+		<Definition xsi:type="MyObjectBuilder_OxygenFarmDefinition">
+			<Id>
+				<TypeId>OxygenFarm</TypeId>
+				<SubtypeId>LargeBlockOxygenFarm</SubtypeId>
+			</Id>
+			<DisplayName>DisplayName_Block_OxygenFarm</DisplayName>
+			<Description>Description_OxygenFarm</Description>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="3" y="1" z="1" />
+			<Center x="0" y="0" z="0" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Cubes\Large\SolarHydroponics.mwm</Model>
+			<Components>
+				<Component Subtype="SteelPlate" Count="40" />
+				<Component Subtype="BulletproofGlass" Count="60" />
+				<Component Subtype="LargeTube" Count="20" />
+				<Component Subtype="SmallTube" Count="10" />
+				<Component Subtype="Construction" Count="20" />
+				<Component Subtype="Computer" Count="20" />
+				<Component Subtype="BulletproofGlass" Count="40" />
+			</Components>
+			<CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Left" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+				<MountPoint Side="Right" StartX="0.2" StartY="0.2" EndX="0.8" EndY="0.8" />
+				<MountPoint Side="Bottom" StartX="0" StartY="0.25" EndX="3" EndY="0.75" />
+				<MountPoint Side="Top" StartX="0" StartY="0.25" EndX="3" EndY="0.75" />
+				<MountPoint Side="Back" StartX="0" StartY="0.375" EndX="1" EndY="0.625" />
+				<MountPoint Side="Front" StartX="2" StartY="0.375" EndX="3" EndY="0.625" />
+			</MountPoints>
+			<MirroringX>Y</MirroringX>
+			<MirroringY>X</MirroringY>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\SolarHydroponicsConstruction_1.mwm" />
+				<Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\SolarHydroponicsConstruction_2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\SolarHydroponicsConstruction_3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>OxygenFarm</BlockPairName>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>30</BuildTimeSeconds>
+			<PanelOrientation>
+				<X>0</X>
+				<Y>0</Y>
+				<Z>-1</Z>
+			</PanelOrientation>
+			<TwoSidedPanel>true</TwoSidedPanel>
+			<PanelOffset>0</PanelOffset>
+			<ResourceSinkGroup>Factory</ResourceSinkGroup>
+			<ResourceSourceGroup>SolarPanels</ResourceSourceGroup>
+			<ProducedGas>
+				<Id>
+					<TypeId>GasProperties</TypeId>
+					<SubtypeId>Oxygen</SubtypeId>
+				</Id>
+				<MaxOutputPerSecond>0.03</MaxOutputPerSecond>
+			</ProducedGas>
+			<OperationalPowerConsumption>0.02</OperationalPowerConsumption>
+			<DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+			<DamagedSound>ParticleWeapExpl</DamagedSound>
+			<EmissiveColorPreset>Default</EmissiveColorPreset>
+			<DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+			<DestroySound>WepSmallWarheadExpl</DestroySound>
+			<PCU>25</PCU>
+		</Definition>
+
+		<Definition xsi:type="MyObjectBuilder_UpgradeModuleDefinition">
+			<Id>
+				<TypeId>UpgradeModule</TypeId>
+				<SubtypeId>LargeProductivityModule</SubtypeId>
+			</Id>
+			<DisplayName>DisplayName_Block_ProductivityModule</DisplayName>
+			<Description>Description_ProductivityModule</Description>
+			<CubeSize>Large</CubeSize>
+			<Public>false</Public>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="2" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Cubes\Large\UpgradeProductivity.mwm</Model>
+			<Components>
+				<Component Subtype="SteelPlate" Count="80" />
+				<Component Subtype="Construction" Count="40" />
+				<Component Subtype="SmallTube" Count="20" />
+				<Component Subtype="Computer" Count="60" />
+				<Component Subtype="Motor" Count="4" />
+				<Component Subtype="SteelPlate" Count="20" />
+			</Components>
+			<CriticalComponent Subtype="Motor" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Right" StartX="0.15" StartY="0.15" EndX="1.85" EndY="0.85" Default="true" />
+				<MountPoint Side="Left" StartX="0.15" StartY="0.15" EndX="1.85" EndY="0.85" />
+				<MountPoint Side="Top" StartX="0.15" StartY="0.15" EndX="0.85" EndY="1.85" />
+				<MountPoint Side="Bottom" StartX="0.15" StartY="0.15" EndX="0.85" EndY="1.85" />
+				<MountPoint Side="Front" StartX="0.15" StartY="0.15" EndX="0.85" EndY="0.85" />
+				<MountPoint Side="Back" StartX="0.15" StartY="0.15" EndX="0.85" EndY="0.85" />
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\UpgradeProductivityConstruction_1.mwm" />
+				<Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\UpgradeProductivityConstruction_2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\UpgradeProductivityConstruction_3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>ProductivityModule</BlockPairName>
+			<MirroringX>Z</MirroringX>
+			<MirroringZ>X</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<Upgrades>
+				<MyUpgradeModuleInfo>
+					<UpgradeType>Productivity</UpgradeType>
+					<Modifier>0</Modifier>
+					<ModifierType>Additive</ModifierType>
+				</MyUpgradeModuleInfo>
+			</Upgrades>
+			<PrimarySound>BlockModuleProductivity</PrimarySound>
+			<DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+			<DamagedSound>ParticleElectrical</DamagedSound>
+			<EmissiveColorPreset>Default</EmissiveColorPreset>
+			<DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+			<DestroySound>WepSmallWarheadExpl</DestroySound>
+			<PCU>1</PCU>
+			<IsAirTight>false</IsAirTight>
+		</Definition>
+		<Definition xsi:type="MyObjectBuilder_UpgradeModuleDefinition">
+			<Id>
+				<TypeId>UpgradeModule</TypeId>
+				<SubtypeId>LargeEffectivenessModule</SubtypeId>
+			</Id>
+			<DisplayName>DisplayName_Block_EffectivenessModule</DisplayName>
+			<Description>Description_EffectivenessModule</Description>
+			<CubeSize>Large</CubeSize>
+			<Public>false</Public>
+			<GuiVisible>false</GuiVisible>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="2" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Cubes\Large\UpgradeEffectiveness.mwm</Model>
+			<Components>
+				<Component Subtype="SteelPlate" Count="80" />
+				<Component Subtype="Construction" Count="50" />
+				<Component Subtype="SmallTube" Count="15" />
+				<Component Subtype="Superconductor" Count="20" />
+				<Component Subtype="Motor" Count="4" />
+				<Component Subtype="SteelPlate" Count="20" />
+			</Components>
+			<CriticalComponent Subtype="Motor" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Right" StartX="0.15" StartY="0.15" EndX="1.85" EndY="0.85" Default="true" />
+				<MountPoint Side="Left" StartX="0.15" StartY="0.15" EndX="1.85" EndY="0.85" />
+				<MountPoint Side="Top" StartX="0.15" StartY="0.15" EndX="0.85" EndY="1.85" />
+				<MountPoint Side="Bottom" StartX="0.15" StartY="0.15" EndX="0.85" EndY="1.85" />
+				<MountPoint Side="Front" StartX="0.15" StartY="0.15" EndX="0.85" EndY="0.85" />
+				<MountPoint Side="Back" StartX="0.15" StartY="0.15" EndX="0.85" EndY="0.85" />
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\UpgradeEffectivenessConstruction_1.mwm" />
+				<Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\UpgradeEffectivenessConstruction_2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\UpgradeEffectivenessConstruction_3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>EffectivenessModule</BlockPairName>
+			<MirroringX>Z</MirroringX>
+			<MirroringZ>X</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<Upgrades>
+				<MyUpgradeModuleInfo>
+					<UpgradeType>Effectiveness</UpgradeType>
+					<Modifier>1</Modifier>
+					<ModifierType>Multiplicative</ModifierType>
+				</MyUpgradeModuleInfo>
+			</Upgrades>
+			<PrimarySound>BlockModuleEffectiveness</PrimarySound>
+			<DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+			<DamagedSound>ParticleElectrical</DamagedSound>
+			<EmissiveColorPreset>Default</EmissiveColorPreset>
+			<DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+			<DestroySound>WepSmallWarheadExpl</DestroySound>
+			<PCU>1</PCU>
+			<IsAirTight>false</IsAirTight>
+		</Definition>
+		-->
+		<Definition xsi:type="MyObjectBuilder_UpgradeModuleDefinition">
+			<Id>
+				<TypeId>UpgradeModule</TypeId>
+				<SubtypeId>LargeEnergyModule</SubtypeId>
+			</Id>
+			<Components>
+				<Component Subtype="SteelPlate" Count="80" />
+				<Component Subtype="Construction" Count="40" />
+				<Component Subtype="SmallTube" Count="20" />
+				<Component Subtype="Capacitor" Count="20" />
+				<Component Subtype="Motor" Count="4" />
+				<Component Subtype="SteelPlate" Count="20" />
+			</Components>
+			<CriticalComponent Subtype="Motor" Index="0" />
+		</Definition>
+
+		
+	</CubeBlocks>
+</Definitions>
