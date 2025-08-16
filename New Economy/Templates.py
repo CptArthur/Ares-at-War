@@ -106,27 +106,13 @@ def GetStoreSettlement(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngo
 
         [Offers:Component/SteelPlate] 
         [Offers:Component/Construction] 
+        [Offers:Component/Computer] 
+        [Offers:Component/Motor] 
+        [Offers:Component/SolarCell] 
+        [Offers:Component/AlkalinePowerCell] 
         [Offers:Component/Girder] 
         [Offers:Component/InteriorPlate] 
-        [Offers:Component/Construction] 
-        [Offers:Component/SmallTube] 
-        [Offers:Component/LargeTube] 
-        [Offers:Component/BulletproofGlass] 
-        [Offers:Component/Motor] 
-        [Offers:Component/Display] 
-        [Offers:Component/Computer] 
-        [Offers:Component/RadioCommunicationComponent] 
-        [Offers:Component/Detector] 
-        [Offers:Component/Canvas] 
-        [Offers:Component/SolarCell] 
-        [Offers:Component/PowerCell] 
-        [Offers:Component/Explosives] 
-        [Offers:Component/MedicalComponent] 
-        [Offers:Component/ReactorComponent] 
-        [Offers:Component/MetalGrid] 
 
-        [Offers:Component/AcidPowerCell] 
-        [Offers:Component/AlkalinePowerCell] 
 
       </Description>
 

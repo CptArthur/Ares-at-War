@@ -27,37 +27,25 @@
         [Orders:Ore/Silicon] 
         [Orders:Ore/Cobalt] 
         [Orders:Ore/Magnesium] 
+        [Orders:Ore/Sulfur] 
 
         [Offers:Ingot/Iron] 
         [Offers:Ingot/Nickel] 
         [Offers:Ingot/Silicon] 
         [Offers:Ingot/Cobalt] 
         [Offers:Ingot/Magnesium] 
+        [Offers:Ingot/Sulfur] 
 
 
         [Offers:Component/SteelPlate] 
         [Offers:Component/Construction] 
+        [Offers:Component/Computer] 
+        [Offers:Component/Motor] 
+        [Offers:Component/SolarCell] 
+        [Offers:Component/AlkalinePowerCell] 
         [Offers:Component/Girder] 
         [Offers:Component/InteriorPlate] 
-        [Offers:Component/Construction] 
-        [Offers:Component/SmallTube] 
-        [Offers:Component/LargeTube] 
-        [Offers:Component/BulletproofGlass] 
-        [Offers:Component/Motor] 
-        [Offers:Component/Display] 
-        [Offers:Component/Computer] 
-        [Offers:Component/RadioCommunicationComponent] 
-        [Offers:Component/Detector] 
-        [Offers:Component/Canvas] 
-        [Offers:Component/SolarCell] 
-        [Offers:Component/PowerCell] 
-        [Offers:Component/Explosives] 
-        [Offers:Component/MedicalComponent] 
-        [Offers:Component/ReactorComponent] 
-        [Offers:Component/MetalGrid] 
 
-        [Offers:Component/AcidPowerCell] 
-        [Offers:Component/AlkalinePowerCell] 
 
       </Description>
 
@@ -70,6 +58,38 @@
      
 
     
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_StoreProfile_Azuris_VendingMachine</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_Azuris.xml]
+        
+        [MinOfferItems:99]
+        [MaxOfferItems:99]
+        [MinOrderItems:99]
+        [MaxOrderItems:99]
+
+        [ItemsRequireInventory:false]
+
+        [Offers:Tool/HandDrill2Item] 
+        [Offers:Tool/HandDrill3Item] 
+        [Offers:Tool/AngleGrinder2Item] 
+        [Offers:Tool/AngleGrinder3Item] 
+        [Offers:Tool/Welder2Item] 
+        [Offers:Tool/Welder3Item] 
+
+        [Offers:Consumable/Medkit] 
+        [Offers:Consumable/Powerkit] 
+
+
+      </Description>
+
+    </EntityComponent>
     
     
     
@@ -126,7 +146,7 @@
         [MinContracts:5]
         [MaxContracts:15]
         
-        [MissionIds:AaW_Mission_Azuris_DestroyDRACobaltOther] 
+        [MissionIds:AaW_Mission_Azuris_DestroyDRAMagnesiumOther] 
 
         
       </Description>

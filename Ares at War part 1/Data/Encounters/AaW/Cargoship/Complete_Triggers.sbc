@@ -5,8 +5,8 @@
     <!--
 
 
-        [Triggers:MSB_Cargoship_Trigger_TargetIsApproaching]
-        [Triggers:MSB_Cargoship_Trigger_Surrender]
+        [Triggers:AaW_Cargoship_Trigger_TargetIsApproaching]
+        [Triggers:AaW_Cargoship_Trigger_Surrender]
 
 
 
@@ -17,7 +17,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Cargoship_Trigger_TargetIsApproaching</SubtypeId>
+          <SubtypeId>AaW_Cargoship_Trigger_TargetIsApproaching</SubtypeId>
       </Id>
       <Description>
 
@@ -28,14 +28,14 @@
         [Tags:MSB_TriggerEvent_InitialTargetIsApproaching_Hard]
         [Tags:MSB_TriggerEvent_InitialTargetIsApproaching_Other]
 
-        [//Conditions:MSB_Cargoship_Condition_TargetIsApproaching]
+        [//Conditions:AaW_Cargoship_Condition_TargetIsApproaching]
 
         [UseTrigger:true]
         [StartsReady:true]
         [MinCooldownMs:120000]
         [MaxCooldownMs:180000]
         [ActionExecution:Random]
-        [Actions:MSB_Cargoship_Action_TargetIsApproaching]
+        [Actions:AaW_Cargoship_Action_TargetIsApproaching]
 
       </Description>
     </EntityComponent>
@@ -43,7 +43,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Cargoship_Condition_TargetIsApproaching</SubtypeId>
+        <SubtypeId>AaW_Cargoship_Condition_TargetIsApproaching</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -61,18 +61,18 @@
 	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Cargoship_Action_TargetIsApproaching</SubtypeId>
+          <SubtypeId>AaW_Cargoship_Action_TargetIsApproaching</SubtypeId>
       </Id>
       <Description>
 
         [RivalAI Action]
 
         [PlayDialogueCue:true]
-        [PlayDialogueCue:MSB_CargoShip_TargetIsApproaching]
+        [PlayDialogueCue:AaW_CargoShip_TargetIsApproaching]
 
 
         [DisableTriggers:true]
-        [DisableTriggerNames:MSB_Cargoship_Trigger_TargetIsApproaching]
+        [DisableTriggerNames:AaW_Cargoship_Trigger_TargetIsApproaching]
 
       </Description>
     </EntityComponent>
@@ -82,7 +82,7 @@
 		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Cargoship_Trigger_Surrender</SubtypeId>
+          <SubtypeId>AaW_Cargoship_Trigger_Surrender</SubtypeId>
       </Id>
       <Description>
 
@@ -92,11 +92,11 @@
         [Tags:MSB_TriggerEvent_VeryLowMorale]
         [StartsReady:true]
 
-        [Conditions:MSB_Cargoship_Condition_Surrender]
+        [Conditions:AaW_Cargoship_Condition_Surrender]
 
 
 
-        [Actions:MSB_Cargoship_Action_Surrender]
+        [Actions:AaW_Cargoship_Action_Surrender]
       </Description>
 
     </EntityComponent>
@@ -106,7 +106,7 @@
 	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Cargoship_Condition_Surrender</SubtypeId>
+        <SubtypeId>AaW_Cargoship_Condition_Surrender</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -126,7 +126,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Cargoship_Action_Surrender</SubtypeId>
+          <SubtypeId>AaW_Cargoship_Action_Surrender</SubtypeId>
       </Id>
       <Description>
 
@@ -134,7 +134,7 @@
 
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Terminate]
+        [ManuallyActivatedTriggerTags:AaW_TriggerEvent_Terminate]
         [ForceManualTriggerActivation:false]
 
 
@@ -174,7 +174,7 @@
 
 
         [PlayDialogueCue:true]
-        [PlayDialogueCue:MSB_CargoShip_Surrender]
+        [PlayDialogueCue:AaW_CargoShip_Surrender]
 
 
 

@@ -16,7 +16,7 @@ def CreateStoreItems(Faction, Name:str,XML_Name: str,StoresProfiles:str,TradeIng
 
      {Temp.GetStoreUniversity(XML_Name,Faction,Name,Ingots,TradeIngots) if "University" in StoresProfiles else ""}
 
-    {Temp.GetStoreVendingMachine(XML_Name,Faction,Name) if "VendingMachine" in StoresProfiles else ""}
+    {Temp.GetStoreVendingMachine(XML_Name,Faction,Name) if "Vending Machine" in StoresProfiles else ""}
     {Temp.GetStoreIngot(XML_Name,Faction,Name,Ingots,TradeIngots) if "Ingot" in StoresProfiles else ""}
     {Temp.GetStoreCiv(XML_Name,Faction,Name) if "Civ" in StoresProfiles else ""}
     {Temp.GetStoreScrap(XML_Name,Faction,Name) if "Scrap" in StoresProfiles else ""}
@@ -98,8 +98,10 @@ def CreateStoreItems(Faction, Name:str,XML_Name: str,StoresProfiles:str,TradeIng
 def CreateTriggers(Faction, Name:str, IO, StoresProfiles):
     print(f"[Triggers:{Faction}_Trigger_Static_PopulateStores_{Name}]")
     FailCondition = ""
+    Tags = "StoreRefresh"
     if IO == False:
       FailCondition = "[UseFailCondition:true]"
+      Tags = "StoreRefreshIO"
     ITC = "{ITC}"
     SHIVAN = "{SHIVAN}"
     SECURITY = "{SECURITY}"
@@ -122,7 +124,7 @@ def CreateTriggers(Faction, Name:str, IO, StoresProfiles):
       <Description>
 
         [RivalAI Trigger]
-        [Tags:StoreRefresh]
+        [Tags:{Tags}]
         [UseTrigger:true]
         [Type:Timer]
         [MinCooldownMs:1200000]
@@ -172,7 +174,7 @@ def CreateTriggers(Faction, Name:str, IO, StoresProfiles):
 
 
     {Trigger.GetStoreMilitary(Faction,Name) if "Military" in StoresProfiles else ""}
-    {Trigger.GetStoreVendingMachine(Faction,Name) if "VendingMachine" in StoresProfiles else ""}
+    {Trigger.GetStoreVendingMachine(Faction,Name) if "Vending Machine" in StoresProfiles else ""}
     {Trigger.GetStoreIngot(Faction,Name) if "Ingot" in StoresProfiles else ""}
     {Trigger.GetStoreCiv(Faction,Name) if "Civ" in StoresProfiles else ""}
     {Trigger.GetStoreScrap(Faction,Name) if "Scrap" in StoresProfiles else ""}

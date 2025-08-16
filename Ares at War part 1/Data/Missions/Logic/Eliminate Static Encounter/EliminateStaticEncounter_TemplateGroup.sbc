@@ -150,7 +150,7 @@ Default:
 
 	[CheckPlayerNear:false]
 	[PlayerNearCoords:{EventCoords}]
-	[PlayerNearDistanceFromCoords:5000]
+	[PlayerNearDistanceFromCoords:20000]
 
 	[CheckTrueBooleans:true]
 	[TrueBooleans:{StaticEncounterSandboxBoolName}]  
@@ -183,6 +183,16 @@ Default:
 	[ChatOverrideMessage:Well done {PlayerName}! Here is your reward as promised]
 	[UseChatOverrideAudio:true]
 	[ChatOverrideAudio:MES-ShipyardSell]
+	
+	[ChatBroadcastToSpecificPlayers:true]
+	[ChatBroadcastPlayerConditionIds:PlayerCondition_DummyTagCheck]
+
+	[AddPlayerConditionPlayerTags:true]
+	[AddIncludedPlayerTags:@{InstanceId}]	
+
+
+
+
       </Description>
     </EntityComponent>	
 
@@ -227,6 +237,13 @@ Default:
 	
 	[AddPlayerConditionPlayerTags:true]
 	[AddIncludedPlayerTags:@{InstanceId}]	
+
+
+	[UseChatBroadcast:true]
+	[ChatData:{LYRA_ContractAccept}]	
+	[ChatBroadcastToSpecificPlayers:true]
+	[ChatBroadcastPlayerConditionIds:PlayerCondition_DummyTagCheck]
+
       </Description>
     </EntityComponent>	
 	
