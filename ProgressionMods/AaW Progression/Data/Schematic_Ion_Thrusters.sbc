@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--
+This File handles these blocks:
+-->
+   
+   
+ <Components>
+	 <Component>
+		<Id>
+			<TypeId>Component</TypeId>
+			<SubtypeId>AaW_Schematic_IonThruster</SubtypeId>
+		</Id>
+		<DisplayName>Schematic Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechFrame.dds</Icon>
+		<Size>
+			<X>1.0</X>
+			<Y>1.0</Y>
+			<Z>0.03</Z>
+		</Size>
+		<Mass>100</Mass>
+		<Volume>50</Volume>
+		<Model>Models\Components\PrototechFrame.mwm</Model>
+		<PhysicalMaterial>Metal</PhysicalMaterial>
+		<MaxIntegrity>40</MaxIntegrity>
+		<DropProbability>0.3</DropProbability>
+		<Health>12</Health>
+		<MinimalPricePerUnit>100000</MinimalPricePerUnit>
+		<MinimumOfferAmount>250</MinimumOfferAmount>
+		<MaximumOfferAmount>2500</MaximumOfferAmount>
+		<MinimumOrderAmount>0</MinimumOrderAmount>
+		<MaximumOrderAmount>0</MaximumOrderAmount>
+		<CanPlayerOrder>true</CanPlayerOrder>
+		<MinimumAcquisitionAmount>1</MinimumAcquisitionAmount>
+		<MaximumAcquisitionAmount>1000</MaximumAcquisitionAmount>
+	</Component>  
+</Components>  
+
+<Blueprints>
+	 <Blueprint> <!-- This blueprint exists to prevent missing blueprint errors -->
+		<Id>
+			<TypeId>BlueprintDefinition</TypeId>
+			<SubtypeId>AaW_Schematic_IonThruster</SubtypeId>
+		</Id>
+		<DisplayName>DisplayName_Item_PrototechPanel</DisplayName>
+		<Icon>Textures\GUI\Icons\component\PrototechPanel_Component.dds</Icon>
+		<Prerequisites>
+			<Item Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_IonThruster" />
+		</Prerequisites>
+		<Result Amount="1" TypeId="Component" SubtypeId="AaW_Schematic_IonThruster" />
+		<BaseProductionTimeInSeconds>1</BaseProductionTimeInSeconds>
+		<IsPrimary>true</IsPrimary>
+	</Blueprint>
+</Blueprints>   
+   
+
+</Definitions>

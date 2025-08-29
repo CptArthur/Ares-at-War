@@ -3,14 +3,9 @@
   <EntityComponents>
 
     <!--
-
 	These triggers apply to both Dynamic and Static
 
-
     -->
-
-
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -45,7 +40,44 @@
     </EntityComponent>
 
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_LYRA_Trigger_TradeRequestIgnored</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
 
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_TradeRequest]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:MSB_Utility_State_Condition_Check_State_Role]
+
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [ActionExecution:Random]
+        [Actions:AaW_LYRA_Action_TradeRequestIgnored]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_LYRA_Action_TradeRequestIgnored</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+      [UseChatBroadcast:true]
+      [ChatData:LYRA_RequestIgnored]	
+
+
+
+      </Description>
+    </EntityComponent>
 
 
 

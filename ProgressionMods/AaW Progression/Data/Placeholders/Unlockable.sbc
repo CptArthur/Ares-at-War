@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<!--
+This File handles these blocks:
+
+Placeholder_LargeJumpDrive
+Placeholder_AQD_SG_Jumpdrive
+
+
+
+Placeholder_SmallBlockSmallThrust
+Placeholder_SmallBlockLargeThrust
+
+Placeholder_LargeBlockSmallThrust
+Placeholder_LargeBlockLargeThrust
+
+
+
+
+Placeholder_LargeAssembler
+Placeholder_LargeAssemblerIndustrial
+
+
+-->
+
+<CubeBlocks>
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeJumpDrive</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) JumpDrive</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\JumpDrive.dds</Icon>
+		<Icon>Icons\white.dds</Icon>
+            <Description>Jump drives allow ships to teleport over large distances. Originally designed by the Sol Cooperative, this older model is still in use today, relying on proven technology despite its age.
+			
+			They require a full charge to jump and can only be activated from the toolbar of a cockpit. </Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="3" y="3" z="2" />
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\JumpDriveConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="3" EndY="2" />
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="3" EndY="3" />
+			<MountPoint Side="Left" StartX="0" StartY="0" EndX="2" EndY="3" />
+			<MountPoint Side="Front" StartX="0" StartY="0" EndX="3" EndY="3" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="2" EndY="3" />
+			<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="3" EndY="2" Default="true" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\JumpDriveConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_JumpDrive</BlockPairName>
+    <IsAirTight>false</IsAirTight>
+    </Definition>
+	
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_AQD_SG_Jumpdrive</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Jump Drive</DisplayName>
+		<Icon>..\2678657382\Textures\GUI\Icons\Cubes\AQD_SG_Jumpdrive.dds</Icon>
+		<Icon>..\2678657382\Textures\GUI\Icons\Cubes\AQD_Logo.dds</Icon>
+		<Icon>Icons\white.dds</Icon>
+            <Description>Jump drives allow ships to teleport over large distances. 
+			
+			They require a full charge to jump and can only be activated from the toolbar of a cockpit. </Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="3" y="3" z="5" />
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>..\2678657382\Models\Cubes\Small\AQD_SG_Jumpdrive_BS2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Front" StartX="0.00" StartY="0.00" EndX="3.00" EndY="3.00"/>
+			<MountPoint Side="Back" StartX="0.00" StartY="0.00" EndX="3.00" EndY="3.00"/>
+			<MountPoint Side="Left" StartX="0.00" StartY="0.00" EndX="5.00" EndY="3.00"/>
+			<MountPoint Side="Right" StartX="0.00" StartY="0.00" EndX="5.00" EndY="3.00"/>
+			<MountPoint Side="Top" StartX="0.00" StartY="0.00" EndX="3.00" EndY="5.00"/>
+			<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="3.00" EndY="5.00"/>
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="..\2678657382\Models\Cubes\Small\AQD_SG_Jumpdrive_BS1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_JumpDrive</BlockPairName>
+          <IsAirTight>false</IsAirTight>   
+    </Definition>	
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_SmallBlockSmallThrust</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\thrust.dds</Icon>
+		<Icon>Icons\white.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Originally designed by the Sol Cooperative, the design is now considered outdated, but it remains in use due to its reliability and efficiency.
+		Thrust Output: 14.4kN
+		Power Consumption: 200kW</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="2" />
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Small\ThrustSmallConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\ThrustSmallConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_SmallThrust</BlockPairName>
+    </Definition>
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_SmallBlockLargeThrust</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Large Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\thrust_large.dds</Icon>
+		<Icon>Icons\white.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Originally designed by the Sol Cooperative, the design is now considered outdated, but it remains in use due to its reliability and efficiency.
+		Thrust Output: 172.8kN
+		Power Consumption: 2.4MW</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+         <Size x="3" y="2" z="4" />
+		  <Center x="1" y="0" z="2" />					 
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Small\ThrustLargeConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="3" EndY="2" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="3" EndY="2" />
+			<MountPoint Side="Bottom" StartX="0" StartY="2" EndX="3" EndY="4" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="2" EndY="2" />
+			<MountPoint Side="Left" StartX="2" StartY="0" EndX="4" EndY="2" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\ThrustLargeConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_LargeThrust</BlockPairName>
+    </Definition>
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeBlockSmallThrust</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\thrust.dds</Icon>
+		<Icon>Icons\white.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Originally designed by the Sol Cooperative, the design is now considered outdated, but it remains in use due to its reliability and efficiency.
+		Thrust Output: 345.6kN
+		Power Consumption: 3.36MW</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="2" />
+		 <Center x="0" y="0" z="1" />		
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\ThrustSmallConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\ThrustSmallConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_SmallThrust</BlockPairName>
+    </Definition>
+
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeBlockLargeThrust</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Large Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\thrust_large.dds</Icon>
+		<Icon>Icons\white.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Originally designed by the Sol Cooperative, the design is now considered outdated, but it remains in use due to its reliability and efficiency.
+		Thrust Output: 4.32MN
+		Power Consumption: 33.6MW</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="3" y="2" z="4" />
+		            <Center x="1" y="0" z="2" />
+					
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\ThrustLargeConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\ThrustLargeConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_LargeThrust</BlockPairName>
+    </Definition>
+	
+	
+	
+	
+
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeAssembler</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Assembler</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\assembler.dds</Icon>
+		<Icon>Icons\white.dds</Icon>
+      <Description>Automated production of Advanced components.
+
+				Power Usage: 1.5MW</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="2" />
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\AssemblerConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+	<MountPoints>
+		<MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+		<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+		<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="2" Default="true" />
+		<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="2" />
+		<MountPoint Side="Left" StartX="0" StartY="0" EndX="2" EndY="1" />
+		<MountPoint Side="Right" StartX="0" StartY="0" EndX="2" EndY="1" />
+	</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\AssemblerConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_Assembler</BlockPairName>
+    </Definition>
+	
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeAssemblerIndustrial</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Industrial Assembler</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\AdvancedAssemblerIndustrial.dds</Icon>
+		<Icon>Icons\white.dds</Icon>
+      <Description>Automated production of Advanced components.
+
+				Power Usage: 1.5MW</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="2" z="2" />
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\AdvancedAssemblerIndustrialConstruction_2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+	<MountPoints>
+		<MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1.1" />
+		<MountPoint Side="Front" StartX="0" StartY="1.1" EndX="1" EndY="2" />
+		<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1.1" />
+		<MountPoint Side="Back" StartX="0" StartY="1.1" EndX="0.1" EndY="2" />
+		<MountPoint Side="Back" StartX="0.9" StartY="1.1" EndX="1" EndY="2" />
+		<MountPoint Side="Back" StartX="0.1" StartY="1.9" EndX="0.9" EndY="2" />
+		<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="1" EndY="2" Default="true" />
+		<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="2" />
+		<MountPoint Side="Left" StartX="0" StartY="0" EndX="2" EndY="1" />
+		<MountPoint Side="Left" StartX="0" StartY="1" EndX="0.1" EndY="2" />
+		<MountPoint Side="Left" StartX="1.9" StartY="1" EndX="2" EndY="2" />
+		<MountPoint Side="Left" StartX="0.1" StartY="1.9" EndX="1.9" EndY="2" />
+		<MountPoint Side="Right" StartX="0" StartY="0" EndX="2" EndY="2" />
+	</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\AdvancedAssemblerIndustrialConstruction_1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_AssemblerIndustrial</BlockPairName>
+	   <DLC>HeavyIndustry</DLC>
+    </Definition>		
+</CubeBlocks>
+   
+   
+   
+
+
+</Definitions>

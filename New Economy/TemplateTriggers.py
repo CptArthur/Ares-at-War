@@ -34,7 +34,7 @@ def GetStoreTradestation(Faction:str, Name:str)->str:
 
 def GetStoreUniversity(Faction:str, Name:str)->str:  
     string = f"""[StoreBlocks:Store University]
-      [StoreProfiles:{Faction}_StoreProfile_{Name}_University]"""
+      [StoreProfiles:AaW_StoreProfile_{Name}_University]"""
     return string
 
 def GetStoreITC(Faction:str, Name:str)->str:  

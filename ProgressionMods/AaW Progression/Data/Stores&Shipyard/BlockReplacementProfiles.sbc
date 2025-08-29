@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!-- Do not change the <SubtypeIds> otherwise AaW can't reference them. 
+
+
+If you want to adjust at encounter level contact me.  But for now MinorSettlement, MajorSettlement and Faction specfic should suffice, I think - CptArthur
+
+
+
+
+
+-->	
+
+<!-- Minor settlments:
+Examples: Doohan, Thorrix, Bratis, Azuris
+-->
+
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_ProgressionBlockReplacement_MinorSettlement</SubtypeId>
+      </Id>
+      <Description>
+        [MES Block Replacement]
+	
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_AQD_SG_Jumpdrive]
+		[NewBlock:JumpDrive/AQD_SG_Jumpdrive]				
+		
+	
+      </Description>
+    </EntityComponent>
+
+
+<!-- Major settlements:
+Examples: Station27, Starlight City, Sunset City, Rak Station
+-->
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_ProgressionBlockReplacement_MajorSettlement</SubtypeId>
+      </Id>
+      <Description>
+        [MES Block Replacement]
+	
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargeJumpDrive]
+		[NewBlock:JumpDrive/LargeJumpDrive]			
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_AQD_SG_Jumpdrive]
+		[NewBlock:JumpDrive/AQD_SG_Jumpdrive]				
+		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_SmallBlockSmallThrust]
+		[NewBlock:Thrust/SmallBlockSmallThrust]		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_SmallBlockLargeThrust]
+		[NewBlock:Thrust/SmallBlockLargeThrust]		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargeBlockSmallThrust]
+		[NewBlock:Thrust/LargeBlockSmallThrust]		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargeBlockLargeThrust]
+		[NewBlock:Thrust/LargeBlockLargeThrust]			
+      </Description>
+    </EntityComponent>
+
+	<!-- Faction Shipyards
+	
+	Factionshipyards include all of AaW_ProgressionBlockReplacement_MajorSettlement
+
+	 -->
+	
+	 <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_ProgressionBlockReplacement_SOLCOOP</SubtypeId>
+      </Id>
+      <Description>
+        [MES Block Replacement]
+
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargePrototechJumpDrive]
+		[NewBlock:JumpDrive/LargePrototechJumpDrive]			
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_SmallPrototechJumpDrive]
+		[NewBlock:JumpDrive/SmallPrototechJumpDrive]	
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_CompactJumpDrive]
+		[NewBlock:JumpDrive/CompactJumpDrive]			
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_SmallCompactJumpDrive]
+		[NewBlock:JumpDrive/SmallCompactJumpDrive]	
+		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargeBlockPrototechThruster]
+		[NewBlock:Thrust/LargeBlockPrototechThruster]		
+		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargeBlockPrototechThruster]
+		[NewBlock:Thrust/LargeBlockPrototechThruster]	
+		
+			
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargePrototechAssembler]
+		[NewBlock:Assembler/LargePrototechAssembler]	
+		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargePrototechRefinery]
+		[NewBlock:Refinery/LargePrototechRefinery]			
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_SmallPrototechRefinery]
+		[NewBlock:Refinery/SmallPrototechRefinery]			
+		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargeBlockPrototechGyro]
+		[NewBlock:Gyro/LargeBlockPrototechGyro]			
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_SmallBlockPrototechGyro]
+		[NewBlock:Gyro/SmallBlockPrototechGyro]					
+		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargeBlockPrototechDrill]
+		[NewBlock:Drill/LargeBlockPrototechDrill]	
+		
+      </Description>
+    </EntityComponent>	
+	
+	
+	 <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_ProgressionBlockReplacement_ITC</SubtypeId>
+      </Id>
+      <Description>
+        [MES Block Replacement]
+
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_SmallBlockSmallThrustSciFi]
+		[NewBlock:Thrust/SmallBlockSmallThrustSciFi]		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_SmallBlockLargeThrustSciFi]
+		[NewBlock:Thrust/SmallBlockLargeThrustSciFi]		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargeBlockSmallThrustSciFi]
+		[NewBlock:Thrust/LargeBlockSmallThrustSciFi]		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargeBlockLargeThrustSciFi]
+		[NewBlock:Thrust/LargeBlockLargeThrustSciFi]	
+
+
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_SmallBlockSmallAtmosphericThrustSciFi]
+		[NewBlock:Thrust/SmallBlockSmallAtmosphericThrustSciFi]		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_SmallBlockLargeAtmosphericThrustSciFi]
+		[NewBlock:Thrust/SmallBlockLargeAtmosphericThrustSciFi]		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargeBlockSmallAtmosphericThrustSciFi]
+		[NewBlock:Thrust/LargeBlockSmallAtmosphericThrustSciFi]		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargeBlockLargeAtmosphericThrustSciFi]
+		[NewBlock:Thrust/LargeBlockLargeAtmosphericThrustSciFi]	
+
+      </Description>
+    </EntityComponent>
+	
+	
+	 <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_ProgressionBlockReplacement_ZENOVA</SubtypeId>
+      </Id>
+      <Description>
+        [MES Block Replacement]
+		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_SmallBlockSmallModularThruster]
+		[NewBlock:Thrust/SmallBlockSmallModularThruster]		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_SmallBlockLargeModularThruster]
+		[NewBlock:Thrust/SmallBlockLargeModularThruster]		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargeBlockSmallModularThruster]
+		[NewBlock:Thrust/LargeBlockSmallModularThruster]		
+		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargeBlockLargeModularThruster]
+		[NewBlock:Thrust/LargeBlockLargeModularThruster]			
+		
+      </Description>
+    </EntityComponent>	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

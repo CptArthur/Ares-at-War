@@ -26,6 +26,8 @@ ContractBlockLocation
 		[MES Event TemplateGroup]
 		
 		[TemplateEventIds:AaW_EventTemplate_Transport_Init]	
+		[TemplateEventIds:AaW_EventTemplate_Transport_CheckIn]	
+
 
 		[TemplateEventIds:AaW_EventTemplate_Transport_Success]
 		[TemplateEventIds:AaW_EventTemplate_Transport_Failed]
@@ -62,22 +64,22 @@ ContractBlockLocation
           <SubtypeId>AaW_EventActionTemplate_Transport_CloseInstance</SubtypeId>
       </Id>
       <Description>
-	[MES Event Action Template]
+		[MES Event Action Template]
 	
-	[RemoveThisInstanceGroup:true]
+		[RemoveThisInstanceGroup:true]
 	
-	[RemoveGPSFromPlayers:true]
-	[RemoveGPSNames:{EventName}]
-	[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+		[RemoveGPSFromPlayers:true]
+		[RemoveGPSNames:{EventName}]
+		[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
 	
-	[AddPlayerConditionPlayerTags:true]
-	[AddIncludedPlayerTags:@{InstanceId}]
+		[AddPlayerConditionPlayerTags:true]
+		[AddIncludedPlayerTags:@{InstanceId}]
 
-	[BroadcastCommandProfiles:true]
-	[CommandProfileIds:AaW_DummyCommandProfile]
-	[CommandProfileOriginCoords:{DestinationLocation}]
+		[BroadcastCommandProfiles:true]
+		[CommandProfileIds:AaW_DummyCommandProfile]
+		[CommandProfileOriginCoords:{DestinationLocation}]
 	
-	[OverrideCommandCode:Abadonend@{InstanceId}]
+		[OverrideCommandCode:Abadonend@{InstanceId}]
 
 	
       </Description>
@@ -107,16 +109,16 @@ ContractBlockLocation
           <SubtypeId>AaW_EventActionTemplate_Transport_Failed</SubtypeId>
       </Id>
       <Description>
-	[MES Event Action Template]
+		[MES Event Action Template]
 	
-	[TryContractFail:true]
+		[TryContractFail:true]
 	
-	[RemoveGPSFromPlayers:true]
-	[RemoveGPSNames:{EventName}]
-	[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+		[RemoveGPSFromPlayers:true]
+		[RemoveGPSNames:{EventName}]
+		[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
 	
-	[AddPlayerConditionPlayerTags:true]
-	[AddIncludedPlayerTags:@{InstanceId}]	
+		[AddPlayerConditionPlayerTags:true]
+		[AddIncludedPlayerTags:@{InstanceId}]	
 	
       </Description>
     </EntityComponent>		
@@ -138,8 +140,8 @@ ContractBlockLocation
 
 		[MES Event Template]
 		[UseEvent:false]
-		[MinCooldownMs:5000]
-		[MaxCooldownMs:15001]			
+		[MinCooldownMs:1000]
+		[MaxCooldownMs:1001]			
 		
 		[UniqueEvent:true]		
 		
@@ -164,26 +166,26 @@ ContractBlockLocation
           <SubtypeId>AaW_EventActionTemplate_Transport_Success</SubtypeId>
       </Id>
       <Description>
-	[MES Event Action Template]
+		[MES Event Action Template]
 
-	[RemoveGPSFromPlayers:true]
-	[RemoveGPSNames:{EventName}]
-	[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
-	[TryContractSuccess:true]
+		[RemoveGPSFromPlayers:true]
+		[RemoveGPSNames:{EventName}]
+		[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+		[TryContractSuccess:true]
 
 	
-	[UseChatBroadcast:true]
-	[ChatData:AaW_EventChat_Template]	
+		[UseChatBroadcast:true]
+		[ChatData:AaW_EventChat_Template]	
 	
-	[UseChatOverrideColor:true]
-	[ChatOverrideColor:Green]
-	[UseChatOverrideAuthor:true]
-	[ChatOverrideAuthor:{EventName}]
+		[UseChatOverrideColor:true]
+		[ChatOverrideColor:Green]
+		[UseChatOverrideAuthor:true]
+		[ChatOverrideAuthor:{EventName}]
 	
-	[UseChatOverrideMessage:true]
-	[ChatOverrideMessage:Well done {PlayerName}! Here is your reward as promised]
-	[UseChatOverrideAudio:true]
-	[ChatOverrideAudio:MES-ShipyardSell]
+		[UseChatOverrideMessage:true]
+		[ChatOverrideMessage:Well done {PlayerName}! Here is your reward as promised]
+		[UseChatOverrideAudio:true]
+		[ChatOverrideAudio:MES-ShipyardSell]
       </Description>
     </EntityComponent>	
 	<!-- End Required -->
@@ -201,8 +203,8 @@ ContractBlockLocation
 		[MES Event Template]
 		[UseEvent:true]
 		[UniqueEvent:true]	
-		[MinCooldownMs:2000]
-		[MaxCooldownMs:2001]	
+		[MinCooldownMs:500]
+		[MaxCooldownMs:501]	
 		[ActionExecution:All]
 		[ActionIds:AaW_EventActionTemplate_Transport_CreateGPS]
 		
@@ -217,18 +219,18 @@ ContractBlockLocation
           <SubtypeId>AaW_EventActionTemplate_Transport_CreateGPS</SubtypeId>
       </Id>
       <Description>
-	[MES Event Action Template]
+		[MES Event Action Template]
 	
-	[AddGPSToPlayers:true]
-	[AddGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
-	[UseGPSObjective:false]
+		[AddGPSToPlayers:true]
+		[AddGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+		[UseGPSObjective:false]
 	
-	[GPSNames:{EventName}]
-	[GPSVector3Ds:{DestinationLocation}]
+		[GPSNames:{EventName}]
+		[GPSVector3Ds:{DestinationLocation}]
 	
 	
-	[AddPlayerConditionPlayerTags:true]
-	[AddIncludedPlayerTags:@{InstanceId}]	
+		[AddPlayerConditionPlayerTags:true]
+		[AddIncludedPlayerTags:@{InstanceId}]	
       </Description>
     </EntityComponent>	
 	
@@ -238,35 +240,107 @@ ContractBlockLocation
           <SubtypeId>AaW_EventActionTemplate_Transport_SpawnTransport</SubtypeId>
       </Id>
       <Description>
-	[MES Event Action Template]
+		[MES Event Action Template]
 
-	[SpawnEncounter:true]
-	[SpawnData:AaW_Spawner_Transport]
-	[SpawnFactionTags:UNKN]
-	[SpawnCoords:{ContractBlockLocation}]
+		[SpawnEncounter:true]
+		[SpawnData:AaW_Spawner_Transport]
+		[SpawnFactionTags:UNKN]
+		[SpawnCoords:{ContractBlockLocation}]
 	
 	
-	[SpawnReplaceKeys:{DestinationName}]
-	[SpawnReplaceValues:{destinationEncounter}]
+		[SpawnReplaceKeys:{DestinationName}]
+		[SpawnReplaceValues:{destinationEncounter}]
 	
-	[UseChatBroadcast:true]
-	[ChatData:AaW_EventChat_Template]	
+		[UseChatBroadcast:true]
+		[ChatData:AaW_EventChat_Template]	
 	
-	[UseChatOverrideColor:true]
-	[ChatOverrideColor:Green]
-	[UseChatOverrideAuthor:true]
-	[ChatOverrideAuthor:]
-	
-	[UseChatOverrideMessage:true]
-	[ChatOverrideMessage:Trying to spawn transport prefab]
-	[UseChatOverrideAudio:true]
-	[ChatOverrideAudio:]
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownIds:AaW_EventTemplate_Transport_CheckIn@{InstanceId}]
 
+		[ToggleEvents:true]
+
+		[ToggleEventIds:AaW_EventTemplate_Transport_CheckIn@{InstanceId}]
+		[ToggleEventIdModes:true]
       </Description>
       
     </EntityComponent>	
 			
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_Transport_CheckIn</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Template]
+		[UseEvent:false]
+		[UniqueEvent:true]	
+		[MinCooldownMs:10000]
+		[MaxCooldownMs:10001]	
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:2000]
+		[ActionIds:AaW_EventActionTemplate_Transport_ReturnCollateral]
+
+		[ActionIds:AaW_EventActionTemplate_Transport_CheckInFailed]
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_Transport_ReturnCollateral</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action Template]
+
+		[ChangePlayerCredits:true]
+		[ChangePlayerCreditsAmount:{Collateral}]
+		[ChangePlayerCreditsPlayerConditionIds:PlayerCondition_DummyTagCheck]
+		[AddPlayerConditionPlayerTags:true]
+		[AddIncludedPlayerTags:LeadPlayer@{InstanceId}]
+
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_Transport_CheckInFailed</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event Action Template]
+
+		[RemoveGPSFromPlayers:true]
+		[RemoveGPSNames:{EventName}]
+		[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+		[AddPlayerConditionPlayerTags:true]
+		[AddIncludedPlayerTags:@{InstanceId}]
+
+		[TryContractFail:true]
 	
+		[UseChatBroadcast:true]
+		[ChatData:AaW_EventChat_Template]	
+	
+		[UseChatOverrideColor:true]
+		[ChatOverrideColor:Green]
+		[UseChatOverrideAuthor:true]
+		[ChatOverrideAuthor:{EventName}]
+	
+		[UseChatOverrideMessage:true]
+		[ChatOverrideMessage:Transport contract failed due to logistical issues. Contract cancelled, collateral returned. Our Apologies]
+		[UseChatOverrideAudio:true]
+		[ChatOverrideAudio:]
+
+      </Description>
+      
+    </EntityComponent>	
+
+
 
 	
 	
@@ -301,14 +375,14 @@ ContractBlockLocation
           <SubtypeId>AaW_EventActionTemplate_Transport_SendCommand</SubtypeId>
       </Id>
       <Description>
-	[MES Event Action Template]
+		[MES Event Action Template]
 	
 	
-	[BroadcastCommandProfiles:true]
-	[CommandProfileIds:AaW_DummyCommandProfile_800m]
-	[CommandProfileOriginCoords:{DestinationLocation}]
+		[BroadcastCommandProfiles:true]
+		[CommandProfileIds:AaW_DummyCommandProfile_800m]
+		[CommandProfileOriginCoords:{DestinationLocation}]
 	
-	[OverrideCommandCode:{InstanceId}]
+		[OverrideCommandCode:{InstanceId}]
       </Description>
     </EntityComponent>	  
 
@@ -320,16 +394,16 @@ ContractBlockLocation
       </Id>
       <Description>
 
-      [RivalAI Command]
+		[RivalAI Command]
       
-      [CommandCode:TestCode]
+		[CommandCode:TestCode]
       
 	  
-	  [SingleRecipient:true]
-	  [IgnoreAntennaRequirement:true]
-	  [IgnoreReceiverAntennaRequirement:true]
+		[SingleRecipient:true]
+		[IgnoreAntennaRequirement:true]
+		[IgnoreReceiverAntennaRequirement:true]
 	  
-	  [Radius:800]
+		[Radius:800]
 	  
 	  
       </Description>
@@ -343,16 +417,16 @@ ContractBlockLocation
       </Id>
       <Description>
 
-      [RivalAI Command]
+		[RivalAI Command]
       
-      [CommandCode:TestCode]
+		[CommandCode:TestCode]
       
 	  
-	  [SingleRecipient:true]
-	  [IgnoreAntennaRequirement:true]
-	  [IgnoreReceiverAntennaRequirement:true]
+		[SingleRecipient:true]
+		[IgnoreAntennaRequirement:true]
+		[IgnoreReceiverAntennaRequirement:true]
 	  
-	  [Radius:9999999999999999999999999999]
+		[Radius:9999999999999999999999999999]
 	  
 	  
       </Description>

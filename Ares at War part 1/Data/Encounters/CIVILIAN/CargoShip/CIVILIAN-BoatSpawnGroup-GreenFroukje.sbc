@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+
+
+
+    <SpawnGroup>
+      <Id>
+        <TypeId>SpawnGroupDefinition</TypeId>
+        <SubtypeId>GreenFroukje</SubtypeId>
+      </Id>
+      <Description>
+
+        [Modular Encounters SpawnGroup]
+
+		[PlanetaryInstallation:true]
+    [PlanetaryInstallationChance:1]
+
+		[InstallationSpawnsOnWaterSurface:true]
+		[InstallationSpawnsOnDryLand:false]
+		
+		[IgnoreCombatPhase:true]
+		[ZoneConditions:ZoneCondition_ZoneAaW]	
+		
+
+		[FactionOwner:SUNSETCITY]	
+
+    [MinWaterDepth:150]
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-SafeToDelete)]		
+			[RandomGridNamePattern:Green Froukje]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]
+      [UniqueEncounter:true]
+
+
+        [UseRivalAi:true]
+        [RivalAiReplaceRemoteControl:true]
+
+
+	
+
+      </Description>
+      <IsPirate>true</IsPirate>
+      <Frequency>5.0</Frequency>
+      <Prefabs>
+        <Prefab SubtypeId="CIVILIAN - Green Froukje">
+          <Position>
+            <X>0.0</X>
+            <Y>0.0</Y>
+            <Z>0.0</Z>
+          </Position>
+          <Speed>25</Speed>
+          <Behaviour>CIVILIAN_GreenFroukje_Behavior</Behaviour>
+        </Prefab>
+      </Prefabs>
+    </SpawnGroup>
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+	</SpawnGroups>
+</Definitions>

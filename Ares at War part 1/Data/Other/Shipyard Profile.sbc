@@ -26,10 +26,6 @@
     </EntityComponent>
 
 
-
-
-
-
      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -52,29 +48,63 @@
       </Description>
     </EntityComponent>
 	
+
+
+
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Shipyard_MinorSettlement</SubtypeId>
+      </Id>
+      <Description>
+        [MES Shipyard]
+        [AllowScrapPurchasing:true]
+        [AllowRepairAndConstruction:false]
+		    [AllowCustomReplacement:true]
+		
+		  [BlockReplacementProfileIds:AaW_ProgressionBlockReplacementProfiles_MinorSettlement]
 	
+      </Description>
+    </EntityComponent>	
+
+
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Shipyard_MajorSettlement</SubtypeId>
+      </Id>
+      <Description>
+        [MES Shipyard]
+        [AllowScrapPurchasing:true]
+        [AllowRepairAndConstruction:true]
+		[AllowCustomReplacement:true]
+		
+		[BlockReplacementProfileIds:AaW_ProgressionBlockReplacementProfiles_MajorSettlement]
+	
+      </Description>
+    </EntityComponent>	
+
+
+
+
+	<!-- At Sunset City (Agaris) -->
      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>AaW_Shipyard_AHE</SubtypeId>
       </Id>
       <Description>
-
         [MES Shipyard]
-
-        [AllowBlueprintBuilding:false] //This feature isn't even built yet, so don't get any ideas.
         [AllowScrapPurchasing:true]
         [AllowRepairAndConstruction:true]
-        [AllowGridTakeover:false]
-
-
-		[RepairAndConstructionExcludedComponentIds:Station27Shipyard]
-		[RepairAndConstructionExcludedComponentIds:RakShipyard]
-		[RepairAndConstructionExcludedComponentIds:ITCShipyard]
+		[AllowCustomReplacement:true]
+		
+		[BlockReplacementProfileIds:AaW_ProgressionBlockReplacementProfiles_MajorSettlement]
+	
       </Description>
     </EntityComponent>	
-	
-	
+
+
      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -84,24 +114,11 @@
 
         [MES Shipyard]
 
-        [AllowBlueprintBuilding:false] //This feature isn't even built yet, so don't get any ideas.
-        [AllowScrapPurchasing:false]
-        [AllowRepairAndConstruction:false]
-        [AllowGridTakeover:false]
+        [AllowScrapPurchasing:true]
+        [AllowRepairAndConstruction:true]
+        [AllowCustomReplacement:true]
 
-		[RepairAndConstructionExcludedComponentIds:AHEShipyard]
-
-		[RepairAndConstructionExcludedComponentIds:RakShipyard]
-		[RepairAndConstructionExcludedComponentIds:ITCShipyard]
-		
-		
-		[AllowCustomReplacement:true]
-        [OldBlock:MyObjectBuilder_CubeBlock/LargeBlockArmorBlock]
-        [NewBlock:RemoteControl/RivalAIRemoteControlLarge]
-		
-		[OldBlock:MyObjectBuilder_CubeBlock/Placeholder_LargeAssembler]
-		[NewBlock:Assembler/LargeAssembler]
-
+        [BlockReplacementProfileIds:AaW_ProgressionBlockReplacementProfiles_MajorSettlement]
 		
       </Description>
     </EntityComponent>	
@@ -116,20 +133,17 @@
 
         [MES Shipyard]
 
-        [AllowBlueprintBuilding:false] //This feature isn't even built yet, so don't get any ideas.
         [AllowScrapPurchasing:true]
         [AllowRepairAndConstruction:true]
-        [AllowGridTakeover:false]
+        [AllowCustomReplacement:true]
 
-
-		[RepairAndConstructionExcludedComponentIds:AHEShipyard]
-		[RepairAndConstructionExcludedComponentIds:Station27Shipyard]
-
-		[RepairAndConstructionExcludedComponentIds:ITCShipyard]
+        [BlockReplacementProfileIds:AaW_ProgressionBlockReplacementProfiles_MajorSettlement]
       </Description>
     </EntityComponent>
 	
 	
+  	<!-- Faction Shipyards -->
+
 	     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -139,20 +153,54 @@
 
         [MES Shipyard]
 
-        [AllowBlueprintBuilding:false] //This feature isn't even built yet, so don't get any ideas.
         [AllowScrapPurchasing:true]
         [AllowRepairAndConstruction:true]
-        [AllowGridTakeover:false]
+        [AllowCustomReplacement:true]
 
-
-		[RepairAndConstructionExcludedComponentIds:AHEShipyard]
-		[RepairAndConstructionExcludedComponentIds:Station27Shipyard]
-		[RepairAndConstructionExcludedComponentIds:RakShipyard]
+        [BlockReplacementProfileIds:AaW_ProgressionBlockReplacementProfiles_MajorSettlement]
+        [BlockReplacementProfileIds:AaW_ProgressionBlockReplacementProfiles_ITC]
 
       </Description>
     </EntityComponent>
 	
 	
+  	     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Shipyard_SOLCOOP</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Shipyard]
+
+        [AllowScrapPurchasing:true]
+        [AllowRepairAndConstruction:true]
+        [AllowCustomReplacement:true]
+
+        [BlockReplacementProfileIds:AaW_ProgressionBlockReplacementProfiles_MajorSettlement]
+        [BlockReplacementProfileIds:AaW_ProgressionBlockReplacementProfiles_SOLCOOP]
+      </Description>
+    </EntityComponent>
+
+  	     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Shipyard_ZENOVA</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Shipyard]
+
+        [AllowScrapPurchasing:true]
+        [AllowRepairAndConstruction:true]
+        [AllowCustomReplacement:true]
+
+        [BlockReplacementProfileIds:AaW_ProgressionBlockReplacementProfiles_MajorSettlement]
+        [BlockReplacementProfileIds:AaW_ProgressionBlockReplacementProfiles_ZENOVA]
+      </Description>
+    </EntityComponent>
+
+
 	
   </EntityComponents>
 </Definitions>

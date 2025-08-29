@@ -74,7 +74,6 @@ namespace AresAtWar.War
 
 
 
-
             //Independents
             var azurisNode = new Node("Azuris", "Sector Azuris", AZURIS, new Vector3D(-3684664.31116301, -1332121.38896001, -2634179.10134753), 8000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Rural);
             var azuris = new StaticEncounter(azurisNode.Id, "Azuris", "AZURIS", new Vector3D(-3684664.31116301, -1332121.38896001, -2634179.10134753), false, new List<string>() { "Settlement" });
@@ -161,23 +160,26 @@ namespace AresAtWar.War
 
 
 
-            /*
-            //Agaria run
-            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { carcosa, thorrix, ahehq, bratis }, 5, new List<string>() { "CIVILIAN" }));
 
-            //The great ocean run
-            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { carcosa, sunsetcity, ahehq, bratis }, 3, new List<string>() { "CIVILIAN" }));
+            //Agaria West
+            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { azuris, sunsetcity,  bratis }, 5, new List<string>() { "CIVILIAN" }));
+
+            //Agaria East
+            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { sunsetcity, thorrix }, 3, new List<string>() { "CIVILIAN" }));
 
 
             //Everything run
-            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { azuris, sunsetcity, ahehq, bratis, carcosa, thorrix, station27 }, 1));
+            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { sunsetcity, starlight, station27 }, 5));
 
             //Space run
-            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { rak, station27 }, 3, new List<string>() { "CIVILIAN" }));
+            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { rak, station27 }, 10, new List<string>() { "CIVILIAN" }));
 
             //ITC only
-            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { sunsetcity, station27 , ITC_AgarisAtlas, ITC_AgarisVinyTradeOutpost }, 3, new List<string>() { "ITC" }));
+            //_TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { sunsetcity, station27 , ITC_AgarisAtlas, ITC_AgarisVinyTradeOutpost }, 3, new List<string>() { "ITC" }));
 
+
+
+            /*
 
             _frontlines.Add(new Frontline("Thorrix", "AgarisSpace"));
             _frontlines.Add(new Frontline("Thorrix", "AHE"));

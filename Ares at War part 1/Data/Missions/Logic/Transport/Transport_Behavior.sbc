@@ -3,7 +3,7 @@
   <EntityComponents>
 	
 <!--
-[SpawnConditionsProfiles:GC-SpawnProfile-RivalAISpawn]
+		[SpawnConditionsProfiles:GC-SpawnProfile-RivalAISpawn]
 
 GC-SpawnGroup-MediumStrikeForce
 
@@ -14,24 +14,24 @@ GC-SpawnGroup-MediumStrikeForce
           <SubtypeId>AaW_Spawner_Transport</SubtypeId>
       </Id>
       <Description>
-	[RivalAI Spawn]
+		[RivalAI Spawn]
 
-	[UseSpawn:true]
+		[UseSpawn:true]
 
-	[StartsReady:true]
-	[SpawningType:CustomSpawn]
+		[StartsReady:true]
+		[SpawningType:CustomSpawn]
 
-	[MaxSpawns:-1]
+		[MaxSpawns:-1]
 
-	[SpawnGroups:AaW_SpawnGroup_Transport_{DestinationName}]
-	[MustBeOnDryLand:true]
+		[SpawnGroups:AaW_SpawnGroup_Transport_{DestinationName}]
+		[MustBeOnDryLand:true]
 	
-	[UseRelativeSpawnPosition:false]
-	[MinDistance:250]
-	[MaxDistance:500]
-	[MinAltitude:20]
-	[MaxAltitude:200]
-	[IgnoreSafetyChecks:true]
+		[UseRelativeSpawnPosition:false]
+		[MinDistance:250]
+		[MaxDistance:500]
+		[MinAltitude:450]
+		[MaxAltitude:500]
+		[IgnoreSafetyChecks:true]
       
       </Description>
       
@@ -44,7 +44,7 @@ GC-SpawnGroup-MediumStrikeForce
       </Id>
       <Description>
 
-	[MES Spawn Conditions]
+		[MES Spawn Conditions]
 
 		[SpaceCargoShip:false]
 		[LunarCargoShip:false]
@@ -74,25 +74,28 @@ GC-SpawnGroup-MediumStrikeForce
       </Id>
       <Description>
 
-	[RivalAI Behavior]
-	[BehaviorName:Passive]
+		[RivalAI Behavior]
+		[BehaviorName:Passive]
 
 
-	[Triggers:AaW_TransportTrigger_ReceivedCommand]
-	[Triggers:AaW_TransportTrigger_Despawn]
-	[Triggers:AaW_TransportTrigger_DespawnMES]
-	[Triggers:AaW_TransportTrigger_Compromised]	  
-	[Triggers:AaW_TransportTrigger_ReceivedCommand_Abadonend]	  
+		[Triggers:AaW_TransportTrigger_ReceivedCommand]
+		[Triggers:AaW_TransportTrigger_Despawn]
+		[Triggers:AaW_TransportTrigger_DespawnMES]
+		[Triggers:AaW_TransportTrigger_Compromised]	  
+		[Triggers:AaW_TransportTrigger_ReceivedCommand_Abadonend]	  
+		[Triggers:AaW_TransportTrigger_CheckIn]	  
+
+    
       </Description>
       
     </EntityComponent>
 	
 
 <!--
-[Triggers:AaW_TransportTrigger_ReceivedCommand]
-[Triggers:AaW_TransportTrigger_Despawn]
-[Triggers:AaW_TransportTrigger_DespawnMES]
-[Triggers:AaW_TransportTrigger_Compromised]
+		[Triggers:AaW_TransportTrigger_ReceivedCommand]
+		[Triggers:AaW_TransportTrigger_Despawn]
+		[Triggers:AaW_TransportTrigger_DespawnMES]
+		[Triggers:AaW_TransportTrigger_Compromised]
 
 
 -->
@@ -103,15 +106,12 @@ GC-SpawnGroup-MediumStrikeForce
       </Id>
       <Description>
 
-      [RivalAI Action]
+		[RivalAI Action]
 
-
-	[ActivateEvent:true]
-	[ActivateEventIds:AaW_EventTemplate_BountyHunting_Fail@{EventInstance}]
-
+		[ActivateEvent:true]
+		[ActivateEventIds:AaW_EventTemplate_BountyHunting_Fail@{EventInstance}]
 
       </Description>
-      
     </EntityComponent>
 	
 	
@@ -122,18 +122,17 @@ GC-SpawnGroup-MediumStrikeForce
       </Id>
       <Description>
 
-      [RivalAI Action]
+		[RivalAI Action]
 
-	[ResetCooldownTimeOfEvents:true]
-	[ResetEventCooldownIds:AaW_EventTemplate_Transport_Success@{EventInstance}]
+		[ResetCooldownTimeOfEvents:true]
+		[ResetEventCooldownIds:AaW_EventTemplate_Transport_Success@{EventInstance}]
 
-	[ToggleEvents:true]
-	[ToggleEventIds:AaW_EventTemplate_Transport_Success@{EventInstance}]
-	[ToggleEventIdModes:true]
+		[ToggleEvents:true]
+		[ToggleEventIds:AaW_EventTemplate_Transport_Success@{EventInstance}]
+		[ToggleEventIdModes:true]
 	
-	[ForceDespawn:true]
-	[TryToDespawnThisGridOnly:true]
-	
+		[ForceDespawn:true]
+		[TryToDespawnThisGridOnly:true]
       </Description>
       
     </EntityComponent>
@@ -145,16 +144,16 @@ GC-SpawnGroup-MediumStrikeForce
       </Id>
       <Description>
 
-      [RivalAI Trigger]
-      [Type:CommandReceived]
-	  [CommandReceiveCode:{EventInstance}]
+		[RivalAI Trigger]
+		[Type:CommandReceived]
+		[CommandReceiveCode:{EventInstance}]
 	  
-	  [UseTrigger:true]
-	  [StartsReady:true]
+		[UseTrigger:true]
+		[StartsReady:true]
 
-	  [MaxActions:1]
+		[MaxActions:1]
 	  	
-	  [Actions:AaW_TransportAction_SuccessMission]
+		[Actions:AaW_TransportAction_SuccessMission]
       </Description>
     </EntityComponent>
 	
@@ -165,16 +164,16 @@ GC-SpawnGroup-MediumStrikeForce
       </Id>
       <Description>
 
-      [RivalAI Trigger]
-      [Type:CommandReceived]
-	  [CommandReceiveCode:Abadonend@{EventInstance}]
+		[RivalAI Trigger]
+		[Type:CommandReceived]
+		[CommandReceiveCode:Abadonend@{EventInstance}]
 	  
-	  [UseTrigger:true]
-	  [StartsReady:true]
+		[UseTrigger:true]
+		[StartsReady:true]
 
-	  [MaxActions:1]
+		[MaxActions:1]
 	  	
-	[Actions:AaW_TransportAction_ReceivedCommand_Abadonend]
+		[Actions:AaW_TransportAction_ReceivedCommand_Abadonend]
       </Description>
     </EntityComponent>	
 
@@ -186,25 +185,59 @@ GC-SpawnGroup-MediumStrikeForce
       </Id>
       <Description>
 
-      [RivalAI Action]
+		[RivalAI Action]
 
 
-[GenerateExplosion:true]
-[ExplosionRange:14]
-[ExplosionDamage:0]
-[ExplosionIgnoresVoxels:true]
+		[GenerateExplosion:true]
+		[ExplosionRange:14]
+		[ExplosionDamage:0]
+		[ExplosionIgnoresVoxels:true]
 
-	[ForceDespawn:true]
-	[TryToDespawnThisGridOnly:true]
+		[ForceDespawn:true]
+		[TryToDespawnThisGridOnly:true]
 
 
       </Description>
       
     </EntityComponent>	
 	
-	
-	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_TransportTrigger_CheckIn</SubtypeId>
+      </Id>
+      <Description>
 
+		[RivalAI Trigger]
+		[Type:Timer]
+    [MinCooldownMs:1000]
+    [MaxCooldownMs:1001]
+
+		[UseTrigger:true]
+		[StartsReady:false]
+		[MaxActions:1]
+		[Actions:AaW_TransportAction_CheckIn]
+	  
+      </Description>
+      
+    </EntityComponent>		
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_TransportAction_CheckIn</SubtypeId>
+      </Id>
+      <Description>
+
+		[RivalAI Action]
+
+		[ToggleEvents:true]
+		[ToggleEventIds:AaW_EventTemplate_Transport_CheckIn@{EventInstance}]
+		[ToggleEventIdModes:false]
+
+      </Description>
+      
+    </EntityComponent>
 	
 	
 	
@@ -215,12 +248,12 @@ GC-SpawnGroup-MediumStrikeForce
       </Id>
       <Description>
 
-      [RivalAI Trigger]
-      [Type:Despawn]
-	  [UseTrigger:true]
-	  [StartsReady:true]
-	  [MaxActions:1]
-	  [Actions:AaW_TransportAction_FailMission]
+		[RivalAI Trigger]
+		[Type:Despawn]
+		[UseTrigger:true]
+		[StartsReady:true]
+		[MaxActions:1]
+		[Actions:AaW_TransportAction_FailMission]
 	  
       </Description>
       
@@ -235,12 +268,12 @@ GC-SpawnGroup-MediumStrikeForce
       </Id>
       <Description>
 
-      [RivalAI Trigger]
-      [Type:DespawnMES]
-	  [UseTrigger:true]
-	  [StartsReady:true]
-	  [MaxActions:1]
-	  [Actions:AaW_TransportAction_FailMission]
+		[RivalAI Trigger]
+		[Type:DespawnMES]
+		[UseTrigger:true]
+		[StartsReady:true]
+		[MaxActions:1]
+		[Actions:AaW_TransportAction_FailMission]
 	  
       </Description>
       
@@ -256,13 +289,13 @@ GC-SpawnGroup-MediumStrikeForce
       </Id>
       <Description>
 
-      [RivalAI Trigger]
-      [Type:Compromised]
-	  [UseTrigger:true]
-	  [StartsReady:true]
-	  [MaxActions:1]
-	  [Actions:AaW_TransportAction_Compromised]
-	  [Actions:AaW_TransportAction_FailMission]	  
+		[RivalAI Trigger]
+		[Type:Compromised]
+		[UseTrigger:true]
+		[StartsReady:true]
+		[MaxActions:1]
+		[Actions:AaW_TransportAction_Compromised]
+		[Actions:AaW_TransportAction_FailMission]	  
       </Description>
     </EntityComponent>		
 		
@@ -275,14 +308,14 @@ GC-SpawnGroup-MediumStrikeForce
       </Id>
       <Description>
 
-      [RivalAI Action]
-      [UseChatBroadcast:false]
-      [ChatData:AaW_TransportChat_Compromised]
+		[RivalAI Action]
+		[UseChatBroadcast:false]
+		[ChatData:AaW_TransportChat_Compromised]
 
-[GenerateExplosion:true]
-[ExplosionRange:14]
-[ExplosionDamage:5]
-[ExplosionIgnoresVoxels:true]
+		[GenerateExplosion:true]
+		[ExplosionRange:14]
+		[ExplosionDamage:5]
+		[ExplosionIgnoresVoxels:true]
       </Description>
       
     </EntityComponent>
@@ -296,24 +329,24 @@ GC-SpawnGroup-MediumStrikeForce
 	  
       <Description>
 
-      [RivalAI Chat]
+		[RivalAI Chat]
       
-      [UseChat:true]
-      [StartsReady:true]
-      [Chance:100]
-      [MaxChats:1]
-      [BroadcastRandomly:true]
+		[UseChat:true]
+		[StartsReady:true]
+		[Chance:100]
+		[MaxChats:1]
+		[BroadcastRandomly:true]
       
-      [Author:Pirate]
-      [Color:Red]
+		[Author:Pirate]
+		[Color:Red]
       
-      [ChatMessages:NOOOOOOO!!!]
-      [ChatAudio:ArcHudGPSNotification1]
-      [BroadcastChatType:Chat]
+		[ChatMessages:NOOOOOOO!!!]
+		[ChatAudio:ArcHudGPSNotification1]
+		[BroadcastChatType:Chat]
       
 	  
-	  [IgnoreAntennaRequirement:true]
-	  [IgnoredAntennaRangeOverride:10000]
+		[IgnoreAntennaRequirement:true]
+		[IgnoredAntennaRangeOverride:10000]
       </Description>
     </EntityComponent>
 	

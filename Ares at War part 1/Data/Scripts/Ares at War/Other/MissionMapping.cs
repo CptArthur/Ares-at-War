@@ -73,7 +73,7 @@ namespace AresAtWar.SessionCore
                 new List<string>(),
                 "Smuggle Cargo to {destinationEncounter}",
                 "Ensure timely and safe delivery of the shipment to {destinationEncounter}",
-                55000, 2, 0.05f, 10, 5
+                1000000, 1, 0.05f, 10, 5
             ),
 
 
@@ -83,7 +83,7 @@ namespace AresAtWar.SessionCore
                 new List<string>(),
                 "Deliver Cargo to {destinationEncounter}",
                 "Ensure timely and safe delivery of the shipment to {destinationEncounter}",
-                55000, 2, 0.05f, 10, 5
+                1000000, 1, 0.05f, 10, 5
             ),
 
            new MissionData(
@@ -91,7 +91,7 @@ namespace AresAtWar.SessionCore
                 new List<string>{"Settlement"},
                 "Deliver civilian cargo to {destinationEncounter}",
                 "Ensure timely and safe delivery of the shipment to {destinationEncounter}",
-                55000, 2, 0.05f, 10, 5
+                1000000, 1, 0.05f, 10, 5
             ),
 
 
@@ -100,7 +100,7 @@ namespace AresAtWar.SessionCore
                 new List<string>{"MilitaryBase"},
                 "Deliver Military supplies to {destinationEncounter}",
                 "Ensure timely and safe delivery of the shipment to {destinationEncounter}",
-                60000, 3, 0.2f, 20, 10
+                1000000, 2, 0.2f, 20, 10
             ),
 
 
@@ -110,14 +110,14 @@ namespace AresAtWar.SessionCore
                 new List<string>(),
                 "Bounty Hunt",
                 "Track down and eliminate the leader of a local rebel group causing unrest.",
-                80000, 4, 0.1f, 15, 10
+                1000000, 4, 0.1f, 15, 10
             ),
             new MissionData(
                 MissionType.Bounty,
                 new List<string>{"Urban", },
                 "Urban Gang Bust",
                 "Assist in a high-profile operation to apprehend a notorious gang in the city.",
-                70000, 3, 0.07f, 12, 8
+                1000000, 3, 0.07f, 12, 8
             ),
 
         };
@@ -508,11 +508,28 @@ namespace AresAtWar.SessionCore
         }
         private static int CalculateReward(int baseReward, double distance, int difficulty)
         {
-            // Example reward calculation
-            int distanceBonus = (int)(distance / 100) * 1000; // Example: 1000 units per 100 km
-            int difficultyMultiplier = difficulty; // Reward increases with difficulty
-            return baseReward + distanceBonus * difficultyMultiplier;
+            // Distance scaling
+            int distanceBonus = 0;
+
+            if (distance <= 100000)
+            {
+                // First 100 km = 10 points per km (strong effect)
+                distanceBonus = (int)(distance * 100); // max 10,000,000 at 100 km
+            }
+            else
+            {
+                // After 100 km = slower growth, e.g. 5 points per km
+                distanceBonus = 10000000 + (int)((distance - 100000) * 5);
+            }
+
+            // Difficulty scaling (gentle, not explosive)
+            double difficultyFactor = 1.0 + (difficulty - 1) * 0.5;
+            // difficulty 1 → 1.0x, difficulty 10 → 5.5x
+
+            int reward = (int)(baseReward + distanceBonus * difficultyFactor);
+            return reward;
         }
+
 
         public static StaticEncounter TransportGetDestination(string currentLocationString, string Faction)
         {

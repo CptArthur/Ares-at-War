@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+     
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_StoreProfile_GreenFroukjeIO_Military</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_DynamicIO.xml]
+        
+        [MinOfferItems:2]
+        [MaxOfferItems:5]
+        [MinOrderItems:7]
+        [MaxOrderItems:11]
+
+        [ItemsRequireInventory:false]
+
+
+        [RequiredOrders:Component/SteelPlate] 
+        [RequiredOrders:Component/MetalGrid]
+        [Orders:Ammo/NATO_25x184mm] 
+        [Orders:Ammo/missile] 
+        [Orders:Ammo/MediumCalibreAmmo] 
+        [Orders:Ammo/LargeCalibreAmmo] 
+        [Orders:Ammo/LargeRailgunAmmo] 
+        [Orders:Ammo/SmallRailgunAmmo] 
+        [Orders:Ammo/AutocannonClip] 
+
+        
+        [RequiredOffers:Tool/AutomaticRifleItem] 
+        [RequiredOffers:Tool/PreciseAutomaticRifleItem] 
+        [RequiredOffers:Tool/RapidFireAutomaticRifleItem] 
+        [RequiredOffers:Ammo/PreciseAutomaticRifleGun_Mag_5rd] 
+        [RequiredOffers:Ammo/RapidFireAutomaticRifleGun_Mag_50rd] 
+        [RequiredOffers:Ammo/AutomaticRifleGun_Mag_20rd] 
+        [RequiredOffers:Ammo/UltimateAutomaticRifleGun_Mag_30rd] 
+
+        [Offers:Component/Construction] 
+        [Offers:Component/Computer] 
+        [Offers:Component/Motor] 
+        [Offers:Component/SolarCell] 
+        [Offers:Component/AlkalinePowerCell] 
+        [Offers:Component/Girder] 
+        [Offers:Component/InteriorPlate] 
+          
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_ContractBlockProfile_GreenFroukjeIO</SubtypeId>
+      </Id>
+      <Description>
+        [MES Contract Block]
+
+        [StoreProfileId:CIVILIAN_StoreProfile_GreenFroukjeIO_Ingot]
+        
+        [MinContracts:5]
+        [MaxContracts:15]
+        
+        
+      </Description>
+    </EntityComponent>	      
+
+  </EntityComponents>
+</Definitions>

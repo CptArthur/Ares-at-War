@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+ <!--
+AaW_Mission_ProcAZURIS
+ -->
+
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_ProcCIVILIAN</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	[Tags:CIVILIAN]
+	
+	[Title:{EventName}]
+	[Description:{Description}]
+	
+	[InstanceEventGroupId:{InstanceEventGroupId}]
+	
+	[Reward:{Reward}]
+	[Collateral:{Collateral}]
+	[ReputationReward:{ReputationReward}]
+	[FailReputationPrice:{FailReputationPrice}]
+	[Duration:{Duration}]
+
+	[CustomApiMapping:AaW-MissionMapping]
+      </Description>
+
+    </EntityComponent>
+	
+
+
+  
+  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_ProcAZURIS</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	[Tags:CIVILIAN]
+	
+	[Title:{EventName}]
+	[Description:{Description}]
+	[PersistantEventConditionIds:AZURIS_EventCondition_SafeEnvironment]
+	[InstanceEventGroupId:{InstanceEventGroupId}]
+	
+	[Reward:{Reward}]
+	[Collateral:{Collateral}]
+	[ReputationReward:{ReputationReward}]
+	[FailReputationPrice:{FailReputationPrice}]
+	[Duration:{Duration}]
+
+	[CustomApiMapping:AaW-MissionMapping]
+      </Description>
+
+    </EntityComponent>
+ 
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AZURIS_EventCondition_SafeEnvironment</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckTrueBooleans:true]
+	[AllowAnyTrueBoolean:false]
+	[TrueBooleans:DRA_MiningOutpostCobaltOtherDestroyed]  
+
+      </Description>
+    </EntityComponent>	
+
+
+
+  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_ProcTHORRIX</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	[Tags:CIVILIAN]
+	
+	[Title:{EventName}]
+	[Description:{Description}]
+	[PersistantEventConditionIds:THORRIX_EventCondition_SafeEnvironment]
+	[InstanceEventGroupId:{InstanceEventGroupId}]
+	
+	[Reward:{Reward}]
+	[Collateral:{Collateral}]
+	[ReputationReward:{ReputationReward}]
+	[FailReputationPrice:{FailReputationPrice}]
+	[Duration:{Duration}]
+
+	[CustomApiMapping:AaW-MissionMapping]
+      </Description>
+
+    </EntityComponent>
+ 
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>THORRIX_EventCondition_SafeEnvironment</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckTrueBooleans:true]
+	[AllowAnyTrueBoolean:false]
+	[TrueBooleans:DRA_MiningOutpostCobaltDestroyed]  
+	[TrueBooleans:DRA_MiningOutpostMagnesiumDestroyed]  
+      </Description>
+    </EntityComponent>	
+
+
+	
+  </EntityComponents>
+</Definitions>
+

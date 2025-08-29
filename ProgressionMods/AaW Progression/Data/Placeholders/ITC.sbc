@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--
+This File handles these blocks:
+
+Placeholder_SmallBlockSmallAtmosphericThrustSciFi
+Placeholder_SmallBlockLargeAtmosphericThrustSciFi
+
+Placeholder_SmallBlockLargeAtmosphericThrustSciFi
+Placeholder_LargeBlockLargeAtmosphericThrustSciFi
+
+
+Placeholder_SmallBlockSmallThrustSciFi
+Placeholder_SmallBlockLargeThrustSciFi
+
+Placeholder_LargeBlockSmallThrustSciFi
+Placeholder_LargeBlockLargeThrustSciFi
+
+Displayname: Roxford
+
+-->
+
+<CubeBlocks>
+
+
+	
+<!-- Start DLC -->
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_SmallBlockSmallAtmosphericThrustSciFi</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Roxford Atmospheric Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\Small_IonThrusterSmall_SciFi.dds</Icon>
+		<Icon>Icons\blue.dds</Icon>
+		<Description>Atmospheric thrusters can only function in planetary atmospheres.  Designed by Roxford, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.
+		Thrust Output: 192 kN
+		Power Consumption: 900kW</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+          <Size x="1" y="1" z="3" />
+		    <Center x="0" y="0" z="1" />		  
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Small\AtmosphericThrusterSmall_SciFi_Construction2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
+			<MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+			<MountPoint Side="Top" StartX="0" StartY="1" EndX="1" EndY="2" Default="true" />
+			<MountPoint Side="Right" StartX="1" StartY="0" EndX="2" EndY="1" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\AtmosphericThrusterSmall_SciFi.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_SmallAtmosphericThrustSciFi</BlockPairName>
+	    <DLC>SparksOfTheFuture</DLC>
+    </Definition>
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_SmallBlockLargeAtmosphericThrustSciFi</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Roxford Large Atmospheric Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\Small_IonThrusterLarge_SciFi.dds</Icon>
+		<Icon>Icons\blue.dds</Icon>
+		<Description>Atmospheric thrusters can only function in planetary atmospheres.  Designed by Roxford, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.
+		Thrust Output: 1.152 MN
+		Power Consumption: 3.6MW</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="3" y="3" z="5" />
+            <Center x="1" y="1" z="2" />			 
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Small\AtmosphericThrusterLarge_SciFi_Construction2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="1" StartY="1" EndX="2" EndY="4" Default="true"/>
+			<MountPoint Side="Bottom" StartX="1" StartY="1" EndX="2" EndY="4" />
+			<MountPoint Side="Right" StartX="1" StartY="1" EndX="4" EndY="2" />
+			<MountPoint Side="Left" StartX="1" StartY="1" EndX="4" EndY="2" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\AtmosphericThrusterLarge_SciFi_Construction1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_LargeAtmosphericThrustSciFi</BlockPairName>
+	     <DLC>SparksOfTheFuture</DLC>
+    </Definition>
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeBlockSmallAtmosphericThrustSciFi</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Roxford Atmospheric Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\Large_AtmosphericThrusterSmall_SciFi.dds</Icon>
+		<Icon>Icons\blue.dds</Icon>
+		<Description>Atmospheric thrusters can only function in planetary atmospheres.  Designed by Roxford, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.
+		Thrust Output: 1.296 MN
+		Power Consumption: 2.4MW			
+		</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="1" y="1" z="3" />
+		 <Center x="0" y="0" z="1" />		
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\AtmosphericThrusterSmall_SciFi_Construction2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="0" StartY="1" EndX="1" EndY="2" Default="true"/>
+			<MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
+			<MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+			<MountPoint Side="Right" StartX="1" StartY="0" EndX="2" EndY="1" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\AtmosphericThrusterSmall_SciFi_Construction1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_SmallAtmosphericThrustSciFi</BlockPairName>
+	    <DLC>SparksOfTheFuture</DLC>
+    </Definition>
+
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeBlockLargeAtmosphericThrustSciFi</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Roxford Large Atmospheric Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\Large_AtmosphericThrusterLarge_SciFi.dds</Icon>
+		<Icon>Icons\blue.dds</Icon>
+		<Description>Atmospheric thrusters can only function in planetary atmospheres.  Designed by Roxford, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.
+		
+		Thrust Output: 12.96MN
+		Power Consumption: 25.2 MW
+		</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="3" y="2" z="4" />
+		            <Center x="1" y="0" z="2" />
+					
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\AtmosphericThrusterLarge_SciFi_Construction2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Top" StartX="1" StartY="1" EndX="2" EndY="3" Default="true" />
+			<MountPoint Side="Bottom" StartX="1" StartY="2" EndX="2" EndY="4" />
+			<MountPoint Side="Left" StartX="2" StartY="1" EndX="4" EndY="2" />
+			<MountPoint Side="Right" StartX="1" StartY="1" EndX="3" EndY="2" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\AtmosphericThrusterLarge_SciFi_Construction1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_LargeAtmosphericThrustSciFi</BlockPairName>
+         <DLC>SparksOfTheFuture</DLC>	  
+    </Definition>	
+	
+
+<!-- Start Ion thrusters -->
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_SmallBlockSmallThrustSciFi</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Roxford Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\Small_IonThrusterSmall_SciFi.dds</Icon>
+		<Icon>Icons\blue.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Designed by Roxford, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.
+		Thrust Output: 28.8kN
+		Power Consumption: 300kW</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="2" />
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Small\IonThrusterSmall_SciFi_Construction2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\IonThrusterSmall_SciFi_Construction1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_SmallThrustSciFi</BlockPairName>
+	    <DLC>SparksOfTheFuture</DLC>
+    </Definition>
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_SmallBlockLargeThrustSciFi</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Roxford Large Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\Small_IonThrusterLarge_SciFi.dds</Icon>
+		<Icon>Icons\blue.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Designed by Roxford, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.
+		Thrust Output: 345.6kN
+		Power Consumption: 3.6MW</Description>
+      <CubeSize>Small</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+         <Size x="3" y="2" z="4" />
+		  <Center x="1" y="0" z="2" />					 
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Small\IonThrusterLarge_SciFi_Construction2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="3" EndY="2" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="3" EndY="2" />
+			<MountPoint Side="Bottom" StartX="0" StartY="2" EndX="3" EndY="4" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="2" EndY="2" />
+			<MountPoint Side="Left" StartX="2" StartY="0" EndX="4" EndY="2" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Small\IonThrusterLarge_SciFi_Construction1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_LargeThrustSciFi</BlockPairName>
+	     <DLC>SparksOfTheFuture</DLC>
+    </Definition>
+	
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeBlockSmallThrustSciFi</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Roxford Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\large_IonThrusterSmall_SciFi.dds</Icon>
+		<Icon>Icons\blue.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Designed by Roxford, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.
+		Thrust Output: 691.2kN
+		Power Consumption: 5.04MW</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="1" y="1" z="2" />
+		 <Center x="0" y="0" z="1" />		
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\IonThrusterSmall_SciFi_Construction2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\IonThrusterSmall_SciFi_Construction1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_SmallThrustSciFi</BlockPairName>
+	    <DLC>SparksOfTheFuture</DLC>
+    </Definition>
+
+	<Definition>
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Placeholder_LargeBlockLargeThrustSciFi</SubtypeId>
+      </Id>
+      <DisplayName>(Placeholder) Roxford Large Ion Thruster</DisplayName>
+		<Icon>Textures\GUI\Icons\Cubes\large_IonThrusterLarge_SciFi.dds</Icon>
+		<Icon>Icons\blue.dds</Icon>
+		<Description>Ion thrusters are advanced thrusters that function best in zero gravity environments. Designed by Roxford, this thruster prioritizes maximum power output, delivering exceptional thrust at the expense of energy efficiency.
+		Thrust Output: 8.64MN
+			Power Consumption: 50.4MW</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+		<Size x="3" y="2" z="4" />
+		            <Center x="1" y="0" z="2" />
+					
+		<ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\IonThrusterLarge_SciFi_Construction2.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+		<MountPoints>
+			<MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+			<MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Bottom" StartX="0" StartY="1" EndX="1" EndY="2" />
+			<MountPoint Side="Right" StartX="0" StartY="0" EndX="1" EndY="1" />
+			<MountPoint Side="Left" StartX="1" StartY="0" EndX="2" EndY="1" />
+		</MountPoints>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\IonThrusterLarge_SciFi_Construction1.mwm" />
+      </BuildProgressModels>
+      <DisassembleRatio>3</DisassembleRatio>
+      <PCU>1</PCU>
+	  <BlockPairName>Placeholder_LargeThrustSciFi</BlockPairName>
+         <DLC>SparksOfTheFuture</DLC>	  
+    </Definition>		
+	
+	
+	
+</CubeBlocks>
+   
+   
+   
+
+
+</Definitions>

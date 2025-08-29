@@ -204,6 +204,9 @@ for index, row in df.iterrows():
     if IO:
         XML_Name = XML_ID + "IO"
 
+
+    static = row["Static"]
+
     #Setup
     if IO:
         print("It is IO")
@@ -628,25 +631,45 @@ for index, row in df.iterrows():
         Item(ItemTypeEnum.Consumable, "FAFSquadron", 0)
 
 
+    if static:
+        XB.CreateXml(XML_Name,
+                    XB.GenerateXMLIngot(Ingot1),
+                    XB.GenerateXMLIngot(Ingot2),
+                    XB.GenerateXMLIngot(Ingot3),
+                    XB.GenerateXMLIngot(Ingot4),
+                    XB.GenerateXMLIngot(Ingot5),
+                    XB.GenerateXMLComponent(Component1),
+                    XB.GenerateXMLComponent(Component2),
+                    XB.GenerateXMLComponent(Component3),
+                    XB.GenerateXMLAmmo(Ammo1),
+                    XB.GenerateXMLAmmo(Ammo2),
+                    XB.GenerateXMLAmmo(Ammo3),
+                    XB.GenerateXMLTool(Tool1),
+                    XB.GenerateXMLTool(Tool2),
+                    XB.GenerateXMLTool(Tool3),
+                    XB.GenerateXMLConsumable(Consumable1),
+                    XB.GenerateXMLConsumable(Consumable2),
+                    XB.GenerateXMLConsumable(Consumable3))
+    else:
+        XB.CreateXml_Dynamic(XML_Name,
+            XB.GenerateXMLIngot(Ingot1),
+            XB.GenerateXMLIngot(Ingot2),
+            XB.GenerateXMLIngot(Ingot3),
+            XB.GenerateXMLIngot(Ingot4),
+            XB.GenerateXMLIngot(Ingot5),
+            XB.GenerateXMLComponent(Component1),
+            XB.GenerateXMLComponent(Component2),
+            XB.GenerateXMLComponent(Component3),
+            XB.GenerateXMLAmmo(Ammo1),
+            XB.GenerateXMLAmmo(Ammo2),
+            XB.GenerateXMLAmmo(Ammo3),
+            XB.GenerateXMLTool(Tool1),
+            XB.GenerateXMLTool(Tool2),
+            XB.GenerateXMLTool(Tool3),
+            XB.GenerateXMLConsumable(Consumable1),
+            XB.GenerateXMLConsumable(Consumable2),
+            XB.GenerateXMLConsumable(Consumable3))    
 
-    XB.CreateXml(XML_Name,
-                XB.GenerateXMLIngot(Ingot1),
-                XB.GenerateXMLIngot(Ingot2),
-                XB.GenerateXMLIngot(Ingot3),
-                XB.GenerateXMLIngot(Ingot4),
-                XB.GenerateXMLIngot(Ingot5),
-                XB.GenerateXMLComponent(Component1),
-                XB.GenerateXMLComponent(Component2),
-                XB.GenerateXMLComponent(Component3),
-                XB.GenerateXMLAmmo(Ammo1),
-                XB.GenerateXMLAmmo(Ammo2),
-                XB.GenerateXMLAmmo(Ammo3),
-                XB.GenerateXMLTool(Tool1),
-                XB.GenerateXMLTool(Tool2),
-                XB.GenerateXMLTool(Tool3),
-                XB.GenerateXMLConsumable(Consumable1),
-                XB.GenerateXMLConsumable(Consumable2),
-                XB.GenerateXMLConsumable(Consumable3))
 
     df = pd.read_csv('Encounters.csv', header=0)
 
@@ -659,6 +682,8 @@ for index, row in df.iterrows():
 
         Encounter_Id = row['Name']       
         Faction = row['Faction']
+
+
         
         if IO:
             Encounter_Id = Encounter_Id + "IO"
@@ -692,13 +717,18 @@ for index, row in df.iterrows():
         if isinstance(row['SOLCOOP'], str):
             SOLCOOP_mission_ids = row['SOLCOOP'].split(',')            
 
+        Static = True
 
+        if isinstance(row['Static'], bool):
+            Static = row['Static']   
 
-        PB.CreateStoreItems(Faction,Encounter_Id,XML_Name,row['StoreProfiles'],row['TradeIngots'],Ingots,
-                            mission_ids, SECURITY_mission_ids,ITC_mission_ids,SHIVAN_mission_ids,AGURO_mission_ids,ZENOVA_mission_ids,SOLCOOP_mission_ids)
+        if Static:
+            PB.CreateStoreItems(Faction,Encounter_Id,XML_Name, row['StoreProfiles'],row['TradeIngots'],Ingots,
+                                mission_ids, SECURITY_mission_ids,ITC_mission_ids,SHIVAN_mission_ids,AGURO_mission_ids,ZENOVA_mission_ids,SOLCOOP_mission_ids)
+            PB.CreateTriggers(Faction,Encounter_Id, IO,row['StoreProfiles'])
 
-
-        
-        PB.CreateTriggers(Faction,Encounter_Id, IO,row['StoreProfiles'])
-
+        else:
+            PB.CreateStoreItems_Dynamic(Faction,Encounter_Id,XML_Name, row['StoreProfiles'],row['TradeIngots'],Ingots,
+                                mission_ids, SECURITY_mission_ids,ITC_mission_ids,SHIVAN_mission_ids,AGURO_mission_ids,ZENOVA_mission_ids,SOLCOOP_mission_ids)
+            PB.CreateTriggers(Faction,Encounter_Id, IO,row['StoreProfiles'])
 input("Done")

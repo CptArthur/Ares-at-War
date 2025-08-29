@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<SpawnGroups>
-	
-	<!-- HQ Base -->
+	<!-- 
 	<SpawnGroup>
 		<Id>
 			<TypeId>SpawnGroupDefinition</TypeId> 
@@ -21,25 +20,19 @@
 
 		[ForceExactPositionAndOrientation:true]
 
-
 		[StaticEncounterCoords:{X:-3661158.5103733 Y:-1301788.86345045 Z:-2642200.20693818}]
 		[StaticEncounterForward:{X:-0.999396018556893 Y:0.00660401624276742 Z:-0.0341172252988828}]
 		[StaticEncounterUp:{X:0.0347046904629859 Y:0.139274625883751 Z:-0.989645473411974}]
-
 
 		[StaticEncounterUsePlanetDirectionAndAltitude:true]
 		[StaticEncounterPlanet:Planet Agaris]
 		[StaticEncounterPlanetDirection:{X:0.0315201249693744 Y:0.139162690312159 Z:-0.989767764350303}]
 		[StaticEncounterPlanetAltitude:-7.52206609219138]
 
-
-
-
 		[UseRandomNameGenerator:true]
 		[RandomGridNamePrefix:(NPC-DoNotDelete)]
 		[RandomGridNamePattern:HQ]
 		[ReplaceAntennaNameWithRandomizedName:Antenna]
-
 
 		[ReplenishSystems:true]
 		[UseRivalAi:true]
@@ -65,9 +58,8 @@
 			<PlaceToGridOrigin>true</PlaceToGridOrigin>
 			</Prefab>
 		</Prefabs>
-		
 	</SpawnGroup>
-	
+	-->
 	
 		<!-- MidWay Base -->
 	<SpawnGroup>
@@ -87,12 +79,12 @@
 		[TriggerRadius:10000]
 
 		[ForceExactPositionAndOrientation:true]
-
-
+		
 		[UseRandomNameGenerator:true]
 		[RandomGridNamePrefix:(NPC-DoNotDelete)]
 		[RandomGridNamePattern:Clam Base]
 		[ReplaceAntennaNameWithRandomizedName:Antenna]
+		[ReplaceAntennaHudTextInsteadOfName:true]	
 
 		[StaticEncounterCoords:{X:-1179079.18812476 Y:144839.836833767 Z:1268477.76831129}]
 		[StaticEncounterForward:{X:-0.273126536574611 Y:-0.951804915045379 Z:-0.139532428898151}]
@@ -183,7 +175,7 @@
 		
 		<Frequency>5.0</Frequency>
 		<Prefabs>
-			<Prefab SubtypeId="GC-HeavyBase">
+			<Prefab SubtypeId="GC-Base">
 				<Position>
 					<X>0.0</X>
 					<Y>0.0</Y>
@@ -197,8 +189,69 @@
 	</SpawnGroup>
 
 
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>GC_UraniumBase</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:GC]		
+
+		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+		[TriggerRadius:10000]
+
+		[ForceExactPositionAndOrientation:true]
+
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-DoNotDelete)]
+		[RandomGridNamePattern:Uranium Base]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+		[ReplaceAntennaHudTextInsteadOfName:true]	
 
 
+		[StaticEncounterCoords:{X:-3663417.67756727 Y:-1300213.72937504 Z:-2642013.40267718}]
+		[StaticEncounterForward:{X:0.0798157843480127 Y:-0.982996306408594 Z:-0.16537140670616}]
+		[StaticEncounterUp:{X:-0.00674241766121159 Y:0.165364503528345 Z:-0.98620947104401}]
+
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Agaris]
+		[StaticEncounterPlanetDirection:{X:-0.00683058119764079 Y:0.165825589034263 Z:-0.98613144011432}]
+		[StaticEncounterPlanetAltitude:-0.28444292776112]
+
+
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:GC_UraniumBaseDestroyed]			
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="GC-Base">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>GC_MilitaryBase_Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+	</SpawnGroup>
 
 
 
