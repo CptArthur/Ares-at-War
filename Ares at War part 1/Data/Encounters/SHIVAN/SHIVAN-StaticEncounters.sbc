@@ -86,6 +86,71 @@ Optional Tags For Dynamic Planet Spawning:
 		
 
 
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>SHIVAN_Ravun</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:True]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:SHIVAN]		
+
+			[TriggerCoords:{X:-122306.566429174 Y:226447.532711751 Z:132844.056486639}]
+			[TriggerRadius:10000]
+
+			[ForceExactPositionAndOrientation:true]
+
+			[CutVoxelsAtAirtightCells:true]
+
+			[StaticEncounterCoords:{X:-3704312.75565865 Y:-1327527.58674551 Z:-2622327.52158774}]
+			[StaticEncounterForward:{X:0.215593295863048 Y:0.779811927972859 Z:-0.587718374538487}]
+			[StaticEncounterUp:{X:-0.699094836954719 Y:-0.296947104195017 Z:-0.650452785568214}]
+
+
+			[StaticEncounterUsePlanetDirectionAndAltitude:true]
+			[StaticEncounterPlanet:Planet Agaris]
+			[StaticEncounterPlanetDirection:{X:-0.699067118775693 Y:-0.296936241245732 Z:-0.650487534147664}]
+			[StaticEncounterPlanetAltitude:34.2912815025556]
+
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-DoNotDelete)]
+			[RandomGridNamePattern:Ravun Outpost]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]
+
+
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]
+	
+
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:SHIVAN_RavunDestroyed]			
+			[ZoneConditions:ZoneCondition_ZoneAaW]
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>4.9</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="SHIVAN - Ravun">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>SHIVAN_Ravun_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>	
 
 	
 <!-- 

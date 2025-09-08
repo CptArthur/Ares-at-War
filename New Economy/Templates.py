@@ -134,39 +134,46 @@ def GetStoreMilitary(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngots
 
         [FileSource:AaW_StoreItems_{XML_Name}.xml]
         
-        [MinOfferItems:99]
-        [MaxOfferItems:99]
-        [MinOrderItems:99]
-        [MaxOrderItems:99]
+        [MinOfferItems:7]
+        [MaxOfferItems:10]
+        [MinOrderItems:12]
+        [MaxOrderItems:16]
+
+        [ItemsRequireInventory:false]
 
         [ItemsRequireInventory:false]
 
         {GenerateProfileIngotOre(Ingots,TradeIngots)}
 
-        [Offers:Ammo/NATO_25x184mm] 
-        [Offers:Ammo/missile] 
-        [Offers:Ammo/MediumCalibreAmmo] 
-        [Offers:Ammo/LargeCalibreAmmo] 
-        [Offers:Ammo/LargeRailgunAmmo] 
-        [Offers:Ammo/SmallRailgunAmmo] 
-        [Offers:Ammo/AutocannonClip] 
 
-        [Offers:Ammo/PreciseAutomaticRifleGun_Mag_5rd] 
-        [Offers:Ammo/RapidFireAutomaticRifleGun_Mag_50rd] 
-        [Offers:Ammo/AutomaticRifleGun_Mag_20rd] 
-        [Offers:Ammo/NATO_5p56x45mm] 
 
-        [Offers:Ammo/UltimateAutomaticRifleGun_Mag_30rd] 
-        [Offers:Ammo/SemiAutoPistolMagazine] 
-        [Offers:Ammo/FullAutoPistolMagazine] 
-        [Offers:Ammo/ElitePistolMagazine] 
 
-        [Offers:Tool/SemiAutoPistolItem] 
-        [Offers:Tool/FullAutoPistolItem] 
-        [Offers:Tool/MediumCalibreAmmo] 
-        [Offers:Tool/AutomaticRifleItem] 
-        [Offers:Tool/PreciseAutomaticRifleItem] 
-        [Offers:Tool/RapidFireAutomaticRifleItem] 
+        [RequiredOrders:Component/SteelPlate] 
+        [RequiredOrders:Component/MetalGrid]
+        [Orders:Ammo/NATO_25x184mm] 
+        [Orders:Ammo/missile] 
+        [Orders:Ammo/MediumCalibreAmmo] 
+        [Orders:Ammo/LargeCalibreAmmo] 
+        [Orders:Ammo/LargeRailgunAmmo] 
+        [Orders:Ammo/SmallRailgunAmmo] 
+        [Orders:Ammo/AutocannonClip] 
+
+        
+        [RequiredOffers:Tool/AutomaticRifleItem] 
+        [RequiredOffers:Tool/PreciseAutomaticRifleItem] 
+        [RequiredOffers:Tool/RapidFireAutomaticRifleItem] 
+        [RequiredOffers:Ammo/PreciseAutomaticRifleGun_Mag_5rd] 
+        [RequiredOffers:Ammo/RapidFireAutomaticRifleGun_Mag_50rd] 
+        [RequiredOffers:Ammo/AutomaticRifleGun_Mag_20rd] 
+        [RequiredOffers:Ammo/UltimateAutomaticRifleGun_Mag_30rd] 
+
+        [Offers:Component/Construction] 
+        [Offers:Component/Computer] 
+        [Offers:Component/Motor] 
+        [Offers:Component/SolarCell] 
+        [Offers:Component/AlkalinePowerCell] 
+        [Offers:Component/Girder] 
+        [Offers:Component/InteriorPlate] 
 
           
       </Description>
@@ -669,7 +676,73 @@ def GetStoreVendingMachine(XML_Name:str,Faction:str, Name:str)->str:
 
     return string
 
+def GetStoreAHE(XML_Name:str,Faction:str, Name:str)->str:  
+    string = f"""
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>{Faction}_StoreProfile_{Name}_AHE</SubtypeId>
+      </Id>
+      <Description>
 
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_{XML_Name}.xml]
+        
+        [MinOfferItems:5]
+        [MaxOfferItems:20]
+        [MinOrderItems:5]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+
+        [Offers:Component/Thrust] 
+        [Offers:Component/GravityGenerator] 
+        [Offers:Component/Superconductor] 
+        [Offers:Component/JumpCore] 
+        [Offers:Component/PowerCell] 
+        [Offers:Component/MedicalComponent] 
+        [Offers:Component/ReactorComponent] 
+
+      </Description>
+
+    </EntityComponent>"""
+
+
+    if "IO" in Name:
+     string = f"""
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>{Faction}_StoreProfile_{Name}_AHE</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_{XML_Name}.xml]
+        
+        [MinOfferItems:5]
+        [MaxOfferItems:20]
+        [MinOrderItems:5]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+
+        [Offers:Component/Thrust] 
+        [Offers:Component/GravityGenerator] 
+        [Offers:Component/Superconductor] 
+        [Offers:Component/JumpCore] 
+        [Offers:Component/PowerCell]  
+        [Offers:Component/MedicalComponent] 
+        [Offers:Component/ReactorComponent] 
+
+
+      </Description>
+
+    </EntityComponent>"""       
+
+    return string
 
 
 def GetStoreZENOVA(XML_Name:str,Faction:str, Name:str)->str:  

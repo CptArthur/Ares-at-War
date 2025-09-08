@@ -9,6 +9,8 @@ AGURO = "{AGURO}"
 UNION = "{UNION}"  
 SOLCOOP = "{SOLCOOP}" 
 ZENOVA = "{ZENOVA}" 
+AHE = "{AHE}" 
+
 
 
 
@@ -80,7 +82,12 @@ def GetStoreSHIVAN(Faction:str, Name:str)->str:
 
     return string
 
+def GetStoreAHE(Faction:str, Name:str)->str:  
 
+    string = f"""[StoreBlocks:Store {AHE}]
+      [StoreProfiles:{Faction}_StoreProfile_{Name}_AHE]	"""   
+
+    return string
 
 
 def GetStoreVendingMachine(Faction:str, Name:str)->str:  

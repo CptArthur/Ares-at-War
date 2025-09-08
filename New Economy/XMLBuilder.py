@@ -55,34 +55,7 @@ def CreateXml(Name:str,Ingot1, Ingot2,Ingot3,Ingot4,Ingot5,Component1,Component2
     StoreItems = f"""<?xml version="1.0" encoding="utf-16"?>
 <StoreItemsContainer xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <StoreItems>
-    <StoreItem>
-      <StoreItemId>Schematics</StoreItemId>
-      <ItemType>Component</ItemType>
-      <ItemSubtypeIds> 
-        <ItemSubtypeId>AaW_Schematic_CeramicsFurnace</ItemSubtypeId>  
-        <ItemSubtypeId>AaW_Schematic_MicroelectronicsFactory</ItemSubtypeId>  
-        <ItemSubtypeId>AaW_Schematic_WireDrawer</ItemSubtypeId>  
-        <ItemSubtypeId>AaW_Schematic_AutoLoom</ItemSubtypeId>  
-        <ItemSubtypeId>AaW_Schematic_PlateStamp</ItemSubtypeId>  
-        <ItemSubtypeId>AaW_Schematic_Extruder</ItemSubtypeId>   
-        <ItemSubtypeId>AaW_Schematic_MunitionsFactory</ItemSubtypeId>  
-        <ItemSubtypeId>AaW_Schematic_Fabricator</ItemSubtypeId> 
-        <ItemSubtypeId>AaW_Schematic_Reactor</ItemSubtypeId> 
-        <ItemSubtypeId>AaW_Schematic_JumpDrive</ItemSubtypeId>  
-      </ItemSubtypeIds> 
-      <Offer>
-        <MinPriceMultiplier>110</MinPriceMultiplier>
-        <MaxPriceMultiplier>130</MaxPriceMultiplier>
-        <MinAmount>3</MinAmount>
-        <MaxAmount>3</MaxAmount>
-      </Offer>
-      <Order>
-        <MinPriceMultiplier>90</MinPriceMultiplier>
-        <MaxPriceMultiplier>100</MaxPriceMultiplier>
-        <MinAmount>3</MinAmount>
-        <MaxAmount>3</MaxAmount>
-      </Order>
-    </StoreItem>
+
 
     <StoreItem>
       <StoreItemId>Ingot1</StoreItemId>

@@ -79,6 +79,44 @@
       </Description>
     </EntityComponent> 
 
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SHIVAN_Ravun_Behavior</SubtypeId>
+      </Id>
+      <Description>
+    [RivalAI Behavior]
+    [BehaviorName:Passive]
+    [TargetData:MSB_TargetProfile_Default]
+
+    [//DialogueBanks:SHIVAN.xml] 
+    [DialogueBanks:AaW.xml] 
+    [//DialogueBanks:MSB.xml] 
+
+
+    [TriggerGroups:SHIVAN_StaticCommon_TriggerGroup]
+    [TriggerGroups:AaW_StaticCommon_TriggerGroup]    
+    [TriggerGroups:MSB_StaticCommon_TriggerGroup]    
+        
+
+    [TriggerGroups:SHIVAN_FixedStatic_TriggerGroup]        
+    [TriggerGroups:AaW_FixedStatic_TriggerGroup]
+       
+
+    [TriggerGroups:SHIVAN_Settlement_TriggerGroup]    
+    [TriggerGroups:AaW_Settlement_TriggerGroup]     
+         
+[Triggers:SHIVAN_Trigger_Static_PopulateStores_Ravun] 
+    [TriggerGroups:SHIVAN_Bank_CommonTriggers]    
+      </Description>
+    </EntityComponent> 
+
+
+
+
+
+
 	
   </EntityComponents>
 </Definitions>

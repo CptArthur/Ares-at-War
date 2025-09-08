@@ -18,6 +18,67 @@ ContractBlockLocation
   
 
 
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>Bratis_EventCondition_MissionDestroyGCMidway</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:GC_AgarisMidWayBaseDestroyed]  
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_Bratis_DestroyGCMidway</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:Midway Reckoning]
+	[Description:For months, GC has stalked our waters, harassing our ships and daring to think we'll stand down. They believe the northern coast belongs to them. But we know better. We are the people of Bratis. These waters have fed us, carried us, and carried our stories for decades. We must take a stand. Please help us reclaim our waters! Destroy GC Midway base.]
+	
+	[OverrideFaction:BRATIS]
+	
+	[Reward:15000000]
+	[Collateral:50000]
+	[ReputationReward:1200]
+	[FailReputationPrice:100]
+	[Duration:0]
+
+	[PersistantEventConditionIds:Thorrix_EventCondition_MissionDestroyDRACobalt]
+
+	[ReplaceKeys:{StaticEncounterSandboxBoolName}]
+	[ReplaceValues:GC_AgarisMidWayBaseDestroyed]
+	
+	[ReplaceKeys:{EventName}]
+	[ReplaceValues:Midway Reckoning]	
+
+	[ReplaceKeys:{EventCoords}]
+	[ReplaceValues:{X:-1179079.18812476 Y:144839.836833767 Z:1268477.76831129}]	
+	
+	[Exclusive:true]
+	
+	[InstanceEventGroupId:MissionGroup_EliminateStaticEncounter]
+
+      </Description>
+    </EntityComponent>
+
+
+
+
 
 
  

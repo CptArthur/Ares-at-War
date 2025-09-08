@@ -153,7 +153,7 @@ def run():
 Planet = "Planet Agaris"
 filename = "agaris"
 
-height = True
+height = False
 Vox = True
 Biome = True
 Ore = True

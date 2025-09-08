@@ -682,8 +682,50 @@
             <Speed>25</Speed>
             <Behaviour>AaW_Transport_Behavior</Behaviour>
         </Prefab>
+    </Prefabs>            
+</SpawnGroup>
+
+		<SpawnGroup>
+    <Id>
+        <TypeId>SpawnGroupDefinition</TypeId> 
+        <SubtypeId>AaW_SpawnGroup_Transport_Bratis</SubtypeId>
+    </Id>
+    <Description>
+    [Modular Encounters SpawnGroup]
+
+    [SpawnConditionsProfiles:AaW_SpawnProfile_RivalAISpawn]
+
+    [UseRandomNameGenerator:true]
+    [RandomGridNamePrefix:]
+    [RandomGridNamePattern:Deliver to Bratis]    
+[ReplaceBeaconNameWithRandomizedName:Beacon]
+[ReplaceBeaconHudTextInsteadOfName:true]
+
+    [UseRivalAi:true]
+    [RivalAiReplaceRemoteControl:true]
+
+    </Description>
+    <Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+    <IsPirate>true</IsPirate>
+    
+    <Frequency>5.0</Frequency>
+    <Prefabs>
+
+        <Prefab SubtypeId="AaW_Transport_Cargo">
+            <Position>
+                <X>0.0</X>
+                <Y>0.0</Y>
+                <Z>0.0</Z>
+            </Position>
+            <Speed>25</Speed>
+            <Behaviour>AaW_Transport_Behavior</Behaviour>
+        </Prefab>
+
+
+
 
     </Prefabs>            
 </SpawnGroup>
+
 	</SpawnGroups>
 </Definitions>

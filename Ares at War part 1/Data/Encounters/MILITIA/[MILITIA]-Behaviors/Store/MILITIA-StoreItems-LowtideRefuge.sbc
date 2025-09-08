@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    
+     
+
+
+     
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MILITIA_StoreProfile_LowtideRefuge_Military</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_LOQ.xml]
+        
+        [MinOfferItems:7]
+        [MaxOfferItems:10]
+        [MinOrderItems:12]
+        [MaxOrderItems:16]
+
+        [ItemsRequireInventory:false]
+
+        [ItemsRequireInventory:false]
+
+        
+        [Orders:Ore/Iron] 
+        [Orders:Ore/Nickel] 
+        [Orders:Ore/Silicon] 
+        [Orders:Ore/Cobalt] 
+
+        [Offers:Ingot/Iron] 
+        [Offers:Ingot/Nickel] 
+        [Offers:Ingot/Silicon] 
+        [Offers:Ingot/Cobalt] 
+
+
+
+
+
+        [RequiredOrders:Component/SteelPlate] 
+        [RequiredOrders:Component/MetalGrid]
+        [Orders:Ammo/NATO_25x184mm] 
+        [Orders:Ammo/missile] 
+        [Orders:Ammo/MediumCalibreAmmo] 
+        [Orders:Ammo/LargeCalibreAmmo] 
+        [Orders:Ammo/LargeRailgunAmmo] 
+        [Orders:Ammo/SmallRailgunAmmo] 
+        [Orders:Ammo/AutocannonClip] 
+
+        
+        [RequiredOffers:Tool/AutomaticRifleItem] 
+        [RequiredOffers:Tool/PreciseAutomaticRifleItem] 
+        [RequiredOffers:Tool/RapidFireAutomaticRifleItem] 
+        [RequiredOffers:Ammo/PreciseAutomaticRifleGun_Mag_5rd] 
+        [RequiredOffers:Ammo/RapidFireAutomaticRifleGun_Mag_50rd] 
+        [RequiredOffers:Ammo/AutomaticRifleGun_Mag_20rd] 
+        [RequiredOffers:Ammo/UltimateAutomaticRifleGun_Mag_30rd] 
+
+        [Offers:Component/Construction] 
+        [Offers:Component/Computer] 
+        [Offers:Component/Motor] 
+        [Offers:Component/SolarCell] 
+        [Offers:Component/AlkalinePowerCell] 
+        [Offers:Component/Girder] 
+        [Offers:Component/InteriorPlate] 
+
+          
+      </Description>
+
+    </EntityComponent>
+
+
+
+    
+    
+    
+    
+    
+
+
+    
+
+
+    
+    
+    
+    
+
+
+    
+    
+    
+
+
+    
+    
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MILITIA_StoreProfile_LowtideRefuge_Fuel</SubtypeId>
+      </Id>
+      <Description>
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_LOQ.xml]
+        
+        [MinOfferItems:5]
+        [MaxOfferItems:20]
+        [MinOrderItems:5]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+
+        [Offers:HydrogenOffer] 
+        [Offers:OxygenOffer] 
+        [Offers:Ore/Ice] 
+      </Description>
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MILITIA_ContractBlockProfile_LowtideRefuge</SubtypeId>
+      </Id>
+      <Description>
+        [MES Contract Block]
+
+        [StoreProfileId:MILITIA_StoreProfile_LowtideRefuge_Ingot]
+        
+        [MinContracts:5]
+        [MaxContracts:15]
+        
+        [MissionIds:AaW_Mission_MILITIA_AttackGCUranium] 
+
+        
+      </Description>
+    </EntityComponent>	    
+
+    
+    
+    
+    
+    
+     
+    
+
+
+  </EntityComponents>
+</Definitions>

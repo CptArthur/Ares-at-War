@@ -29,6 +29,8 @@ def CreateStoreItems(Faction, Name:str,XML_Name: str, StoresProfiles:str,TradeIn
     {Temp.GetStoreSECURITY(XML_Name,Faction,Name) if "SECURITY" in StoresProfiles else ""}
     {Temp.GetStoreAGURO(XML_Name,Faction,Name) if "AGURO" in StoresProfiles else ""}
     {Temp.GetStoreZENOVA(XML_Name,Faction,Name) if "ZENOVA" in StoresProfiles else ""}
+    {Temp.GetStoreAHE(XML_Name,Faction,Name) if "AHE" in StoresProfiles else ""}
+
 
     {Temp.GetStoreITC(XML_Name,Faction,Name) if "ITC" in StoresProfiles else ""}
     {Temp.GetStoreUNION(XML_Name,Faction,Name) if "UNION" in StoresProfiles else ""}
@@ -218,7 +220,7 @@ def CreateTriggers(Faction, Name:str, IO, StoresProfiles):
     {Trigger.GetStoreUNION(Faction,Name) if "UNION" in StoresProfiles else ""}
     {Trigger.GetStoreSOLCOOP(Faction,Name) if "SOLCOOP" in StoresProfiles else ""}
     {Trigger.GetStoreZENOVA(Faction,Name) if "ZENOVA" in StoresProfiles else ""}
-
+    {Trigger.GetStoreAHE(Faction,Name) if "AHE" in StoresProfiles else ""}
     {Trigger.GetStoreOutpost(Faction,Name) if "Outpost" in StoresProfiles else ""}        
 
       [StoreBlocks:Store Fuel]

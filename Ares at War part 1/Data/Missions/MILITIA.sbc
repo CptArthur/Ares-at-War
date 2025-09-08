@@ -54,7 +54,74 @@
 	
 	
 
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MILITIA_EventCondition_MissionDestroyGCUraniumBase</SubtypeId>
+      </Id>
+      <Description>
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:GC_UraniumBaseDestroyed]  
+
+      </Description>
+    </EntityComponent>	
+
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_MILITIA_AttackGCUranium</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
 	
+	[Title:Eliminate GC Uranium Base]
+	[Description:They call it a base. We call it a pit of greed. Tear it down. Burn it out. No Corp stronghold can stand against the will of a free world. Your mission: destroy all GC positions at the uranium ore node. Expect heavy resistance.]
+	
+	[OverrideFaction:MILITIA]
+	
+	[Reward:25000000]
+	[Collateral:50000]
+	[ReputationReward:600]
+	[FailReputationPrice:20]
+	[Duration:0]
+
+	[PersistantEventConditionIds:MILITIA_EventCondition_MissionDestroyGCUraniumBase]
+
+	[ReplaceKeys:{StaticEncounterSandboxBoolName}]
+	[ReplaceValues:GC_UraniumBaseDestroyed]
+	
+	[ReplaceKeys:{EventName}]
+	[ReplaceValues:Eliminate GC Uranium Base]	
+
+	[ReplaceKeys:{EventCoords}]
+	[ReplaceValues:{X:-3663417.67756727 Y:-1300213.72937504 Z:-2642013.40267718}]	
+
+		[Exclusive:true]
+			
+	[InstanceEventGroupId:MissionGroup_EliminateStaticEncounter]
+
+
+
+      </Description>
+    </EntityComponent> 
+
+
+
+
+
+
+
+
+
+
+
+	<!-- Old-->
 	
  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -86,7 +153,7 @@
     [MES Mission]
 	
 	[Title:Retake Thorrix]
-	[Description:It’s been nearly two years since the Shivan Syndicate took control of Thorrix Outpost. Since then, they’ve turned it into a major hub. MILITIA command wants the site neutralized to break Syndicate control of the Agaris Desert.]
+	[Description:It's been nearly two years since the Shivan Syndicate took control of Thorrix Outpost. Since then, they've turned it into a major hub. MILITIA command wants the site neutralized to break Syndicate control of the Agaris Desert.]
 	
 	[OverrideFaction:MILITIA]
 	
