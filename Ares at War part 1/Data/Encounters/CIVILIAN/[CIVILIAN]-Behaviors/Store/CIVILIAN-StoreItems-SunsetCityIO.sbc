@@ -131,6 +131,29 @@
 
     
     
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_StoreProfile_SunsetCityIO_AGURO</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_SunsetCityIO.xml]
+        
+        [MinOfferItems:20]
+        [MaxOfferItems:20]
+        [MinOrderItems:20]
+        [MaxOrderItems:20]
+
+        [ItemsRequireInventory:false]
+
+        [Orders:Ingot/PurifiedSpice] 
+
+      </Description>
+
+    </EntityComponent>
     
     
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -235,6 +258,22 @@
     </EntityComponent>	
     
     
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>CIVILIAN_ContractBlockProfile_SunsetCityIO_AGURO</SubtypeId>
+      </Id>
+      <Description>
+        [MES Contract Block]
+
+        [StoreProfileId:CIVILIAN_StoreProfile_SunsetCityIO_Ingot]
+        
+        [MinContracts:5]
+        [MaxContracts:15]
+        
+        
+      </Description>
+    </EntityComponent>	
     
     
      

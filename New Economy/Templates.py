@@ -918,13 +918,7 @@ def GetStoreAGURO(XML_Name:str,Faction:str, Name:str)->str:
 
         [ItemsRequireInventory:false]
 
-        [Orders:Ingot/CrystalPrism] 
-        [Orders:Ingot/StabilizedCronyx] 
         [Orders:Ingot/PurifiedSpice] 
-
-        [Offers:Ingot/DoriumIngot]
-        [Offers:Component/ReinforcedDrillbit]
-        [Offers:Component/ReinforcedPlate]
 
 
       </Description>
@@ -952,13 +946,8 @@ def GetStoreAGURO(XML_Name:str,Faction:str, Name:str)->str:
 
         [ItemsRequireInventory:false]
 
-        [Orders:Ingot/CrystalPrism] 
-        [Orders:Ingot/StabilizedCronyx] 
         [Orders:Ingot/PurifiedSpice] 
 
-        [Offers:Ingot/DoriumIngot]
-        [Offers:Component/ReinforcedDrillbit]
-        [Offers:Component/ReinforcedPlate]
       </Description>
 
     </EntityComponent>"""       

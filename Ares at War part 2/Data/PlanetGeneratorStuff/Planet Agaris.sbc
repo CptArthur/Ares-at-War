@@ -927,9 +927,13 @@
           <Material>Woods_grass</Material>
         </Materials>
         <Items>
-     <Item TypeId="MyObjectBuilder_Trees" SubtypeId="WoodGrassForestEdge" Density="0.1"/>
-          <Item TypeId="MyObjectBuilder_DestroyableItems" SubtypeId="WoodGrassBushForestLarge" Density="0.4"/>
-			    <Item TypeId="MyObjectBuilder_DestroyableItems" SubtypeId="Fern" Density="5.4"/>
+			<Item TypeId="MyObjectBuilder_Trees" SubtypeId="WoodGrassForestEdge" Density="0.1"/>
+			<Item TypeId="MyObjectBuilder_DestroyableItems" SubtypeId="WoodGrassBushForestLarge" Density="0.2"/>
+			<Item TypeId="MyObjectBuilder_DestroyableItems" SubtypeId="Fern" Density="5.4"/>
+
+			<Item TypeId="MyObjectBuilder_Forageable" SubtypeId="TaigaForageables" Density="0.03"/>
+									
+									
         </Items>
         <Rule>
           <Height Min="0" Max="0.7"/>
@@ -1037,6 +1041,42 @@
         </Rule>
       </Item>
 
+			<Item>
+				<Biomes>
+					<Biome>0</Biome>
+				</Biomes>
+				<Materials>
+					<Material>Grass</Material>
+					<Material>Grass_old</Material>
+
+				</Materials>
+				<Items>
+					<Item TypeId="MyObjectBuilder_Forageable" SubtypeId="EarthForageables" Density="0.01"/>
+				</Items>
+				<Rule>
+					<Height Min="0" Max="1"/>
+					<Latitude Min="0" Max="90"/>
+					<Slope Min="0" Max="20"/>
+				</Rule>
+			</Item>
+	  
+	  
+			<Item>
+				<Biomes>
+					<Biome>0</Biome>
+				</Biomes>
+				<Materials>
+					<Material>Farm_Land</Material>
+				</Materials>
+				<Items>
+					<Item TypeId="MyObjectBuilder_Forageable" SubtypeId="GrainForageables" Density="0.06"/>
+				</Items>
+				<Rule>
+					<Height Min="0" Max="1"/>
+					<Latitude Min="0" Max="90"/>
+					<Slope Min="0" Max="20"/>
+				</Rule>
+			</Item>
 
 
 
@@ -1054,8 +1094,7 @@
         </Materials>
         <Items>
 			<Item TypeId="MyObjectBuilder_VoxelMapStorageDefinition" GroupId="stone_largestone" ModifierId="Magnesium" Density="0.04" />
-
-					   			
+		   			
         </Items>
         <Rule>
           <Height Min="0" Max="0.7"/>
@@ -1168,9 +1207,12 @@
 	  
 	  
 
-	  
-	  
-	  
+
+
+
+
+
+			
       </EnvironmentItems>
 
       <DefaultSurfaceMaterial Material="Stone" MaxDepth="4"/>
