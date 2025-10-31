@@ -1,6 +1,78 @@
 <?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<SpawnGroups>
+
+
+
+		<!-- MidWay Base -->
+	<SpawnGroup>
+		<Id>
+			<TypeId>SpawnGroupDefinition</TypeId> 
+			<SubtypeId>GC_TechFacility</SubtypeId>
+		</Id>
+		<Description>
+		[Modular Encounters SpawnGroup]
+		
+		[StaticEncounter:True]
+		[ForceStaticGrid:true]
+		[RotateFirstCockpitToForward:false]
+		[FactionOwner:GC]		
+
+		[TriggerCoords:{X:-135965.419098251 Y:-204713.406736157 Z:90418.1589357384}]
+		[TriggerRadius:10000]
+
+		[ForceExactPositionAndOrientation:true]
+		
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-DoNotDelete)]
+		[RandomGridNamePattern:Tech Facility]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+		[ReplaceAntennaHudTextInsteadOfName:true]	
+
+
+		[StaticEncounterCoords:{X:-3657092.61070023 Y:-1296007.60645679 Z:-2641605.119877}]
+		[StaticEncounterForward:{X:0.490404291458524 Y:0.833657823962076 Z:0.254004455602415}]
+		[StaticEncounterUp:{X:0.102820221752379 Y:0.23407610664181 Z:-0.966765937700643}]
+
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Agaris]
+		[StaticEncounterPlanetDirection:{X:0.099256613008756 Y:0.234265667077186 Z:-0.967092406134445}]
+		[StaticEncounterPlanetAltitude:-38.6802153490935]
+
+		[CutVoxelsAtAirtightCells:true]
+		[CutVoxelSize:3]
+
+		[ReplenishSystems:true]
+		[UseRivalAi:true]
+		[RivalAiReplaceRemoteControl:true]
+		[IgnoreCombatPhase:true]
+		[IgnoreCleanupRules:true]
+		[FalseSandboxVariables:GC_TechFacilityDestroyed]			
+		[ZoneConditions:ZoneCondition_ZoneAaW]
+
+		</Description>
+		<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+		<IsPirate>true</IsPirate>
+		
+		<Frequency>5.0</Frequency>
+		<Prefabs>
+			<Prefab SubtypeId="GC - Tech Facility">
+				<Position>
+					<X>0.0</X>
+					<Y>0.0</Y>
+					<Z>0.0</Z>
+				</Position>
+				<Speed>0</Speed>
+				<Behaviour>GC_MilitaryBase_Behavior</Behaviour>
+			<PlaceToGridOrigin>true</PlaceToGridOrigin>
+			</Prefab>
+		</Prefabs>
+		
+	</SpawnGroup>	
+
+
+
 	<!-- 
 	<SpawnGroup>
 		<Id>
@@ -123,6 +195,13 @@
 		</Prefabs>
 		
 	</SpawnGroup>	
+
+
+
+
+
+
+
 
 <!--
 	<SpawnGroup>

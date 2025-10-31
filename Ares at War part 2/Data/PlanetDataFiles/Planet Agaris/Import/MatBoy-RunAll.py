@@ -190,14 +190,14 @@ def Matboy(Mloc,rloc,gloc,bloc,Red,Green,Blue,side):
 
 
 
-MrhoekR = False
+MrhoekR = True
 MrhoekG = False
 MrhoekB = False
 
 
 
 
-Red = False #on
+Red = True #on
 Green = False #off
 Blue = True #on
 

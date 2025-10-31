@@ -59,6 +59,41 @@ def CreateXml(Name:str,Ingot1, Ingot2,Ingot3,Ingot4,Ingot5,Component1,Component2
 
     <StoreItem>
       <StoreItemId>Ingot1</StoreItemId>
+      <ItemType>Ingot</ItemType>
+      <ItemSubtypeIds> 
+        <ItemSubtypeId>Stone</ItemSubtypeId>  
+      </ItemSubtypeIds> 
+
+      <Offer>
+        <MinPriceMultiplier>5</MinPriceMultiplier>
+        <MaxPriceMultiplier>7</MaxPriceMultiplier>
+        <MinAmount>190000</MinAmount>
+        <MaxAmount>250000</MaxAmount>
+      </Offer>
+
+    </StoreItem>
+
+
+    <StoreItem>
+      <StoreItemId>Ingot1</StoreItemId>
+      <ItemType>Ingot</ItemType>
+
+      <Offer>
+        <MinPriceMultiplier>50</MinPriceMultiplier>
+        <MaxPriceMultiplier>60</MaxPriceMultiplier>
+        <MinAmount>1000</MinAmount>
+        <MaxAmount>10000</MaxAmount>
+      </Offer>
+      <Order>
+        <MinPriceMultiplier>10</MinPriceMultiplier>
+        <MaxPriceMultiplier>20</MaxPriceMultiplier>
+        <MinAmount>1000</MinAmount>
+        <MaxAmount>10000</MaxAmount>
+      </Order>
+    </StoreItem>
+
+    <StoreItem>
+      <StoreItemId>Ingot1</StoreItemId>
       <ItemType>Ingot</ItemType>{Ingot1}
       <Offer>
         <MinPriceMultiplier>50</MinPriceMultiplier>

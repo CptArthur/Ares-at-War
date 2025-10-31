@@ -104,6 +104,8 @@ def GetStoreSettlement(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngo
 
         {GenerateProfileIngotOre(Ingots,TradeIngots)}
 
+        [Offers:Ingot/Stone] 
+
         [Offers:Component/SteelPlate] 
         [Offers:Component/Construction] 
         [Offers:Component/Computer] 
