@@ -87,7 +87,7 @@ namespace AresAtWar.War
 
 
             // UNION Farm land
-            var agaria = new Node("Agaria", "Sector Agaria", GC, new Vector3D(-3702782, -1299410, -2541753), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Urban);
+            var agaria = new Node("Agaria", "Sector Agaria", SUNSETCITY, new Vector3D(-3702782, -1299410, -2541753), 20000, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Urban);
             var sunsetcity = new StaticEncounter(agaria.Id, "SunsetCity", "SUNSETCITY", new Vector3D(-3703710.56552889, -1300687.78803807, -2542134.43874369), true, new List<string>() { "Settlement" });
             var aheEncounter2 = new StaticEncounter(agaria.Id, "AgarisOutpost1", "SUNSETCITY", new Vector3D(-3703442.66211895, -1300817.03738934, -2541847.28840769), false);
             var aheEncounter3 = new StaticEncounter(agaria.Id, "AgarisOutpost2", "SUNSETCITY", new Vector3D(-3710629.45681993, -1308011.02317491, -2548826.88948266), false);

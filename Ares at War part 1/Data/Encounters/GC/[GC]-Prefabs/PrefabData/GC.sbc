@@ -45,6 +45,9 @@
       </Description>
 
     </EntityComponent>
+
+
+
 	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -173,6 +176,51 @@
 
     </EntityComponent>		
 	
-	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>GC_PrefabData_Dropship</SubtypeId>
+      </Id>
+      <Description>
+
+      [MES Prefab Data]
+      
+      [Prefabs:GC-Dropship]
+
+      [ManipulationProfiles:GC_Manipulation_Dropship]     
+      
+      </Description>
+      
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>GC_Manipulation_Dropship</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Manipulation]
+		
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-SafeToDelete)]
+		[RandomGridNamePattern:Dropship-RandomLetterRandomNumberRandomNumber]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+		[ReplaceAntennaHudTextInsteadOfName:true]
+
+		
+		
+		[UseBlockReplacerProfile:true]
+        [IgnoreGlobalBlockReplacer:true]
+        [BlockReplacerProfileNames:MES-NpcThrusters-Hydro]
+
+        [ConfigureSpecialNpcThrusters:true]
+        [NpcHydroThrustPowerMultiply:0.0001]
+      </Description>
+
+    </EntityComponent>
+
+
   </EntityComponents>
 </Definitions>

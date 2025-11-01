@@ -12,7 +12,6 @@
 
         [Triggers:AaW_TaskForceLeader_Trigger_Setup]
 
-        [Triggers:AaW_TaskForceLeader_Trigger_OnStart]
         [Triggers:AaW_TaskForceLeader_Trigger_InitRole]
         [Triggers:AaW_TaskForceLeader_Trigger_CloseRole]
 
@@ -139,39 +138,6 @@
     </EntityComponent>
     <!-- End Required stuff -->
 
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_TaskForceLeader_Trigger_OnStart</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Type:Timer]
-
-        [UseTrigger:true]
-        [StartsReady:false]
-
-        [MinCooldownMs:1000]
-        [MaxCooldownMs:1001]
-
-        [MaxActions:1]
-        [Actions:AaW_TaskForceLeader_Action_Init]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_TaskForceLeader_Action_Init</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [AppendAntennaHudText:true]
-        [AntennaHudTextSuffix: (Leader)]
-      </Description>
-    </EntityComponent>
 
  
 

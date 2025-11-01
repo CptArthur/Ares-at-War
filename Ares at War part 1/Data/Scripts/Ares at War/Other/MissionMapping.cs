@@ -422,6 +422,8 @@ namespace AresAtWar.SessionCore
             mapping.Add("{InstanceEventGroupId}", $"MissionGroup_Transport");
 
             var destinationEncounter = TransportGetDestination(spawnGroupName, Faction);
+            if (destinationEncounter == null)
+                return null;
 
             var missiondataTags = new List<string>();
             
@@ -431,10 +433,6 @@ namespace AresAtWar.SessionCore
             }
 
             missiondataTags.AddList(destinationEncounter.Tags);
-
-
-            if (destinationEncounter == null)
-                return null;
 
 
             var _missionType = GetRandomMissionData(MissionType.Transport, missiondataTags);
