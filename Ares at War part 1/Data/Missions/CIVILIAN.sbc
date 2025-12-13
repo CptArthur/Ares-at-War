@@ -87,7 +87,7 @@ ContractBlockLocation
 
 
 
-
+<!--
  
  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -147,6 +147,7 @@ ContractBlockLocation
       </Description>
     </EntityComponent>
 
+-->
 
  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -197,7 +198,7 @@ ContractBlockLocation
 	[ReplaceValues:Destroy DRA Magnesium Outpost]	
 
 	[ReplaceKeys:{EventCoords}]
-	[ReplaceValues:{X:-3678919.75817321 Y:-1328045.60224412 Z:-2529986.12841394}]	
+	[ReplaceValues:{X:-3658137.18096731 Y:-1305465.62918192 Z:-2524865.2501867}]	
 	
 	[Exclusive:true]
 
@@ -280,6 +281,71 @@ I made a mistake. Cobalt other should be MagnesiumOther. I cannot change it anym
 
       </Description>
     </EntityComponent>
+
+
+
+
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SunsetCity_EventCondition_MissionDestroySHIVANRavun</SubtypeId>
+      </Id>
+      <Description>
+
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:SHIVAN_RavunDestroyed]  
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_SunsetCity_DestroySHIVANRavun</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:Shut Down Syndicate Outpost]
+	[Description:Our flagship, the Green Froukje, has confirmed the location of a Shivan Syndicate outpost on Gold Island. The site is being used to store and distribute spice that's been flooding into Sunset City. We can't allow this operation to continue. The outpost must be destroyed and the Syndicate's presence wiped out. Will you take care of it?]
+	
+	[OverrideFaction:SUNSETCITY]
+	
+	[Reward:15000000]
+	[Collateral:50000]
+	[ReputationReward:600]
+	[FailReputationPrice:100]
+	[Duration:0]
+
+	[PersistantEventConditionIds:SunsetCity_EventCondition_MissionDestroySHIVANRavun]
+
+	[ReplaceKeys:{StaticEncounterSandboxBoolName}]
+	[ReplaceValues:SHIVAN_RavunDestroyed]
+	
+	[ReplaceKeys:{EventName}]
+	[ReplaceValues:Destroy SHIVAN Ravun Outpost]	
+
+	[ReplaceKeys:{EventCoords}]
+	[ReplaceValues:{X:-3704312.75565865 Y:-1327527.58674551 Z:-2622327.52158774}]	
+	
+	[Exclusive:true]
+
+	[InstanceEventGroupId:MissionGroup_EliminateStaticEncounter]
+
+      </Description>
+    </EntityComponent> 
+
+
+
+
 
 
 

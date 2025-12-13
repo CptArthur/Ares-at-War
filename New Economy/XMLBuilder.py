@@ -65,8 +65,8 @@ def CreateXml(Name:str,Ingot1, Ingot2,Ingot3,Ingot4,Ingot5,Component1,Component2
       </ItemSubtypeIds> 
 
       <Offer>
-        <MinPriceMultiplier>1</MinPriceMultiplier>
-        <MaxPriceMultiplier>2</MaxPriceMultiplier>
+        <CustomPrice>5</CustomPrice>
+
         <MinAmount>190000</MinAmount>
         <MaxAmount>250000</MaxAmount>
       </Offer>

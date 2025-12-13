@@ -717,6 +717,13 @@ for index, row in df.iterrows():
         if isinstance(row['SOLCOOP'], str):
             SOLCOOP_mission_ids = row['SOLCOOP'].split(',')            
 
+        MAYOR_mission_ids = []
+        if isinstance(row['MAYOR'], str):
+            MAYOR_mission_ids = row['MAYOR'].split(',')  
+
+
+
+
         Static = True
 
         if isinstance(row['Static'], bool):
@@ -724,11 +731,11 @@ for index, row in df.iterrows():
 
         if Static:
             PB.CreateStoreItems(Faction,Encounter_Id,XML_Name, row['StoreProfiles'],row['TradeIngots'],Ingots,
-                                mission_ids, SECURITY_mission_ids,ITC_mission_ids,SHIVAN_mission_ids,AGURO_mission_ids,ZENOVA_mission_ids,SOLCOOP_mission_ids)
+                                mission_ids, SECURITY_mission_ids,ITC_mission_ids,SHIVAN_mission_ids,AGURO_mission_ids,ZENOVA_mission_ids,SOLCOOP_mission_ids,MAYOR_mission_ids)
             PB.CreateTriggers(Faction,Encounter_Id, IO,row['StoreProfiles'])
 
         else:
             PB.CreateStoreItems_Dynamic(Faction,Encounter_Id,XML_Name, row['StoreProfiles'],row['TradeIngots'],Ingots,
-                                mission_ids, SECURITY_mission_ids,ITC_mission_ids,SHIVAN_mission_ids,AGURO_mission_ids,ZENOVA_mission_ids,SOLCOOP_mission_ids)
+                                mission_ids, SECURITY_mission_ids,ITC_mission_ids,SHIVAN_mission_ids,AGURO_mission_ids,ZENOVA_mission_ids,SOLCOOP_mission_ids,MAYOR_mission_ids)
             PB.CreateTriggers(Faction,Encounter_Id, IO,row['StoreProfiles'])
 input("Done")

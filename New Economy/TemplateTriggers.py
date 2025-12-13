@@ -10,7 +10,7 @@ UNION = "{UNION}"
 SOLCOOP = "{SOLCOOP}" 
 ZENOVA = "{ZENOVA}" 
 AHE = "{AHE}" 
-
+MAYOR = "{MAYOR}" 
 
 
 
@@ -183,3 +183,11 @@ def GetContractZENOVA(Faction:str, Name:str)->str:
       [ContractBlockProfiles:{Faction}_ContractBlockProfile_{Name}_ZENOVA]	"""   
 
     return string
+
+def GetContractMAYOR(Faction:str, Name:str)->str:  
+
+    string = f"""[ContractBlocks:Contracts {MAYOR}]
+      [ContractBlockProfiles:{Faction}_ContractBlockProfile_{Name}_MAYOR]	"""   
+
+    return string
+

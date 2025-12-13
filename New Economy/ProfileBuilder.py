@@ -3,7 +3,7 @@ import TemplateTriggers as Trigger
 
 import Templates_Dynamic as Temp_Dynamic
 def CreateStoreItems(Faction, Name:str,XML_Name: str, StoresProfiles:str,TradeIngots:str,Ingots:list, 
-                     MissionIds:list, SECURITY_mission_ids,ITC_mission_ids,SHIVAN_mission_ids,AGURO_mission_ids,ZENOVA_mission_ids,SOLCOOP_mission_ids):
+                     MissionIds:list, SECURITY_mission_ids,ITC_mission_ids,SHIVAN_mission_ids,AGURO_mission_ids,ZENOVA_mission_ids,SOLCOOP_mission_ids,MAYOR_mission_ids):
     string = f"""<?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
@@ -85,8 +85,11 @@ def CreateStoreItems(Faction, Name:str,XML_Name: str, StoresProfiles:str,TradeIn
     {Temp.GetContractFaction(Faction,Name,"ZENOVA",ZENOVA_mission_ids) if "ZENOVA" in StoresProfiles else ""}
     {Temp.GetContractFaction(Faction,Name,"ITC",ITC_mission_ids) if "ITC" in StoresProfiles else ""}
     {Temp.GetContractFaction(Faction,Name,"SOLCOOP",SOLCOOP_mission_ids) if "SOLCOOP" in StoresProfiles else ""} 
+    {Temp.GetContractFaction(Faction,Name,"MAYOR",MAYOR_mission_ids) if "MAYOR" in StoresProfiles else ""}     
+
     
 
+    
 
   </EntityComponents>
 </Definitions>
@@ -95,7 +98,7 @@ def CreateStoreItems(Faction, Name:str,XML_Name: str, StoresProfiles:str,TradeIn
         f.write(string)
 
 def CreateStoreItems_Dynamic(Faction, Name:str,XML_Name: str, StoresProfiles:str,TradeIngots:str,Ingots:list, 
-                     MissionIds:list, SECURITY_mission_ids,ITC_mission_ids,SHIVAN_mission_ids,AGURO_mission_ids,ZENOVA_mission_ids,SOLCOOP_mission_ids):
+                     MissionIds:list, SECURITY_mission_ids,ITC_mission_ids,SHIVAN_mission_ids,AGURO_mission_ids,ZENOVA_mission_ids,SOLCOOP_mission_ids,MAYOR_mission_ids):
     string = f"""<?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
@@ -140,6 +143,8 @@ def CreateTriggers(Faction, Name:str, IO, StoresProfiles):
     AGURO = "{AGURO}"  	
     UNION = "{UNION}"  
     SOLCOOP = "{SOLCOOP}"  
+    MAYOR = "{MAYOR}"  
+
 
 
 
@@ -246,7 +251,10 @@ def CreateTriggers(Faction, Name:str, IO, StoresProfiles):
     {Trigger.GetContractITC(Faction,Name) if "ITC" in StoresProfiles else ""}
     {Trigger.GetContractUNION(Faction,Name) if "UNION" in StoresProfiles else ""}
     {Trigger.GetContractSOLCOOP(Faction,Name) if "SOLCOOP" in StoresProfiles else ""}
-    {Trigger.GetContractSOLCOOP(Faction,Name) if "ZENOVA" in StoresProfiles else ""}
+    {Trigger.GetContractZENOVA(Faction,Name) if "ZENOVA" in StoresProfiles else ""}
+    {Trigger.GetContractMAYOR(Faction,Name) if "MAYOR" in StoresProfiles else ""}
+
+
 
       </Description>
     </EntityComponent>
