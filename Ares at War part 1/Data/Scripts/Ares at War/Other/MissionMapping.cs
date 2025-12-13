@@ -531,6 +531,8 @@ namespace AresAtWar.SessionCore
 
         public static StaticEncounter TransportGetDestination(string currentLocationString, string Faction)
         {
+
+
             List<StaticEncounter> possibleDestinations = new List<StaticEncounter>();
             List<int> destinationWeights = new List<int>();
             int totalWeight = 0;

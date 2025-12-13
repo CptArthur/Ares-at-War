@@ -31,8 +31,12 @@ namespace AresAtWar.Command
             text.Append($"Counter: {PlayerReadyForPurge}");
 
             text.Append($"Current Node Control:").AppendLine();
+
+
+
             foreach (var node in WarSim._nodes)
             {
+                node.Refresh();
                 text.Append($"{node.Id}: {node.Faction.Tag}").AppendLine();
 
             }

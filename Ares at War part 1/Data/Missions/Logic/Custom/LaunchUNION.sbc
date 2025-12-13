@@ -1,0 +1,483 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+ <!--
+Variables:
+
+{LaunchUNIONName}
+{LaunchUNIONCoords}
+On start Send LaunchUNION to Players; 
+PlayerNear Watcher 
+	
+ -->
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MissionGroup_LaunchUNION</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event TemplateGroup]
+		
+		[TemplateEventIds:AaW_EventTemplate_LaunchUNION_Init]
+
+  [TemplateEventIds:AaW_EventTemplate_LaunchUNION_CloseInstance]
+
+  [TemplateEventIds:AaW_EventTemplate_LaunchUNION_AZURISGPS]
+  [TemplateEventIds:AaW_EventTemplate_LaunchUNION_BRATISGPS]
+  [TemplateEventIds:AaW_EventTemplate_LaunchUNION_THORRIXGPS]
+  [TemplateEventIds:AaW_EventTemplate_LaunchUNION_SUNSETCITYGPS]
+
+
+      </Description>
+	</EntityComponent>	
+	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_LaunchUNION_Init</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:true]
+		[UniqueEvent:true]	
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:9000]
+		
+		[ActionIds:AaW_EventActionTemplate_LaunchUNION_Init]
+		[ActionIds:AaW_EventActionTemplate_LaunchUNION_Init_2]
+
+
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_LaunchUNION_Init</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+
+  [ChangeReputationWithPlayers:true]
+  [ReputationPlayerConditionIds:PlayerCondition_DummyTagCheck]
+  [ReputationChangeAmount:1200]
+  [ReputationChangeFactions:UNION]
+  [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+  [AddPlayerConditionPlayerTags:true]
+  [AddIncludedPlayerTags:@{ContractId}]
+
+
+  [ChangeBooleans:true]
+  [SetBooleansTrue:UNION_Launched]
+
+
+
+[BroadcastCommandProfiles:true]
+[CommandProfileIds:AaW_Command_StoreRefresh]
+[CommandProfileOriginCoords:{X:0 Y:0 Z:0}]
+
+
+    [UseChatBroadcast:true]
+    [ChatData:AaW_EventChat_Template]
+    
+    [ChatBroadcastToSpecificPlayers:true]
+    [ChatBroadcastPlayerConditionIds:PlayerCondition_DummyTagCheck]
+
+    
+    [UseChatOverrideColor:true]
+    [ChatOverrideColor:Green]
+    
+    [UseChatOverrideAuthor:true]	
+    [ChatOverrideAuthor:Leonard | Democratic Movement]
+    
+    [UseChatOverrideMessage:true]
+    [ChatOverrideMessage:Hi {PlayerName}, I am Leonard. Thank you so much for helping us out. Together we will make a fair and united future for Agaris.]
+
+	
+      </Description>
+    </EntityComponent>	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_LaunchUNION_Init_2</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+  [ToggleEvents:true]
+  [ToggleEventIds:AaW_EventTemplate_LaunchUNION_CloseInstance@{InstanceId}]
+  [ToggleEventIdModes:true]
+
+  [ToggleEventIds:AaW_EventTemplate_LaunchUNION_AZURISGPS@{InstanceId}]
+  [ToggleEventIdModes:true]
+
+  [ToggleEventIds:AaW_EventTemplate_LaunchUNION_BRATISGPS@{InstanceId}]
+  [ToggleEventIdModes:true]
+
+
+  [ToggleEventIds:AaW_EventTemplate_LaunchUNION_THORRIXGPS@{InstanceId}]
+    [ToggleEventIdModes:true]
+
+  [ToggleEventIds:AaW_EventTemplate_LaunchUNION_SUNSETCITYGPS@{InstanceId}]
+    [ToggleEventIdModes:true]
+
+
+
+  [ResetCooldownTimeOfEvents:true]
+  [ResetEventCooldownIds:AaW_EventTemplate_LaunchUNION_CloseInstance@{InstanceId}]  
+  [ResetEventCooldownIds:AaW_EventTemplate_LaunchUNION_AZURISGPS@{InstanceId}]
+  [ResetEventCooldownIds:AaW_EventTemplate_LaunchUNION_BRATISGPS@{InstanceId}]
+  [ResetEventCooldownIds:AaW_EventTemplate_LaunchUNION_THORRIXGPS@{InstanceId}]
+  [ResetEventCooldownIds:AaW_EventTemplate_LaunchUNION_SUNSETCITYGPS@{InstanceId}]
+
+
+
+
+    [UseChatBroadcast:true]
+    [ChatData:AaW_EventChat_Template]
+    
+    [ChatBroadcastToSpecificPlayers:true]
+    [ChatBroadcastPlayerConditionIds:PlayerCondition_DummyTagCheck]
+  [AddPlayerConditionPlayerTags:true]
+  [AddIncludedPlayerTags:@{ContractId}]
+
+    
+    [UseChatOverrideColor:true]
+    [ChatOverrideColor:Green]
+    
+    [UseChatOverrideAuthor:true]	
+    [ChatOverrideAuthor:Leonard | Democratic Movement]
+    
+    [UseChatOverrideMessage:true]
+    [ChatOverrideMessage:It's imperative that we gather allies. I'm sending you some coordinates; travel to these locations and earn their trust.]
+
+	
+      </Description>
+    </EntityComponent>	
+
+
+
+      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_LaunchUNION_CloseInstance</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:false]
+		[UniqueEvent:true]	
+		[MinCooldownMs:20000]
+		[MaxCooldownMs:20001]	
+    
+    
+    [ActionIds:AaW_EventActionTemplate_LaunchUNION_CloseInstance]
+    
+      </Description>      
+	</EntityComponent>	
+
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_LaunchUNION_CloseInstance</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	[RemoveThisInstanceGroup:true]
+	[TryContractFail:true]
+		</Description>
+    </EntityComponent>		
+	
+	
+
+
+
+<!-- Each colony gps-->
+
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventConditionTemplate_LaunchUNION_THORRIXNeutral</SubtypeId>
+      </Id>
+      <Description>
+     [MES Event Condition Template]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_THORRIXNeutral]
+
+  [AddPlayerConditionPlayerTags:true]
+  [AddIncludedPlayerTags:LeadPlayer@{ContractId}]
+
+      </Description>
+    </EntityComponent>	
+
+
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventConditionTemplate_LaunchUNION_BRATISNeutral</SubtypeId>
+      </Id>
+      <Description>
+     [MES Event Condition Template]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_BRATISNeutral]
+
+  [AddPlayerConditionPlayerTags:true]
+  [AddIncludedPlayerTags:LeadPlayer@{ContractId}]
+
+      </Description>
+    </EntityComponent>
+
+
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventConditionTemplate_LaunchUNION_SUNSETCITYNeutral</SubtypeId>
+      </Id>
+      <Description>
+     [MES Event Condition Template]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_SUNSETCITYNeutral]
+
+  [AddPlayerConditionPlayerTags:true]
+  [AddIncludedPlayerTags:LeadPlayer@{ContractId}]
+
+      </Description>
+    </EntityComponent>
+
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventConditionTemplate_LaunchUNION_AZURISNeutral</SubtypeId>
+      </Id>
+      <Description>
+     [MES Event Condition Template]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_AZURISNeutral]
+
+  [AddPlayerConditionPlayerTags:true]
+  [AddIncludedPlayerTags:LeadPlayer@{ContractId}]
+
+      </Description>
+    </EntityComponent>
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_LaunchUNION_AZURISGPS</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:false]
+		[UniqueEvent:true]	
+		[MinCooldownMs:1000]
+		[MaxCooldownMs:1001]	
+
+    [PersistantConditionIds:AaW_EventConditionTemplate_LaunchUNION_AZURISNeutral]
+
+		[ActionExecution:All]
+		[TimeUntilNextActionMs:1100]
+		
+		[ActionIds:AaW_EventActionTemplate_LaunchUNION_AZURISGPS]
+
+      </Description>      
+	</EntityComponent>		
+	
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_LaunchUNION_AZURISGPS</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+	[AddGPSToPlayers:true]
+	[AddGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	[UseGPSObjective:false]
+	
+	[GPSNames:(UNION) Become friends with Azuris]
+	[GPSVector3Ds:{X:-3684663 Y:-1332121 Z:-2634179}]
+
+  [AddPlayerConditionPlayerTags:true]
+  [AddIncludedPlayerTags:@{ContractId}]
+	
+      </Description>
+    </EntityComponent>	
+
+
+	
+      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_LaunchUNION_BRATISGPS</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:false]
+		[UniqueEvent:true]	
+		[MinCooldownMs:5000]
+		[MaxCooldownMs:5001]	
+
+    [PersistantConditionIds:AaW_EventConditionTemplate_LaunchUNION_BRATISNeutral]
+
+		[ActionExecution:All]
+		[TimeUntilNextActionMs:1100]
+		
+		[ActionIds:AaW_EventActionTemplate_LaunchUNION_BRATISGPS]
+
+      </Description>      
+	</EntityComponent>		
+	
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_LaunchUNION_BRATISGPS</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+	[AddGPSToPlayers:true]
+	[AddGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	[UseGPSObjective:false]
+	
+	[GPSNames:(UNION) Become friends with Bratis]
+	[GPSVector3Ds:{X:-3627767 Y:-1263017 Z:-2588342}]
+
+  [AddPlayerConditionPlayerTags:true]
+  [AddIncludedPlayerTags:@{ContractId}]
+	
+      </Description>
+    </EntityComponent>	
+
+
+
+      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_LaunchUNION_THORRIXGPS</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:false]
+		[UniqueEvent:true]	
+		[MinCooldownMs:10000]
+		[MaxCooldownMs:10001]	
+
+    [PersistantConditionIds:AaW_EventConditionTemplate_LaunchUNION_THORRIXNeutral]
+
+		[ActionExecution:All]
+		[TimeUntilNextActionMs:1100]
+		
+		[ActionIds:AaW_EventActionTemplate_LaunchUNION_THORRIXGPS]
+
+      </Description>      
+	</EntityComponent>		
+	
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_LaunchUNION_THORRIXGPS</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+	[AddGPSToPlayers:true]
+	[AddGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	[UseGPSObjective:false]
+	
+	[GPSNames:(UNION) Become friends with Thorrix]
+	[GPSVector3Ds:{X:-3664945 Y:-1323993 Z:-2526529}]
+
+  [AddPlayerConditionPlayerTags:true]
+  [AddIncludedPlayerTags:@{ContractId}]
+	
+      </Description>
+    </EntityComponent>	
+
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_LaunchUNION_SUNSETCITYGPS</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:false]
+		[UniqueEvent:true]	
+		[MinCooldownMs:15000]
+		[MaxCooldownMs:15001]	
+
+    [PersistantConditionIds:AaW_EventConditionTemplate_LaunchUNION_SUNSETCITYNeutral]
+
+		[ActionExecution:All]
+		[TimeUntilNextActionMs:1100]
+		
+		[ActionIds:AaW_EventActionTemplate_LaunchUNION_SUNSETCITYGPS]
+
+
+      </Description>      
+	</EntityComponent>		
+	
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_LaunchUNION_SUNSETCITYGPS</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+	[AddGPSToPlayers:true]
+	[AddGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	[UseGPSObjective:false]
+	
+	[GPSNames:(UNION) Become friends with Sunset City]
+	[GPSVector3Ds:{X:-3703709 Y:-1300688 Z:-2542135}]
+
+  [AddPlayerConditionPlayerTags:true]
+  [AddIncludedPlayerTags:@{ContractId}]
+	
+      </Description>
+    </EntityComponent>	
+
+
+
+
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>
+

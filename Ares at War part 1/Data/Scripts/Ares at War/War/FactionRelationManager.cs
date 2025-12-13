@@ -38,7 +38,7 @@ namespace AaW.Factions
             var SHIVAN = MyAPIGateway.Session.Factions.TryGetFactionByTag("SHIVAN");
             var CRUSADERS = MyAPIGateway.Session.Factions.TryGetFactionByTag("CRUSADERS");
             var DRA = MyAPIGateway.Session.Factions.TryGetFactionByTag("DRA");
-
+            var MILITIA = MyAPIGateway.Session.Factions.TryGetFactionByTag("MILITIA");
 
 
 
@@ -56,7 +56,7 @@ namespace AaW.Factions
             // Return early if any required faction is missing
             if (UNION == null || THORRIX == null || ITC == null || GC == null || ROS == null || 
                 DOOHAN == null || AZURIS == null || BRATIS == null || SHIVAN == null || ARES ==null 
-                || CIVILIAN == null || CRUSADERS ==null || SHIPPERS ==null || DRA == null || SUNSETCITY == null)
+                || CIVILIAN == null || CRUSADERS ==null || SHIPPERS ==null || DRA == null || SUNSETCITY == null || MILITIA==null)
             {
                 MyVisualScriptLogicProvider.ShowNotificationToAll($"Error: Factions not found. Please save and reload the game", 50000, "Red");
                 return;
@@ -74,7 +74,7 @@ namespace AaW.Factions
             neutralFactions.Add(SHIPPERS);
             neutralFactions.Add(SUNSETCITY);
 
-            MakeNeutralWithAll(neutralFactions, new List<IMyFaction> { UNION, ITC, GC, ROS, SHIVAN, CRUSADERS, SHIPPERS });
+            MakeNeutralWithAll(neutralFactions, new List<IMyFaction> { UNION, ITC, GC, ROS, SHIVAN, CRUSADERS, SHIPPERS, MILITIA });
 
             // Manually define other specific peace pairs
             AddPeacePair(UNKN, DRA); 
@@ -85,9 +85,9 @@ namespace AaW.Factions
             AddPeacePair(ITC, GC);
             AddPeacePair(ITC, ROS);
             AddPeacePair(ITC, UNION);
+            AddPeacePair(MILITIA, UNION);
 
-
-
+            
 
         }
 

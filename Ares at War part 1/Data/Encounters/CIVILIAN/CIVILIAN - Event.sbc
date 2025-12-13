@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+
+
+		<SpawnGroup>
+			<Id>
+				<TypeId>SpawnGroupDefinition</TypeId> 
+				<SubtypeId>UNKN_Marleen2</SubtypeId>
+			</Id>
+			<Description>
+			[Modular Encounters SpawnGroup]
+			
+			[StaticEncounter:true]
+			[ForceStaticGrid:true]
+			[RotateFirstCockpitToForward:false]
+	        [FactionOwner:UNKN]		
+
+			[TriggerCoords:{X:-3636093.04296116 Y:-1307792.31326393 Z:-2531334.5612504}]
+			[TriggerRadius:4500]
+
+			[ForceExactPositionAndOrientation:true]
+			[CutVoxelsAtAirtightCells:false]
+
+		[UseRandomNameGenerator:true]
+		[RandomGridNamePrefix:(NPC-DoNotDelete)]
+		[RandomGridNamePattern:Marleen]
+		[ReplaceAntennaNameWithRandomizedName:Antenna]
+		[ReplaceAntennaHudTextInsteadOfName:true]	
+
+
+		[StaticEncounterCoords:{X:-3648771.70126065 Y:-1253712.83796077 Z:-2591263.85038715}]
+		[StaticEncounterForward:{X:-0.0278610251843929 Y:-0.231392055749893 Z:-0.972461581230164}]
+		[StaticEncounterUp:{X:0.0501034632325172 Y:0.971293151378632 Z:-0.232549488544464}]
+
+
+		[StaticEncounterUsePlanetDirectionAndAltitude:true]
+		[StaticEncounterPlanet:Planet Agaris]
+		[StaticEncounterPlanetDirection:{X:0.243423531883193 Y:0.961720231678856 Z:-0.125853804491879}]
+		[StaticEncounterPlanetAltitude:-4.37998343270738]
+
+
+			[ForceStaticGrid:false]		
+			[DoNotForceStaticGrid:true]
+
+			[IgnoreCombatPhase:true]
+			[IgnoreCleanupRules:true]
+			[FalseSandboxVariables:UNKN_Marleen]			
+			[ZoneConditions:ZoneCondition_ZoneAaW]
+			
+			[UseRivalAi:true]
+			[RivalAiReplaceRemoteControl:true]		
+			</Description>
+			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
+			<IsPirate>true</IsPirate>
+			
+			<Frequency>5.0</Frequency>
+			<Prefabs>
+				<Prefab SubtypeId="CIVILIAN - Marlene">
+					<Position>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</Position>
+					<Speed>0</Speed>
+					<Behaviour>CIVILIAN_MarleenEvent_Behavior</Behaviour>
+				<PlaceToGridOrigin>true</PlaceToGridOrigin>
+				</Prefab>
+			</Prefabs>
+			
+		</SpawnGroup>
+
+
+
+
+
+
+
+
+		
+
+
+	</SpawnGroups>
+</Definitions>

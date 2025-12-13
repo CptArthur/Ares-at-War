@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+ <!--
+ 
+DemocraticMovementScore
+ProsperityCoalitionScore
+SecurityFrontScore
+ 
+ -->
+
+
+<!-- Colonies -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--UNIONNotYetLaunched-->
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AZURIS_EventCondition_UNIONNotYetLaunched</SubtypeId>
+      </Id>
+      <Description>
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:UNION_Launched]  
+
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_AZURISFriendly]
+
+      </Description>
+    </EntityComponent>	
+
+
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>THORRIX_EventCondition_UNIONNotYetLaunched</SubtypeId>
+      </Id>
+      <Description>
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:UNION_Launched]  
+
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_THORRIXFriendly]
+
+      </Description>
+    </EntityComponent>	
+
+
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SUNSETCITY_EventCondition_UNIONNotYetLaunched</SubtypeId>
+      </Id>
+      <Description>
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:UNION_Launched]  
+
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_SUNSETCITYFriendly]
+
+      </Description>
+    </EntityComponent>	
+
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>BRATIS_EventCondition_UNIONNotYetLaunched</SubtypeId>
+      </Id>
+      <Description>
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:UNION_Launched]  
+
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_BRATISFriendly]
+
+      </Description>
+    </EntityComponent>	
+
+<!-- End UNION NOT YET LAUNCHED -->
+
+
+
+
+
+
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>UNION_EventCondition_UNIONLaunched</SubtypeId>
+      </Id>
+      <Description>
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckTrueBooleans:true]
+	[AllowAnyTrueBoolean:false]
+	[TrueBooleans:UNION_Launched]  
+
+      </Description>
+    </EntityComponent>	
+
+
+ 
+
+
+
+	
+  </EntityComponents>
+</Definitions>
+

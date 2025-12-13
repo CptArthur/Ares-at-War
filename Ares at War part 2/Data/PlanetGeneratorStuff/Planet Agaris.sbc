@@ -81,18 +81,11 @@
 	
 
 
-      <!-- Pole Day + Night -->
-      <SoundRule>
-        <Height Min="0" Max="0.42"/>
-        <Latitude Min="70" Max="90"/>
-        <SunAngleFromZenith Min="0" Max="180"/>
-        <EnvironmentSound>AmbPoleDay</EnvironmentSound>
-      </SoundRule>
 		 
 
 	<SoundRule>
         <Height Min="0" Max="1.2"/>
-        <Latitude Min="0" Max="70"/>
+        <Latitude Min="0" Max="90"/>
         <SunAngleFromZenith Min="0" Max="180"/>
         <EnvironmentSound>AmbHigh</EnvironmentSound>
       </SoundRule>  
@@ -244,7 +237,7 @@
               <Layer Material="Snow" Depth="20"/>
 
             </Layers>
-            <Height Min="0" Max="1"/>
+            <Height Min="0.194" Max="1"/>
             <Latitude Min="0" Max="90"/>
             <Slope Min="0" Max="40"/>
           </Rule>
@@ -254,11 +247,56 @@
               <Layer Material="TritonStone" Depth="20"/>
 
             </Layers>
-            <Height Min="0" Max="1"/>
-            <Latitude Min="0" Max="90"/>
+            <Height Min="0.194" Max="1"/>
+            <Latitude Min="0" Max="60"/>
             <Slope Min="40" Max="90"/>
           </Rule>
+		  
+		  <Rule>
+            <Layers>
+              <Layer Material="TritonIce" Depth="5"/>
+
+            </Layers>
+            <Height Min="0" Max="0.193"/>
+            <Latitude Min="0" Max="60"/>
+            <Slope Min="0" Max="90"/>
+          </Rule>
+
+
+
+		  
+		   <Rule>
+            <Layers>
+              <Layer Material="TritonStone" Depth="20"/>
+
+            </Layers>
+            <Height Min="0.204" Max="1"/>
+            <Latitude Min="60" Max="90"/>
+            <Slope Min="40" Max="90"/>
+          </Rule>
+		  
+		  <Rule>
+            <Layers>
+              <Layer Material="TritonIce" Depth="5"/>
+
+            </Layers>
+            <Height Min="0" Max="0.204"/>
+            <Latitude Min="60" Max="90"/>
+            <Slope Min="0" Max="90"/>
+          </Rule>
+
+
+
+
+
+		  
+		  
         </MaterialGroup>
+		
+		
+		
+		
+		
 		<MaterialGroup Name="Dry" Value="80">
 		  
 		  <Rule>
@@ -557,6 +595,85 @@
             <Slope Min="25" Max="90"/>
           </Rule>
         </MaterialGroup>
+
+		<MaterialGroup Name="Ocean ijs " Value="212">
+		
+		<Rule>
+            <Layers>
+              <Layer Material="Snow" Depth="3"/>
+			<Layer Material="Ice" Depth="500"/>
+            </Layers>
+            <Height Min="0.192" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="0" Max="90"/>
+        </Rule>	
+		
+		
+		   <Rule>
+            <Layers>
+              <Layer Material="AlienSandSea" Depth="3"/>
+			<Layer Material="Soil" Depth="5"/>
+            </Layers>
+            <Height Min="0.144" Max="0.192"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="0" Max="20"/>
+          </Rule>
+
+	
+			   <Rule>
+            <Layers>
+              <Layer Material="Rocks_grassSea" Depth="3"/>
+			<Layer Material="Soil" Depth="5"/>
+            </Layers>
+            <Height Min="0.144" Max="0.192"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="20" Max="90"/>
+          </Rule>
+
+	  
+		  
+	
+	   <Rule>
+            <Layers>
+              <Layer Material="DarkSoilSea" Depth="3"/>
+			<Layer Material="Soil" Depth="5"/>
+            </Layers>
+            <Height Min="0" Max="0.144"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="0" Max="20"/>
+          </Rule>
+		<Rule>
+            <Layers>
+              <Layer Material="DarkRock1Sea" Depth="3"/>
+			<Layer Material="Soil" Depth="5"/>
+            </Layers>
+            <Height Min="0" Max="0.144"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="20" Max="90"/>
+          </Rule>
+	
+          </MaterialGroup>
+		  
+		  
+		  
+		  
+		  
+		  
+		 <MaterialGroup Name="Stone" Value="10">
+         
+		 <Rule>
+            <Layers>
+              <Layer Material="Stone" Depth="10"/>
+            </Layers>
+            <Height Min="0" Max="1"/>
+            <Latitude Min="0" Max="90"/>
+            <Slope Min="0" Max="90"/>
+          </Rule>
+        </MaterialGroup>
+
+
+
+
 
 
 
@@ -1331,277 +1448,535 @@
     </CloudLayers>
 
 
-	<WeatherFrequencyMin>600</WeatherFrequencyMin>
-	<WeatherFrequencyMax>5400</WeatherFrequencyMax>
+	<WeatherFrequencyMin>900</WeatherFrequencyMin>
+	<WeatherFrequencyMax>1500</WeatherFrequencyMax>
 	<WeatherGenerators>
-
-		<WeatherGenerator>
-			<Voxel>Grass</Voxel>
-			<Weathers>
-				<Weather>
-					<Name>FogLight</Name>
-					<Weight>1</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>900</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-				</Weather>
-                <Weather>
-                    <Name>FogHeavy</Name>
-                    <Weight>1</Weight>
-                    <MinLength>300</MinLength>
-                    <MaxLength>900</MaxLength>
-                    <SpawnOffset>2000</SpawnOffset>
-                </Weather>
-				<Weather>
-					<Name>RainLight</Name>
-					<Weight>3</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>1200</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-				</Weather>
-				<Weather>
-					<Name>RainHeavy</Name>
-					<Weight>2</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>900</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-				</Weather>
-
-			</Weathers>
-		</WeatherGenerator>
-		<WeatherGenerator>
-			<Voxel>GrassDry</Voxel>
-			<Weathers>
-				<Weather>
-					<Name>FogLight</Name>
-					<Weight>1</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>600</MaxLength>
-				</Weather>
-				<Weather>
-					<Name>RainLight</Name>
-					<Weight>4</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>1200</MaxLength>
-				</Weather>
-
-			</Weathers>
-		</WeatherGenerator>
-		<WeatherGenerator>
-			<Voxel>Soil</Voxel>
-			<Weathers>
-				<Weather>
-					<Name>FogLight</Name>
-					<Weight>1</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>900</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-				</Weather>
-                <Weather>
-                    <Name>FogHeavy</Name>
-                    <Weight>1</Weight>
-                    <MinLength>300</MinLength>
-                    <MaxLength>600</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-                </Weather>
-				<Weather>
-					<Name>RainLight</Name>
-					<Weight>4</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>1200</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-				</Weather>
-				<Weather>
-					<Name>RainHeavy</Name>
-					<Weight>5</Weight>
-					<MinLength>600</MinLength>
-					<MaxLength>1800</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-				</Weather>
-
-			</Weathers>
-		</WeatherGenerator>
-		<WeatherGenerator>
-			<Voxel>Snow</Voxel>
-			<Weathers>
-				<Weather>
-					<Name>SnowLight</Name>
-					<Weight>5</Weight>
-					<MinLength>600</MinLength>
-					<MaxLength>1800</MaxLength>
-				</Weather>
-				<Weather>
-					<Name>SnowHeavy</Name>
-					<Weight>2</Weight>
-					<MinLength>600</MinLength>
-					<MaxLength>2400</MaxLength>
-				</Weather>
-				<Weather>
-					<Name>FogLight</Name>
-					<Weight>1</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>900</MaxLength>
-				</Weather>
-            	<Weather>
-					<Name>FogHeavy</Name>
-					<Weight>1</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>900</MaxLength>
-				</Weather>
-			</Weathers>
-		</WeatherGenerator>
-		<WeatherGenerator>
-			<Voxel>Sand</Voxel>
-			<Weathers>
-				<Weather>
-					<Name>SandStormLight</Name>
-					<Weight>4</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>1800</MaxLength>
-				</Weather>
-				<Weather>
-					<Name>SandStormHeavy</Name>
-					<Weight>1</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>3600</MaxLength>
-				</Weather>
-            	<Weather>
-					<Name>Dust</Name>
-					<Weight>2</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>1200</MaxLength>
-				</Weather>
-			</Weathers>
-		</WeatherGenerator>
-        <WeatherGenerator>
-			<Voxel>Ice</Voxel>
-			<Weathers>
-				<Weather>
-					<Name>FogLight</Name>
-					<Weight>1</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>900</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-				</Weather>
-                <Weather>
-                    <Name>FogHeavy</Name>
-                    <Weight>1</Weight>
-                    <MinLength>300</MinLength>
-                    <MaxLength>600</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-                </Weather>
-				<Weather>
-					<Name>RainLight</Name>
-					<Weight>3</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>1200</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-				</Weather>
-				<Weather>
-					<Name>RainHeavy</Name>
-					<Weight>2</Weight>
-					<MinLength>600</MinLength>
-					<MaxLength>1800</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-				</Weather>
-
-			</Weathers>
-		</WeatherGenerator>
-        <WeatherGenerator>
-			<Voxel>Rock</Voxel>
-			<Weathers>
-				<Weather>
-					<Name>FogLight</Name>
-					<Weight>1</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>900</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-				</Weather>
-                <Weather>
-                    <Name>FogHeavy</Name>
-                    <Weight>1</Weight>
-                    <MinLength>300</MinLength>
-                    <MaxLength>600</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-                </Weather>
-				<Weather>
-					<Name>RainLight</Name>
-					<Weight>3</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>1200</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-				</Weather>
-				<Weather>
-					<Name>RainHeavy</Name>
-					<Weight>2</Weight>
-					<MinLength>600</MinLength>
-					<MaxLength>1800</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-				</Weather>
-
-			</Weathers>
-		</WeatherGenerator>
-		
-		
-        <WeatherGenerator>
-			<Voxel>SEA</Voxel>
-			<Weathers>
-				<Weather>
-					<Name>FogLight</Name>
-					<Weight>1</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>900</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-				</Weather>
-                <Weather>
-                    <Name>FogHeavy</Name>
-                    <Weight>1</Weight>
-                    <MinLength>300</MinLength>
-                    <MaxLength>600</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-                </Weather>
-				<Weather>
-					<Name>RainLight</Name>
-					<Weight>3</Weight>
-					<MinLength>300</MinLength>
-					<MaxLength>1200</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-				</Weather>
-				<Weather>
-					<Name>RainHeavy</Name>
-					<Weight>2</Weight>
-					<MinLength>600</MinLength>
-					<MaxLength>1800</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-				</Weather>
-
-				<Weather>
-					<Name>ThunderstormLight</Name>
-					<Weight>2</Weight>
-					<MinLength>600</MinLength>
-					<MaxLength>1800</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-				</Weather>
-
-				<Weather>
-					<Name>ThunderstormHeavy</Name>
-					<Weight>2</Weight>
-					<MinLength>600</MinLength>
-					<MaxLength>1800</MaxLength>
-					<SpawnOffset>2000</SpawnOffset>
-				</Weather>
-
-
-			</Weathers>
-		</WeatherGenerator>		
-		
-		
-		
-		
-		
-		
-		
-		
+			<WeatherGenerator>
+				<Voxel>Grass</Voxel>
+				<Weathers>
+					<Weather>
+						<Name>LowWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>HighWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>FogLight</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>FogHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>RainLight</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>RainHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>ThunderstormLight</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>ThunderstormHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+				</Weathers>
+			</WeatherGenerator>
+			<WeatherGenerator>
+				<Voxel>GrassDry</Voxel>
+				<Weathers>
+					<Weather>
+						<Name>LowWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>HighWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>FogLight</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>FogHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>RainLight</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>RainHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>ThunderstormLight</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>ThunderstormHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>Hailstorm</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+				</Weathers>
+			</WeatherGenerator>
+			<WeatherGenerator>
+				<Voxel>Soil</Voxel>
+				<Weathers>
+					<Weather>
+						<Name>LowWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>HighWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>FogLight</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>FogHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>RainLight</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>RainHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>ThunderstormLight</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>ThunderstormHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+				</Weathers>
+			</WeatherGenerator>
+			<WeatherGenerator>
+				<Voxel>Snow</Voxel>
+				<Weathers>
+					<Weather>
+						<Name>LowWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>HighWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>ColdFront</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>SnowLight</Name>
+						<Weight>4</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>SnowHeavy</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>FogLight</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>FogHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>Hailstorm</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+				</Weathers>
+			</WeatherGenerator>
+			<WeatherGenerator>
+				<Voxel>Sand</Voxel>
+				<Weathers>
+					<Weather>
+						<Name>LowWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>HighWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>HeatWave</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>ExtremeHeat</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>SandStormLight</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>SandStormHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>Dust</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+				</Weathers>
+			</WeatherGenerator>
+			<WeatherGenerator>
+				<Voxel>Ice</Voxel>
+				<Weathers>
+					<Weather>
+						<Name>LowWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>HighWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>RainLight</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>RainHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>ThunderstormLight</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>ThunderstormHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+				</Weathers>
+			</WeatherGenerator>
+			<WeatherGenerator>
+				<Voxel>Rock</Voxel>
+				<Weathers>
+					<Weather>
+						<Name>LowWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>HighWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>FogLight</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>FogHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>RainLight</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>RainHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>ThunderstormLight</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>ThunderstormHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+				</Weathers>
+			</WeatherGenerator>
+			<WeatherGenerator>
+				<Voxel>SEA</Voxel>
+				<Weathers>
+					<Weather>
+						<Name>FogHeavy</Name>
+						<Weight>3</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>						
+					<Weather>
+						<Name>LowWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>HighWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>RainLight</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>RainHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>ThunderstormLight</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>ThunderstormHeavy</Name>
+						<Weight>4</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+				</Weathers>
+			</WeatherGenerator>
+			
+			<WeatherGenerator>
+				<Voxel>Beach</Voxel>
+				<Weathers>
+					<Weather>
+						<Name>FogHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>				
+				
+					<Weather>
+						<Name>LowWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>HighWinds</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>RainLight</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>RainHeavy</Name>
+						<Weight>1</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>ThunderstormLight</Name>
+						<Weight>2</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+					<Weather>
+						<Name>ThunderstormHeavy</Name>
+						<Weight>4</Weight>
+						<MinLength>600</MinLength>
+						<MaxLength>900</MaxLength>
+						<SpawnOffset>1000</SpawnOffset>
+					</Weather>
+				</Weathers>
+			</WeatherGenerator>			
+			
+			
+			
 	</WeatherGenerators>
 
 	

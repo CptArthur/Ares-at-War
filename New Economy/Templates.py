@@ -25,17 +25,17 @@ def GenerateProfileIngot(Ingots:list,TradeIngots:str):
         string += f"        [Offers:Ingot/{ingot}] \n"
     return string
 
-def GenerateProfileIngotOre(Ingots:list,TradeIngots:str):
+def GenerateProfileIngotOre(Ingots:list,TradeIngots:str, checkScores = True):
     string = "\n"
     for ingot in Ingots:
-        if ingot.scoreint > 2:
+        if checkScores and ingot.scoreint > 2:
             continue
         if ingot.Name not in TradeIngots:
            continue
         string += f"        [Orders:Ore/{ingot}] \n"
     string += "\n"
     for ingot in Ingots:
-        if ingot.scoreint > 2:
+        if checkScores and ingot.scoreint > 2:
             continue
         if ingot.Name not in TradeIngots:
            continue
@@ -246,30 +246,8 @@ def GetStoreTradestation(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIn
 
         [ItemsRequireInventory:false]
 
-        {GenerateProfileIngotOre(Ingots,TradeIngots)}
+        {GenerateProfileIngotOre(Ingots,TradeIngots,False)}
 
-  
-
-        [Offers:Component/SteelPlate] 
-        [Offers:Component/Construction] 
-        [Offers:Component/Girder] 
-        [Offers:Component/InteriorPlate] 
-        [Offers:Component/Construction] 
-        [Offers:Component/SmallTube] 
-        [Offers:Component/LargeTube] 
-        [Offers:Component/BulletproofGlass] 
-        [Offers:Component/Motor] 
-        [Offers:Component/Display] 
-        [Offers:Component/Computer] 
-        [Offers:Component/RadioCommunicationComponent] 
-        [Offers:Component/Detector] 
-        [Offers:Component/Canvas] 
-        [Offers:Component/SolarCell] 
-        [Offers:Component/PowerCell] 
-        [Offers:Component/Explosives] 
-        [Offers:Component/MedicalComponent] 
-        [Offers:Component/ReactorComponent] 
-        [Offers:Component/MetalGrid] 
 
   
       </Description>

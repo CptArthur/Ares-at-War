@@ -100,7 +100,7 @@ namespace AresAtWar.War
 
             
             //Midway
-            var midwayNode = new Node("Midway", "Sector Midway", GC, new Vector3D(-3715949, -1286742, -2567999), 17500, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Military);
+            var midwayNode = new Node("Midway", "Sector Midway", GC, new Vector3D(-3713063.13, -1292030, -2609383), 17500, macro: MarcoLocation.Bylen, planet: Planet.Agaris, feel: Feel.Military);
 
             // Nodes and StaticEncounters for space locations
             var station27Node = new Node("Station27Space", "Station27 Sector", GC, new Vector3D(-2070540.14510301, -1017587.98462825, -3367463.76531797), 1100000, macro: MarcoLocation.Bylen, planet: Planet.Space, feel: Feel.Barren);
@@ -162,10 +162,10 @@ namespace AresAtWar.War
 
 
             //Agaria West
-            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { azuris, sunsetcity,  bratis }, 5, new List<string>() { "CIVILIAN" }));
+            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { azuris, sunsetcity,  bratis }, 5, new List<string>() { "CIVILIAN", "AZURIS", "SUNSETCITY","BRATIS" }));
 
             //Agaria East
-            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { sunsetcity, thorrix }, 3, new List<string>() { "CIVILIAN" }));
+            _TradeRoutes.Add(new TradeRoute(new List<StaticEncounter> { sunsetcity, thorrix }, 3, new List<string>() { "CIVILIAN", "THORRIX", "SUNSETCITY" }));
 
 
             //Everything run

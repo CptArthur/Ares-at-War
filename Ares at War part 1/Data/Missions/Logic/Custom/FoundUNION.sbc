@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+ <!--
+Variables:
+
+{LaunchUNIONName}
+{LaunchUNIONCoords}
+On start Send LaunchUNION to Players; 
+PlayerNear Watcher 
+	
+ -->
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MissionGroup_FoundUNION</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event TemplateGroup]
+		
+		[TemplateEventIds:AaW_EventTemplate_FoundUNION_Init]
+
+
+
+      </Description>
+	</EntityComponent>	
+	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_FoundUNION_Init</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:true]
+		[UniqueEvent:true]	
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:9000]
+		
+		[ActionIds:AaW_EventActionTemplate_FoundUNION_Init]
+		[ActionIds:AaW_EventActionTemplate_FoundUNION_Init_2]
+
+
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_FoundUNION_Init</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+
+  [AddPlayerConditionPlayerTags:true]
+  [AddIncludedPlayerTags:@{ContractId}]
+
+
+  [ChangeBooleans:true]
+  [SetBooleansTrue:UNION_Founded]
+
+
+
+[BroadcastCommandProfiles:true]
+[CommandProfileIds:AaW_Command_StoreRefresh]
+[CommandProfileOriginCoords:{X:0 Y:0 Z:0}]
+
+
+    [UseChatBroadcast:true]
+    [ChatData:AaW_EventChat_Template]
+    
+    [ChatBroadcastToSpecificPlayers:true]
+    [ChatBroadcastPlayerConditionIds:PlayerCondition_DummyTagCheck]
+
+    
+    [UseChatOverrideColor:true]
+    [ChatOverrideColor:Green]
+    
+    [UseChatOverrideAuthor:true]	
+    [ChatOverrideAuthor:Leonard | Democratic Movement]
+    
+    [UseChatOverrideMessage:true]
+    [ChatOverrideMessage:We did it. ]
+
+	
+      </Description>
+    </EntityComponent>	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_FoundUNION_Init_2</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+
+	
+	[RemoveThisInstanceGroup:true]
+	[TryContractFail:true]
+
+
+      </Description>
+    </EntityComponent>	
+
+
+
+
+
+
+
+	
+	
+
+	
+  </EntityComponents>
+</Definitions>
+

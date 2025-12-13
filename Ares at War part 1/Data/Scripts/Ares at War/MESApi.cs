@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ProtoBuf;
 using Sandbox.ModAPI;
 using VRage;
 using VRage.Game.ModAPI;
@@ -21,6 +22,7 @@ namespace AresAtWar.API {
 		private Action<Vector3D, string, double, bool> _changeKnownPlayerLocationSize;
 		private Func<string, string> _convertRandomNamePatterns;
 		private Func<List<string>, MatrixD, Vector3, bool, string, string, bool> _customSpawnRequest;
+		private Func<Dictionary<string, object>, bool> _customSpawnRequest2;
 		private Func<IMyCubeGrid, Vector3D> _getDespawnCoords;
 		private Func<List<string>> _getSpawnGroupBlackList;
 		private Action<string, List<string>> _getSpawnGroupsByType;
@@ -45,9 +47,11 @@ namespace AresAtWar.API {
 		private Func<Vector3D, List<string>, bool> _spawnPlanetaryInstallation;
 		private Func<Vector3D, List<string>, bool> _spawnRandomEncounter;
 		private Func<Vector3D, List<string>, bool> _spawnSpaceCargoShip;
+		private Action<Vector3D> _processStaticEncountersAtLocation;
 		private Action<string, bool> _toggleSpawnGroupEnabled;
 		private Action<bool, string, Action<object[]>> _registerCustomAction;
 		private Action<string, List<string>, List<string>> _insertInstanceEventGroup;
+		private Action<List<string>, Vector3D, string, double, long> _sendBehaviorCommand;
 		private Action<bool, string, Func<string, string, List<string>, Vector3D, Dictionary<string, string>>> _registerCustomMissionMapping;
 		//Create this object in your SessionComponent LoadData() Method
 		public MESApi() {
@@ -109,18 +113,23 @@ namespace AresAtWar.API {
 		/// <param name="steamUserId"></param>
 		public void ChatCommand(string message, MatrixD playerPosition, long identityId, ulong steamUserId) => _chatCommand?.Invoke(message, playerPosition, identityId, steamUserId);
 
-		/// <summary>
-		/// Used To Spawn A Random SpawnGroup From A Provided List At A Provided Location. The Spawn Will Not Be Categorized As A CargoShip/RandomEncounter/Etc. The spawngroup/conditions must also use the [RivalAiSpawn:true] tag to be able to spawn with this command.
-		/// </summary>
-		/// <param name="spawnGroups">List of SpawnGroups you want to attempt spawning from</param>
-		/// <param name="coords">The coordinates the Spawn will use</param>
-		/// <param name="forwardDir">Forward Direction vector for the spawn</param>
-		/// <param name="upDir">Up Direction Vector for the spawn</param>
-		/// <param name="velocity">Velocity vector</param>
-		/// <param name="factionOverride">Faction tag you want spawngroup to use, regardless of its settings</param>
-		/// <param name="spawnProfileId">Identifier for your mod so MES can properly log where the spawn request originated from</param>
-		public bool CustomSpawnRequest(List<string> spawnGroups, MatrixD spawningMatrix, Vector3 velocity, bool ignoreSafetyCheck, string factionOverride, string spawnProfileId) => _customSpawnRequest?.Invoke(spawnGroups, spawningMatrix, velocity, ignoreSafetyCheck, factionOverride, spawnProfileId) ?? false;
+        /// <summary>
+        /// Used To Spawn A Random SpawnGroup From A Provided List At A Provided Location. The Spawn Will Not Be Categorized As A CargoShip/RandomEncounter/Etc. The spawngroup/conditions must also use the [RivalAiSpawn:true] tag to be able to spawn with this command.
+        /// </summary>
+        /// <param name="spawnGroups">List of SpawnGroups you want to attempt spawning from</param>
+        /// <param name="coords">The coordinates the Spawn will use</param>
+        /// <param name="forwardDir">Forward Direction vector for the spawn</param>
+        /// <param name="upDir">Up Direction Vector for the spawn</param>
+        /// <param name="velocity">Velocity vector</param>
+        /// <param name="factionOverride">Faction tag you want spawngroup to use, regardless of its settings</param>
+        /// <param name="spawnProfileId">Identifier for your mod so MES can properly log where the spawn request originated from</param>
+        public bool CustomSpawnRequest(List<string> spawnGroups, MatrixD spawningMatrix, Vector3 velocity, bool ignoreSafetyCheck, string factionOverride, string spawnProfileId) => _customSpawnRequest?.Invoke(spawnGroups, spawningMatrix, velocity, ignoreSafetyCheck, factionOverride, spawnProfileId) ?? false;
 
+        /// <summary>
+        /// Used To Spawn A Random SpawnGroup From A Provided List At A Provided Location. The Spawn Will Not Be Categorized As A CargoShip/RandomEncounter/Etc. The spawngroup/conditions must also use the [RivalAiSpawn:true] tag to be able to spawn with this command
+        /// </summary>
+        public bool CustomSpawnRequest(CustomSpawnRequestArgs args) => _customSpawnRequest2?.Invoke(args.ToDictionary()) ?? false;
+		
 		/// <summary>
 		/// Gets the Despawn Coords that are generated from a ship spawned as either Space or Planet CargoShip.
 		/// Returns Vector3D.Zero if no Coords can be found.
@@ -321,6 +330,13 @@ namespace AresAtWar.API {
 		/// <param name="toggle">true for enabled, false for disabled</param>
 		public void ToggleSpawnGroupEnabled(string spawnGroupName, bool toggle) => _toggleSpawnGroupEnabled?.Invoke(spawnGroupName, toggle);
 
+
+		/// <summary>
+		/// Processes static encounters at a specified location.
+		/// </summary>
+		/// <param name="position">position</param>
+		public void ProcessStaticEncountersAtLocation(Vector3D position) => _processStaticEncountersAtLocation?.Invoke(position);
+
 		/// <summary>
 		/// Allows you to register a method that is invoked when a SpawnGroup's Conditions are being evaluated. The SpawnGroup eligiblity will pass or fail depending on the bool output of your provided method.
 		/// </summary>
@@ -348,7 +364,15 @@ namespace AresAtWar.API {
 		*/
 		public void RegisterCustomMissionMapping(bool register, string methodIdentifier, Func<string, string, List<string>, Vector3D, Dictionary<string, string>> func) => _registerCustomMissionMapping?.Invoke(register, methodIdentifier, func);
 
-		public void InsertInstanceEventGroup(string ProfileSubTypeID, List<string> replacekeys, List<string> replacevalues) => _insertInstanceEventGroup?.Invoke(ProfileSubTypeID, replacekeys, replacevalues);
+        /// <summary>
+        /// Allows you to send a Behavior Command..
+        /// </summary>
+        /// <param name="commandProfileIds">The names (SubtypeIds) of the Commandprofiles  you want to send</param>
+        /// <param name="originCoords">Vector3D from where the commandprofile is send</param>
+		///  <param name="overrideCommandCode">string</param>
+        public void SendBehaviorCommand(List<string> commandProfileIds, Vector3D originCoords, string overrideCommandCode = "", double overrideRadius = -1, long commandOwnerId = 0) => _sendBehaviorCommand?.Invoke(commandProfileIds, originCoords, overrideCommandCode, overrideRadius, commandOwnerId);
+
+        public void InsertInstanceEventGroup(string ProfileSubTypeID, List<string> replacekeys, List<string> replacevalues) => _insertInstanceEventGroup?.Invoke(ProfileSubTypeID, replacekeys, replacevalues);
 
 
 		//Run This Method in your SessionComponent UnloadData() Method
@@ -376,6 +400,7 @@ namespace AresAtWar.API {
 				_behaviorTriggerActivationWatcher = (Action<bool, Action<IMyRemoteControl, string, string, IMyEntity, Vector3D>>)dict["BehaviorTriggerActivationWatcher"];
 				_chatCommand = (Action<string, MatrixD, long, ulong>)dict["ChatCommand"];
 				_customSpawnRequest = (Func<List<string>, MatrixD, Vector3, bool, string, string, bool>)dict["CustomSpawnRequest"];
+				_customSpawnRequest2 = (Func<Dictionary<string, object>, bool>)dict["CustomSpawnRequest2"];
 				_getDespawnCoords = (Func<IMyCubeGrid, Vector3D>)dict["GetDespawnCoords"];
 				_getSpawnGroupBlackList = (Func<List<string>>)dict["GetSpawnGroupBlackList"];
 				_getSpawnGroupsByType = (Action<string, List<string>>)dict["GetSpawnGroupsByType"];
@@ -399,9 +424,11 @@ namespace AresAtWar.API {
 				_spawnPlanetaryInstallation = (Func<Vector3D, List<string>, bool>)dict["SpawnPlanetaryInstallation"];
 				_spawnRandomEncounter = (Func<Vector3D, List<string>, bool>)dict["SpawnRandomEncounter"];
 				_spawnSpaceCargoShip = (Func<Vector3D, List<string>, bool>)dict["SpawnSpaceCargoShip"];
+				_processStaticEncountersAtLocation = (Action<Vector3D>)dict["ProcessStaticEncountersAtLocation"];
 				_toggleSpawnGroupEnabled = (Action<string, bool>)dict["ToggleSpawnGroupEnabled"];
 				_registerCustomAction = (Action<bool, string, Action<object[]>>)dict["RegisterCustomAction"];
 				_insertInstanceEventGroup = (Action<string, List<string>, List<string>>)dict["InsertInstanceEventGroup"];
+				_sendBehaviorCommand = (Action<List<string>, Vector3D, string,double,long>)dict["SendBehaviorCommand"];
 				_registerCustomMissionMapping = (Action< bool, string, Func<string, string, List<string>, Vector3D, Dictionary<string, string>>>)dict["RegisterCustomMissionMapping"];
 
 			} catch (Exception e) {
@@ -411,6 +438,57 @@ namespace AresAtWar.API {
 			}
 
 
+		}
+
+		public sealed class CustomSpawnRequestArgs
+		{
+			/// <summary>List of SpawnGroups you want to attempt spawning from</summary>
+			public List<string> SpawnGroups;
+
+			/// <summary>The coordinates the Spawn will use</summary>
+			public MatrixD SpawningMatrix;
+			
+			/// <summary>Velocity vector</summary>
+			public Vector3 Velocity;
+			
+			public bool IgnoreSafetyCheck;
+			
+			/// <summary>Faction tag you want spawngroup to use, regardless of its settings</summary>
+			public string FactionOverride;
+			
+			/// <summary>Identifier for your mod so MES can properly log where the spawn request originated from</summary>
+			public string SpawnProfileId;
+			
+			/// <summary>Arbitrary user data to be inserted to NpcData</summary>
+			public string Context;
+
+			public Dictionary<string, object> ToDictionary()
+			{
+				return new Dictionary<string, object>
+				{
+					{ nameof(SpawnGroups), SpawnGroups },
+					{ nameof(SpawningMatrix), SpawningMatrix },
+					{ nameof(Velocity), Velocity },
+					{ nameof(IgnoreSafetyCheck), IgnoreSafetyCheck },
+					{ nameof(FactionOverride), FactionOverride },
+					{ nameof(SpawnProfileId), SpawnProfileId },
+					{ nameof(Context), Context },
+				};
+			}
+
+			public static CustomSpawnRequestArgs FromDictionary(Dictionary<string, object> dictionary)
+			{
+				return new CustomSpawnRequestArgs
+				{
+					SpawnGroups = (List<string>)dictionary[nameof(SpawnGroups)],
+					SpawningMatrix = (MatrixD)dictionary[nameof(SpawningMatrix)],
+					Velocity = (Vector3)dictionary[nameof(Velocity)],
+					IgnoreSafetyCheck = (bool)dictionary[nameof(IgnoreSafetyCheck)],
+					FactionOverride = (string)dictionary[nameof(FactionOverride)],
+					SpawnProfileId = (string)dictionary[nameof(SpawnProfileId)],
+					Context = (string)dictionary[nameof(Context)],
+				};
+			}
 		}
 
 	}

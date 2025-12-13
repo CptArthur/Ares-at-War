@@ -1,0 +1,559 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MILITIA_UmbraDamagedEvent_Behavior</SubtypeId>
+      </Id>
+      <Description>
+    [RivalAI Behavior]
+    [BehaviorName:NauticalRoutes]
+    [TargetData:MSB_TargetProfile_Default]
+
+
+	[AutopilotData:MSB_Nautical_AutoPilot]
+	[SecondaryAutopilotData:MSB_Nautical_AutoPilot]
+	
+	
+
+    [//DialogueBanks:MILITIA.xml] 
+    [DialogueBanks:AaW.xml] 
+    [//DialogueBanks:MSB.xml] 
+
+    [TriggerGroups:MILITIA_DynamicCommon_TriggerGroup]
+    [TriggerGroups:AaW_DynamicCommon_TriggerGroup]    
+    [TriggerGroups:MSB_DynamicCommon_TriggerGroup]   
+
+    [Triggers:MSB_Interaction_TradeRequest_TriggerGroup_Decline] //Only make sense because it has no role.
+
+    [Triggers:MILITIA_UmbraDamagedEvent_Trigger_OnStart] 
+    [Triggers:MILITIA_UmbraDamagedEvent_Trigger_PlayerNearFirstTime]        
+    [Triggers:MILITIA_UmbraDamagedEvent_Trigger_IsHome]       
+    [Triggers:MILITIA_UmbraDamagedEvent_Trigger_Despawn]     
+
+    [Triggers:MILITIA_UmbraDamagedEvent_Trigger_RepairedTurret]       
+    [Triggers:MILITIA_UmbraDamagedEvent_Trigger_RepairedReactor]   
+    [Triggers:MILITIA_UmbraDamagedEvent_Trigger_FullyRepaired]
+    [Triggers:MILITIA_UmbraDamagedEvent_Trigger_FullyRepaired_Delay]
+
+
+    [UsePlayerDistanceTimer:false]
+    [UseNoTargetTimer:false]
+    [UseRetreatTimer:false]
+
+
+		[Routes:Agaris_MILITIA.xml] 
+
+
+      </Description>
+    </EntityComponent>
+    
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <Id>
+      <TypeId>Inventory</TypeId>
+      <SubtypeId>MILITIA_UmbraDamagedEvent_Trigger_OnStart</SubtypeId>
+    </Id>
+    <Description>
+
+    [RivalAI Trigger]
+    [UseTrigger:true]
+
+    [Type:Timer]
+
+    [Actions:MILITIA_UmbraDamagedEvent_Action_OnStart]
+    [MaxActions:1]
+
+    </Description>
+  </EntityComponent>
+
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <Id>
+      <TypeId>Inventory</TypeId>
+      <SubtypeId>MILITIA_UmbraDamagedEvent_Action_OnStart</SubtypeId>
+    </Id>
+    <Description>
+    [RivalAI Action]
+
+    [ChangeInertiaDampeners:true]
+    [InertiaDampenersEnable:false]
+
+    [UseChatBroadcast:true]
+    [ChatData:MILITIA_UmbraDamagedEvent_Chat_OnStart]
+
+    [SetAntennaThoughtBubble:true]
+    [SetAntennaThoughtBubbleName:SOS]
+
+    [ChangeBehaviorSubclass:true]
+    [NewBehaviorSubclass:Passive]
+
+    </Description>
+  </EntityComponent>
+
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Chat_OnStart</SubtypeId>
+  </Id>
+  <Description>
+    [RivalAI Chat]
+
+    [UseChat:true]
+    [StartsReady:true]
+    [MaxChats:1]
+    [BroadcastRandomly:true]
+    [Author:{AntennaName}]
+    [Color:{PlayerRelation}]
+
+    [ChatMessages:This is {AntennaName} requesting any nearby support. We've run into trouble and our ship is badly damaged. Please help!]
+    [ChatAudio:ArcHudGPSNotification1]
+    [BroadcastChatType:Chat]
+  </Description>
+</EntityComponent>
+
+
+
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Trigger_PlayerNearFirstTime</SubtypeId>
+  </Id>
+  <Description>
+    [RivalAI Trigger]
+    [UseTrigger:true]
+    [StartsReady:true]
+
+    [Type:PlayerNear]
+    [TargetDistance:500]
+
+    [MinPlayerReputation:-500]
+    [MaxPlayerReputation:1501]
+
+
+    [MinCooldownMs:450000]
+    [MaxCooldownMs:600000]
+
+    [Conditions:MSB_Context_Condition_NormalNeutral]
+
+    [MaxActions:1]
+    [Actions:MILITIA_UmbraDamagedEvent_Action_PlayerNearFirstTime]
+  </Description>
+</EntityComponent>
+
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Action_PlayerNearFirstTime</SubtypeId>
+  </Id>
+  <Description>
+  [RivalAI Action]
+
+  [UseChatBroadcast:true]
+  [ChatData:MILITIA_UmbraDamagedEvent_Chat_PlayerNearFirstTime]
+
+
+  [AddGPSToPlayers:true]
+  [AddGPSPlayerConditionIds:PlayerCondition_Position_Near8km]
+  [UseGPSObjective:true]
+  
+  [GPSNames:Tow Vercors home?]
+  [GPSDescriptions:Remove manually]
+  [GPSVector3Ds:{X:-3712089.27540552 Y:-1341877.69354531 Z:-2590698.18011404}]
+	[AddGPSPlayerOverridePositionInPlayerCondition:true]
+
+  [HighlightBlocks:true]
+  [HighlightBlockNames:Small Reactor A]
+  [HighlightBlockModes:true]
+
+  [HighlightBlockNames:Assault Cannon Turret A]
+  [HighlightBlockModes:true]
+
+  [EnableTriggers:true]
+  [EnableTriggerNames:MILITIA_UmbraDamagedEvent_Trigger_RepairedTurret]
+  [EnableTriggerNames:MILITIA_UmbraDamagedEvent_Trigger_RepairedReactor]
+
+
+  </Description>
+</EntityComponent>
+
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Chat_PlayerNearFirstTime</SubtypeId>
+  </Id>
+  <Description>
+
+    [RivalAI Chat]
+
+    [UseChat:true]
+    [StartsReady:true]
+    [MaxChats:1]
+    [BroadcastRandomly:true]
+    [Author:{AntennaName}]
+    [Color:{PlayerRelation}]
+
+    [ChatMessages:Hey {PlayerName}, thanks for coming to help. Can you repair our reactor and turret, or tow us back to base? We'll be in your debt!]
+    [ChatAudio:ArcHudGPSNotification1]
+    [BroadcastChatType:Chat]
+  </Description>
+</EntityComponent>
+
+<!--
+MILITIA_UmbraDamagedEvent_Trigger_RepairedTurret
+MILITIA_UmbraDamagedEvent_Trigger_RepairedReactor
+
+-->
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Trigger_RepairedTurret</SubtypeId>
+  </Id>
+  <Description>
+
+  [RivalAI Trigger]
+  [UseTrigger:false]
+
+  [Type:Timer]
+[ConditionCheckResetsTimer:true]
+
+
+  [MinCooldownMs:4500]
+  [MaxCooldownMs:6000]
+
+
+  [Conditions:MILITIA_UmbraDamagedEvent_Condition_RepairedTurret]
+  [Actions:MILITIA_UmbraDamagedEvent_Action_RepairedTurret]
+  [MaxActions:1]
+
+  </Description>
+</EntityComponent>
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Condition_RepairedTurret</SubtypeId>
+  </Id>
+  <Description>
+    [RivalAI Condition]
+
+    [UseConditions:true]
+    [MatchAnyCondition:false]
+
+    [UseRequiredFunctionalBlocks:true]
+    [RequiredAllFunctionalBlockNames:Assault Cannon Turret A]
+
+  </Description>
+</EntityComponent>
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Action_RepairedTurret</SubtypeId>
+  </Id>
+  <Description>
+  [RivalAI Action]
+  
+	[UseChatBroadcast:true]
+  [ChatData:MILITIA_UmbraDamagedEvent_Chat_RepairedTurret]
+  
+  [ChangeReputationWithPlayers:true]
+  [ReputationChangeRadius:5000]
+  [ReputationChangeAmount:100]
+  [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+  [ReputationChangeFactions:{Self}]
+
+  [SetBooleansTrue:TurretRepaired]
+
+  [EnableTriggers:true]
+  [EnableTriggerNames:MILITIA_UmbraDamagedEvent_Trigger_FullyRepaired]
+
+  [ResetCooldownTimeOfTriggers:true]
+  [ResetTriggerCooldownNames:MILITIA_UmbraDamagedEvent_Trigger_FullyRepaired]
+
+  </Description>
+</EntityComponent>
+
+
+  
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <Id>
+      <TypeId>Inventory</TypeId>
+      <SubtypeId>MILITIA_UmbraDamagedEvent_Chat_RepairedTurret</SubtypeId>
+    </Id>
+    <Description>
+  
+      [RivalAI Chat]
+  
+      [UseChat:true]
+      [StartsReady:true]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      [Author:{AntennaName}]
+      [Color:{PlayerRelation}]
+  
+      [ChatMessages:{PlayerName}, thanks for the turret fix. The corporations won't like what's waiting for them now.]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+    </Description>
+  </EntityComponent>
+
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Trigger_RepairedReactor</SubtypeId>
+  </Id>
+  <Description>
+
+  [RivalAI Trigger]
+  [UseTrigger:false]
+
+  [Type:Timer]
+[ConditionCheckResetsTimer:true]
+
+
+  [MinCooldownMs:4500]
+  [MaxCooldownMs:6000]
+
+
+  [Conditions:MILITIA_UmbraDamagedEvent_Condition_RepairedReactor]
+  [Actions:MILITIA_UmbraDamagedEvent_Action_RepairedReactor]
+  [MaxActions:1]
+
+  </Description>
+</EntityComponent>
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Condition_RepairedReactor</SubtypeId>
+  </Id>
+  <Description>
+    [RivalAI Condition]
+
+    [UseConditions:true]
+    [MatchAnyCondition:false]
+
+    [UseRequiredFunctionalBlocks:true]
+    [RequiredAllFunctionalBlockNames:Small Reactor A]
+
+  </Description>
+</EntityComponent>
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Action_RepairedReactor</SubtypeId>
+  </Id>
+  <Description>
+  [RivalAI Action]
+  
+	[UseChatBroadcast:true]
+  [ChatData:MILITIA_UmbraDamagedEvent_Chat_RepairedReactor]
+  
+  [ChangeReputationWithPlayers:true]
+  [ReputationChangeRadius:5000]
+  [ReputationChangeAmount:100]
+  [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+  [ReputationChangeFactions:{Self}]
+
+  [SetBooleansTrue:ReactorRepaired]
+
+  [EnableTriggers:true]
+  [EnableTriggerNames:MILITIA_UmbraDamagedEvent_Trigger_FullyRepaired]
+
+  [ResetCooldownTimeOfTriggers:true]
+  [ResetTriggerCooldownNames:MILITIA_UmbraDamagedEvent_Trigger_FullyRepaired]
+
+
+
+  </Description>
+</EntityComponent>
+
+
+  
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <Id>
+      <TypeId>Inventory</TypeId>
+      <SubtypeId>MILITIA_UmbraDamagedEvent_Chat_RepairedReactor</SubtypeId>
+    </Id>
+    <Description>
+  
+      [RivalAI Chat]
+  
+      [UseChat:true]
+      [StartsReady:true]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      [Author:{AntennaName}]
+      [Color:{PlayerRelation}]
+  
+      [ChatMessages:Reactor back online. Thanks for the repair, {PlayerName}.]
+      [ChatAudio:ArcHudGPSNotification1]
+      [BroadcastChatType:Chat]
+    </Description>
+  </EntityComponent>
+
+
+
+
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Trigger_FullyRepaired</SubtypeId>
+  </Id>
+  <Description>
+
+  [RivalAI Trigger]
+  [UseTrigger:false]
+
+  [Type:Timer]
+  [ConditionCheckResetsTimer:true]
+
+
+  [MinCooldownMs:4500]
+  [MaxCooldownMs:6000]
+
+  [Conditions:MILITIA_UmbraDamagedEvent_Condition_FullyRepaired]
+  [Actions:MILITIA_UmbraDamagedEvent_Action_FullyRepaired]
+  [MaxActions:1]
+
+  </Description>
+</EntityComponent>
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Condition_FullyRepaired</SubtypeId>
+  </Id>
+
+  <Description>
+    [RivalAI Condition]
+
+    [UseConditions:true]
+    [MatchAnyCondition:false]
+
+    [CheckTrueBooleans:true]
+    [TrueBooleans:ReactorRepaired]
+    [TrueBooleans:TurretRepaired]
+
+  </Description>
+</EntityComponent>
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Action_FullyRepaired</SubtypeId>
+  </Id>
+  <Description>
+  [RivalAI Action]
+
+  [UseChatBroadcast:true]
+  [ChatData:MILITIA_UmbraDamagedEvent_Chat_FullyRepaired]
+
+  [SetAntennaThoughtBubble:true]
+  [SetAntennaThoughtBubbleName:STAND CLEAR]
+
+
+
+  [EnableTriggers:true]
+  [EnableTriggerNames:MILITIA_UmbraDamagedEvent_Trigger_FullyRepaired_Delay]
+  [EnableTriggerNames:MILITIA_UmbraDamagedEvent_Trigger_Despawn]
+
+
+  [ResetCooldownTimeOfTriggers:true]
+  [ResetTriggerCooldownNames:MILITIA_UmbraDamagedEvent_Trigger_FullyRepaired_Delay]
+
+
+  [ChangeReputationWithPlayers:true]
+  [ReputationChangeRadius:5000]
+  [ReputationChangeAmount:350]
+  [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+  [ReputationChangeFactions:{Self}]
+
+  [DisableTriggers:true]
+  [DisableTriggerNames:MILITIA_UmbraDamagedEvent_Trigger_IsHome]
+
+
+
+
+  </Description>
+</EntityComponent>
+
+
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Chat_FullyRepaired</SubtypeId>
+  </Id>
+  <Description>
+
+    [RivalAI Chat]
+
+    [UseChat:true]
+    [StartsReady:true]
+    [MaxChats:1]
+    [BroadcastRandomly:true]
+    [Author:{AntennaName}]
+    [Color:{PlayerRelation}]
+
+    [ChatMessages:All systems stable again. Thanks, {PlayerName}; we can manage the trip back to base now. PLEASE STAND CLEAR]
+    [ChatAudio:ArcHudGPSNotification1]
+    [BroadcastChatType:Chat]
+  </Description>
+</EntityComponent>
+
+
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Trigger_FullyRepaired_Delay</SubtypeId>
+  </Id>
+  <Description>
+
+  [RivalAI Trigger]
+  [UseTrigger:false]
+
+  [Type:Timer]
+
+  [MinCooldownMs:29000]
+  [MaxCooldownMs:29001]
+
+  [Actions:MILITIA_UmbraDamagedEvent_Action_FullyRepaired_Delay]
+  [MaxActions:1]
+
+  </Description>
+</EntityComponent>
+
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Action_FullyRepaired_Delay</SubtypeId>
+  </Id>
+  <Description>
+  [RivalAI Action]
+
+    [ChangeInertiaDampeners:true]
+    [InertiaDampenersEnable:true]
+
+    [ChangeBehaviorSubclass:true]
+    [NewBehaviorSubclass:NauticalRoutes]
+
+    [ClearAntennaThoughtBubble:true]
+
+  </Description>
+</EntityComponent>
+
+
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!--
+[Triggers:MILITIA_UmbraDamagedEvent_Trigger_IsHome]       
+[Triggers:MILITIA_UmbraDamagedEvent_Trigger_Despawn]     
+-->
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Trigger_IsHome</SubtypeId>
+  </Id>
+  <Description>
+
+  [RivalAI Trigger]
+  [UseTrigger:true]
+
+  [Type:Position]
+  [GlobalPosition:{X:-3712089.27540552 Y:-1341877.69354531 Z:-2590698.18011404}]
+  [TargetDistance:500]
+  [ConditionCheckResetsTimer:true]
+
+
+  [MinCooldownMs:4500]
+  [MaxCooldownMs:6000]
+
+
+  [Actions:MILITIA_UmbraDamagedEvent_Action_IsHome]
+  [MaxActions:1]
+
+  </Description>
+</EntityComponent>
+
+
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Action_IsHome</SubtypeId>
+  </Id>
+  <Description>
+  [RivalAI Action]
+
+  [UseChatBroadcast:true]
+  [ChatData:MILITIA_UmbraDamagedEvent_Chat_IsHome]
+
+  [ChangeReputationWithPlayers:true]
+  [ReputationChangeRadius:5000]
+  [ReputationChangeAmount:600]
+  [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+  [ReputationChangeFactions:{Self}]
+
+  [ChangePlayerCredits:true]
+  [ChangePlayerCreditsAmount:5000000]
+  [ChangePlayerCreditsOverridePositionInPlayerCondition:true]
+  [ChangePlayerCreditsPlayerConditionIds:PlayerCondition_Position_Near5km]
+
+  [ChangeInertiaDampeners:true]
+  [InertiaDampenersEnable:true]
+  [ClearAntennaThoughtBubble:true]
+
+  [EnableTriggers:true]
+  [EnableTriggerNames:MILITIA_UmbraDamagedEvent_Trigger_Despawn]
+
+
+  [DisableTriggers:true]
+  [DisableTriggerNames:MILITIA_UmbraDamagedEvent_Trigger_RepairedTurret]
+  [DisableTriggerNames:MILITIA_UmbraDamagedEvent_Trigger_RepairedReactor]
+  [DisableTriggerNames:MILITIA_UmbraDamagedEvent_Trigger_FullyRepaired]
+  [DisableTriggerNames:MILITIA_UmbraDamagedEvent_Trigger_FullyRepaired_Delay]
+
+  [HighlightBlocks:true]
+  [HighlightBlockNames:Small Reactor A]
+  [HighlightBlockModes:false]
+
+  [HighlightBlockNames:Assault Cannon Turret A]
+  [HighlightBlockModes:false]
+
+  </Description>
+</EntityComponent>
+
+
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Chat_IsHome</SubtypeId>
+  </Id>
+  <Description>
+
+    [RivalAI Chat]
+
+    [UseChat:true]
+    [StartsReady:true]
+    [MaxChats:1]
+    [BroadcastRandomly:true]
+    [Author:{AntennaName}]
+    [Color:{PlayerRelation}]
+
+    [ChatMessages:Thank you, {PlayerName}! We wouldn't have made it back without your tow.]
+    [ChatAudio:ArcHudGPSNotification1]
+    [BroadcastChatType:Chat]
+  </Description>
+</EntityComponent>
+	
+
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Trigger_Despawn</SubtypeId>
+  </Id>
+  <Description>
+
+  [RivalAI Trigger]
+  [UseTrigger:false]
+
+  [Type:PlayerFar]
+  [TargetDistance:10000]
+  [ConditionCheckResetsTimer:true]
+
+  [MinCooldownMs:4500]
+  [MaxCooldownMs:6000]
+
+  [Actions:MILITIA_UmbraDamagedEvent_Action_Despawn]
+  [MaxActions:1]
+
+  </Description>
+</EntityComponent>
+
+
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>MILITIA_UmbraDamagedEvent_Action_Despawn</SubtypeId>
+  </Id>
+  <Description>
+  [RivalAI Action]
+
+  [ForceDespawn:true]
+
+  </Description>
+</EntityComponent>
+
+
+
+  </EntityComponents>
+</Definitions>

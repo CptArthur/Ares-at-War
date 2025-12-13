@@ -130,10 +130,10 @@ def CreateStoreItems_Dynamic(Faction, Name:str,XML_Name: str, StoresProfiles:str
 def CreateTriggers(Faction, Name:str, IO, StoresProfiles):
     print(f"[Triggers:{Faction}_Trigger_Static_PopulateStores_{Name}]")
     FailCondition = ""
-    Tags = "StoreRefresh"
+    Tags = "StoreRefreshIO"
     if IO == False:
       FailCondition = "[UseFailCondition:true]"
-      Tags = "StoreRefreshIO"
+      Tags = "StoreRefresh"
     ITC = "{ITC}"
     SHIVAN = "{SHIVAN}"
     SECURITY = "{SECURITY}"

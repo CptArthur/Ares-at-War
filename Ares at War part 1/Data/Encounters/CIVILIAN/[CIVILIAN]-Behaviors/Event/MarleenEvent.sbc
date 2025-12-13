@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>CIVILIAN_MarleenEvent_Behavior</SubtypeId>
+      </Id>
+      <Description>
+    [RivalAI Behavior]
+    [BehaviorName:Passive]
+    [TargetData:MSB_TargetProfile_Default]
+
+	
+    [//DialogueBanks:CIVILIAN.xml] 
+    [DialogueBanks:AaW.xml] 
+    [//DialogueBanks:MSB.xml] 
+
+
+    [Triggers:MSB_Interaction_TradeRequest_TriggerGroup_Decline] //Only make sense because it has no role.
+
+    [Triggers:CIVILIAN_MarleenEvent_Trigger_OnStart] 
+    [Triggers:CIVILIAN_MarleenEvent_Trigger_PlayerNearFirstTime]        
+    [Triggers:CIVILIAN_MarleenEvent_Trigger_PressedButton]       
+    [Triggers:CIVILIAN_MarleenEvent_Trigger_ButtonCheck]     
+
+
+
+    [UsePlayerDistanceTimer:false]
+    [UseNoTargetTimer:false]
+    [UseRetreatTimer:false]
+
+
+
+      </Description>
+    </EntityComponent>
+    
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <Id>
+      <TypeId>Inventory</TypeId>
+      <SubtypeId>CIVILIAN_MarleenEvent_Trigger_OnStart</SubtypeId>
+    </Id>
+    <Description>
+
+    [RivalAI Trigger]
+    [UseTrigger:true]
+
+    [Type:Timer]
+
+    [Actions:CIVILIAN_MarleenEvent_Action_OnStart]
+    [MaxActions:1]
+
+    </Description>
+  </EntityComponent>
+
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <Id>
+      <TypeId>Inventory</TypeId>
+      <SubtypeId>CIVILIAN_MarleenEvent_Action_OnStart</SubtypeId>
+    </Id>
+    <Description>
+    [RivalAI Action]
+
+    [ChangeInertiaDampeners:true]
+    [InertiaDampenersEnable:false]
+
+    [UseChatBroadcast:false]
+    [ChatData:CIVILIAN_MarleenEvent_Chat_OnStart]
+
+
+    </Description>
+  </EntityComponent>
+
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>CIVILIAN_MarleenEvent_Chat_OnStart</SubtypeId>
+  </Id>
+  <Description>
+    [RivalAI Chat]
+
+    [UseChat:true]
+    [StartsReady:true]
+    [MaxChats:1]
+    [BroadcastRandomly:true]
+    [Author:{AntennaName}]
+    [Color:{PlayerRelation}]
+
+    [ChatMessages:This is {AntennaName} requesting any nearby support. We've run into trouble and our ship is badly damaged. Please help!]
+    [ChatAudio:ArcHudGPSNotification1]
+    [BroadcastChatType:Chat]
+  </Description>
+</EntityComponent>
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>CIVILIAN_MarleenEvent_Trigger_PlayerNearFirstTime</SubtypeId>
+  </Id>
+  <Description>
+    [RivalAI Trigger]
+    [UseTrigger:true]
+    [StartsReady:true]
+
+    [Type:PlayerNear]
+    [TargetDistance:500]
+
+
+
+
+    [MaxActions:1]
+    [Actions:CIVILIAN_MarleenEvent_Action_PlayerNearFirstTime]
+  </Description>
+</EntityComponent>
+
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>CIVILIAN_MarleenEvent_Action_PlayerNearFirstTime</SubtypeId>
+  </Id>
+  <Description>
+  [RivalAI Action]
+
+  [HighlightBlocks:true]
+  [HighlightBlockNames:DownloadButton]
+  [HighlightBlockModes:true]
+
+  [EnableTriggers:true]
+  [EnableTriggerNames:CIVILIAN_MarleenEvent_Trigger_PressedButton]
+
+
+
+  </Description>
+</EntityComponent>
+
+
+<!--
+CIVILIAN_MarleenEvent_Trigger_PressedButton
+
+
+-->
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>CIVILIAN_MarleenEvent_Trigger_PressedButton</SubtypeId>
+  </Id>
+  <Description>
+
+  [RivalAI Trigger]
+  [UseTrigger:true]
+
+  [Type:ButtonPress]
+[ConditionCheckResetsTimer:true]
+[ButtonPanelName:DownloadButton]
+[ButtonPanelIndex:0]
+  [MinCooldownMs:4500]
+  [MaxCooldownMs:6000]
+
+
+  [Conditions:CIVILIAN_MarleenEvent_Condition_PressedButton]
+  [Actions:CIVILIAN_MarleenEvent_Action_PressedButton]
+  [MaxActions:1]
+
+  </Description>
+</EntityComponent>
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>CIVILIAN_MarleenEvent_Condition_PressedButton</SubtypeId>
+  </Id>
+  <Description>
+    [RivalAI Condition]
+
+    [UseConditions:true]
+    [MatchAnyCondition:false]
+
+    [UseRequiredFunctionalBlocks:true]
+    [RequiredAllFunctionalBlockNames:DownloadButton]
+
+  </Description>
+</EntityComponent>
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>CIVILIAN_MarleenEvent_Action_PressedButton</SubtypeId>
+  </Id>
+  <Description>
+  [RivalAI Action]
+  
+  [SetSandboxBooleansTrue:MarleenDownloaded]
+
+  [HighlightBlocks:true]
+  [HighlightBlockNames:DownloadButton]
+  [HighlightBlockModes:false]
+
+  [TerminateBehavior:true]
+
+
+  </Description>
+</EntityComponent>
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>CIVILIAN_MarleenEvent_Trigger_ButtonCheck</SubtypeId>
+  </Id>
+  <Description>
+
+  [RivalAI Trigger]
+  [UseTrigger:true]
+
+  [Type:Timer]
+[ConditionCheckResetsTimer:true]
+
+
+  [MinCooldownMs:4500]
+  [MaxCooldownMs:6000]
+
+
+  [Conditions:CIVILIAN_MarleenEvent_Condition_ButtonCheck]
+  [Actions:CIVILIAN_MarleenEvent_Action_ButtonCheck]
+  [MaxActions:1]
+
+  </Description>
+</EntityComponent>
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>CIVILIAN_MarleenEvent_Condition_ButtonCheck</SubtypeId>
+  </Id>
+  <Description>
+    [RivalAI Condition]
+
+    [UseConditions:true]
+    [UseFailCondition:true]
+    [MatchAnyCondition:false]
+
+    [UseRequiredFunctionalBlocks:true]
+    [RequiredAllFunctionalBlockNames:DownloadButton]
+
+  </Description>
+</EntityComponent>
+
+<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+  <Id>
+    <TypeId>Inventory</TypeId>
+    <SubtypeId>CIVILIAN_MarleenEvent_Action_ButtonCheck</SubtypeId>
+  </Id>
+  <Description>
+  [RivalAI Action]
+  
+  [SetSandboxBooleansTrue:MarleenDestroyed]
+[TerminateBehavior:true]
+
+  </Description>
+</EntityComponent>
+
+
+
+
+
+
+
+
+  </EntityComponents>
+</Definitions>

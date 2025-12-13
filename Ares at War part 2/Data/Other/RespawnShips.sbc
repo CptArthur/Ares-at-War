@@ -10,6 +10,65 @@
 	
 
 <!-- Vanilla -->
+
+
+	<Ship Enabled="false"> <!-- Planetary Rover -->
+	  <Id>
+		<TypeId>RespawnShipDefinition</TypeId>
+		<SubtypeId>RespawnRover</SubtypeId>
+	  </Id>
+	  <DisplayName>DisplayName_PlanetaryLander</DisplayName>
+	  <Icon>Textures\GUI\Icons\RespawnShips\RespawnRover.png</Icon>
+	  <CooldownSeconds>900</CooldownSeconds>
+	  <Prefab>RespawnRover</Prefab>
+
+	  <UseForSpace>false</UseForSpace>
+	  <UseForPlanetsWithAtmosphere>true</UseForPlanetsWithAtmosphere>
+	  <UseForPlanetsWithoutAtmosphere>false</UseForPlanetsWithoutAtmosphere>	  
+	  <PlanetDeployAltitude>1500</PlanetDeployAltitude>
+	  <MinimalAirDensity>0.9</MinimalAirDensity>
+
+      <InitialLinearVelocity x="0" y="-95" z="0" />
+	  <InitialAngularVelocity x="0" y="0.4" z="0" />
+
+	  <HelpTextLocalizationId>Description_RespawnRover</HelpTextLocalizationId>
+	</Ship>
+
+    <Ship Enabled="false"> <!-- Moon Rover -->
+	  <Id>
+		<TypeId>RespawnShipDefinition</TypeId>
+		<SubtypeId>RespawnMoonRover</SubtypeId>
+	  </Id>
+	  <DisplayName>DisplayName_PlanetaryLander</DisplayName>
+	  <Icon>Textures\GUI\Icons\RespawnShips\RespawnRover.png</Icon>
+	  <CooldownSeconds>900</CooldownSeconds>
+	  <Prefab>RespawnRover</Prefab>
+
+	  <UseForSpace>false</UseForSpace>
+	  <UseForPlanetsWithAtmosphere>false</UseForPlanetsWithAtmosphere>
+	  <UseForPlanetsWithoutAtmosphere>true</UseForPlanetsWithoutAtmosphere>
+	  <PlanetDeployAltitude>15</PlanetDeployAltitude>
+
+	  <HelpTextLocalizationId>Description_RespawnRover</HelpTextLocalizationId>
+	</Ship>
+	
+	<Ship Enabled="false"> <!-- Space Start -->
+	  <Id>
+		<TypeId>RespawnShipDefinition</TypeId>
+		<SubtypeId>RespawnSpacePod</SubtypeId>
+	  </Id>
+	  <DisplayName>DisplayName_RespawnPodSpace</DisplayName>
+	  <Icon>Textures\GUI\Icons\RespawnShips\RespawnSpacePod.png</Icon>
+	  <CooldownSeconds>900</CooldownSeconds>
+	  <Prefab>RespawnSpacePod</Prefab>
+
+	  <UseForSpace>true</UseForSpace>
+	  <SpawnNearProceduralAsteroids>true</SpawnNearProceduralAsteroids>
+
+	  <HelpTextLocalizationId>Description_SpacePod</HelpTextLocalizationId>
+	</Ship>
+	
+	
     <Ship Enabled="false">
       <Id>
         <TypeId>RespawnShipDefinition</TypeId>

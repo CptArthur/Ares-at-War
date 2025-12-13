@@ -63,11 +63,14 @@ Urban:
 	[CustomApiConditions:AaW_Home]	
 	
 	
-	
 	[FactionOwner:SPRT]	
 	[UseSpawnGroupPrefabSpawningMode:true]
       </Description>
     </EntityComponent>
+
+
+
+
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -181,7 +184,67 @@ Urban:
       </Description>
     </EntityComponent>
 	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_AgarisOnWater_Home</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
 	
+	[IgnoreCombatPhase:true]
+	[ZoneConditions:ZoneCondition_ZoneAaW]	
+
+	[PlanetWhitelist:Planet Agaris]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:100]	
+
+	[CustomApiConditions:AaW_Home]	
+
+      [MinWaterCoverage:0.8]	
+	
+	[FactionOwner:SPRT]	
+	[UseSpawnGroupPrefabSpawningMode:true]
+      </Description>
+    </EntityComponent>
+
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_SpawnProfile_AgarisOnWater_Outside_Combat</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Spawn Conditions]
+	[AtmosphericCargoShip:true]
+	[UseCombatPhase:true]
+	
+	
+	[PlanetWhitelist:Planet Agaris]	
+	[SkipAirDensityCheck:false]
+	[AtmosphericCargoShipChance:10]	
+	
+		
+	[UseThreatLevelCheck:true]
+	[ThreatLevelCheckRange:2000]
+	[ThreatScoreGridConfiguration:Static]
+	[ThreatScoreMaximum:300]	
+	[ThreatIncludeOtherNpcOwners:true]	
+
+      [MinWaterCoverage:0.8]
+
+	[CustomApiConditions:AaW_Outside]	
+	
+	
+	[FactionOwner:SPRT]		
+	[UseSpawnGroupPrefabSpawningMode:true]	
+      </Description>
+    </EntityComponent>
+
 	
 	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

@@ -4,149 +4,120 @@
   
  <!--
  
- 
- 
 DemocraticMovementScore
 ProsperityCoalitionScore
 SecurityFrontScore
  
  -->
- 
- 
-   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_Mission_SecurityFrontDonation</SubtypeId>
-      </Id>
-      <Description>
-
-    [MES Mission]
-	
-	[Title:Make Political Donation to the Security Front]
-	[Description:In a system threatened by piracy, unrest, and lawlessness, the Ares Security Front stands as the shield of all citizens. We are committed to enforcing strong security measures, protecting trade routes, and maintaining order across every colony. With your donation we can finance our campaigning
-	
-	]
-	
-	[OverrideFaction:AHE]
-	
-	[Reward:5000000]
-	[Collateral:80000]
-	[ReputationReward:200]
-	[FailReputationPrice:20]
-	[Duration:300]
-
-	[PersistantEventConditionIds:AHE_EventCondition_MissionDestroyDRAHQ]
-
-	[ReplaceKeys:{StaticEncounterSandboxBoolName}]
-	[ReplaceValues:DRA_HQDestroyed]
-	
-	[ReplaceKeys:{EventName}]
-	[ReplaceValues:Destroy DRA HQ]	
-
-	[ReplaceKeys:{EventCoords}]
-	[ReplaceValues:{X:-3631334.68361371 Y:-1326304.76052412 Z:-2536825.59381119}]	
-	
-	
-	
-	[InstanceEventGroupId:MissionGroup_EliminateStaticEncounter]
-
-      </Description>
-
-    </EntityComponent>
-
- <!--
- 
-		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>UNION_Mission_RelicData</SubtypeId>
-      </Id>
-      <Description>
-
-    [MES Mission]
-	[Tags:SHIVAN]
-	[OverrideFaction:SHIVAN]
-	
-	[Title:Sell Relic Data]
-	[Description:]
-	
-	[StoreProfileId:AaW_StoreProfile_RelicData]
-	[MissionType:Acquisition]
-	
-	[Reward:50000000]
-	[Collateral:0]
-	[ReputationReward:75]
-	[FailReputationPrice:0]
-	[Duration:5]
-
-
-  [Exclusive:true]
-
-      </Description>
-    </EntityComponent>
-	
 
  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AHE_EventCondition_MissionDestroyDRAHQ</SubtypeId>
+          <SubtypeId>AZURIS_EventCondition_UNIONNotYetLaunched</SubtypeId>
       </Id>
       <Description>
-
      [MES Event Condition]
 	  
 	[UseAnyPassingCondition:false]
 
 	[CheckFalseBooleans:true]
 	[AllowAnyFalseBoolean:false]
-	[FalseBooleans:DRA_HQDestroyed]  
-	[FalseBooleans:AHE_HQDestroyed]  
+	[FalseBooleans:UNION_Launched]  
+
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_AZURISFriendly]
 
       </Description>
-      
     </EntityComponent>	
+
+
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>UNION_EventCondition_UNIONLaunched</SubtypeId>
+      </Id>
+      <Description>
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckTrueBooleans:true]
+	[AllowAnyTrueBoolean:false]
+	[TrueBooleans:UNION_Launched]  
+
+      </Description>
+    </EntityComponent>	
+
 
    	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AHE_Mission_DestroyDRAHQ</SubtypeId>
+        <SubtypeId>AaW_Mission_UNION_NextSteps</SubtypeId>
       </Id>
       <Description>
 
     [MES Mission]
 	
-	[Title:Eliminate DRA]
-	[Description:The DRA have been anoyance. Destroy their HQ]
+	[Title:(UNION) Found the UNION]
+	[Description:This day marks the formal founding of the UNION of Agaris. Ensure you have strong ties with Sunset City, Azuris, Bratis, and Thorrix.]
 	
-	[OverrideFaction:AHE]
+	[OverrideFaction:UNION]
 	
-	[Reward:5000000]
-	[Collateral:80000]
-	[ReputationReward:200]
-	[FailReputationPrice:20]
-	[Duration:300]
+	[Reward:0]
+	[Collateral:0]
+	[ReputationReward:0]
+	[FailReputationPrice:0]
+	[Duration:0]
 
-	[PersistantEventConditionIds:AHE_EventCondition_MissionDestroyDRAHQ]
+	[PersistantEventConditionIds:UNION_EventCondition_UNIONLaunched]
+	[LeadPlayerConditionIds:PlayerCondition_AgarisColoniesFriendly]
 
-	[ReplaceKeys:{StaticEncounterSandboxBoolName}]
-	[ReplaceValues:DRA_HQDestroyed]
+	[Exclusive:true]
 	
-	[ReplaceKeys:{EventName}]
-	[ReplaceValues:Destroy DRA HQ]	
-
-	[ReplaceKeys:{EventCoords}]
-	[ReplaceValues:{X:-3631334.68361371 Y:-1326304.76052412 Z:-2536825.59381119}]	
-	
-	
-	
-	[InstanceEventGroupId:MissionGroup_EliminateStaticEncounter]
+	[InstanceEventGroupId:MissionGroup_FoundUNION]
 
       </Description>
-
     </EntityComponent>
 
--->
- 
+
+ <!-- Launch missions -->
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_Azuris_LaunchUNION</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:(UNION) Fund the Democratic Movement of Agaris Iniative]
+	[Description:We need to break up corporate monopolies and restore power to the colonies of Agaris. It's time to put people ahead of profits and ensure fair opportunity for all. Azuris, Bratis, Thorrix, and Sunset City can form the core of a new Union of Agaris, but they can't stand up to these forces alone. We'll need outside backing from either the Sol Cooperative or the Shippers to make the first move. With your help we can start the initiative, quietly at first, carefully, but with a clear purpose. REQUIRED FUNDS: 15m]
+	
+	[OverrideFaction:UNION]
+	
+	[Reward:0]
+	[Collateral:15000000]
+	[ReputationReward:1200]
+	[FailReputationPrice:0]
+	[Duration:0]
+
+	[PersistantEventConditionIds:AZURIS_EventCondition_UNIONNotYetLaunched]
+
+	[LeadPlayerConditionIds:PlayerCondition_AZURISFriendly]
+
+
+	[Exclusive:true]
+	
+	[InstanceEventGroupId:MissionGroup_LaunchUNION]
+
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+
 
 	
   </EntityComponents>

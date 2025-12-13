@@ -1,0 +1,510 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_ExcludedPlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	[CheckPlayerTags:true]
+	[ExcludedPlayerTag:PlayerNear]
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_IncludedPlayerNear</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	[CheckPlayerTags:true]
+	[IncludedPlayerTag:PlayerNear]
+ 
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_ITCNeutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:ITC]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:500]
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_ITCFriendly</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:ITC]
+	[MinPlayerReputation:501]
+	[MaxPlayerReputation:1500]
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_SHIVANNeutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SHIVAN]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:500]
+      </Description>
+      
+    </EntityComponent>	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_SHIVANPositiveNeutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SHIVAN]
+	[MinPlayerReputation:0]
+	[MaxPlayerReputation:500]
+
+      </Description>
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_SHIVANFriendly</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SHIVAN]
+	[MinPlayerReputation:501]
+	[MaxPlayerReputation:1500]
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_GCHostile</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:GC]
+	[MinPlayerReputation:-1500]
+	[MaxPlayerReputation:_499]
+
+      </Description>      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_GCNeutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:GC]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:500]
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_GCFriendly</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:GC]
+	[MinPlayerReputation:501]
+	[MaxPlayerReputation:1500]
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_UNIONNeutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:UNION]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:500]
+
+      </Description>
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_UNIONPositiveNeutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:UNION]
+	[MinPlayerReputation:0]
+	[MaxPlayerReputation:500]
+
+      </Description>
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_UNIONFriendly</SubtypeId>
+      </Id>
+      <Description>
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:UNION]
+	[MinPlayerReputation:501]
+	[MaxPlayerReputation:1500]
+
+      </Description>
+    </EntityComponent>	
+
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_AgarisColoniesFriendly</SubtypeId>
+      </Id>
+      <Description>
+	[MES Player Condition]
+	
+	[CheckPlayerReputation:true]
+
+
+	[CheckReputationwithFaction:UNION]
+	[MinPlayerReputation:1499]
+	[MaxPlayerReputation:1500]
+
+	[CheckReputationwithFaction:SUNSETCITY]
+	[MinPlayerReputation:501]
+	[MaxPlayerReputation:1500]
+
+	[CheckReputationwithFaction:AZURIS]
+	[MinPlayerReputation:501]
+	[MaxPlayerReputation:1500]
+
+	[CheckReputationwithFaction:BRATIS]
+	[MinPlayerReputation:501]
+	[MaxPlayerReputation:1500]
+
+	[CheckReputationwithFaction:THORRIX]
+	[MinPlayerReputation:501]
+	[MaxPlayerReputation:1500]
+
+      </Description>
+    </EntityComponent>	
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_MILITIANeutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:MILITIA]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:500]
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_MILITIAFriendly</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+      
+      [CheckPlayerTags:true]
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:MILITIA]
+	[MinPlayerReputation:501]
+	[MaxPlayerReputation:1500]
+
+
+      </Description>
+    </EntityComponent>
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_AHENeutral</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:AHE]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:500]
+
+
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_AHEFriendly</SubtypeId>
+      </Id>
+      <Description>
+
+	[MES Player Condition]
+	
+	      [CheckPlayerTags:true]
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:AHE]
+	[MinPlayerReputation:501]
+	[MaxPlayerReputation:1500]
+
+
+      </Description>
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_AZURISNeutral</SubtypeId>
+      </Id>
+      <Description>
+	[MES Player Condition]
+	
+      [CheckPlayerTags:true]
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:AZURIS]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:500]
+
+      </Description>
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_AZURISFriendly</SubtypeId>
+      </Id>
+      <Description>
+	[MES Player Condition]
+	
+            [CheckPlayerTags:true]
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:AZURIS]
+	[MinPlayerReputation:501]
+	[MaxPlayerReputation:1500]
+
+      </Description>
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_BRATISNeutral</SubtypeId>
+      </Id>
+      <Description>
+	[MES Player Condition]
+	
+            [CheckPlayerTags:true]
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:BRATIS]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:500]
+
+      </Description>
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_BRATISFriendly</SubtypeId>
+      </Id>
+      <Description>
+	[MES Player Condition]
+
+      [CheckPlayerTags:true]	
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:BRATIS]
+	[MinPlayerReputation:501]
+	[MaxPlayerReputation:1500]
+
+      </Description>
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_SUNSETCITYNeutral</SubtypeId>
+      </Id>
+      <Description>
+	[MES Player Condition]
+
+      [CheckPlayerTags:true]
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:SUNSETCITY]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:500]
+
+      </Description>
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_SUNSETCITYFriendly</SubtypeId>
+      </Id>
+      <Description>
+	[MES Player Condition]
+
+      [CheckPlayerTags:true]	
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:AZURIS]
+	[MinPlayerReputation:501]
+	[MaxPlayerReputation:1500]
+
+      </Description>
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_THORRIXNeutral</SubtypeId>
+      </Id>
+      <Description>
+	[MES Player Condition]
+
+      [CheckPlayerTags:true]	
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:THORRIX]
+	[MinPlayerReputation:-500]
+	[MaxPlayerReputation:500]
+
+      </Description>
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>PlayerCondition_THORRIXFriendly</SubtypeId>
+      </Id>
+      <Description>
+	[MES Player Condition]
+     
+      [CheckPlayerTags:true]
+
+
+	[CheckPlayerReputation:true]
+	[CheckReputationwithFaction:THORRIX]
+	[MinPlayerReputation:501]
+	[MaxPlayerReputation:1500]
+
+      </Description>
+    </EntityComponent>	    
+
+  </EntityComponents>
+</Definitions>

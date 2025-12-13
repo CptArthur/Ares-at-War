@@ -1,0 +1,308 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+ <!--
+Variables:
+{EventName}
+{EventCoords}
+{Description}
+ 
+{SandboxBoolNameSuccess}
+{SandboxBoolNameFailure}
+
+
+
+Default:
+{ContractBlockFaction}
+{ContractBlockLocation}
+{Faction}
+{InstanceId}
+ -->
+
+	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MissionGroup_BasicBooleanLocation</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event TemplateGroup]
+		
+		[TemplateEventIds:AaW_EventTemplate_BasicBooleanLocation_Init]	
+
+		[TemplateEventIds:AaW_EventTemplate_BasicBooleanLocation_Failed]
+		[TemplateEventIds:AaW_EventTemplate_BasicBooleanLocation_Abandoned]
+		
+
+		[TemplateEventIds:AaW_EventTemplate_BasicBooleanLocation_FailureBool]
+		[TemplateEventIds:AaW_EventTemplate_BasicBooleanLocation_Success]
+
+      </Description>
+	</EntityComponent>	
+	
+	
+	<!-- Start Required -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_BasicBooleanLocation_Abandoned</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[Tags:Abandoned@{InstanceId}]
+		[UseEvent:false]
+		[UniqueEvent:true]		
+		[ActionExecution:All]
+		[ActionIds:AaW_EventActionTemplate_BasicBooleanLocation_CloseInstance]
+
+      </Description>
+	</EntityComponent>		
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_BasicBooleanLocation_CloseInstance</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	[RemoveThisInstanceGroup:true]
+	
+	[RemoveGPSFromPlayers:true]
+	[RemoveGPSNames:{EventName}]
+	[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	
+	[AddPlayerConditionPlayerTags:true]
+	[AddIncludedPlayerTags:@{InstanceId}]	
+      </Description>
+    </EntityComponent>		
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_BasicBooleanLocation_Failed</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[Tags:Failed@{InstanceId}]
+		[UseEvent:false]
+		
+		[UniqueEvent:true]		
+		[ActionExecution:All]
+		[ActionIds:AaW_EventActionTemplate_BasicBooleanLocation_Failed]
+
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_BasicBooleanLocation_Failed</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	[TryContractFail:true]
+	
+	[RemoveGPSFromPlayers:true]
+	[RemoveGPSNames:{EventName}]
+	[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	
+	[AddPlayerConditionPlayerTags:true]
+	[AddIncludedPlayerTags:@{InstanceId}]	
+	
+      </Description>
+    </EntityComponent>		
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_BasicBooleanLocation_FailureBool</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+
+		[UseEvent:true]
+		[MinCooldownMs:5000]
+		[MaxCooldownMs:15001]			
+		
+		[UniqueEvent:true]		
+		
+		[ConditionIds:MES_EventConditionTemplate_BasicBooleanLocation_FailureBool]
+		
+	
+		[ActionExecution:All]
+		[ActionIds:AaW_EventActionTemplate_BasicBooleanLocation_Failed]
+
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES_EventConditionTemplate_BasicBooleanLocation_FailureBool</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Condition Template]
+
+
+	[CheckFalseBooleans:true]
+	[FalseBooleans:{SandboxBoolNameFailure}]  
+      </Description>
+    </EntityComponent>		
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_BasicBooleanLocation_Success</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:true]
+		[MinCooldownMs:5000]
+		[MaxCooldownMs:15001]			
+		
+		[UniqueEvent:true]		
+		
+		[ConditionIds:MES_EventConditionTemplate_BasicBooleanLocation_Success]
+
+		
+		[ActionExecution:Sequential]
+		[TimeUntilNextActionMs:5000] 
+	
+		[ActionIds:AaW-EventAction-Common-IncomingMessage]
+		
+		[ActionIds:AaW_EventActionTemplate_BasicBooleanLocation_Success]
+      </Description>
+	</EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MES_EventConditionTemplate_BasicBooleanLocation_Success</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Condition Template]
+
+
+	[CheckPlayerNear:false]
+	[PlayerNearCoords:{EventCoords}]
+	[PlayerNearDistanceFromCoords:20000]
+
+	[CheckTrueBooleans:true]
+	[TrueBooleans:{SandboxBoolNameSuccess}]  
+      </Description>
+    </EntityComponent>		
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_BasicBooleanLocation_Success</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+	[RemoveGPSFromPlayers:true]
+	[RemoveGPSNames:{EventName}]
+	[RemoveGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	[TryContractSuccess:true]
+
+	
+	[UseChatBroadcast:true]
+	[ChatData:AaW_EventChat_Template]	
+	
+	[UseChatOverrideColor:true]
+	[ChatOverrideColor:Green]
+	[UseChatOverrideAuthor:true]
+	[ChatOverrideAuthor:{EventName}]
+	
+	[UseChatOverrideMessage:true]
+	[ChatOverrideMessage:Well done {PlayerName}! Here is your reward as promised]
+	[UseChatOverrideAudio:true]
+	[ChatOverrideAudio:MES-ShipyardSell]
+	
+	[ChatBroadcastToSpecificPlayers:true]
+	[ChatBroadcastPlayerConditionIds:PlayerCondition_DummyTagCheck]
+
+	[AddPlayerConditionPlayerTags:true]
+	[AddIncludedPlayerTags:@{InstanceId}]	
+
+
+
+
+      </Description>
+    </EntityComponent>	
+
+	<!-- End Required -->
+
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_BasicBooleanLocation_Init</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[UseEvent:true]
+		[UniqueEvent:true]	
+		[MinCooldownMs:2000]
+		[MaxCooldownMs:2001]	
+		[ActionExecution:All]
+		[ActionIds:AaW_EventActionTemplate_BasicBooleanLocation_CreateGPS]
+
+      </Description>
+	</EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_BasicBooleanLocation_CreateGPS</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+	[AddGPSToPlayers:true]
+	[AddGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	[UseGPSObjective:false]
+	
+	[GPSNames:{EventName}]
+	[GPSVector3Ds:{EventCoords}]
+
+	[GPSColors:{X:255 Y:178 Z:112}]
+	
+	[AddPlayerConditionPlayerTags:true]
+	[AddIncludedPlayerTags:@{InstanceId}]	
+
+
+	[UseChatBroadcast:true]
+	[ChatData:{LYRA_ContractAccept}]	
+	[ChatBroadcastToSpecificPlayers:true]
+	[ChatBroadcastPlayerConditionIds:PlayerCondition_DummyTagCheck]
+
+      </Description>
+    </EntityComponent>	
+	
+			
+	
+
+	
+	
+
+
+
+
+	
+  </EntityComponents>
+</Definitions>
+

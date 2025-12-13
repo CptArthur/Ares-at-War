@@ -6,6 +6,8 @@ using System.Text;
 using AresAtWar.Command;
 using AresAtWar.Logging;
 using AresAtWar.War;
+using AresAtWar.SessionCore;
+using AresAtWar.API;
 namespace AaWSyncManager
 {
 	public static class ChatManager
@@ -90,8 +92,19 @@ namespace AaWSyncManager
 				MyAPIGateway.Utilities.SetVariable<bool>("AaWStoryEvents", false);
 			}
 
+            if (msg.EndsWith(".RefreshStores", StringComparison.OrdinalIgnoreCase))
+            {
+                commandfound = true;
+                MyVisualScriptLogicProvider.ShowNotification("Refreshing Stores", 5000, "White", identity);
+				
+				AaWSessionCore.MESApi.SendBehaviorCommand(new List<string> { "AaW_Command_StoreRefresh" }, new VRageMath.Vector3D(0,0,0));
 
-			if (sb.ToString() == null)
+            }
+
+
+
+
+            if (sb.ToString() == null)
 				return;
 
 

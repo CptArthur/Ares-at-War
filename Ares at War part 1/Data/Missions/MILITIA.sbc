@@ -66,7 +66,7 @@
 
 	[CheckFalseBooleans:true]
 	[AllowAnyFalseBoolean:false]
-	[FalseBooleans:GC_UraniumBaseDestroyed]  
+	[FalseBooleans:GC_TechFacilityDestroyed]  
 
       </Description>
     </EntityComponent>	
@@ -74,7 +74,7 @@
    	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AaW_Mission_MILITIA_AttackGCUranium</SubtypeId>
+        <SubtypeId>AaW_Mission_MILITIA_AttackGCTechFacility</SubtypeId>
       </Id>
       <Description>
 
@@ -94,13 +94,13 @@
 	[PersistantEventConditionIds:MILITIA_EventCondition_MissionDestroyGCUraniumBase]
 
 	[ReplaceKeys:{StaticEncounterSandboxBoolName}]
-	[ReplaceValues:GC_UraniumBaseDestroyed]
+	[ReplaceValues:GC_TechFacilityDestroyed]
 	
 	[ReplaceKeys:{EventName}]
-	[ReplaceValues:Eliminate GC Uranium Base]	
+	[ReplaceValues:Eliminate GC Tech Facility]	
 
 	[ReplaceKeys:{EventCoords}]
-	[ReplaceValues:{X:-3663417.67756727 Y:-1300213.72937504 Z:-2642013.40267718}]	
+	[ReplaceValues:{X:-3657092.61070023 Y:-1296007.60645679 Z:-2641605.119877}]	
 
 		[Exclusive:true]
 			
@@ -114,6 +114,98 @@
 
 
 
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MILITIA_EventCondition_PersuadeAzuris</SubtypeId>
+      </Id>
+      <Description>
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+
+
+	[CheckTrueBooleans:true]
+	[TrueBooleans:GC_Martiallaw]  
+
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:AzurisDestroyed]  
+	[FalseBooleans:MILITIA_PersuadedAzuris]  	
+
+
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_AZURISFriendly]
+	[PlayerConditionIds:PlayerCondition_MILITIAFriendly]
+
+      </Description>
+    </EntityComponent>	
+
+
+
+
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_MILITIA_PersuadeAzuris</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:(MILITIA) Persuade Azuris to Join the MILITIA]
+	[Description:War with the corporations is inevitable. The colonies of Azuris, Bratis, and Thorrix must stand together under the banner of the MILITIA if they hope to defend themselves. With your support, we can begin gathering the weapons and supplies needed for the fight ahead. Once Azuris, Bratis, and Thorrix are convinced to commit, we will formally join the MILITIA and prepare for the conflict that's coming. REQUIRED FUNDS: 10m]
+	
+	[OverrideFaction:MILITIA]
+	
+	[Reward:0]
+	[Collateral:10000000]
+	[ReputationReward:500]
+	[FailReputationPrice:0]
+	[Duration:0]
+
+	[PersistantEventConditionIds:MILITIA_EventCondition_PersuadeAzuris]
+
+	[LeadPlayerConditionIds:PlayerCondition_AZURISFriendly]
+	[LeadPlayerConditionIds:PlayerCondition_MILITIAFriendly]
+
+	[InstanceEventGroupId:MissionGroup_ChatREPBooleanGPS]
+
+	[ReplacePairs:{ChangeBooleans1},true]
+	[ReplacePairs:{AddGPSToPlayers1},false]
+	[ReplacePairs:{UseChatBroadcast1},false]
+	[ReplacePairs:{ChangeReputationWithPlayers1},true]
+	[ReplacePairs:{ChangeBooleans2},false]
+	[ReplacePairs:{AddGPSToPlayers2},false]
+	[ReplacePairs:{UseChatBroadcast2},true]
+	[ReplacePairs:{ChangeReputationWithPlayers2},true]
+	[ReplacePairs:{ChangeBooleans3},false]
+	[ReplacePairs:{AddGPSToPlayers3},false]
+	[ReplacePairs:{UseChatBroadcast3},false]
+	[ReplacePairs:{ChangeReputationWithPlayers3},true]
+
+
+	[ReplacePairs:{SetBooleansTrue1},MILITIA_PersuadedAzuris]
+	[ReplacePairs:{ReputationChangeFaction1},Azuris]
+	[ReplacePairs:{ReputationChangeAmount1},500]
+
+	[ReplacePairs:{ChatOverrideAuthor2},MILITIA]
+	[ReplacePairs:{ChatOverrideMessage2},Great Work {PlayerName}. Azuris joining our cause will greatly strengthen our efforts.]
+
+	[ReplacePairs:{ReputationChangeFaction2},MILITIA]
+	[ReplacePairs:{ReputationChangeAmount2},500]
+
+	[ReplacePairs:{ReputationChangeFaction3},UNION]
+	[ReplacePairs:{ReputationChangeAmount3},-100]
+
+
+
+		[Exclusive:true]
+			
+      </Description>
+    </EntityComponent> 
 
 
 
@@ -121,7 +213,11 @@
 
 
 
-	<!-- Old-->
+
+
+
+
+	<!--
 	
  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -244,7 +340,7 @@
     </EntityComponent> 		
 	
 	
-	
+	-->
 	
 	
 	

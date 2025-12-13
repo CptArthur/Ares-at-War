@@ -59,12 +59,48 @@
 		
         [ManuallyActivateTrigger:true]
 		[ManuallyActivatedTriggerTags:StoreRefresh]
+[ManuallyActivatedTriggerTags:StoreRefreshIO]
     [ForceManualTriggerActivation:true]
       </Description>
     </EntityComponent>
 
 
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Trigger_StoreRefreshCommand</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Type:CommandReceived]
+        [CommandReceiveCode:AaW_StoreRefresh]
+
+        [MaxActions:-1]
+        [Actions:AaW_Common_Action_StoreRefreshCommand]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Common_Action_StoreRefreshCommand</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:StoreRefresh]
+        [ManuallyActivatedTriggerTags:StoreRefreshIO]
+        [ForceManualTriggerActivation:true]
+
+
+      </Description>
+    </EntityComponent>
 
 
 

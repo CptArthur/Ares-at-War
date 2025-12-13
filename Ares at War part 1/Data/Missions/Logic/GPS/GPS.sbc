@@ -9,18 +9,38 @@ Variables:
 {GPSCoords}
 On start Send GPS to Players; 
 PlayerNear Watcher 
-	
+
+
+Required
+{ChangeBooleans1}
+{AddGPSToPlayers1}
+{UseChatBroadcast1}
+{ChangeReputationWithPlayers1}
+
+
+Optional
+{SetBooleansTrue1}
+{SetBooleansFalse1}
+{GPSName1}
+{GPSCoord1}
+{ChatOverrideAuthor1}
+{ChatOverrideMessage1}
+
+{ReputationChangeFaction1}
+{ReputationChangeAmount1}
+
+
  -->
 	
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MissionGroup_GPS</SubtypeId>
+          <SubtypeId>MissionGroup_ChatREPBooleanGPS</SubtypeId>
       </Id>
       <Description>
 		[MES Event TemplateGroup]
 		
-		[TemplateEventIds:AaW_EventTemplate_GPS_Init]
+		[TemplateEventIds:AaW_EventTemplate_ChatREPBooleanGPS_Init]
       </Description>
 	</EntityComponent>	
 	
@@ -29,20 +49,22 @@ PlayerNear Watcher
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_EventTemplate_GPS_Init</SubtypeId>
+          <SubtypeId>AaW_EventTemplate_ChatREPBooleanGPS_Init</SubtypeId>
       </Id>
       <Description>
 
 		[MES Event Template]
 		[UseEvent:true]
 		[UniqueEvent:true]	
-		[MinCooldownMs:2000]
-		[MaxCooldownMs:2001]	
+		[MinCooldownMs:10000]
+		[MaxCooldownMs:10001]	
 		[ActionExecution:Sequential]
 		[TimeUntilNextActionMs:1100]
 		
-		[ActionIds:AaW_EventActionTemplate_GPS_CreateGPS]
-		[ActionIds:AaW_EventActionTemplate_GPS_CloseInstance]
+		[ActionIds:AaW_EventActionTemplate_ChatREPBooleanGPS_Action1]
+		[ActionIds:AaW_EventActionTemplate_ChatREPBooleanGPS_Action2]
+		[ActionIds:AaW_EventActionTemplate_ChatREPBooleanGPS_Action3]
+		[ActionIds:AaW_EventActionTemplate_ChatREPBooleanGPS_CloseInstance]
 
       </Description>
 	</EntityComponent>	
@@ -50,33 +72,159 @@ PlayerNear Watcher
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_EventActionTemplate_GPS_CreateGPS</SubtypeId>
+          <SubtypeId>AaW_EventActionTemplate_ChatREPBooleanGPS_Action1</SubtypeId>
       </Id>
       <Description>
 	[MES Event Action Template]
 
-	[AddGPSToPlayers:true]
+  [AddPlayerConditionPlayerTags:true]
+  [AddIncludedPlayerTags:@{ContractId}]
+
+  [ChangeReputationWithPlayers:{ChangeReputationWithPlayers1}]
+  [ReputationPlayerConditionIds:PlayerCondition_DummyTagCheck]
+  [ReputationChangeAmount:{ReputationChangeAmount1}]
+  [ReputationChangeFactions:{ReputationChangeFaction1}]
+  [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+
+  [ChangeBooleans:{ChangeBooleans1}]
+  [SetBooleansTrue:{SetBooleansTrue1}]
+  [SetBooleansFalse:{SetBooleansFalse1}]
+
+	[AddGPSToPlayers:{AddGPSToPlayers1}]
 	[AddGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
-	[UseGPSObjective:false]
-	
-	[GPSNames:{GPSName}]
-	[GPSVector3Ds:{GPSCoords}]
+	[GPSNames:{GPSName1}]
+	[GPSVector3Ds:{GPSCoord1}]
+
+    [UseChatBroadcast:{UseChatBroadcast1}]
+    [ChatData:AaW_EventChat_Template]
+    
+    [ChatBroadcastToSpecificPlayers:true]
+    [ChatBroadcastPlayerConditionIds:PlayerCondition_DummyTagCheck]
+
+    
+    [UseChatOverrideColor:true]
+    [ChatOverrideColor:Green]
+    
+    [UseChatOverrideAuthor:true]	
+    [ChatOverrideAuthor:{ChatOverrideAuthor1}]
+    
+    [UseChatOverrideMessage:true]
+    [ChatOverrideMessage:{ChatOverrideMessage1}]
 	
       </Description>
     </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_ChatREPBooleanGPS_Action2</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+  [AddPlayerConditionPlayerTags:true]
+  [AddIncludedPlayerTags:@{ContractId}]
+
+  [ChangeReputationWithPlayers:{ChangeReputationWithPlayers2}]
+  [ReputationPlayerConditionIds:PlayerCondition_DummyTagCheck]
+  [ReputationChangeAmount:{ReputationChangeAmount2}]
+  [ReputationChangeFactions:{ReputationChangeFaction2}]
+  [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+
+  [ChangeBooleans:{ChangeBooleans2}]
+  [SetBooleansTrue:{SetBooleansTrue2}]
+  [SetBooleansFalse:{SetBooleansFalse2}]
+
+	[AddGPSToPlayers:{AddGPSToPlayers2}]
+	[AddGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	[GPSNames:{GPSName2}]
+	[GPSVector3Ds:{GPSCoord2}]
+
+    [UseChatBroadcast:{UseChatBroadcast2}]
+    [ChatData:AaW_EventChat_Template]
+    
+    [ChatBroadcastToSpecificPlayers:true]
+    [ChatBroadcastPlayerConditionIds:PlayerCondition_DummyTagCheck]
+
+    
+    [UseChatOverrideColor:true]
+    [ChatOverrideColor:Green]
+    
+    [UseChatOverrideAuthor:true]	
+    [ChatOverrideAuthor:{ChatOverrideAuthor2}]
+    
+    [UseChatOverrideMessage:true]
+    [ChatOverrideMessage:{ChatOverrideMessage2}]
+	
+      </Description>
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_ChatREPBooleanGPS_Action3</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+
+  [AddPlayerConditionPlayerTags:true]
+  [AddIncludedPlayerTags:@{ContractId}]
+
+  [ChangeReputationWithPlayers:{ChangeReputationWithPlayers3}]
+  [ReputationPlayerConditionIds:PlayerCondition_DummyTagCheck]
+  [ReputationChangeAmount:{ReputationChangeAmount3}]
+  [ReputationChangeFactions:{ReputationChangeFaction3}]
+  [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+
+  [ChangeBooleans:{ChangeBooleans3}]
+  [SetBooleansTrue:{SetBooleansTrue3}]
+  [SetBooleansFalse:{SetBooleansFalse3}]
+
+	[AddGPSToPlayers:{AddGPSToPlayers3}]
+	[AddGPSPlayerConditionIds:PlayerCondition_DummyTagCheck]
+	[GPSNames:{GPSName3}]
+	[GPSVector3Ds:{GPSCoord3}]
+
+    [UseChatBroadcast:{UseChatBroadcast3}]
+    [ChatData:AaW_EventChat_Template]
+    
+    [ChatBroadcastToSpecificPlayers:true]
+    [ChatBroadcastPlayerConditionIds:PlayerCondition_DummyTagCheck]
+
+    
+    [UseChatOverrideColor:true]
+    [ChatOverrideColor:Green]
+    
+    [UseChatOverrideAuthor:true]	
+    [ChatOverrideAuthor:{ChatOverrideAuthor3}]
+    
+    [UseChatOverrideMessage:true]
+    [ChatOverrideMessage:{ChatOverrideMessage3}]
+	
+      </Description>
+    </EntityComponent>	
+
+
+
+
+
 	
 	
 	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AaW_EventActionTemplate_GPS_CloseInstance</SubtypeId>
+          <SubtypeId>AaW_EventActionTemplate_ChatREPBooleanGPS_CloseInstance</SubtypeId>
       </Id>
       <Description>
 	[MES Event Action Template]
 	
 	[RemoveThisInstanceGroup:true]
-	[TryContractSuccess:true]
+	[TryContractFail:true]
 		</Description>
     </EntityComponent>		
 	

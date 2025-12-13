@@ -170,7 +170,7 @@ namespace AresAtWar.SessionCore
                 MESApi.ToggleSpawnGroupEnabled("NPC-SY-LG-SpaceCargoShips", false);
                 MESApi.ToggleSpawnGroupEnabled("NPC-SY-LG-SpaceRandomEncounters", false);
                 MESApi.ToggleSpawnGroupEnabled("NPC-SY-SG-SpaceRandomEncounters", false);
-
+                MESApi.ChatCommand("/MES.Settings.Combat.EnableCombatPhaseSystem.true", MatrixD.Identity, 0, 0);
                 WarSim.Init();
 
 
