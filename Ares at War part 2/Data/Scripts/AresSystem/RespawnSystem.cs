@@ -99,6 +99,8 @@ namespace RespawnSystem
             //MyAPIGateway.Utilities.ShowMessage("AaW Debug",$"{player.DisplayName} with {player.IdentityId} == {playerId} spawned {RespawnShipPrefabName}");
 
 
+            bool foundship = false;
+
             if (RespawnShipPrefabName == "RespawnShip-S27")
             {
                 Vector3D position = new Vector3D(-1971126.63, -1015993.3, -2313164.75);
@@ -111,7 +113,7 @@ namespace RespawnSystem
                 else if (MyAPIGateway.Multiplayer.IsServer)
                     MyAPIGateway.Multiplayer.SendMessageTo(modId, Encoding.ASCII.GetBytes("start"), MyVisualScriptLogicProvider.GetSteamId(player.IdentityId), true);
 
-
+                foundship = true;
             }
 
 
@@ -125,6 +127,9 @@ namespace RespawnSystem
                     Fade.fade(true);
                 else if (MyAPIGateway.Multiplayer.IsServer)
                     MyAPIGateway.Multiplayer.SendMessageTo(modId, Encoding.ASCII.GetBytes("start"), MyVisualScriptLogicProvider.GetSteamId(player.IdentityId), true);
+
+                foundship = true;
+
             }
 
 
@@ -147,17 +152,27 @@ namespace RespawnSystem
                         Fade.fade(true);
                     else if (MyAPIGateway.Multiplayer.IsServer)
                         MyAPIGateway.Multiplayer.SendMessageTo(modId, Encoding.ASCII.GetBytes("start"), MyVisualScriptLogicProvider.GetSteamId(player.IdentityId), true);
+
+                    foundship = true;
+
                 }
             }
 
             if (RespawnShipPrefabName == "ITC Sollieman (Crashed)")
             {
                 respawndata.TLL = MyAPIGateway.Session.GameplayFrameCounter;
+                foundship = true;
             }
 
+            if (RespawnShipPrefabName == "WRK-B2 Beeriev Carrier")
+            {
+                MyAPIGateway.Utilities.ShowMessage("AaW", "WRK-B2 Beeriev Carrier regristed");
+                respawndata.TLL = MyAPIGateway.Session.GameplayFrameCounter + 160;
+                foundship = true;
+            }
 
-
-            _RespawnData.Add(respawndata);
+            if (foundship)
+                _RespawnData.Add(respawndata);
 
 
         }
@@ -224,6 +239,44 @@ namespace RespawnSystem
                 grid.ConvertToStatic();
                 return;
             }
+
+            
+
+            if (RespawnShipPrefabName == "WRK-B2 Beeriev Carrier")
+            {
+                var HeightOffSet = 3000;
+
+                var planet = MyGamePruningStructure.GetClosestPlanet(AgarisCenter);
+
+
+
+                Vector3D position = planet.GetClosestSurfacePointGlobal(AgarisCenter + (MyUtils.GetRandomVector3Normalized() * planet.AverageRadius));
+
+                Vector3 vector = MyAPIGateway.GravityProviderSystem.CalculateNaturalGravityInPoint(position);
+                Vector3D up = -Vector3D.Normalize(vector);
+                position += (HeightOffSet * up);
+
+                //MyVisualScriptLogicProvider.SetWeatherP("/Weather SandStormHeavy", "SandStormHeavy", 4000, position);
+                Vector3D forward = MyUtils.GetRandomPerpendicularVector(up);
+                MatrixD matrix = MatrixD.CreateWorld(position, forward, up);
+
+                var gridWorldMatrix = MatrixD.Invert(block.PositionComp.LocalMatrixRef) * matrix;
+
+
+                MatrixD pitch = MatrixD.CreateFromAxisAngle(gridWorldMatrix.Right, MathHelper.ToRadians(2));
+                MatrixD roll = MatrixD.CreateFromAxisAngle(gridWorldMatrix.Forward, MathHelper.ToRadians(-10));
+
+                MatrixD finalMatrix = pitch * roll * gridWorldMatrix;
+
+
+                grid.Teleport(finalMatrix);
+                grid.PositionComp.SetWorldMatrix(ref finalMatrix, skipTeleportCheck: true);
+
+            }
+
+
+
+
 
 
             if (RespawnShipPrefabName == "ITC Sollieman (Crashed)")

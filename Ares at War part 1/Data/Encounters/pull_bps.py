@@ -6,7 +6,7 @@ BP_DIR = r"C:\Users\maart\AppData\Roaming\SpaceEngineers\Blueprints\local\#AaWPr
 factions_list = ["AnF","CIVILIAN", "CRUSADERS", "DRA",
                  "GC","IRONFIST", "ITC", "MILITIA",
                  "REMNANTS", "SCRAP", "SHIVAN",
-                 "SPRT", "UNION", "UNKN"]
+                 "SPRT", "UNION", "UNKN", "SHIPPERS"]
 
 
 def find_faction_in_string(s):
@@ -61,11 +61,11 @@ def main():
 
         faction = find_faction_in_string(bp_name)
 
-        # Default target
-        if faction:
-            target = os.path.join(faction, f"[{faction}]-Prefabs")
+        
+        if faction == "Prefabs":
+            target = "Prefabs"
         else:
-            target = "Prefabs"  # Fallback if no faction found
+            target = os.path.join(faction, f"[{faction}]-Prefabs")
 
         full_path = os.path.join(src, filename)
 

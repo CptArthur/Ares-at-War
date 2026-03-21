@@ -63,16 +63,56 @@ def CreateXml(Name:str,Ingot1, Ingot2,Ingot3,Ingot4,Ingot5,Component1,Component2
       <ItemSubtypeIds> 
         <ItemSubtypeId>Stone</ItemSubtypeId>  
       </ItemSubtypeIds> 
-
       <Offer>
         <CustomPrice>5</CustomPrice>
-
         <MinAmount>190000</MinAmount>
         <MaxAmount>250000</MaxAmount>
       </Offer>
-
     </StoreItem>
 
+    <StoreItem>
+      <StoreItemId>FoodContainerItem</StoreItemId>
+      <ItemType>Item</ItemType>
+       <ItemSubtypeIds> 
+        <ItemSubtypeId>Algae</ItemSubtypeId>  
+        <ItemSubtypeId>Grain</ItemSubtypeId>     
+      </ItemSubtypeIds>      
+      <Offer>
+        <MinPriceMultiplier>500</MinPriceMultiplier>
+        <MaxPriceMultiplier>600</MaxPriceMultiplier>
+        <MinAmount>10000</MinAmount>
+        <MaxAmount>50000</MaxAmount>
+      </Offer>
+      <Order>
+        <MinPriceMultiplier>100</MinPriceMultiplier>
+        <MaxPriceMultiplier>110</MaxPriceMultiplier>
+        <MinAmount>40000</MinAmount>
+        <MaxAmount>50000</MaxAmount>
+      </Order>
+    </StoreItem>
+
+    <StoreItem>
+      <StoreItemId>FoodContainerConsumable</StoreItemId>
+      <ItemType>Consumable</ItemType>
+       <ItemSubtypeIds> 
+        <ItemSubtypeId>Mushrooms</ItemSubtypeId>  
+        <ItemSubtypeId>Vegetables</ItemSubtypeId>     
+        <ItemSubtypeId>Fruit</ItemSubtypeId>  
+        <ItemSubtypeId>Fish</ItemSubtypeId>  
+      </ItemSubtypeIds>      
+      <Offer>
+        <MinPriceMultiplier>500</MinPriceMultiplier>
+        <MaxPriceMultiplier>600</MaxPriceMultiplier>
+        <MinAmount>10000</MinAmount>
+        <MaxAmount>50000</MaxAmount>
+      </Offer>
+      <Order>
+        <MinPriceMultiplier>100</MinPriceMultiplier>
+        <MaxPriceMultiplier>110</MaxPriceMultiplier>
+        <MinAmount>40000</MinAmount>
+        <MaxAmount>50000</MaxAmount>
+      </Order>
+    </StoreItem>
 
     <StoreItem>
       <StoreItemId>Ingot1</StoreItemId>
@@ -476,9 +516,7 @@ def CreateXml(Name:str,Ingot1, Ingot2,Ingot3,Ingot4,Ingot5,Component1,Component2
     </StoreItem>
 
     
-
-
-
+ 
     <StoreItem>
       <StoreItemId>HydrogenOffer</StoreItemId>
       <ItemType>Hydrogen</ItemType>
@@ -946,6 +984,7 @@ def CreateXml_Dynamic(Name:str,Ingot1, Ingot2,Ingot3,Ingot4,Ingot5,Component1,Co
         <MaxAmount>100</MaxAmount>
       </Order>
     </StoreItem>
+ 
 
     <StoreItem>
       <StoreItemId>HydrogenOffer</StoreItemId>

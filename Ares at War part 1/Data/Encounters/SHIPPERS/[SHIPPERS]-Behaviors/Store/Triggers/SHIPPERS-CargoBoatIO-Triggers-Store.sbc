@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+  <!-- [Triggers:SHIPPERS_Trigger_Static_PopulateStores_CargoBoatIO] -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SHIPPERS_Trigger_Static_PopulateStores_CargoBoatIO</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+        [Tags:StoreRefreshIO]
+        [UseTrigger:true]
+        [Type:Timer]
+        [MinCooldownMs:1200000]
+        [MaxCooldownMs:1200001]
+        [Conditions:SHIPPERS_Condition_Static_PopulateStores_CargoBoatIO]
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:SHIPPERS_Action_Static_PopulateStores_CargoBoatIO]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SHIPPERS_Condition_Static_PopulateStores_CargoBoatIO</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+              
+        [UseConditions:true]
+        
+        [CheckAllLoadedModIDs:true]
+        [AllModIDsToCheck:2344068716]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>SHIPPERS_Action_Static_PopulateStores_CargoBoatIO</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ApplyStoreProfiles:true]
+        [ClearStoreContentsFirst:true]
+
+    
+    
+
+    
+
+
+    [StoreBlocks:Store Military]
+      [StoreProfiles:SHIPPERS_StoreProfile_CargoBoatIO_Military]
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+            
+
+      [StoreBlocks:Store Fuel]
+      [StoreProfiles:SHIPPERS_StoreProfile_CargoBoatIO_Fuel]
+  
+
+      [AddCustomDataToBlocks:true]
+      [CustomDataBlockNames:EconomySurvival Store Water Vehicles,EconomySurvival Store Land Vehicles,EconomySurvival Store Air Vehicles,EconomySurvival Store Space Vehicles]
+      [CustomDataFiles:SHIPPERS_Water_Vehicles.xml]
+      [CustomDataFiles:SHIPPERS_Land_Vehicles.xml]
+      [CustomDataFiles:SHIPPERS_Air_Vehicles.xml]
+      [CustomDataFiles:SHIPPERS_Space_Vehicles.xml]  
+  
+
+      [ApplyContractProfiles:true]
+      [ClearContractContentsFirst:true]
+      [ContractBlocks:Contracts]
+      [ContractBlockProfiles:SHIPPERS_ContractBlockProfile_CargoBoatIO]
+   
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+      </Description>
+    </EntityComponent>
+  </EntityComponents>
+</Definitions>

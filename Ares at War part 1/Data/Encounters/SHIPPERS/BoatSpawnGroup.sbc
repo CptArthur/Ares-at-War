@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SpawnGroups>
+
+
+
+
+    <SpawnGroup>
+      <Id>
+        <TypeId>SpawnGroupDefinition</TypeId>
+        <SubtypeId>SHIPPERS-BoatCargoShip</SubtypeId>
+      </Id>
+      <Description>
+
+        [Modular Encounters SpawnGroup]
+
+		[PlanetaryInstallation:true]
+    [PlanetaryInstallationChance:100]
+
+		[InstallationSpawnsOnWaterSurface:true]
+		[InstallationSpawnsOnDryLand:false]
+		
+		[IgnoreCombatPhase:true]
+		[ZoneConditions:ZoneCondition_ZoneAaW]	
+		
+
+		[FactionOwner:SHIPPERS]	
+
+    [MinWaterDepth:150]
+
+			[UseRandomNameGenerator:true]
+			[RandomGridNamePrefix:(NPC-SafeToDelete)]		
+			[RandomGridNamePattern:ColorAdjective FishNoun]
+			[ReplaceAntennaNameWithRandomizedName:Antenna]
+			[ReplaceAntennaHudTextInsteadOfName:true]
+      [UniqueEncounter:true]
+
+
+        [UseRivalAi:true]
+        [RivalAiReplaceRemoteControl:true]
+
+
+	
+
+      </Description>
+      <IsPirate>true</IsPirate>
+      <Frequency>5.0</Frequency>
+      <Prefabs>
+        <Prefab SubtypeId="SHIPPERS - LCC3">
+          <Position>
+            <X>0.0</X>
+            <Y>0.0</Y>
+            <Z>0.0</Z>
+          </Position>
+          <Speed>25</Speed>
+          <Behaviour>SHIPPERS_WaterMerchant_Behavior</Behaviour>
+        </Prefab>
+      </Prefabs>
+    </SpawnGroup>
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+	</SpawnGroups>
+</Definitions>

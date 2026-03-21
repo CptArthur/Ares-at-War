@@ -34,6 +34,71 @@ SecurityFrontScore
  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
+          <SubtypeId>BRATIS_EventCondition_UNIONNotYetLaunched</SubtypeId>
+      </Id>
+      <Description>
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:UNION_Launched]  
+
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_BRATISFriendly]
+
+      </Description>
+    </EntityComponent>	
+
+
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>THORRIX_EventCondition_UNIONNotYetLaunched</SubtypeId>
+      </Id>
+      <Description>
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:UNION_Launched]  
+
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_THORRIXFriendly]
+
+      </Description>
+    </EntityComponent>	
+
+
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>SUNSETCITY_EventCondition_UNIONNotYetLaunched</SubtypeId>
+      </Id>
+      <Description>
+     [MES Event Condition]
+	  
+	[UseAnyPassingCondition:false]
+
+	[CheckFalseBooleans:true]
+	[AllowAnyFalseBoolean:false]
+	[FalseBooleans:UNION_Launched]  
+
+	[CheckPlayerCondition:true]
+	[PlayerConditionIds:PlayerCondition_SUNSETCITYFriendly]
+
+      </Description>
+    </EntityComponent>	
+
+
+
+
+ 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
           <SubtypeId>UNION_EventCondition_UNIONLaunched</SubtypeId>
       </Id>
       <Description>
@@ -81,6 +146,24 @@ SecurityFrontScore
 
 
  <!-- Launch missions -->
+
+
+ <!--
+1. Azuris
+2. Thorrix
+3. Bratis
+4. Sunset City
+
+
+AaW_Mission_Azuris_LaunchUNION
+AaW_Mission_Thorrix_LaunchUNION
+AaW_Mission_Bratis_LaunchUNION
+AaW_Mission_SunsetCity_LaunchUNION
+
+ -->
+
+
+
    	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -105,15 +188,101 @@ SecurityFrontScore
 
 	[LeadPlayerConditionIds:PlayerCondition_AZURISFriendly]
 
+	[Exclusive:true]
+	
+	[InstanceEventGroupId:MissionGroup_LaunchUNION]
+      </Description>
+    </EntityComponent>
+
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_Thorrix_LaunchUNION</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:(UNION) Fund the Democratic Movement of Agaris Iniative]
+	[Description:We need to break up corporate monopolies and restore power to the colonies of Agaris. It's time to put people ahead of profits and ensure fair opportunity for all. Azuris, Bratis, Thorrix, and Sunset City can form the core of a new Union of Agaris, but they can't stand up to these forces alone. We'll need outside backing from either the Sol Cooperative or the Shippers to make the first move. With your help we can start the initiative, quietly at first, carefully, but with a clear purpose. REQUIRED FUNDS: 15m]
+	
+	[OverrideFaction:UNION]
+	
+	[Reward:0]
+	[Collateral:15000000]
+	[ReputationReward:1200]
+	[FailReputationPrice:0]
+	[Duration:0]
+
+	[PersistantEventConditionIds:THORRIX_EventCondition_UNIONNotYetLaunched]
+
+	[LeadPlayerConditionIds:PlayerCondition_THORRIXFriendly]
 
 	[Exclusive:true]
 	
 	[InstanceEventGroupId:MissionGroup_LaunchUNION]
-
       </Description>
     </EntityComponent>
 
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_Bratis_LaunchUNION</SubtypeId>
+      </Id>
+      <Description>
 
+    [MES Mission]
+	
+	[Title:(UNION) Fund the Democratic Movement of Agaris Iniative]
+	[Description:We need to break up corporate monopolies and restore power to the colonies of Agaris. It's time to put people ahead of profits and ensure fair opportunity for all. Azuris, Bratis, Thorrix, and Sunset City can form the core of a new Union of Agaris, but they can't stand up to these forces alone. We'll need outside backing from either the Sol Cooperative or the Shippers to make the first move. With your help we can start the initiative, quietly at first, carefully, but with a clear purpose. REQUIRED FUNDS: 15m]
+	
+	[OverrideFaction:UNION]
+	
+	[Reward:0]
+	[Collateral:15000000]
+	[ReputationReward:1200]
+	[FailReputationPrice:0]
+	[Duration:0]
+
+	[PersistantEventConditionIds:BRATIS_EventCondition_UNIONNotYetLaunched]
+
+	[LeadPlayerConditionIds:PlayerCondition_BRATISFriendly]
+
+	[Exclusive:true]
+	
+	[InstanceEventGroupId:MissionGroup_LaunchUNION]
+      </Description>
+    </EntityComponent>
+
+   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Mission_SunsetCity_LaunchUNION</SubtypeId>
+      </Id>
+      <Description>
+
+    [MES Mission]
+	
+	[Title:(UNION) Fund the Democratic Movement of Agaris Iniative]
+	[Description:We need to break up corporate monopolies and restore power to the colonies of Agaris. It's time to put people ahead of profits and ensure fair opportunity for all. Azuris, Bratis, Thorrix, and Sunset City can form the core of a new Union of Agaris, but they can't stand up to these forces alone. We'll need outside backing from either the Sol Cooperative or the Shippers to make the first move. With your help we can start the initiative, quietly at first, carefully, but with a clear purpose. REQUIRED FUNDS: 15m]
+	
+	[OverrideFaction:UNION]
+	
+	[Reward:0]
+	[Collateral:15000000]
+	[ReputationReward:1200]
+	[FailReputationPrice:0]
+	[Duration:0]
+
+	[PersistantEventConditionIds:SUNSETCITY_EventCondition_UNIONNotYetLaunched]
+
+	[LeadPlayerConditionIds:PlayerCondition_SUNSETCITYFriendly]
+
+	[Exclusive:true]
+	
+	[InstanceEventGroupId:MissionGroup_LaunchUNION]
+      </Description>
+    </EntityComponent>
 
 
 

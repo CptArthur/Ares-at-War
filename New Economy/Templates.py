@@ -102,6 +102,12 @@ def GetStoreSettlement(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngo
 
         [ItemsRequireInventory:false]
 
+        [Orders:Item/Grain]
+        [Orders:Consumable/Mushrooms]
+        [Orders:Consumable/Vegetables]
+        [Orders:Consumable/Fruit]
+        [Orders:Consumable/Fish]
+
         {GenerateProfileIngotOre(Ingots,TradeIngots)}
 
         [Offers:Ingot/Stone] 
@@ -114,8 +120,6 @@ def GetStoreSettlement(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngo
         [Offers:Component/AlkalinePowerCell] 
         [Offers:Component/Girder] 
         [Offers:Component/InteriorPlate] 
-
-
       </Description>
 
     </EntityComponent>"""
