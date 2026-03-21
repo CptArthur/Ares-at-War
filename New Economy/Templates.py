@@ -190,6 +190,9 @@ def GetStoreMilitary(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngots
 
 
 
+
+
+
 #Special
 def GetStoreUniversity(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngots:str)->str:  
     string = f"""

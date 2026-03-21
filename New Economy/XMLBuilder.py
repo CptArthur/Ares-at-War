@@ -600,6 +600,54 @@ def CreateXml_Dynamic(Name:str,Ingot1, Ingot2,Ingot3,Ingot4,Ingot5,Component1,Co
     </StoreItem>
 
     <StoreItem>
+      <StoreItemId>FoodContainerItem</StoreItemId>
+      <ItemType>Item</ItemType>
+       <ItemSubtypeIds> 
+        <ItemSubtypeId>Algae</ItemSubtypeId>  
+        <ItemSubtypeId>Grain</ItemSubtypeId>     
+      </ItemSubtypeIds>      
+      <Offer>
+        <MinPriceMultiplier>60</MinPriceMultiplier>
+        <MaxPriceMultiplier>80</MaxPriceMultiplier>
+        <MinAmount>100</MinAmount>
+        <MaxAmount>500</MaxAmount>
+      </Offer>
+      <Order>
+        <MinPriceMultiplier>100</MinPriceMultiplier>
+        <MaxPriceMultiplier>110</MaxPriceMultiplier>
+        <MinAmount>400</MinAmount>
+        <MaxAmount>500</MaxAmount>
+      </Order>
+    </StoreItem>
+
+    
+    <StoreItem>
+      <StoreItemId>FoodContainerConsumable</StoreItemId>
+      <ItemType>Consumable</ItemType>
+       <ItemSubtypeIds> 
+        <ItemSubtypeId>Mushrooms</ItemSubtypeId>  
+        <ItemSubtypeId>Vegetables</ItemSubtypeId>     
+        <ItemSubtypeId>Fruit</ItemSubtypeId>  
+        <ItemSubtypeId>Fish</ItemSubtypeId>  
+      </ItemSubtypeIds>      
+      <Offer>
+        <MinPriceMultiplier>60</MinPriceMultiplier>
+        <MaxPriceMultiplier>80</MaxPriceMultiplier>
+        <MinAmount>100</MinAmount>
+        <MaxAmount>500</MaxAmount>
+      </Offer>
+      <Order>
+        <MinPriceMultiplier>100</MinPriceMultiplier>
+        <MaxPriceMultiplier>110</MaxPriceMultiplier>
+        <MinAmount>400</MinAmount>
+        <MaxAmount>500</MaxAmount>
+      </Order>
+    </StoreItem>
+
+
+
+
+    <StoreItem>
       <StoreItemId>Ingot1</StoreItemId>
       <ItemType>Ingot</ItemType>{Ingot1}
       <Offer>

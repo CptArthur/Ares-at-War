@@ -120,6 +120,50 @@ def GetStoreMilitary(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngots
 
     return string    
 
+#Special
+def GetStoreFishingBoat(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIngots:str)->str:  
+    string = f"""
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>{Faction}_StoreProfile_{Name}_FishingBoat</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Store]
+
+        [FileSource:AaW_StoreItems_{XML_Name}.xml]
+        
+        [MinOfferItems:2]
+        [MaxOfferItems:5]
+        [MinOrderItems:7]
+        [MaxOrderItems:11]
+
+        [ItemsRequireInventory:false]
+
+        [ItemsRequireInventory:false]
+
+        [RequiredOrders:Component/SteelPlate] 
+
+        [RequiredOffers:Consumable/Fish]
+        [Offers:Component/Construction] 
+        [Offers:Component/Computer] 
+        [Offers:Component/Motor] 
+        [Offers:Component/SolarCell] 
+        [Offers:Component/AlkalinePowerCell] 
+        [Offers:Component/Girder] 
+        [Offers:Component/InteriorPlate] 
+
+          
+      </Description>
+
+    </EntityComponent>"""
+
+    return string 
+
+
+
+
 def GetStoreScrap(XML_Name:str,Faction:str, Name:str)->str:  
     string = f"""
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

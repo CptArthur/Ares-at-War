@@ -27,6 +27,13 @@ def GetStoreMilitary(Faction:str, Name:str)->str:
       [StoreProfiles:{Faction}_StoreProfile_{Name}_Military]"""
     return string    
     
+def GetStoreFishingBoat(Faction:str, Name:str)->str:  
+    string = f"""[StoreBlocks:Store FishingBoat]
+      [StoreProfiles:{Faction}_StoreProfile_{Name}_FishingBoat]"""
+    return string    
+
+
+
 #Special
 def GetStoreTradestation(Faction:str, Name:str)->str:  
     string = f"""[StoreBlocks:Store Tradestation]

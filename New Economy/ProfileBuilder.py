@@ -15,7 +15,6 @@ def CreateStoreItems(Faction, Name:str,XML_Name: str, StoresProfiles:str,TradeIn
      {Temp.GetStoreMilitary(XML_Name,Faction,Name,Ingots,TradeIngots) if "Military" in StoresProfiles else ""}
 
 
-
     {Temp.GetStoreVendingMachine(XML_Name,Faction,Name) if "Vending Machine" in StoresProfiles else ""}
     {Temp.GetStoreIngot(XML_Name,Faction,Name,Ingots,TradeIngots) if "Ingot" in StoresProfiles else ""}
     {Temp.GetStoreCiv(XML_Name,Faction,Name) if "Civ" in StoresProfiles else ""}
@@ -103,7 +102,10 @@ def CreateStoreItems_Dynamic(Faction, Name:str,XML_Name: str, StoresProfiles:str
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
      {Temp_Dynamic.GetStoreMilitary(XML_Name,Faction,Name,Ingots,TradeIngots) if "Military" in StoresProfiles else ""}
+     {Temp_Dynamic.GetStoreFishingBoat(XML_Name,Faction,Name,Ingots,TradeIngots) if "FishingBoat" in StoresProfiles else ""}
+     
 
+     GetStoreFishingBoat
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -211,6 +213,8 @@ def CreateTriggers(Faction, Name:str, IO, StoresProfiles):
 
 
     {Trigger.GetStoreMilitary(Faction,Name) if "Military" in StoresProfiles else ""}
+    {Trigger.GetStoreFishingBoat(Faction,Name) if "FishingBoat" in StoresProfiles else ""}
+
     {Trigger.GetStoreVendingMachine(Faction,Name) if "Vending Machine" in StoresProfiles else ""}
     {Trigger.GetStoreIngot(Faction,Name) if "Ingot" in StoresProfiles else ""}
     {Trigger.GetStoreCiv(Faction,Name) if "Civ" in StoresProfiles else ""}
