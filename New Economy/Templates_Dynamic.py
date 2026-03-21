@@ -146,13 +146,7 @@ def GetStoreFishingBoat(XML_Name:str,Faction:str, Name:str, Ingots:list,TradeIng
         [RequiredOrders:Component/SteelPlate] 
 
         [RequiredOffers:Consumable/Fish]
-        [Offers:Component/Construction] 
-        [Offers:Component/Computer] 
-        [Offers:Component/Motor] 
-        [Offers:Component/SolarCell] 
-        [Offers:Component/AlkalinePowerCell] 
-        [Offers:Component/Girder] 
-        [Offers:Component/InteriorPlate] 
+
 
           
       </Description>
