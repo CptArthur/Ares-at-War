@@ -171,6 +171,41 @@ namespace AresAtWar.SessionCore
                 MESApi.ToggleSpawnGroupEnabled("NPC-SY-LG-SpaceRandomEncounters", false);
                 MESApi.ToggleSpawnGroupEnabled("NPC-SY-SG-SpaceRandomEncounters", false);
                 MESApi.ChatCommand("/MES.Settings.Combat.EnableCombatPhaseSystem.true", MatrixD.Identity, 0, 0);
+
+                //MESApi.ChatCommand("/MES.Settings.PlanetaryInstallations.MaxShipsPerArea.1", MatrixD.Identity, 0, 0);
+
+
+                MESApi.ChatCommand("/MES.Settings.PlanetaryInstallations.TimeoutSpawnLimit.1", MatrixD.Identity, 0, 0);
+                MESApi.ChatCommand("/MES.Settings.PlanetaryInstallations.TimeoutDuration.1800", MatrixD.Identity, 0, 0);
+                MESApi.ChatCommand("/MES.Settings.PlanetaryInstallations.TimeoutRadius.45000", MatrixD.Identity, 0, 0);
+                MESApi.ChatCommand("/MES.Settings.PlanetaryInstallations.MaxShipsPerArea.1", MatrixD.Identity, 0, 0);
+                MESApi.ChatCommand("/MES.Settings.PlanetaryInstallations.AreaSize.50000", MatrixD.Identity, 0, 0);
+
+                MESApi.ChatCommand("/MES.Settings.PlanetaryCargoShips.TimeoutSpawnLimit.1", MatrixD.Identity, 0, 0);
+                MESApi.ChatCommand("/MES.Settings.PlanetaryCargoShips.TimeoutDuration.1800", MatrixD.Identity, 0, 0);
+                MESApi.ChatCommand("/MES.Settings.PlanetaryCargoShips.TimeoutRadius.45000", MatrixD.Identity, 0, 0);
+                MESApi.ChatCommand("/MES.Settings.PlanetaryCargoShips.MaxShipsPerArea.1", MatrixD.Identity, 0, 0);
+                MESApi.ChatCommand("/MES.Settings.PlanetaryCargoShips.AreaSize.45000", MatrixD.Identity, 0, 0);
+
+
+                MESApi.ChatCommand("/MES.Settings.SpaceCargoShips.TimeoutSpawnLimit.1", MatrixD.Identity, 0, 0);
+                MESApi.ChatCommand("/MES.Settings.SpaceCargoShips.TimeoutDuration.1800", MatrixD.Identity, 0, 0);
+                MESApi.ChatCommand("/MES.Settings.SpaceCargoShips.TimeoutRadius.45000", MatrixD.Identity, 0, 0);
+                MESApi.ChatCommand("/MES.Settings.SpaceCargoShips.MaxShipsPerArea.1", MatrixD.Identity, 0, 0);
+                MESApi.ChatCommand("/MES.Settings.SpaceCargoShips.AreaSize.45000", MatrixD.Identity, 0, 0);
+
+
+                MESApi.ChatCommand("/MES.Settings.RandomEncounters.TimeoutSpawnLimit.1", MatrixD.Identity, 0, 0);
+                MESApi.ChatCommand("/MES.Settings.RandomEncounters.TimeoutDuration.1800", MatrixD.Identity, 0, 0);
+                MESApi.ChatCommand("/MES.Settings.RandomEncounters.TimeoutRadius.45000", MatrixD.Identity, 0, 0);
+                MESApi.ChatCommand("/MES.Settings.RandomEncounters.MaxShipsPerArea.1", MatrixD.Identity, 0, 0);
+                MESApi.ChatCommand("/MES.Settings.RandomEncounters.AreaSize.45000", MatrixD.Identity, 0, 0);
+
+
+
+
+
+
                 WarSim.Init();
 
 
