@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+
+
+
+    <!-- Persistant-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition_Area_Alba</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+
+            [CheckPlayerNear:true]    
+            [PlayerNearCoords:{X:-3703755.75132314 Y:-1300647.96263827 Z:-2542175.33441601}]
+            [PlayerNearDistanceFromCoords:200]
+
+            [CheckPlayerTags:true]
+            [ExcludedPlayerTag:Player_Triggered_Area_Alba]
+
+            [CheckPlayerReputation:false]
+            [CheckReputationwithFaction:SPRT]
+            [MinPlayerReputation:500]
+            [MaxPlayerReputation:1500]
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition_Area_Alba_ConsiderTriggered</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+            [CheckPlayerNear:true]    
+            [PlayerNearCoords:{X:-3703755.75132314 Y:-1300647.96263827 Z:-2542175.33441601}]
+            [PlayerNearDistanceFromCoords:4500]
+
+            [CheckPlayerTags:true]
+            [ExcludedPlayerTag:Player_Triggered_Area_Alba]
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_EventPersistantCondition_Area_Alba</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+            [CheckPlayerCondition:true]
+            [PlayerConditionIds:PlayerCondition_Area_Alba]    
+
+             [CheckFalseBooleans:true]
+             [FalseBooleans:SHIVAN_RavunDestroyed]
+
+        </Description>   
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_Event_Area_Alba</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event]
+            [UseEvent:true]
+            [Tags:EventAreaAlba]
+            [UniqueEvent:true]    
+            [MinCooldownMs:30000]
+            [MaxCooldownMs:30001]
+			[StartsReady:false]
+            [PersistantConditionIds:MES_EventPersistantCondition_Area_Alba]
+            [OnFailResetCooldown:true]
+
+
+            [UseAnyPassingCondition:false]
+            [ActionExecution:Sequential]
+			[TimeUntilNextActionMs:1000]
+
+            [ActionIds:MES_EventAction_Area_Alba]
+            [ActionIds:MES_EventAction_Area_Alba_End]
+
+
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_EventAction_Area_Alba</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [UseChatBroadcast:true]
+            [ChatData:MES_EventChat_Area_Alba]
+
+			[AddGPSToPlayers:true]
+			[AddGPSPlayerConditionIds:PlayerCondition_Area_Alba_ConsiderTriggered]
+			[UseGPSObjective:false]
+			
+			[GPSNames:Mayor Alba Office]
+			[GPSDescriptions:Remove manually]
+			[GPSVector3Ds:{X:-3703755.75132314 Y:-1300647.96263827 Z:-2542175.33441601}]
+
+
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_EventChat_Area_Alba</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+            [UseChat:true]
+            [StartsReady:true]
+            [Chance:100]
+            [MaxChats:-1]
+            [BroadcastRandomly:true]
+            [IgnoreAntennaRequirement:True]
+            [IgnoredAntennaRangeOverride:1]
+            [SendToAllOnlinePlayers:false]
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition_Area_Alba_ConsiderTriggered]
+            [Color:Green]
+            [Author:Mayor Alba]
+            [ChatMessages:Hey… I don't believe we've met, but I have a job you might be interested in... Come to my office.]
+            [BroadcastChatType:Chat]
+            [ChatAudio:]  
+        </Description>
+    </EntityComponent>
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_EventAction_Area_Alba_End</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [AddTagstoPlayers:true]
+            [AddTagsPlayerConditionIds:PlayerCondition_Area_Alba_ConsiderTriggered]
+            [AddTags:Player_Triggered_Area_Alba]
+
+
+        </Description>
+    </EntityComponent>
+
+
+
+  
+  </EntityComponents>
+
+
+  
+</Definitions>

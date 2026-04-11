@@ -8,14 +8,14 @@
     <SpawnGroup>
       <Id>
         <TypeId>SpawnGroupDefinition</TypeId>
-        <SubtypeId>SHIPPERS-BoatCargoShip</SubtypeId>
+        <SubtypeId>SHIPPERS-BoatsAgaris</SubtypeId>
       </Id>
       <Description>
 
         [Modular Encounters SpawnGroup]
 
 		[PlanetaryInstallation:true]
-    [PlanetaryInstallationChance:100]
+    [PlanetaryInstallationChance:20]
 
 		[InstallationSpawnsOnWaterSurface:true]
 		[InstallationSpawnsOnDryLand:false]
@@ -26,21 +26,29 @@
 
 		[FactionOwner:SHIPPERS]	
 
-    [MinWaterDepth:150]
+    [MinWaterDepth:50]
 
 			[UseRandomNameGenerator:true]
 			[RandomGridNamePrefix:(NPC-SafeToDelete)]		
 			[RandomGridNamePattern:ColorAdjective FishNoun]
 			[ReplaceAntennaNameWithRandomizedName:Antenna]
 			[ReplaceAntennaHudTextInsteadOfName:true]
-      [UniqueEncounter:true]
 
 
         [UseRivalAi:true]
         [RivalAiReplaceRemoteControl:true]
 
 
-	
+		[UseSpawnGroupPrefabSpawningMode:true]
+		[PrefabSpawningMode:RandomSelectedIndexes]
+
+		
+        [PrefabIndexGroupNames:Main]
+        [PrefabIndexGroupValues:0]
+        [PrefabIndexGroupNames:Main]
+        [PrefabIndexGroupValues:1]
+
+		
 
       </Description>
       <IsPirate>true</IsPirate>
@@ -55,6 +63,19 @@
           <Speed>25</Speed>
           <Behaviour>SHIPPERS_WaterMerchant_Behavior</Behaviour>
         </Prefab>
+
+        <Prefab SubtypeId="SHIPPERS - DEKA">
+          <Position>
+            <X>0.0</X>
+            <Y>0.0</Y>
+            <Z>0.0</Z>
+          </Position>
+          <Speed>25</Speed>
+          <Behaviour>SHIPPERS_WaterMerchant_Behavior</Behaviour>
+        </Prefab>
+
+
+
       </Prefabs>
     </SpawnGroup>
 
