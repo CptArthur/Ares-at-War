@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!-- 
+--> 
+  
+  <!-- SpawnCommunicationsRelay -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DefenseSystem_Trigger_Guards_SpawnCommunicationsRelay</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Trigger]
+	[UseTrigger:false]
+	[Tags:SpawnGuards]
+	[Type:Timer]	
+	[StartsReady:false]	
+
+	[MinCooldownMs:3000]
+	[MaxCooldownMs:3001]
+	[Conditions:AaW_DefenseSystem_Condition_Guards_SpawnCommunicationsRelay]
+	[MaxActions:-1]
+	[Actions:AaW_DefenseSystem_Action_Guards_SpawnCommunicationsRelay]
+	
+      </Description>
+    </EntityComponent>  
+  
+      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DefenseSystem_Condition_Guards_SpawnCommunicationsRelay</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+ 
+	
+	[CheckIfSpawnGroupExist:true]
+	[ExistingSpawnGroupName:{Faction}_SpawnGroup_Guards_{CommunicationsRelay}]
+      </Description>
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DefenseSystem_Action_Guards_SpawnCommunicationsRelay</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Defense_LaunchGuards]
+
+	[SpawnEncounter:true]
+	[Spawner:AaW_DefenseSystem_Spawner_Guards_SpawnCommunicationsRelay]
+	[ForceSameFactionOwnership:true]
+	
+	[DisableTriggers:true]
+	[DisableTriggerTags:SpawnGuards]
+	
+	
+      </Description>
+    </EntityComponent>  
+  
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_DefenseSystem_Spawner_Guards_SpawnCommunicationsRelay</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Spawn]
+	[UseSpawn:true]
+
+	[StartsReady:true]
+	[SpawningType:CustomSpawn]
+
+	[MaxSpawns:-1]
+	[SpawnGroups:{Faction}_SpawnGroup_Guards_CommunicationsRelay]
+	
+	[UseRelativeSpawnPosition:false]
+	[MinDistance:250]
+	[MaxDistance:2500]
+	[MinAltitude:600]
+	[MaxAltitude:1400]
+	[IgnoreSafetyChecks:true]
+      </Description>
+    </EntityComponent> 
+	
+  </EntityComponents>
+</Definitions>

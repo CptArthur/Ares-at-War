@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_CommunicationsRelay_Trigger_Setup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MaxActions:1]
+        [Actions:AaW_CommunicationsRelay_Action_Setup]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_CommunicationsRelay_Action_Setup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [CreateKnownPlayerArea:true]
+        [KnownPlayerAreaRadius:25000]
+        [KnownPlayerAreaTimer:30000]
+
+        [ChangeAntennaRanges:true]
+        [AntennaNamesForRangeChange:Antenna]
+        [AntennaRangeChangeType:Set]
+        [AntennaRangeChangeAmount:35000]
+
+        [ChangeAntennaHudText:true]
+        [UseRandomNameGenerator:true]
+        [AntennaHudText:Communications Relay RandomLetter-RandomNumberRandomNumberRandomNumber]
+
+      </Description>
+    </EntityComponent>
+
+  
+	
+  </EntityComponents>
+</Definitions>

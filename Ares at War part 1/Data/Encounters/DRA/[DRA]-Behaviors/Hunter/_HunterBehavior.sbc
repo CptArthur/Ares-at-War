@@ -2,56 +2,21 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>DRA_Hunter_Behavior</SubtypeId>
-      </Id>
-      <Description>
-    [RivalAI Behavior]
-    [BehaviorName:Passive]
-    [TargetData:MSB_Hunter_Target]
-
-	[AutopilotData:AaW_Gunship_Autopilot]
-	[SecondaryAutopilotData:Aaw_Gunship_Autopilot_Combat]
-	
-	
-    [//DialogueBanks:DRA.xml] 
-    [DialogueBanks:AaW.xml] 
-    [//DialogueBanks:MSB.xml] 
-
-
-    [TriggerGroups:DRA_DynamicCommon_TriggerGroup]
-    [TriggerGroups:AaW_DynamicCommon_TriggerGroup]    
-    [TriggerGroups:MSB_DynamicCommon_TriggerGroup]    
-   
-	
-
-     [TriggerGroups:DRA_Gunship_TriggerGroup]        
-    [TriggerGroups:AaW_Gunship_TriggerGroup]
-    [//TriggerGroups:MSB_Gunship_TriggerGroup]     
-      
-
-    [TriggerGroups:DRA_Hunter_TriggerGroup]    
-    [TriggerGroups:AaW_Hunter_TriggerGroup]     
-
-      </Description>
-      
-    </EntityComponent>  
+ 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>DRA_Hunter_Behavior_Fighter</SubtypeId>
+          <SubtypeId>DRA_Hunter_Behavior_Drone</SubtypeId>
       </Id>
       <Description>
     [RivalAI Behavior]
     [BehaviorName:Passive]
-    [TargetData:MSB_Hunter_Target]
+    [TargetData:AaW_TargetProfile_LongRange]
 
-	[AutopilotData:AaW_Gunship_Autopilot]
-	[SecondaryAutopilotData:MSB_Fighter_Autopilot]
-	[TertiaryAutopilotData:MSB_Fighter_Autopilot_NoSafety]
+	[AutopilotData:MSB_Drone_Autopilot]
+	[SecondaryAutopilotData:MSB_Drone_Autopilot]
+	[TertiaryAutopilotData:MSB_Drone_Autopilot]
 	
     [//DialogueBanks:DRA.xml] 
     [DialogueBanks:AaW.xml] 
@@ -62,9 +27,9 @@
     [TriggerGroups:MSB_DynamicCommon_TriggerGroup]    
    
 
-    [TriggerGroups:DRA_Fighter_TriggerGroup]        
-    [TriggerGroups:AaW_Fighter_TriggerGroup]
-    [TriggerGroups:MSB_CPTFighter_TriggerGroup]    
+    [TriggerGroups:DRA_Drone_TriggerGroup]        
+    [TriggerGroups:AaW_Drone_TriggerGroup]
+    [TriggerGroups:MSB_CPTDrone_TriggerGroup]    
     
 
     [TriggerGroups:DRA_Hunter_TriggerGroup]    

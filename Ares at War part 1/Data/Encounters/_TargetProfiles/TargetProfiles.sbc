@@ -46,7 +46,35 @@
       </Description>
     </EntityComponent>
 
- 
+
+    <!-- ShortRange - Used during combat. -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_TargetProfile_ShortRange</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Target]
+
+        [UseCustomTargeting:true]
+        [Target:PlayerAndGrid]
+
+        [MaxDistance:3500]
+        [MaxExistingTargetDistance:2000]
+
+        [MatchAllFilters:OutsideOfSafezone]
+        [MatchAllFilters:Owner]
+        [MatchAllFilters:Relation]
+        [MatchAllFilters:Powered]
+
+        [Owners:Player]
+        [Owners:NPC]
+        [Relations:Enemy]
+
+        [GetTargetBy:ClosestDistance]
+      </Description>
+    </EntityComponent>
+
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -60,23 +88,12 @@
         [Target:PlayerAndGrid]
 
         [MaxDistance:15000]
-
-        [TimeUntilTargetAcquisition:10]
-        [TimeUntilNextEvaluation:3]
+        [MaxExistingTargetDistance:-1]
 
         [MatchAllFilters:OutsideOfSafezone]
         [MatchAllFilters:Owner]
         [MatchAllFilters:Relation]
         [MatchAllFilters:Powered]
-
-        [MatchAnyFilters:Broadcasting]
-        [MatchAnyFilters:MovementScore]
-        [MatchAnyFilters:LineOfSight]
-
-        [NonBroadcastVisualRange:3000]
-        [MinMovementScore:1000]
-        [MaxMovementDetectableDistance:5000]
-        [MaxLineOfSight:3000]
 
         [Owners:Player]
         [Owners:NPC]
@@ -86,7 +103,6 @@
       </Description>
     </EntityComponent>
 
- 
 
   </EntityComponents>
 </Definitions>

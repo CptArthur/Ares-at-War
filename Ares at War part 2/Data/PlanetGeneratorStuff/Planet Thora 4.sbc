@@ -246,28 +246,13 @@
           </Rule>
         </MaterialGroup>	  
 	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
+
 	  
       <MaterialGroup Name="Taiga Biome" Value="20">	  
 	  
         <Rule>
           <Layers>
-            <Layer Material="Woods_grass" Depth="5"/>
+            <Layer Material="Snow_MEwoodsgrass" Depth="5"/>
           </Layers>
           <Height Min="0.04" Max="1"/>
           <Latitude Min="0" Max="90"/>
@@ -276,7 +261,7 @@
 
         <Rule>
           <Layers>
-            <Layer Material="MEwoods" Depth="5"/>
+            <Layer Material="Snow" Depth="5"/>
           </Layers>
           <Height Min="0.04" Max="1"/>
           <Latitude Min="0" Max="90"/>
@@ -285,7 +270,7 @@
 
         <Rule>
           <Layers>
-            <Layer Material="Woods_grass" Depth="5"/>
+            <Layer Material="Snow_MEwoodsgrass" Depth="5"/>
           </Layers>
           <Height Min="0.04" Max="1"/>
           <Latitude Min="0" Max="90"/>
@@ -329,11 +314,11 @@
 
         <Rule>
           <Layers>
-            <Layer Material="Snow_MEwoodsgrass" Depth="5"/>
+            <Layer Material="TritonIce" Depth="5"/>
           </Layers>
           <Height Min="0" Max="1"/>
           <Latitude Min="0" Max="90"/>
-          <Slope Min="5" Max="10"/>
+          <Slope Min="5" Max="7"/>
         </Rule>
 
         <Rule>
@@ -342,21 +327,20 @@
           </Layers>
           <Height Min="0" Max="1"/>
           <Latitude Min="0" Max="90"/>
-          <Slope Min="10" Max="25"/>
+          <Slope Min="7" Max="25"/>
         </Rule>
 		
 		
-		
-        <Rule>
-          <Layers>
-            <Layer Material="Stone" Depth="5"/>
-          </Layers>
-          <Height Min="0" Max="1"/>
-          <Latitude Min="0" Max="90"/>
-          <Slope Min="25" Max="90"/>
-        </Rule>
 
+	   <Rule>
+		<Layers>
+		  <Layer Material="TritonStone" Depth="20"/>
 
+		</Layers>
+		<Height Min="0" Max="1"/>
+		<Latitude Min="0" Max="90"/>
+		<Slope Min="25" Max="90"/>
+	  </Rule>
 
       </MaterialGroup>
 
@@ -507,17 +491,19 @@
           <Slope Min="10" Max="25"/>
         </Rule>
 		
-		
-		
-        <Rule>
-          <Layers>
-            <Layer Material="Stone" Depth="5"/>
-          </Layers>
-          <Height Min="0" Max="1"/>
-          <Latitude Min="0" Max="90"/>
-          <Slope Min="25" Max="90"/>
-        </Rule>
 
+
+	   <Rule>
+		<Layers>
+		  <Layer Material="TritonStone" Depth="20"/>
+
+		</Layers>
+		<Height Min="0" Max="1"/>
+		<Latitude Min="0" Max="90"/>
+		<Slope Min="25" Max="90"/>
+	  </Rule>
+	  
+	  
       </MaterialGroup>	
 
 	  
@@ -596,7 +582,7 @@
           <Biome>0</Biome>
         </Biomes>
         <Materials>
-          <Material>Snow</Material>
+          <Material>Snow_MEwoodsgrass</Material>
         </Materials>
         <Items>
           <Item TypeId="MyObjectBuilder_Trees" SubtypeId="SnowForestLarge" Density="0.1"/>

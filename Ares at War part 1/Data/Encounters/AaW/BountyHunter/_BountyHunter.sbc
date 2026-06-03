@@ -5,25 +5,26 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_BountyHunter_TriggerGroup</SubtypeId>
+        <SubtypeId>AaW_BountyHunter_TriggerGroup</SubtypeId>
       </Id>
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_BountyHunter_Trigger_Setup]
+        [Triggers:AaW_BountyHunter_Trigger_Setup]
 
-        [Triggers:MSB_BountyHunter_Trigger_InitRole]
-        [Triggers:MSB_BountyHunter_Trigger_CloseRole]
+        [Triggers:AaW_BountyHunter_Trigger_InitRole]
+        [Triggers:AaW_BountyHunter_Trigger_CloseRole]
+        [Triggers:AaW_BountyHunter_Trigger_HasTarget5000]
+
+
       </Description>
     </EntityComponent>
-
-
 
     <!-- Setup -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_BountyHunter_Trigger_Setup</SubtypeId>
+        <SubtypeId>AaW_BountyHunter_Trigger_Setup</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -34,29 +35,27 @@
         [StartsReady:true]
 
         [MaxActions:1]
-        [Actions:MSB_BountyHunter_Action_Setup]
+        [Actions:AaW_BountyHunter_Action_Setup]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_BountyHunter_Action_Setup</SubtypeId>
+        <SubtypeId>AaW_BountyHunter_Action_Setup</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
         [SetBooleansTrue:MSB_Role_BountyHunter]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:CargoShip]
+
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Primary]
+
       </Description>
     </EntityComponent>
-
-<!--
-
-        [Triggers:MSB_BountyHunter_Trigger_InitRole]
-        [Triggers:MSB_BountyHunter_Trigger_CloseRole]
-
-
--->
-
 
 
 
@@ -64,7 +63,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_BountyHunter_Trigger_InitRole</SubtypeId>
+          <SubtypeId>AaW_BountyHunter_Trigger_InitRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -76,7 +75,7 @@
         [StartsReady:false]
 
         [MaxActions:-1]
-        [Actions:MSB_BountyHunter_Action_InitRole]
+        [Actions:AaW_BountyHunter_Action_InitRole]
       </Description>
 
     </EntityComponent>
@@ -84,7 +83,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_BountyHunter_Action_InitRole</SubtypeId>
+          <SubtypeId>AaW_BountyHunter_Action_InitRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -103,7 +102,7 @@
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_BountyHunter_Trigger_CloseRole</SubtypeId>
+        <SubtypeId>AaW_BountyHunter_Trigger_CloseRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -116,20 +115,84 @@
         [StartsReady:false]
 
         [MaxActions:-1]
-        [Actions:MSB_BountyHunter_Action_CloseRole]
+        [Actions:AaW_BountyHunter_Action_CloseRole]
       </Description>
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_BountyHunter_Action_CloseRole</SubtypeId>
+        <SubtypeId>AaW_BountyHunter_Action_CloseRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
       </Description>
     </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_BountyHunter_Trigger_HasTarget5000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:HasTarget]
+
+        [Tags:MSB_RoleToCombat_Trigger]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:AaW_BountyHunter_Condition_HasTarget5000]
+
+        [Actions:AaW_BountyHunter_Action_HasTarget5000]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_BountyHunter_Condition_HasTarget5000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+
+        [CheckTargetDistance:true]
+        [MaxTargetDistance:5000]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_BountyHunter_Action_HasTarget5000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+
+        
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
 <!-- End Required stuff -->
 
 

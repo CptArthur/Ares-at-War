@@ -7,14 +7,14 @@
 
 
     <!--
-        [Triggers:MSB_Hunter_Trigger_HasTarget4000]
-        [Triggers:MSB_Hunter_Trigger_ApproachingTarget_Player]
+        [Triggers:AaW_Hunter_Trigger_HasTarget4000]
+        [Triggers:AaW_Hunter_Trigger_ApproachingTarget_Player]
 	  -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Hunter_Trigger_HasTarget4000</SubtypeId>
+        <SubtypeId>AaW_Hunter_Trigger_HasTarget4000</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -26,16 +26,33 @@
         [UseTrigger:true]
         [StartsReady:true]
 
-        [Conditions:MSB_Hunter_Condition_HasTarget4000]
+        [Conditions:AaW_Hunter_Condition_HasTarget4000]
 
+        [Actions:AaW_Hunter_Action_HasTarget4000]
+
+
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Hunter_Action_HasTarget4000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+        
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
       </Description>
     </EntityComponent>
+
+
+    
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Hunter_Condition_HasTarget4000</SubtypeId>
+        <SubtypeId>AaW_Hunter_Condition_HasTarget4000</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -53,7 +70,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Hunter_Trigger_ApproachingTarget_Player</SubtypeId>
+        <SubtypeId>AaW_Hunter_Trigger_ApproachingTarget_Player</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -64,7 +81,7 @@
         [Tags:MSB_TriggerEvent_InitialApproachingTarget_Hard]
         [Tags:MSB_TriggerEvent_InitialApproachingTarget_Other]
 
-        [Conditions:MSB_Hunter_Condition_ApproachingTarget_Player]
+        [Conditions:AaW_Hunter_Condition_ApproachingTarget_Player]
 
         [UseTrigger:true]
         [StartsReady:true]
@@ -73,13 +90,13 @@
         [MaxCooldownMs:180000]
 
         [ActionExecution:Random]
-        [Actions:MSB_Hunter_Action_ApproachingTarget_Player]
+        [Actions:AaW_Hunter_Action_ApproachingTarget_Player]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Hunter_Condition_ApproachingTarget_Player</SubtypeId>
+        <SubtypeId>AaW_Hunter_Condition_ApproachingTarget_Player</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -94,16 +111,16 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Hunter_Action_ApproachingTarget_Player</SubtypeId>
+        <SubtypeId>AaW_Hunter_Action_ApproachingTarget_Player</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
         [PlayDialogueCue:true]
-        [DialogueCueId:MSB_Hunter_ApproachingPlayerTarget]
+        [DialogueCueId:AaW_Hunter_ApproachingPlayerTarget]
 
         [DisableTriggers:true]
-        [DisableTriggerNames:MSB_Hunter_Trigger_ApproachingTarget_Player]
+        [DisableTriggerNames:AaW_Hunter_Trigger_ApproachingTarget_Player]
       </Description>
     </EntityComponent>
 

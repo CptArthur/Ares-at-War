@@ -1,0 +1,793 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--
+    This encounter works in both space and gravity. Flies in a straight line to a despawn point roughly 15km away. Periodically, it stops and initiates a long range scan by charging up for a period of time (and indicating it in its GPS signal) and then extending its detection range to 5km. If it detects a player static grid, it approaches it to around 2km. Then it attempts to reach its original despawn point. If it reaches its despawn point, it creates a Known Player Area and activates a trigger tag allowing for an encounter with the relay Role to be spawned.
+
+    To use:
+      * Reference AaW_Scout_TriggerGroup in your behavior
+      * Use the following in SpawnConditions to prevent multiple KnownPlayerAreas being created for the same faction in the same place:
+        [UseKnownPlayerLocations:true]
+        [KnownPlayerLocationMustMatchFaction:true]
+        [KnownPlayerLocationMustBeInside:false]
+      * If you would like to use the mechanic of destroying specific comms relays clearing the Known Player Area, spawn corresponding encounters when the following tags are called:
+        MSB_TriggerEvent_Scout_SpawnRelay_Space
+        MSB_TriggerEvent_Scout_SpawnRelay_Gravity
+        Spawn them with the "Relay" static role that allows them to clear the Known Player Area when destroyed.
+
+    TODO:
+      * Logic for finding NPC bases - when they're found, spawn one wave of attackers with a delay.
+    -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:AaW_Scout_Trigger_Setup]
+
+        [Triggers:AaW_Scout_Trigger_InitRole]
+        [Triggers:AaW_Scout_Trigger_CloseRole]
+
+        [Triggers:AaW_Scout_Trigger_Despawn]
+
+        [Triggers:AaW_Scout_Trigger_InitiateScan]
+        [Triggers:AaW_Scout_Trigger_InitiateScan_UpdateSignal]
+        [Triggers:AaW_Scout_Trigger_InitiateScan_UpdateSignal_Loop]
+        [Triggers:AaW_Scout_Trigger_InitiateScan_UpdateSignal_Done]
+
+        [Triggers:AaW_Scout_Trigger_Scan_CheckForStatics]
+        [Triggers:AaW_Scout_Trigger_FlyToTarget]
+        [Triggers:AaW_Scout_Trigger_NearTarget]
+        [Triggers:AaW_Scout_Trigger_NearTarget_Timeout]
+
+        [Triggers:AaW_Scout_Trigger_TransmitLocation]
+        [Triggers:AaW_Scout_Trigger_SpawnRelay]
+      </Description>
+    </EntityComponent>
+
+    <!-- Setup -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Trigger_Setup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MaxActions:1]
+        [Actions:AaW_Scout_Action_Setup]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Action_Setup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [SetBooleansTrue:AaW_Role_Scout]
+
+        [SetBooleansFalse:AaW_Role_Scout_FoundTarget]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_Role_InitRole]
+
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Trigger_InitRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_Role_InitRole]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [Actions:AaW_Scout_Action_InitRole]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Action_InitRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_InitRole]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:CargoShip]
+
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Primary]
+
+		    [ResetCooldownTimeOfTriggers:true]
+		    [ResetTriggerCooldownNames:AaW_Scout_Trigger_InitiateScan]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:AaW_Scout_Trigger_InitiateScan]
+        [EnableTriggerNames:AaW_Scout_Trigger_NearTarget]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Trigger_CloseRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_Role_CloseRole]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [Actions:AaW_Scout_Action_CloseRole]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Action_CloseRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:AaW_Scout_Trigger_InitiateScan]
+        [DisableTriggerNames:AaW_Scout_Trigger_NearTarget]
+      </Description>
+    </EntityComponent>
+
+    <!-- Despawn Override -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Trigger_Despawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:DespawnNear]
+
+        [TargetDistance:2000]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+
+        [Conditions:MSB_System_Despawn_Condition_Active]
+
+        [MaxActions:1]
+        [Actions:AaW_Scout_Action_Despawn]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Action_Despawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Scout - StartDespawn]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn]
+      </Description>
+    </EntityComponent>
+
+    <!-- Scan for Enemy Statics -->
+    <!-- Initiate ThoughBubble Display -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Trigger_InitiateScan</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:30000]
+        [MaxCooldownMs:90000]
+
+        [Conditions:MSB_Utility_State_Condition_Check_State_Role]
+
+        [Actions:AaW_Scout_Action_InitiateScan]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Action_InitiateScan</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Scout - InitiateScan]
+
+        [ChangeAutopilotSpeed:true]
+        [NewAutopilotSpeed:0]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_InitiateScan]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:AaW_Scout_Trigger_InitiateScan]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Trigger_InitiateScan_UpdateSignal</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_Scout_InitiateScan]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:AaW_Scout_Action_InitiateScan_UpdateSignal]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Action_InitiateScan_UpdateSignal</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Scout - UpdateSignal]
+
+		    [SetAntennaThoughtBubble:true]
+        [SetAntennaThoughtBubbleName:Initiating Long Range Scan...]
+        [StartAntennaThoughtBubblePercentage:true]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:AaW_Scout_Trigger_InitiateScan_UpdateSignal_Done]
+		    [EnableTriggerNames:AaW_Scout_Trigger_InitiateScan_UpdateSignal_Loop]
+
+		    [ResetCooldownTimeOfTriggers:true]
+		    [ResetTriggerCooldownNames:AaW_Scout_Trigger_InitiateScan_UpdateSignal_Loop]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:AaW_Scout_Trigger_InitiateScan]
+      </Description>
+    </EntityComponent>
+
+    <!-- Start ThoughtBubble Loop -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Trigger_InitiateScan_UpdateSignal_Loop</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [Conditions:MSB_Utility_State_Condition_Check_State_Role]
+
+        [Actions:AaW_Scout_Action_InitiateScan_UpdateSignal_Loop]
+
+        [UseElseActions:true]
+        [ElseActions:AaW_Scout_Action_InitiateScan_UpdateSignal_Cancel]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Action_InitiateScan_UpdateSignal_Loop</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Scout - UpdateSignal Loop]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_InitiateScan_Loop]
+
+        [IncreaseAntennaThoughtBubblePercentage:true]
+        [IncreaseAntennaThoughtBubblePercentageAmount:10]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Action_InitiateScan_UpdateSignal_Cancel</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Scout - UpdateSignal Cancel]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_InitiateScan_Cancel]
+
+        [EndAntennaThoughtBubblePercentage:true]
+		    [ClearAntennaThoughtBubble:true]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Trigger_InitiateScan_UpdateSignal_Done</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:AntennaThoughtBubblePercentageReachedMax]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:2000]
+        [MaxCooldownMs:2001]
+
+        [Actions:AaW_Scout_Action_InitiateScan_UpdateSignal_Done]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Action_InitiateScan_UpdateSignal_Done</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Scout - UpdateSignal Done]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_InitiateScan_Done]
+
+        [EndAntennaThoughtBubblePercentage:true]
+		    [ClearAntennaThoughtBubble:true]
+
+        [ChangeTargetProfile:true]
+        [NewTargetProfileId:MSB_TargetProfile_Scan_5000]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:AaW_Scout_Trigger_InitiateScan_UpdateSignal_Loop]
+      </Description>
+    </EntityComponent>
+
+    <!-- Check for nearby player-owned static grids -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Trigger_Scan_CheckForStatics</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_Scout_InitiateScan_Done]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:AaW_Scout_Condition_Scan_CheckForStatics]
+
+        [Actions:AaW_Scout_Action_Scan_CheckForStatics_Found]
+
+        [UseElseActions:true]
+        [ElseActions:AaW_Scout_Action_Scan_CheckForStatics_NotFound]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Condition_Scan_CheckForStatics</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+
+        [CheckTargetDistance:true]
+        [MaxTargetDistance:5000]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Action_Scan_CheckForStatics_Found</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Scout - CheckForStatics Found]
+
+        [ChangeAutopilotSpeed:true]
+        [NewAutopilotSpeed:55]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_Scan_FoundTarget]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Action_Scan_CheckForStatics_NotFound</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Scout - CheckForStatics NotFound]
+
+        [ChangeAutopilotSpeed:true]
+        [NewAutopilotSpeed:55]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_Scan_NotFoundTarget]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:AaW_Scout_Trigger_InitiateScan]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:AaW_Scout_Trigger_InitiateScan]
+      </Description>
+    </EntityComponent>
+
+    <!-- Confirm enemy static -->
+    <!-- Create waypoint -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Trigger_FlyToTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_Scout_Scan_FoundTarget]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:AaW_Scout_Action_FlyToTarget]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Action_FlyToTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Scout - FlyToTarget]
+
+        [AddWaypoints:true]
+        [WaypointsToAdd:AaW_Scout_Waypoint_NearTarget]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:AaW_Scout_Trigger_NearTarget]
+        [EnableTriggerNames:AaW_Scout_Trigger_NearTarget_Timeout]
+
+		    [ResetCooldownTimeOfTriggers:true]
+		    [ResetTriggerCooldownNames:AaW_Scout_Trigger_NearTarget_Timeout]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Waypoint_NearTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Waypoint]
+
+        [Waypoint:EntityOffset]
+        [RelativeEntity:Target]
+
+        [MinDistance:2000]
+        [MaxDistance:2500]
+
+        [MinAltitude:1000]
+        [MaxAltitude:1500]
+
+        [InheritRelativeAltitude:false]
+      </Description>
+    </EntityComponent>
+
+    <!-- Fly to waypoint -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Trigger_NearTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:HasTarget]
+
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+
+        [Conditions:AaW_Scout_Condition_NearTarget]
+
+        [Actions:AaW_Scout_Action_NearTarget]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Condition_NearTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+
+        [CheckTargetDistance:true]
+        [MaxTargetDistance:2500]
+
+        [IsTargetGrid:true]
+        [IsTargetStatic:true]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:MSB_State_Combat]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Action_NearTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Scout - NearTarget]
+
+        [SwitchToNextWaypoint:true]
+
+        [ChangeAutopilotSpeed:true]
+        [NewAutopilotSpeed:65]
+
+        [ChangeTargetProfile:true]
+        [NewTargetProfileId:MSB_TargetProfile_LowRange]
+
+        [SetBooleansTrue:AaW_Role_Scout_FoundTarget]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_NearTarget]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:AaW_Scout_Trigger_NearTarget]
+        [DisableTriggerNames:AaW_Scout_Trigger_NearTarget_Timeout]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:AaW_Scout_Trigger_TransmitLocation]
+      </Description>
+    </EntityComponent>
+    <!-- For the case in which the static grid can no longer be found. -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Trigger_NearTarget_Timeout</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:HasTarget]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:120000]
+        [MaxCooldownMs:120001]
+
+        [Conditions:AaW_Scout_Condition_NearTarget]
+        [UseFailCondition:true]
+
+        [Actions:AaW_Scout_Action_NearTarget_Timeout]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Action_NearTarget_Timeout</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Scout - NearTarget Timeout]
+
+        [SwitchToNextWaypoint:true]
+
+        [ChangeTargetProfile:true]
+        [NewTargetProfileId:MSB_TargetProfile_LowRange]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_NearTarget_Timeout]
+
+		    [ResetCooldownTimeOfTriggers:true]
+		    [ResetTriggerCooldownNames:AaW_Scout_Trigger_InitiateScan]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:AaW_Scout_Trigger_InitiateScan]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:AaW_Scout_Trigger_NearTarget_Timeout]
+      </Description>
+    </EntityComponent>
+
+    <!-- At Despawn, set KPA, spawn satellite / relay -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Trigger_TransmitLocation</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_Despawn]
+
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [Conditions:AaW_Scout_Condition_TransmitLocation]
+
+        [Actions:AaW_Scout_Action_TransmitLocation]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Condition_TransmitLocation</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:AaW_Role_Scout_FoundTarget]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Action_TransmitLocation</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Scout - TransmitLocation]
+
+        [//CreateKnownPlayerArea:true]
+        [//KnownPlayerAreaRadius:25000]
+        [//KnownPlayerAreaTimer:300]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_TransmitLocation]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Trigger_SpawnRelay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_Scout_TransmitLocation]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:AaW_Scout_Condition_SpawnRelay]
+
+        [Actions:AaW_Scout_Action_SpawnRelay_Space]
+
+        [UseElseActions:true]
+        [ElseActions:AaW_Scout_Action_SpawnRelay_Gravity]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Condition_SpawnRelay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [GravityCheck:true]
+        [MaxGravity:0.001]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Action_SpawnRelay_Space</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Scout - SpawnRelay Space]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_SpawnRelay_Space]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>AaW_Scout_Action_SpawnRelay_Gravity</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Scout - SpawnRelay Gravity]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_SpawnRelay_Gravity]
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </EntityComponents>
+</Definitions>
