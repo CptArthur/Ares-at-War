@@ -3,12 +3,10 @@
   <EntityComponents>
   
 
-
-<!--
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
         <Id>
             <TypeId>Inventory</TypeId>
-            <SubtypeId>MES_Event_AlbaAttacked</SubtypeId>
+            <SubtypeId>MES_Event_AlbaAttackedChain_init</SubtypeId>
         </Id>
         <Description>
             [MES Event]
@@ -29,8 +27,6 @@
 
             [ActionIds:AaW_EventAction_Common_IncomingMessage]
             [ActionIds:MES_EventAction_AlbaAttacked]
-
-
         </Description>
     </EntityComponent>
 	
@@ -47,6 +43,9 @@
 
              [CheckFalseBooleans:true]
              [FalseBooleans:AlbaRemovedFromOffice]
+             [FalseBooleans:GCAgarisBlockade]
+
+
         </Description>   
     </EntityComponent>	
 	
@@ -64,7 +63,16 @@
 
             [ChangeBooleans:true]
             [SetBooleansTrue:AlbaAttacked]
-			
+
+
+            [ResetCooldownTimeOfEvents:true]
+            [ResetEventCooldownTags:AlbaAttacked]
+
+            [ToggleEvents:true]
+            [ToggleEventTags:AlbaAttacked]
+            [ToggleEventTagModes:true]
+
+
         </Description>
     </EntityComponent>
 
@@ -87,16 +95,303 @@
 			[BroadcastChatType:Chat]
 			[Color:Blue]
 			[Author:Ares News Station]
-			[ChatMessages:Breaking news! Mayor Alba of Sunset City survived an apparent bomb attack today in what authorities are calling a targeted assassination attempt. While no suspects have been officially named, investigators believe the Syndicate may be involved.]
+			[ChatMessages:Breaking news! Mayor Alba of Sunset City survived an apparent attack today in what authorities are calling a targeted assassination attempt. Officials have not named any suspects, but investigators are pursuing multiple leads. The Mayor was unharmed and is expected to resume public duties later this week.]
 			[ChatAudio:]   
         </Description>
     </EntityComponent>
 
--->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_Event_AlbaAttackedChain_GCSunsetCityTalks</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event]
+            [UseEvent:false]
+			[Tags:AlbaAttacked]
+			[UniqueEvent:true]
+
+			[MinCooldownMs:1800000]
+			[MaxCooldownMs:4400000]
+			[StartsReady:false]
+            [PersistantConditionIds:MES_EventPersistantCondition_GCSunsetCityTalks]
+            [OnFailResetCooldown:true]
+
+
+            [UseAnyPassingCondition:false]
+            [ActionExecution:Sequential]
+			[TimeUntilNextActionMs:5000]
+
+            [ActionIds:AaW_EventAction_Common_IncomingMessage]
+            [ActionIds:MES_EventAction_GCSunsetCityTalks]
+        </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_EventPersistantCondition_GCSunsetCityTalks</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+
+             [CheckTrueBooleans:true]
+             [TrueBooleans:SHIVAN_RavunDestroyed]
+
+             [CheckFalseBooleans:true]
+             [FalseBooleans:AlbaRemovedFromOffice]
+             [FalseBooleans:GCAgarisBlockade]
+             [FalseBooleans:UNION_Founded]
+             [FalseBooleans:GCSunsetCitySecurityAgreement]
+
+        </Description>   
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_EventAction_GCSunsetCityTalks</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [UseChatBroadcast:true]
+            [ChatData:MES_EventChat_GCSunsetCityTalks]
+
+            [ChangeBooleans:true]
+            [SetBooleansTrue:GCSunsetCityTalks]
+
+
+            [ResetCooldownTimeOfEvents:true]
+            [ResetEventCooldownTags:GCSunsetCityTalks]
+
+            [ToggleEvents:true]
+            [ToggleEventTags:GCSunsetCityTalks]
+            [ToggleEventTagModes:true]
+
+
+
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_EventChat_GCSunsetCityTalks</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+			[UseChat:true]
+			[StartsReady:true]
+			[Chance:100]
+			[MaxChats:-1]
+			[BroadcastRandomly:true]
+			[IgnoreAntennaRequirement:True]
+			[IgnoredAntennaRangeOverride:1]
+			[SendToAllOnlinePlayers:true]
+
+			[BroadcastChatType:Chat]
+			[Color:Blue]
+			[Author:Ares News Station]
+			[ChatMessages:Investigators continue to search for those responsible for the attack on Mayor Alba.  No arrests have been announced. The GC has offered assistance to Sunset City authorities. GC representatives described the incident as a threat to Agaris stability and pledged support for ongoing security efforts. Discussions between the GC and Sunset city officials are reportedly underway.]
+			[ChatAudio:]   
+        </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_Event_AlbaAttackedChain_LeonardWorriedAboutGCSunsetCity</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event]
+            [UseEvent:false]
+			[Tags:GCSunsetCityTalks]
+			[UniqueEvent:true]
+
+			[MinCooldownMs:900000]
+			[MaxCooldownMs:1800000]
+			[StartsReady:false]
+            [PersistantConditionIds:MES_EventPersistantCondition_LeonardWorriedAboutGCSunsetCity]
+            [OnFailResetCooldown:true]
+
+
+            [UseAnyPassingCondition:false]
+            [ActionExecution:Sequential]
+			[TimeUntilNextActionMs:5000]
+
+            [ActionIds:AaW_EventAction_Common_IncomingMessage]
+            [ActionIds:MES_EventAction_LeonardWorriedAboutGCSunsetCity]
+        </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_EventPersistantCondition_LeonardWorriedAboutGCSunsetCity</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+
+             [CheckTrueBooleans:true]
+             [TrueBooleans:UNION_Launched]
 
 
 
 
+             [CheckFalseBooleans:true]
+             [FalseBooleans:AlbaRemovedFromOffice]
+             [FalseBooleans:GCAgarisBlockade]
+             [FalseBooleans:UNION_Founded]
+              [FalseBooleans:GCSunsetCitySecurityAgreement]
+        </Description>   
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_EventAction_LeonardWorriedAboutGCSunsetCity</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [UseChatBroadcast:true]
+            [ChatData:MES_EventChat_LeonardWorriedAboutGCSunsetCity]
+			
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_EventChat_LeonardWorriedAboutGCSunsetCity</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+			[UseChat:true]
+			[StartsReady:true]
+			[Chance:100]
+			[MaxChats:-1]
+			[BroadcastRandomly:true]
+			[IgnoreAntennaRequirement:True]
+			[IgnoredAntennaRangeOverride:1]
+			[SendToAllOnlinePlayers:false]
+
+            [SendToSpecificPlayers:true]
+            [PlayerConditionIds:PlayerCondition_Faction_FriendlyUNION]
+
+			[BroadcastChatType:Chat]
+			[Color:Green]
+			[Author:Leonard | Democratic Movement]
+			[ChatMessages:I don't know what Mayor Alba is thinking, but a GC security pact with Sunset City would be disastrous for our cause. I'm hearing reports that GC fighters are already flying all over Sunset City]
+			[ChatAudio:]   
+        </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_Event_AlbaAttackedChain_GCSunsetCitySecurityAgreement</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event]
+            [UseEvent:false]
+			[Tags:GCSunsetCityTalks]
+			[UniqueEvent:true]
+
+			[MinCooldownMs:3900000]
+			[MaxCooldownMs:17800000]
+			[StartsReady:false]
+            [PersistantConditionIds:MES_EventPersistantCondition_GCSunsetCitySecurityAgreement]
+            [OnFailResetCooldown:true]
+
+
+            [UseAnyPassingCondition:false]
+            [ActionExecution:Sequential]
+			[TimeUntilNextActionMs:5000]
+
+            [ActionIds:AaW_EventAction_Common_IncomingMessage]
+            [ActionIds:MES_EventAction_GCSunsetCitySecurityAgreement]
+        </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_EventPersistantCondition_GCSunsetCitySecurityAgreement</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+
+             [CheckTrueBooleans:true]
+             [TrueBooleans:UNION_Launched]
+             [TrueBooleans:GCSunsetCityTalks]
+
+
+             [CheckFalseBooleans:true]
+             [FalseBooleans:AlbaRemovedFromOffice]
+             [FalseBooleans:GCAgarisBlockade]
+             [FalseBooleans:UNION_Founded]
+             [FalseBooleans:GCSunsetCitySecurityAgreement]
+
+
+        </Description>   
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_EventAction_GCSunsetCitySecurityAgreement</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [UseChatBroadcast:true]
+            [ChatData:MES_EventChat_GCSunsetCitySecurityAgreement]
+
+            [ChangeBooleans:true]
+            [SetBooleansTrue:GCSunsetCitySecurityAgreement]
+
+
+            [ResetCooldownTimeOfEvents:true]
+            [ResetEventCooldownTags:GCSunsetCitySecurityAgreement]
+
+            [ToggleEvents:true]
+            [ToggleEventTags:GCSunsetCitySecurityAgreement]
+            [ToggleEventTagModes:true]
+			
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_EventChat_GCSunsetCitySecurityAgreement</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+			[UseChat:true]
+			[StartsReady:true]
+			[Chance:100]
+			[MaxChats:-1]
+			[BroadcastRandomly:true]
+			[IgnoreAntennaRequirement:True]
+			[IgnoredAntennaRangeOverride:1]
+			[SendToAllOnlinePlayers:true]
+
+			[BroadcastChatType:Chat]
+			[Color:Blue]
+			[Author:Ares News Station]
+			[ChatMessages:In the wake of the recent attack on Mayor Alba, Sunset City has approved a new security agreement with the GC. Residents can expect increased GC activity throughout the Sunset City Sector. It is a remarkable development, as the GC has historically operated as a mining corporation rather than a security provider.]
+			[ChatAudio:]   
+        </Description>
+    </EntityComponent>
 
   
   </EntityComponents>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+  
+  <!--
+  
+              [MES Event Condition]
+            [CheckPlayerCondition:true]
+            [PlayerConditionIds:PlayerCondition_Faction_FriendlyUNION]   
+			
+			-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>PlayerCondition_Faction_FriendlyUNION</SubtypeId>
+        </Id>
+        <Description>
+            [MES Player Condition]
+
+            [CheckPlayerReputation:true]
+            [CheckReputationwithFaction:UNION]
+            [MinPlayerReputation:500]
+            [MaxPlayerReputation:1500]
+        </Description>
+    </EntityComponent>
+
+
+
+
+ 
+
+
+
+  
+  </EntityComponents>
+
+
+  
+</Definitions>
