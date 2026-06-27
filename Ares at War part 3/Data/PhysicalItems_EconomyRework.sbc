@@ -1,0 +1,244 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <PhysicalItems>
+	
+        <PhysicalItem>
+            <Id>
+                <TypeId>Ore</TypeId>
+                <SubtypeId>Scrap</SubtypeId>
+            </Id>
+            <DisplayName>DisplayName_Item_Scrap</DisplayName>
+            <Icon>Textures\GUI\Icons\component\ScrapMetalComponent.dds</Icon>
+            <Size>
+                <X>0.2</X>
+                <Y>0.2</Y>
+                <Z>0.1</Z>
+            </Size>
+            <Mass>1</Mass>
+            <Volume>0.254</Volume>
+            <Model>Models\Components\ScrapMetalComponent.mwm</Model>
+            <PhysicalMaterial>Metal</PhysicalMaterial>
+			<MinimalPricePerUnit>10</MinimalPricePerUnit>
+        </PhysicalItem>
+
+
+		
+		<!-- Seed Objects -->
+		<PhysicalItem xsi:type="MyObjectBuilder_SeedItemDefinition">
+			<Id>
+				<TypeId>SeedItem</TypeId>
+				<SubtypeId>Fruit</SubtypeId>
+			</Id>
+			<DisplayName>DisplayName_Item_FruitSeeds</DisplayName>
+			<Icon>Textures\GUI\Icons\Items\SeedPack_Fruit.dds</Icon>
+			<Size>
+				<X>0.14</X>
+				<Y>0.14</Y>
+				<Z>0.14</Z>
+			</Size>
+			<Mass>0.12</Mass>
+			<Volume>0.1</Volume>
+			<Model>Models\Items\SeedPack_Fruit.mwm</Model>
+			<PhysicalMaterial>Metal</PhysicalMaterial>
+
+			<GrowthTimeMultiplier>1.75</GrowthTimeMultiplier>
+			<WaterConsumptionMultiplier>2.0</WaterConsumptionMultiplier>
+			<FullyGrownWaterConsumptionMultiplier>0.1</FullyGrownWaterConsumptionMultiplier>
+
+			<OutputItemDefinitionId>
+				<TypeId>ConsumableItem</TypeId>
+				<SubtypeId>Fruit</SubtypeId>
+			</OutputItemDefinitionId>
+
+			<MinimumOutput>2</MinimumOutput>
+			<MaximumOutput>4</MaximumOutput>
+			<GrowthStages>
+				<GrowthStage>
+					<MinCompletionPercentage>0</MinCompletionPercentage>
+					<MaxCompletionPercentage>40</MaxCompletionPercentage>
+					<ModelPath>Models\Environment\Farming\crop_fruit_001_GS_1.mwm</ModelPath>
+				</GrowthStage>
+				<GrowthStage>
+					<MinCompletionPercentage>40</MinCompletionPercentage>
+					<MaxCompletionPercentage>99.99</MaxCompletionPercentage>
+					<ModelPath>Models\Environment\Farming\crop_fruit_001_GS_2.mwm</ModelPath>
+				</GrowthStage>
+				<GrowthStage>
+					<MinCompletionPercentage>99.99</MinCompletionPercentage>
+					<MaxCompletionPercentage>100</MaxCompletionPercentage>
+					<ModelPath>Models\Environment\Farming\crop_fruit_001_GS_3.mwm</ModelPath>
+				</GrowthStage>
+			</GrowthStages>
+			<DeadPlantModelPath>Models\Environment\Farming\crop_fruit_001_GS_4.mwm</DeadPlantModelPath>
+
+			<MinimalPricePerUnit>10</MinimalPricePerUnit>
+			<MinimumOfferAmount>1</MinimumOfferAmount>
+			<MaximumOfferAmount>8</MaximumOfferAmount>
+			<CanPlayerOrder>true</CanPlayerOrder>
+            <CanPlayerOffer>true</CanPlayerOffer>
+		</PhysicalItem>
+		
+		<PhysicalItem xsi:type="MyObjectBuilder_SeedItemDefinition">
+			<Id>
+				<TypeId>SeedItem</TypeId>
+				<SubtypeId>Grain</SubtypeId>
+			</Id>
+			<DisplayName>DisplayName_Item_GrainSeeds</DisplayName>
+			<Icon>Textures\GUI\Icons\Items\SeedPack_Grain.dds</Icon>
+			<Size>
+				<X>0.14</X>
+				<Y>0.14</Y>
+				<Z>0.14</Z>
+			</Size>
+			<Mass>0.12</Mass>
+			<Volume>0.1</Volume>
+			<Model>Models\Items\SeedPack_Grain.mwm</Model>
+			<PhysicalMaterial>Metal</PhysicalMaterial>
+
+			<GrowthTimeMultiplier>1.5</GrowthTimeMultiplier>
+			<WaterConsumptionMultiplier>1.6</WaterConsumptionMultiplier>
+			<FullyGrownWaterConsumptionMultiplier>0.1</FullyGrownWaterConsumptionMultiplier>
+
+			<OutputItemDefinitionId>
+				<TypeId>PhysicalObject</TypeId>
+				<SubtypeId>Grain</SubtypeId>
+			</OutputItemDefinitionId>
+
+			<MinimumOutput>2</MinimumOutput>
+			<MaximumOutput>4</MaximumOutput>
+			<GrowthStages>
+				<GrowthStage>
+					<MinCompletionPercentage>0</MinCompletionPercentage>
+					<MaxCompletionPercentage>40</MaxCompletionPercentage>
+					<ModelPath>Models\Environment\Farming\crop_grain_001_GS_1.mwm</ModelPath>
+				</GrowthStage>
+				<GrowthStage>
+					<MinCompletionPercentage>40</MinCompletionPercentage>
+					<MaxCompletionPercentage>99.99</MaxCompletionPercentage>
+					<ModelPath>Models\Environment\Farming\crop_grain_001_GS_2.mwm</ModelPath>
+				</GrowthStage>
+				<GrowthStage>
+					<MinCompletionPercentage>99.99</MinCompletionPercentage>
+					<MaxCompletionPercentage>100</MaxCompletionPercentage>
+					<ModelPath>Models\Environment\Farming\crop_grain_001_GS_3.mwm</ModelPath>
+				</GrowthStage>
+			</GrowthStages>
+			<DeadPlantModelPath>Models\Environment\Farming\crop_grain_001_GS_4.mwm</DeadPlantModelPath>
+			
+			<MinimalPricePerUnit>10</MinimalPricePerUnit>
+			<MinimumOfferAmount>1</MinimumOfferAmount>
+			<MaximumOfferAmount>8</MaximumOfferAmount>
+			<CanPlayerOrder>true</CanPlayerOrder>
+            <CanPlayerOffer>true</CanPlayerOffer>
+		</PhysicalItem>
+		
+		<PhysicalItem xsi:type="MyObjectBuilder_SeedItemDefinition">
+			<Id>
+				<TypeId>SeedItem</TypeId>
+				<SubtypeId>Mushrooms</SubtypeId>
+			</Id>
+			<DisplayName>DisplayName_Item_MushroomSpores</DisplayName>
+			<Icon>Textures\GUI\Icons\Items\SeedPack_Mushroom.dds</Icon>
+			<Size>
+				<X>0.14</X>
+				<Y>0.14</Y>
+				<Z>0.14</Z>
+			</Size>
+			<Mass>0.12</Mass>
+			<Volume>0.1</Volume>
+			<Model>Models\Items\SeedPack_Mushroom.mwm</Model>
+			<PhysicalMaterial>Metal</PhysicalMaterial>
+
+			<GrowthTimeMultiplier>0.6</GrowthTimeMultiplier>
+			<WaterConsumptionMultiplier>0.8</WaterConsumptionMultiplier>
+			<FullyGrownWaterConsumptionMultiplier>0.1</FullyGrownWaterConsumptionMultiplier>
+
+			<OutputItemDefinitionId>
+				<TypeId>ConsumableItem</TypeId>
+				<SubtypeId>Mushrooms</SubtypeId>
+			</OutputItemDefinitionId>
+
+			<MinimumOutput>2</MinimumOutput>
+			<MaximumOutput>4</MaximumOutput>
+			<GrowthStages>
+				<GrowthStage>
+					<MinCompletionPercentage>0</MinCompletionPercentage>
+					<MaxCompletionPercentage>40</MaxCompletionPercentage>
+					<ModelPath>Models\Environment\Farming\crop_fungus_001_GS_1.mwm</ModelPath>
+				</GrowthStage>
+				<GrowthStage>
+					<MinCompletionPercentage>40</MinCompletionPercentage>
+					<MaxCompletionPercentage>99.99</MaxCompletionPercentage>
+					<ModelPath>Models\Environment\Farming\crop_fungus_001_GS_2.mwm</ModelPath>
+				</GrowthStage>
+				<GrowthStage>
+					<MinCompletionPercentage>99.99</MinCompletionPercentage>
+					<MaxCompletionPercentage>100</MaxCompletionPercentage>
+					<ModelPath>Models\Environment\Farming\crop_fungus_001_GS_3.mwm</ModelPath>
+				</GrowthStage>
+			</GrowthStages>
+			<DeadPlantModelPath>Models\Environment\Farming\crop_fungus_001_GS_4.mwm</DeadPlantModelPath>
+			
+			<MinimalPricePerUnit>10</MinimalPricePerUnit>
+			<MinimumOfferAmount>1</MinimumOfferAmount>
+			<MaximumOfferAmount>8</MaximumOfferAmount>
+			<CanPlayerOrder>true</CanPlayerOrder>
+            <CanPlayerOffer>true</CanPlayerOffer>
+		</PhysicalItem>
+		
+		<PhysicalItem xsi:type="MyObjectBuilder_SeedItemDefinition">
+			<Id>
+				<TypeId>SeedItem</TypeId>
+				<SubtypeId>Vegetables</SubtypeId>
+			</Id>
+			<DisplayName>DisplayName_Item_VegetableSeeds</DisplayName>
+			<Icon>Textures\GUI\Icons\Items\SeedPack_Vegetable.dds</Icon>
+			<Size>
+				<X>0.14</X>
+				<Y>0.14</Y>
+				<Z>0.14</Z>
+			</Size>
+			<Mass>0.12</Mass>
+			<Volume>0.1</Volume>
+			<Model>Models\Items\SeedPack_Vegetable.mwm</Model>
+			<PhysicalMaterial>Metal</PhysicalMaterial>
+
+			<GrowthTimeMultiplier>1</GrowthTimeMultiplier>
+			<WaterConsumptionMultiplier>1.5</WaterConsumptionMultiplier>
+			<FullyGrownWaterConsumptionMultiplier>0.1</FullyGrownWaterConsumptionMultiplier>
+
+			<OutputItemDefinitionId>
+				<TypeId>ConsumableItem</TypeId>
+				<SubtypeId>Vegetables</SubtypeId>
+			</OutputItemDefinitionId>
+
+			<MinimumOutput>2</MinimumOutput>
+			<MaximumOutput>4</MaximumOutput>
+			<GrowthStages>
+				<GrowthStage>
+					<MinCompletionPercentage>0</MinCompletionPercentage>
+					<MaxCompletionPercentage>40</MaxCompletionPercentage>
+					<ModelPath>Models\Environment\Farming\crop_vegetable_001_GS_1.mwm</ModelPath>
+				</GrowthStage>
+				<GrowthStage>
+					<MinCompletionPercentage>40</MinCompletionPercentage>
+					<MaxCompletionPercentage>99.99</MaxCompletionPercentage>
+					<ModelPath>Models\Environment\Farming\crop_vegetable_001_GS_2.mwm</ModelPath>
+				</GrowthStage>
+				<GrowthStage>
+					<MinCompletionPercentage>99.99</MinCompletionPercentage>
+					<MaxCompletionPercentage>100</MaxCompletionPercentage>
+					<ModelPath>Models\Environment\Farming\crop_vegetable_001_GS_3.mwm</ModelPath>
+				</GrowthStage>
+			</GrowthStages>
+			<DeadPlantModelPath>Models\Environment\Farming\crop_vegetable_001_GS_4.mwm</DeadPlantModelPath>
+			
+			<MinimalPricePerUnit>10</MinimalPricePerUnit>
+			<MinimumOfferAmount>1</MinimumOfferAmount>
+			<MaximumOfferAmount>8</MaximumOfferAmount>
+			<CanPlayerOrder>true</CanPlayerOrder>
+            <CanPlayerOffer>true</CanPlayerOffer>
+		</PhysicalItem>
+		
+    </PhysicalItems>
+</Definitions>

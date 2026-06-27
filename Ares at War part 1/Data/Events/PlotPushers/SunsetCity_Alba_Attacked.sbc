@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+
+
+<!--
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_Event_AlbaAttacked</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event]
+            [UseEvent:true]
+			[Tags:AaW_StoryEvent]
+			[UniqueEvent:true]
+
+			[MinCooldownMs:7700000]
+			[MaxCooldownMs:14400000]
+			[StartsReady:false]
+            [PersistantConditionIds:MES_EventPersistantCondition_AlbaAttacked]
+            [OnFailResetCooldown:true]
+
+
+            [UseAnyPassingCondition:false]
+            [ActionExecution:Sequential]
+			[TimeUntilNextActionMs:5000]
+
+            [ActionIds:AaW_EventAction_Common_IncomingMessage]
+            [ActionIds:MES_EventAction_AlbaAttacked]
+
+
+        </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_EventPersistantCondition_AlbaAttacked</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Condition]
+
+             [CheckTrueBooleans:true]
+             [TrueBooleans:SHIVAN_RavunDestroyed]
+
+             [CheckFalseBooleans:true]
+             [FalseBooleans:AlbaRemovedFromOffice]
+        </Description>   
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_EventAction_AlbaAttacked</SubtypeId>
+        </Id>
+        <Description>
+            [MES Event Action]
+
+            [UseChatBroadcast:true]
+            [ChatData:MES_EventChat_AlbaAttacked]
+
+            [ChangeBooleans:true]
+            [SetBooleansTrue:AlbaAttacked]
+			
+        </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+        <Id>
+            <TypeId>Inventory</TypeId>
+            <SubtypeId>MES_EventChat_AlbaAttacked</SubtypeId>
+        </Id> 
+        <Description>
+            [RivalAI Chat]
+			[UseChat:true]
+			[StartsReady:true]
+			[Chance:100]
+			[MaxChats:-1]
+			[BroadcastRandomly:true]
+			[IgnoreAntennaRequirement:True]
+			[IgnoredAntennaRangeOverride:1]
+			[SendToAllOnlinePlayers:true]
+
+			[BroadcastChatType:Chat]
+			[Color:Blue]
+			[Author:Ares News Station]
+			[ChatMessages:Breaking news! Mayor Alba of Sunset City survived an apparent bomb attack today in what authorities are calling a targeted assassination attempt. While no suspects have been officially named, investigators believe the Syndicate may be involved.]
+			[ChatAudio:]   
+        </Description>
+    </EntityComponent>
+
+-->
+
+
+
+
+
+  
+  </EntityComponents>
+
+
+  
+</Definitions>
