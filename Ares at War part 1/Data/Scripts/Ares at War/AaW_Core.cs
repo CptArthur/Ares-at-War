@@ -29,7 +29,7 @@ namespace AresAtWar.SessionCore
     {
         public static AaWSessionCore Instance;
 
-        public static string ModVersion = "0.7";
+        public static string ModVersion = "0.8";
 
         public static MESApi MESApi;
         public static int counter = 0;
